@@ -1,2 +1,1 @@
-# mipt🤟
-all my mipt tex stuff
+я тут что-нибудь напишу потом🤟
