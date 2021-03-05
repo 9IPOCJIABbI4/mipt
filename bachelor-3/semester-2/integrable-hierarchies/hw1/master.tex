@@ -1,0 +1,27 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Домашнее задание по интегрируемым иерархиям}
+\begin{document}
+	\maketitle
+\begin{hiProb}[Упражнение 1.2]
+\end{hiProb}
+\begin{sol}
+\begin{multline*}
+	H_3=\frac{1}{3}\sum_{i,\,j,\,k}^{} L_{ij}L_{jk} L_{ki}=\\=
+	\frac{1}{3}\sum_{i=1}^{N} \sum_{j,\,k}^{} L_{ij}L_{jk}L_{ki}=\frac{1}{3}\sum_{i=1}^{N} \left( \sum_{j=1}^{N} L_{ij}L_{jj}L_{ji}+ \sum_{j\neq k}^{} L_{ij}L_{jk}L_{ki} \right) =\\=
+	\frac{1}{3}\sum_{i,\,j}^{} L_{jj}L_{ij}L_{ji}+\frac{1}{3}
+	\sum_{i=1}^{N} \sum_{j \neq k}^{} L_{ij}L_{jk}L_{ki}=\\=
+	\sum_{i=1}^{N} L_{ii}^3+ \frac{1}{3}\sum_{i\neq j}^{N} L_{jj}L_{ij}L_{ji}+\frac{1}{3}\sum_{i=1}^{N} \left( 
+	\sum_{j<k}^{} L_{ij}L_{jk}L_{ki}+\sum_{j>k}^{} L_{ij}L_{jk}L_{ki}\right) =\\=
+	\sum_{i=1}^{N} L_{ii}^3+ \frac{1}{3}\sum_{i< j}^{N} L_{jj}L_{ij}L_{ji}+\frac{1}{3}\sum_{i> j}^{N} L_{jj}L_{ij}L_{ji}+\\+\frac{1}{3}\sum_{i=1}^{N} \left( 
+	\sum_{j<k}^{} L_{ij}L_{jk}L_{ki}+\sum_{j>k}^{} L_{ij}L_{jk}L_{ki}\right) =\\=
+	\sum_{i=1}^{N} L_{ii}^3+ \frac{1}{3}\sum_{i< j}^{N} L_{jj}L_{ij}L_{ji}+\frac{1}{3}\sum_{i> j}^{N} L_{ii}L_{ji}L_{ij}+\\+\frac{1}{3}\sum_{i=1}^{N} \left( 
+	\sum_{j<k}^{} L_{ij}L_{jk}L_{ki}+\sum_{j>k}^{} L_{ij}L_{jk}L_{ki}\right) =
+%	\frac{1}{3} \sum_{i=1}^{N} L_{ii}^3+
+%	\frac{1}{3} \sum_{i \neq j\neq k}^{} L_{ij}L_{jk}L_{ki}
+%	=\\=\frac{1}{3}\sum_{i=1}^{N} L_{ii}^3+
+%	\frac{1}{3}\sum_{i\neq j}^{} \left( \sum_{j\neq k}^{} L_{ij}L_{jk}L_{ki}+
+%	\sum_{k=1}^{N} L_{kk}^3\right)
+.\end{multline*} 
+\end{sol}
+\end{document}

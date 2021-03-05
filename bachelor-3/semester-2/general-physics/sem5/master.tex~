@@ -1,0 +1,202 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Семинар №5}
+\begin{document}
+	\maketitle
+Две формулы для понимания физической кинетики:
+\[
+\sigma=\frac{ne^2 \tau}{m^*},\quad \kappa=\frac{1}{3} c v \lambda
+.\] 
+\begin{hiProb}[0-5-1]
+\end{hiProb}
+\begin{sol}
+Закон Лорентца-Франца
+\[
+\frac{\kappa}{\sigma T}=L
+.\] 
+\[
+R=\rho \frac{l}{S}
+.\] 
+\[
+\frac{P}{S}=\kappa \frac{\Delta T}{l}
+.\] 
+\[
+L=\frac{PR}{T\Delta T}
+.\] 
+\[
+P \sim 2 \cdot 10^{-11} \text{ Вт}
+.\] 
+\end{sol}
+\begin{hiProb}[0-5-2]
+\end{hiProb}
+\begin{sol}
+\[
+\kappa= \frac{1}{3} \underbrace{c}_{\sim T^3}\cdot \underbrace{v}_{\sim s} \cdot
+\underbrace{\lambda}_{\sim \text{const}}
+.\] 
+\end{sol}
+\begin{hiProb}[3.65]
+\end{hiProb}
+\begin{sol}
+\[
+\frac{1}{\rho}= \sigma= \frac{n e^2 \tau}{m^*}
+.\] 
+\[
+	\epsilon_F= \frac{m^* v_F^2}{2}= \frac{\hbar^2}{2m} (3\pi^2
+	n)^{2 /3}
+.\] 
+\[
+\lambda= v_F \tau
+.\] 
+\[
+n=\frac{1}{a^3} \text{ --- тип решётки}
+.\] 
+\[
+	\lambda\approx  \frac{(3\pi^2)^{1 /3} \hbar a^2}{\rho e^2}\sim 10^{-6} \text{ см}
+.\] 
+\end{sol}
+\begin{hiProb}[3.75]
+\end{hiProb}
+\begin{sol}
+\[
+\frac{1}{\tau}= \underbrace{\frac{1}{\tau_1}}_{\text{прим.}}+
+\underbrace{\frac{1}{\tau_2}}_{\text{фон.}}
+.\] 
+\[
+\frac{1}{\rho}= \frac{ne^2 \tau}{m^*}
+.\] 
+\[
+\lambda = v_F \tau= \frac{1}{n_{\text{прим}}\sigma_\text{сеч}}
+.\] 
+\[
+n=\frac{4}{a^3}
+.\] 
+\[
+\sigma_\text{сеч} \sim 10^{-16} \text{ см}^2 \propto n_\text{прим}
+.\] 
+\end{sol}
+\begin{hiProb}[3.9]
+\end{hiProb}
+\begin{sol}
+\begin{figure}[ht]
+    \centering
+    \incfig{1}
+    \caption{1}
+    \label{fig:1}
+\end{figure}
+\[
+\sin \frac{\phi}{2}= \frac{k_{D /2}}{k_F}=
+\frac{\sqrt[3]{6} }{2 \sqrt[6]{3} }
+.\] 
+\[
+n=\frac{1}{a^3}
+.\] 
+\[
+	k_F=(3\pi^2)^{1 /3} \frac{1}{\theta_0?}
+.\] 
+\[
+	\frac{4}{3} \pi k_D = \left( \frac{2\pi}{a} \right) ^3
+.\] 
+\[
+	k_D= (6\pi^2)^{1 /3} \frac{1}{a}
+.\] 
+\[
+\phi \sim  78 ^\circ
+.\] 
+\end{sol}
+\begin{hiProb}[Т5-1?]
+\end{hiProb}
+\begin{sol}
+\begin{figure}[ht]
+    \centering
+    \incfig{2}
+    \caption{}
+    \label{fig:2}
+\end{figure}
+\[
+E= \frac{mv_F^2}{2}
+.\] 
+\[
+	\delta E = m v_F \delta v= v_F \delta (m v)= v_F \hbar \delta k
+.\] 
+\[
+E_\text{ф}= c\hbar k
+.\] 
+\[
+	E_\text{ф} ^{(\text{max})}=c \hbar \delta k
+.\] 
+\end{sol}
+\begin{hiProb}[3.74]
+\end{hiProb}
+\begin{sol}
+	\[
+	\kappa = \frac{1}{3}c v \lambda
+	.\] 
+	\[
+	\kappa= c_e \overline{v}_e = c_\text{ф} \overline{v}_\text{ф}
+	.\] 
+	\[
+	c_e= 2nk \frac{kT}{\epsilon_F}
+	.\] 
+	\[
+		v_F= \frac{\hbar }{m} (3\pi^2 n)^{1 /3}
+	.\] 
+	\[
+		c_\text{ф}= k \frac{12}{5} \pi^4 \left( \frac{T}{\theta} \right) ^3 n
+	.\] 
+	\[
+	\overline{v}_\text{ф}=s
+	.\] 
+	\[
+	T \sim \sqrt{ \frac{\theta^3 k}{ms v_p}} \sim  100 \text{ К}
+	.\] 
+\end{sol}
+\begin{hiProb}[3.88]
+\end{hiProb}
+\begin{sol}
+\[
+	\sigma= \frac{ne^{2}\tau}{m} 
+.\]
+\[
+\lambda < v_F \tau>\lambda_F
+.\] 
+\[
+\sigma= \frac{ne^2\tau}{m}= \frac{ne^2}{m} \frac{\lambda}{v_F}=
+\frac{ne^2}{m} \frac{2\pi\hbar }{m v_F^2} \approx \frac{1}{h}
+4e^2 n^{1 /3}
+.\] 
+\[
+	v_F=\frac{\hbar}{m} (3\pi^2 n)^{1 /3}
+.\] 
+\end{sol}
+\begin{hiProb}[Личная разработка]
+\[
+T_1=1 \text{ К}, \quad \rho_1=2 \cdot 10^{-6} \Omega\cdot\text{см}
+.\] 
+\[
+T_2= 2 \text{ К},\quad \rho_2= 3,3 \cdot 10^{-6} \Omega \cdot \text{см}
+.\] 
+\[
+T=4,2 \text{ К}
+.\] 
+\end{hiProb}
+\begin{sol}
+\[
+\left\{
+\begin{aligned}
+\rho_1 &= A+BT_1^5 \\
+\rho_2 &= A+B T_2^5 \\
+\end{aligned}
+\right.
+.\] 
+\[
+P=I^2 R= I^2 N_r \pi\ldots
+.\] 
+\end{sol}
+\begin{sol}
+ормм
+\[
+
+.\] 
+\end{sol}
+\end{document}

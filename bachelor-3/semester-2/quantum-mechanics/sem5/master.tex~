@@ -1,0 +1,330 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Семинар №5}
+\begin{document}
+	\maketitle
+	Нестационарное уравнение Дирака в нековариантной форме
+\[
+	i \hbar \frac{\partial }{\partial t} \Psi\left( \mathbf{r},\,t \right) =
+	\underbrace{\left( c(\widehat{\operatorname{\boldsymbol{\alpha}}},\, \widehat{\operatorname{\mathbf{p}}})+\beta m c^2 \right)}_{\widehat{\operatorname{H}}_D} \Psi( \mathbf{r},\,t)
+.\] 
+\[
+	\widehat{\operatorname{\alpha}}_i= \begin{pmatrix} o & \widehat{\operatorname{\sigma}}_i\\
+	\widehat{\operatorname{\sigma}}_i & 0\end{pmatrix},\quad
+	\widehat{\operatorname{\beta}}= \begin{pmatrix} 
+	\widehat{\operatorname{1}}& 0\\
+0 & -\widehat{\operatorname{1}}\end{pmatrix} 
+.\] 
+\[
+\frac{\widehat{\operatorname{\beta}}}{c}\times
+\left( i \hbar \frac{\partial }{\partial t} -c \left( 
+\widehat{\operatorname{\boldsymbol{\alpha}}},\, \widehat{\operatorname{\mathbf{p}}}\right) -\widehat{\operatorname{\beta}} m c^2 \right) 
+\Psi \left( \mathbf{r},\,t \right) =0
+.\] 
+\[
+\gamma_0= \widehat{\operatorname{\beta}},\quad
+\gamma^i=- \gamma_i = \widehat{\operatorname{\beta}} \alpha_i
+.\] 
+\[
+	\left( i\hbar \frac{1}{c} \gamma_0 \frac{\partial }{\partial t} - \widehat{\operatorname{\gamma}}^i\widehat{\operatorname{\beta}}_i -mc\right) \Psi(\mathbf{r},\,t)=0
+.\] 
+\[
+	\left( i \hbar \frac{1}{c} \gamma_0 \frac{\partial }{\partial t} + \gamma^i i\hbar \frac{\partial }{\partial x^i}-mc  \right) \Psi=0
+.\] 
+\[
+\left( i\hbar \underbrace{\left( \frac{\gamma_0}{c}\frac{\partial }{\partial t} + \left( \boldsymbol{\gamma},\,\boldsymbol{\nabla} \right)  \right) }_{\gamma_\mu \partial^\mu\equiv \widehat{\operatorname{\partial}}}
+i-mc \right)\Psi=0 .\] 
+\[
+	\Psi'= e^{\frac{ie f(x,\,t)}{\hbar c}}\Psi
+.\] 
+\[
+	\left( i\hbar \widehat{\operatorname{\partial}}-mc \right) 
+	\Psi=0
+.\] 
+\[
+	\Psi(\mathbf{r},\,t)= e^{- \frac{i}{\hbar }E t}\cdot
+	\Psi (\mathbf{r})
+.\] 
+\[
+\left\{
+\begin{aligned}
+	\widehat{\operatorname{H}}_D \psi(\mathbf{r})&= E\psi(\mathbf{r}) \\
+	\widehat{\operatorname{\mathbf{p}}}\psi(\mathbf{r})&= 
+	\mathbf{p} \psi(\mathbf{r})\\
+\end{aligned}
+\right.
+.\] 
+\[
+	\psi(\mathbf{r})= u(\mathbf{p},\,E)\frac{1}{\sqrt{V} }
+	e^{\frac{i}{\hbar }\left( \mathbf{p},\,\mathbf{r} \right) },
+	\quad \int \psi^\dagger \psi dV=1
+.\] 
+\[
+	\left( c \begin{pmatrix} 0 & \left(\widehat{\operatorname{
+	\boldsymbol{\sigma}}},\,\widehat{\operatorname{\mathbf{p}}}  \right) \\
+	\left( \widehat{\operatorname{\boldsymbol{\sigma}}},\,
+\widehat{\operatorname{\mathbf{p}}}\right) &0\end{pmatrix} +mc^2 \begin{pmatrix} \widehat{\operatorname{1}} &0 \\
+0& -\widehat{\operatorname{1}}\end{pmatrix}  \right)
+u\left( \mathbf{p},\,E \right) e^{\frac{i}{\hbar }\left( \mathbf{p},\,\mathbf{r} \right) }=E u \left( \mathbf{p},\,E \right) 
+e^{\frac{i}{\hbar }\left( \mathbf{p},\,\mathbf{r} \right) }
+.\] 
+\[
+	\left( c \begin{pmatrix} 0 & \left(\widehat{\operatorname{
+	\boldsymbol{\sigma}}},\,\widehat{\operatorname{\mathbf{p}}}  \right) \\
+	\left( \widehat{\operatorname{\boldsymbol{\sigma}}},\,
+\widehat{\operatorname{\mathbf{p}}}\right) &0\end{pmatrix} +mc^2 \begin{pmatrix} \widehat{\operatorname{1}} &0 \\
+0& -\widehat{\operatorname{1}}\end{pmatrix}  -E\begin{pmatrix} \widehat{\operatorname{1}} &0 \\
+0& \widehat{\operatorname{1}}\end{pmatrix}\right)
+\underbrace{u\left( \mathbf{p},\,E \right) e^{\frac{i}{\hbar }\left( \mathbf{p},\,\mathbf{r} \right) }}_{\sim \psi(\mathbf{r})}=0
+.\] 
+\[
+	u\left( \mathbf{p},\,E \right) = \begin{pmatrix} 
+	\phi\left( \mathbf{p},\,E) \right) \\
+\chi\left( \mathbf{p},\,E \right) \end{pmatrix} 
+.\] 
+\[
+	\widehat{\operatorname{p}}\Psi(\mathbf{r})= \mathbf{p} \psi
+	(\mathbf{r})
+.\] 
+\[
+	\begin{pmatrix} (mc^2-E)\widehat{\operatorname{1}}&
+	c \left( \widehat{\operatorname{\boldsymbol{\sigma}}},\,
+\mathbf{p}\right) \\
+c\left( \widehat{\operatorname{\boldsymbol{\sigma}}},\,
+\mathbf{p}\right) & (-mc^2-E) \widehat{\operatorname{1}}\end{pmatrix} \begin{pmatrix} \phi\\ \chi \end{pmatrix} =0
+.\] 
+\[
+	\begin{vmatrix} (mc^2-E)\widehat{\operatorname{1}}&
+	c \left( \widehat{\operatorname{\boldsymbol{\sigma}}},\,
+\mathbf{p}\right) \\
+c\left( \widehat{\operatorname{\boldsymbol{\sigma}}},\,
+\mathbf{p}\right) & (-mc^2-E) \widehat{\operatorname{1}}\end{vmatrix} =0
+.\]
+\[
+	-(mc^2-E) (mc^2+E) \widehat{\operatorname{1}}- c^2
+	\left( \widehat{\operatorname{\boldsymbol{\sigma}}},\,\widehat{\operatorname{\mathbf{p}}} \right) \left( \widehat{\operatorname{\boldsymbol{\sigma}}},\,\widehat{\operatorname{\mathbf{p}}} \right)=0
+.\] 
+\[
+	\widehat{\operatorname{1}}(E^2- (mc^2)^2)= c^2
+\left( \widehat{\operatorname{\boldsymbol{\sigma}}},\,\widehat{\operatorname{\mathbf{p}}} \right)\left( \widehat{\operatorname{\boldsymbol{\sigma}}},\,\widehat{\operatorname{\mathbf{p}}} \right)=
+c^2 \mathbf{p}^2
+.\] 
+\[
+\left( \widehat{\operatorname{\boldsymbol{\sigma}}},\,\widehat{\operatorname{\mathbf{p}}} \right)\left( \widehat{\operatorname{\boldsymbol{\sigma}}},\,\widehat{\operatorname{\mathbf{p}}} \right)=
+\widehat{\operatorname{\sigma}}_i p_i \widehat{\operatorname{\sigma}}_j p_j= p_i p_j \left( \widehat{\operatorname{1}}\delta_{ij}+
+i \epsilon_{ijk}\widehat{\operatorname{\sigma}}_k\right) =
+\mathbf{p}^2 \cdot \widehat{\operatorname{1}}+0=
+\widehat{\operatorname{p}}^2\cdot \widehat{\operatorname{1}}
+.\] 
+\[
+	E^2 =m^2 c^4 + \mathbf{p}^2 c^2
+.\] 
+\[
+	\widehat{\operatorname{\Lambda}}= \frac{c\left( \widehat{\operatorname{\boldsymbol{\alpha}}},\,\mathbf{p} \right) +\beta mc^2}{E_p}=\frac{\widehat{\operatorname{H}}_D}{\left( \widehat{\operatorname{H}}_D^2 \right) ^{1 /2}}
+.\] 
+\[
+	E= \pm \sqrt{ m^2 c^4 +\mathbf{p}^2 c^2} = \xi_p E_p
+.\] 
+\[
+\xi_p=+1,\quad E>0
+.\] 
+\[
+	\xi_p=-1,\quad E<0
+.\] 
+\[
+\left\{
+\begin{aligned}
+	c \left( \widehat{\operatorname{\boldsymbol{\sigma}}},\,
+	\mathbf{p}\right) \chi&=  (E-mc^2)\phi \\
+	c \left( \widehat{\operatorname{\boldsymbol{\sigma}}},\,
+\widehat{\operatorname{\mathbf{p}}}\right)\phi&=
+	(E+mc^2)\chi
+\end{aligned} 
+\right.\implies
+\chi= \frac{c\left( \widehat{\operatorname{\boldsymbol{\sigma}}},\,
+\widehat{\operatorname{\mathbf{p}}}\right) \phi}{\xi E_p+mc^2}
+.\] 
+\[
+	u\left( \mathbf{p},\,E \right) = N \begin{pmatrix} \phi\\
+	\chi\end{pmatrix} =N \begin{pmatrix} 
+\phi \\ \frac{c \left( \widehat{\operatorname{\boldsymbol{\sigma}}},\,
+\widehat{\operatorname{\mathbf{p}}}\right) \phi}{E+mc^2}\end{pmatrix} 
+.\] 
+\[
+\int \psi^\dagger \psi dV\implies
+u^\dagger \left( \mathbf{p},\,E \right) u\left( \mathbf{p},\,E \right) =1
+.\] 
+\[
+	N^2 \begin{pmatrix} \phi^\dagger &
+	\frac{\phi^\dagger c \left( \widehat{\operatorname{\boldsymbol{\sigma}}}^\dagger,\,\mathbf{p} \right) }{E+mc^2}\end{pmatrix} 
+	\begin{pmatrix} \phi \\
+	\frac{c\left( \widehat{\operatorname{\boldsymbol{\sigma}}},\,
+\widehat{\operatorname{\mathbf{p}}}\right) }{E+mc^2}\end{pmatrix} =1
+.\] 
+\[
+	N^2 \phi^\dagger \phi \left( 1+ \frac{c^2 \mathbf{p}^2}{
+	(E+mc^2)^2} \right) =
+	N^2 \phi^\dagger \phi \left( 1+ \frac{E^2 -m^2 c^4}{
+	(E+mc^2)^2} \right) =1
+.\] 
+\[
+N^2 \phi^\dagger \phi \frac{2E}{E+mc^2}=1\implies
+N= \sqrt{\frac{E+mc^2}{2E}} 
+.\] 
+\[
+\phi^\dagger \phi=1
+.\] 
+\[
+\widehat{\operatorname{\boldsymbol{\Sigma}}}=
+\begin{pmatrix} \widehat{\operatorname{\boldsymbol{\sigma}}}&0\\
+0& \widehat{\operatorname{\boldsymbol{\sigma}}}\end{pmatrix} 
+.\] 
+\[
+	\widehat{\operatorname{\mathbf{s}}}= \frac{\hbar}{2}
+	\widehat{\operatorname{\boldsymbol{\Sigma}}} \text{ ---
+	спиральность}
+.\] 
+\begin{multline*}
+	\frac{\left( \widehat{\operatorname{\boldsymbol{\Sigma}}},\,
+	\mathbf{p}\right) }{p}\psi(\mathbf{r})=
+	s\cdot \psi(\mathbf{r})\implies
+	\begin{pmatrix} \left( \widehat{\operatorname{\boldsymbol{\sigma}}},\,\mathbf{p} \right) & 0\\ 0 &
+	\left( \widehat{\operatorname{\boldsymbol{\sigma}}},\,\mathbf{p} \right) \end{pmatrix} \begin{pmatrix} \phi \\ \chi \end{pmatrix} =
+	s\cdot p \begin{pmatrix}  \phi \\ \chi \end{pmatrix} \implies\\
+	\implies
+	\begin{pmatrix} \widehat{\operatorname{s}}_x &
+	\widehat{\operatorname{s}}_y &
+\widehat{\operatorname{s}}_z\end{pmatrix} =
+		\begin{pmatrix}  \frac{\hbar}{2} \widehat{\operatorname{\Sigma}}_x&
+\frac{\hbar}{2} \widehat{\operatorname{\Sigma}}_y &
+\frac{\hbar}{2} \widehat{\operatorname{\Sigma}}_z\end{pmatrix} 
+.\end{multline*} 
+\[
+s=\pm 1
+.\] 
+\[
+\widehat{\operatorname{\Sigma}}_x= \begin{pmatrix} 
+\widehat{\operatorname{\sigma}}_x & 0 \\
+0 & \widehat{\operatorname{\sigma}}_x\end{pmatrix} 
+.\] 
+\[
+	\left( \widehat{\operatorname{\boldsymbol{\sigma}}},\,
+	\widehat{\operatorname{\mathbf{p}}}\right) \phi=
+	s p\phi\implies
+	\begin{pmatrix}  p_z & p_x - i p_y \\
+	p_x +i p_y & - p_z\end{pmatrix} 
+	\begin{pmatrix} c_1 \\ c_2 \end{pmatrix} =sp
+	\left( c_1 \\c_2 \right) 
+.\] 
+\[
+	s=1 \quad \left<\mathbf{p} \right> \uparrow \uparrow
+	\left<\mathbf{s} \right>
+.\] 
+\[
+	s=-1 \quad \left<\mathbf{p} \right>\uparrow \downarrow
+	\left<\mathbf{s} \right>
+.\] 
+\[
+	\Psi_{\mathbf{p}s \xi_p}(\mathbf{r},\,t)=\frac{
+	e^{\frac{i}{\hbar }\left( -\xi E_p t+ \mathbf{p} \mathbf{r} \right) }}{2\sqrt{V} }
+	\begin{pmatrix} \sqrt{1+ \xi \frac{mc^2}{E_p}} \left( 
+	1+ \frac{sp_z}{p}\right) ^{1 /2}\\
+s\left( 1+ \xi \frac{mc^2}{E_1} \right) ^{1 /2}\left( 
+1- \frac{sp_z}{p}\right) ^{1 /2}e^{i \delta}\\
+s\xi \left( 1- \xi \frac{mc^2}{E_p} \right) ^{1 /2}
+\left( 1+ \frac{sp_z}{p} \right) ^{1 /2}\\
+\xi \left( 1- \frac{\xi mc^2}{E_p} \right) ^{1 /2}
+\left( 1 - \frac{sp_z}{p} \right) ^{1 /2}
+e^{i\delta}\end{pmatrix} 
+.\] 
+\begin{hiProb}[Задача 6]
+\end{hiProb}
+\begin{sol}
+\[
+	\Psi\left( \mathbf{r},\,t \right) = \frac{1}{\sqrt{V} }
+	u \left( \mathbf{p},\, E \right) C^{\frac{i}{\hbar }\left( 
+	\mathbf{p},\,\mathbf{r}\right) -Et}
+.\] 
+\[
+	u(\mathbf{p},\,E)= N \begin{pmatrix} \phi\\\chi \end{pmatrix} =N \begin{pmatrix} \phi\\
+\frac{c\left( \widehat{\operatorname{\boldsymbol{\sigma}}},\,
+\widehat{\operatorname{\mathbf{p}}}\right) }{E+mc^2}\phi\end{pmatrix} , \quad N= \frac{1}{\sqrt{2} }\sqrt{ 1+ \frac{mc^2}{E}} 
+.\] 
+\[
+	\left<\mathbf{s} \right> = \frac{u^\dagger \widehat{\operatorname{
+	\mathbf{s}}}u}{u^\dagger u}=
+	\frac{u^\dagger \frac{1}{2} \widehat{\operatorname{\boldsymbol{\Sigma}}}u}{u^\dagger u}=
+	\frac{1}{2} N^2 \begin{pmatrix} 
+		\phi^\dagger & \phi^\dagger \frac{c \left( \widehat{\operatorname{\boldsymbol{\sigma}}},\,\mathbf{p} \right) }{E+mc^2}\end{pmatrix} \begin{pmatrix} \widehat{\operatorname{\boldsymbol{\sigma}}}&0\\ 0&
+	\widehat{\operatorname{\boldsymbol{\sigma}}}\end{pmatrix} 
+	\begin{pmatrix} \phi\\ \frac{c \left( \widehat{\operatorname{\boldsymbol{\sigma}}},\,\mathbf{p} \right) }{E+mc^2} \end{pmatrix} 
+.\] 
+\[
+	\mathbf{p}= \begin{pmatrix} 0 & 0 & p \end{pmatrix} ,\quad
+	\left( \widehat{\operatorname{\boldsymbol{\sigma}}},\,\mathbf{p} \right) =\sigma_zp
+.\] 
+\[
+	\implies \left<\mathbf{s} \right> =  \frac{1}{2}
+	N^2 \phi^\dagger \left( \widehat{\operatorname{\boldsymbol{\sigma}}}+ \frac{c^2}{(E+mc^2)^2} \left( \widehat{\operatorname{\boldsymbol{\sigma}}},\, \mathbf{p} \right) \boldsymbol{\sigma}
+	\left( \widehat{\operatorname{\boldsymbol{\sigma}}},\,
+\mathbf{p}\right) \right) \phi=
+\frac{N^2}{2} \phi^\dagger \left(  \widehat{\operatorname{\boldsymbol{\sigma}}}+ \frac{p^2c^2}{(E+mc^2)^2}\widehat{\operatorname{\sigma}}_z
+\widehat{\operatorname{\boldsymbol{\sigma}}} \widehat{\operatorname{\sigma}}_z\right) \phi
+.\] 
+\[
+	\left<s_x \right> = \frac{N^2}{2} \phi^\dagger \left( 
+	\widehat{\operatorname{\sigma}}_x + \frac{p^2 c^2}{
+(E+mc^2)^2}\widehat{\operatorname{\sigma}}_z \widehat{\operatorname{
+\sigma}}_x  \widehat{\operatorname{\sigma}}_z\right) \phi
+\xlongequal[]{*}
+.\] 
+\[
+\widehat{\operatorname{\sigma}}_z \widehat{\operatorname{\sigma}}_x
+= - \widehat{\operatorname{\sigma}}_x \widehat{\operatorname{\sigma}}_z= i \widehat{\operatorname{\sigma}}_y
+.\] 
+\[
+i \widehat{\operatorname{\sigma}}_y \widehat{\operatorname{\sigma}}_z
+= - i \widehat{\operatorname{\sigma}}_z \widehat{\operatorname{\sigma}}_y= +i \left( - \widehat{\operatorname{\sigma}}_z \widehat{\operatorname{\sigma}}_y \right) = i \left( i \widehat{\operatorname{\sigma}}_x \right) = - \widehat{\operatorname{\sigma}}_x
+.\] 
+\begin{multline*}
+	\xlongequal[]{*} \frac{N^2}{2} \phi^\dagger  \left( 
+	\widehat{\operatorname{\sigma}}_x-
+\frac{p^2 c^2 \widehat{\operatorname{\sigma}}_x}{
+(E+ mc^2)^2}\right) \phi
+= \frac{1}{2} N^2 \phi^\dagger \widehat{\operatorname{\sigma}}_x
+\phi \frac{(E+mc^2)^2 - p^2 c^2}{(E+mc^2)^2}=\\=
+\frac{1}{2} \frac{1}{2} \frac{E+mc^2}{E} \frac{
+E^2 + 2 m c^2 E + (mc^2)^2 - p^2 c^2}{(E+ mc^2)^2}\phi^\dagger \widehat{\operatorname{\sigma}}_x \phi=
+\frac{1}{4} \frac{1}{E} \frac{2(mc^2)^2 + 2mc^2 E}{E+mc^2}\phi^\dagger \widehat{\operatorname{\sigma}}_x \phi=\\=
+\frac{mc^2}{2E} \phi^\dagger \widehat{\operatorname{\sigma}}_x
+\phi
+.\end{multline*} 
+\begin{multline*}
+	\left<s_y \right> = \frac{N^2}{2} \phi^\dagger \left( 
+	\widehat{\operatorname{\sigma}}_y+\frac{p^2 c^2}{
+(E+mc^2)^2} \underbrace{\widehat{\operatorname{\sigma}}_z
+\widehat{\operatorname{\sigma}}_y}_{- \widehat{\operatorname{\sigma}}_y \widehat{\operatorname{\sigma}}_z}\widehat{\operatorname{\sigma}}_z\right) \phi
+=\\=\frac{N^2}{2}\phi^\dagger \left( 
+\widehat{\operatorname{\sigma}}_y + \frac{p^2 c^2}{(E+mc^2)^2}
+\left( - \widehat{\operatorname{\sigma}}_y \underbrace{\widehat{\operatorname{\sigma}}_z \widehat{\operatorname{\sigma}}_z}_{\widehat{\operatorname{1}}}\right) \right) \phi= \frac{mc^2}{2E} \phi^\dagger
+\widehat{\operatorname{\sigma}}_y \phi
+.\end{multline*} 
+\[
+\left<s_z \right> = \frac{N^2}{2} \phi^\dagger
+ \left(  \widehat{\operatorname{\sigma}}_z + \frac{p^2c^2}{
+ (E+mc^2)^2}\widehat{\operatorname{\sigma}}_z \widehat{\operatorname{\sigma}}_z \widehat{\operatorname{\sigma}}_z \right) \phi=
+ \frac{N^2}{2} \phi + \widehat{\operatorname{\sigma}}_z \phi
+ \frac{(E+mc^2)^2+ p^2 c^2}{(E+mc^2)^2}= \frac{1}{2} \phi^\dagger
+ \widehat{\operatorname{\sigma}}_z \phi
+.\] 
+\[
+	E^2+(mc^2)^2 +2 mc^2 E
+.\] 
+\[
+\phi^\dagger \widehat{\operatorname{\sigma}}_z \phi \neq 0
+.\] 
+\[
+\frac{mc^2}{E} \ll
+.\] 
+\end{sol}
+\end{document}

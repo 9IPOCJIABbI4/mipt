@@ -1,0 +1,123 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Лабораторная работа 11.1\\
+Определение ширины запрещённой зоны полупроводника}
+\begin{document}
+	\maketitle
+	\begin{abstract}
+	Исследуется температурная зависимость проводимости
+	типичного полупроводника --- германия или кремния.
+	Определяется ширина запрещённой зоны методом, частично
+	исключающим ошибки эксперимента.
+	\end{abstract}
+	\section{Теоретическое введение}
+Величина электропроводности в полупроводниках определяется
+числом электронов в зоне проводимости и дырок в валентной зоне
+(эти числа в чистыых полупроводниках, конечно, равны друг другу).
+
+Числа электронов, находящихся в зоне провод
+	\section{Выполнение}
+	По проведённым прямым измерениям, представленным в 
+	таблице \ref{tab:1},
+\begin{table}[htpb]
+		\centering
+		\caption{Прямые измерения}
+		\label{tab:1}
+		\csvreader[tabular=|c|c|c|,
+		table head={\hline  $U$, мВ& $R_\text{пр},$
+			кОм
+				     & $R_\text{пп}$, кОм\\\hline},
+		late after line=\\\hline, head to column names]
+		{datasethi.csv}{}
+			{ \num{\u} & \num{\prov}
+				   & \num{\pp}}
+	\end{table}
+	исследуем зависимости
+	\[
+		\ln \sigma = f(1 /T)
+	\] 
+	для проводника и полупроводника, где
+	\[
+	\sigma=\frac{l}{RS},\quad t=t_\text{комн}+\beta U,\quad
+	\beta=41\cdot 10^{-6}\, \text{В} /\text{К},\quad
+	t_\text{комн}=24,0\pm 1,0\, ^\circ \text{С}
+	.\] 
+	\[
+	l_\text{пп}=39,20\pm 0,10\, \text{мм},\quad
+	S_\text{пп}=a^2,\quad a=4,10\pm 0,10\, \text{мм}
+	.\] 
+	\[
+	l_\text{пр}=13,40\pm 0,10\,\text{м},\quad
+	S_\text{пр}=\pi d^2,\quad
+	d=0,070\pm 0,010\, \text{мм}
+	.\] 
+	Также, кроме систематической погрешности, в таблице \ref{tab:1} учтена погрешность установки
+	\[
+		\pm \left[ 0,015\pm 0,02\left( R_k /R_x-1 \right)  \right] 
+	,\] 
+	где $R_k$ --- включённый предел измерений (2 кОм),
+	$R_x$ --- значение измеряемой величины в килоомах.
+	Для обезразмеривания аргумента логарифма разделим все
+	полученные значения $\sigma$ на $\sigma_0=\sigma(t_\text{комн})$. Полученные описанным образом косвенные измерения приведены в 
+	таблице \ref{tab:2}.
+		\begin{table}[htpb]
+			\centering
+			\caption{Косвенные измерения}
+			\label{tab:2}
+			\csvreader[tabular=|c|c|c|c|c|,
+			table head={\hline  $T^{-1}$, $10^{-3}\cdot\text{К}^{-1}$& $\displaystyle \sigma_\text{пп}, \ \nicefrac{1}{\text{Ом}\cdot \text{м}}$& $\sigma_\text{пр} ,\ \nicefrac{1}{\text{мкОм}\cdot \text{м}}$& $\ln \left( \sigma_\text{пп} /\sigma_{\text{пп}0} \right) $ &
+			$\ln \left( \sigma_\text{пр} /\sigma_{\text{пр}0} \right) $\\\hline},
+			late after line=\\\hline, head to column names]
+			{datasethi.csv}{}
+				{\num{\tinv} & \num{\spp} &\num{\spr} &\num{\lnspp} & \num{\lnspr}}
+		\end{table}
+		График зависимости $\sigma(T)$ для полупроводника
+		представлен на рис.~\ref{fig:1}, а для проводника ---
+		на рис.~\ref{fig:2}.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{3}
+	\caption{График зависимости $\sigma(T)$ полупроводника}
+	\label{fig:1}
+\end{figure}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{2}
+	\caption{График зависимости $\sigma(T)$ проводника}
+	\label{fig:2}
+\end{figure}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{1}
+	\caption{График $\ln \sigma =f(1 /T)$ полупроводника}
+	\label{fig:3}
+\end{figure}
+Для проводника (в нашем случае --- меди) коэффициент наклона графика 
+\[
+\frac{d\sigma}{dT}=-0,027\pm 0,006\ \frac{1}{\text{мкОм}\cdot \text{м}
+\cdot \text{К}}
+.\] 
+Среднее значение $\sigma$ по исследуемому интервалу будет равно
+\[\overline{\sigma}=8,3\pm 1,0\, \frac{1}{\text{мкОм}\cdot \text{м}}.\]
+А температурный коэффициент сопротивления соответственно
+\[
+\alpha=- \frac{1}{\overline{\sigma}} \frac{d\sigma}{dT}=
+0,0033\pm 0,0008 \, ^\circ \text{С} ^{-1}
+ ,\] 
+что в пределах погрешности совпадает с табличным значением
+\[
+\alpha_\text{Cu}\approx 0,004 \, ^\circ \text{С} ^{-1}
+.\] 
+По графику на рис.~\ref{fig:3} определяем коэффициент наклона
+\[
+	\eta=(-4,20\pm 0,15)\, \text{К}
+.\] 
+Откуда ширина запрещённой зоны полупроводника
+\[
+\Delta= -2k \eta =0,73\pm 0,03\, \text{эВ}
+,\] 
+что сопвадает с табличной величиной запрещённой зоны для германия
+\[
+\Delta_\text{Ge}\approx 0,7\,\text{эВ}
+.\] 
+\end{document}

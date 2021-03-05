@@ -1,0 +1,40 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Лабораторная работа №11.3\\
+Измерение контактной разности потенциалов в полупроводниках}
+\begin{document}
+	\maketitle
+Результаты экспериментов и вычислений приведены в табл.~\ref{tab:1}.
+Были использованы следующие данные
+\[
+t=t_\text{комн}+U/\beta,\quad t_\text{комн}=25\pm 1 ^\circ \text{С},
+\quad \beta=41\cdot 10^{-6} \text{В} / ^\circ \text{С},\quad
+R_0=R(t_{\text{комн}})
+.\] 
+	\begin{table}[htpb]
+		\centering
+		\caption{Измерения}
+		\label{tab:1}
+		\csvreader[tabular=|c|c|c|c|,
+		table head={\hline $U$, мВ & $R$, Ом & $1 /T$, $10^{-3}\text{К}^{-1}$& $\ln \left( R /R_0 \right) $  \\\hline},
+		late after line=\\\hline, head to column names]
+		{data.csv}{}
+		{\num{\V} & \num{\R} & \num{\Tinv}& \num{\lnR}}
+	\end{table}
+	На рис.~\ref{fig:1} представлена зависимость $\ln (R_g)$ 
+	от $1 /T$. Коэффициент наклона данного графика
+	\[
+		\eta=\frac{\Delta(\ln R)}{\Delta(1 /T)}=(5,9\pm 0,3)
+		\cdot 10^3\, \text{К}
+	.\] 
+	Отсюда находим контактную разность потенциалов $(p-n)$-перехода исследуемого диода
+	\[
+	\Delta V= \frac{k_\text{Б}}{e}\eta=0,51\pm 0,02\, \text{эВ}
+	.\] 
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{1}
+	\caption{Зависимость $\ln(R_g)$ от $1 /T$}
+	\label{fig:1}
+\end{figure}
+\end{document}

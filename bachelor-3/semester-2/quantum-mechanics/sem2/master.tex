@@ -1,0 +1,303 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Семинар №2 по квантовой механике}
+\begin{document}
+	\maketitle
+\begin{hiProb}[Задача 4]
+Покажите, что для оператора эволюции
+\[
+	\widehat{\operatorname{U}}(t_2,\,t_1)\equiv T e^{
+	i \int\limits_{t_1}^{t_2} dt \widehat{\operatorname{V}}_0
+(t)},
+\]
+верно равенство
+\[
+	\widehat{\operatorname{U}}(t_2,\,t_1)\widehat{\operatorname{U}}(t_1,\,t_0)= \widehat{\operatorname{U}}(t_2,\,t_0)
+.\] 
+\end{hiProb}
+\begin{sol}
+\begin{multline*}
+	\widehat{\operatorname{U}}(t_1,\,t_0)=T e ^{
+	- \frac{i}{\hbar }\int\limits_{t_0}^{t_1} d\tau
+\widehat{\operatorname{H}}(\tau)}=
+\sum_{n=0}^{\infty} \left( - \frac{i}{\hbar } \right) ^n
+\int\limits_{t_0}^{t_1} d \tau_1 \ldots
+\int\limits_{t_0}^{\tau_{n-1}} d \tau_n \widehat{\operatorname{H}}
+(\tau_1) \ldots \widehat{\operatorname{H}}(\tau_n)=\\=
+\widehat{\operatorname{1}}-\frac{i}{\hbar }
+\int\limits_{t_0}^{t_1} d\tau \widehat{\operatorname{H}}(\tau)
+-\frac{1}{\hbar^2 }\int\limits_{t_0}^{t_1} d \tau_1 \int\limits_{t_0}^{\tau_1} d\tau_2 \widehat{\operatorname{H}}  (\tau_1)
+\widehat{\operatorname{H}}(\tau_2)+\\+\frac{i}{\hbar^3}\int\limits_{t_0}^{t_1} 
+d\tau_1 \int\limits_{t_0}^{\tau_1} d\tau_2 \int\limits_{t_0}^{
+\tau_2} d\tau_3 \widehat{\operatorname{H}}(\tau_1)\widehat{\operatorname{H}}(\tau_2)\widehat{\operatorname{H}}(\tau_3)+\ldots  
+.\end{multline*} 
+Проделать самостоятельно формулу 6 из лекций
+\[
+	\ket{\psi(t)}=\ket{\psi_0}- \frac{i}{\hbar }
+	\int\limits_{t_0}^{t_1} d\tau \widehat{\operatorname{H}}
+	(\tau)\ket{\psi(\tau}
+.\] 
+\[
+	\widehat{\operatorname{U}}(t_2,\,t_1)=\widehat{\operatorname{1}}- \frac{i}{\hbar }\int\limits_{t_1}^{t_2} d\tau \widehat{\operatorname{H}}(\tau)- \frac{1}{\hbar ^2}\int\limits_{t_1}^{t_2} d \tau_1
+	\int\limits_{t_1}^{\tau_1} d\tau_2 \widehat{\operatorname{H}}
+	(\tau_1) \widehat{\operatorname{H}}(\tau_2)+\ldots
+.\] 
+\begin{multline*}
+	\widehat{\operatorname{U}}(t_2,\,t_1)\widehat{\operatorname{U}}
+	(t_1,\,t_0)=\\=
+	\left( \widehat{\operatorname{1}}-\frac{i}{\hbar }
+	\int\limits_{t_1}^{t_2} d\tau \widehat{\operatorname{H}}
+(\tau)-\frac{1}{\hbar^2}\int\limits_{t_1}^{t_2} d\tau_2d\tau_1
+\int\limits_{t_1}^{\tau_1} d\tau_2 \widehat{\operatorname{H}}
+(\tau_1)\widehat{\operatorname{H}}(\tau_2)+
+\frac{i}{\hbar^3 }\int\limits_{t_1}^{t_2} d\tau_1
+\int\limits_{t_1}^{\tau_1} d\tau_2 \int\limits_{t_1}^{\tau_2} 
+d\tau_3 \widehat{\operatorname{H}}(\tau_1)\widehat{\operatorname{H}}
+(\tau_2)\widehat{\operatorname{H}}(\tau_3)+\ldots \right) \widehat{\operatorname{1}}+\\+
+\frac{i}{\hbar^3} \int\limits_{t_1}^{t_2} d\tau_1 \int\limits_{t_1}^{
+\tau_1} d \tau_2 d\tau_3 \widehat{\operatorname{H}}(\tau_1)
+\widehat{\operatorname{H}}(\tau_2) \widehat{\operatorname{H}}(\tau_3)
+\left( - \frac{i}{\hbar }\int\limits_{t_0}^{t_1} d \tau' \widehat{\operatorname{H}}(\tau')  \right) +
+\left(\widehat{\operatorname{1}}\ldots\right)
+\left( - \frac{1}{\hbar^2} \int\limits_{t_0}^{t_1} d \tau_1'
+\int\limits_{t_0}^{\tau_1'} d \tau_2' \widehat{\operatorname{H}}(
+\tau_1')\widehat{\operatorname{H}}(\tau_2')\right) +\\+
+\left(\widehat{\operatorname{1}}\ldots\right)\left( 
+\left( -\frac{i}{\hbar ^3} \right) \int\int\int\right) 
+.\end{multline*} 
+\begin{multline*}
+\widehat{\operatorname{1}}- \frac{i}{\hbar }\int\limits_{t_1}^{t_2} 
+d\tau \widehat{\operatorname{H}}(\tau) - \frac{i}{\hbar } \int\limits_{t_0}^{t_1} d \tau' \widehat{\operatorname{H}} (\tau')=
+-\frac{1}{\hbar^2} \int\limits_{t_1}^{t_2} d\tau_1 \int\limits_{t_1}^{\tau_1} d\tau_2 \widehat{\operatorname{H}}(\tau_1) \widehat{\operatorname{H}}(\tau_2)+\\+
+\left( - \frac{i}{\hbar } \right) ^2 \int\limits_{t_1}^{t_2} 
+d\tau H(\tau) \int\limits_{t_0}^{t_1} d\tau' \widehat{\operatorname{H}}(\tau')+ \left( -\frac{i}{\hbar } \right) ^2 \int\limits_{t_0}^{t_1}  d\tau_1 \int\limits_{t_0}^{\tau_1} d\tau_2 \widehat{\operatorname{H}}(\tau_1) \widehat{\operatorname{H}} (\tau_2)=\\=
+\left( -\frac{i}{\hbar } \right) ^2 \int\limits_{t_1}^{t_2} 
+d\tau_1 \left[ \int\limits_{t_1}^{\tau_1} d\tau_2 \widehat{\operatorname{H}}(\tau_1) \widehat{\operatorname{H}}(\tau_2)+
+\int\limits_{t_0}^{t_1} d\tau_2 \widehat{\operatorname{H}}(\tau_1)
+H(\tau_2) \right] +\ldots=\\=-\left( \frac{i}{\hbar } \right) ^2
+\int\limits_{t_1}^{t_2} d\tau_1 \int\limits_{t_0}^{\tau_1} 
+\widehat{\operatorname{H}}(\tau_1) \widehat{\operatorname{H}}(\tau_2)
+d\tau_2+ \left( - \frac{i}{\hbar } \right) ^2 \int\limits_{t_0}^{t_1} 
+d\tau_1 \int\limits_{t_0}^{\tau_1} d\tau_2 \widehat{\operatorname{H}}
+(\tau_1) \widehat{\operatorname{H}}(\tau_2)=\\=
+\left( - \frac{i}{\hbar } \right) ^2 \int\limits_{t_0}^{t_2} 
+d\tau_1 \int\limits_{t_0}^{\tau_1} d \tau_2 \widehat{\operatorname{H}}
+(\tau_1) \widehat{\operatorname{H}}(\tau_2)
+.\end{multline*} 
+\end{sol}
+\begin{hiProb}[Задача 2]
+\[
+	\Psi(x,\,t=0)= C e ^{-\frac{m\omega}{2\hbar }(x-x_0)^2}
+.\] 
+\end{hiProb}
+\begin{sol}
+\[
+	K(t,\,t_0=0|x,\,y)= \sqrt{\frac{m\omega}{2\pi i \hbar
+	\sin (\omega t)}} e^{\frac{i S[z_{\text{Cl}}(\cdot)]}{\hbar}}
+.\] 
+\[
+	\Psi(t,\,x)= \int dy K(t|x,\,y)\Psi_{t=0}(y)=
+	C \int dy \frac{m\omega}{2\pi i \hbar \sin \omega t}
+	e^{\frac{i m \omega}{2\hbar \sin \omega t}\left( 
+	(x^2+y^2)\cos\omega t-2xy\right) }
+	e^{-\frac{m \omega (y-y_0)^2}{2\hbar}}
+.\] 
+\[
+\lambda\to \lambda+i \epsilon
+.\] 
+\end{sol}
+\begin{hiProb}[Задача 7а]
+\end{hiProb}
+\begin{sol}
+\[
+	\Psi_\text{SM}= \Phi \left( \underbrace{\mathbf{r}_1}_{1e^-},\,
+\underbrace{	\mathbf{r}_2}_{2e^-}\right) \cdot \chi\left( S_{1z},\,S_{2z} \right) 
+.\] 
+\[
+\widehat{\operatorname{S}}= \widehat{\operatorname{S}}_1+\widehat{\operatorname{S}}_2
+.\] 
+\[
+	\left\{
+	\begin{aligned}
+		\widehat{\operatorname{S}}^2(1) \Ket{\frac{1}{2},m_1}&= \frac{3}{4}
+\hbar^2\Ket{\frac{1}{2},m_1}\\
+		S_z(1) \Ket{\frac{1}{2},\,m_1}&=\hbar m_1 \Ket{\frac{1}{2},\,m_1}
+	\end{aligned}
+	\right.
+\] 
+\[
+\left\{
+\begin{aligned}
+	\widehat{\operatorname{S}}^2(2) \Ket{\frac{1}{2},\,m_2}&=
+	\hbar^2 \frac{3}{4}\Ket{\frac{1}{2},\,m_2}\\
+\widehat{\operatorname{S}}_z(2)\Ket{\frac{1}{2},\,m_2}&=
+\hbar m_2 \Ket{\frac{1}{2},\,m_2}
+\end{aligned}
+\right.
+\] 
+\[
+\left\{
+\begin{aligned}
+	\widehat{\operatorname{S}}^2 \Psi_\text{SM}&= \hbar^2 S
+	(S+1)\Psi_\text{SM}\\
+	\widehat{\operatorname{S}}_z \Psi_{\text{SM}}&=
+	\hbar M \Psi_{\text{SM}}
+\end{aligned}
+\right.
+\] 
+\emph{Частица №1}:
+\[
+	\chi_{1 /2}(1)\to S_z = \frac{\hbar }{2}
+.\] 
+\[
+	\chi_{- 1 /2}(1)\to S_z= - \frac{\hbar }{2}
+.\] 
+\emph{Частица №2}
+\[
+	\chi_{1 /2}(2)\to S_z = \frac{\hbar }{2}
+.\] 
+\[
+	\chi_{- 1 /2}(2)\to  S_z =- \frac{\hbar}{2}
+.\] 
+\[
+	\mathcal{H}(1,\,2)= \mathcal{H}(1) \otimes \mathcal{H}(2)
+.\] 
+\[
+	\ket{\Psi_1}= \chi_{1 /2}(1) \otimes \chi_{1 /2}(2),\quad
+	m_1=1 /2,\ m_2=1 /2
+.\] 
+\[
+	\ket{\Psi_2}= \chi_{1 /2}(1) \otimes \chi_{-1 /2}(2)
+	m_1=1 /2,\ m_2=-1 /2
+.\] 
+\[
+	\ket{\Psi_3}= \chi_{-1 /2}(1) \otimes \chi_{1 /2}(2)
+	m_1=-1 /2,\ m_2=1 /2
+.\] 
+\[
+	\ket{\Psi_4}= \chi_{-1 /2}(1) \otimes \chi_{-1 /2}(2)
+	m_1=-1 /2,\ m_2=-1 /2
+.\] 
+\[
+	\widehat{\operatorname{S}}_z(1) \chi_1 =\hbar m_1
+	\chi_1,\quad m_1= \pm \frac{1}{2}
+.\] 
+\[
+	\sigma_3 = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} 
+.\] 
+\[
+	\frac{1}{2} \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix} =
+	\frac{1}{2}\begin{pmatrix} 1 \\0 \end{pmatrix} 
+.\] 
+\[
+	\frac{1}{2}\begin{pmatrix} 0 &0 \\0 & -1 \end{pmatrix} = -\frac{1}{2}\begin{pmatrix} 0 \\1 \end{pmatrix} 
+.\] 
+Общие собственные функции: $\Psi_{1,\,1},\ \Psi_{1,\,-1}$ 
+\renewcommand{\labelenumi}{\asbuk{enumi})}
+\begin{enumerate}
+\item 
+	\[
+	\left\{
+	\begin{aligned}
+		\widehat{\operatorname{S}}_z\Psi_{1,\,1}&= \hbar \cdot 1
+	\Psi_{1,\,-1}\\
+		\widehat{\operatorname{S}}^2 \Psi_{1,\,1}&=\hbar^2\cdot_2\Psi_{1,\,1}
+	\end{aligned}
+	\right.
+	.\] 
+	\[
+		\Psi_{1,\,1}=\chi_{1 /2}(1) \chi_{ 1/2}(2)=
+		\begin{pmatrix} 1 \\ 0 \\ 0 \\ 0 \end{pmatrix} ,\quad
+		S=1,\ M=1
+	.\] 
+\item 
+	\[
+	\left\{
+	\begin{aligned}
+		\widehat{\operatorname{S}}_z\Psi_{1,\,-1}&=\hbar (-1)
+		\Psi_{1,\,-1}\\
+		\widehat{\operatorname{S}}^2_{1,\,-1}&= 
+		\hbar^2 \cdot 2 \Psi_{1,\,-1}\\
+	\end{aligned}
+	\right.
+	.\] 
+	\[
+		\Psi_{1,\,-1}=\chi_{- 1 /2}(1)\chi_{- 1/ 2}(2)=
+		\begin{pmatrix} 0 \\ 0 \\0 \\ 1 \end{pmatrix},\quad
+		M=-1,\ S=1
+	.\] 
+\end{enumerate}
+\[
+	\widehat{\operatorname{S}}_+ \Psi_{SM}= \hbar \sqrt{S(S+1)-
+	M(M+1)} 
+.\] 
+\begin{multline*}
+	\left( \widehat{\operatorname{S}}_+(1)+\widehat{\operatorname{S}}_+ (2)\chi_{1 /2}(1)\chi_{- 1 /2}(2) \right) =
+	\widehat{\operatorname{S}}_+(1)\chi_{-1 /2}(1) \chi_{-1 /2}
+	(2)+\chi_{- 1 /2}(1) \widehat{\operatorname{S}}_+(2)
+	\chi_{-1 /2}(2)=\\=\hbar \left[ 1\cdot \chi_{1 /2}(1)
+	\chi_{-1 /2}(2)+\chi_{- 1 /2}(1)\chi_{1 /2}(2)\right] 
+.\end{multline*} 
+\[
+	\Psi_{0,\,0}=\frac{1}{\sqrt{2} }\left( \chi_{1 /2}(1)
+	\chi_{- 1 /2}(2)-\chi_{-1 /2}(1)\chi_{1 /2}(2)\right) 
+.\] 
+\[
+	\left\{
+	\begin{aligned}
+	\sum_{m_1,\,m_2}^{} C^{SM}_{s_1 m_1 s_2 m_2} C_{s_1 m_1 s_2
+	m_2}^{S'M'}&=\delta_{SS'}\delta_{MM'}\\
+	\sum_{SM} C^{SM}_{s_1 m_1 s_2 m_2} C^{SM}_{s_1 m_1' s_2 m_2'}
+	&= \delta_{m_1 m_1'}\delta_{m_2 m_2'}
+	\end{aligned}
+	\right.
+\] 
+\[
+C_{\frac{1}{2}\, \frac{1}{2}\, \frac{1}{2}\, \frac{1}{2}}^{1\, 1}=1
+.\] 
+\[
+C_{\frac{1}{2}\, -\frac{1}{2}\, \frac{1}{2}\, -\frac{1}{2}}^{1\, -1}=
+C_{\frac{1}{2}\, \frac{1}{2}\, \frac{1}{2}\, \frac{1}{2}}^{1\, 1}=1
+.\] 
+\[
+C_{\frac{1}{2}\, -\frac{1}{2}\, \frac{1}{2}\, \frac{1}{2}}^{1\, 0}=
+\frac{1}{\sqrt{2} }
+.\] 
+\[
+C_{\frac{1}{2}\, \frac{1}{2}\, \frac{1}{2}\, -\frac{1}{2}}^{1\, 0}=
+\frac{1}{\sqrt{2} }
+.\] 
+\[
+C_{\frac{1}{2}\, -\frac{1}{2}\, \frac{1}{2}\, \frac{1}{2}}^{0\, 0}=
+\frac{1}{\sqrt{2} }
+.\] 
+\[
+C_{\frac{1}{2}\, \frac{1}{2}\, \frac{1}{2}\, -\frac{1}{2}}^{0\, 0}=
+\frac{1}{\sqrt{2} }
+.\]
+\[
+\widehat{\operatorname{S}}_+ \Psi_{0,\,0}= \widehat{\operatorname{S}}_- \Psi_{0,\,0}=0
+.\] 
+\end{sol}
+\begin{hiProb}[Задача 7б]
+\end{hiProb}
+\begin{sol}
+\[
+	\widehat{\operatorname{\mathbf{j}}}=\widehat{\operatorname{\mathbf{l}}}+ \widehat{\operatorname{\mathbf{s}}}
+.\] 
+\[
+	\widehat{\operatorname{j^2}},\ 
+		\widehat{\operatorname{j_z}},\
+		\widehat{\operatorname{l^2}},\
+		\widehat{\operatorname{s^2}}
+.\] 
+\[
+\widehat{\operatorname{j_z}}\Psi_{\text{об}}=m_j \Psi_\text{об}
+.\] 
+\[
+\widehat{\operatorname{j_z}}=\widehat{\operatorname{l_z}}+\widehat{\operatorname{s_z}}=-i \widehat{\operatorname{1}}\frac{\partial }{\partial \phi} + \frac{1}{2}\widehat{\operatorname{\sigma_z}}=
+\begin{pmatrix} -i \frac{\partial }{\partial \phi} +\frac{1}{2}&
+0\\ 0& -i \frac{\partial }{\partial \phi} -\frac{1}{2}\end{pmatrix} 
+.\] 
+\end{sol}
+\end{document}

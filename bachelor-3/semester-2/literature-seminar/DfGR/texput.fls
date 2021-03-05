@@ -1,0 +1,4 @@
+PWD /home/nyxapuk/mipt/bachelor-3/semester-2/literature-seminar/DfGR
+INPUT /usr/share/texmf-dist/web2c/texmf.cnf
+INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
+OUTPUT texput.log

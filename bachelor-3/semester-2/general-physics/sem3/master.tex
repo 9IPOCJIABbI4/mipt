@@ -1,0 +1,250 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Семинар №3}
+\begin{document}
+	\maketitle
+\begin{hiProb}[Задача 0-3-1]
+\[
+n=10^{21} \frac{1}{\text{ см}}
+.\] 
+\[
+\epsilon_F\sim 1\text{ эВ} \simeq 10000 \text{ К}
+.\] 
+\begin{figure}[ht]
+    \centering
+    \incfig[0.7]{1}
+    \caption{}
+    \label{fig:1}
+\end{figure}
+\end{hiProb}
+\begin{hiProb}[Задача 0-3-2]
+\[
+	\frac{k_F}{k_\text{Бр}}= \frac{\sqrt[3]{3\pi^2 /a^3} }{\pi /a}
+	=\sqrt[3]{\frac{3}{\pi}} <1
+.\] 
+\end{hiProb}
+\begin{hiProb}[Задача 3.4]
+	\[
+	d=0,37\text{ нм},\quad \epsilon=\frac{p^2}{2m^*},\quad
+	\left< \epsilon \right>-?
+	.\] 
+\end{hiProb}
+\begin{sol}
+\[
+	dN= 2\frac{4\pi p^2 dp}{(2\pi \hbar)^3 /V}
+.\] 
+\[
+\Delta x\Delta p\sim 2\pi \hbar
+.\] 
+\begin{figure}[ht]
+    \centering
+    \incfig[0.7]{2}
+    \caption{}
+    \label{fig:2}
+\end{figure}
+\[
+\frac{N}{V}= \int\limits_{o}^{\epsilon_F} \frac{m^{3 /2}\sqrt{2} }{\pi \hbar^3}\sqrt{\epsilon } d\epsilon 
+.\] 
+\[
+	\epsilon_F= \frac{\hbar^2}{2m}(3\pi^2 n)^{\frac{2}{3}}
+.\] 
+\[
+f=\frac{1}{e^{\frac{\epsilon-\epsilon_F}{kT}}+1}
+.\] 
+\begin{figure}[ht]
+    \centering
+    \incfig[0.7]{3}
+    \caption{}
+    \label{fig:3}
+\end{figure}
+\[
+\left<\epsilon  \right>= \frac{\int\limits_{0}^{\infty} \epsilon
+f(\epsilon) g(\epsilon)d\epsilon }{\int\limits_{0}^{\infty} g(\epsilon)f(\epsilon) d\epsilon }=
+\frac{\int\limits_{o}^{\epsilon_F}\epsilon^{3 /2}  d\epsilon }{\int\limits_{0}^{\epsilon_F} \epsilon^{1 /2}d\epsilon }= \frac{3}{5}\epsilon_F
+.\] 
+\[
+	n=\frac{2}{\left( 2d /\sqrt{3}  \right) ^3}
+.\] 
+\end{sol}
+\begin{hiProb}[Задача 3.13]
+\end{hiProb}
+\begin{sol}
+\[
+	\epsilon_F\sim  \left( \frac{n}{g_s} \right) ^{2 /3}
+.\] 
+\[
+N \sim  g_S \epsilon_F ^{ 3 /2}
+.\] 
+\[
+N= A\cdot 2 \epsilon_{F_1}^{3 /2}=A \cdot 1\cdot \epsilon_{F_2}^{3 /2}
+.\] 
+\[
+\epsilon_{F_2}=\epsilon_{F_1}2^{2 /3}
+.\] 
+\end{sol}
+\begin{hiProb}[Задача 3.5]
+\[
+\epsilon_F=5\text{ эВ}
+.\] 
+\end{hiProb}
+\begin{sol}
+\begin{figure}[ht]
+    \centering
+    \incfig{4}
+    \caption{}
+    \label{fig:4}
+\end{figure}
+\begin{enumerate}
+\item $C_p$ доб. эн. $\Delta \epsilon =k_\text{Б}$
+\item $\Delta N \sim  T\cdot D(\epsilon_F)$
+\end{enumerate}
+\[
+	D(\epsilon_F)= \frac{3}{2}\frac{N}{\epsilon_F}
+.\] 
+\[
+\frac{\Delta E}{E}= \frac{\Delta N \Delta \epsilon }{E}=
+\frac{\Delta N T}{\frac{3}{5}\epsilon_F}=
+\frac{3 /2 N \frac{T^2}{\epsilon_F}}{3 /5 \epsilon_F}=\frac{5}{2}N
+\left( \frac{T}{\epsilon_F} \right) ^2
+.\] 
+\end{sol}
+\begin{hiProb}[Задача 3.44]
+\end{hiProb}
+\begin{sol}
+	\[
+	C=C_\text{эл}+C_{\text{ф}}
+	.\] 
+	\[
+	T\ll \Theta
+	.\] 
+	\[
+		C(T)=AT+BT^3
+	.\] 
+\[
+	u=\int\limits_{0}^{\infty}f(\epsilon) g(\epsilon) \epsilon
+	d\epsilon \approx n \frac{k^2 T^2}{\epsilon_F}
+.\] 
+\[
+	f(\epsilon)= \frac{1}{e^{\frac{\epsilon-\epsilon_F}{kT}}+1}
+.\] 
+\[
+	g(\epsilon) =2 \frac{4\pi p^2 dp}{(2\pi \hbar)^3 /V}
+.\] 
+\[
+C_\text{эл}= \frac{du}{dT}\approx 2nk^2 \frac{T}{\epsilon_F}
+.\] 
+\[
+	C_\text{ф}\sim  \left( \frac{T}{\Theta} \right) ^{3}
+.\] 
+\end{sol}
+\begin{hiProb}[Задача 3.17]
+\[
+	Z=N,\quad A=238,\quad \epsilon_\gamma-?
+.\] 
+\end{hiProb}
+\begin{sol}
+\begin{figure}[ht]
+    \centering
+    \incfig{5}
+    \caption{}
+    \label{fig:5}
+\end{figure}
+\[
+	\Delta \epsilon= \frac{1}{D(\epsilon_F)}
+.\] 
+\[
+\epsilon_F= A n^{2 /3}
+.\] 
+\[
+\ln \epsilon_F= \ln L+ \frac{2}{3} \ln n
+.\] 
+\[
+\frac{d \epsilon_F}{\epsilon_F}= \frac{2}{3} \frac{dn}{n}
+.\] 
+\[
+\left. \frac{dn}{d\epsilon } \right|_{\epsilon_F}= \frac{3}{2} \frac{N}{\epsilon}
+.\] 
+\[
+	dN=2\cdot 2 \frac{\epsilon \pi p^2 dp}{(2\pi \hbar)^2 /V}
+.\] 
+\[
+\epsilon= \frac{p^2}{2m}
+.\] 
+\[
+n= \frac{2}{3\pi^2 \hbar^3}p_F^3 \text{ --- число нукл. на ед. объёма}
+.\] 
+\end{sol}
+\begin{hiProb}[Задача 3.22]
+\[
+n=8,5 \cdot 10^{22} \frac{1}{\text{см}^3}
+.\] 
+\[
+	\beta_T= -\frac{1}{V}\left( \frac{\partial V}{\partial P}  \right) _T
+.\] 
+\end{hiProb}
+\begin{sol}
+\[
+p= \frac{2}{3} n \left<\epsilon \right>
+.\] 
+\[
+n=\frac{N}{V}
+.\] 
+\[
+dn=- \frac{N}{V^2}dV
+.\] 
+\[
+\frac{dn}{n}=-\frac{dV}{V}
+.\] 
+\[
+	\beta_T=\frac{1}{n} \frac{1}{\left( dp /dn \right) _T}
+.\] 
+\[
+p\sim  270\text{ атм}
+.\] 
+\end{sol}
+\begin{hiProb}[Задача 3.27]
+\[
+\epsilon_F=1\text{ ГэВ},\quad T=0\text{ К}
+.\] 
+\end{hiProb}
+\begin{sol}
+\[
+\epsilon=pc
+.\] 
+\[
+	dN=2 \frac{4\pi p^2 dp}{(2n \hbar)^3 /V}=
+	2 \frac{4\pi \epsilon^2 d\epsilon }{(2\pi \hbar c)^3}=g(\epsilon) d\epsilon=dn
+.\] 
+\[
+\left<\epsilon  \right>= \frac{\int\limits_{0}^{\infty} \epsilon
+g(\epsilon) f(\epsilon) d\epsilon }{\int\limits_{0}^{\infty} 
+g(\epsilon) f(\epsilon) d\epsilon }=
+\frac{\int\limits_{0}^{\epsilon_F} \epsilon^3 d \epsilon  }{\int\limits_{o}^{\epsilon_F} \epsilon^2 d\epsilon }= \frac{3}{4}\epsilon_F
+.\] 
+\end{sol}
+\begin{hiProb}[Задача Т3.1]
+\[
+	M,\quad T\le 10^9 \text{ К},\quad R-?
+.\] 
+\end{hiProb}
+\begin{sol}
+\[
+E_G=-\frac{3}{5} \frac{G M^2}{R}
+.\] 
+\[
+E_k=N \cdot \frac{3}{5}E_F= \frac{M}{m}\frac{3}{5} 
+\frac{p_F^2}{2m}=\frac{3}{10} \frac{M}{m^2} \left( 
+\frac{9\pi M}{4m R^3}\right) ^{2 /3}\hbar^2
+.\] 
+\[
+E=E_k+E_G,\quad \frac{\partial E}{\partial R} =0
+.\] 
+\[
+	R= \frac{\hbar }{6 M^2} \frac{M^{5 /3}}{m^{8 /3}} \left( 
+	\frac{9\pi}{4}\right) ^{2 /3}
+.\] 
+\[
+n= \frac{M}{m} \frac{1}{\frac{4\pi}{3} R^3}
+.\] 
+\end{sol}
+\end{document}

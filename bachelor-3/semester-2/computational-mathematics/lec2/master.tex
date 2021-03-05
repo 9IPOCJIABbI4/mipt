@@ -1,0 +1,57 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Лекция №2}
+\begin{document}
+	\maketitle
+Явные методы Рунге-Кутты
+\[
+	\mathcal{L} u =f(x,\,u)
+.\] 
+\[
+	Ly=F(x,\,y)
+.\] 
+\[
+u_{n+1}= \underbrace{u_n+ u'_n h+ \frac{1}{2}u''_n h^2}_{y_n}+\ldots
+.\] 
+\[
+	u'=f(x,\,u)\to  u'_n=f_n
+.\] 
+\[
+	u''_n= \left. \frac{d}{dx}(u') \right|_{x=x_n}=
+		\left. \frac{d}{dx}\left( f(x,\,u) \right)  \right|_{
+			x=x_n}= f'_x+f'_u u'= \left. \left( 
+		f'_x+f'_u f\right)  \right|_{x=x_n}
+.\] 
+\[
+	u''_n= \frac{d}{d}(f'_x+f'_u f)= f''_{x x}+
+	f''_{xu}f+f''_{xu}f+f''_{uu}f^2+f'_uf'_x+(f'_u)^2f
+.\] 
+ЯМРК с числом стадий, равным $s$ и определяющими к-ми
+	метода
+	\begin{align*}
+		&c_2,\,a_{21}\\
+		&c_3,\, a_{31},\,a_{32}\\
+		&\ldots\\
+		&c_s,\,a_{s_1},\,a_{s2},\ldots,\,a_{s s-1}\\
+		&b_1,\,b_2,\ldots,\,b_s
+	\end{align*} 
+	Называется метод вида:
+	\begin{align*}
+		&k_1=f(x_n,\,y_n)\\
+		&\ldots
+	.\end{align*} 
+\[
+	u_{n+1}= u_n+f_n h + \frac{1}{2}\left( f'_x+f'_uf \right) _n h^2+ O(h^2)
+.\] 
+\begin{dfn}
+ЯМРК имеет порядок аппроксимации $p$, если $\| u_{n+1}-y_{n+1}\|=
+ O\left( h^{p+1} \right) $, если $u_n=y_n$
+\end{dfn}
+До этого $\| r_h\|\le Ch^p$
+\begin{align*}
+	k_1=f(x-n,\,y_n)\\
+	k_2=f(x_n+c_2 h ,\,y_n+h c_{21} f_n)\\
+	k_3= f\left( x_1+c_3 h,\,y_n+h\left( a_{31}f_n+a_{32}f(x_n \right)  \right) 
+.\end{align*}
+ЯМРК с $s=2$
+\end{document}
