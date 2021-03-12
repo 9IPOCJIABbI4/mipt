@@ -1,0 +1,148 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Семинар №6}
+\begin{document}
+	\maketitle
+	\begin{hiProb}[0-6-1]
+		
+	\end{hiProb}
+\begin{sol}
+\[
+\sigma= \frac{ne^2 \tau}{m}
+.\] 
+\[
+	n \sim \exp \left( -\frac{\Delta}{2kT} \right) 
+.\] 
+\[
+	\frac{\sigma_2}{\sigma_1}= \exp \left(  \frac{\Delta}{2kT} \frac{T_1-T_2}{T_1 T_2} \right) \sim 
+	e^{2,13}\approx 23
+.\] 
+\end{sol}
+\begin{hiProb}[0-6-2]
+
+\end{hiProb}
+\begin{sol}
+\[
+	\text{Ry}^*= \left( \frac{m e^4}{2\hbar^2} \right)^* =
+	\frac{\operatorname{Ry}}{m_e} \frac{m_h m_n}{m_h+m_n} \frac{1}{\epsilon^2}
+	\sim 6,8\text{ мэВ}
+.\] 
+\[
+	a_B^*= \left( \frac{\hbar^2}{me^2} \right) ^*=
+	\frac{\epsilon }{m} m_e \cdot \underbrace{a_B}_{0,5 \text{ \AA}} \approx 100 \text{ \AA}
+.\] 
+\end{sol}
+\begin{hiProb}[4.2]
+\end{hiProb}
+\begin{sol}
+\[
+\frac{mv^2}{R}= \frac{e^2}{\epsilon R^2}
+.\] 
+\[
+mvR=\hbar
+.\] 
+\[
+R= \frac{\epsilon \hbar^2}{m e^2}
+.\] 
+\[
+\epsilon_1= -\frac{e^2}{2\epsilon R}=- \frac{me^4}{2\epsilon^2 \hbar^2}
+.\] 
+\[
+m \mapsto m^* \implies R \sim  65\text{ нм} \implies \epsilon_1\sim 0,7\text{ мэВ}
+.\] 
+\end{sol}
+\begin{hiProb}[4.50]
+\end{hiProb}
+\begin{sol}
+\begin{figure}[ht]
+    \centering
+    \incfig{1}
+    \caption{К задаче 4.50}
+    \label{fig:1}
+\end{figure}
+\[
+	n_{\text{min}}\sim \frac{1}{\left( a^*_B \right) ^3}
+.\] 
+\end{sol}
+\[
+	n= 2 \left( \frac{m_n k T}{2\pi \hbar^2} \right) ^{3 /2}
+	e^{\frac{\epsilon}{kT}}
+.\] 
+\[
+	p= 2 \left( \frac{m_p kT}{2\pi \hbar^2} \right) ^{3 /2}
+	e^{- \frac{\Delta+\epsilon }{kT}}
+.\] 
+\[
+n=p \text{ --- сообств. п/п}
+.\] 
+\[
+\mu= -\frac{\Delta}{2} +\frac{3}{4} kT \ln \frac{m_p}{m_n}
+.\] 
+\begin{figure}[ht]
+    \centering
+    \incfig{2}
+    \caption{}
+    \label{fig:2}
+\end{figure}
+\begin{hiProb}[4.40]
+\end{hiProb}
+\begin{sol}
+	\[
+		n_h= 2 \left( \frac{m_h k T}{2\pi \hbar^2} \right) ^{3 /2} e^{- \frac{\mu+\Delta}{kT}}
+	.\] 
+	\[
+	n_e=n_h
+	.\] 
+\end{sol}
+\begin{hiProb}[4.2]
+\end{hiProb}
+\begin{sol}
+	\[
+	\sigma= \frac{ne^2 \tau}{m^*}=ne\mu
+	.\]
+	\[
+	\tau_h \sim 10^{-12 }\text{ с}\gg \tau_\text{соуд}
+	.\] 
+	\[
+	L= \sqrt{D \tau} \approx 0,2 \text{ см}
+	.\] 
+	\[
+	D= \frac{kt\mu}{e}
+	.\] 
+	 
+\end{sol}
+\begin{hiProb}[4.25]
+\end{hiProb}
+\begin{sol}
+\[
+n_{\text{Sb}}= n_{\operatorname{Au}^-}+2 n_{\operatorname{Au}^{2-}}
++n_-
+.\] 
+\[
+n_{\operatorname{Au}^-}+n_{\operatorname{Au}^{2-}}=n_{\operatorname{Au}}
+.\] 
+\[
+n_-+n_{\operatorname{Au}^{2-}}=n_{\operatorname{Sb}}-n_{\operatorname{Au}}
+.\] 
+\[
+	f(\Delta+\epsilon)= \frac{n_{\operatorname{Au}^{2-}}}{n_{\operatorname{Au}}}=\frac{1}{1+ e^{\frac{-\Delta+\epsilon_2 -\mu}{kT}}}
+.\] 
+\[
+n=Q \underbrace{e^{\frac{\mu}{kT}}
+}_{x}.\] 
+\[
+Qx+n_{\operatorname{Au}} \frac{x}{x+e^{\frac{-\Delta+\epsilon_2}{kT}}}
+=n_{\operatorname{Sb}}-n_{\operatorname{Au}}
+.\] 
+\[
+x= \frac{n_{\operatorname{Sb}}-n_{\operatorname{Au}}}{2n_{Au}-n_{\operatorname{Sb}}}e^{\frac{-\Delta +\epsilon_2}{kT}}=e^{\frac{\mu}{kT}}
+.\] 
+\[
+\mu= -\Delta+\epsilon_2+kT \ln \frac{n_{\operatorname{Sb}}-n_{\operatorname{Au}}}{2n_{\operatorname{Au}}-n_{\operatorname{Sb}}}=-\Delta+\epsilon_2
+.\] 
+\[
+n_{-}=Q_- e^{\frac{-\Delta +\epsilon_2}{kT}}\sim 8,3 \cdot 10^{4}
+\text{ см}^{-3}
+.\] 
+\end{sol}
+\end{document}

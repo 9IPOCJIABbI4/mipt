@@ -1,0 +1,196 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Семинар №6}
+\begin{document}
+	\maketitle
+\[
+S= d^d x \frac{1}{2} \partial_\mu \phi \partial^\mu \phi,\quad \Delta= \frac{d}{2}-1
+.\] 
+Кл. симм.: токи
+\[
+\partial_\mu J^\mu=0,\quad J^\mu =\begin{pmatrix} 
+T_\text{с}^{\mu}{}_{\nu} & j^\mu \end{pmatrix} \ldots
+.\] 
+\[
+	S= \int d^d x \left( \frac{1}{2} \partial_\mu \phi \partial^\mu \phi -V(\phi) \right) = \int dt d^{d-1} x \left( \frac{1}{2}
+	\dot{\phi}^2 -\frac{1}{2} (\nabla \phi)^2-V(\phi)\right) \xlongequal[]{*}
+.\] 
+\[
+	Z= \int D\phi(x) e^{i S[\phi]}=
+	\int D \phi e^{- S_E [\phi]}
+.\] 
+Виковский поворот
+\[
+t=-i \tau
+.\]
+\[
+	\xlongequal[]{*} i \underbrace{\int d\tau d^{d-1} x \left( 
+	\frac{1}{2} (\partial_\tau \phi)^2 +\frac{1}{2} (\nabla \phi)^2 +V (\phi)\right) }_{S_E}=
+	i \int d^d x_E \left( \frac{1}{2} \partial_\mu \phi \partial^\mu \phi) +V(\phi) \right) 
+.\] 
+\[
+\eta_{MN}=\delta_{MN} \quad d+1\text{-мерная теория}
+.\] 
+\[
+z^0,\,z^1 \to  w^0,\,w^1
+.\] 
+\[
+	g'^{\mu \nu} (\omega)= \frac{\partial w^\mu}{\partial z^\rho}
+	\frac{\partial w^\nu}{\partial z^\sigma}  g ^{\rho\sigma}=\Lambda^{-1} \begin{pmatrix} 1 & 0\\ 0 &1 \end{pmatrix} ,\quad g^{\mu \nu}= \delta ^{\mu \nu}
+.\] 
+\[
+0= g'^{01}= \frac{\partial w^0}{\partial z^\rho} \frac{\partial w^1}{\partial z^\sigma}g^{\rho\sigma}=
+\frac{\partial w^0}{\partial z^0}  \frac{\partial w^1}{\partial z^0} +\frac{\partial w^0}{\partial z^1} \frac{\partial w^1}{\partial z^1}=0  
+.\] 
+\[
+	g'^{00}= g'^{11},\quad \left( \frac{\partial w^0}{\partial z^0}  \right) ^2 + \left( \frac{\partial w^0}{\partial z^1}  \right) ^2=
+	\left( \frac{\partial w^1}{\partial z^0}  \right) ^2+
+	\left( \frac{\partial w^1}{\partial z^1}  \right) ^2
+.\] 
+Имеем систему
+\[
+\left\{
+\begin{aligned}
+ab+cd&= 0 \\
+a^2+c^2&=b^2+d^2
+\end{aligned}
+\right.
+.\] 
+Её решениями являются
+\[
+\left\{
+\begin{aligned}
+b&= c \\
+a&= -d \\
+\end{aligned}
+\right.,\quad
+\left\{
+\begin{aligned}
+a&= -d \\
+a&=d
+\end{aligned}
+\right.
+.\] 
+То есть
+\[
+\left\{
+\begin{aligned}
+\frac{\partial w^1}{\partial z^0} &= \frac{\partial w^0}{\partial z^1}  \\
+\frac{\partial w^0}{\partial ^0} &= -\frac{\partial w^1}{\partial z^1}  \\
+\end{aligned}
+\right.
+,\quad
+\left\{
+\begin{aligned}
+\frac{\partial w^1}{\partial z^0} &= - \frac{\partial w^0}{\partial z^1}  \\
+\frac{\partial w^0}{\partial z^0}&= \frac{\partial w^1}{\partial z^1}  \\ 
+\end{aligned}
+\right.
+.\] 
+Это условия голоморфности и антиголоморфности соответственно.
+\[
+	g_{\mu \nu} dz^\mu dz^\nu= (dz^0)^2+(dz^1)^2=
+	\frac{1}{4} \begin{pmatrix} dz^2 d \overline{z}^2 +2 dz d \overline{z} \\ dz^2 d \overline{z}^2+2 dz d \overline{z} \end{pmatrix} =dz d \overline{z}
+.\] 
+\[
+z=z^0+i z^1,\quad \overline{z}= z^0- i z^1
+.\] 
+\[
+	g_{\mu\nu}=  \begin{pmatrix} 0 & \frac{1}{2}\\ \frac{1}{2} &0 \end{pmatrix} 
+.\] 
+\[
+	w=w(z) \text{ либо } w=w(\overline{z})
+.\] 
+\[
+g_{\mu\nu} dz^\mu dz^\nu= dz d \overline{z} = 
+\left( \frac{\partial z}{\partial w} \frac{\partial \overline{z}}{\partial \overline{w}}  \right) dw d \overline{w}=
+\left( \frac{d \overline{z}}{dw(\overline{z})} \frac{\partial z}{\partial \overline{w (\overline{z})}} \right) dw d \overline{w}
+.\] 
+\begin{table}[htpb]
+	\centering
+	\caption{}
+	\label{tab:1}
+	\begin{tabular}{|Cc|Cc|Cc|}
+		\hline
+	 & лок. & глоб \\\hline
+		инф. & & \\\hline
+		конечн. & $\emptyset$ & $w= \frac{az+b}{cz+d}$ \\\hline
+	\end{tabular}
+\end{table}
+Квазипримарное поле с $\Delta=0$
+\[
+	\phi'\left(w,\,\overline{w}\right)= \phi \left( z ,\, \overline{z} \right) ,\quad w(z)= z + \epsilon (z),\quad \epsilon\to 0
+.\] 
+\[
+	\phi'\left(z,\,\overline{z}\right)= \phi\left(z,\,\overline{z}\right)- \epsilon \partial_z \phi - \overline{\epsilon } \partial_{\overline{z}} \phi
+.\] 
+\[
+	\epsilon(z)= \sum_{n=-\infty}^{\infty} \epsilon_n z^{n+1},
+\]
+где $\epsilon_n$ --- счётное число параметров преобразования.
+\[
+l_n= - z^{n+1}\partial_{z}\text{ --- голом.},\quad \overline{l}_n=- \overline{z}^{n+1}
+\partial_{\overline{z}}\text{ --- антиголом.}
+\] 
+\[
+	\left( \delta_{\epsilon_1\overline{\epsilon }_1}
+		\delta_{\epsilon_2 \overline{\epsilon }_2}-
+		\delta_{\epsilon_2 \overline{\epsilon }_2}
+\delta_{\epsilon_1\overline{\epsilon }_1}
+	\right) \phi=
+	\left[ \delta_{\epsilon_1\overline{\epsilon }_1},\,
+	\delta_{\epsilon_2\overline{\epsilon }_2}\right] \phi
+.\] 
+\[
+	\left[ l_n,\,l_m \right] =(m+1)z^{n+m+1}\partial_z-(n+1)
+	z^{n+m +1}\partial_z =(m-n) l_{n+m}
+.\] 
+Алгебра Витта:
+\[
+	\left[ \overline{l}_n,\,\overline{l}_m \right] =(m-n) \overline{l}_{n+m}
+.\] 
+\[
+	\begin{pmatrix} a & b \\ c & d \end{pmatrix} \in 
+	\text{SL}(2,\,\mathbb{C}),\quad
+	\begin{pmatrix} a & b \\ c & d \end{pmatrix} =
+	\begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix} +
+	\begin{pmatrix} \alpha & \beta \\ \gamma & \delta=-\alpha \end{pmatrix} 
+.\] 
+\[
+	w= \frac{az+b}{cz+d}= \frac{(1+\alpha) z + \beta}{\gamma z+1 -\alpha}= z+ \beta +2 \alpha z-\gamma z^2
+.\] 
+\[
+\beta=\epsilon_{-1},\quad \alpha= \frac{\epsilon_0}{2},\quad
+\gamma=-\epsilon_1
+.\] 
+\[
+l_{-1},\ l_0,\ l_1
+.\] 
+\[
+\left[ l_{-1},\,l_0 \right] =l_{-1},\quad \left[ l_0,\,l_1 \right] =
+l_1,\quad \left[ l_{-1},\,l_1 \right] =2 l_0
+.\] 
+\[
+\delta \phi = -\epsilon \partial_z \phi - \overline{\epsilon }
+\partial_{\overline{z}}\phi= \sum_{n=-\infty}^{\infty} \left( 
+\epsilon_n l_n \phi + \overline{\epsilon }_n \overline{l}_n \phi\right) 
+.\] 
+\[
+	w(z)= z+\epsilon(z)
+.\] 
+Квазипримарные поля
+\[
+	\phi'\left( w,\,\overline{w} \right) =
+	\left( \frac{\partial w}{\partial z} \right)  ^{-h} 
+	\left( \frac{\partial \overline{w}}{\partial \overline{z}}  \right) ^{-\overline{h}}\phi \left(z,\,\overline{z}\right)
+.\] 
+\[
+	h=\frac{1}{2} (\Delta+S),\quad \overline{h}=\frac{1}{2}
+	(\Delta -S)
+.\] 
+\[
+	\phi_{z_1,\ldots,\,z_h,\,\overline{z}_1,\ldots,\,\overline{z}_{\overline{h}}}= \left( \frac{\partial z}{\partial w}  \right) ^h
+	\left( \frac{\partial \overline{z}}{\partial \overline{w}}  \right) ^{\overline{h}} \phi'_{w_1,\ldots,\,w_h,\, \overline{w}_1,\ldots,\,\overline{w}_{\overline{h}}}
+.\] 
+
+\end{document}

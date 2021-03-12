@@ -1,0 +1,161 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Семинар №6}
+\begin{document}
+	\maketitle
+\begin{hiProb}[Задача 9]
+\end{hiProb}
+\begin{sol}
+\[
+	A_x =A_z=0,\quad A_y= \mathcal{H} x
+.\] 
+\[
+	\mathbf{H} = \operatorname{rot} \mathbf{A}= \mathcal{H} \mathbf{k}
+.\] 
+\[
+	\mathbf{A}= \begin{pmatrix}0& \mathcal{H}x & 0  \end{pmatrix} 
+	,\quad \phi=0
+.\] 
+\[
+	\mathbf{E}= - \frac{1}{c} \frac{\partial \mathbf{A}}{\partial t} -\nabla \phi=0
+.\] 
+\[
+	\mathbf{P}=\frac{\partial L}{\partial \mathbf{v}} 
+.\] 
+\[
+	H= \frac{1}{2m} \left( \mathbf{P}- \frac{e}{c}\mathbf{A} \right) ^2 +e \phi
+.\] 
+\[
+	L= -mc^2 \sqrt{1- \frac{v^2}{c^2}} +\frac{e}{c} \left( 
+	\mathbf{A},\,\mathbf{v}\right) -e\phi
+.\] 
+\[
+	\mathbf{P}=\frac{\partial L}{\partial \mathbf{v}} =
+	\frac{m\mathbf{v}}{\sqrt{1- \frac{v^2}{c^2}} }+
+	\frac{e}{c} \mathbf{A}= \mathbf{p}+\frac{e}{c}\mathbf{A}
+.\] 
+Значит
+\[
+	\mathbf{p}=\mathbf{P}-\frac{e}{c} \mathbf{A}
+.\] 
+\[
+	\widehat{\operatorname{H}}=\frac{1}{2m} \left( 
+	\widehat{\operatorname{\mathbf{P}}} -\frac{e}{c}\mathbf{A}\cdot \widehat{\operatorname{1}}\right) - \underbrace{\left(\widehat{\operatorname{\boldsymbol{\mu}}},\, \mathbf{H}\right)}_{=0,\text{ т.\:к }s=0} 
+.\] 
+\[
+	\widehat{\operatorname{H}}=\frac{1}{2m} \left( \widehat{\operatorname{p_x}}^2 + \left( \widehat{\operatorname{p_y}}-\frac{e}{c}
+	\mathcal{H} \widehat{\operatorname{x}}\right)^2+ \widehat{\operatorname{p_z}}^2  \right) 
+.\] 
+\[
+\widehat{\operatorname{P_x}}\equiv \widehat{\operatorname{p_x}},\quad
+\widehat{\operatorname{P_z}}= \widehat{\operatorname{p_z}}
+.\] 
+\[
+\widehat{\operatorname{H}}\psi=E \psi
+.\] 
+\[
+\left[ \widehat{\operatorname{P_y}},\,\widehat{\operatorname{H}} \right] = \left[ \widehat{\operatorname{P_z}},\,\widehat{\operatorname{H}} \right] =0,\quad \left[ \widehat{\operatorname{P_x}},\,\widehat{\operatorname{H}} \right] \neq 0
+.\] 
+\[
+\left[ \widehat{\operatorname{x}},\,\widehat{\operatorname{p_x}} \right] i\hbar \cdot \widehat{\operatorname{1}}\neq 0
+.\] 
+\[
+	\widehat{\operatorname{\mathbf{P}}}=-i\hbar \nabla = -i\hbar
+	\begin{pmatrix} \frac{\partial }{\partial x}& \frac{\partial }{\partial y} & \frac{\partial }{\partial z}   \end{pmatrix} 
+.\] 
+\[
+\left[ \widehat{\operatorname{y}},\,\widehat{\operatorname{p_z}} \right] =0;\quad \left[ \widehat{\operatorname{y}},\,\widehat{\operatorname{p_y}} \right] =i\hbar \cdot \widehat{\operatorname{1}}
+.\] 
+$P_y$ и $P_z=p_z$ --- интегралы движения.
+\[
+	\psi=C \exp \left( \frac{i}{\hbar }\left( 
+	P_y y+P_z z\right)  \right) f(x)
+.\] 
+\[
+	P_y,\,P_z \in \left( -\infty;\infty \right) 
+.\] 
+Т.\:к. $A_z=0$, то $P_z\equiv p_z=m v_z$.
+\[
+	\frac{1}{2m}\left( \widehat{\operatorname{P_x}}^2+
+	\left( \widehat{\operatorname{P_y}}-\frac{e}{c}\mathcal{H}
+\widehat{\operatorname{x}}\right) ^2+ \widehat{\operatorname{P_z}}^2\right) \exp \left( \frac{i}{\hbar } \left( P_y y+ P_z z \right)  \right) f(x)= E \exp \left( \frac{i}{\hbar } \left( P_y y +P_z z \right)  \right) f(x)
+.\] 
+\begin{enumerate}
+\item $\displaystyle 
+	\widehat{\operatorname{P_x}}^2 \exp \left( \frac{i}{\hbar }
+	\left( P_y y +P_z z \right) \right) f(x)= - \hbar^2
+	\exp \left( P_y y +P_z z \right) f(x)
+.$
+\item $\displaystyle  \widehat{\operatorname{P_z}}^2 \exp \left( 
+	\frac{i}{\hbar} \left( P_y y+ P_z z \right) \right) f(x)=
+	P_z^2 \exp \left( \frac{i}{\hbar }\left( P_y y+P_z z \right) f(x) \right) $
+\item $\displaystyle \left( \widehat{\operatorname{P_y}}-\frac{e}{c}
+	\mathcal{H} \widehat{\operatorname{x}}\right) ^2
+	\exp \left( \frac{i}{\hbar }\left( P_y y+P_z z \right)  \right) f(x)= \left( P_y-\frac{e}{c} \mathcal{H} x \right) ^2 \exp
+	\left( \frac{i}{\hbar }\left( P_y y+P_z z \right)  \right) 
+	f(x)$
+\end{enumerate} 
+\[
+	-\frac{\hbar^2}{ 2m} f''(x) +\frac{P_z^2}{2m}
+	f(x) +\frac{1}{2m} \left( P_y- \frac{e}{c} \mathcal{H}
+	x\right) ^2 f(x)-Ef(x)=0
+.\] 
+\[
+	f''(x)+ \frac{2m}{\hbar^2} \left( E - \frac{P_z^2}{2m}
+	- \frac{\left(P_y- \frac{e}{c} \mathcal{H}x\right)^2}{2m}\right) f(x)=0
+.\] 
+\[
+	f''(x)+ \frac{2m}{\hbar^2}\left( E- \frac{P_z^2}{2m}-\frac{1}{2m}-\frac{1}{2m} \frac{e^2 \mathcal{H}^2}{c^2}\left( x- \frac{cP_y}{e\mathcal{H}} \right) ^2 \right) f(x)=0
+.\] 
+\[
+	x_0= \frac{c P_y}{e\mathcal{H}},\quad \omega_H= \frac{e\mathcal{H}}{mc}
+.\] 
+\[
+	f''(x)+ \frac{2m}{\hbar^2} \left[ \left( E-\frac{P_z^2}{2m} \right) - \frac{m \omega_H^2}{2}(x-x_0)^2 \right] f(x)=0
+.\] 
+\[
+\widehat{\operatorname{H}}= \frac{\widehat{\operatorname{p}}^2}{2m}
++ \frac{m \omega^2 \widehat{\operatorname{x}}^2}{2}
+.\] 
+\[
+	\psi(x)+ \frac{2m}{\hbar^2}\left( E- \frac{m\omega^2 x^2}{2} \right) \psi(x)=0
+.\] 
+Л. Л. \S 23
+\[
+	E_n- \frac{p_z^2}{2m}= \hbar \omega \left( n+\frac{1}{2} \right),\quad n=0,\,1,\,2,\ldots
+\]
+\[
+	E_n= \frac{p_z^2}{2m}+ \hbar \omega \left( n+\frac{1}{2} \right) 
+.\] 
+\[
+	\psi_n (x) = \frac{1}{\sqrt{2^n \cdot n! a_H \sqrt{\pi} } }
+	H_n\left( \frac{x-x_0}{a_H} \right) e^{-\frac{1}{2} \left( \frac{x-x_0}{a_H} \right) ^2},\quad a_H= \sqrt{\frac{\hbar}{m\omega}} 
+.\] 
+\[
+	H_n(\xi)= (-1)^n e^{\xi^2} \frac{d^n}{d\xi^n} \left( e^{-\xi^2} \right) 
+.\]
+\[
+	\psi_{np_y p_z}= C \exp \left( \frac{i}{\hbar }\left( P_y y+P_z \right)  \right) f_n(x)
+.\] 
+\[
+	S=L_x L_y=L^2,\quad \psi(y+L)=\psi(y)
+.\] 
+\[
+	\psi(z+L)= \psi(z) \implies p_y = \frac{2\pi \hbar }{L}n_y,\quad p_z= \frac{2\pi \hbar n_y}{L}
+.\] 
+\[
+	0<x_0<L,\quad 0< \frac{c p_y}{e\mathcal{H}}<L\implies
+	\Delta p_y= \frac{e\mathcal{H} L}{c}
+.\] 
+\[
+	\Delta p_y \Delta y= \frac{e\mathcal{H} L}{c} L=
+	\frac{e \mathcal{H} L^2}{c}
+.\] 
+\[
+\Delta y=L,\quad \Delta z \Delta P_z= L\Delta P_z
+.\] 
+\[
+	N= \frac{\Delta P_y \Delta y}{2\pi \hbar }= \frac{\Delta P_z \Delta z}{2\pi \hbar }= \frac{e \mathcal{H} V \Delta P_z}{c(2\pi \hbar)^2}
+.\] 
+\end{sol}
+\end{document}

@@ -1,0 +1,247 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Семинар №5}
+\begin{document}
+	\maketitle
+	Производная Хироты
+	\[
+		f(x-y)g(x-y)= \sum_{i=0}^{\infty} \frac{1}{j!}\left( D_x^j f\cdot g \right) y^j
+	.\] 
+	\[
+		D_x f\cdot g=  f(x) g(x) + \frac{\partial f}{\partial x}  y g(x) - f(x) y \frac{\partial g}{\partial x} +\ldots
+	.\] 
+	Уравнение КдФ в производных Хироты
+	\[
+		(4 D_t D_x -D_x^4) \tau \tau=0
+	.\] 
+	Обобщаем
+	\[
+		P(D_1,\, D_2,\ldots)\tau \tau=0
+	.\] 
+	Тривиальное решение: $\tau\equiv 1$.
+	Ищем решение
+\[
+	\tau= 1+ \epsilon f_1 +o(\epsilon^2)
+.\] 
+В первом порядке по $\epsilon$ уравнение преобразуется к виду
+\[
+	P(\partial_1,\, \partial_2,\ldots) f_1=0
+.\] 
+\[
+	k_i P (k_1,\,k_2,\ldots)=0
+.\] 
+\[
+f_1= e^{k_1 x_1 + k_2 x_2 +\ldots}
+.\] 
+Для нескольких наборов(=солитонов?)
+\[
+k_1^{(1)},\ k_2^{(2)},\ldots\quad k_1^{(2)},\ k_2 ^{(2)}\ldots
+\] 
+\[
+f_1= \sum_{j=1}^{n}  c_j e^{ k_1 ^{(j)} x_1+ k_2 ^{(j)} x_2}
+.\] 
+\[
+	\epsilon:\quad 2P(\partial_1,\,\partial_2,\ldots)1\cdot f_1=0
+.\] 
+\[
+	\tau=1+ C e^{2kx+2k^3 t} \text{ (КдФ)}
+.\] 
+Рассмотрим двухсолитонное решение
+\[
+n=2:\quad k_i^{(1)},\,k_i ^{(2)}
+.\] 
+\[
+\tau= 1 +\epsilon \sum_{j=1}^{2} c_j e^{k_1 ^{(j)}x_1+ k_2 ^{(j)}x_2+
+\ldots}+\epsilon^2 f_2 +o(\epsilon^2)
+.\] 
+\[
+	\epsilon^2 :\quad P(\partial_1,\,\partial_2,\ldots)f_2+
+	c_1 c_2 P(k_1 ^{(1)}-k_1 ^{(2)},\, k_2 ^{(1)}- k_2 ^{(2)},\ldots) e^{\left( k_1 ^{(1)}+ k_1 ^{(2)} \right) x_1 + \ldots}=0
+.\] 
+\[
+	P\left( D_1,\,D_2,\,\ldots \right) \left( 
+	1+\epsilon A +\epsilon^2 f_2\right)\left( 1+\epsilon A+
+\epsilon^2 f_2\right) =0\ldots
+\] 
+\[
+	f_2=- \frac{P\left( k_1 ^{(1)}-k_1 ^{(2)} \right) }{P
+	\left( k_1 ^{(1)}+k_1 ^{(2)} \right) }c_1 c_2 e^{
+\left( \left( k_1^{(1)}k_1 ^{(2)} \right) x_1+\ldots \right) }
+.\] 
+КдФ:
+\[
+	k^{(i)}=\left( 2k_i,\,2k_i ^3 \right) \implies
+	f_2=  \frac{\left( k_1-k_2 \right) ^2}{(k_1+k_2)^2}c_1 c_2
+	e^{2(k_1+k_2)x +2 \left( k_1 ^3+k_2^3 \right) t}
+.\] 
+Расширяем набор переменных по правилу
+\[
+x_1=,\quad x_3=t,\quad x_5,\ x_5\ldots
+.\] 
+Для $n$-солитонной системы
+\[
+c_1,\ldots,\, c_n\quad k_1 ,\ldots,\, k_n
+.\] 
+\[
+	\xi(x,\,k)= \sum_{j=1}^{\infty} x_j k^j
+.\] 
+\[
+\xi_i = 2 \sum_{j=1}^{\infty} k_i^{2j+1} x_{2j+1}=
+\xi(x,\,k_i)- \xi(x,\,-k_i)
+.\] 
+\[
+	a_{i i'}= \frac{\left( k_i - k_{i'} \right) ^2}{
+	(k_i+k_{i'})^2}
+.\] 
+\[
+I= \{1,\ldots,\,n\} 
+.\] 
+$n$-солитонное решение иерархии КдФ:
+\[
+	\tau(x_1,\,x_3,\ldots)= \sum_{J \subset I}^{\infty}
+	\left( \prod_{i \in  J}^{} c_i  \right) 
+	\left(  \prod_{\substack{i,i' \in J\\ i< i'}}^{}a_{i i'}  \right)  \exp \left( \sum_{i \in J}^{} \xi_i \right) 
+.\] 
+\begin{multline*}
+n=3:\quad \tau= 1+ c_1 e^{\xi_1}+ c_2 e^{\xi_2} +c_3 e^{\xi_3}+
+c_1 c_2 a_{12} e^{\xi_1+\xi_2}+ c_1 c_3 a_{13} e^{\xi_1+\xi_3}+\\+
+c_2 c_3 a_{23} e^{\xi_2+\xi_3}+c_1 c_2 c_3 a_{12} a_{13} a_{23}
+e^{\xi_1+\xi_2+\xi_3}
+.\end{multline*} 
+Уравнение КдФ:
+\[
+\tau= 1+c e^{2k_1 x_1+2 k_1^3 x_3}
+.\]
+Иерарх. КдФ:
+\[
+\tau=1+c_1 e^{2 \sum_{j=1}^{\infty} k_1^{2j+1}x_{2j+1}}
+.\] 
+\[
+u=2 \frac{\partial ^2}{\partial x^2} \ln \tau=\frac{8 c k_1^2 e^{2 k_1 \left(k_1^2 t+x\right)}}{\left(c e^{2 k_1 \left(k_1^2
+t+x\right)}+1\right)^2}= \frac{2e^{\frac{A}{2}}k_1^2}{\ch^2 \left( k_1 x +k_1 ^3 t + \frac{A}{2} \right) }
+.\] 
+\section*{Вершинные операторы}
+$X$ --- не диф. оператор.
+\[
+	\frac{\partial }{\partial \epsilon } \tau(x_1,\,x_3,\ldots)=
+	X \tau \left( x_1,\,x_3,\ldots \right) 
+.\]  
+\[
+\tau_{n+1}=e^{\epsilon X} \tau_n
+.\] 
+Для параметра $k$ определим
+\[
+	X(k)= \exp \left( 2 \sum_{j=0}^{\infty} k^{2j+1} x_{2j+1} \right) \cdot \exp \left( -2 \sum_{j=0}^{\infty} \frac{1}{(2j+1) k^{2j+1}}\frac{\partial }{\partial _{2j+1}}  \right) 
+.\] 
+\[
+	X(k) f\left( x_1,\,x_3,\ldots \right) =
+	\exp \left(  2 \sum_{j=0}^{\infty}  k^{2j+1} x_{2j+1} \right) f\left( x_1 - \frac{2}{k},\,x_3 - \frac{2}{3k^3},\ldots \right) 
+.\] 
+Понадобится следующая лемма:
+\[
+	X(k_1) X(k_2)= \frac{(k_1-k_2)^2}{(k_1+k_2)^2} \exp
+	\left( 2 \sum_{i=1}^{2} \sum_{j=0}^{\infty} k_{i}^{2j+1}x_{2j+1} \right) \exp \left(  - 2 \sum_{i=1}^{2}  \sum_{j=0}^{\infty} 
+	\frac{1}{(2j+1) k_1^{2j+1}} \frac{\partial }{\partial x_{2j+1}} \right) 
+.\] 
+\[
+	e^{c X(k)}= 1 +c X(k)
+.\] 
+\[
+\tau_1=	e^{c X(k)}\cdot 1 \text{ --- 1-солит. реш.}
+.\] 
+\[
+	\tau= e ^{c_1 X(k_1)}\ldots e^{c_n X(k_n)} \cdot 1 \text{ --- }n\text{ -солит. реш.}
+.\] 
+\[
+	\left(  D_1^4 +3 D_2^2 - 4 D_1 D_3\right) \tau\tau=0
+.\]
+\[
+	P\left( k_1,\,k_2,\,k_3 \right) = k_1^4+3 k_2^2 - 4 k_1 k_3
+.\] 
+\[
+	\left( k_1,\,k_2,\,k_3 \right) =\left( 
+	p-q,\, p^2-q^2,\,p^3-q^3\right) 
+.\] 
+Для наборов
+\[
+	k_i^{(1)},\ k_i ^{(2)}
+.\] 
+Получим
+\[
+	- \frac{D\left(k_1 ^{(1)}-k_1 ^{(2)},\ldots\right)}{P\left(k_1 ^{(1)}+
+	k_1 ^{(2)},\ldots\right)}=
+	\frac{(p_1-p_2)(q_1-q_2)}{(p_1-q_2)(q_1-p_2)}
+.\] 
+\[
+	\xi_i = \sum_{j=1}^{\infty} \left( p_i^j q_i^j \right) x_j=
+	\xi(x,\,p_i)- \xi(x,\,q_i)
+.\] 
+\[
+	a_{ii'}= \frac{(p_i- p_{i'})(q_i -q_{i'})}{(p_i-
+	q_{i'})(q_i- p_{i'})}
+.\] 
+\[
+	X(p,\,q)= \exp \left(\sum_{j=1}^{\infty} (p^j-q^j)x_j\right) 
+	\cdot \exp \left( - \sum_{j=1}^{\infty}  \frac{1}{j}
+	\left( p^{-j}- q^{-j} \right) \frac{\partial }{\partial x_j} \right) 
+.\] 
+\[
+	\tau= e^{c_1 X(p_1,\,q_1)} \cdots e^{c_n X\left( p_n,\,q_n \right) }\cdots 1
+.\] 
+\[
+p^i =-q^i \implies \text{КдФ}
+.\] 
+\section*{Билинейное тождество}
+\begin{thm}
+	Для любых $x,\ x'$, $\xi:= \xi (x,\,k)$, $\xi' := \xi (x',\,k)$:
+	\[
+		\oint \frac{dk}{2\pi i} e^{\xi-\xi'}\tau \left( 
+		x_1- \frac{1}{k},\, x_2 - \frac{1}{2k^2},\ldots\right) \tau \left( x'_1 + \frac{1}{k},\,x_2' + \frac{1}{2k^2},\ldots \right) =0
+	.\] 
+\end{thm}
+\begin{proof}
+\[
+	\exp \left(  \xi \left( x_1 - \frac{1}{k},\ldots \right)  \right) = \exp \left( \sum_{j=1}^{\infty} \left( p_i ^j -q_i^j \right) 
+	\left( x_j - \frac{1}{j k^j} \right) \right) =
+	\frac{k-p_i}{k-q_i}e^{\xi_i}
+.\] 
+\end{proof}
+Введём вспомогательные функции
+\[
+	w(x,\,k)= e^{\xi (x,\,k)}\left( 1+ \sum_{i=1}^{\infty} \frac{w_i}{k^i} \right) 
+.\] 
+ \[
+	w^*(x,\,k)= e^{-\xi (x,\,k)}\left( 1+ \sum_{i=1}^{\infty} \frac{w^*_i}{k^i} \right) 
+.\]
+По теореме получаем
+\[
+	\oint \frac{dk}{2\pi i} w (x,\,k) w^* (x',\,k)
+.\] 
+\[
+	\frac{\partial w}{\partial x_j} =B_j w,\quad B_j =\left( L^j \right) _{+}
+.\] 
+\begin{enumerate}
+\item $\displaystyle  \forall Q \hookrightarrow \oint
+	\frac{dk}{2\pi i} Q(w) w^*(x',\,k)=0$
+\item $\displaystyle \tilde{w} (x,\,k)= e^{\xi (x,\,k)} \sum_{i=1}^{\infty} \frac{\tilde{w}_i}{k^i}$ 
+	\[
+		\oint \frac{dk}{ 2\pi i} \tilde{w} (x,\,k) w^*(x',\,k)=0 \implies \tilde{w}_i \equiv 0
+	.\] 
+	\[
+		Q= \frac{\partial }{\partial x_j} - (L^j)_+
+	.\] 
+	\[
+		Qw= \frac{\partial w}{\partial x_j}- L^j w + (L^j)_-
+		w \text{  --- имеет вид 2}\implies Qw=0 \text{ и т.д.}
+	.\] 
+\end{enumerate}
+\begin{multline*}
+	0 = \oint \frac{dk}{2\pi i } \exp \left( 
+	2 \sum_{j=1}^{\infty} k^j y_j\right) \tau
+	\left( x_1+ y_1 - \frac{1}{k},\ldots \right) \tau\left( 
+	x_1- y_1+ \frac{1}{k},\ldots\right) =\\=
+	\oint \frac{dk}{2\pi i} \exp \left( 2 \sum_{i=1}^{\infty} k^i
+	y_i\right) \exp \left( \sum_{j=1}^{\infty} \left( y_j- \frac{1}{j k_j} \right) D_j \right) \tau\tau
+.\end{multline*} 
+lknlknkljbkjb
+\end{document}
