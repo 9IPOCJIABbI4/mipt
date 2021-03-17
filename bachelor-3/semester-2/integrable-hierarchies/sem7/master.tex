@@ -1,0 +1,76 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Семинар №7}
+\begin{document}
+	\maketitle
+\section{Эрмитова матричная модель}
+\[
+	Z= \int [dX] \exp \left( -\frac{1}{2} \operatorname{Tr}X^2 + \sum_{k=1}^{\infty} t_k \operatorname{Tr} X^k \right) 
+.\] 
+$X$ --- эрмитовы матрицы $X=x^\dagger$. У эрмитовых матриц
+ \[
+	 N+ \frac{2N (N-1)}{2}=N^2
+\]
+степеней свободы.
+\[
+	[dX]=\prod_{i=1}^{N} dX_{ii} \prod_{i>j}^{} 
+	d \Re X_{ij} d \Im X_{ij}
+.\] 
+Все уравнения иерархии записаны через переменные 
+\[
+	t_k \quad (=x_k \text{ из книжки Д-М})
+.\] 
+\begin{multline*}
+	Z(t)= \int [dX] e^{-\frac{1}{2}\operatorname{Tr}X^2}
+	\exp \left( t_1 \operatorname{Tr} X+ t_2 \operatorname{Tr} X^2+ \ldots \right) =\\= \int [dX] e^{-\frac{1}{2}\operatorname{Tr}X^2} \left( 1+ t_1 \operatorname{Tr} X^2 +t_2 \operatorname{Tr} X^2 + \frac{1}{2} t_1^2 \left( \operatorname{Tr}X \right) ^2+ \ldots \right) 
+.\end{multline*} 
+\begin{multline*}
+	Z(t)= \int [dX] e^{-\frac{1}{2} \operatorname{Tr} X^2}+
+	t_1 \int [dX] e^{-\frac{1}{2} \operatorname{Tr}
+	X^2}\operatorname{Tr} X+\\+ \frac{t_1^2}{2} \int
+	[dX] e^{-\frac{1}{2} \operatorname{Tr} X^2}
+	(\operatorname{Tr} X)^2+ t_2 \int [dX] e^{-\frac{1}{2}
+	\operatorname{Tr} X^2}+ \ldots
+.\end{multline*} 
+\[
+	\int\limits_{-\infty }^{\infty}  e^{- \mathbf{x}^T
+	A \mathbf{x}} d^N x= \frac{\sqrt{\pi} ^n}{\sqrt{\det A} }
+.\] 
+\[
+	\int[dX] e^{-\frac{1}{2} \operatorname{Tr} X^2}=
+	\int e^{-\mathbf{x}^T A \mathbf{x}}=
+	\frac{\sqrt{\pi} ^{N^2}}{2^{N^2-N}}
+.\] 
+\[
+\int [dX] X_{ij} X_{kl} e^{- \frac{1}{2} \operatorname{Tr} X^2}\xlongequal[]{*}
+.\] 
+Индекс у вектора
+\[
+	\mathbf{x}= \begin{pmatrix} X_{11} &
+	\ldots & X_{NN} & \Re X_{12} &\ldots& \Re
+X_{N-1\,N}& \Im X_{12} &\ldots &\Im X_{N-1\,N}\end{pmatrix} ^T
+\] 
+\[
+	p=\frac{N+(N-i+1)}{2}i +(j-i)
+.\] 
+\[
+	q= \frac{(N+N-k+1)}{2}k+ (l-k)
+.\] 
+\[
+X_{ij} X_{kl}= \Re X_{ij} \Re X_{kl}+\Re X_{kl} i \Im
+X_{jj}+i \Im X_{kl} \Re X_{ij}- \Im X_{ij}\Im X_{kl}=
+A \delta_{ik}\delta_{jl} \frac{1}{2}+? 
+.\] 
+Значит $\xlongequal[]{*}\delta_{il} \delta_{jk}$.
+\[
+	\int [dX] e^{-\frac{1}{2} \operatorname{Tr} X^2}
+	\sum_{i,j}^{} X_{ij} X_{ji}= \sum_{i,j}^{} \delta_{ii}
+	\delta_{jj}= N^2 \cdot\#
+.\] 
+\[
+	\int [dX] e^{-\frac{1}{2} \operatorname{Tr} X^2}
+	\left( \sum_{i}^{} X_{ii} \right)  \left( \sum_{j}^{} X_{jj} \right) = \sum_{i,j}^{} \delta_{ij}
+	\delta_{ji}= \sum_{i}^{} \delta_{ii}=N \cdot\#
+.\]
+Д/з: числа Гурвица.
+\end{document}
