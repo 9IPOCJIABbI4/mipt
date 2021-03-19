@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.3.9)  17 MAR 2021 05:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Arch Linux) (preloaded format=pdflatex 2021.3.9)  19 MAR 2021 03:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1451,9 +1451,317 @@ LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
 LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
 (Font)              using `T2A/cmtt/bx/it' instead on input line 626.
 
+[9] [10] [11]
+<figures//2.pdf, id=118, 361.35pt x 358.33875pt>
+File: figures//2.pdf Graphic file (type pdf)
+<use figures//2.pdf>
+Package pdftex.def Info: figures//2.pdf  used on input line 852.
+(pdftex.def)             Requested size: 276.00105pt x 273.70177pt.
+ [12 <./figures//2.pdf>] [13] [14]
 
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1024.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1024.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1024.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1024.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1024.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1024.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1024.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1024.
+
+<figures//3.pdf, id=151, 361.35pt x 222.8325pt>
+File: figures//3.pdf Graphic file (type pdf)
+<use figures//3.pdf>
+Package pdftex.def Info: figures//3.pdf  used on input line 1028.
+(pdftex.def)             Requested size: 252.94327pt x 155.98167pt.
+[15 <./figures//3.pdf>] [16]
+Overfull \hbox (77.5069pt too wide) detected at line 1241
+[] []
+ []
+
+[17] [18] [19]
+Overfull \hbox (80.4816pt too wide) detected at line 1379
+[] \PU/cmr/m/up/10 + (\OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 x[]\PU/cmr/m/up/10 )\OML/cmm/m/it/10 y[] \PU/cmr/m/up/10 = 0[] [] + (\OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 x[]\PU/cmr/m/up/10 )\OML/cmm/m/it/10 y[] \PU/cmr/m/up/10 = 0[] [] + (\OML/cmm/m/it/10 a \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 x[]\PU/cmr/m/up/10 )\OML/cmm/m/it/10 y[] \PU/cmr/m/up/10 = 0\OML/cmm/m/it/10 :
+ []
+
+
+Overfull \hbox (63.09015pt too wide) detected at line 1390
+[] []
+ []
+
+[20] [21]
+Overfull \hbox (88.46562pt too wide) detected at line 1568
+\OML/cmm/m/it/10 A \PU/cmr/m/up/10 = []
+ []
+
+[22]
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1585.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1585.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1585.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1586.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1586.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1586.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1586.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1586.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1586.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1586.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1586.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1586.
+
+
+Overfull \hbox (56.07611pt too wide) in paragraph at lines 1586--1586
+[][]$[][]$[]$[][]$[][][][][]\T2A/cmtt/m/n/10 {{[]$[][]$[][][]$[][]$[][][][][][]\T2A/cmtt/m/it/10 j[]\T2A/cmtt/m/n/10 }[]{[][][][][][]\T2A/cmtt/m/it/10 j[][][][][][][]j[]\T2A/cmtt/m/n/10 }}[] 
+ []
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1587.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1587.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1587.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1588.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1588.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1588.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1589.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1589.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1589.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1589.
+
+<figures//4.pdf, id=203, 361.35pt x 217.81375pt>
+File: figures//4.pdf Graphic file (type pdf)
+<use figures//4.pdf>
+Package pdftex.def Info: figures//4.pdf  used on input line 1600.
+(pdftex.def)             Requested size: 252.94327pt x 152.46857pt.
+<figures//5.pdf, id=204, 361.35pt x 209.78375pt>
+File: figures//5.pdf Graphic file (type pdf)
+<use figures//5.pdf>
+Package pdftex.def Info: figures//5.pdf  used on input line 1603.
+(pdftex.def)             Requested size: 252.94327pt x 146.84761pt.
+[23 <./figures//4.pdf>]
+<figures//6.pdf, id=223, 361.35pt x 209.78375pt>
+File: figures//6.pdf Graphic file (type pdf)
+<use figures//6.pdf>
+Package pdftex.def Info: figures//6.pdf  used on input line 1606.
+(pdftex.def)             Requested size: 252.94327pt x 146.84761pt.
+ [24 <./figures//5.pdf> <./figures//6.pdf>]
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1660.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1660.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1663.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1663.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1663.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1664.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1664.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1664.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1665.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1665.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1665.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1665.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1665.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1665.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1665.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1665.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1665.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1665.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1665.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1666.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1666.
+
+
+Overfull \hbox (120.13834pt too wide) in paragraph at lines 1666--1666
+[][][][][][][]$[]$\T2A/cmtt/m/it/10 _[][]$[][]$[][][][][][][][]\T2A/cmtt/m/n/10 {$[][]$[]$[][]$}[]{[]n[][][]N[]}[][][][]$[]$[][]x[][][][][][]x[][] 
+ []
+
+<figures//7.pdf, id=256, 542.025pt x 329.23pt>
+File: figures//7.pdf Graphic file (type pdf)
+<use figures//7.pdf>
+Package pdftex.def Info: figures//7.pdf  used on input line 1672.
+(pdftex.def)             Requested size: 271.01183pt x 164.6146pt.
+
+Overfull \hbox (124.3931pt too wide) in paragraph at lines 1675--1675
+[][][]$[]$[][][]$[]$[][][][][][][][][][]\T2A/cmtt/m/n/10 {[]$[]$[][][][][][][][][][][]$[]$[][][][][][]}[]{[][][][]$[]$}[][][][]$[]$[][]$[]$[][] 
+ []
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1684.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1684.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1684.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1684.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1684.
+
+
+LaTeX Font Warning: Font shape `T2A/cmtt/bx/sl' undefined
+(Font)              using `T2A/cmtt/bx/it' instead on input line 1684.
+
+
+Overfull \hbox (25.84961pt too wide) in paragraph at lines 1685--1685
+[][][][][][][][][][]\T2A/cmtt/m/n/10 {$[][]$[]$[][]$}[][][][][]{[]n[][][]N[]}[][][][]$[]$[][][][] 
+ []
+
+<figures//8.pdf, id=257, 542.025pt x 341.275pt>
+File: figures//8.pdf Graphic file (type pdf)
+<use figures//8.pdf>
+Package pdftex.def Info: figures//8.pdf  used on input line 1688.
+(pdftex.def)             Requested size: 271.01183pt x 170.63707pt.
+[25 <./figures//7.pdf>] 
 AED: lastpage setting LastPage
-[9] (./master.aux)
+[26 <./figures//8.pdf>] (./master.aux)
 Package rerunfilecheck Info: File `master.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1462,18 +1770,18 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 45287 strings out of 479383
- 975940 string characters out of 5875831
- 1662362 words of memory out of 5000000
- 61501 multiletter control sequences out of 15000+600000
- 427769 words of font info for 93 fonts, out of 8000000 for 9000
+ 45427 strings out of 479383
+ 977660 string characters out of 5875831
+ 1664153 words of memory out of 5000000
+ 61578 multiletter control sequences out of 15000+600000
+ 428104 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,18n,147p,755b,4482s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfit0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfit1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on master.pdf (9 pages, 398010 bytes).
+ 84i,18n,147p,1184b,4482s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfit0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfit1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt0800.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on master.pdf (26 pages, 608776 bytes).
 PDF statistics:
- 171 PDF objects out of 1000 (max. 8388607)
- 126 compressed objects within 2 object streams
- 19 named destinations out of 1000 (max. 500000)
- 42 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 386 PDF objects out of 1000 (max. 8388607)
+ 293 compressed objects within 3 object streams
+ 73 named destinations out of 1000 (max. 500000)
+ 77 words of extra memory for PDF output out of 10000 (max. 10000000)
 

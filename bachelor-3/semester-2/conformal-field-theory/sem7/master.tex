@@ -1,0 +1,241 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Семинар №7}
+\begin{document}
+	\maketitle
+	Из теоремы Нётер
+	\[
+	\phi \to  \phi + \epsilon_i \delta \phi_i,\quad
+	x^\mu \to  x^\mu+ \epsilon_i \delta x_i^\mu
+	.\] 
+	\[
+		J^\mu= \left( \mathcal{L} \delta_\nu^\mu -
+		\frac{\partial \mathcal{L}}{\partial \partial_\mu \phi} \partial_\nu \phi\right) 
+		\delta x^\nu+ \frac{\partial \mathcal{L}}{\partial \partial_\mu \phi} \delta \phi
+	.\] 
+	\begin{table}[htpb]
+	\centering
+	\caption{}
+	\label{tab:1}
+	\begin{tabular}{|c|c|c|c|}
+		\hline  & $\delta x^\mu$ & $\epsilon_i$ & $\epsilon_i \delta \phi_i$ \\
+		\hline $P_\mu$ & $a^\mu$ & $a^\mu$ & 0\\
+		\hline $D$ & $\lambda x^\mu$ & $\lambda$ &
+		$-\lambda \cdot \Delta \cdot \phi$\\
+		\hline $L_{\mu \nu}$ & $\omega^\mu_\nu x^\nu$ & $\omega^{\mu\nu}$ & $-i S_{\mu\nu} \phi$\\
+		\hline $K_\mu$ & $2(b\cdot x) x^\mu - b^\mu x^2$ & $b^\mu$ &  ?\\
+		\hline
+	\end{tabular}
+	\end{table}
+
+Токи:
+\begin{enumerate}
+\item Трансляция:
+	\[
+		T_\text{с}^\mu {}_\nu = \mathcal{L} \delta^\mu_\nu-
+		\frac{\partial \mathcal{L}}{\partial (\partial \phi)} \partial_\nu \phi,\quad \partial_\mu T_\text{с}^\mu {}_\nu=0 
+	.\] 
+\item Поворот:
+	\[
+		M^\mu {}_{\rho \nu}=
+		T_\text{с}^\mu {}_\nu x_\rho - T_\text{с}^\mu {}_\rho x_\nu-
+		i \frac{\partial \mathcal{L}}{\partial \left( \partial
+		_\mu \phi\right) } S_{\nu \rho}\phi,\quad
+		\partial_\mu M^\mu {}_{\nu\rho}=0
+	.\] 
+\item Дилотация
+	\[
+		J_{\text{D}}^\mu= T_\text{с}^\mu {}_\nu x^\nu-
+		\Delta \cdot \frac{\partial \mathcal{L}}{\partial \partial _\mu \phi} \phi
+	.\] 
+\end{enumerate}
+\[
+	\delta S = \int\limits_{V}^{} d^d x' \mathcal{L}
+	\left( \phi' ,\,\partial ' \phi\right) -S
+	= \int d^d x \partial_\mu \mathcal{K}^\mu (\phi)=
+	\int\limits_{\partial V}^{} d^d  S_\mu \mathcal{K}^\mu(\phi) 
+.\] 
+Пусть ток
+\[
+\partial_\mu J^\mu=0
+\]
+сохраняется. Если добавить
+\[
+	\partial_\mu \left( J^\mu +\partial_\nu
+	B^{\mu \nu}\right)=0,\quad B^{\mu\nu}=- B^{\nu \mu}
+\]
+то это выражение также будет сохраняться.
+
+У $T$ есть антисимметричная часть, т.\:к.
+\[
+0= \partial_\mu M^{\mu\nu \rho}=T ^{\rho \nu}-
+T^{\nu \rho}- i \partial_\mu \left( 
+\frac{\partial \mathcal{L}}{\partial \left( \partial_\mu
+\phi\right) } S_{\nu\rho}\phi\right) 
+.\] 
+\[
+	T^{\rho \nu}- T ^{\nu \rho}= i \partial_\mu \left( 
+	\frac{\partial \mathcal{L}}{\partial \left( 
+\partial_\mu \phi\right) } S_{\nu\rho} \phi\right) 
+.\] 
+\[
+	T^{\mu\nu} \to  T_\text{с}^{\mu\nu} + \partial_\rho B^{
+	\rho \mu \nu},\quad B^{\rho \mu}= -B ^{\mu \rho}
+.\] 
+\[
+T^{\mu\nu}-T^{\nu\mu}= 2\partial_\rho B^{\rho \mu \nu}=
+i \partial_\rho\underbrace{ \left( 
+\frac{\partial \mathcal{L}}{\partial \left( \partial_\rho \phi \right) } S^{\nu\mu}\right) }_{b^{\rho \mu\nu}}
+.\] 
+\[
+	B^{\rho \mu\nu}= \frac{i}{4} \left( 
+	b^{\rho \mu\nu}+b ^{\nu \rho \mu}+ b^{\mu \nu \rho}\right) 
+.\] 
+\[
+M^{\mu \nu \rho}=T^{\mu\nu}x^{\rho}-
+T^{\mu \rho}x^\nu
+.\] 
+Тождество Уорда:
+\begin{multline}
+\partial_\mu \left< T^{\mu\nu} X \right> =
+- i \sum_{i=1}^{n} \delta(x-x_i) \left<
+\phi_1 (x_1) \ldots \underbrace{\widehat{\operatorname{P}}}_{
+=-i \frac{\partial }{\partial x_\nu} }\phi_i (x_i)\ldots
+\phi_n (x_n)\right>=\\=
+- \sum_{i=1}^{n} \delta(x-x_i) \frac{\partial }{\partial x_i} 
+\left<X \right>
+\label{eq:1}
+.\end{multline} 
+\[
+	L^{\nu \rho}= -i \left( x^\rho \partial^\nu
+	-x^\nu \partial^\rho\right) +S^{\nu \rho}
+.\] 
+\begin{multline*}
+	\partial_\mu \left< \left( T^{\mu\nu}x^\rho
+	-T^{\mu \rho}x^\nu\right) X \right> =
+	- \sum_{i=1}^{n} \delta (x-x_i) 
+	\left< \phi_i (x_i) \ldots \widehat{\operatorname{L}}^{\nu\rho} \phi(x_i) \ldots \phi_n(x_n) \right> =\\=
+	\sum_{i=1}^{n} \delta(x-x_i) \left( 
+	\left( x_i^\nu \partial_i^\rho-x_i^\rho \partial_i^\nu \right) -i S_i^{\nu\rho}\right) \left<X \right>
+.\end{multline*} 
+Используя \ref{eq:1}, получаем
+\[
+x^\rho \partial_\mu \left< T^{\mu\nu} X \right>-
+x^\nu \partial_\mu \left< T^{\mu\rho} X \right>+
+\left<\left( T^{\rho\nu}-T^{\nu\rho} \right) X \right>
+.\] 
+\[
+	\left<\left( T^{\rho\nu}-T^{\nu\rho} \right) X \right>
+	=-i \sum_{i}^{} \delta(x-x_i) S^{\nu \rho}_i \left<X \right>
+.\] 
+\[
+	\partial_\mu J^\mu _\text{D}=T^\mu_\text{с}?^\mu {}_\mu
+	-\Delta \partial_\mu \left( \frac{\partial \mathcal{L}}{\partial (\partial_\mu \phi)} \phi \right) =0
+.\] 
+\begin{multline*}
+	\partial_\mu \left< J^\mu_\text{D} X \right> = x^\nu \partial_\mu \left<T^\mu {}_\nu X \right>+\left<
+	T^\mu{}_\mu X\right>=\\=
+	-i\sum_{}^{} \delta(x-x_i) \left<
+	\phi_1(x_1)\ldots \left(-i x_i^\rho \partial_\rho^i -i \Delta\right) \phi_i (x_i) \ldots \phi_n(x_n)\right>
+.\end{multline*} 
+\[
+	\partial_\mu \left<T^{\mu\nu} X\right> =  - \sum_{i=1}^{n} \delta(x-x_i) \frac{\partial }{\partial x^i_\nu} \left<X \right>
+.\] 
+\[
+	\left<T^\mu{}_\mu X \right> =
+	-\sum_{i=1}^{n} \delta(x-x_i)\Delta_i
+	\left<X \right>
+.\] 
+\begin{multline*}
+	\phi'\left(w,\overline{w}\right)=
+	\left( \frac{dw}{dz} \right) ^{-h}
+	\left(\frac{d \overline{w}}{d \overline{z}}\right)^{-\overline{h}} \phi \left( z,\,\overline{z} \right) =
+	e^{- i \phi S}\phi\left( z,\,\overline{z} \right) 
+	\approx \\ \approx(1- i \phi s) \phi \left( z,\,\overline{z} \right) = \left(1- \frac{i}{2} \omega^{\mu \nu} S_{\mu\nu}\right)
+	\phi\left( z,\,\overline{z} \right) 
+.\end{multline*} 
+\[
+	h=\frac{1}{2} (\Delta+s),\quad \overline{h}
+	=\frac{1}{2} (\Delta-s)
+.\] 
+\[
+w=e^i\phi z,\quad \overline{w} =e^{- i \phi} \overline{z}
+.\] 
+\[
+	\omega_{\mu\nu}= \begin{pmatrix} 0 & \phi \\ -\phi &0 \end{pmatrix} =\phi \cdot \epsilon _{\mu\nu},\quad
+	S_{\mu\nu}= \epsilon_{\mu\nu}s
+.\] 
+\[
+\epsilon_{\mu\nu}\epsilon^{\mu\nu}=2
+.\] 
+\[
+S_{\mu\nu}=\epsilon_{\mu\nu}s
+.\] 
+\[
+T^{\rho\sigma}- T^{\sigma\rho}=\epsilon^{\rho\sigma}
+\epsilon_{\mu\nu} T^{\mu\nu}
+.\] 
+\[
+\left<\epsilon^{\mu\nu} T_{\mu\nu}X \right> =
+- i \sum_{i=1}^{n} \delta (x-x_i) S_i \left<X \right>
+.\] 
+\[
+	z'^\mu =z^\mu +\epsilon ^\mu (z)
+.\] 
+\[
+	\partial_\mu \left( \epsilon\nu T^{\mu\nu} \right) =
+	\partial_{\mu} \epsilon_{\nu} T^{\mu\nu}+
+	\epsilon_\nu \partial_{\mu} T^{\mu\nu}=
+	\epsilon_\nu \partial_\mu T^{\mu\nu}+\frac{1}{2}
+	\left( \partial_\rho \epsilon^\rho \right) 
+	T^\mu {}_\mu + \frac{1}{2} e_{\rho \sigma}
+	\partial^\rho \epsilon^\sigma e_{\mu\nu}
+	T^{\mu\nu}
+.\] 
+\[
+\partial_\mu \epsilon_\nu +\partial_\nu \epsilon_\mu=
+\frac{1}{2} \left( \partial_\rho \epsilon^\rho \right) \underbrace{g_{\mu\nu}}_{\delta_{\mu\nu}}
+.\] 
+\[
+\partial_\mu \epsilon_\nu -\partial_\nu \epsilon_\mu=
+e_\mu\nu \left( \epsilon^{\rho\sigma}\partial_\rho
+\epsilon_\sigma \right) 
+.\] 
+\[
+\delta_\epsilon \left< X \right> =
+\int d^2 x \partial_\mu \left<\epsilon_\nu T^{\mu\nu} X \right>
+.\] 
+\section*{Д/з}
+\begin{hiProb}[Задача 1]
+Проверить что это действительно дельта-функция, подставив
+в формулы
+\[
+	\delta ^{(2)} (x)= \frac{1}{\pi} \partial_{\overline{z}}
+	\frac{1}{z}= \frac{1}{\pi} \partial_z \frac{1}{\overline{z}}
+.\] 
+\[
+	\int d^2 f(z) \delta ^{(2)}\left( x \right) =f(z=0)
+.\] 
+\[
+	d^2 x f\left( \overline{z} \right) \delta ^{(2)}(x)
+	=f(\overline{z}=0)
+.\] 
+
+\end{hiProb}
+\begin{hiProb}[Задача 2 ]
+Проверить 3 тождества Уорда для
+\[
+	\partial_\mu = \begin{pmatrix} \partial_\mu &
+	\partial_{\overline{z}}\end{pmatrix},\quad
+	T^{\mu\nu}=
+		\begin{pmatrix} T^{zz} & T^{z \overline{z}}\\
+		T^{\overline{z} z}& T^{\overline{z} \overline{z}}\end{pmatrix} 
+.\] 
+\end{hiProb}
+\begin{hiProb}[Задача 3]
+Вычислить кореллятор
+\[
+\left<T^{zz} X \right>
+.\] 
+\end{hiProb}
+\end{document}
