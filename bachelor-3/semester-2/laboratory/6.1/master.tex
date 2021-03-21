@@ -1,6 +1,184 @@
 \documentclass[a4paper]{article}
 \input{../../preamble.tex}
-\title{}
+\title{Лаба}
 \begin{document}
 	\maketitle
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{5}
+	\caption{}
+	\label{fig:5}
+\end{figure}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{1}
+	\caption{}
+	\label{fig:1}
+\end{figure}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{2}
+	\caption{}
+	\label{fig:2}
+\end{figure}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{3}
+	\caption{}
+	\label{fig:3}
+\end{figure}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{4}
+	\caption{}
+	\label{fig:4}
+\end{figure}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{6}
+	\caption{}
+	\label{fig:6}
+\end{figure}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{7}
+	\caption{}
+	\label{fig:7}
+\end{figure}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{8}
+	\caption{}
+	\label{fig:8}
+\end{figure}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{9}
+	\caption{}
+	\label{fig:9}
+\end{figure}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{10}
+	\caption{}
+	\label{fig:10}
+\end{figure}
+	\begin{table}[htpb]
+		\centering
+		\caption{}
+		\label{tab:1}
+		\csvreader[tabular=|c|c|c|c|c|,
+		table head={\hline № & $a$ & $b$ & $c$ & $X$\\\hline},
+		late after line=\\\hline, head to column names]
+		{dataset.csv}{}
+		{\nexp &\num{\aexp} & \num{\bexp} & \num{\cexp} & \num {\Xexp}}
+	\end{table}
+\begin{table}[htpb]
+		\centering
+		\caption{}
+		\label{tab:2}
+	\csvreader[tabular=|c|c|c|c|c|c|,
+	table head={\hline № & $\epsilon$, \% & $\Gamma_\text{экс}$, \nicefrac{\text{мм}}{\text{с}} & $\Gamma_\text{экс}$, $10^{-7}$ эВ & $v_\text{р}$, \nicefrac{\text{мм}}{\text{с}}& $\Delta E$, $10^{-7}$ эВ\\\hline},
+		late after line=\\\hline, head to column names]
+		{dataset2.csv}{}
+	 {\nexp &\num{\epsexp} & \num{\gexp} & \num{\gexpt} & \num {\vp} & \num{\dE}}
+	\end{table}
+%	\begin{table}[htpb]
+%		\centering
+%		\caption{}
+%		\label{tab:3}
+%		\csvreader[tabular=|c|c|,
+%		table head={\hline $I$, \nicefrac{1}{\text{с}}& $E$, эВ \\\hline},
+%		late after line=\\\hline, head to column names]
+%		{dataset1f.csv}{}
+%		{\num{\Ione} & \num{\Eone}}
+%	\end{table}
+%	\begin{table}[htpb]
+%		\centering
+%		\caption{}
+%		\label{tab:4}
+%		\csvreader[tabular=|c|c|,
+%		table head={\hline $I$, \nicefrac{1}{\text{с}}& $v$, \nicefrac{\text{мм}}{\text{с}} \\\hline},
+%		late after line=\\\hline, head to column names]
+%		{dataset2f.csv}{}
+%		{\num{\Itwo} & \num{\vtwo}}
+%	\end{table}
+%	\begin{table}[htpb]
+%		\centering
+%		\caption{}
+%		\label{tab:5}
+%		\csvreader[tabular=|c|c|,
+%		table head={\hline $I$, \nicefrac{1}{\text{с}}& $v$, \nicefrac{\text{мм}}{\text{с}} \\\hline},
+%		late after line=\\\hline, head to column names]
+%		{dataset3f.csv}{}
+%		{\num{\Ithree} & \num{\vthree}}
+%	\end{table}
+%	\begin{table}[htpb]
+%		\centering
+%		\caption{}
+%		\label{tab:6}
+%		\csvreader[tabular=|c|c|,
+%		table head={\hline $I$, \nicefrac{1}{\text{с}}& $v$, \nicefrac{\text{мм}}{\text{с}} \\\hline},
+%		late after line=\\\hline, head to column names]
+%		{dataset4f.csv}{}
+%		{\num{\Ifour} & \num{\vfour}}
+%	\end{table}
+\begin{table}[htpb]
+\begin{subtable}[h]{0.4\textwidth}
+		\centering
+		\label{tab:3}
+		\csvreader[tabular=|c|c|,
+		table head={\hline $I$, \nicefrac{1}{\text{с}}& $E$, эВ \\\hline},
+		late after line=\\\hline, head to column names]
+		{dataset1f.csv}{}
+		{\num{\Ione} & \num{\Eone}}
+		\caption{Спектр излучения}
+\end{subtable}
+\begin{subtable}[h]{0.4\textwidth}
+		\centering
+		\label{tab:6}
+		\csvreader[tabular=|c|c|,
+		table head={\hline $I$, \nicefrac{1}{\text{с}}& $v$, \nicefrac{\text{мм}}{\text{с}} \\\hline},
+		late after line=\\\hline, head to column names]
+		{dataset4f.csv}{}
+		{\num{\Ifour} & \num{\vfour}}
+		\caption{Резонансное поглощение на 1-ом поглотителе}
+\end{subtable}
+\caption{Экспериментальные данные}
+\end{table}
+
+	\begin{table}[htpb]
+
+\begin{subtable}[h]{0.3\textwidth}
+		\centering
+		\label{tab:4}
+		\csvreader[tabular=|c|c|,
+		table head={\hline $I$, \nicefrac{1}{\text{с}}& $v$, \nicefrac{\text{мм}}{\text{с}} \\\hline},
+		late after line=\\\hline, head to column names]
+		{dataset2f.csv}{}
+		{\num{\Itwo} & \num{\vtwo}}
+		\caption{2-ом поглотителе}
+\end{subtable}
+\begin{subtable}[h]{0.3\textwidth}
+		\centering
+		\label{tab:5}
+		\csvreader[tabular=|c|c|,
+		table head={\hline $I$, \nicefrac{1}{\text{с}}& $v$, \nicefrac{\text{мм}}{\text{с}} \\\hline},
+		late after line=\\\hline, head to column names]
+		{dataset3f.csv}{}
+		{\num{\Ithree} & \num{\vthree}}
+		\caption{3-ом поглотителе}
+\end{subtable}
+\begin{subtable}[h]{0.3\textwidth}
+		\centering
+		\label{tab:6}
+		\csvreader[tabular=|c|c|,
+		table head={\hline $I$, \nicefrac{1}{\text{с}}& $v$, \nicefrac{\text{мм}}{\text{с}} \\\hline},
+		late after line=\\\hline, head to column names]
+		{dataset4f.csv}{}
+		{\num{\Ifour} & \num{\vfour}}
+		\caption{4-ом поглотителе}
+\end{subtable}
+\caption{Экспериментальные данные. Резонансное поглощение на}
+\end{table}
 \end{document}
