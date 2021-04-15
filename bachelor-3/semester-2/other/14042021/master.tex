@@ -1,0 +1,31 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{}
+\begin{document}
+	\maketitle
+	Обозначим ортонормированный базис как $\left\{ \mathbf{e}_1,\ldots,\,\mathbf{e}_n \right\} $ и
+	соответствующие ему координаты $(x_1,\ldots,\,x_n)$.
+В этом базисе
+\[
+	\nabla = \left( \frac{\partial }{\partial x_1} ,\ldots
+	,\, \frac{\partial }{\partial x_n} \right) ,\quad
+	b_k= (b_{k1},\ldots,\,b_{kn})
+.\]
+\[
+	\nabla f(x)= \sum_{k=1}^{n} \nabla g\left( \left<
+	x,\,b_k\right>  \right) =
+	\sum_{k=1}^{n} g'(\left<x,\,b_k \right> ) \left( b_{k 1},\ldots,\,
+	b_{kn}\right) =
+	\sum_{k=1}^{n} g'(\left<x,\,b_k \right> ) b_k
+.\] 
+\[
+	g'(x)=\pi  \ln ^{\sin x}(x) \left(\frac{\sin x}{x \ln x}+\ln (\ln x) \cos
+   x\right)
+.\] 
+\[
+	\left<\nabla f(a^*),\,b_1 \right> =
+	\left<\sum_{k=1}^{n} g'(\left<a^*,\,b_k \right> )b_k,\,b_1 \right> 
+	=g'\left(\left<a^*,\,b_1 \right> \right)\| b_1\|^2=
+	6
+.\] 
+\end{document}

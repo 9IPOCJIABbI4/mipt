@@ -62,15 +62,17 @@
 
 %%% Теоремы
 \theoremstyle{plain} % Это стиль по умолчанию, его можно не переопределять.
-\newtheorem{theorem}{Теорема}
-\newtheorem*{thm}{Теорема}
-\newtheorem{prop}{Утверждение}
+\newtheorem{thm}{Теорема}
+\newtheorem*{thm*}{Теорема}
+\newtheorem{prop}{Предложение}
+\newtheorem*{prop*}{Предложение}
  
 \theoremstyle{definition} % "Определение"
 %\newtheorem{corollary}{Следствие}[theorem]
-\newtheorem*{dfn}{Определение}
-\newtheorem{problem}{Задача}
-\newtheorem*{problem*}{Задача}
+\newtheorem{dfn}{Определение}
+\newtheorem*{dfn*}{Определение}
+\newtheorem{prob}{Задача}
+\newtheorem*{prob*}{Задача}
 
  
 \theoremstyle{remark} % "Примечание"
@@ -247,7 +249,7 @@
 \usepackage{extarrows}
 %\renewcommand{\labelenumii}{\asbuk{enumii})}
 %\renewcommand{\labelenumiv}{\Asbuk{enumiv}}
-\newcommand{\prob}[1]{\subsubsection*{#1}}
+%\newcommand{\prob}[1]{\subsubsection*{#1}}
 \sisetup{output-decimal-marker = {,},separate-uncertainty = true,exponent-product = \cdot}
 
 \usepackage{braket}

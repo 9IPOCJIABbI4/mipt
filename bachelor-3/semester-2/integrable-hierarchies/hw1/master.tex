@@ -3,25 +3,262 @@
 \title{Домашнее задание по интегрируемым иерархиям}
 \begin{document}
 	\maketitle
+\begin{hiProb}[Упражнение 1.0]
+\end{hiProb}
+\begin{sol}
+\[
+l_i=\epsilon _{ijk} r_j p_k
+.\] 
+\begin{multline*}
+\left\{ l_i,\,l_j \right\} =\sum_{k=1}^{3} 
+\frac{\partial l_j}{\partial p_k} 
+\frac{\partial l_i}{\partial r_k} -\frac{\partial l_i}{\partial p_k} \frac{\partial l_j}{\partial r_k}=
+\epsilon _{jpl}r_p \delta_{lk}
+\epsilon _{imn}\delta_{m k}p_n -\epsilon _{imn}r_m \delta_{kn}
+\epsilon _{jpl}\delta_{pk}p_l =\\=
+\epsilon _{jpk}r_p \epsilon _{ikm}p_m-\epsilon _{imk} r_m \epsilon _{jkl}p_l
+=
+(\delta_{jm}\delta_{pi}-\delta_{ji}\delta_{pm})r_pp_m-(\delta_{il}\delta_{mj}-\delta_{ij}\delta_{lm})r_mp_l
+=
+\\=r_ip_j-\delta_{ij}r_mp_m-r_jp_i+\delta_{ij}r_mp_m =
+r_i p_j-r_j p_i
+.\end{multline*} 
+С другой стороны
+\[
+\epsilon _{ijk}l_k =\epsilon _{ijk}\epsilon _{klm}r_l p_m=
+(\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl})r_l p_m=
+r_i p_j-r_jp_i
+.\] 
+Откуда следует, что
+\[
+\left\{ l_i,\,l_j \right\} =\epsilon _{ijk}l_k
+.\] 
+Далее
+\begin{multline*}
+A_i= \epsilon _{ijk} l_j p_k + \frac{\alpha}{r}r_i=
+\epsilon _{ijk} \epsilon _{jmn}r_m p_n p_k +\frac{\alpha}{r}
+r_i=
+(\delta_{km}\delta_{in}-\delta_{kn}\delta_{im})
+r_m p_n p_k+ \frac{\alpha}{r}r_i=
+\\=(\mathbf{r},\,\mathbf{p})p_i+\left(\frac{\alpha}{r}-\mathbf{p}^2\right)r_i
+.\end{multline*} 
+\begin{multline*}
+\left\{ l_i,\,A_j \right\} =
+\sum_{k=1}^{3} \frac{\partial l_i}{\partial r_k} 
+\frac{\partial A_j}{\partial p_k}-
+\frac{\partial A_j}{\partial r_k} \frac{\partial l_i}{\partial p_k} =\\=
+\epsilon _{inm}\delta_{nk} p_m
+\left(r_k p_j+(\mathbf{r},\,\mathbf{p})\delta_{jk}-2p_k r_j\right)-
+\left(p_kp_j - \frac{\alpha r_k}{r^3}r_j+\left(\frac{\alpha}{r}-\mathbf{p}^2\right) \delta_{jk} \right) 
+\epsilon_{inm}r_n \delta_{m k }=\\
+=\epsilon _{ikm} p_m
+\left(r_k p_j+(\mathbf{r},\,\mathbf{p})\delta_{jk}\right)-
+\left(p_kp_j +\left(\frac{\alpha}{r}-\mathbf{p}^2\right) \delta_{jk} \right) 
+\epsilon_{ink}r_n =\\
+=\epsilon _{ijm}\left((\mathbf{r},\,\mathbf{p})p_m+
+\left( \frac{\alpha}{r}+\mathbf{p}^2 \right) r_m\right)=
+\epsilon _{ijk}A_k
+.\end{multline*} 
+А также
+\begin{multline*}
+\left\{ A_i,\,A_j \right\} =
+\sum_{k=1}^{3} \frac{\partial A_i}{\partial r_k} 
+\frac{\partial A_j}{\partial p_k} -
+\frac{\partial A_j}{\partial r_k} \frac{\partial A_i}{\partial p_k} =\\=
+\left(p_kp_i - \frac{\alpha r_k}{r^3}r_i+\left(\frac{\alpha}{r}-\mathbf{p}^2\right) \delta_{ik} \right)
+\left(r_k p_j+(\mathbf{r},\,\mathbf{p})\delta_{jk}-2p_k r_j\right)-\\-
+\left(p_kp_j - \frac{\alpha r_k}{r^3}r_j+\left(\frac{\alpha}{r}-\mathbf{p}^2\right) \delta_{jk} \right)
+\left(r_k p_i+(\mathbf{r},\,\mathbf{p})\delta_{ik}-2p_k r_i\right)=\\=
+2(\mathbf{r},\,\mathbf{p})p_ip_j-2\mathbf{p}^2p_i r_j-
+\frac{\alpha}{r}r_i p_j+
+\frac{\alpha(\mathbf{r},\,\mathbf{p})}{r^3}r_i r_j+\\+
+\left( \frac{\alpha}{r}-\mathbf{p}^2 \right) r_i p_j
++\left( \frac{\alpha}{r}-\mathbf{p}^2 \right) \delta_{ij}-
+2\left( \frac{\alpha}{r}-\mathbf{p}^2 \right) p_i r_j-\\
+-2(\mathbf{r},\,\mathbf{p})p_ip_j+2\mathbf{p}^2p_j r_i+
+\frac{\alpha}{r}r_j p_i-
+\frac{\alpha(\mathbf{r},\,\mathbf{p})}{r^3}r_i r_j-\\-
+\left( \frac{\alpha}{r}-\mathbf{p}^2 \right) r_j p_i
+-\left( \frac{\alpha}{r}-\mathbf{p}^2 \right) \delta_{ij}+
+2\left( \frac{\alpha}{r}-\mathbf{p}^2 \right) p_j r_i=\\
+-2\mathbf{p}^2p_i r_j-
+\frac{\alpha}{r}r_i p_j+
+\left( \frac{\alpha}{r}-\mathbf{p}^2 \right) r_i p_j
+-
+2\left( \frac{\alpha}{r}-\mathbf{p}^2 \right) p_i r_j+\\
++2\mathbf{p}^2p_j r_i+
+\frac{\alpha}{r}r_j p_i-
+\left( \frac{\alpha}{r}-\mathbf{p}^2 \right) r_j p_i
++
+2\left( \frac{\alpha}{r}-\mathbf{p}^2 \right) p_j r_i=\\
+\left(2\mathbf{p}^2-
+\frac{\alpha}{r}+
+\left( \frac{\alpha}{r}-\mathbf{p}^2 \right)
++
+2\left( \frac{\alpha}{r}-\mathbf{p}^2 \right)\right)(r_ip_j-r_jp_i)=\\=
+-\left(\mathbf{p}^2 -2 \frac{\alpha}{r} \right) (r_i p_j
+-r_j p_i)=-2E\epsilon _{ijk} l_k
+.\end{multline*} 
+\end{sol}
 \begin{hiProb}[Упражнение 1.2]
 \end{hiProb}
 \begin{sol}
 \begin{multline*}
-	H_3=\frac{1}{3}\sum_{i,\,j,\,k}^{} L_{ij}L_{jk} L_{ki}=\\=
-	\frac{1}{3}\sum_{i=1}^{N} \sum_{j,\,k}^{} L_{ij}L_{jk}L_{ki}=\frac{1}{3}\sum_{i=1}^{N} \left( \sum_{j=1}^{N} L_{ij}L_{jj}L_{ji}+ \sum_{j\neq k}^{} L_{ij}L_{jk}L_{ki} \right) =\\=
-	\frac{1}{3}\sum_{i,\,j}^{} L_{jj}L_{ij}L_{ji}+\frac{1}{3}
-	\sum_{i=1}^{N} \sum_{j \neq k}^{} L_{ij}L_{jk}L_{ki}=\\=
-	\sum_{i=1}^{N} L_{ii}^3+ \frac{1}{3}\sum_{i\neq j}^{N} L_{jj}L_{ij}L_{ji}+\frac{1}{3}\sum_{i=1}^{N} \left( 
-	\sum_{j<k}^{} L_{ij}L_{jk}L_{ki}+\sum_{j>k}^{} L_{ij}L_{jk}L_{ki}\right) =\\=
-	\sum_{i=1}^{N} L_{ii}^3+ \frac{1}{3}\sum_{i< j}^{N} L_{jj}L_{ij}L_{ji}+\frac{1}{3}\sum_{i> j}^{N} L_{jj}L_{ij}L_{ji}+\\+\frac{1}{3}\sum_{i=1}^{N} \left( 
-	\sum_{j<k}^{} L_{ij}L_{jk}L_{ki}+\sum_{j>k}^{} L_{ij}L_{jk}L_{ki}\right) =\\=
-	\sum_{i=1}^{N} L_{ii}^3+ \frac{1}{3}\sum_{i< j}^{N} L_{jj}L_{ij}L_{ji}+\frac{1}{3}\sum_{i> j}^{N} L_{ii}L_{ji}L_{ij}+\\+\frac{1}{3}\sum_{i=1}^{N} \left( 
-	\sum_{j<k}^{} L_{ij}L_{jk}L_{ki}+\sum_{j>k}^{} L_{ij}L_{jk}L_{ki}\right) =
+H_3= \frac{1}{3} \sum_{i,j,k}^{} L_{ij}L_{jk}L_{ki}=
+\frac{1}{3}\sum_{i=1}^{N} L_{ii}^3+
+\frac{1}{3}\sum_{j=k\neq i}^{} L_{ij}L_{jk}L_{ki}+
+\frac{1}{3} \sum_{\substack{i\neq j, j\neq k,\\ k\neq i}}^{} L_{ij}L_{jk}L_{ki}
+%=\\
+%=
+%\frac{1}{3}\sum_{i=1}^{N} L_{ii}^3+
+%\frac{1}{3}\sum_{j=k\neq i}^{} L_{ij}L_{jk}L_{ki}+
+%\frac{1}{3} \sum_{\substack{i<j, j\neq k,\\ k\neq i}}^{} L_{ij}L_{jk}L_{ki}
+%+
+%\frac{1}{3} \sum_{\substack{i>j, j\neq k,\\ k\neq i}}^{} L_{ij}L_{jk}L_{ki}=\\
+%=
+%\frac{1}{3}\sum_{i=1}^{N} L_{ii}^3-
+%\frac{1}{3}\sum_{j=k\neq i}^{} L_{ji}L_{kj}L_{ik}+
+%\frac{1}{3} \sum_{\substack{i<j, j\neq k,\\ k\neq i}}^{} L_{ij}L_{jk}L_{ki}
+%+
+%\frac{1}{3} \sum_{\substack{i>j, j\neq k,\\ k\neq i}}^{} L_{ij}L_{jk}L_{ki}=\\
+%=
+%\frac{1}{3}\sum_{i=1}^{N} L_{ii}^3-
+%\frac{1}{3}\sum_{j=k\neq i}^{} L_{ji}L_{kj}L_{ik}+
+%\frac{1}{3} \sum_{\substack{i<j, j\neq k,\\ k\neq i}}^{} L_{ij}L_{jk}L_{ki}
+%+
+%\frac{1}{3} \sum_{\substack{i>j, j\neq k,\\ k\neq i}}^{} L_{ij}L_{jk}L_{ki}=\\
+%=\frac{1}{3} \sum_{i=1}^{N} p_i^3+
+%\sum_{i\neq j, i\neq k}^{} \frac{\nu}{q_i-q_j}L_{jk}
+%\frac{\nu}{q_k-q_i}
+.\end{multline*} 
+\[
+\sum_{\substack{i\neq j, j\neq k,\\ k\neq i}}^{} L_{ij}L_{jk}L_{ki}=
+\sum_{\substack{i>j, j\neq k,\\ k\neq i}}^{} L_{ij}L_{jk}L_{ki}+
+\sum_{\substack{i<j, j\neq k,\\ k\neq i}}^{} L_{ij}L_{jk}L_{ki}
+.\] 
+\begin{multline*}
+\sum_{\substack{i<j, j\neq k,\\ k\neq i}}^{} L_{ij}L_{jk}L_{ki}=-
+\sum_{\substack{i<j, j\neq k,\\ k\neq i}}^{} L_{ji}L_{kj}L_{ik}=\\=-
+\sum_{\substack{j<i, i\neq k,\\ k\neq j}}^{} L_{ij}L_{ki}L_{jk}=
+-\sum_{\substack{i>j, j\neq k,\\ k\neq i}}^{} L_{ij}L_{jk}L_{ki}
+.\end{multline*} 
+Следовательно
+\[
+\sum_{\substack{i\neq j, j\neq k,\\ k\neq i}}^{} L_{ij}L_{jk}L_{ki}=0
+.\] 
+И
+\[
+H_3= \frac{1}{3} \sum_{i=1}^{N} L_{ii}^3+ \frac{1}{3}
+\sum_{j=k\neq i}^{} L_{ij}L_{jk}L_{ki}=
+\frac{1}{3}\sum_{i=1}^{N} p_i^3-
+\nu^2 \sum_{k \neq i}^{} \frac{p_i}{(q_i-q_k)^2}
+.\] 
+%\begin{multline*}
+%	H_3=\frac{1}{3}\sum_{i,\,j,\,k}^{} L_{ij}L_{jk} L_{ki}=\\=
+%	\frac{1}{3}\sum_{i=1}^{N} \sum_{j,\,k}^{} L_{ij}L_{jk}L_{ki}=\frac{1}{3}\sum_{i=1}^{N} \left( \sum_{j=1}^{N} L_{ij}L_{jj}L_{ji}+ \sum_{j\neq k}^{} L_{ij}L_{jk}L_{ki} \right) =\\=
+%	\frac{1}{3}\sum_{i,\,j}^{} L_{jj}L_{ij}L_{ji}+\frac{1}{3}
+%	\sum_{i=1}^{N} \sum_{j \neq k}^{} L_{ij}L_{jk}L_{ki}=\\=
+%	\sum_{i=1}^{N} L_{ii}^3+ \frac{1}{3}\sum_{i\neq j}^{N} L_{jj}L_{ij}L_{ji}+\frac{1}{3}\sum_{i=1}^{N} \left( 
+%	\sum_{j<k}^{} L_{ij}L_{jk}L_{ki}+\sum_{j>k}^{} L_{ij}L_{jk}L_{ki}\right) =\\=
+%	\sum_{i=1}^{N} L_{ii}^3+ \frac{1}{3}\sum_{i< j}^{N} L_{jj}L_{ij}L_{ji}+\frac{1}{3}\sum_{i> j}^{N} L_{jj}L_{ij}L_{ji}+\\+\frac{1}{3}\sum_{i=1}^{N} \left( 
+%	\sum_{j<k}^{} L_{ij}L_{jk}L_{ki}+\sum_{j>k}^{} L_{ij}L_{jk}L_{ki}\right) =\\=
+%	\sum_{i=1}^{N} L_{ii}^3+ \frac{1}{3}\sum_{i< j}^{N} L_{jj}L_{ij}L_{ji}+\frac{1}{3}\sum_{i> j}^{N} L_{ii}L_{ji}L_{ij}+\\+\frac{1}{3}\sum_{i=1}^{N} \left( 
+%	\sum_{j<k}^{} L_{ij}L_{jk}L_{ki}+\sum_{j>k}^{} L_{ij}L_{jk}L_{ki}\right) =
 %	\frac{1}{3} \sum_{i=1}^{N} L_{ii}^3+
 %	\frac{1}{3} \sum_{i \neq j\neq k}^{} L_{ij}L_{jk}L_{ki}
 %	=\\=\frac{1}{3}\sum_{i=1}^{N} L_{ii}^3+
 %	\frac{1}{3}\sum_{i\neq j}^{} \left( \sum_{j\neq k}^{} L_{ij}L_{jk}L_{ki}+
 %	\sum_{k=1}^{N} L_{kk}^3\right)
+%.\end{multline*} 
+
+\end{sol}
+\begin{hiProb}[Упражнение 1.3]
+\end{hiProb}
+\begin{sol}
+Уравнения движения:
+\begin{multline*}
+-\dot{p}_k= \frac{\partial H}{\partial q_k} =
+2\nu^2 \sum_{i<j}^{} \frac{\delta_{ik}-\delta_{jk}}{(q_i-q_j)^3}=
+2\nu^2 \left( \sum_{k<j}^{} \frac{1}{(q_k-q_j)^3}-
+\sum_{i<k}^{} \frac{1}{(q_i-q_k)^3}\right) =\\=
+2\nu^2 \sum_{k\neq i}^{} \frac{1}{(q_k-q_i)^3}
+,\end{multline*} 
+\[
+\dot{q}_k= \frac{\partial H}{\partial p_k} =
+p_k
+.\]
+По определению
+\[
+	M_{ij}= \delta_{ij} d_i -(1-\delta_{ij})\frac{\nu}{(q_i-q_j)^2}
+.\] 
+Уравнение Лакса:
+\begin{multline*}
+\delta_{ij}\dot{p}_i+
+(\delta_{ij}-1) \frac{\nu \left(\dot{q_i}-\dot{q}_j\right)}{(q_i-q_j)^2}=\\=
+\sum_{k=1}^{N} \left[\left( \delta_{ik}p_i +(1-\delta_{ik}) \frac{\nu}{q_i-q_k} \right) \left( 
+\delta_{kj} d_k-(1-\delta_{kj}) \frac{\nu}{(q_k-q_j)^2}\right)-
+\right.\\-
+\left.\left( \delta_{ik}d_i-(1-\delta_{ik})
+	\frac{\nu}{(q_i-q_k)^2}\right) \left( \delta_{kj}p_k+(1-\delta_{kj})
+\frac{\nu}{q_k-q_j}\right)\right]=\\=
+\delta_{ij}p_id_i-
+p_i(1-\delta_{ij}) \frac{\nu}{(q_i-q_j)^2}
++d_j(1-\delta_{ij}) \frac{\nu}{q_i-q_j}-
+\nu^2\sum_{k\neq i,k \neq j}^{} \frac{1}{
+(q_i-q_k)(q_k-q_j)^2}-\\ 
+-\delta_{ij}d_ip_i-
+d_i(1-\delta_{ij}) \frac{\nu}{q_i-q_j}
++p_j(1-\delta_{ij}) \frac{\nu}{(q_i-q_j)^2}+
+\nu^2 \sum_{k\neq i,k\neq j}^{} \frac{1}{(q_i-q_k)^2(q_k-q_j)}=
+\\=(\delta_{ij}-1)\left((p_i-p_j) \frac{\nu}{(q_i-q_j)^2}+
+\frac{\nu^2}{q_i-q_j}\left(\sum_{k\neq i}^{} \frac{1}{(q_i-q_k)^2}
+-\sum_{k\neq j}^{} \frac{1}{(q_j-q_k)^2}\right)\right)-\\-
+\nu^2 \sum_{k\neq i,k \neq j}^{}  
+\frac{q_i+q_j-2q_k}{(q_i-q_k)^2(q_k-q_j)^2} 
 .\end{multline*} 
+Из последнего уравнения получаем
+\[
+	\dot{p}_i=2\nu^2 \sum_{k\neq i}^{} \frac{1}{(q_k-q_i)^3}
+.\] 
+Учтя, что
+\begin{multline*}
+	\sum_{k\neq i}^{} \frac{1}{(q_i-q_k)^2}-
+	\sum_{k\neq j}^{} \frac{1}{(q_j-q_k)^2}=
+	\frac{1}{(q_i-q_j)^2}-
+	\frac{1}{(q_j-q_i)^2}+\\+
+	\sum_{k\neq i,k\neq j}^{} \frac{(q_j-q_i)(q_i+q_j-2q_k)}{(q_i-q_k)^2
+	(q_j-q_k)^2}=
+	\sum_{k\neq i,k\neq j}^{} \frac{(q_j-q_i)(q_i+q_j-2q_k)}{(q_i-q_k)^2
+	(q_j-q_k)^2}
+,\end{multline*} 
+также получаем, что
+\[
+\dot{q}_k=p_k
+.\] 
+%\begin{multline*}
+%\delta_{ij}\dot{p}_i+
+%(\delta_{ij}-1) \frac{\nu \left(\dot{q_i}-\dot{q}_j\right)}{(q_i-q_j)^2}=
+%\left( \delta_{ik}p_i +(1-\delta_{ik}) \frac{\nu}{q_i-q_k} \right) \left( 
+%\delta_{kj} d_k-(1-\delta_{kj}) \frac{\nu}{(q_k-q_j)^2}\right)-
+%\\-
+%\left( \delta_{ik}d_i+(1-\delta_{ik})
+%	\frac{\nu}{(q_i-q_k)^2}\right) \left( \delta_{kj}p_k+(1-\delta_{kj})
+%\frac{\nu}{q_k-q_j}\right)
+%.\end{multline*}
+%\begin{multline*}
+%\delta_{ij}\dot{p}_i+
+%(\delta_{ij}-1) \frac{\nu \left(\dot{q_i}-\dot{q}_j\right)}{(q_i-q_j)^2}=
+%\left( \delta_{ik}p_i +(1-\delta_{ik}) \frac{\nu}{q_i-q_k} \right) \left(
+%(\delta_{kj}-1) \frac{\nu}{(q_k-q_j)^2}\right)-
+%\\-
+%\left( \delta_{kj}p_k+(1-\delta_{ji})
+%\frac{\nu}{q_j-q_i}\right) \frac{\partial }{\partial q_i} 
+%\left((1-\delta_{ij})
+%\frac{\nu}{q_i-q_j}\right) 
+%.\end{multline*}
+%Для $i=j$:
+%\[
+%\dot{L}_{ii}= L_{ij}M_{ji}-M_{ij}L_{ji}
+%.\] 
 \end{sol}
 \end{document}

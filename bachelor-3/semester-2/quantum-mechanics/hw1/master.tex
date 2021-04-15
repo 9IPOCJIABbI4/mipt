@@ -1,0 +1,193 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Домашняя работа по квантовой механике}
+\begin{document}
+	\maketitle
+\section*{Первое задание}
+\begin{hiProb}[1]
+Вычислите интеграл по траекториям:
+\[
+	Z[\mathbf{J}(\cdot )]= \int\limits_{\mathbf{z}(0)=
+	\mathbf{y},\ \mathbf{z}(t)=\mathbf{x}}^{} 
+	\mathcal{D} \mathbf{z}(\tau) e^{
+	i \int\limits_{0}^{t} d\tau \left[ 
+\frac{m\dot{\mathbf{z}}^2(\tau)}{2}+\mathbf{J}(\tau)
+\mathbf{z}(\tau)\right]  }
+.\] 
+\end{hiProb}
+\begin{sol}
+Разложим переменную интегрирования следующим образом:
+\[
+	\mathbf{z}(\tau)=\mathbf{z}_{cl}(\tau)+\mathbf{q}(\tau)
+,\]
+где
+\[
+	\mathbf{z}_{cl}(0)=\mathbf{y},\
+	\mathbf{z}_{cl}(t)=\mathbf{x},\quad
+	\mathbf{q}(0)=0,\
+	\mathbf{q}(t)=0
+.\] 
+Т.\:к.
+\[
+	\mathcal{L}= \frac{m \dot{\mathbf{z}}_{cl}^2}{2}+\mathbf{J}(\tau)\mathbf{z}_{cl}
+,\]
+то
+\[
+	m\ddot{\mathbf{z}}_{cl}=\mathbf{J}(\tau)
+ \] 
+и
+\[
+S_{cl}= \int\limits_{0}^{t} d\tau
+\left( \frac{m}{2} \dot{\mathbf{z}}^2_{cl}+
+\mathbf{J}(\tau) \mathbf{z}_{cl}\right) 
+.\] 
+Тогда
+\[
+S= S_{cl}+ \int\limits_{0}^{t} d\tau
+\left[ m \dot{\mathbf{z}}_{cl}\dot{\mathbf{q}}+
+\mathbf{J}(\tau) \mathbf{q}\right] +\int\limits_{0}^{t}  d\tau \frac{m \dot{\mathbf{q}}^2}{2}
+.\] 
+\[
+\int\limits_{0}^{t}d \tau \left[ 
+m \dot{\mathbf{z}}_{cl} \dot{\mathbf{q}}\right] = 
+\left. m \dot{\mathbf{z}}_{cl} \mathbf{q} \right|_{0}^t 
+	- \int\limits_{0}^{t}  d\tau \ddot{\mathbf{z}} _{cl}\mathbf{q}m
+	=- \int\limits_{0}^{t}  d\tau \ddot{\mathbf{z}} _{cl}\mathbf{q}m
+.\] 
+\[
+\int\limits_{0}^{t}d\tau \left[ 
+m \dot{\mathbf{z}}_{cl} \dot{\mathbf{q}}+
+\mathbf{J} \mathbf{q}\right] =
+\int\limits_{0}^{t}  d\tau \left[ 
+\mathbf{J}(\tau) \mathbf{q}-
+\ddot{\mathbf{z}}_{cl}\mathbf{q} m\right] =
+\int\limits_{0}^{t} d\tau
+\mathbf{q} \underbrace{\left[ -m \ddot{\mathbf{z}}_{cl}
++\mathbf{J}(\tau)\right] }_{=0}=0
+.\] 
+Следовательно
+\[
+	S=S_{cl}+ \int\limits_{0}^{t} d\tau \frac{m \dot{\mathbf{q}}^2}{2} 
+.\] 
+Значит
+\[
+	Z= \exp \left( 
+		i \frac{S_{cl}(t,\,\mathbf{x},\,\mathbf{y})}{\hbar  }\right) \underbrace{\int\limits_{\mathbf{q}(0)=\mathbf{0},\ 
+	\mathbf{q}(t)=\mathbf{0}}
+	\mathcal{D} \mathbf{q}(\tau)
+	\exp \left( \frac{i}{\hbar }
+\int\limits_{0}^{t} d\tau \frac{m \dot{\mathbf{q}}^2}{2} \right) }_{K(t| \mathbf{0},\,\mathbf{0})}
+.\] 
+\begin{multline*}
+	K(t|\mathbf{x},\,\mathbf{y})=
+	\Bra{\mathbf{x}}e^{-\frac{i}{\hbar } \frac{
+	\widehat{\operatorname{\mathbf{p}}}^2}{2m}t}\Ket{\mathbf{y}}=
+	\bra{\mathbf{x}}e^{-\frac{i}{\hbar } \frac{
+	\widehat{\operatorname{\mathbf{p}}}^2}{2m}t}
+	\int\limits_{\mathbb{R}^3}^{} d^3 \mathbf{p} 
+	\ket{\mathbf{p}}\braket{\mathbf{p|}\mathbf{y}}=\\=
+	\int\limits_{\mathbb{R}^3}^{} d^3 
+	\mathbf{p} e^{-\frac{i}{\hbar } \frac{
+	\mathbf{p}^2}{2m}t}\frac{1}{(2\pi \hbar )^3}
+	e^{-\frac{i \mathbf{p} (\mathbf{x}-\mathbf{y})}{\hbar }}
+.\end{multline*} 
+\[
+	K(t|\mathbf{0},\,\mathbf{0})=
+	\int\limits_{\mathbb{R}^3}^{} 
+	d^3 \mathbf{p} e^{-\frac{i}{\hbar }
+	\frac{\mathbf{p}^2}{2m}t} \frac{1}{
+(2\pi \hbar )^3}=
+\frac{1}{(2\pi \hbar )^3} \sqrt{\frac{\pi^3}{
+i \left(\frac{t}{2m\hbar }\right)^3}}=
+\left( \sqrt{ \frac{m}{2\pi \hbar  t i}}  \right) ^3
+.\] 
+%На лекциях мы нашли
+%\[
+%	K_\omega\left( t|x,\,y \right) =
+%	\sqrt{ \frac{m\omega}{2\pi i \hbar \sin 
+%	\omega t}} e^{ 
+%\frac{i}{\hbar } S_{cl}}
+%.\] 
+%В нашем случае $\omega\to 0$, поэтому
+%\[
+%	\mathbf{z}_{cl}(\tau)=
+%	\frac{1}{2} \mathbf{J} \tau (\tau-t )+\frac{\tau (\mathbf{x}-\mathbf{y})}{t }+\mathbf{y}
+%.\] 
+%Классическое действие тогда
+%\begin{multline*}
+%	S_{cl}= \int\limits_{0}^{t} \mathcal{L}dt=\\
+%	=
+%	\int\limits_{0}^{t}\left[  
+%	\frac{m}{2}\left( 
+%	\mathbf{J}\left( \tau-\frac{t}{2} \right) +\frac{\mathbf{x}-\mathbf{y}}{t}\right) ^2+
+%	\frac{1}{2}\mathbf{J}^2 \tau (\tau-t)+
+%	\frac{\tau}{t}\left( \mathbf{x}-\mathbf{y},\,
+%	\mathbf{J}\right) +\left( 
+%\mathbf{y},\,\mathbf{J}\right)\right] d\tau=
+%\\=\frac{m}{2}\left( 
+%\mathbf{J}^2 \frac{t^3}{12}+\frac{\left(\mathbf{x}-\mathbf{y}\right)^2}{t}\right) 
+%-\mathbf{J}^2 \frac{t^3}{12}+
+%(\mathbf{x}-\mathbf{y},\,\mathbf{J})\frac{t}{2}+
+%(\mathbf{y},\,\mathbf{J})t
+%.\end{multline*} 
+%Далее, раскладывая отклонение от классического
+%пути по Фурье, и в
+\end{sol}
+\begin{hiProb}[2]
+Волновая функция гармонического осциллятора с массой
+$m$ и частотой $\omega$ в начальный момент времени
+имеет вид:
+\[
+	\Psi (x,\,t=0)=C e^{- \frac{m\omega}{2\hbar }(x-x_0)^2}
+,\]
+где $C$ и $x_0$ --- некоторые константы.
+Используя ядро оператора эволюции
+для осциллятора, найдите вид волновой функции
+в произвольный момент времени.
+\end{hiProb}
+\begin{sol}
+\[
+	\Psi (t,\,x)=
+	\int\limits_{-\infty}^{\infty} 
+	dy K_\omega (t|x,\,y)\Psi(y|t=0)
+.\] 
+Ядро оператора эволюции для осциллятора:
+\[
+	K_\omega (t|x,\,y)=
+	\sqrt{ \frac{m\omega}{2\pi i \hbar 
+	\sin  \omega t}} 
+	\exp  \left( 
+	\frac{i}{\hbar } S_{cl}
+(t,\,x,\,y)\right) 
+.\] 
+\[
+	S_{cl} (t,\,x,\,y)=
+	\frac{m\omega}{2 \sin \omega t}
+	\left[ 
+	(x^2+y^2) \cos \omega t -2xy\right] 
+.\] 
+\[
+	\Psi(x,\,t=0)=
+	C e^{-\frac{m\omega}{2\hbar }(x-x_0)^2}
+.\] 
+\begin{multline*}
+	\Psi (t|x)=C \sqrt{
+	\frac{m\omega}{ 2\pi i \hbar  \sin \omega
+t}} \int \exp  \left[ 
+\frac{i}{\hbar } \left( \frac{m\omega}{ 2 \sin \omegat} \left\{ (x^2+y^2) \cos  \omega t -2xy \right\} \right) - \frac{m\omega}{2\hbar } (y-x_0)^2\right] dy=\\=C \sqrt{ \frac{m\omega }{2 \pi i \hbar  \sin  \omega
+t}}  \int \exp  \left[ 
+\left( \frac{im\omega \cos \omega t}{2\hbar 
+\sin \omega t}- \frac{m\omega}{2\hbar } \right) y^2-
+\frac{im \omega}{\hbar \sin  \omega t }xy
++\frac{m\omega}{\hbar }x_0y
++ \frac{im\omega \cos \omega t}{2\hbar  \sin \omega t}x^2 - \frac{m\omega}{2\hbar } x_0^2\right] dy=\\=
+C \sqrt{ \frac{m\omega }{2\pi i \hbar  \sin \omega
+t}}  \exp  \left[ 
+\frac{im \omega}{2\hbar } \ctg  \omega t\cdot x^2-
+\frac{m\omega}{2\hbar }x_0^2\right] \cdot 
+\int \exp  \left[ 
+\left( \frac{im \omega \cos  \omega t}{2\hbar 
+\sin \omega t}- \frac{m\omega}{2\hbar } \right) \right] 
+.\end{multline*} 
+\end{sol}
+\end{document}
