@@ -1,5 +1,19 @@
 \documentclass[a4paper]{article}
 \input{../../preamble.tex}
+\makeatletter
+\newcommand\incircbin
+{%
+  \mathpalette\@incircbin
+}
+\newcommand\@incircbin[2]
+{%
+  \mathbin%
+  {%
+    \ooalign{\hidewidth$#1#2$\hidewidth\crcr$#1\bigcirc$}%
+  }%
+}
+\newcommand{\oeq}{\incircbin{=}}
+\makeatother
 \title{Домашняя работа по квантовой механике}
 \begin{document}
 	\maketitle
@@ -101,6 +115,94 @@ m \dot{\mathbf{z}}_{cl} \dot{\mathbf{q}}+
 i \left(\frac{t}{2m\hbar }\right)^3}}=
 \left( \sqrt{ \frac{m}{2\pi \hbar  t i}}  \right) ^3
 .\] 
+Найдём теперь $S_{cl}(\mathbf{z}_{cl})$. $\mathbf{z}_{cl}(\tau)$ 
+ищем в виде:
+\[
+	\mathbf{z}(\tau)= \mathbf{a} \tau +\mathbf{b} +
+	\int\limits_{-\infty}^{\infty} G(\tau,\,\tau')
+	\frac{\mathbf{J}(\tau')}{m}d\tau'
+.\] 
+Из уравнения движения $m \ddot{\mathbf{z}}_{cl}=\mathbf{J}(\tau)$ 
+следует:
+\[
+	\frac{d^2 G(\tau,\,\tau')}{d\tau^2}=\delta(\tau-\tau')
+.\] 
+\[
+	G(0,\,\tau')=G(t,\,\tau')=0
+.\] 
+Из условий $\mathbf{z}_{cl}(0)=\mathbf{y}$, $\mathbf{z}_{cl}
+(t)=\mathbf{x}$ следует, что $\mathbf{b}=\mathbf{y}$, 
+$\mathbf{a}=(\mathbf{x}-\mathbf{y}) /t$. Тогда
+решение имеет вид:
+\[
+	G(\tau,\,\tau')=(\tau-\tau')\theta(\tau-\tau')+
+	C_1 (\tau')\tau +C_2(\tau')
+.\] 
+\[
+	G(0,\,\tau')=\tau' \theta(-\tau')+C_2(\tau')=0\implies
+	C_2(\tau')=\tau' \theta(-\tau')
+.\] 
+\begin{multline*}
+	G(t,\,\tau')=(t-\tau') \theta(t-\tau')+
+	C_1(\tau') t+ \tau'\theta(-\tau')\implies\\\implies
+	C_1(\tau')= \frac{-(t-\tau')\theta(t-\tau')-\tau' \theta(-\tau')}{t}
+.\end{multline*} 
+\[
+	G(\tau,\,\tau')=(\tau-\tau') \theta(\tau-\tau')+
+	\frac{\tau}{t} \left[ 
+	-(t-\tau')\theta(t-\tau')-\tau' \theta(-\tau')\right] +
+	\tau' \theta(-\tau')
+.\] 
+Вычислим $S_{cl}$:
+\[
+S_{cl}= \int d\tau \left[ 
+\frac{m \dot{\mathbf{z}}_{cl}^2}{2}- \mathbf{J}(\tau)
+\mathbf{z}_{cl}(\tau)\right] 
+.\] 
+\[
+	\int\limits_{0}^{t} d\tau \frac{m}{2} \left( 
+	\dot{\mathbf{z}}_{cl}\right) ^2 = \int\limits_{0}^{t} 
+	d\tau \frac{d}{d\tau} \left( 
+	\frac{m}{2} \dot{\mathbf{z}}_{cl}\mathbf{z}_{cl}\right) -
+	\int\limits_{0}^{t}  d\tau \frac{m}{2}
+	\mathbf{z}_{cl}\ddot{\mathbf{z}}_{cl}
+.\] 
+\[
+	S_{cl}= \underbrace{\left. \frac{m}{2} \mathbf{z}_{cl} \dot{\mathbf{z}}_{cl}
+\right|_{\tau=0}^{\tau=t}}_{S_{cl1}}+
+\underbrace{\frac{1}{2} \int\limits_{0}^{t} 
+d\tau \mathbf{J}(\tau) \mathbf{z}_{cl}(\tau)}_{S_{cl 2}}.\] 
+\begin{multline*}
+	S_{cl 1}= \frac{m}{2} \mathbf{z}_{cl}(t)
+	\dot{\mathbf{z}}_{cl}(t)-\frac{m}{2}
+	\mathbf{z}_{cl}(0)\dot{\mathbf{z}}_{cl}(0)=
+	\frac{m}{2} \mathbf{x} \left[ 
+	\frac{\mathbf{x}-\mathbf{y}}{t}+
+ \frac{1}{2} \int\limits_{-\infty}^{\infty} \left.
+\frac{dG(\tau,\,\tau')}{d\tau} \right|_{\tau=t}\cdot 
+\mathbf{J}(\tau') d\tau\right] -\\-
+\frac{m}{2} \mathbf{y} \left[ 
+\frac{\mathbf{x}-\mathbf{y}}{t}+\frac{1}{2}
+\int\limits_{-\infty}^{\infty} \left. \frac{dG(\tau,\,\tau')}{
+d\tau} \right|_{\tau=0}\mathbf{J}(\tau') d\tau' \right] 
+.\end{multline*} 
+И, т.\:к. $G(\tau,\,\tau') \neq 0$ только при $\tau' \in 
+\left[ 0,\,t \right] $, то
+\[
+	S_{cl 1}=\frac{m \left| \mathbf{x} -\mathbf{y} \right| ^2}{2t}+ \frac{1}{2t} \int\limits_{0}^{t} 
+	\left( \tau' \mathbf{x} \mathbf{J}(\tau')-
+	(t-\tau') \mathbf{y} \mathbf{J}(\tau')\right) d\tau'
+.\] 
+\[
+S_{cl 2}= \frac{1}{2} \int\limits_{0}^{t} 
+\left(  \frac{\mathbf{x} -\mathbf{y}}{t}\tau+\mathbf{y} \right) 
+\mathbf{J}(\tau) d\tau + \frac{1}{2} \int\limits_{0}^{t} 
+d\tau \int\limits_{-\infty}^{\infty} 
+d\tau' \mathbf{J}(\tau) G(\tau,\,\tau')
+\frac{\mathbf{J}(\tau')}{m}
+.\] 
+Подставляя полученное значение $S_{cl}$, получаем ответ
+для $Z\left[ \mathbf{J}(\cdot ) \right] $.
 %На лекциях мы нашли
 %\[
 %	K_\omega\left( t|x,\,y \right) =
@@ -173,9 +275,9 @@ $m$ и частотой $\omega$ в начальный момент времен
 \begin{multline*}
 	\Psi (t|x)=C \sqrt{
 	\frac{m\omega}{ 2\pi i \hbar  \sin \omega
-t}} \int \exp  \left[ 
-\frac{i}{\hbar } \left( \frac{m\omega}{ 2 \sin \omegat} \left\{ (x^2+y^2) \cos  \omega t -2xy \right\} \right) - \frac{m\omega}{2\hbar } (y-x_0)^2\right] dy=\\=C \sqrt{ \frac{m\omega }{2 \pi i \hbar  \sin  \omega
-t}}  \int \exp  \left[ 
+t}} \times \\\times\int \exp  \left[ 
+\frac{i}{\hbar } \left( \frac{m\omega}{ 2 \sin \omega t} \left\{ (x^2+y^2) \cos  \omega t -2xy \right\} \right) - \frac{m\omega}{2\hbar } (y-x_0)^2\right] dy=\\=C \sqrt{ \frac{m\omega }{2 \pi i \hbar  \sin  \omega
+t}}  \times\\\times\int \exp  \left[ 
 \left( \frac{im\omega \cos \omega t}{2\hbar 
 \sin \omega t}- \frac{m\omega}{2\hbar } \right) y^2-
 \frac{im \omega}{\hbar \sin  \omega t }xy
@@ -184,10 +286,1302 @@ t}}  \int \exp  \left[
 C \sqrt{ \frac{m\omega }{2\pi i \hbar  \sin \omega
 t}}  \exp  \left[ 
 \frac{im \omega}{2\hbar } \ctg  \omega t\cdot x^2-
-\frac{m\omega}{2\hbar }x_0^2\right] \cdot 
+\frac{m\omega}{2\hbar }x_0^2\right] \times\\\times 
 \int \exp  \left[ 
-\left( \frac{im \omega \cos  \omega t}{2\hbar 
-\sin \omega t}- \frac{m\omega}{2\hbar } \right) \right] 
+\underbrace{\left( \frac{im \omega \cos  \omega t}{2\hbar 
+\sin \omega t}- \frac{m\omega}{2\hbar } \right)}_{A} 
+y^2 +2 \underbrace{\left(  - \frac{i m \omega}{2 \hbar \sin  \omega t }x
++\frac{m\omega}{2\hbar }x_0\right)}_{B}y \right] dy=\\=
+C_1 \sqrt{\frac{\pi}{-A}} \exp  \left[ 
+-\frac{1}{4} \cdot 2B\cdot \frac{1}{A}\cdot 2B\right] =
+C_1 \sqrt{\frac{\pi}{-A}} \exp \frac{B^2}{-A}
 .\end{multline*} 
+\[
+	B^2= \left( \frac{m\omega}{2\hbar } \right) ^2
+	\left( -\frac{x^2}{\sin ^2 \omega t}-
+	\frac{2i x x_0}{\sin  \omega t}+x_0^2\right) 
+.\] 
+\begin{multline*}
+	\Psi (t|x)= C_1 \sqrt{ \frac{2\pi \hbar }{- m\omega
+	\left( \frac{i \cos  \omega t}{\sin \omega t}-1 \right) }}\exp  \left[ 
+\frac{-m\omega}{2\hbar } \frac{\left( -\frac{x^2}{\sin \omega t}-2 i x x_0+x_0^2 \sin \omega t \right) }{\left( 
+i \cos  \omega t -\sin  \omega t\right) }\right]  =\\=
+C_1 \sqrt{\frac{-2\pi \hbar  \sin \omega t}{m\omega i}} 
+e^{-\frac{i \omega t}{2}} \exp 
+\left[ \frac{m\omega i e^{-i\omega t}\sin \omega t}{2\hbar }
+\left( - \frac{ix}{\sin \omega t}+x_0 \right) ^2\right] =\\=
+C e^{- \frac{i \omega t}{2}} \exp \left[ 
+\frac{m\omega}{2\hbar }\left( 
+\frac{i \cos \omega t}{\sin  \omega t}x^2-x_0^2
++i e^{-i\omega t}\left( 
+-\frac{x^2}{\sin  \omega t}-2 i x x_0 +x_0^2 \sin \omega t\right) \right) \right]  =\\=
+C e^{- \frac{i\omega t}{2}} \exp \left[ 
+\frac{m\omega }{2\hbar }\left( -x_0^2+
+2x x_0 \cos \omega t +i x_0^2 \sin \omega t \cos \omega t-
+x^2 - 2 i x x_0 \sin \omega t+x_0^2 \sin ^2 \omega t\right) \right] =
+\\=C e^{- \frac{i\omega t}{2}} \exp \left[ 
+\frac{m\omega}{2\hbar } \left( 
+-(x-x_0 \cos \omega t)^2+ i
+\left( \frac{x_0^2}{2} \sin  \omega t- 2 x x_0 \sin \omega t \right) \right) \right] 
+.\end{multline*} 
+\end{sol}
+%\begin{hiProb}[3]
+%\end{hiProb}
+%\begin{sol}
+%\renewcommand{\labelenumi}{\asbuk{enumi})}
+%\begin{enumerate}
+%\item \[S= \int\limits_{0}^{t}  d \tau
+%	\left[ \frac{m \dot{\mathbf{X}}^2}{2}+
+%	\frac{eB}{2c} (x \dot{y}-y\dot{x})\right] =
+%	\int\limits_{0}^{t} d \tau \left[ 
+%	\frac{m \dot{x}^2}{2}+\frac{m\dot{y}^2}{2}+
+%\frac{m\dot{z}^2}{2}+ \frac{eB}{2c}(x\dot{y}-y\dot{x})\right] \]
+%Проварьировав действие, получим уравнения движения:
+%\begin{multline*}
+%0 = \delta S= \int\limits_{0}^{t} d \tau
+%\left[ m \dot{x} \delta \dot{x}+m \dot{y}\delta
+%\dot{y}+ m \dot{z}\delta\dot{z}+
+%\frac{eB}{2c} \left( 
+%x \delta \dot{y}+\dot{y} \delta x-
+%y \delta \dot{x}-\dot{x} \delta y\right) \right] =\\=
+%\int\limits_{0}^{t} d\tau
+%\left[ \left( m\dot{x}- \frac{eB}{2c}y \right) \delta
+%\dot{x}+\left( 
+%m \dot{y}+\frac{eB}{2c}x\right) \delta\dot{y}\right] 
+%.\end{multline*} 
+%\end{enumerate}
+%\end{sol}
+\begin{hiProb}[4]
+\end{hiProb}
+\begin{sol}
+\[
+	\widehat{\operatorname{U}}(t_2,\,t_1)\equiv
+	T e^{i \int\limits_{t_1}^{t_2} dt \widehat{\operatorname{V}}_0 (t)}
+.\] 
+\[
+	\widehat{\operatorname{U}}(t_2,\,t_0)=
+	\sum_{n=0}^{\infty} i^n \int\limits_{t_0}^{t_2} 
+	d\tau_1 \int\limits_{t_0}^{\tau_1} d\tau_2\ldots
+	\int\limits_{t_0}^{\tau_{n-1}} d\tau_n \widehat{\operatorname{V}}_0 (\tau_1) \ldots
+	\widehat{\operatorname{V}}_0 (\tau_n)
+.\] 
+\begin{multline*}
+	\widehat{\operatorname{U}}(t_2,\,t_1)\widehat{\operatorname{U}}(t_1,\,t_0)=
+	\sum_{m=0}^{\infty} \sum_{n=0}^{\infty} 
+	i^{n+m} \int\limits_{t_1}^{t_2} d\tau_1 \ldots
+	\int\limits_{t_1}^{\tau_{n-1}} d \tau_n
+	\int\limits_{t_0}^{t_1} d\tilde{\tau}_1
+	\int\limits_{t_0}^{\tilde{\tau}_1} 
+	d\tilde{\tau}_2 \ldots
+	\int\limits_{t_0}^{\tilde{\tau}_{m-1}} d\tilde{\tau}_m\times\\\times
+	\widehat{\operatorname{V}}_0(\tau_1)\ldots
+	\widehat{\operatorname{V}}_0 (\tau_n)
+	\widehat{\operatorname{V}}_0 (\tilde{\tau}_1)\ldots
+	\widehat{\operatorname{V}}_0(\tilde{\tau}_m)
+	\xlongequal[]{N=n+m}\\=
+	\sum_{N=0}^{\infty} i^N \sum_{n=0}^{N} \int\limits_{t_1}^{t_2} d\tau_1 \int\limits_{t_1}^{\tau_1} 
+	d\tau_2 \ldots \int\limits_{t_1}^{\tau_{n-1}} 
+	d\tau_n \int\limits_{t_0}^{t_1} d\tau_{n+1}
+	\int\limits_{t_0}^{\tau_{n+1}} d\tau_{n+2}
+	\ldots \int\limits_{t_0}^{\tau_{N-1}} d\tau_{N} 
+	\widehat{\operatorname{V}}_0(\tau_1) \ldots
+	\widehat{\operatorname{V}}_0 (\tau_N)=\\=
+	\sum_{N=0}^{\infty} i^N
+	\int\limits_{t_0}^{t_2} d\tau_1 \int\limits_{t_0}^{\tau_1} d\tau_2\ldots
+	\int\limits_{t_0}^{\tau_{n-1}} d\tau_n 
+	\int\limits_{t_0}^{\tau_n} d\tau_{n+1}\ldots
+	\int\limits_{t_0}^{\tau_{N-1}} d\tau_N
+	\widehat{\operatorname{V}}_0(\tau_1)
+	\ldots \widehat{\operatorname{V}}_0 (\tau_N)=
+	\widehat{\operatorname{U}}(t_2,\,t_0)
+\end{multline*} 
+так как 
+\begin{multline*}
+\sum_{n=0}^{N} \int\limits_{t_1}^{t_2} 
+d\tau_1 \int\limits_{t_1}^{\tau_1} d\tau_2\ldots
+\int\limits_{t_1}^{t_{n-1}} d\tau_n \int\limits_{t_0}^{\tau_n} 
+d\tau_{n+1}\ldots \int\limits_{t_0}^{\tau_{N-1}} d\tau_{N}=\\
+= \int\limits_{t_0}^{t_2} d\tau_1 \int\limits_{t_0}^{t_1} 
+d\tau_2 \ldots \int\limits_{t_0}^{\tau_{n-1}} d\tau_n
+\int\limits_{t_0}^{t_1} d \tau_{n+1}
+\int\limits_{t_0}^{\tau_{n+1}} d\tau_{n+2}\ldots
+\int\limits_{t_0}^{\tau_{N-1}} d\tau_N 
+.\end{multline*} 
+Покажем это:
+\[
+N=1:\quad \int\limits_{t_0}^{t_1} d\tau_1+\int\limits_{t_1}^{t_2} d\tau_1=\int\limits_{t_0}^{t_2} d\tau_1   
+.\] 
+\begin{multline*}
+N=2:\quad \int\limits_{t_0}^{t_1}  d\tau_1 \int\limits_{t_0}^{\tau_1} d\tau_2+
+\int\limits_{t_1}^{t_2} d\tau_1 \int\limits_{t_0}^{t_1} 
+d\tau_2+ \int\limits_{t_1}^{t_2} d\tau_1 \int\limits_{t_1}^{\tau_1} d\tau_2=\\=
+\int\limits_{t_0}^{t_1} d\tau_1 \int\limits_{t_0}^{\tau_1} 
+d\tau_2+ \int\limits_{t_1}^{t_2} d\tau_1 \int\limits_{t_0}^{\tau_1} d\tau_2= \int\limits_{t_0}^{t_2} 
+d\tau_1 \int\limits_{t_0}^{\tau_1} d\tau_2 
+.\end{multline*} 
+Далее аналогично.
+\end{sol}
+\begin{hiProb}[5]
+\end{hiProb}
+\begin{sol}
+Гамильтониан Дирака:
+\[
+	\widehat{\operatorname{H}}_D=c \left( 
+	\widehat{\operatorname{\alpha}}_i \widehat{\operatorname{p}}_i\right) +\beta m c^2
+,\]
+где
+\[
+	\alpha_i= \begin{pmatrix} 0 & \sigma_i \\
+	\sigma_i & 0\end{pmatrix} ,\quad
+		\beta=\begin{pmatrix} 1&0&0&0\\0&1&0&0\\
+		0&0&-1&0\\0&0&0&-1\end{pmatrix} 
+.\] 
+\begin{enumerate}
+\item \[
+\left[ \widehat{\operatorname{L}}_i,\,\widehat{\operatorname{H}}_D \right] =
+\hbar \left[ \widehat{\operatorname{l}}_i,\,
+\widehat{\operatorname{H}}_D\right] =
+c \hbar  \widehat{\operatorname{\alpha}}_k\left[ \widehat{\operatorname{l}}_i,\,\widehat{\operatorname{p}}_k \right] 
+.\] 
+Т.\:к. $\left[ \widehat{\operatorname{l}}_i,\,\widehat{\operatorname{p}}_k \right] = i \epsilon _{ikl} \widehat{\operatorname{p}}_l$, то
+\[
+\left[ \widehat{\operatorname{L}}_i,\,\widehat{\operatorname{H}}
+_D\right] = i \hbar  \epsilon _{ikl} \alpha_k 
+\widehat{\operatorname{p}}_l c
+.\] 
+\item 
+\[
+\widehat{\operatorname{S}}_i= \hbar /2
+\begin{pmatrix} \sigma_i & 0 \\ 0 & \sigma_i \end{pmatrix} =
+\frac{\hbar}{2} \Sigma_i'
+.\] 
+\[
+\left[ \widehat{\operatorname{S}}_i, \widehat{\operatorname{H}}_D \right] = \frac{\hbar}{2}
+\left[ \widehat{\operatorname{\Sigma}}_i',\,\widehat{\operatorname{H}}_D \right] =
+\frac{\hbar}{2} c \widehat{\operatorname{p}}_k \left[ 
+\Sigma_i',\,\widehat{\operatorname{\alpha}}_k\right] +
+\frac{\hbar }{2} m c^2 \left[ 
+\Sigma_i',\,\beta\right] 
+.\] 
+\[
+\left[ \Sigma_i',\,\beta \right] =
+\begin{pmatrix} \sigma_i & 0 \\ 0 & \sigma_i \end{pmatrix} 
+\begin{pmatrix} \widehat{\operatorname{1}} & 0 \\ 0&-\widehat{\operatorname{1}} \end{pmatrix} -
+\begin{pmatrix} \widehat{\operatorname{1}}& 0\\ 0 &
+-\widehat{\operatorname{1}}\end{pmatrix} 
+	\begin{pmatrix} \sigma_i & 0\\ 0 & \sigma_i \end{pmatrix} =0
+.\] 
+\begin{multline*}
+\left[ \Sigma_i',\,\alpha_k \right] =
+\begin{pmatrix}\sigma_i & 0\\ 0 & \sigma_i  \end{pmatrix} 
+\begin{pmatrix} 0 & \sigma_k\\ \sigma_k &0 \end{pmatrix} -
+\begin{pmatrix} 0 & \sigma_k \\ \sigma_k & 0 \end{pmatrix} 
+\begin{pmatrix} \sigma_i & 0 \\ 0&\sigma_i \end{pmatrix} =\\=
+\begin{pmatrix} 0 & \sigma_i \sigma_k \\
+\sigma_i \sigma_k &0\end{pmatrix} -
+	\begin{pmatrix} 0 & \sigma_k \sigma_i\\
+	\sigma_k \sigma_i &0\end{pmatrix} =
+		\begin{pmatrix} 0 & \left[ \sigma_i,\,\sigma_k \right] \\ \left[ \sigma_i,\,\sigma_k \right] &0 \end{pmatrix} =\\=
+		2i \epsilon _{ikl} \begin{pmatrix} 
+		0 & \sigma_l \\ \sigma_l &0\end{pmatrix} 
+		= 2i \epsilon _{ikl} \widehat{\operatorname{\alpha}}_l
+.\end{multline*} 
+Следовательно
+\[
+\left[ \widehat{\operatorname{S}}_i,\,\widehat{\operatorname{H}}_D \right] =
+\frac{\hbar }{2}c \widehat{\operatorname{p}}_k \cdot i
+\cdot 2 \cdot  \epsilon _{ikl} \widehat{\operatorname{\alpha}}_l=
+-\hbar c \epsilon _{ikl} \widehat{\operatorname{\alpha}}_{k}
+\widehat{\operatorname{p}}_l \cdot i
+.\] 
+Значит
+\[
+\left[ \widehat{\operatorname{J}}_i,\,\widehat{\operatorname{H}}_D \right] =
+\left[ \widehat{\operatorname{L}}_i,\,\widehat{\operatorname{H}}_D \right] +
+\left[ \widehat{\operatorname{S}}_i,\,\widehat{\operatorname{H}}_D \right] =0
+.\] 
+\end{enumerate}
+\end{sol}
+\begin{hiProb}[6]
+\end{hiProb}
+\begin{sol}
+\[
+	\mathbf{p}= \begin{pmatrix} 0 & 0 & p \end{pmatrix} 
+.\] 
+Уравнение Дирака:
+\[
+i \hbar \frac{\partial }{\partial t} \Psi= \widehat{\operatorname{H}}_D \Psi
+.\] 
+\[
+\widehat{\operatorname{H}}_D= c \widehat{\operatorname{\boldsymbol{\alpha }}}
+\cdot \widehat{\operatorname{\mathbf{p}}}+\beta mc^2
+.\] 
+\[
+	\alpha_i = \begin{pmatrix} 0 & \sigma_i \\
+	\sigma_i &0\end{pmatrix} ,\quad \beta=
+		\begin{pmatrix} \widehat{\operatorname{1}}& 0\\
+		0 & -\widehat{\operatorname{1}}\end{pmatrix} 
+.\] 
+Ищем решение в виде
+\[
+	\Psi_\alpha= U_\alpha (p) e^{\frac{i}{\hbar }
+	\left( \mathbf{p} \mathbf{r} -\epsilon t \right) },\quad
+	(\alpha=1,\,2,\,3,\,4)
+.\] 
+\[
+	\epsilon  U= \begin{pmatrix} mc^2 & c
+	\left( \boldsymbol{\rho},\,\boldsymbol{\sigma}\right)\\
+c \left( \boldsymbol{\rho},\,\boldsymbol{\sigma} \right) &
+-mc^2 \end{pmatrix} U
+.\] 
+\[
+U= N \begin{pmatrix} \phi\\ \chi \end{pmatrix} ,\quad
+U^\dagger U=1,\quad \phi^\dagger \phi=1
+,\]
+где $\phi,\ \chi$ --- биспиноры.
+\[
+	\begin{pmatrix} mc^2-\epsilon  & c \boldsymbol{\rho}
+	\boldsymbol{\sigma}\\ c \boldsymbol{\rho}\boldsymbol{\sigma} & -mc^2 -\epsilon \end{pmatrix} \begin{pmatrix} \phi\\\chi \end{pmatrix} =0
+,\]
+откуда
+\[
+\left\{
+\begin{aligned}
+	(mc^2 -\epsilon ) \phi+ c \boldsymbol{\rho}\boldsymbol{\sigma}\chi&= 0, \\
+	c \boldsymbol{\rho}\boldsymbol{\sigma} \phi-
+	(mc^2 +\epsilon ) \chi&= 0. \\
+\end{aligned}
+\right.
+\] 
+Откуда
+\[
+\chi= \frac{c \boldsymbol{\rho \boldsymbol{\sigma}}}{\epsilon +mc^2}\phi
+.\] 
+\[
+	(mc^2-\epsilon ) \phi + \frac{c^2 (\boldsymbol{\rho}\boldsymbol{\sigma})^2}{\epsilon +mc^2}=0
+.\] 
+Следовательно
+\[
+\epsilon ^2=p^2c^2+m^2 c^4
+.\] 
+\[
+	1 = U^\dagger U=|N|^2 (\phi^\dagger \phi+
+	\chi^\dagger \chi)= |N|^2 \left( 
+	\phi^\dagger \phi+ \phi^\dagger
+\frac{c \boldsymbol{\rho }\boldsymbol{\sigma}c \boldsymbol{\rho\sigma}}{(\epsilon +mc^2)^2}\phi\right) 
+\xlongequal[]{*}
+.\] 
+Т.\:к.
+\[
+\sigma_i \sigma_k = i \epsilon _{ikl} \sigma_l +\delta_{ik},\quad
+(\boldsymbol{\sigma\rho})^2= \sigma_i p_i \sigma_k p_k=
+|\mathbf{p}|^2
+,\]
+то
+\[
+	\xlongequal[]{*}|N|^2 \left( 
+	\phi^\dagger \phi +
+\frac{c^2|\mathbf{p}|^2}{(\epsilon +mc^2)^2}\phi^\dagger \phi\right) =
+|N|^2 \left( 1+ \frac{\epsilon -mc^2}{\epsilon +mc^2} \right) 
+\implies N= \sqrt{\frac{\epsilon +mc^2}{2\epsilon }} 
+.\] 
+Пусть $\hbar =1$, тогда
+\[
+	\Sigma_i = \frac{1}{2} \begin{pmatrix}  \sigma_i & 0\\
+	0 & \sigma_i\end{pmatrix} 
+.\] 
+\[
+\left< \Sigma_i \right> = \frac{U^\dagger \Sigma_i U}{
+U^\dagger U}= \frac{|N|^2}{2} \begin{pmatrix} \phi^\dagger
+& \chi^\dagger\end{pmatrix} \begin{pmatrix} 
+\sigma_i & 0\\ 0 & \sigma_i\end{pmatrix} \begin{pmatrix} 
+\phi& \chi\end{pmatrix} =
+\frac{|N|^2}{2} \left( \phi^\dagger \sigma_i \phi+
+\chi^\dagger \sigma_i \chi\right) 
+.\] 
+$\mathbf{p}$ направлен вдоль оси $Z$, поэтому 
+\[
+	\chi= \frac{c |\mathbf{p}| \sigma_z \phi}{\epsilon +mc^2}\implies \left<\Sigma_i \right> =
+	\frac{|N|^2}{2}\left( 
+	\phi^\dagger \sigma_i \phi+  \phi^\dagger
+	\frac{\sigma_z \sigma_i \sigma_z}{(\epsilon +mc^2)^2}
+	\phi |\mathbf{p}|^2 c^2\right)
+.\] 
+Т.\:к. $\sigma_z \sigma_x \sigma_z=- \sigma_x$,
+$\sigma_z \sigma_y \sigma_z=- \sigma_y$, то
+\begin{multline*}
+\left<\Sigma_{1,2} \right> =
+\frac{|N|^2}{2} \left( 
+\phi^\dagger \sigma_{1,2} \phi - \phi^\dagger
+\sigma_{1,2} \phi \frac{|p|^2 c^2}{(\epsilon +mc^2)^2}\right) =\\=
+\frac{\epsilon +mc^2}{4\epsilon } \left( 
+1- \frac{\epsilon ^2 -m^2 c^4}{(\epsilon +mc^2)^2}\right) 
+(\phi^\dagger \sigma_{1,2} \phi)=\\=
+\frac{\epsilon +mc^2}{4\epsilon } \left( 
+1- \frac{\epsilon -mc^2}{\epsilon +mc^2}\right) (\phi^\dagger
+\sigma_{1,2} \phi) =\frac{mc^2}{2\epsilon }(\phi^\dagger\sigma_{1,2} \phi)
+.\end{multline*} 
+\begin{multline*}
+	\left<\Sigma_3 \right> = \frac{|N|^2}{2} \left( 
+		\phi^\dagger \sigma_z \phi+ \phi^\dagger
+	\sigma_z \phi \frac{|\mathbf{p}|^2 c^2}{(\epsilon +mc^2)^2}\right) =\\=
+	\frac{(\epsilon +mc^2)}{4\epsilon }
+	(\phi^\dagger \sigma_z \phi) \left( 
+	1+ \frac{\epsilon ^2 -m^2 c^4}{(\epsilon +mc^2)^2}\right) =\\=
+	\frac{\epsilon +mc^2}{4\epsilon } \left( 
+	\frac{\epsilon +mc^2 +\epsilon  -mc^2}{\epsilon +mc^2}\right) (\phi^\dagger \sigma_z \phi)=
+	\frac{1}{2} (\phi^\dagger \sigma_z \phi)
+.\end{multline*} 
+Таким образом
+\[
+\left<\Sigma_{1,2} \right> = \frac{mc^2}{2\epsilon }
+(\phi^\dagger \sigma_{1,2} \phi),\quad
+\left<\Sigma_3 \right> =\frac{1}{2} (\phi^\dagger \sigma_z \phi)
+.\] 
+\end{sol}
+\begin{hiProb}[7]
+\end{hiProb}
+\begin{sol}
+\renewcommand{\labelenumi}{\asbuk{enumi})}
+\begin{enumerate}
+\item \[
+\widehat{\operatorname{S}}_i= \widehat{\operatorname{S}}_{1i}
++ \widehat{\operatorname{S}}_{2i}= \frac{1}{2} (\sigma_1)_i
++\frac{1}{2} (\sigma_2)_i
+.\] 
+\[
+	\widehat{\operatorname{\mathbf{S}}}^2= \widehat{\operatorname{\mathbf{S}}}_1^{2}+
+	\widehat{\operatorname{\mathbf{S}}}_2^2 +2 \widehat{\operatorname{\mathbf{S}}}_1 \widehat{\operatorname{\mathbf{S}}}_2
+.\] 
+Так как $\left[ \widehat{\operatorname{\mathbf{S}}}^2,\,
+\widehat{\operatorname{S}}_z\right] =0$, $\left[ 
+\widehat{\operatorname{\mathbf{S}}}^2,\, \widehat{\operatorname{\mathbf{S}}}^2_1\right] =0$,
+$\left[ \widehat{\operatorname{\mathbf{S}}}^2,\,
+\widehat{\operatorname{\mathbf{S}}}_2^2\right] =0$,
+$
+	\left[ \widehat{\operatorname{\mathbf{S}_1^2}},\,
+	\widehat{\operatorname{S}}_{1i}\right] =0
+,$ 
+$\left[ \widehat{\operatorname{\mathbf{S}_1^2}},\,
+\widehat{\operatorname{\mathbf{S}_2^2}}\right] =0$,
+то будем искать волновые функции, которые
+являются собственными для следующего набора
+операторов: $\widehat{\operatorname{\mathbf{S}^2}},\
+\widehat{\operatorname{S}}_z,\ \widehat{\operatorname{\mathbf{S}_1^2}},\ \widehat{\operatorname{\mathbf{S}_2^2}}$.
+
+
+Такие функции составляются из:
+\[
+	\widehat{\operatorname{\mathbf{S}_1^2}}
+	\chi_{\pm  \frac{1}{2}}(1)=
+	\frac{3}{4} \chi_{\pm \frac{1}{2}}(1)
+.\] 
+\[
+	\widehat{\operatorname{\mathbf{S}_2^2}}
+	\chi_{\pm  \frac{1}{2}}(2)=
+	\frac{3}{4} \chi_{\pm \frac{1}{2}}(2)
+.\]
+\[
+	\widehat{\operatorname{S}}_{1z}
+	\chi_{\pm  \frac{1}{2}}(1)=
+	\pm  \frac{1}{2} \chi_{\pm \frac{1}{2}}(1)
+.\]
+\[
+	\widehat{\operatorname{S}}_{2z}
+	\chi_{\pm  \frac{1}{2}}(2)=
+	\pm  \frac{1}{2} \chi_{\pm \frac{1}{2}}(2)
+.\]
+Пусть $\Psi_{SM}$ --- собственные функции. Тогда
+\[
+\left\{
+\begin{aligned}
+	\widehat{\operatorname{\mathbf{S}^2}}
+	\Psi_{SM}&= S(S+1)\Psi_{SM}\\
+	\widehat{\operatorname{S}}_z\Psi_{SM}&=
+	M \Psi_{SM}
+\end{aligned}
+\right.
+.\] 
+При $S=1$, $M=\pm 1$:
+\[
+	\Psi_{1,1}=\chi_{\frac{1}{2}}(1)\chi_{\frac{1}{2}}(2),\quad
+	\Psi_{1,-1}=\chi_{-\frac{1}{2}}(1)
+	\chi_{-\frac{1}{2}}(2)
+.\] 
+Понижающий оператор: $\widehat{\operatorname{S}}_-=
+ \widehat{\operatorname{S}}_{1-}+ \widehat{\operatorname{S}}_{2-}$.
+\[
+\widehat{\operatorname{S}}_- \ket{1,\,1}=
+\sqrt{2}  \ket{1,0}
+,\]
+т.\:к. $\widehat{\operatorname{j}}_{\pm }\ket{j,\,m}
+=\sqrt{j(j+1)-m(m\pm 1)} \ket{j,\,m\pm 1}$.
+Значит
+\begin{multline*}
+\Psi_{1,0}= \frac{1}{\sqrt{2} }
+\widehat{\operatorname{S}}_- \Psi_{1,1}= \frac{1}{\sqrt{2} } \left( \widehat{\operatorname{S}}_{1-}+ \widehat{\operatorname{S}}_{2-} \right) 
+\chi_{\frac{1}{2}}(1) \chi_{\frac{1}{2}}(2)=\\=
+\frac{1}{\sqrt{2} }\left( \chi_{\frac{1}{2}}(1)
+\chi_{-\frac{1}{2}}(2)+\chi_{-\frac{1}{2}}(1)
+\chi_{\frac{1}{2}}(2)\right) 
+.\end{multline*} 
+Следовательно, спиновые функции для $S=1$ \emph{симметричны} по отношению к перестановкам
+спиновых переменных.
+
+$\Psi_{1,0}$ и $\Psi_{0,0}$ должны быть
+ортогональны. Будем искать $\Psi_{0,0}$ в виде:
+\[
+	\Psi_{0,0}= A \chi_{\frac{1}{2}}(1)\chi_{-\frac{1}{2}}(2)+B\chi_{-\frac{1}{2}}(1)\chi_{\frac{1}{2}}(2)
+.\] 
+Из ортогональности $\Psi_{1,0}$, $\Psi_{0,0}$ 
+следует, что $A+B=0$, значит
+\[
+	\Psi_{0,0}= \frac{1}{\sqrt{2} } \left( 
+	\chi_{\frac{1}{2}}(1) \chi_{-\frac{1}{2}}(2) -\chi_{-\frac{1}{2}}(1) \chi_{\frac{1}{2}}(2)\right) 
+.\] 
+Волновые функции, отвечающие значению суммарного
+спина $S=0$, \emph{антисимметричны} по отношению
+к перестановкам  спиновых переменных.
+\item Оператор углового момента:
+	\[
+	\widehat{\operatorname{J}}_i= \widehat{\operatorname{L}}_i +\widehat{\operatorname{S}}_i\implies
+	\widehat{\operatorname{\mathbf{J}}}^2=
+	\widehat{\operatorname{\mathbf{L}}}^2+
+	\widehat{\operatorname{\mathbf{S}}}^2+
+	2 \widehat{\operatorname{\mathbf{L}}}
+	\widehat{\operatorname{\mathbf{S}}}
+	.\] 
+	Так как $\left[ \widehat{\operatorname{\mathbf{J}}}^2,\,J_z \right] =0$, $\left[ \widehat{\operatorname{\mathbf{J}J}}^2,
+	\widehat{\operatorname{\mathbf{L}}}^2\right] =0$,
+	$\left[ \widehat{\operatorname{\mathbf{J}}}^2,\,
+	\widehat{\operatorname{\mathbf{S}}}^2\right] =0$,
+	то будем искать волновую функцию, яввляющуюся
+	собственной для $\widehat{\operatorname{\mathbf{J}}}^2$, $
+	\widehat{\operatorname{J}}_z$, $
+	\widehat{\operatorname{\mathbf{L}}}^2$,
+	$\widehat{\operatorname{\mathbf{S}}}^2$.
+Пусть $\hbar =1$. Тогда $\widehat{\operatorname{j}}_z= \widehat{\operatorname{l}}_z+ \widehat{\operatorname{s}}_z= - i \frac{\partial }{\partial \phi} + \frac{1}{2}\sigma_z$. Следовательно
+\[
+\left\{
+\begin{aligned}
+	\frac{\partial }{\partial \phi} \Psi_1&=i \left( 
+	m-\frac{1}{2}\right) \Psi_1,\\
+		\frac{\partial }{\partial \phi} \Psi_2&=
+	i\left( m-\frac{1}{2} \right) \Psi_2,
+\end{aligned}
+\right.
+\] 
+где
+\[
+\Psi= \begin{pmatrix} \Psi_1\\\Psi_2 \end{pmatrix} ,\quad
+J_z \Psi =m \Psi
+.\] 
+Откуда
+\[
+	\Psi_1= f(\theta) e^{i\left( m-\frac{1}{2} \right) \phi},\quad
+	\Psi_2=f(\theta) e^{i \left( m+\frac{1}{2} \right) \phi}
+.\] 
+\[
+	\widehat{\operatorname{\mathbf{L}}}^2 \Psi= l(l+1) \Psi
+.\] 
+Значит
+\[
+	\Psi_1= C_1 Y _l^{\left( m-\frac{1}{2} \right) },\quad
+	\Psi_2=C_2 Y _l ^{\left( 
+	m+\frac{1}{2}\right) },
+\]
+где $Y_l^{(m)}(\theta,\,\phi)$ --- сферические
+функции.
+
+По условию $\Psi_1$ и $\Psi_2$ должны удовлетворять
+уравнению:
+\[
+	\widehat{\operatorname{\mathbf{J}}}^2\Psi=j(j+1)
+	\Psi
+.\] 
+Матрицы Паули:
+\[
+	\sigma_1= \begin{pmatrix} 0 & 1\\ 1&0 \end{pmatrix} ,\quad \sigma_2
+	\begin{pmatrix} 0 &-i\\ i & 0 \end{pmatrix} ,\quad
+	\sigma_3 = \begin{pmatrix} 1 &0 \\ 0& -1 \end{pmatrix} 
+.\] 
+\[
+	\widehat{\operatorname{\mathbf{J}}}^2=
+	\widehat{\operatorname{\mathbf{L}}}^2+
+	\widehat{\operatorname{\mathbf{S}}}^2+
+	2 \widehat{\operatorname{\mathbf{L}}}
+	\widehat{\operatorname{\mathbf{S}}}=
+	\widehat{\operatorname{\mathbf{L}}}^2+
+	\widehat{\operatorname{\mathbf{S}}}^2+
+	l_i \sigma_i=
+	\begin{pmatrix} \widehat{\operatorname{\mathbf{l}}}^2+ \frac{3}{4}+
+	\widehat{\operatorname{l}}_z & \widehat{\operatorname{l}}_-\\
+\widehat{\operatorname{l}}_+&
+\widehat{\operatorname{\mathbf{l}}}^2+ \frac{3}{4}- \widehat{\operatorname{l}}_z\end{pmatrix} 
+.\] 
+\[
+\widehat{\operatorname{j}}_{\pm }
+\ket{j,\,m}= \sqrt{j(j+1)-m(m\pm 1)} 
+\ket{j,\,m\pm 1}
+.\] 
+\begin{multline*}
+	\widehat{\operatorname{\mathbf{J}}}^2
+	\begin{pmatrix} \Psi_1\\ \Psi_2  \end{pmatrix} =
+	\widehat{\operatorname{\mathbf{J}}}^2
+	\begin{pmatrix} C_1 Y_l^{\left( m-\frac{1}{2} \right) }\\
+	C_2 Y_l^{\left( m+\frac{1}{2} \right) }\end{pmatrix} =\\
+	=\begin{pmatrix} \left( l(l+1)+\frac{3}{4}
+	+m -\frac{1}{2}\right) C_1 Y_l^{\left( m-\frac{1}{2} \right) }+
+\sqrt{l(l+1) -m^2 +\frac{1}{4}} C_2 Y_l^{\left( m-\frac{1}{2} \right) }\\
+\sqrt{l(l+1)-m^2 +\frac{1}{4}} C_1 Y_{l}^{\left( m+\frac{1}{2} \right) }+\left( (l+1)l-m+\frac{1}{4} \right) C_2 Y_l^{\left( m+\frac{1}{2} \right) }\end{pmatrix} =\\=
+j(j+1) \begin{pmatrix}  C_1 Y_l^{\left( m-\frac{1}{2} \right) }\\C_2 Y_l^{\left( m+\frac{1}{2} \right) }  
+ \end{pmatrix} .\end{multline*} 
+Следовательно
+\[
+\left\{
+\begin{aligned}
+	\left( l(l+1)+m+\frac{1}{4}-j(j+1) \right) C_1 +\sqrt{l(l+1)-m^2+\frac{1}{4}} C_2&= 0 ,\\
+	\sqrt{l(l+1)-m^2+\frac{1}{4}} C_1+
+	\left( l(l+1)-m+\frac{1}{4}-j(j+1) \right) C_2&= 0 .\\
+\end{aligned}
+\right.
+\] 
+Чтобы система имела нетривиальное решение:
+\[
+	\left( \left( l+\frac{1}{2} \right) ^2-
+	j(j+1)\right) ^2-m^2 - \left( 
+\left( l+\frac{1}{2} \right) ^2-m^2\right) =0
+.\] 
+\[
+	j(j+1)= \left( l+\frac{1}{2} \right) ^2
+	\pm  \left( l+\frac{1}{2} \right) =A
+.\] 
+\[
+j^2\pm j-A=0
+.\] 
+Откуда
+\[
+j= \frac{-1+ \sqrt{1+4A} }{2}
+\]
+(т.\:к. $j>0$). Значит
+\begin{align*}
+	j_1 &= -\frac{1}{2}+ \sqrt{\frac{1}{4}+
+	\left( l+\frac{1}{2} \right) \left( 
+l+\frac{1}{2}+1\right) } =
+l+1-\frac{1}{2}=l+\frac{1}{2},\\
+		j_2&= -\frac{1}{2} + \sqrt{\frac{1}{4}+\left( 
+		l+\frac{1}{2}\right) \left( 
+l-\frac{1}{2}\right) } =l-\frac{1}{2}\\
+.\end{align*}
+Нормировка:
+\[
+	\int \left( |\Psi_1|^2+
+	|\Psi_2|^2\right) d\Omega=|C_1|^2+|C_2|^2=1
+.\] 
+\renewcommand{\labelenumii}{\arabic{enumii})}
+\begin{enumerate}
+\item \[
+j=l+\frac{1}{2}\implies l=j-\frac{1}{2}
+.\] 
+\[
+	\left( j^2-\frac{1}{4}+m+\frac{1}{4}-j^2-j \right) C_1+\sqrt{jj^2-\frac{1}{4}-m^2+\frac{1}{4}}
+	C_2=0
+.\] 
+\[
+	C_2= \frac{(j-m)C_1}{\sqrt{j^2-m^2} }=
+	\sqrt{\frac{j-m}{j+m}} C_1
+.\] 
+\[
+C_1^2+\frac{j-m}{j+m}C_1^2=\frac{2j}{j+m}C_1^2=1
+\implies \left\{
+\begin{aligned}
+C_1= \sqrt{\frac{j+m}{2j}} ,\\
+C_2= \sqrt{\frac{j-m}{2j}}. 
+\end{aligned}
+\right. 
+\] 
+Следовательно
+\[
+	\Psi= Y_{lm}^{\left( l+\frac{1}{2} \right) }=
+	\begin{pmatrix} \sqrt{\frac{j+1}{2j}} 
+	Y_l^{\left( m-\frac{1}{2} \right)} (\theta,\,\phi)\\
+\sqrt{\frac{j-1}{2j}} Y_l^{\left( m+\frac{1}{2} \right) }(\theta,\,\phi)\end{pmatrix} 
+.\] 
+\item \[
+j=l-\frac{1}{2}\implies l=j+\frac{1}{2}
+.\] 
+\[
+	\left( j^2+2j+\frac{3}{4}+m+\frac{1}{4}-j^2-j \right) C_1+ \sqrt{j^2+2j+\frac{3}{4}-m^2+\frac{1}{4}} C_2=0
+.\] 
+\[
+	C_2= -\frac{(j+m+1)C_1}{\sqrt{j^2+2j+1-m^2} }
+	=-\frac{(j+m+1)C_1}{\sqrt{(j+1)^2-m^2} }=
+	- \sqrt{\frac{j+m+1}{j+1-m}} C_1
+.\] 
+\[
+	C_1^2+\frac{j+m+1}{j+1-m}C_1^2=\frac{2(j+1)}{j+1-m}C_1^2=1\implies
+	\left\{
+	\begin{aligned}
+		C_1&= \sqrt{\frac{j+1-m}{2(j+1)}} ,\\
+		C_2&= - \sqrt{\frac{j+1+m}{2(j+1)}}. 
+	\end{aligned}
+	\right.
+\] 
+Откуда
+\[
+	\Psi=Y_{lm}^{\left( l-\frac{1}{2} \right) }=
+	\begin{pmatrix} -\sqrt{\frac{j+1-m}{2(j+1)}} Y_l^{\left( m-\frac{1}{2} \right) }(\theta,\,\phi)\\
+	-\sqrt{\frac{j+1+m}{2(j+1)}} Y_l^{\left( m+\frac{1}{2} \right) }(\theta,\,\phi)\end{pmatrix} 
+.\] 
+\end{enumerate}
+\item
+	\[
+	\widehat{\operatorname{L}}_i= \widehat{\operatorname{L}}_{1i}+ \widehat{\operatorname{L}}_{2i}
+	.\] 
+	\[
+	\widehat{\operatorname{L}}^2=
+	\widehat{\operatorname{L}}_1^2+
+	\widehat{\operatorname{L}}_2^2+
+	2 \widehat{\operatorname{\mathbf{L}}}_1
+	\widehat{\operatorname{\mathbf{L}}}_2
+	.\] 
+Т.\:к. $\left[ \widehat{\operatorname{L}}^2,\,\widehat{\operatorname{L}}_z \right]$,
+$
+\left[ \widehat{\operatorname{L}}^2,\,\widehat{\operatorname{L}}_1^2 \right] =0
+,$ 
+$
+\left[ \widehat{\operatorname{L}}^2,\,\widehat{\operatorname{L}}_2^2 \right] =0
+$,
+то будем искать волновые функции, являющиеся
+собственными для $\widehat{\operatorname{L}}^2,\ 
+ \widehat{\operatorname{L}}_z,\ \widehat{\operatorname{L}}_1^2,\ \widehat{\operatorname{L}}_2^2$. Они составляются
+ из:
+\[
+	\widehat{\operatorname{L}}_1^2 \phi_{l_1 m_1}(1)= l_1 (l_1+1) \phi_{l_1 m_1}(1)
+.\] 
+\[
+	\widehat{\operatorname{L}}_{1z}\phi_{l_1 m_1}(1) = m_1 \phi_{l_1 m_1}(1) 
+.\] 
+\[
+	\widehat{\operatorname{L}}_2^2 \phi_{l_2 m_2}(2)= l_2 (l_2+1) \phi_{l_2 m_2}(2)
+.\] 
+\[
+	\widehat{\operatorname{L}}_{2z}\phi_{l_2 m_2}(2) = m_2 \phi_{l_2 m_2}(2) 
+.\] 
+Пусть $\Psi_{LM}$ --- искомые функции, тогда
+\[
+\widehat{\operatorname{L}}^2 \Psi_{LM}=
+L(L+1) \Psi_{LM}
+.\] 
+\[
+\widehat{\operatorname{L}}_z \Psi_{LM}=
+M \Psi _{LM}
+.\] 
+\[
+\Psi_{LM}= \sum_{}^{} C_{l_1 m_1 l_1 m_2}^{LM}
+\phi_{l_1 m_1}\phi_{l_2 m_2}
+.\] 
+При $L=2$, $M=\pm 2$:
+\[
+	\Psi_{2,2}= \phi_{1,1}(1)\phi_{1,1}(2)
+.\] 
+\[
+	\Psi_{2,-2}=\phi_{1,-1} (1)\phi_{1,-1}
+	(2)
+.\] 
+Понижающий оператор: $\widehat{\operatorname{L}}_-
+= \widehat{\operatorname{L}}_{1-} + \widehat{\operatorname{L}}_{2-}$,
+\[
+\widehat{\operatorname{L}}_- \Psi_{2,2}=
+\sqrt{2\cdot 3-2} \Psi_{2,1}=2 \Psi_{2,1}
+.\] 
+\begin{multline*}
+\Psi_{2,1}= \frac{1}{2} \widehat{\operatorname{L}}_-
+\Psi_{2,2} = \frac{1}{2} \left( 
+\widehat{\operatorname{L}}_{1-}+\widehat{\operatorname{L}}_{2-}\right) 
+\phi_{1,1} (1) \phi_{1,1}(2)=\\=
+\frac{1}{2} \left( \sqrt{2} \phi_{1,0}
+(1) \phi_{1,1} (2) +\sqrt{2}  \phi_{1,1}(1)
+\phi_{1,0} (2)\right) =\\=\frac{1}{\sqrt{2} }
+\left( \phi_{1,0} (1) \phi_{1,1}(2)
++ \phi_{1,1}(1) \phi_{1,0} (2)\right) 
+.\end{multline*} 
+\[
+\widehat{\operatorname{L}}_+ \Psi_{2,2}
+= \sqrt{ 6+2\cdot (-1)} \Psi_{2,-1}=
+2\cdot  \Psi_{2,-1}
+.\] 
+\[
+\Psi_{2,-1}= \frac{1}{2} \widehat{\operatorname{L}}_+
+\Psi_{2,-2}= \frac{1}{\sqrt{2} }
+\left( \phi_{1,0}(1)\phi_{1,-1}(2)+
+\phi_{1,-1}(1)\phi_{1,0}(2)\right) 
+.\] 
+\[
+\widehat{\operatorname{L}}_- \Psi_{2,1}=
+\sqrt{6} \Psi_{2,0}
+.\] 
+\begin{multline*}
+\Psi_{2,0}= \frac{1}{\sqrt{6\cdot 2} }
+\left( \widehat{\operatorname{L}}_{1-}+
+\widehat{\operatorname{L}}_{2-}\right) 
+\left( \phi_{1,0}(1)\phi_{1,1}(2)+
+\phi_{1,1}(1) \phi_{1,0}(2)\right) =\\=
+\frac{1}{\sqrt{12} } \left( 
+\sqrt{2} \phi_{1,-1}(1) \phi_{1,1}(2)
++\sqrt{2}  \phi_{1,1} (1) \phi_{1,-1}(2)+
+2\sqrt{2} \phi_{1,0}(1)\phi_{1,0}(2)\right) 
+=\\= \frac{1}{\sqrt{6} } \left( 
+\phi_{1,-1} (1)\phi_{1,1}(2)+\phi_{1,1}(1)
+\phi_{1,-1}(2)+2\phi_{1,0}(1)\phi_{1,0}(2)\right) 
+.\end{multline*} 
+Коэффициенты Клебша-Гордана:
+\[
+C_{1,\pm 1,1,\pm 1}^{2,\pm 2}=1,\quad
+C_{1,\pm 1,1,0}^{2,\pm 1}=C_{1,0,1,\pm 1}^{
+2,\pm 1}= \frac{1}{\sqrt{2} },\quad
+\] 
+\[
+C_{1,\pm 1,1,\mp 1}^{2,0}= \frac{1}{\sqrt{6} },\quad
+C_{1,0,1,0}^{2,0}=\frac{2}{\sqrt{6} }=\sqrt{\frac{2}{3}} 
+.\] 
+Соотношение ортогональности:
+\[
+\sum_{m_1,m_2}^{} C_{j_1 m_1 j_2 m_2}^{
+JM} C_{j_1 m_1 j_2 m_2}^{J' M'}=
+\delta_{JJ'}\delta_{MM'}
+.\] 
+\[
+\sum_{J,M}^{} C_{j_1 m_1 j_2 m_2}^{J M}
+C_{j_1 m_1' j_2 m_2'}^{JM}=
+\delta_{m_1 m_1'}\delta_{m_2 m_2'}
+.\] 
+Значит
+\[
+	\frac{1}{\sqrt{2} }\left( C_{1,1,1,0}^{1,1}+C_{1,0,1,1}^{1,1} \right) =0
+.\] 
+Из условия нормировки:
+\[
+\Psi_{1,1}= \frac{1}{\sqrt{2} }
+\left( \phi_{1,0} (1) \phi_{1,1}(2) -\phi_{1,1}
+(1) \phi_{1,0}(2)\right) 
+.\] 
+Аналогично:
+\[
+\Psi_{1,-1}= \frac{1}{\sqrt{2} }
+\left( \phi_{1,0}(1) \phi_{1,1}(2)-\phi_{1,1}
+(1) \phi_{1,-1}(2)\right) 
+.\] 
+\[
+\widehat{\operatorname{L}}_{-} \Psi_{1,1}=
+\sqrt{2}  \Psi_{1,0}
+.\] 
+Следовательно
+\begin{multline*}
+\Psi_{1,0}= \frac{1}{2}
+\left( \widehat{\operatorname{L}}_{1-}+
+\widehat{\operatorname{L}}_{2-}\right) 
+\left( \phi_{1,0}(1)\phi_{1,1}(2)
+-\phi_{1,1}(1)\phi_{1,0}(2)\right) =\\=
+\frac{1}{\sqrt{2} }
+\left( \phi_{1,-1}(1)\phi_{1,1}(2)-
+\phi_{1,1}(1)\phi_{1,-1}(2)\right) 
+.\end{multline*} 
+Из соотношения ортогональности
+при $M'=M=0,\ L'=2,\ L=0$:
+\[
+	\frac{1}{\sqrt{6} }\left( 
+	C_{1,1,1,-1}^{0,0}+C_{1,-1,1,1}^{0,0}\right) +
+	\frac{2}{\sqrt{6} }C_{1,0,1,0}^{0,0}
+.\] 
+И при $L'=1,\ L=0$:
+\[
+	\frac{1}{\sqrt{2} }\left( C_{1,1,1,-1}^{0,-}-C_{1,-1,1,1}^{0,0} \right) =0
+.\] 
+Поэтому
+\[
+C_{1,1,1,-1}^{0,0}=C_{1,-1,1,1}^{0,0}
+.\] 
+\[
+C_{1,0,1,0}^{0,0}=-C_{1,1,1,-1}^{0,0}
+.\] 
+Используя условие нормировки получаем:
+\[
+	\Psi_{0,0}=\frac{1}{\sqrt{3} }\left( 
+	\phi_{1,-1}(1)\phi_{1,1}(2)+
+\phi_{1,1}(1)\phi_{1,-1}(2)-\phi_{1,0}(1)\phi_{1,0}(2)\right) 
+.\] 
+Функции $\Psi_{LM}$ при $L=0,\, 2$  \emph{симметричны}
+по отношению к перестановке частиц, а при $L=1$ 
+--- \emph{антисимметричны}.
+\end{enumerate}
+\end{sol}
+\begin{hiProb}[8]
+\end{hiProb}
+\begin{sol}
+Псевдовектор Паули-Любанского:
+\[
+W^\mu= -\frac{1}{2}\epsilon ^{\mu\nu\lambda\rho}
+p_\nu S_{\lambda\rho}
+,\]
+где $S_{oa}=K^a$, $S_{ab}=\epsilon _{abc}J^c$,
+$a,\,b=1,\,2,\,3$, $S_{\mu\nu}=-S_{\nu\mu}$.
+$J^a$ и $K^a$ --- генераторы вращений и бустов.
+ \[
+W^2=W_\mu W^\mu= \frac{1}{4} \epsilon _{\mu\nu'\lambda'\rho'}p^{\nu'}S^{\lambda'\rho'}
+\epsilon ^{\mu\nu\lambda\rho}p_\nu S_{\lambda\rho}
+.\] 
+\begin{multline*}
+\epsilon _{\mu\nu'\lambda'\rho'}\epsilon ^{
+\mu\nu\lambda\rho}=-
+\begin{vmatrix} \delta_{\nu'}^\nu &
+\delta_{\lambda'}^\nu & \delta_{\rho'}^\nu\\
+\delta_{\nu'}^\lambda & \delta_{\lambda'}^\lambda & \delta_{\rho'}^\lambda\\
+\delta_{\nu'}^\rho& \delta_{\lambda'}^\rho & \delta_{\rho'}^\rho\end{vmatrix} =\\=
+-\left( \delta_{\nu'}^\nu \delta_{\lambda'}^\lambda
+\delta_{\rho'}^\rho +\delta_{\lambda'}^\nu
+\delta_{\rho'}^{\lambda}\delta_{\nu'}^\rho+
+\delta_{\rho'}^\nu \delta_{\nu'}^\lambda
+\delta_{\lambda'}^\rho\right. - \\ - \left. \delta_{\nu'}^\nu
+\delta_{\nu'}^\nu\delta_{\rho'}^\lambda \delta_{\lambda'}^\rho-
+\delta_{\lambda'}^\nu \delta_{\nu'}^\lambda
+\delta_{\rho'}^\rho-
+\delta_{\rho'}^\nu \delta_{\nu'}^\lambda
+\delta_{\lambda'}^\rho\right) 
+.\end{multline*} 
+Значит
+\begin{multline*}
+	W_\mu W^\mu = -\frac{1}{4} \left( 
+	p^2 S^2 + p^\rho p_\nu
+S_{\lambda\rho}^{\nu\lambda}
++p^\lambda p_\nu S_{\lambda\rho}
+S^{\rho \nu}\right. - \\ - \left.
+p^2 S_{\lambda\rho} S^{\rho\lambda}
+-p^\lambda p_\nu S_{\lambda \rho}
+S^{\nu \rho}
+-p^\lambda p_\nu S_{\lambda \rho
+}S^{\rho \nu}\right) 
+.\end{multline*} 
+Следовательно
+\[
+	W^2= -\frac{1}{2} \left( 
+	p^2 S^2-2p_\nu p^\lambda S_{\lambda\rho}
+S^{\nu\rho}\right) 
+.\] 
+\end{sol}
+\begin{hiProb}[9]
+\end{hiProb}
+\begin{sol}
+\begin{enumerate}
+\item Декартовы координаты.
+\[
+	\mathbf{H}=\rot \mathbf{A},\quad
+	A_x=A_z=0,\quad
+	A_y=\mathbf{H}\mathbf{x}\implies
+	H_z=H,\quad H_y=H_x=0
+.\] 
+Гамильтониан системы:
+\[
+	\widehat{\operatorname{\mathcal{H}}}=
+	\frac{1}{2m} \left[ \widehat{\operatorname{p}}_x +
+	\left( \widehat{\operatorname{p}}_y-
+\frac{e}{c} \mathbf{H}\mathbf{x}\right) ^2+
+\widehat{\operatorname{p}}_z^2\right] 
+.\] 
+Будем искать стационарные состояния:
+\[
+	\widehat{\operatorname{\mathcal{H}}}\Psi
+	=E \Psi
+.\] 
+Заметим, что:
+\[
+\left[ \widehat{\operatorname{p}}_z,\,
+\widehat{\operatorname{\mathcal{H}}}\right] =0,\quad
+\left[ \widehat{\operatorname{p}}_z,\,
+\widehat{\operatorname{\mathcal{H}}}\right] =0
+.\] 
+Значит, будем искать волновые функции в виде
+\[
+\Psi_{E,p_y,p_z}= \frac{1}{2\pi \hbar }
+\exp \left[ 
+\frac{i}{\hbar } \left( p_y y+p_z z \right) \right] 
+\tilde{\Psi}(x)
+,\]
+где коэффициент перед экспонент подобран из
+условия нормировки. Поэтому
+\[
+	\tilde{\Psi}''(x)+\frac{2m}{\hbar ^2}
+	\left[ \left( E-\frac{p_z^2}{2m}-
+	\right)-\frac{m}{2}
+\omega_H^2 \left( x-x_0 \right) ^2\right] 
+\tilde{\Psi}(x)=0
+,\]
+где $\omega_H= \frac{eH}{mc}$, $x_0= \frac{cp_y}{eH}$.
+
+Решение данного уравнения выражается
+через решение уравнения Шрёдингера для 
+гармонического осциллятора с частотой
+$\omega_H$:
+\[
+\Psi_{n,p_y,p_z}= \frac{1}{2\pi \hbar }
+\exp \left( \frac{i}{\hbar }
+\left( p_y y+p_z z \right) \right) 
+\Psi_n^{\text{осц}}(x-x_0)
+.\] 
+\[
+	E_n= \hbar  \omega_H \left( n+\frac{1}{2} \right) + \frac{p_z^2}{2m}
+\] 
+--- уровни Ландау. Уровни энергии не зависят
+от $p_y$, следовательно --- вырождены.
+Ограничим область движения ящиком в виде
+параллелепипеда со сторонами $L_x,\ L_y,\
+L_z$ ($V=L_x L_y L_z$).
+\begin{multline*}
+	\Psi(x_i+L)=\Psi_{x_i}\implies
+	\exp  \left( \frac{i}{\hbar }
+	p_i x_i\right) = \exp \left( 
+\frac{i}{\hbar } p_i (x_i+L_i)\right) \implies
+\\ \implies
+	p_i= \frac{2\pi \hbar }{L}
+	k_i,\quad k_i= 0,\pm 1,\pm 2\ldots
+\end{multline*} 
+Следовательно число квантовых состояний
+в объёме $V$ в расчёте на интервал $\Delta p_z$ 
+и один дискретный уровень:
+\[
+	\Delta N= \frac{L_y L_z}{(2\pi \hbar )^2}
+	\Delta p_y \Delta p_z
+.\] 
+\begin{multline*}
+0<x_0<L_x \implies
+\frac{\Delta p_y c}{eH}= Lx \implies
+\Delta p_y= \frac{eH L_x}{c}\implies\\\implies
+\Delta N= \frac{\Delta p_z}{(2\pi \hbar )^2}
+\frac{eH}{c} L_x L_y L_z \implies
+\Delta N= \frac{eH}{c} \frac{V}{(2\pi \hbar )^2}
+\Delta p_z
+\end{multline*} 
+--- кратность вырождения.
+\item В цилиндрических координатах.
+	\[
+		\widehat{\operatorname{\mathbf{A}}}=
+		\frac{1}{2}
+		\mathbf{H}\times
+		\mathbf{r},\quad
+		\mathbf{H} \parallel z \implies
+		A_z=A_\rho=0,\ A_\phi= \frac{1}{2}
+		H \rho
+	.\] 
+\[
+A_x= -\frac{1}{2} Hy,\quad A_y= \frac{1}{2}
+Hx
+.\] 
+\[
+	\widehat{\operatorname{\mathcal{H}}}
+	= \frac{1}{2m} \left( 
+	\left( \widehat{\operatorname{p}}_x-
+\frac{e}{c} \widehat{\operatorname{A}}_x\right) ^2 +\left( \widehat{\operatorname{p}}_y-
+\frac{e}{c} \widehat{\operatorname{A}}_y\right) +\widehat{\operatorname{p}}_z^2\right) 
+.\] 
+\[
+	\widehat{\operatorname{\mathcal{H}}}=
+	\frac{1}{2m} \left( 
+	\widehat{\operatorname{p}}_x^2 +
+\widehat{\operatorname{p}}_y^2 +
+\widehat{\operatorname{p}}_z^2 +
+\frac{e^2}{c^2} \left( A_x^2 +A_y^2 \right) -
+\frac{2e}{c}\left( A_x p_x +A_y p_y \right) \right) 
+.\] 
+\[
+	\frac{e}{c}H\left( y\widehat{\operatorname{p}}_x -x \widehat{\operatorname{p}}_y \right) =
+	-\frac{e}{c} H \widehat{\operatorname{L}}_z=
+	i \hbar  \frac{e}{c} H \frac{\partial }{\partial \phi} 
+.\] 
+\[
+	\widehat{\operatorname{\mathcal{H}}}=
+	- \frac{\hbar ^2}{2m}\Delta
+	+\frac{e^2}{c^2}
+	\frac{H^2}{8m} \left( x^2+y^2 \right) 
+	+ i \frac{e\hbar }{2mc}
+	H \frac{\partial }{\partial \phi} 
+.\] 
+\[
+	\widehat{\operatorname{\mathcal{H}}}
+	= - \frac{\hbar ^2}{2m}
+	\left( \frac{\partial ^2}{\partial z^2} +
+	\frac{1}{\rho} \frac{\partial }{\partial \rho} \rho \frac{\partial }{\partial \rho} +
+\frac{1}{\rho^2} \frac{\partial ^2}{\partial \phi^2} \right) +
+\frac{i}{2} \hbar  \omega_H \frac{\partial }{\partial \phi} +
+\frac{1}{8} m\omega_H^2 \rho^2
+.\] 
+Т.\:к.
+\[
+	\left[ \widehat{\operatorname{\mathcal{H}}},\,
+	\widehat{\operatorname{p}}_z\right] =0,
+	\quad \left[ 
+	\widehat{\operatorname{\mathcal{H}}},\,
+\widehat{\operatorname{L}}_z\right] =0
+,\] 
+то будем искать волновые функции, удовлетворяющие
+следующим условиям:
+\[
+\widehat{\operatorname{p}}_z \Psi =p_z
+\Psi;\quad
+\widehat{\operatorname{\mathcal{H}}}\Psi
+=E\Psi;\quad
+\widehat{\operatorname{L}}_z\Psi=
+\hbar  M\Psi
+.\] 
+\[
+	\Psi(\rho,\,z,\,\phi)=
+	\Psi_z (z) \Phi(\phi) R(\rho)
+.\] 
+\[
+	\Psi_z (z)= \frac{1}{\sqrt{2 \pi \hbar } }
+	e^{\frac{i p_z z}{\hbar }};\quad
+	\Phi(\phi)= \frac{1}{\sqrt{2\pi} }
+	e^{iM\phi}
+.\] 
+Значит при нормировке
+\[
+	\int\limits_{0}^{\infty} |R(\rho)|^2
+	\rho d\rho=1
+\] 
+получаем
+\[
+	- \frac{\hbar ^2}{ 2m}\left( 
+	\frac{1}{\rho} \frac{d}{d\rho}
+\rho \frac{dR}{d\rho}
+-\frac{M^2}{\rho^2} R\right) -
+\frac{1}{2} \hbar  \omega_H M R+
+\frac{1}{8} M \omega_H^2 \rho^2 R=
+\underbrace{\left( E- \frac{p_z^2}{2M} \right) }_{
+=E_H}R
+\]
+Пусть
+\[
+\epsilon= \frac{E_H}{\hbar  \omega_H},\quad
+\xi= \sqrt{ \frac{2m \omega_H}{\hbar }}\rho= \frac{\sqrt{2} \rho}{\rho_H}
+.\] 
+Тогда
+\[
+R''+\frac{1}{\xi} R' +
+\left( \epsilon - \frac{M^2}{\xi^2}+\frac{M}{2}
+-\frac{\xi^2}{16}\right) R=0
+.\] 
+При $\xi\to 0$ получаем:
+\[
+R''+ \frac{1}{\xi}R'- \frac{M^2}{\xi^2}R=0,\quad
+R \sim  \xi^s \implies
+s(s-1)+s -M^2=0 \implies s=\pm M
+.\] 
+\[
+R|_{\xi\to 0} \sim  \xi^{|M|}
+.\] 
+При $\xi \to \infty$:
+\[
+R''- \frac{1}{16}\xi^2 R=0,\quad
+R \sim  \exp \left( -\alpha \xi^2 \right) 
+.\] 
+Значит
+\[
+	\left( -2\alpha \xi e^{-\alpha \xi^2} \right) '- \frac{1}{16} \xi^2 e^{-\alpha \xi^2}=0
+.\] 
+\[
+-2\alpha e^{-\alpha \xi^2}+
+4 \alpha^2 \xi^2 e^{-\alpha \xi^2}-\frac{1}{16}
+\xi^2 e^{-\alpha \xi^2}=0
+.\] 
+\[
+-\frac{2\alpha}{\xi^2}+4\alpha^2-\frac{1}{16}=0
+.\] 
+Поэтому
+\[
+\alpha=\frac{1}{8}
+,\]
+т.\:к. $\xi\to \infty$. Значит
+\[
+	R(\xi)= e^{-\frac{\xi^2}{8}}\xi^{|M|}
+	W(\xi)
+.\] 
+Для $u= \xi^2 /4$ получим
+\[
+u \frac{d^2 W}{du^2}+
+\left( |M|+1-u \right) \frac{dW}{du}
++\left( \epsilon - \frac{|M|-M+1}{2} \right) 
+W=0
+.\] 
+Раскладывая $\displaystyle W= \sum_{k=0}^{\infty} a_k u^k$, получаем
+\begin{multline*}
+\sum_{k=0}^{\infty} \left[ \left( k(k+1)+
+\left( |M|+1 \right) (k+1)\right) a_{k+1}+
+\left( \epsilon -k - \frac{|M|-M+1}{2} \right) a_k\right] =0
+.\end{multline*} 
+Откуда
+\[
+	a_{k+1}= a_k \frac{2k-2\epsilon  +|M|-M+1}{2(k+1)(k+|M|+1)}\sim \frac{a_k}{k} \text{ при }
+	k\gg 1
+,\] 
+т.\:е. если ряд не обрывается, то $W \sim 
+e^u$ --- ненормируемое решение. Значит
+\[
+\epsilon = n_\rho + \frac{|M|-M+1}{2},\quad
+n_\rho= 0,\,1,\,2,\ldots \text{ --- радиальное кв. число}
+.\] 
+Энергетический спектр:
+\[
+	E_{n \rho_z}= \hbar  \omega_H \left( 
+	n+\frac{1}{2}\right) + \frac{p_z^2}{2m},\quad
+	n= n_\rho+ \frac{|M|-M}{2}= 0,\,1,\,2
+\]
+($n$ --- главное квантовое число).
+
+Уровни энергии вырождены по значениям проекции
+момента на направление магнитного поля: каждому
+фиксированному значению $n$ соответствуют состояния 
+с $M=-n,-n+1,\ldots,\,0,\,1,\ldots,\,\infty$.
+\[
+	R_{n_\rho M}(\rho)=
+	\frac{1}{\rho_H \sqrt{n_\rho r! \left( 
+	|M|+n_\rho\right) !}} \exp 
+	\left( - \frac{\rho^2}{4\rho_H^2} \right) 
+	\left( \frac{\rho}{\sqrt{2} \rho_H} \right) 
+	^{|M|} \underbrace{L_{n_\rho}^{|M|}\left( 
+	\frac{\rho^2}{2\rho_H^2}\right) }_{\substack{\text{присоед. полин.}\\\text{Лагерра}}}
+.\] 
+\end{enumerate}
+\end{sol}
+\begin{hiProb}[12]
+\end{hiProb}
+\begin{sol}
+Обобщая уравнения Клейна-Фока-Гордона
+на случай присутствия ЭМ полей и учитывая
+$\mathbf{A}=\mathbf{0}$ (поле --- электрическое)
+получаем
+\[
+	\left[ \left( i \frac{\hbar}{c}
+	\frac{\partial }{\partial t}- e \phi \right) ^2 + \left( \hbar  \frac{\partial }{\partial x_i}  \right) ^2-
+(mc)^2\right] \Phi=0
+.\] 
+Ищем решение в виде:
+\[
+	\Phi= \Psi(x)e^{-\frac{iEt}{\hbar }}
+.\] 
+\[
+	\left[ \left( E-e\phi \right) ^2-
+	c^2 \widehat{\operatorname{p}}^2-
+m^2 c^4 \right] \Psi=0
+.\] 
+\[
+	\left( E^2- m^2 c^4 \right)\Psi
+	=\left[ c^2 \widehat{\operatorname{p}}^2
+	+2 E e \phi - e^2 \phi^2\right] \Psi
+.\] 
+\[
+\frac{E^2 -m^2 c^4}{2mc^2}\Psi=
+\left( \frac{\widehat{\operatorname{p}}^2}{2m}
++\underbrace{\frac{E}{mc^2}e \phi- \frac{e^2\phi^2}{2mc^2}}_{U_{\text{eff}}}\right) 
+\Psi
+.\] 
+\[
+	U_{\text{eff}}= \frac{E}{mc^2}
+	e\phi- \frac{e^2 \phi^2}{2mc^2}
+.\] 
+При энергии частицы $E \simeq mc^2$, если
+поле достаточно сильное (т.\:е. $e\phi >2mc^2$),
+то эффективный потенциал $U_{\text{eff}}<0$ и 
+частица испытывает притяжение.
+\end{sol}
+\section*{Второе задание}
+\begin{hiProb}[13]
+\end{hiProb}
+\begin{sol}
+Для расчётов используем выражение оператора
+координаты $\widehat{\operatorname{x}}$ 
+для гармонического осциллятора через операторы
+рождения и уничтожения ($x_0$ --- осцилляторная
+единица длины)
+\[
+\widehat{\operatorname{x}}= \frac{x_0}{\sqrt{2} }
+\left( \widehat{\operatorname{a}}^+ +
+\widehat{\operatorname{a}}\right) ,\quad
+x_0= \sqrt{ \frac{\hbar }{m\omega}} 
+.\] 
+\renewcommand{\labelenumi}{\asbuk{enumi})}
+\begin{enumerate}
+\item Поправка первого приближения
+	\[
+	E_n^{(1)}= \bra{n}\widehat{\operatorname{V}}\ket{n}=
+	\alpha\bra{n}\widehat{\operatorname{x}}\ket{n}
+	=
+\frac{\alpha x_0}{\sqrt{2} }
+\bra{n} \widehat{\operatorname{a}}^+ + \widehat{\operatorname{a}}\ket{n}=0
+	.\] 
+Поправка второго приближения
+\[
+E_n^{(2)}= \sum_{k\neq n}^{} \frac{|V_{nk}|^2}{E_n^{(0)}-E_k^{(0)}}=
+\frac{\alpha^2 x_0^2}{2}\left( 
+\frac{n}{\hbar  \omega}- \frac{n+1}{\hbar \omega}\right) = -\frac{\alpha^2}{2m\omega^2}
+,\] 
+где $V_{nk}= \bra{n} \widehat{\operatorname{V}}\ket{k}$, $E_n^{(0)}=
+ \hbar \omega (n+1 /2)$.
+\item Можно показать, что
+	\[
+		\braket{\widehat{\operatorname{x}}^4} =
+	\bra{n} \widehat{\operatorname{x}}^4\ket{n}=
+	\frac{x_0^4}{4} \left( 6n^2+6n+3 \right) 
+	,\]
+\[
+	\braket{\widehat{\operatorname{x}}^{2k+1}}=
+	\bra{n}\widehat{\operatorname{x}}^{2k+1}
+	\ket{n}=0,\quad k=0,\,1,\ldots
+\]
+Тогда знаем поправку первого приближения для слагаемого $Bx^4$, для $Ax^3$ необходимо
+вычислять поправку второго приближения. Суммарная
+поправка равна
+\[
+	\Delta E_n= \frac{3}{2} B \left( \frac{\hbar}{m\omega} \right) ^2 \left[ 
+	n^2+n+\frac{1}{2}\right] -\frac{15}{4}
+	\frac{A^2}{\hbar  \omega}
+	\left( \frac{\hbar }{m\omega} \right) ^3
+	\left[ n^2 +n+ \frac{11}{30} \right] 
+.\] 
+\end{enumerate}
+\end{sol}
+\begin{hiProb}[14]
+\end{hiProb}
+\begin{sol}
+\begin{figure}[ht]
+    \centering
+    \incfig[0.5]{1}
+    \caption{}
+    \label{fig:1}
+\end{figure}
+\renewcommand{\labelenumi}{\asbuk{enumi})}
+\begin{enumerate}
+\item \[
+		\boldsymbol{\mathcal{E}}=
+		\frac{Ze}{R^2}\mathbf{e}_z
+.\] 
+\[
+	\mathbf{d}= \sum_{i}^{} e_i
+	\mathbf{r}_i= e \sum_{i}^{} \mathbf{r}_i
+.\] 
+\[
+	\widehat{\operatorname{V}}= -\boldsymbol{\mathcal{E}} \widehat{\operatorname{\mathbf{d}}}=
+	- \sum_{i}^{} \frac{Ze^2}{R^2} \widehat{\operatorname{z}}_i
+.\] 
+\[
+E^{(1)}= \bra{e_1e_2\ldots e_n}\widehat{\operatorname{V}}\ket{e_i \ldots e_n}
+=0
+.\] 
+\[
+E^{(2)}= \sum_{k \neq n}^{}
+\frac{\left| \bra{\mathbf{e}_k}\widehat{\operatorname{V}}
+\ket{\mathbf{e}_n}\right| ^2}{E_n^{(0)}-E_k^{(0)}}=
+\frac{Z^2 e^4}{R^4} \sum_{k\neq n}^{} 
+\frac{\left\ket{ \bra{\mathbf{e}_k}\sum_{i}^{} \widehat{\operatorname{z}}_i|\mathbf{e}_n} \right| }{}
+.\] 
+\end{enumerate}
 \end{sol}
 \end{document}

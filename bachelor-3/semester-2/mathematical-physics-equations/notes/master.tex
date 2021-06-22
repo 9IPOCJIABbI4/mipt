@@ -1,0 +1,427 @@
+\documentclass[10pt,landscape,a4paper]{article}
+\input{../../preamble.tex}
+\usepackage{tikz}
+\usetikzlibrary{shapes,positioning,arrows,fit,calc,graphs,graphs.standard}
+%\usepackage[nosf]{kpfonts}
+%\usepackage[t1]{sourcesanspro}
+%\usepackage[lf]{MyriadPro}
+%\usepackage[lf,minionint]{MinionPro}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage[top=0mm,bottom=1mm,left=0mm,right=1mm]{geometry}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{microtype}
+
+\let\bar\overline
+
+\definecolor{myblue}{cmyk}{1,.72,0,.38}
+
+\def\firstcircle{(0,0) circle (1.5cm)}
+\def\secondcircle{(0:2cm) circle (1.5cm)}
+
+\colorlet{circle edge}{myblue}
+\colorlet{circle area}{myblue!5}
+
+\tikzset{filled/.style={fill=circle area, draw=circle edge, thick},
+    outline/.style={draw=circle edge, thick}}
+
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+
+%\everymath\expandafter{\the\everymath \color{myblue}}
+%\everydisplay\expandafter{\the\everydisplay \color{myblue}}
+
+\renewcommand{\baselinestretch}{.8}
+\pagestyle{empty}
+
+\global\mdfdefinestyle{header}{%
+linecolor=gray,linewidth=1pt,%
+leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
+}
+
+%\newcommand{\header}{
+%\begin{mdframed}[style=header]
+%\footnotesize
+%\sffamily
+%Шпаргалка~по~урматам
+%\end{mdframed}
+%}
+
+\newcommand{\header}{
+}
+
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {.2ex}%
+                                {.2ex}%x
+                                {%\color{myblue}
+			\sffamily\small\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{1}{0mm}%
+                                {.2ex}%
+                                {.2ex}%x
+                                {\sffamily\bfseries}}
+
+
+
+\def\multi@column@out{%
+   \ifnum\outputpenalty <-\@M
+   \speci@ls \else
+   \ifvoid\colbreak@box\else
+     \mult@info\@ne{Re-adding forced
+               break(s) for splitting}%
+     \setbox\@cclv\vbox{%
+        \unvbox\colbreak@box
+        \penalty-\@Mv\unvbox\@cclv}%
+   \fi
+   \splittopskip\topskip
+   \splitmaxdepth\maxdepth
+   \dimen@\@colroom
+   \divide\skip\footins\col@number
+   \ifvoid\footins \else
+      \leave@mult@footins
+   \fi
+   \let\ifshr@kingsaved\ifshr@king
+   \ifvbox \@kludgeins
+     \advance \dimen@ -\ht\@kludgeins
+     \ifdim \wd\@kludgeins>\z@
+        \shr@nkingtrue
+     \fi
+   \fi
+   \process@cols\mult@gfirstbox{%
+%%%%% START CHANGE
+\ifnum\count@=\numexpr\mult@rightbox+2\relax
+          \setbox\count@\vsplit\@cclv to \dimexpr \dimen@-1cm\relax
+%\setbox\count@\vbox to \dimen@{\vbox to 1cm{\header}\unvbox\count@\vss}%
+\else
+      \setbox\count@\vsplit\@cclv to \dimen@
+\fi
+%%%%% END CHANGE
+            \set@keptmarks
+            \setbox\count@
+                 \vbox to\dimen@
+                  {\unvbox\count@
+                   \remove@discardable@items
+                   \ifshr@nking\vfill\fi}%
+           }%
+   \setbox\mult@rightbox
+       \vsplit\@cclv to\dimen@
+   \set@keptmarks
+   \setbox\mult@rightbox\vbox to\dimen@
+          {\unvbox\mult@rightbox
+           \remove@discardable@items
+           \ifshr@nking\vfill\fi}%
+   \let\ifshr@king\ifshr@kingsaved
+   \ifvoid\@cclv \else
+       \unvbox\@cclv
+       \ifnum\outputpenalty=\@M
+       \else
+          \penalty\outputpenalty
+       \fi
+       \ifvoid\footins\else
+         \PackageWarning{multicol}%
+          {I moved some lines to
+           the next page.\MessageBreak
+           Footnotes on page
+           \thepage\space might be wrong}%
+       \fi
+       \ifnum \c@tracingmulticols>\thr@@
+                    \hrule\allowbreak \fi
+   \fi
+   \ifx\@empty\kept@firstmark
+      \let\firstmark\kept@topmark
+      \let\botmark\kept@topmark
+   \else
+      \let\firstmark\kept@firstmark
+      \let\botmark\kept@botmark
+   \fi
+   \let\topmark\kept@topmark
+   \mult@info\tw@
+        {Use kept top mark:\MessageBreak
+          \meaning\kept@topmark
+         \MessageBreak
+         Use kept first mark:\MessageBreak
+          \meaning\kept@firstmark
+        \MessageBreak
+         Use kept bot mark:\MessageBreak
+          \meaning\kept@botmark
+        \MessageBreak
+         Produce first mark:\MessageBreak
+          \meaning\firstmark
+        \MessageBreak
+        Produce bot mark:\MessageBreak
+          \meaning\botmark
+         \@gobbletwo}%
+   \setbox\@cclv\vbox{\unvbox\partial@page
+                      \page@sofar}%
+   \@makecol\@outputpage
+     \global\let\kept@topmark\botmark
+     \global\let\kept@firstmark\@empty
+     \global\let\kept@botmark\@empty
+     \mult@info\tw@
+        {(Re)Init top mark:\MessageBreak
+         \meaning\kept@topmark
+         \@gobbletwo}%
+   \global\@colroom\@colht
+   \global \@mparbottom \z@
+   \process@deferreds
+   \@whilesw\if@fcolmade\fi{\@outputpage
+      \global\@colroom\@colht
+      \process@deferreds}%
+   \mult@info\@ne
+     {Colroom:\MessageBreak
+      \the\@colht\space
+              after float space removed
+              = \the\@colroom \@gobble}%
+    \set@mult@vsize \global
+  \fi}
+
+\makeatother
+\setlength{\parindent}{0pt}
+\begin{document}
+\small
+\begin{multicols*}{5}
+	\section*{Пространство $S'$}
+Функции медленного роста:
+\[
+	|f(x)|\le C\left( 1+|x|^{2p} \right) 
+.\] 
+\[
+	\left<\mathcal{P} \frac{1}{x-x_0},\,\phi(x) \right> =
+	\operatorname{v.p.} \int\limits_{-\infty}^{\infty} \frac{\phi(x)}{x-x_0}dx 
+.\] 
+\[
+	\mathcal{P} \frac{1}{\left( x-x_0 \right) ^n}
+	=\frac{(-1)^{n-1}}{(n-1)!}
+	\frac{d^{n-1}}{dx^{n-1}}
+	\mathcal{P} \frac{1}{x-x_0}
+.\] 
+\[
+	x^n\mathcal{P} \frac{1}{x^n}=1
+.\] 
+\begin{multline*}
+	\left<\mathcal{P} \frac{1}{|x|},\phi(x) \right> =\\=
+	\int\limits_{|x|<1}^{} \frac{\phi(x)-\phi(0)}{|x|}dx+
+	\int\limits_{|x|\ge 1}^{} \frac{\phi(x)}{|x|}dx 
+.\end{multline*} 
+\[
+	x \mathcal{P}\frac{1}{|x|}=\sign x
+.\] 
+\[
+\left<\partial^\alpha f,\,\phi \right> =
+(-1)^{|\alpha|}\left<f,\,\partial^\alpha \phi \right> 
+.\] 
+\[
+	\frac{d}{dx}\ln |x|= \mathcal{P} \frac{1}{x}
+.\] 
+\[
+	S'\left( \mathbb{R}^3 \right) :\left<\delta_{S_a} (x),\,\phi(x) \right> =
+	\int\limits_{|x|=a}^{} \phi(x)dS_x 
+.\] 
+\section*{Преобразование Фурье}
+\[
+F[\phi(x)](y)=
+\int\limits_{\mathbb{R}^m}^{} e^{i(x,\,y)}
+\phi(x) dx
+.\] 
+\[
+	\left<F[f(x)](y),\,\phi(y) \right> 
+	=\left<f(x),\,F[\phi(y)](x) \right> 
+.\] 
+\[
+	F^{-1}[\phi(x)](y)
+	=\frac{1}{\left( 2\pi \right) ^{m}}
+	\int\limits_{\mathbb{R}^m}^{} 
+	e^{-\left( x,\,y \right) }\phi(x)
+	dx
+.\] 
+\[
+	\left<F^{-1}
+	[f(x)](y),\,\phi(y)\right> =
+	\left<f(x),\,F^{-1}[\phi(y)](x) \right> 
+.\] 
+\[
+	F^{-1}[F[f](y)](x)=
+	F\left[ F^{-1}[f](y) \right] (x)= f(x)
+.\] 
+\begin{multline*}
+	F^{-1}[f(x)](y)=
+	\frac{1}{(2\pi)^{m}}
+	F\left[ f(x) \right] 
+	(-y)=\\= \frac{1}{\left( 2\pi \right) ^m}
+	F\left[ f(-x) \right] (y)
+.\end{multline*} 
+\[
+	\partial^{\alpha} F[f(x)](y)
+	=F\left[ \left( ix \right) ^{\alpha}
+	f(x)\right] (y)
+.\] 
+\[
+	F\left[ \partial^\alpha f(x) \right] 
+	(y)= \left( -iy \right) ^\alpha
+	F[f(x)](y)
+.\] 
+\[
+	F\left[ f(x-x_0) \right] (y)
+	=e^{i(y,\,x_0)}
+	F[f(x)](y)
+.\] 
+\[
+F^{-1}\left[ 
+f(x-x_0)\right] (y)=
+e^{-i \left( y,\,x_0 \right) }
+F^{-1}\left[ f(x) \right] (y)
+.\] 
+\[
+	F\left[ \delta(x-a) \right] (y)
+	=e^{iay}
+.\] 
+\[
+	F[\delta(x)](y)=1
+.\] 
+\[
+	F^{-1}[1](y)=\delta(y)
+.\] 
+\[
+	F^{-1}\left[e^{iax}\right]
+	(y)=\delta(y-a)
+.\] 
+\begin{multline*}
+	F\left[e^{iax}\right]
+	(y)= 2\pi F^{-1}
+	\left[ e^{-iax} \right] (y)
+	=\\=2\pi \delta(y+a)
+.\end{multline*} 
+\[
+	F[1](y)=2\pi \delta (y)
+.\] 
+\[
+	F^{-1} \left[ \delta(x-a) \right] (y)
+	=\frac{1}{2\pi} e^{-iay}
+.\] 
+\[
+	F[\sin x](y)=
+	\pi i \left( 
+	\delta(y+1)-\delta(y-1)\right) 
+.\] 
+\[
+	F[\sign (x)](y)
+	=2i \mathcal{P} \frac{1}{y}
+.\] 
+\[
+	F\left[ \mathcal{P} \frac{1}{x} \right] 
+	(y)=\pi i \sign y
+.\] 
+\[
+	F[\theta (x)](y)= i \mathcal{P} \frac{1}{y}
+	+\pi \delta (y)
+.\] 
+\[
+	F\left[ |x| \right] (y)=-2 \mathcal{P}
+	\frac{1}{y^2}
+.\] 
+\begin{multline*}
+	F\left[ \frac{1}{x+b+ia} \right] (y)
+	=\\= -2\pi i \sign (a) \theta (-ay) e^{ay-iby}
+.\end{multline*} 
+\[
+	S'\left( \mathbb{R}^3 \right) :F\left[ \frac{1}{|x|} \right] (y)=
+	\frac{4\pi}{|y|^2}
+.\] 
+\[
+	F\left[ \delta_{S_a}(x) \right] (y)=
+	\frac{4\pi a }{
+	|y|}\sin \left( a |y| \right) 
+.\]
+\[
+	S'\left(\mathbb{R}^3\right):
+	F\left[|x|\right](y)=
+	-4\pi \Delta \left( \frac{1}{|y|^2} \right) 
+.\] 
+\[
+	S'\left( \mathbb{R}^3 \right) :F[1](y)= (2\pi)^m \delta(y)
+.\] 
+\begin{multline*}
+	S'\left( \mathbb{R}^m \right)\to  S'\left( 
+	\mathbb{R}^n\right) :\\\left<f\left( Ax+b \right) ,\,\phi(x) \right> =\\=\left<F^{-1}[f](y),\,e^{i\left( b,\,y \right) }F[\phi(x)]\left( A^Ty \right)  \right> 
+.\end{multline*} 
+\begin{multline*}
+	S'\left( \mathbb{R}^n \right) :
+	\left<f\left( Ax+b \right) ,\,\phi(x) \right> =\\=
+	\left<f(y),\, \frac{\phi\left( A^{-1}(y-b) \right) }{|\det A|} \right> 
+.\end{multline*} 
+\section*{Функции Грина}
+%\begin{table}[h]
+%\caption{}
+%\label{tab:1}
+%\begin{tabular}{|c|c|}
+%	\hline $\frac{\partial ^2 u}{\partial t^2} 
+%	-a^2 \frac{\partial ^2 u}{\partial x^2} $ &  $\frac{\theta\left( at-|x| \right) }{2a}$   \\
+%	\hline  $\frac{\partial ^2 u}{\partial t^2} -a^2 \Delta u$& $\frac{\delta\left( at-|x| \right) }{4\pi a^2 t}$  \\
+%	\hline 
+%\end{tabular}
+%\end{table}
+\begin{align*}
+	&\text{ЛЧ} &&\mathcal{E}_a(t,\,x) \\
+	&\frac{\partial ^2 u}{\partial t^2} -
+	a^2 \frac{\partial ^2 u}{\partial x^2} 
+	&&\frac{\theta\left( at-|x| \right) }{2a}\\
+	&\frac{\partial ^2 u}{\partial t^2} -
+	a^2 \Delta u
+	&& \frac{\delta\left( at-|x| \right) }{4\pia^2 t}\\
+	&\Delta u-a^2 u
+	&& -\frac{e^{-a|x|}}{4\pi|x|}\\
+	& \Delta u
+	&& -\frac{1}{4\pi |x|}\\
+	& \frac{\partial u}{\partial t} 
+	-a^2 \Delta u
+	&& \frac{\theta(t)}{\left( 2a \sqrt{\pi} 
+	t\right) ^n}e^{- \frac{|x|^2}{4a^2 t}}\\
+.\end{align*}
+\section*{Задачи Коши}
+\begin{multline*}
+	\left<\left( f\left( t,\,x \right) 
+	\right) *\left( \mathcal{E}_a \left( t,\,x \right)  \right),\,\phi(t,\,x) \right> =\\=
+	\lim_{R \to +\infty} 
+	\left< f\left( t,\,x \right) ,\,
+	\eta_{1} \left( \frac{t}{R},\,
+	\frac{x}{R}\right) \right. \times \\ \times \left.
+	\left<\mathcal{E}_a\left( \tau,\,y \right) 
+	,\,\phi\left( t+\tau,\,x+y \right) \right> \right> 
+.\end{multline*}
+Формула Даламбера для
+одномерного
+волнового уравнения с
+правой частью специального вида
+\[
+	\delta'(t)u_0(x)+\delta(t)u_1(x)
+,\]
+где $u_0(x),\ u_1(x)$ --- медленного роста:
+\begin{multline*}
+	u(t,\,x)= \frac{\theta(t)}{2}\left( u_0
+	(x+at)+u_0(x-at)\right) 
+	+\\+\frac{\theta(t)}{2a}
+	\int\limits_{x-at}^{x+at}  
+	u_1\left( \xi \right) d\xi
+.\end{multline*} 
+Формула Кирхгоффа для
+трёхмерного ВУ -//-:
+\begin{multline*}
+	u(t,x)= \frac{\partial }{\partial t} 
+	\left( \frac{\theta(t)}{4\pi a^2 t}
+	\int\limits_{|z-x|=at}^{} u_0(z)d S_z \right) +\\+
+	\frac{\theta(t)}{4\pi a^2 t}
+	\int\limits_{|z-x|=at}^{} 
+	u_1(z)d S_z
+.\end{multline*} 
+\[
+	\left<\mathcal{E}(t,\,x),\,\phi(t,\,x) \right> =\frac{1}{4\pi a^2} \int\limits_{\mathbb{R}^3}^{} \frac{\phi\left( \frac{|x|}{a},\,x \right) }{|x|}dx 
+.\] 
+\[
+	f(x)* \left( -\frac{1}{4\pi |x|} \right) 
+	=-\frac{1}{4\pi} \int\limits_{\mathbb{R}^3}^{} \frac{f(y)}{|x-y|} dy
+.\] 
+\vfill\null
+%\columnbreak
+\end{multicols*}
+ 
+\end{document}

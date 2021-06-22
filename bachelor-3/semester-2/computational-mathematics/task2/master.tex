@@ -1,0 +1,26 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{}
+\begin{document}
+	\maketitle
+\[
+\frac{u_m^{n+1}-u_m^n}{\tau}+a \frac{u_m^n-u_{m-1}^n}{h}
+=f^n_m
+.\] 
+\[
+\left\{
+\begin{aligned}
+	\frac{\rho_m^{n+1}-\rho_m^n}{\tau}+u_m^n \frac{\rho_m^{n}-\rho_{m-1}^n}{h}+\frac{\rho_m^n}{\left( 
+	r_m^n\right) ^2}  \frac{\left(r_m^n  \right)^2u_m^n-\left(r_{m-1}^n  \right)^2u_{m-1}^n}{h}  &=0 ,\\
+	\frac{u_m^{n+1}-u_m^n}{\tau}+u_m^n \frac{u_m^{n}-u_{m-1}^n}{h}+\frac{1}{
+	\rho_m^n} \frac{P_m^n-P_{m-1}^n}{h}  &=0 ,\\
+	\frac{E_m^{n+1}-E_m^n}{\tau}+u_m^n \frac{E_m^{n}-E_{m-1}^n}{h}+\frac{\gamma-1}{\left( 
+	r_m^n\right) ^2}E_m^n\frac{\left(r_m^n  \right)^2u_m^n-\left(r_{m-1}^n  \right)^2u_{m-1}^n}{h}&=0 ,\\
+	E_m^n-\frac{P_m^n}{\rho_m^n (\gamma-1)}=0.
+\end{aligned}
+\right.
+\] 
+\[
+U= \begin{pmatrix} \rho \\ u \\ E \end{pmatrix} 
+.\] 
+\end{document}

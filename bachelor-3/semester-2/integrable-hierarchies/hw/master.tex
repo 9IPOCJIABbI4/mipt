@@ -1,0 +1,120 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Домашняя работа по интегрируемым иерархиям}
+\begin{document}
+	\maketitle
+\begin{hiProb}[2.3]
+\end{hiProb}
+\begin{sol}
+Пусть
+\[
+	(\partial+x)^{-1}
+	=\sum_{n=1}^{\infty} (-1)^{n-1}
+	a_{n-1} \partial^{-n}
+.\] 
+Перемножая, получим
+\[
+	(\partial+x)\left( a_0 \partial^{-1}-
+	a_1 \partial^{-2}+a_2 \partial^{-3}-\ldots\right) =1
+,\]
+а приравнивая коэффициенты при $\partial^{-n}$,
+получим  $a_0=1,\ a_n-x a_{n-1}+\partial a_{n-1}=0$ 
+для $n\ge 1$. Таким образом, $a_0=1$, $a_1=x$,
+$a_2=x^2+1$, $a_3=x^3 +3x$, $a_4=x^4 +6 x^2+3$,
+а общее решение имеет вид
+\[
+a_n= \sum_{k=0}^{\left[ n /2 \right] }
+\frac{n(n-1)(n-2)\ldots (n-2k+1)}{2\cdot 4\cdot 
+6\cdots 2k} x^{n-2k}
+.\] 
+\end{sol}
+\begin{hiProb}[2.5]
+\end{hiProb}
+\begin{sol}
+	Если $l$ чётно, то  $\left( P^{l /2} \right) _+=P^{l /2}$ и, следовательно, $\left[ P,\,\left( P^{l /2} \right) _+ \right] =0$.
+\end{sol}
+\begin{hiProb}[2.10]
+\end{hiProb}
+\begin{sol}
+\[
+L=\partial+ \sum_{j=1}^{\infty} f_j \partial^{-j}
+.\] 
+\[
+\frac{\partial L}{\partial x_j}=
+\frac{\partial }{\partial x_j} \partial
++\sum_{i=1}^{\infty} \left( \frac{\partial f_i}{\partial x_j}\partial^{-i}+f_i \frac{\partial }{\partial x_j} \partial^{-i}  \right) 
+.\] 
+\[
+	B_j=\left( L^j \right) _{+},\quad
+	B_1=\partial,\quad B_2=\partial^2+2f_{1},\quad
+\] 
+\[
+	B_3=\partial^3+3f_1 \partial+ 3\left( \partial
+	f_1\right) +3 f_2
+.\] 
+%\[
+%	\left[ B_1,\,L \right] =\partial^2+\sum_{j=1}^{\infty} \left( (\partial f_j) \partial^{-j}+f_j \partial^{1-j} \right) -
+%	\partial^2-
+%	\sum_{j=1}^{\infty}  f_j \partial^{1-j}=
+%	\sum_{j=1}^{\infty} \left( \partial f_j \right) \partial^{-j}
+%.\] 
+\[
+	\left[ B_2,\,L \right] =-2(\partial f_1)+
+	\sum_{j=1}^{\infty} \left( 
+	(\partial^2 f_j) \partial^{-j}+2\left( \partial f_j \right) \partial^{1-j}+2f_1 f_j \partial^{-j}-2f_j \partial^{-j}\circ f_1\right)
+,\] 
+где
+\[
+	\partial^{-j} \circ f_1= \sum_{k\ge 0}^{} \begin{pmatrix} -j\\k \end{pmatrix} \left( \partial^k f_1 \right) 
+	\partial^{-j-k},\quad
+	\begin{pmatrix}-j\\k  \end{pmatrix} =
+	\frac{-j(-j-1)\ldots(-j-k+1)}{k!}
+.\] 
+\begin{multline*}
+\left[ B_3,\,L \right] =-
+3(\partial f_1)\partial-
+3(\partial^2 f_1)-3(\partial f_2)+
+\sum_{j=1}^{\infty} \left( \left( \partial^3 f_j  \right)\partial^{-j} +
+	3\left( \partial^2 f_j \right)\partial^{1-j}
+	\right. + \\ + \left.3\left( \partial f_j \right) \partial^{2-j}
+	+3f_1 (\partial f_j) \partial^{-j}+
+	3 f_1 f_j \partial^{1-j}-
+	3f_j(\partial^{-j}\circ f_1) \partial\right. + \\ + \left.
+	3(\partial f_1)f_j\partial^{-j}-
+	3f_j \partial^{-j}\circ \left( \partial f_1 \right) 
++3f_2 f_j \partial^{-j}-
+	3f_j\partial^{-j}\circ f_2
+\right) 
+.\end{multline*} 
+
+Из уравнения
+\[
+\frac{\partial L}{\partial x_2} =\left[ B_2,\,L \right] 
+,\] 
+приравнивая коэффициенты при $\partial^{-1}$ и $\partial^{-2}$ , получаем
+\[
+	\frac{\partial f_1}{\partial x_1} 
+	=\partial^2 f_1+2 \partial^2 f_2
+,\]
+\[
+\frac{\partial f_2}{\partial x_2} =\partial^2 f_2+2\partial f_3
++2f_1 \partial f_1
+.\] 
+Из уравнения
+\[
+\frac{\partial L}{\partial x_3} = \left[ B_3,\,L \right] 
+\] 
+аналогично получаем при $\partial^{-1}$ 
+\[
+\frac{\partial f_1}{\partial x_3} =
+\partial^3 f_1 +3\partial^2 f_2+3\partial f_3+6 f_1 \partial f_1
+.\] 
+Выражая $f_2$ и $f_2$ через $f_1$ и обозначая $u=-2f_1$,
+получаем
+\[
+\frac{3}{4}\frac{\partial ^2 u}{\partial x_2} =
+\partial\left( \frac{\partial u}{\partial x_3} +\frac{3}{2} u\partial u-
+\partial^3 u\right) 
+.\] 
+\end{sol}
+\end{document}

@@ -1,0 +1,104 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Фермионный формализм: числа Гурвица}
+\begin{document}
+	\maketitle
+Простые числа Гурвица вводятся для разветвлённого накрытия Римановой сферы двумерной
+поверхностью рода $g$ с $m$ простыми точками
+ветвления и одной точкой с профилем ветвления задаваемым
+разбиением $\mu= \left[ \mu_1,\,\mu_2,\ldots,\,\mu_{l(\mu)} \right] $ и могут быть выражены в терминах симметрических
+групп
+\[
+h_{m;\mu}^{\circ}= \frac{1}{|\mu|!}
+\left| \left\{ \left( \eta_1,\ldots,\,\eta_m \right) ,
+\eta_i \in C_2 \left( S_{|\mu|} \right) \colon 
+\eta_m \circ \cdots \eta_1 \in C_\mu \left( S_{|\mu|} \right) \right\}  \right| 
+,\] 
+где $S_{|\mu|}$ --- симметрическая группа перестановок
+$|\mu|$ элементов, $C_2\left( S_{|\mu|} \right) $ ---
+набор всех транспозиций в $S_{|\mu|}$ и $C_\mu \left( S_{|\mu|} \right) $ --- набор всех циклических перестановок
+типа $\mu$.
+
+В бозонном представлении гипергеометрических  $\tau$-функций
+требуется задать содержание $c(w)$ каждой ячейки $w$ 
+Диаграммы Юнга $\lambda$:
+\[
+	c(w)=j-i,\quad 1\le  i\le l(\lambda),\quad
+	1\le j\le \lambda_i
+.\] 
+
+
+Гипергеометрические  $\tau$-функции в бозонном представлении
+задаются как
+\[
+	\tau(\mathbf{t})= \sum_{\lambda}^{} r_\lambda
+	s_\lambda (\beta) s_\lambda(\mathbf{t}),
+\] 
+где $s_\lambda(\beta)$ --- полином Шура по переменным $\beta_k$
+и
+\[
+	r_\lambda= \left( \prod_{w\in \lambda}^{} r\left( c(w) \right)   \right) 
+.\] 
+
+
+Производящая функция для простых чисел Гурвица принадлежит
+множеству
+гипергеометрических $\tau$-функций и может быть записана
+в виде
+\[
+	\tau_{H}\left( \mathbf{t} \right) =
+	\sum_{\lambda}^{} e^{u c(\lambda)}s_\lambda
+	\left( \beta_k= \delta_{k,1} \right) s_{\lambda}
+	(\mathbf{t})
+,\] 
+где $c(\lambda)= \sum_{w\in \lambda}^{} c(w)$.
+Параметры производящей функции для набора гипергеометрических функций:
+\[
+	r(n)=e^{un},
+\]
+\[
+\beta_1=1,
+\]
+\[
+\beta_k=0,\quad k\ge 2
+.\] 
+Для гипергеометрических $\tau$-функций получается
+\[
+	G=e^{A(\beta)}
+.\] 
+Имеем
+\[
+	A(\beta)=\sum_{k=1}^{\infty} \beta_k A_k=\beta_1 A_1
+	=A_1
+.\] 
+\[
+	A_1= \sum_{n\in \mathbb{Z}}^{} r(n) :\psi_n\psi_{n-1}^*:= \sum_{n\in \mathbb{Z}}^{} e^{un}:\psi_n \psi_{n-1}^*:
+.\] 
+И в каком-то смысле
+\[
+A_1=e^{ui}\delta_{i,j+1}
+.\] 
+\[
+	A_1^2=(e^{ui}\delta_{i,k+1})\left( 
+	e^{uk}\delta_{k,j+1}\right) =
+	e^{u(2i-1)}\delta_{i,j+2}
+.\] 
+\[
+	A_1^3=(e^{u(2i-1)}\delta_{i,k+2})\left( 
+	e^{uk}\delta_{k,j+1}\right) =
+	e^{u(3i-3)}\delta_{i,j+3}
+.\]
+\[
+	A_1^n=\exp \left[u\left(ni-\sum_{k=0}^{n-1}k\right)
+	\right]\delta_{i,\,j+n}
+.\] 
+\[
+G=\sum_{n=1}^{\infty} \frac{A_1^n}{n!}
+.\] 
+\[
+	C_\lambda= \det _{l(\lambda)\times l(\lambda)}
+	\left( G^{-1,-2,-3,\ldots}_{i_{-1},i_{-2},i_{-3}\ldots} \right) 
+.\]
+Где $i_{-k}$ находятся из диаграммы Юнга $\lambda=[i_{-1}+1,
+i_{-2}+2,\ldots]$
+\end{document}

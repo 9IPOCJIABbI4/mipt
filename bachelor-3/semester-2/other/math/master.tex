@@ -1,0 +1,235 @@
+\documentclass[10pt,landscape,a4paper]{article}
+\input{../../preamble.tex}
+\usepackage{tikz}
+\usetikzlibrary{shapes,positioning,arrows,fit,calc,graphs,graphs.standard}
+%\usepackage[nosf]{kpfonts}
+%\usepackage[t1]{sourcesanspro}
+%\usepackage[lf]{MyriadPro}
+%\usepackage[lf,minionint]{MinionPro}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage[top=0mm,bottom=1mm,left=0mm,right=1mm]{geometry}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{microtype}
+
+\let\bar\overline
+
+\definecolor{myblue}{cmyk}{1,.72,0,.38}
+
+\def\firstcircle{(0,0) circle (1.5cm)}
+\def\secondcircle{(0:2cm) circle (1.5cm)}
+
+\colorlet{circle edge}{myblue}
+\colorlet{circle area}{myblue!5}
+
+\tikzset{filled/.style={fill=circle area, draw=circle edge, thick},
+    outline/.style={draw=circle edge, thick}}
+
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+
+\everymath\expandafter{\the\everymath \color{myblue}}
+\everydisplay\expandafter{\the\everydisplay \color{myblue}}
+
+\renewcommand{\baselinestretch}{.8}
+\pagestyle{empty}
+
+\global\mdfdefinestyle{header}{%
+linecolor=gray,linewidth=1pt,%
+leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
+}
+
+\newcommand{\header}{
+\begin{mdframed}[style=header]
+\footnotesize
+\sffamily
+Интересные математические факты для общего развития
+\end{mdframed}
+}
+
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {.2ex}%
+                                {.2ex}%x
+                                {\color{myblue}\sffamily\small\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{1}{0mm}%
+                                {.2ex}%
+                                {.2ex}%x
+                                {\sffamily\bfseries}}
+
+
+
+\def\multi@column@out{%
+   \ifnum\outputpenalty <-\@M
+   \speci@ls \else
+   \ifvoid\colbreak@box\else
+     \mult@info\@ne{Re-adding forced
+               break(s) for splitting}%
+     \setbox\@cclv\vbox{%
+        \unvbox\colbreak@box
+        \penalty-\@Mv\unvbox\@cclv}%
+   \fi
+   \splittopskip\topskip
+   \splitmaxdepth\maxdepth
+   \dimen@\@colroom
+   \divide\skip\footins\col@number
+   \ifvoid\footins \else
+      \leave@mult@footins
+   \fi
+   \let\ifshr@kingsaved\ifshr@king
+   \ifvbox \@kludgeins
+     \advance \dimen@ -\ht\@kludgeins
+     \ifdim \wd\@kludgeins>\z@
+        \shr@nkingtrue
+     \fi
+   \fi
+   \process@cols\mult@gfirstbox{%
+%%%%% START CHANGE
+\ifnum\count@=\numexpr\mult@rightbox+2\relax
+          \setbox\count@\vsplit\@cclv to \dimexpr \dimen@-1cm\relax
+\setbox\count@\vbox to \dimen@{\vbox to 1cm{\header}\unvbox\count@\vss}%
+\else
+      \setbox\count@\vsplit\@cclv to \dimen@
+\fi
+%%%%% END CHANGE
+            \set@keptmarks
+            \setbox\count@
+                 \vbox to\dimen@
+                  {\unvbox\count@
+                   \remove@discardable@items
+                   \ifshr@nking\vfill\fi}%
+           }%
+   \setbox\mult@rightbox
+       \vsplit\@cclv to\dimen@
+   \set@keptmarks
+   \setbox\mult@rightbox\vbox to\dimen@
+          {\unvbox\mult@rightbox
+           \remove@discardable@items
+           \ifshr@nking\vfill\fi}%
+   \let\ifshr@king\ifshr@kingsaved
+   \ifvoid\@cclv \else
+       \unvbox\@cclv
+       \ifnum\outputpenalty=\@M
+       \else
+          \penalty\outputpenalty
+       \fi
+       \ifvoid\footins\else
+         \PackageWarning{multicol}%
+          {I moved some lines to
+           the next page.\MessageBreak
+           Footnotes on page
+           \thepage\space might be wrong}%
+       \fi
+       \ifnum \c@tracingmulticols>\thr@@
+                    \hrule\allowbreak \fi
+   \fi
+   \ifx\@empty\kept@firstmark
+      \let\firstmark\kept@topmark
+      \let\botmark\kept@topmark
+   \else
+      \let\firstmark\kept@firstmark
+      \let\botmark\kept@botmark
+   \fi
+   \let\topmark\kept@topmark
+   \mult@info\tw@
+        {Use kept top mark:\MessageBreak
+          \meaning\kept@topmark
+         \MessageBreak
+         Use kept first mark:\MessageBreak
+          \meaning\kept@firstmark
+        \MessageBreak
+         Use kept bot mark:\MessageBreak
+          \meaning\kept@botmark
+        \MessageBreak
+         Produce first mark:\MessageBreak
+          \meaning\firstmark
+        \MessageBreak
+        Produce bot mark:\MessageBreak
+          \meaning\botmark
+         \@gobbletwo}%
+   \setbox\@cclv\vbox{\unvbox\partial@page
+                      \page@sofar}%
+   \@makecol\@outputpage
+     \global\let\kept@topmark\botmark
+     \global\let\kept@firstmark\@empty
+     \global\let\kept@botmark\@empty
+     \mult@info\tw@
+        {(Re)Init top mark:\MessageBreak
+         \meaning\kept@topmark
+         \@gobbletwo}%
+   \global\@colroom\@colht
+   \global \@mparbottom \z@
+   \process@deferreds
+   \@whilesw\if@fcolmade\fi{\@outputpage
+      \global\@colroom\@colht
+      \process@deferreds}%
+   \mult@info\@ne
+     {Colroom:\MessageBreak
+      \the\@colht\space
+              after float space removed
+              = \the\@colroom \@gobble}%
+    \set@mult@vsize \global
+  \fi}
+
+\makeatother
+\setlength{\parindent}{0pt}
+\title{Шпаргалка к общесосу}
+\begin{document}
+\small
+\begin{multicols*}{5}
+\section{Формулы Тейлора}
+\begin{gather*}
+%	e^x=1+x+\frac{x^2}{2!}+o\left( x^2 \right) \\
+%	\sh x= x+\frac{x^3}{3!}+\frac{x^5}{5!}+o\left( x^6 \right) \\
+%	\ch x= 1+\frac{x^2}{2!}+\frac{x^4}{4!}+o\left( x^5 \right) \\
+%	\sin x= x- \frac{x^3}{3!}+\frac{x^5}{5!}+o\left( x^6 \right)\\
+%	\cos x= 1- \frac{x^2}{2!}+ \frac{x^4}{4!}+ o\left( x^5 \right) \\
+	(1+x)^\alpha=1+\alpha x+ \frac{\alpha(\alpha-1)}{2!}
+	x^2+o\left( x^2 \right) \\
+	\ln (1+x)=x -\frac{x^2}{2}+
+	\frac{x^3}{3}+o\left( x^3 \right) \\
+	\tg x= x+\frac{x^3}{3}+\frac{2}{15}x^5+o(x^6)\\
+	\arctg x=x-\frac{x^3}{3}+\frac{x^5}{5}+
+	o\left( x^6 \right) \\
+	\arcctg x= \frac{\pi}{2}- \arctg x\\
+	\arcsin x=x+\frac{1}{6}x^3+\frac{3}{40}x^5+o\left( x^6 \right)\\
+	\arccos x= \frac{\pi}{2}-\arcsin x
+\end{gather*}
+\section{Производные}
+\begin{gather*}
+	\left( \arcsin x \right) '=
+	\frac{1}{\sqrt{1-x^2} }\\
+	(\arctg x)'=\frac{1}{1+x^2}
+\end{gather*}
+\section{Интегралы}
+\begin{gather*}
+\int \frac{dx}{x^2-a^2}=\frac{1}{2a} \ln \left| \frac{x-a}{x+a} \right| +C\\
+\int \frac{dx}{\sqrt{x^2+a^2} }=\ln \left| x+\sqrt{x^2+a^2}  \right| +C
+.\end{gather*} 
+Дифференциальный бином:
+\[
+	I=\int x^m\left( a+b x^n \right) ^p dx,\ \left(m,\,n,\,p \in \mathbb{Q}\right)
+.\] 
+Замены:
+\begin{itemize}
+	\item $p \in \mathbb{Z}$:\\
+	 $x=t^k$,  $k$ ---
+		общ. знам.  $m$ и $n$
+	\item $\frac{m+1}{n} \in \mathbb{Z}$:\\
+	 $a+bx^n=t^s$,
+		 $s$ --- знам. $p$
+	 \item $p+ \frac{m+1}{n} \in \mathbb{Z}$:\\
+	 $a x^{-n}+b=t^s$, $s$ --- знам. $p$.
+\end{itemize}
+\section{Сходимость}
+\begin{tabular}{|Cc|Cc|Cc|}
+	\hline  & Да & Нет \\
+	\hline $\int\limits_{1}^{+\infty} \frac{1}{x^\alpha} dx$&$\alpha>1$ &$\alpha\le 1$\\
+	\hline $\int\limits_{0}^{1} \frac{1}{x^\alpha} dx$&$\alpha<1$ &$\alpha\ge 1 $\\
+	\hline  $\int\limits_2^{+\infty}\frac{dx}{x^\alpha |\ln  x|^\beta}$ & $\substack{\alpha >1,\ \beta \in \mathbb{R}\\\alpha=1,\ \beta>1}$  & $\substack{\alpha<1,\ \beta \in \mathbb{R}\\\alpha=1,\ \beta\le 1}$ \\
+	\hline $\int\limits_{0}^{1 /2} \frac{dx}{x^\alpha |\ln x |^\beta} $ & $\substack{\alpha <1,\ \beta \in \mathbb{R}\\\alpha=1,\ \beta>1}$ &  $\substack{\alpha >1,\ \beta \in \mathbb{R}\\\alpha=1,\ \beta\le 1}$\\
+	\hline
+\end{tabular}\\
+
+\end{multicols*}
+\end{document}

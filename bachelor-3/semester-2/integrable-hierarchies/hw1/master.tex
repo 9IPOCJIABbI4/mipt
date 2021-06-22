@@ -3,6 +3,7 @@
 \title{Домашнее задание по интегрируемым иерархиям}
 \begin{document}
 	\maketitle
+\section*{Задание 1}
 \begin{hiProb}[Упражнение 1.0]
 \end{hiProb}
 \begin{sol}
@@ -260,5 +261,77 @@ d_i(1-\delta_{ij}) \frac{\nu}{q_i-q_j}
 %\[
 %\dot{L}_{ii}= L_{ij}M_{ji}-M_{ij}L_{ji}
 %.\] 
+\end{sol}
+\section*{Задание 3}
+\begin{hiProb}[Упражнение 1.1]
+\end{hiProb}
+\begin{sol}
+\[
+x^2 \frac{\partial }{\partial x} x=x^2
+.\] 
+\end{sol}
+\begin{hiProb}[Упражнение 1.2]
+\end{hiProb}
+\begin{sol}
+Для уравнения
+\[
+\frac{\partial u}{\partial t} =u^2 u_x +u_{xxx}
+\] 
+\[
+	K(u)=u^2u_x +u_{3x}
+.\] 
+В свою очередь
+\begin{multline*}
+	\frac{\partial }{\partial s} K(u)=
+	(u^2u_x+u_{3x})_s=
+	(u^2)_su_x+u^2u_{sx}+u_{s3x}=\\=
+	2u \hat{K}(u)u_x+u^2 \hat{K}_x(u)  
+	\hat{K}  _{3 x}(u)
+.\end{multline*} 
+Рассматриваем
+\[
+	\hat{K}(u)=Au^4 u_x +B u^2 u_{3x}+Cu u_x u_{2x}
+	+D u^3_x+Eu_{5x}
+.\] 
+Для такого случая
+\begin{multline*}
+	\frac{\partial }{\partial t} \hat{K}(u)=
+	A\left(4u^3 \hat{K}(u)u_x+u^4K_x(u)\right)+
+	B\left(2uK(u)u_{3x}+u^2K_{3x}(u)\right)+\\+
+	C\left( K(u)u_xu_{2x}+uK_x(u)u_{2x}+
+	uu_x K_{2x}(u)\right) +3Du_x^2K_x(u)+
+	E K_{5x}(u)
+.\end{multline*} 
+Из равенства
+\[
+	\frac{\partial }{\partial s} K(u)=
+	\frac{\partial }{\partial t} \hat{K}(u)
+\]
+получаем, принимая $A=1$ (код в Mathematica прилагается):
+\[
+	\hat{K}(u)=u^4u_x+2u^2u_{3x}+8uu_xu_{2x}+
+	2u_x^3+\frac{6}{5}u_{5x}
+.\] 
+Следовательно
+\[
+	\frac{\partial u}{\partial s} =\hat{K}(u)
+\]
+является симметрией данного уравнения.
+\end{sol}
+\begin{hiProb}[Упражнение 1.3]
+\end{hiProb}
+\begin{sol}
+%Рассматривается уравнение
+%\[
+%\frac{\partial B}{\partial t} +\left[ B,\,P \right] =0
+%.\] 
+%\[
+%\frac{\partial ^4}{\partial x^3 \partial t} +
+%b_1 \frac{\partial ^2}{\partial x\partial t} +b_2 \frac{\partial }{\partial t} +
+%.\] 
+Выкладки приложены в Mathematica. Ответ:
+\[
+6uu_x+3u_{xt}+u_{3x}=0
+.\] 
 \end{sol}
 \end{document}

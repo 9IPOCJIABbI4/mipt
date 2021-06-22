@@ -1,0 +1,181 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Неделя №10\\
+Энергетические диаграммы для квазичастичного тока в контактах сверхпроводников. Эффект Джозефсона}
+\begin{document}
+	\maketitle
+\begin{hiProb}[Т10-4]
+\end{hiProb}
+\begin{sol}
+\begin{figure}[ht]
+    \centering
+    \incfig{1}
+    \caption{}
+    \label{fig:1}
+\end{figure}
+Ток возникнет при $eV=\Delta_0=1,76 k_B T_c$, поэтому
+\[
+V= \frac{1.76 k_B T_c}{e}= 0,18 \text{ мВ}
+.\] 
+\end{sol}
+\begin{hiProb}[Т10-5]
+\end{hiProb}
+\begin{sol}
+Предположим сначала, что $I_{c 1}< I_{c 2}$. Тогда первый контакт ---
+это <<узкое место>> и бездиссипативный ток через систему во всяком
+случае не может быть больше, чем $I_{c 1}$. Докажем, что
+он может быть равен $I_{c 1}$. Чтобы это было так, требуется
+$\phi_1 = \pi /2$, и условие равенства токов через два
+контакта даёт $I_{c 1} = I_{c 2} \sin \phi_2$, поэтому такая
+ситуация имеет место при
+\[
+	\cos \phi_c = \cos \left( \frac{\pi}{2}+ \phi_2 \right) 
+	= - \sin \phi_2= - \frac{I_{c 1}}{I_{c 2}},\quad
+	\left| \cos \phi_c \right| <1
+.\]
+Итак, при такой разности фаз достигается критический ток $I_{c 1}$ 
+через систему.
+
+Учитывая произвольное соотношение между $I_{c 1}$ и $I_{c 2}$,
+записываем ответ следующим образом:
+\[
+	I_{c}= \min \left( I_{c 1},\, I_{c 2} \right) ,\quad
+	\cos \phi_c= - \frac{\min \left( I_{c 1},\,I_{c 2} \right) }{
+	\max \left( I_{c 1},\,I_{c 2} \right) }
+.\] 
+\end{sol}
+\begin{hiProb}[Т10-6]
+\end{hiProb}
+\begin{sol}
+Напряжение на джозефсоновском контакте при токе, большем критического,
+связано со скоростью изменения фазы $\displaystyle \frac{d\phi}{dt}=
+2 \frac{eV}{\hbar }$, при этом часть тока течёт по резистивному
+каналу, и в режиме постоянного заданного тока $I=I_c \sin \phi+ V /R=
+ I_c \sin \phi + \frac{\hbar }{2 e R} \frac{d \phi}{dt}$.
+Решением данного дифференциального уравнения будет
+\[
+	\phi(t)= 2 \arctg  \left[ 
+	\frac{I_c}{I} - \frac{\sqrt{I^2- I_c^2} }{I}\tg \left( 
+\frac{C_1 -t}{2}\sqrt{ \left( \frac{2eR}{\hbar } \right) ^2 \left( I^2-
+I_c^2\right) } \right) \right] 
+.\] 
+Выбор константы произволен --- это начало отсчёта времени, полагаем
+$C_1=0$.
+Далее, для интересующего нас напряжения
+\[
+V= \frac{\hbar }{2e} \phi'= \frac{\hbar }{2e}
+\frac{2}{1 + \left[ \frac{I_c}{I}+ \frac{\sqrt{I^2 -I_c^2} }{I}
+\tg  \left( \frac{\omega t}{2} \right) \right] ^2} \frac{\sqrt{
+I^2-I_c^2} }{I} \frac{1}{\cos  ^2 \left( \frac{\omega t}{2} \right) 
+} \frac{\omega}{2}
+,\] 
+где
+\[
+\omega = \frac{2eR}{\hbar } I \sqrt{I^2 -I_c^2} 
+.\] 
+Раскрывая квадрат в знаменателе и пользуясь формулами  двойных
+углов и основным тригонометрическим тождеством:
+\begin{multline*}
+	V= \frac{R(I^2 -I_c^2)}{I \cos ^2 \frac{\omega t}{2} + \frac{I_c^2}{I}\cos ^2 \frac{\omega t}{2} +
+	\frac{I_c \sqrt{I^2 -I_c^2} }{I}\sin  \omega t+
+\frac{I^2-I_c^2}{I}\sin ^2 \frac{\omega t}{2}}=\\=
+\frac{R (I^2- I_c^2)}{I+ \frac{I_c^2}{I}\cos  \omega t+
+\frac{I_c \sqrt{I^2-I_c^2} }{I}\sin \omega t}
+.\end{multline*}
+С использованием формулы для синуса суммы это преобразуется в
+компактный вид
+\[
+	V=\frac{R \left( I^2- I_c^2 \right) }{I+
+	I_c \sin \left( \omega t +\xi \right) }
+,\] 
+фаза $\xi$ зависит от токов, но постоянна в условиях этого 
+опыта и опять равносильна выбору момента нуля отсчёта времени.
+Это приводит к ответу:
+\[
+	V(t)= R \frac{I^2 -I_c^2}{I+I_c \cos \omega t}
+.\]
+При вычислении среднего
+\[
+	\overline{V}=R I_c \overline{\frac{(I /I_c)^2-1}{(I /I_c)+
+	\cos \omega t}}= RI_c \int\limits_{0}^{2\pi} 
+	\frac{(I /I_c)^2 -1}{I/I_c +\cos  x}dx = R I_c
+	\frac{1}{\pi} 
+	\int\limits_{0}^{\pi} \frac{(I /I_c)^2 -1}{I /I_c + \cos x}
+	dx
+.\] 
+Интеграл табличный, получаем
+\[
+	\overline{V}= R I_c \frac{1}{2\pi} \frac{2\left( 
+	(I /I_c)^2-1\right) }{\sqrt{(I /I_c)^2 -1} }\pi=
+	\frac{\hbar  \omega}{2e}
+.\] 
+\end{sol}
+\begin{hiProb}[Т10-7]
+\end{hiProb}
+\begin{sol}
+Через <<рукава >> СКВИДа текут токи $I_a=I_c \sin \phi_a$,
+$I_b= I_c \sin \phi_b$. Это можно представить,
+как сумму текущего симметрично по <<рукавам>> транспортного
+тока $I_{tr }= (I_a +I_b) /2$ и кольцевого тока $I_{loop}= (I_a+I_b) /2$. Этот кольцевой ток приводит к частичному экранированию
+ внешнего магнитного потока. Скачки фаз на джозефсоновских
+контактах будут определяться полным потоком.
+
+Система уравнений СКВИДа при заданном полном токе $I$ принимает вид
+\[
+\left\{
+\begin{aligned}
+\phi_a- \phi_b &= 2\pi \frac{\Phi}{\Phi_0} ,\\
+\Phi&=\Phi_{ext}-L I_{loop}= \Phi_{ext}-L(I_a-I_b) /2 ,\\
+I&=2I_{t r}= I_a+I_b .\\
+\end{aligned}
+\right.
+\] 
+Здесь может возникнуть вопрос о выборе знака во втором уравнении,
+как мы увидим далее знак в ответ не входит, поэтому этот вопрос
+не важен. Вводим переменные $\Delta \phi= \phi_a- \phi_b$,
+$\phi_0= \left( \phi_a+ \phi_b \right) /2$ и подставляем в первое
+уравнение выражение для полного потока:
+\[
+\Delta \phi= 2\pi \frac{\Phi_{ext}}{\Phi_0}-\pi
+\frac{LI}{\Phi_0}\left( \sin \phi_a-\sin \phi_b \right) =
+2\pi \frac{\Phi _{ext}}{\Phi_0}- \pi \beta \cos  \phi_0
+\sin  \frac{\Delta \phi}{2}
+.\] 
+\[
+	I=I_c (\sin \phi_a+ \sin \phi_b) 2I_c \sin 
+	\phi_0 \cos  \frac{\Delta \phi}{2}
+.\] 
+Первое из уравнений определяет разность скачков фаз в зависимости
+от внешнего потока. Максимизируя второе по $\phi_0$, получим
+максимальный бездиссипативный ток.
+
+Для указанных в условии потоков:
+\begin{enumerate}
+	\item $\Phi_{ext}=0$ задаёт $\Delta \phi =0$,
+		откуда максимальный бездиссипативный ток
+		$I_{\max}= 2I_c$ 
+	\item $\Phi_{ext}= \frac{\Phi_0}{2}$ в отсутствие 
+		индуктивности давало бы $\Delta \phi=\pi$, первая
+		малая поправка по $\beta$ очевидно будет
+$\Delta \phi= \pi\beta \cos \phi_0$. Тогда в выражении для
+полного бездиссипативноого тока
+\[
+\cos  \frac{\Delta \phi}{2}\approx
+\cos  \left( \frac{\pi}{2} - \frac{\pi \beta}{2}
+\cos \phi_0 \right) = \sin 
+\left( \frac{\pi\beta}{2} \cos \phi_0 \right) \approx
+\frac{\pi \beta}{2} \cos  \phi_0
+\] 
+и для полного тока имеем $I=I_c \sin 2\phi_0 \frac{\pi \beta}{2}$.
+Соответственно, $I_{\max} (\Phi_0 /2)= \frac{\pi\beta}{2}I_c$.
+Ответ бы не изменился при другом выборе знака в поправке к полному
+потоку, так как знак можно изменить подбором фазы
+$\phi_0$. 
+\end{enumerate}
+Для отношения максимальных бездиссипативных токов получаем
+\[
+	\frac{I_{\max}(\Phi_0 /2)}{I_{\max}(0)}= \frac{\pi \beta}{2}
+	\approx 0,15
+.\] 
+\end{sol}
+\end{document}

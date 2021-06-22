@@ -1,0 +1,317 @@
+\documentclass[c]{beamer}
+\input{../../preamble.tex}
+%\usefonttheme[onlymath]{serif}
+\usetheme{MIPT}
+\newtheorem{rthm}{Теорема}
+\newtheorem{rdfn}{Определение}
+\newtheorem{rproof}{Доказательство}
+\newtheorem{rexample}{Пример}
+\title{Точное решение Онгасера двумерной модели Изинга}
+\subtitle{Вопрос по выбору на ГКЭ по физике}
+\author{Драчов Ярослав}
+\date{\today}
+\institute[МФТИ]{Московский физико-технический институт}
+\begin{document}
+
+\frame[plain]{\titlepage}
+\section{Описание модели}
+\begin{frame}
+\frametitle{\insertsection}
+Рассматриваемая модель представляет собой плоскую квадратную
+решётку, состоящую из $N$ узлов, в каждом из которых находится
+<<диполь>> с осью, перпендикулярной к плоскости решётки. Диполь
+может иметь две противоположные ориентации, так что общее
+число возможных конфигураций диполей равно $2^N$.
+
+С каждым узлом решётки (с целочисленными координатами $k,\,l$)
+свяжем переменную $\sigma_{kl}$, принимающую два значения
+$\pm 1$, соответствующие двум возможным ориентациям диполя.
+\end{frame}
+\section{Характеристики конфигурации решётки}
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}{Энергия}
+\[
+	E(\sigma)= -J \sum_{k,\,l=1}^{L} \left(\sigma_{kl}\sigma_{kl+1}
+	+\sigma_{kl}\sigma_{k+1l}\right)
+,\] 
+где $L$ --- число узлов в ребре решётки ($N=L^2$ ), а $J$ ---
+величина энергии взаимодействия пары соседних диполей.
+\end{block}
+\end{frame} 
+\begin{frame}
+\frametitle{\insertsection}
+\begin{block}{Статистическая сумма}
+\[
+	Z= \sum_{(\sigma)}^{} e^{-E(\sigma) /T}=\sum_{(\sigma)}^{} 
+	\exp \left[ \theta \sum_{k,\,l}^{} (\sigma_{kl}
+	\sigma_{kl+1}+\sigma_{kl}\sigma_{k+1l})\right] 
+,\] 
+где суммирование происходит по всем $2^{N}$ возможным конфигурациям, а также $\theta=J /T$.
+\end{block}
+\end{frame}
+\begin{frame}
+\frametitle{\insertsection}
+Т.\:к. $\sigma_{kl}^2=1$, то раскладывая экспоненту в ряд 
+по степеням $\theta$ получаем
+точное равенство
+\[
+	\exp(\theta \sigma_{kl}\sigma_{k'l'})=
+	\ch \theta + \sigma_{kl}\sigma_{k'l'} \sh\theta=
+	\ch \theta (1+ \sigma_{kl}\sigma_{k'l'} \th\theta)
+.\] 
+Поэтому
+\begin{multline*}
+	Z=\sum_{(\sigma)}^{} 
+	\exp \left[ \theta \sum_{k,\,l}^{} (\sigma_{kl}
+	\sigma_{kl+1}+\sigma_{kl}\sigma_{k+1l})\right] =\\=
+	(1-x^2)^{-N}\sum_{(\sigma)}^{} \prod_{k,\,l=1}^{L}
+	(1+x \sigma_{kl \sigma _{kl+1}})(1+x \sigma_{kl}\sigma_{
+	k+1l})
+,\end{multline*} 
+где $x=\th\theta$.
+\end{frame}
+\begin{frame}
+\frametitle{\insertsection}
+Итак,
+\[
+	Z=
+	(1-x^2)^{-N}\sum_{(\sigma)}^{} \prod_{k,\,l=1}^{L}
+	(1+x \sigma_{kl \sigma _{kl+1}})(1+x \sigma_{kl}\sigma_{
+	k+1l})
+.\] 
+
+Последнее выражение можно переписать в виде
+	\[
+		Z=(1-x^2)^{-N}S
+,\]
+где
+\[
+	S= \sum_{(\sigma)}^{} \prod_{k,\,l=1}^{L} (1+x \sigma_{kl}
+	\sigma_{kl+1})(1+x \sigma_{kl} \sigma_{k+1l})
+.\] 
+\end{frame}
+\section{Интерпретация суммы $S$}
+\begin{frame}
+\frametitle{\insertsection}
+Под знаком суммы
+\[
+	S= \sum_{(\sigma)}^{} \prod_{k,\,l=1}^{L} (1+x \sigma_{kl}
+	\sigma_{kl+1})(1+x \sigma_{kl} \sigma_{k+1l})
+\]
+имеем
+\[
+	\prod_{k,\,l=1}^{L} (1+x \sigma_{kl}
+	\sigma_{kl+1})(1+x \sigma_{kl} \sigma_{k+1l})
+\] 
+--- полином по переменным $x$ и $\sigma_{kl}$.
+\end{frame}
+\begin{frame}
+\frametitle{\insertsection}
+Имеем
+\[
+	\prod_{k,\,l=1}^{L} (1+x \sigma_{kl}
+	\sigma_{kl+1})(1+x \sigma_{kl} \sigma_{k+1l})
+.\]
+Заметим, что
+\begin{itemize}
+\item \only<1>{каждое $\sigma_{kl}$ может встретиться
+	в данном полиноме в степенях от нулевой до четвертой.}
+\only<2>{ после взятия суммы
+\[
+	S= \sum_{(\sigma)}^{} \prod_{k,\,l=1}^{L} (1+x \sigma_{kl}
+	\sigma_{kl+1})(1+x \sigma_{kl} \sigma_{k+1l})
+\]
+по всем $\sigma_{kl}=\pm 1$ члены, содержащие  нечётные степени
+$\sigma_{kl}$, обратятся в нуль, так что ненулевой вклад
+дадут только члены, содержащие $\sigma_{kl}$ в степенях
+0, 2, и 4.}
+\only<3>{ т.\:к. $\sigma_{kl}^0=\sigma_{kl}^2=\sigma_{kl}^4=1$,
+	то каждый член полинома, содержащий все переменные $\sigma_{kl}$ в чётных степенях, даст вклад в сумму $S$, пропорциональный
+числу конфигураций $2^N$ (после суммирования по всем
+конфигурациям $(\sigma)$).}
+\end{itemize}
+\end{frame}
+\begin{frame}
+\frametitle{\insertsection}
+Имеем
+\[
+	\prod_{k,\,l=1}^{L} (1+x \sigma_{kl}
+	\sigma_{kl+1})(1+x \sigma_{kl} \sigma_{k+1l})
+.\]
+Представим $x\sigma_{kl}\sigma_{kl+1}$ как вертикальное ребро,
+соединяющее <<диполи>> в узлах решётки $(k,\,l)$ и
+$(k,\,l+1)$, соответственно, а $x\sigma_{kl}\sigma_{k+1l}$,
+аналогично,
+как горизонтальное ребро.
+\begin{center}
+\incfig[0.7]{3}
+\end{center}
+
+\end{frame}
+\begin{frame}
+\frametitle{\insertsection}
+Имеем
+\[
+	\prod_{k,\,l=1}^{L} (1+x \sigma_{kl}
+	\sigma_{kl+1})(1+x \sigma_{kl} \sigma_{k+1l})
+.\]
+Каждому члену полинома можно однозначно поставить в соответствие
+совокупность рёбер, соединяющих некоторые пары соседних узлов
+решётки. Далее рассмотрим примеры таких соответствий.
+\end{frame}
+\begin{frame}
+\frametitle{\insertsection}
+\begin{center}
+\incfig[0.4]{4}
+\end{center}
+\[
+x^2 \sigma_{kl}\sigma_{k+1,l}^2 \sigma_{k+1,l-1}
+\] 
+\end{frame}
+\begin{frame}
+\frametitle{\insertsection}
+\begin{center}
+	\incfig[0.4]{5}
+\end{center}
+\[
+x^8 \sigma_{kl}^2\sigma_{k+1,l}^2 \sigma_{k+1,l-1}^2
+\sigma_{k,\,l-1}^4 \sigma_{k,\,l-2}^2\sigma_{k-1,\,l-1}^2
+\sigma_{k-1,\,l-2}^2
+\] 
+\end{frame}
+\begin{frame}
+\frametitle{\insertsection}
+\begin{center}
+	\incfig[0.4]{6}
+\end{center}
+\[
+x^{10} \sigma_{kl}^2\sigma_{k+1,l}^2 \sigma_{k+1,l-1}^2
+\sigma_{k,\,l-1}^2 \sigma_{k-2,\,l-1}^2\sigma_{k-1,\,l-2}^2
+\sigma_{k-1,\,l-3}^2\sigma_{k-2,\,l-3}^2\sigma_{k-2,\,l-2}^2
+\] 
+\end{frame}
+\begin{frame}
+\frametitle{\insertsection}
+Дадим геометрическую интерпретацию сделанным ранее замечаниям:
+\begin{itemize}
+\only<1>{\item $\sigma_{kl}^n\cdots,\ n=0,\,2,\,4\implies$ в каждом
+	узле графика заканчивается $0,\,2$ или 4 ребра (что
+	означает замкнутость графика, самопересечения
+допускаются)}
+\only<2>{\item каждый член полинома даёт вклад в сумму $2^N\implies$
+	сумму 
+\[
+	S= \sum_{(\sigma)}^{} \prod_{k,\,l=1}^{L} (1+x \sigma_{kl}
+	\sigma_{kl+1})(1+x \sigma_{kl} \sigma_{k+1l})
+\]
+	можно представить в виде
+	\[
+	S=2^N \sum_{r}^{} x^r g_r
+	,\] 
+где $g_r$ --- число замкнутых \alert{графиков}, составленных
+из (чётного) числа $r$ связей.}
+
+\end{itemize}
+\end{frame}
+\section{Ещё <<чуть-чуть>>}
+\begin{frame}
+\frametitle{\insertsection}
+Дальнейший расчёт состоит из двух этапов:
+\begin{enumerate}
+\item сумма по графикам указанного вида преобразуется в сумму
+	по всем возможным замкнутым петлям,
+\item получающаяся сумма вычисляется путём сведения к задаче
+	о <<случайных блужданиях>> точки по решётке.
+\end{enumerate}
+\end{frame}
+\section{Фазовый переход}
+\begin{frame}
+\frametitle{\insertsection}
+\only<1>{Окончательно, статистическая сумма будет иметь вид:
+\begin{multline*}
+	Z=2^N (1-x^2)^{-N}\times\\\times\prod_{p,\,q=0}^{L} \left[ 
+	(1+x^2)^2-2x(1-x^2)\left( \cos \frac{2\pi p}{L}+
+\cos \frac{2\pi q}{L}\right) \right] ^{1 /2} 
+.\end{multline*} }
+\only<1-2>{Термодинамический потенциал:
+\begin{multline*}
+	\Phi=-T \ln Z= - N T \ln 2 +N T \ln (1-x^2)-\\-
+	\frac{1}{2}T \sum_{p,\,q=0}^{L} \ln \left[ 
+	(1+x^2)^2-2x (1-x^2)\left( \cos \frac{2\pi p}{L}+
+\cos \frac{2\pi q}{L}\right) \right] 
+,\end{multline*} }
+\only<2-3>{или, переходя от суммирования к интегрированию
+\begin{multline*}
+	\Phi=-NT \ln 2+NT \ln(1-x^2)-\\- \frac{NT}{2(2\pi)^2}
+	\iint\limits_{0}^{2\pi}  \ln \left[ 
+	(1+x^2)^2-2x(1-x^2)(\cos \omega_1 +\cos \omega_2)\right] 
+	d\omega_1 d\omega_2
+.\end{multline*} }
+\only<3>{
+$\Phi$ имеет особую точку, когда аргумент логарифма нуль.
+Как функция от  $\omega_1$, $\omega_2$ этот аргумент минимален
+при $\cos \omega_1=\cos\omega_2=1$, когда он равен
+\[
+	(1+x^2)^2-4x(1-x^2)=(x^2+2x-1)^2
+.\]
+Это выражение имеет минимум, в котором оно обращается в нуль
+лишь при одном (положительном) значении $x=x_c=\sqrt{2} -1$;
+соответствующая температура $T_c \left( \th \frac{J}{T_c}=
+x_c\right) $ и является точкой фазового перехода.}
+\end{frame}
+\begin{frame}
+\frametitle{\insertsection}
+	Разложение $\Phi(t)$ по степеням $t=T-T_c$ 
+	вблизи точки перехода содержит наряду с регулярной
+	частью также и особый член. Заменяя регулярную
+	часть её значением при $t=0$, разлагая аргумент
+	логарифма вблизи его минимума по степеням
+	$\omega_1$, $\omega_2$ и $t$ и произведя интегрирование,
+	получим, что вблизи точки перехода термодинамический
+	потенциал имеет вид
+	\[
+		\Phi \approx a+ \frac{1}{2}b(T-T_c)^2
+		\ln |T-T_c|,
+	\]
+	где $a,\,b$ --- постоянные (причём $b>0$).
+	Сам потенциал непрерывен в точке перехода, а
+	теплоёмкость обращается в бесконечность
+	по закону
+	\[
+	C \approx -b T_c b \ln|T-T_c|
+	\] 
+	симметричному по обе стороны точки перехода.
+\end{frame}
+\section{Обсуждение результатов}
+\begin{frame}
+\frametitle{\insertsection}
+Из непрерывности первой производной термодинамического
+потенциала и скачка второй, заключаем, что в данной модели
+имеет место фазовый переход второго рода. На качественном
+уровне получается, что при температурах ниже критической
+большая часть диполей будет ориентирована одинаково,
+а при температурах выше --- диполей <<вверх>> и <<вниз>>
+будет поровну. Данная модель на качественном уровне
+описывает механизм ферромагнетизма (наличия намагниченности
+в отсутствии внешнего поля при достаточно низких температурах).
+\end{frame}
+\section{Приложения модели Изинга}
+\begin{frame}
+\frametitle{\insertsection}
+Введённая изначально для понимания природы ферромагнетизма, модель Изинга оказалась в центре разнообразных физических теорий, относящихся к критическим явлениям, жидкостям и растворам, спиновым стёклам, клеточным мембранам, моделированию иммунной системы, различным общественным явлениям и т. д. Кроме того, эта модель служит полигоном для проверки методов численного моделирования различных физических явлений.
+\end{frame}
+\section{Список литературы}
+\begin{frame}
+\frametitle{\insertsection}
+\begin{enumerate}
+\item \emph{}Паташинский А. З., Покровский В. Л. Флуктуационная
+	теория фазовых переходов
+\item \emph{Ландау Л. Д., Лифшиц Е. М.} Статистическая физика
+\end{enumerate}
+\end{frame}
+\begin{frame}
+  \centering \Large
+  \emph{Спасибо за внимание!}
+\end{frame}
+\end{document}

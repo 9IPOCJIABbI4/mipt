@@ -1,0 +1,33 @@
+# Fdb version 3
+["xdvipdfmx"] 1623676248 "master.xdv" "master.pdf" "master" 1623676306
+  "master.xdv" 1623676248 880 6e28e5477431d7acb8fdf03aeaa5931f "xelatex"
+  (generated)
+  "master.pdf"
+["xelatex"] 1623676306 "master.tex" "master.xdv" "master" 1623676306
+  "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1616952564 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/usr/share/texmf-dist/tex/generic/babel-english/english.ldf" 1616952564 7008 9ff5fdcc865b01beca2b0fe4a46231d4 ""
+  "/usr/share/texmf-dist/tex/generic/babel-russian/russianb.ldf" 1607186335 27102 4a79376076aa6f398d4ac34bd05d4d15 ""
+  "/usr/share/texmf-dist/tex/generic/babel/babel.def" 1616952564 117107 1581fb598640513906da8cad532ce3fe ""
+  "/usr/share/texmf-dist/tex/generic/babel/babel.sty" 1616952564 37603 238ec77f17efb6cad12f8184b4ff9c28 ""
+  "/usr/share/texmf-dist/tex/generic/babel/txtbabel.def" 1616952564 5230 e5dd3bd60e99368f77a36ca54b2bb859 ""
+  "/usr/share/texmf-dist/tex/generic/babel/xebabel.def" 1616952564 11986 5c56b7762521a969f5ec20ab3e0c9e0a ""
+  "/usr/share/texmf-dist/tex/latex/base/article.cls" 1616952564 20145 aad8c3dd3bc36e260347b84002182bc2 ""
+  "/usr/share/texmf-dist/tex/latex/base/fontenc.sty" 1616952564 4947 8cb7717f0cc771eca0fda15160c7fee9 ""
+  "/usr/share/texmf-dist/tex/latex/base/size10.clo" 1616952564 8449 a72d5d4e612221b46000c3d71724e0ef ""
+  "/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd" 1616952564 2431 b6cead9f069ed55f4fba0c637aa047b6 ""
+  "/usr/share/texmf-dist/tex/latex/base/tuenc.def" 1616952564 28385 db6a45d5d942ba0cae516544203fdb0b ""
+  "/usr/share/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty" 1616952564 163300 4d3d778e38973f06a2524732dbbc580f ""
+  "/usr/share/texmf-dist/tex/latex/fontspec/fontspec.cfg" 1616952564 549 c4adac819276241fea8eb79c5ab7b99e ""
+  "/usr/share/texmf-dist/tex/latex/fontspec/fontspec.sty" 1616952564 1655 a1ec6f2670a260de25415d37e9c60e97 ""
+  "/usr/share/texmf-dist/tex/latex/l3backend/l3backend-xetex.def" 1616952564 26739 3bbeab44d8134abb4fe07bd6b2bf505a ""
+  "/usr/share/texmf-dist/tex/latex/l3kernel/expl3.sty" 1616952564 6209 39d1eb8cf795211a62af7adcc948426b ""
+  "/usr/share/texmf-dist/tex/latex/l3packages/xparse/xparse-generic.tex" 1616952564 80141 edbf9289c99ff37db17116af7a3a423f ""
+  "/usr/share/texmf-dist/tex/latex/l3packages/xparse/xparse.sty" 1616952564 5905 c6eb253894f4e808af476e034b49df36 ""
+  "/usr/share/texmf-dist/web2c/texmf.cnf" 1616952564 33301 a3134070eacafb10b1f371612ce2650d ""
+  "/var/lib/texmf/web2c/xetex/xelatex.fmt" 1619360706 5313619 a8b4fe1ac1ef56af64c27e6dc8044fa6 ""
+  "master.aux" 1623676248 132 4a260024c72d45b6eba469fdd16bf7b8 "xelatex"
+  "master.tex" 1623676305 509 ed04a1dbc011a84a06cfed6d3406ca63 ""
+  (generated)
+  "master.aux"
+  "master.xdv"
+  "master.log"

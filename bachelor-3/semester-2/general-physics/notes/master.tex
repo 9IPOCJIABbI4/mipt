@@ -1,0 +1,382 @@
+\documentclass[10pt,landscape,a4paper]{article}
+\input{../../preamble.tex}
+\usepackage{tikz}
+\usetikzlibrary{shapes,positioning,arrows,fit,calc,graphs,graphs.standard}
+%\usepackage[nosf]{kpfonts}
+%\usepackage[t1]{sourcesanspro}
+%\usepackage[lf]{MyriadPro}
+%\usepackage[lf,minionint]{MinionPro}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage[top=0mm,bottom=1mm,left=0mm,right=1mm]{geometry}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{microtype}
+
+\let\bar\overline
+
+\definecolor{myblue}{cmyk}{1,.72,0,.38}
+
+\def\firstcircle{(0,0) circle (1.5cm)}
+\def\secondcircle{(0:2cm) circle (1.5cm)}
+
+\colorlet{circle edge}{myblue}
+\colorlet{circle area}{myblue!5}
+
+\tikzset{filled/.style={fill=circle area, draw=circle edge, thick},
+    outline/.style={draw=circle edge, thick}}
+
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+
+\everymath\expandafter{\the\everymath \color{myblue}}
+\everydisplay\expandafter{\the\everydisplay \color{myblue}}
+
+\renewcommand{\baselinestretch}{.8}
+\pagestyle{empty}
+
+\global\mdfdefinestyle{header}{%
+linecolor=gray,linewidth=1pt,%
+leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
+}
+
+\newcommand{\header}{
+\begin{mdframed}[style=header]
+\footnotesize
+\sffamily
+Шпаргалка~по~общесосу
+\end{mdframed}
+}
+
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {.2ex}%
+                                {.2ex}%x
+                                {\color{myblue}\sffamily\small\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{1}{0mm}%
+                                {.2ex}%
+                                {.2ex}%x
+                                {\sffamily\bfseries}}
+
+
+
+\def\multi@column@out{%
+   \ifnum\outputpenalty <-\@M
+   \speci@ls \else
+   \ifvoid\colbreak@box\else
+     \mult@info\@ne{Re-adding forced
+               break(s) for splitting}%
+     \setbox\@cclv\vbox{%
+        \unvbox\colbreak@box
+        \penalty-\@Mv\unvbox\@cclv}%
+   \fi
+   \splittopskip\topskip
+   \splitmaxdepth\maxdepth
+   \dimen@\@colroom
+   \divide\skip\footins\col@number
+   \ifvoid\footins \else
+      \leave@mult@footins
+   \fi
+   \let\ifshr@kingsaved\ifshr@king
+   \ifvbox \@kludgeins
+     \advance \dimen@ -\ht\@kludgeins
+     \ifdim \wd\@kludgeins>\z@
+        \shr@nkingtrue
+     \fi
+   \fi
+   \process@cols\mult@gfirstbox{%
+%%%%% START CHANGE
+\ifnum\count@=\numexpr\mult@rightbox+2\relax
+          \setbox\count@\vsplit\@cclv to \dimexpr \dimen@-1cm\relax
+\setbox\count@\vbox to \dimen@{\vbox to 1cm{\header}\unvbox\count@\vss}%
+\else
+      \setbox\count@\vsplit\@cclv to \dimen@
+\fi
+%%%%% END CHANGE
+            \set@keptmarks
+            \setbox\count@
+                 \vbox to\dimen@
+                  {\unvbox\count@
+                   \remove@discardable@items
+                   \ifshr@nking\vfill\fi}%
+           }%
+   \setbox\mult@rightbox
+       \vsplit\@cclv to\dimen@
+   \set@keptmarks
+   \setbox\mult@rightbox\vbox to\dimen@
+          {\unvbox\mult@rightbox
+           \remove@discardable@items
+           \ifshr@nking\vfill\fi}%
+   \let\ifshr@king\ifshr@kingsaved
+   \ifvoid\@cclv \else
+       \unvbox\@cclv
+       \ifnum\outputpenalty=\@M
+       \else
+          \penalty\outputpenalty
+       \fi
+       \ifvoid\footins\else
+         \PackageWarning{multicol}%
+          {I moved some lines to
+           the next page.\MessageBreak
+           Footnotes on page
+           \thepage\space might be wrong}%
+       \fi
+       \ifnum \c@tracingmulticols>\thr@@
+                    \hrule\allowbreak \fi
+   \fi
+   \ifx\@empty\kept@firstmark
+      \let\firstmark\kept@topmark
+      \let\botmark\kept@topmark
+   \else
+      \let\firstmark\kept@firstmark
+      \let\botmark\kept@botmark
+   \fi
+   \let\topmark\kept@topmark
+   \mult@info\tw@
+        {Use kept top mark:\MessageBreak
+          \meaning\kept@topmark
+         \MessageBreak
+         Use kept first mark:\MessageBreak
+          \meaning\kept@firstmark
+        \MessageBreak
+         Use kept bot mark:\MessageBreak
+          \meaning\kept@botmark
+        \MessageBreak
+         Produce first mark:\MessageBreak
+          \meaning\firstmark
+        \MessageBreak
+        Produce bot mark:\MessageBreak
+          \meaning\botmark
+         \@gobbletwo}%
+   \setbox\@cclv\vbox{\unvbox\partial@page
+                      \page@sofar}%
+   \@makecol\@outputpage
+     \global\let\kept@topmark\botmark
+     \global\let\kept@firstmark\@empty
+     \global\let\kept@botmark\@empty
+     \mult@info\tw@
+        {(Re)Init top mark:\MessageBreak
+         \meaning\kept@topmark
+         \@gobbletwo}%
+   \global\@colroom\@colht
+   \global \@mparbottom \z@
+   \process@deferreds
+   \@whilesw\if@fcolmade\fi{\@outputpage
+      \global\@colroom\@colht
+      \process@deferreds}%
+   \mult@info\@ne
+     {Colroom:\MessageBreak
+      \the\@colht\space
+              after float space removed
+              = \the\@colroom \@gobble}%
+    \set@mult@vsize \global
+  \fi}
+
+\makeatother
+\setlength{\parindent}{0pt}
+\title{Шпаргалка к общесосу}
+\begin{document}
+\small
+\begin{multicols*}{5}
+
+\begin{hiProb}[0-9-1]
+Оценить максимальный ток, который может протекать через индиевую проволочку диаметром $d=100 \text{ мкм}$, не разрушая сверхпроводимость. Критическое поле для индия при $T=0$ равно $H_c=280\text{ Э}$.
+\end{hiProb}
+\begin{sol}
+Применим теорему о циркуляции для магнитного
+поля для контура, опоясывающего провод:
+\begin{multline*}
+2\pi r H_c= \frac{4\pi}{c}J_c,\quad
+J_c= \frac{cr}{2}H_c=\\= \frac{dc}{4} H_c\approx 21\cdot 10^{10} \text{ ед. СГС}=7 \text{ А}
+.\end{multline*} 
+\end{sol}
+\begin{hiProb}[0-9-2]
+	На кварцевый стержень диаметром  $d=10 \text{ мкм}$ напылён слой свинца ($T_c=7,2\text{ К}$), толщина которого много больше лондоновской глубины проникновения. Оценить, чему должна быть равна напряженность магнитного поля, приложенного параллельного оси стержня при $T>T_c$, чтобы при переходе в сверхпроводящее состояние был захвачен магнитный поток, равный кванту потока $\Phi_0$.
+\end{hiProb}
+\begin{sol}
+Квант магнитного потока равен
+$
+\Phi_0= \pi \hbar c /e
+.$ 
+Захваченный магнитный поток равен величине $BS$, где $S$ 
+--- площадь сечения: 
+$
+S= \pi d^2 /4.$ 
+\[
+B=
+\frac{\Phi_0}{S}= \frac{4\pi \hbar c}{\pi e d^2}=
+\frac{4\hbar c}{ed^2}\approx 0,9 \cdot 10^{-9}\text{ Гс}
+.\] 
+\end{sol}
+\begin{hiProb}[0-10-1]
+При приложении какого напряжения начнёт течь ток в туннельном контакте между сверхпроводящим свинцом ($T_c=7,2\text{ К}$) и нормальным металлом? Температура $T\ll T_c$.
+\end{hiProb}
+\begin{sol}
+Щель в спектре возбуждений равна $\Delta \approx 1,5 k_B T_c$. Пороговое напряжение равно $U= \Delta /e$. Получаем,
+что $U= 1,5k_B T_c /e\approx 928\text{ мкВ}$.
+\end{sol}
+\begin{hiProb}[0-10-2]
+При каком напряжении на джозефсоновском контакте в нём будут генерироваться электромагнитные волны с длиной волны $\lambda=3\text{ см}$?
+\end{hiProb}
+\begin{sol}
+Связь частоты осцилляции и напряжения: $\omega=2eU /\hbar $.
+Тогда для длины волны имеем, что
+\[
+\lambda= \frac{2\pi c}{\omega}= \frac{2\pi \hbar c}{2eU}=
+\frac{hc}{eU} 
+.\] 
+\[
+U=\frac{hc}{e\lambda}\approx
+40 \text{ мкВ}
+.\] 
+\end{sol}
+\begin{hiProb}[0-11-1]
+Чему равен уровень химпотенциала в полупроводнике с легированием акцепторными примесями при $T=0$? Считать энергию «потолка» валентной зоны равной нулю, ширина запрещенной зоны $\Delta$, расстояние от примесного уровня до «дна» зоны проводимости $\delta$.
+\end{hiProb}
+\begin{sol}
+При нулевой температуре при наличии акцепторных
+примесей уровень химпотенциала находится между
+потолком валентной зоны и акцепторным уровнем.
+Акцепторный уровень: $\Delta-\delta$. Получаем,
+что $\mu = (\Delta-\delta) /2$.
+\end{sol}
+\begin{hiProb}[0-11-2]
+Найти потенциал плоской границы контакта полупроводников на $p$-$n$-переходе при $T=0$, если концентрация донорных примесей в 10 раз больше, чем концентрация акцепторных. Оба полупроводника получены легированием кремния ($\Delta=1,1\text{ эВ}$), примесные уровни близки к
+\end{hiProb}
+\begin{sol}
+Пусть $N_d$ и $N_a$ --- концентрации доноров и
+акцепторов. Пусть $x=0$ есть граница контакта, $x<0$
+есть проводник типа $(n)$, $x>0$ есть проводник
+типа $(p)$. Тогда химический потенциал монотонно убывает
+с увеличением $x$. Тогда существуют такие точки $h_d$ и
+$h_a$, что при $-h_d<x<0$ донорные уровни выше
+химического потенциала, а при $0<x<h_a$ акцепторные
+уровни ниже химического потенциала. В этих областях
+соответствующие ионы полностью ионизированы.
+Из условия электронейтральности: $N_d h_d=N_a h_a$.
+Если  $\epsilon $ --- диэлектрическая проницаемость
+среды, то имеем уравнения Пуассона в областях:
+\[
+	\epsilon \phi''(x)=4\pi e\cdot 
+	\begin{cases}
+		N_d & \text{при } x  \in \left( -h_d,\,0 \right) ,\\
+		N_a & \text{при } x  \in \left( 0,\,h_a \right) .\\
+	\end{cases}
+\] 
+При $x < -h_d$ считаем, что $\phi(x)=0$.
+\[
+	\phi(x)=%\begin{cases}
+		- \frac{4\pi e N_d}{2\epsilon }(x+h_d)^2
+		%& \text{при } x \in \left( -h_d, 0 \right) ,\\
+		%\frac{1}{\epsilon }
+		%\left( 2\pi e N_a \left( x-h_a \right) ^2-
+		%2\pi e N_a h_a^2 -2\pi e N_d h_d^2\right) 
+		%& \text{при } x \in \left( 
+		%0,\,h_a\right) .
+		%\end{cases}
+	\] 
+	при $x \in \left( -h_d,\,0 \right) $.
+	\begin{multline*}
+		\phi(x)= \frac{1}{\epsilon }
+		\left( 2\pi e N_a \left( x-h_a \right) ^2\right. - \\ - \left.
+		2\pi e N_a h_a^2-
+	2\pi e N_d h_d^2\right) 
+	\end{multline*}
+	при $x \in \left( 0,\,h_a \right) $
+	Получаем, что $\phi(0)= - 2\pi e N_d h_d^2 /\epsilon $. С другой стороны
+\[
+	\phi(h_a)= -\frac{2\pi e}{\epsilon }
+	\left( N_a h_a^2+N_d h_d^2 \right) 			
+\]
+и $\phi(h_d)=0$. С учётом того, что
+$N_a h_a= N_d h_d$, получаем, что
+ \[
+	 \phi(0)= -\frac{N_a}{N_a+N_d}\left( 
+	 \phi(h_d)-\phi(h_a)\right) 
+\]
+есть выражение для потенциала границы.
+При этом
+\[
+	\phi \left( h_d \right) -
+	\phi\left( h_a \right) =
+	\frac{1}{e} \left( \mu_d- \mu_a \right) 
+	\approx
+	\frac{\Delta}{e}
+,\] 
+где учтено, что химические потенциалы близки к
+границам зоны.
+Получаем потенциал границы:
+\[
+	\phi(0)= - \frac{1}{1+ N_d /N_a}
+	\frac{\Delta}{e}= -0,1 \text{ В}
+.\] 
+\end{sol}
+\begin{hiProb}[0-12-1]
+При изучении двумерного электронного газа в графене или
+гетероструктурах часто используют дополнительный электрод («затвор»),
+который создаёт перпендикулярное плоскости газа электрическое поле,
+притягивающее или выталкивающее электроны из внешней цепи. Это
+позволяет регулировать концентрацию электронов. В опыте такого типа
+при приложении электрического поля перпендикулярно плоскости
+графена энергия Ферми электронов оказалась равна $E_F=0,1\text{ эВ}$. Найти
+поверхностную плотность электронов в графене в этом опыте. Спектр электронов вблизи точки Дирака $E\left( \mathbf{k}-\mathbf{k}_0 \right) =\hbar c^* \left| \mathbf{k}-\mathbf{k}_0 \right| $, $c^*=108 \text{ см} /\text{с}$.
+\end{hiProb}
+\begin{sol}
+Фермиевский вектор в двумерном случае равен $k_F=\sqrt{2\pi n} $, где $n$ --- плотность электронов.
+\[
+	E_F= c^* k_F \hbar,\quad n= \frac{k_F^2}{2\pi}
+.\] 
+Получаем, что
+ \[
+n= \frac{E_F^2}{2c^{*2}\pi\hbar ^2}\approx 3,6\cdot 10^{11}
+\text{ см}^{-2}
+.\] 
+\end{sol}
+\begin{hiProb}[0-12-2]
+Вычислить энергетическое расстояние между нижними уровнями размерного квантования для двумерного электронного газа в Si и GaAs в приближении прямоугольной потенциальной ямы с бесконечно высокими потенциальными стенками в направлении, нормальном к плоскости двумерного электронного газа. Эффективная масса электрона $m^*$ в GaAs и Si составляет 0.067 и 0.19 масс свободного электрона соответственно. Ширину ямы принять равной $d=20\text{ нм}$. Сравнить полученное значение с характерными температурами – комнатной (300 К), температурой жидкого азота (77 К), температурой жидкого гелия (4.2 К).
+\end{hiProb}
+\begin{sol}
+?
+\end{sol}
+\begin{hiProb}[0-13-1]
+Оценить, при какой температуре диполь-дипольное взаимодействие атомных магнитных моментов могло бы привести к возникновению упорядоченной магнитной структуры. Для оценки принять магнитный момент атомов равным $\mu_B$, расстояние между атомами $d=4\text{ \AA}$.
+\end{hiProb}
+\begin{sol}
+Диполь-дипольное взаимодействие может привести к
+возникновению упорядоченной магнитной структуры,
+если энергия этого взаимодействия будет больше
+тепловой энергии. Значит, $\Delta E >k_B T$. Энергию
+дипольного взаимодействия оценим как
+$\Delta E \simeq \mu_B^2 /\alpha^3$. Получаем оценку
+для температуры
+$T<\mu_B^2 / \left(k_B \alpha^3\right) \approx 0,01 \text{ К}$.
+\end{sol}
+\begin{hiProb}[0-13-2]
+	Спектр длинноволновых элементарных возбуждений ферромагнетика (спиновых волн) $\omega(k)=Ak^2$. Определить зависимость от температуры вклада спиновых волн в теплоёмкость трёхмерного ферромагнетика.
+\end{hiProb}
+\begin{sol}
+Запишем плотность энергии для магнонов:
+\[
+	\rho = \int\limits_{0}^{+\infty} n(\omega) 
+	\hbar \omega \frac{d^3k}{\left( 2\pi \right) ^3}
+,\] 
+где
+\[
+	n= \frac{1}{\exp \left( \frac{\hbar \omega}{k_B T} \right) -1}
+\]
+--- функция распределения.
+\begin{multline*}
+	\int\limits_{0}^{+\infty} n(\omega)
+	\hbar \omega \frac{d^3k}{\left( 2\pi \right) ^3}=\\=
+	\int\limits_{0}^{+\infty}  
+	\frac{A \hbar  k^2}{\exp \left( \frac{A\hbar k^2}{k_B T} \right) -1} \frac{4\pi k^2 dk}{\left( 2\pi \right) ^3}=\\= \left( \frac{k_B T}{A\hbar } \right) ^{5 /2}
+	\frac{4\pi \hbar }{\left( 2\pi \right) ^3}
+	\int\limits_{0}^{+\infty} 
+	\frac{x^4 dx}{\exp \left(x^2\right)-1}
+	\propto\\ \propto T^{5 /2}
+.\end{multline*} 
+Теплоёмкость равна $\displaystyle C=\frac{d\rho}{dT}
+ \propto T^{3 /2}$. Получаем зависимость теплоёмкости
+ от температуры: $C \propto T^{3 /2}$.
+\end{sol}
+\end{multicols*}
+\end{document}

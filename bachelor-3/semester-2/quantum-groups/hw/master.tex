@@ -1,0 +1,176 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\usepackage{ytableau}
+\ytableausetup{smalltableaux}
+\title{Домашняя работа по квантовым группам}
+\begin{document}
+	\maketitle
+\section*{$\mathcal{U}_q \left( \mathfrak{su_2} \right) $}
+Возьмём в алгебре другой базис (а именно $\mathfrak{sl}_2$)
+и будем решать в нём.
+
+О представлении $\ydiagram{1}$ знаем следующее.
+Действует на пространстве из векторов
+\[
+V_1= \begin{pmatrix} 1 \\0 \end{pmatrix} ,\quad
+V_2= \begin{pmatrix} 0 \\ 1 \end{pmatrix} 
+,\] 
+$V_1$ --- старший.
+ \[
+E V_1=0,\quad E V_2=V_1,\quad FV_1=V_2,\quad
+F V_2=0
+,\] 
+\[
+KV_1=qV_1,\quad
+KV_2=q^{-1} V_2,\quad K^{-1}V_1 =q^{-1} V_1,
+.\] 
+\section*{Простые Алгебры Ли}
+Группа $SO(4)$ задаётся соотношениями
+\[
+Q Q^T=I,\quad \det Q=1
+.\] 
+\[
+	I=\left( I+tA+O\left(t^2\right) \right) \left( 
+	I+tA^T+O\left( t^2 \right) \right) =
+	I+t\left( A+A^T \right) +O\left( t^2 \right) 
+.\] 
+Откуда следует, что элементами алгебры $so(4)$ 
+являются антисимметричные матрицы $A$,  т.\:е. такие, что
+\[
+A^T=-A
+.\] 
+Элемент этой алгебры имеет следующий вид
+\[
+	\begin{pmatrix} 0 & a_{1} & a_{2} & a_{3}\\
+	-a_{1} & 0 & a_{4} & a_{5} \\
+-a_{2} & -a_{4} & 0 & a_{6} \\
+-a_{3} & -a_{5} & -a_{6} & 0\end{pmatrix} 
+\] 
+и может быть разложен как
+\[
+A=\sum_{i=1}^{6} a_{i} e_{i}
+,\] 
+где $e_{i}$ --- базисные матрицы данной алгебры Ли.
+
+Найдём коммутационные соотношения с помощью Mathematica:
+\[
+\left[ e_1,\,e_2 \right] =-e_4,\quad
+\left[ e_1,\,e_3 \right] =-e_5,\quad
+\left[ e_1,\,e_4 \right] =e_2,\quad
+\left[ e_1,\,e_5 \right] =e_3,\quad
+\left[ e_1,\,e_6 \right] =0,
+\] 
+\[
+\left[ e_2,\,e_3 \right] =-e_6,\quad
+\left[ e_2,\,e_4 \right] =-e_1,\quad
+\left[ e_2,\,e_5 \right] =0,\quad
+\left[ e_2,\,e_6 \right] =e_3,
+\] 
+\[
+\left[ e_3,\,e_4 \right] =0,\quad
+\left[ e_3,\,e_5 \right] =-e_1,\quad
+\left[ e_3,\,e_6 \right] =-e_2,
+\] 
+\[
+\left[ e_4,\,e_5 \right] =-e_6,\quad
+\left[ e_4,\,e_6 \right] =-e_5,
+\] 
+\[
+\left[ e_5,\,e_6 \right] =-e_4
+.\] 
+Видим, что максимальное количество коммутирующих элементов
+в алгебре --- 2. Поэтому для построения базиса Картана-Вейля
+обозначим, без ограничения общности, $H_1=e_1,\ H_2=e_6$.
+Далее, обозначим $E$
+ \[
+\operatorname{ad}_{H_1}=\left(
+\begin{array}{cccc}
+ 0 & 0 & -1 & 0 \\
+ 0 & 0 & 0 & -1 \\
+ 1 & 0 & 0 & 0 \\
+ 0 & 1 & 0 & 0 \\
+\end{array}
+\right),\quad
+\operatorname{ad}_{H_2}=\left(
+\begin{array}{cccc}
+ 0 & -1 & 0 & 0 \\
+ 1 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & -1 \\
+ 0 & 0 & 1 & 0 \\
+\end{array}
+\right),\]
+действие данными матрицами осуществляется на вектора в базисе $\left( e_2,\,e_3,\,e_4,\,e_5 \right) $
+Эти матрицы коммутируют и могут быть одновременно диагонализированы
+\[
+\operatorname{ad}_{H_1}=
+\begin{pmatrix} -i& 0& 0&0\\
+0&-i&0&0\\
+0&0&i&0\\
+0&0&0&i\end{pmatrix} ,\quad
+\operatorname{ad}_{H_2}=
+\begin{pmatrix} -i& 0& 0&0\\
+0&i&0&0\\
+0&0&-i&0\\
+0&0&0&i\end{pmatrix} 
+.\] 
+Они, в свою очередь действуют на пространстве с базисом
+\[
+E_1=\frac{1}{4}\left( e_5+i(e_3+e_4)-e_2 \right) ,\quad E_2=\frac{1}{4}\left( e_2+e_5+i(e_3-e_4) \right) 
+,\] 
+\[
+E_3=\frac{1}{4}\left( e_2+e_5+i(e_4-e_3) \right) ,\quad
+E_4=\frac{1}{4}\left( e_5-e_2-i(e_3+e_4) \right) 
+.\] 
+Теперь мы вроде как имеем соотношения
+\[
+\left[ H_i,\,H_j \right] =0,\quad \left[ H_i,\,E_\alpha \right] =\alpha_i E_\alpha
+,\] 
+и
+\[
+	\alpha=\begin{pmatrix}i\\-i  \end{pmatrix} \text{ или }\begin{pmatrix} i\\i \end{pmatrix} 
+\] 
+на пространстве с базисом $(h_1,\,h_2)$. Дуальные корни тогда
+\[
+	a^\vee= \frac{2\alpha}{(\alpha,\,\alpha)}= -\alpha
+.\] 
+Базис Шевалле
+\[
+	H_{\alpha_i}=\left( \alpha_i^\vee,\,H \right),\quad
+	H\left( \begin{pmatrix} i\\-i \end{pmatrix}  \right) =
+	-ih_1+ih_2,\quad
+	H\left( \begin{pmatrix} i\\i \end{pmatrix}  \right) =
+	-ih_1-ih_2
+.\] 
+Матрица Картана
+\[
+	A_{ij}=\left( \alpha_i,\,\alpha_j^{\vee} \right) =
+	\begin{pmatrix} 2 &0\\
+	0& 2\end{pmatrix} 
+.\] 
+Система корней представлена на рис.~\ref{fig:1}.
+\begin{figure}[ht]
+    \centering
+    \incfig{1}
+    \caption{}
+    \label{fig:1}
+\end{figure}
+Диаграмма Дынкина изображена на рис.~\ref{fig:2}.
+\begin{figure}[ht]
+    \centering
+    \incfig{2}
+    \caption{}
+    \label{fig:2}
+\end{figure}
+\begin{figure}[ht]
+    \centering
+    \incfig{3}
+    \caption{3}
+    \label{fig:3}
+\end{figure}
+\begin{figure}[ht]
+    \centering
+    \incfig{4}
+    \caption{4}
+    \label{fig:4}
+\end{figure}
+\end{document}

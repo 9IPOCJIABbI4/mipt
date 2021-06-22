@@ -1,0 +1,1083 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Задание 2}
+\begin{document}
+	\maketitle
+	\section*{Тема XII. Общая теория сходимости для уравнений в частных производных}
+\begin{hiProb}[7.1]
+\end{hiProb}
+\begin{sol}
+\begin{multline*}
+-i \frac{\Psi_m^{n+1}-\Psi_m^n}{\tau}=
+\xi \left( \frac{\Psi_{m+1}^{n-1}-2 \Psi_m^{n+1}+\Psi_{m-1}^{n+1}}{h^2}+ \tilde{U} \Psi^n \right) 
++\\+(1-\xi) \left( \frac{\Psi_{m+1}^{n}-2 \Psi_m^{n}+\Psi_{m-1}^{n}}{h^2}+ \tilde{U} \Psi^n \right) 
+.\end{multline*} 
+Сначала рассмотрим схему с $\tilde{U}=0$:
+\[
+-i \frac{\Psi_m^{n+1}-\Psi_m^n}{\tau}=
+\xi \frac{\Psi_{m+1}^{n+1}-2 \Psi_m^{n+1}+\Psi_{m-1}^{n+1}}{h^2}+(1-\xi) \frac{\Psi_{m+1}^n -2 \Psi_m^n +\Psi_{m-1}^n}{h^2}
+.\] 
+Пусть $\Psi_m^n=\Psi$. Разложим в окрестности
+точки $(x_m,\,t_n)$:
+\begin{multline*}
+	-\frac{i}{\tau} \left( \Psi_t \tau
+	+\Psi_{tt} \frac{\tau^2}{2}+O\left(\tau^3\right)\right) =\\=
+	\frac{\xi}{h^2} \left( 
+	\Psi_t \tau +\Psi_x h + \Psi_{t t}\frac{\tau^2}{2}+\Psi_{xx} \frac{h^2}{2}+
+2 \Psi_{tx} \frac{\tau h}{2}+ \Psi_{x x x}
+\frac{h^3}{6} \right. + \\ + \left. \Psi_{x x t}\frac{h^2 \tau}{6}\cdot 3
++ \Psi_{x t t} \frac{h \tau^2}{6}\cdot 3+
+\Psi _{t  t t} \frac{\tau^3}{6}-
+2 \left( \Psi_t \tau + \Psi_{tt} \frac{\tau^2}{2}+
+\Psi_{t t t} \frac{\tau^3}{6}\right)
++\Psi_t \tau \right. - \\ - \left. \Psi_x h + \Psi_{t t} \frac{\tau^2}{2}+ \Psi_{ x x} \frac{h^2}{2}- \Psi_{x t}
+\frac{h \tau}{2} \cdot 2 - \Psi_{x x x} \frac{h^2}{2}
++ \Psi_{x x x} \frac{h^3}{6}\right. - \\ - \left. \Psi_x h +
+\Psi_{x x} \frac{h^2}{2} -\Psi_{x x x}
+\frac{h^3}{6}\right) 
+.\end{multline*} 
+Таким образом:
+\[
+	-i \Psi_t + O(\tau)= \Psi_{x x}
+	+O(h^2)
+.\] 
+Если $\Psi$ --- решение уравнения, то 
+\[
+- i \frac{\partial \Psi}{\partial t}=
+\frac{\partial^2 \Psi }{\partial x^2} 
+.\] 
+Следовательно  схема аппроксимирует исходную задачу.
+Устойчивость проверим по спектральному признаку:
+\[
+\Psi_m^n = \lambda^n e^{i \phi m}
+.\] 
+\[
+-i \frac{\lambda-1}{\tau}=
+\frac{\xi}{h^2} \left( 
+\lambda e^{i\phi}-2 \lambda+ \lambda e^{i\phi}\right) + \frac{1-\xi}{h^2}
+\left( e^{i \phi}-2 -e^{-i\phi} \right) 
+.\] 
+\begin{multline*}
+	-i \frac{\lambda-1}{\tau}= \frac{\xi \lambda \cdot 2}{h^2} \left( \cos \phi-1 \right) 
+	+\frac{1-\xi}{h^2}\cdot 2 (\cos \phi-1)=\\=
+	\frac{\xi (\lambda-1)}{h^2}\cdot 2(\cos \phi
+	-1) + \frac{2}{h^2} (\cos \phi-1)
+.\end{multline*} 
+\[
+	(\lambda-1) \left( 
+	\frac{2 \xi (1- \cos \phi)}{h^2}-
+\frac{i}{\tau}\right) =
+\frac{2}{h^2} (\cos \phi -1)
+.\] 
+Значит
+\[
+	\lambda= -\frac{2(1-\cos \phi)}{h^2\left( 
+	\frac{1}{h^2}\cdot 2 \xi (1-\cos  \phi) - \frac{i}{\tau}\right) }+1
+.\] 
+\[
+	\lambda= \frac{2 (\xi-1) (1- \cos \phi)-
+	\frac{ih^2}{\tau}}{2\xi(1-\cos \phi)-
+\frac{i}{\tau}h^2}=
+\frac{1- i \frac{\tau}{h^2}\cdot 4(1-\xi) \sin ^2 \frac{\phi}{2}}{1+ i \frac{\tau}{h^2}\cdot 4
+\xi \sin ^2 \frac{\phi}{2}}
+.\] 
+Числитель и знаменатель последней дроби имеют равные
+действительные части, поэтому $|\lambda|\le 1$, если
+абсолютное значение мнимой части числителя меньше
+чем знаменателя, т.\:е. $1-\xi\le \xi$, следовательно
+$\xi \ge 0,5$.
+
+При $\tilde{U}\neq 0$:
+\[
+-i \frac{\lambda-1}{\tau}= \frac{\xi}{h^2}
+\left( \lambda e^{i \phi}-2 \lambda+\lambda
+e^{-i\phi}\right) + \frac{1-\xi}{h^2}
+\left( e^{i\phi}-2 + e^{-i\phi} \right) +
+\xi \lambda \tilde{U}+ (1-\xi) \tilde{U}
+.\] 
+\[
+	-i \frac{\lambda-1}{\tau}= \frac{\xi (\lambda-1)}{h^2} \cdot 2 \left( 
+	\cos \phi-1\right) +
+	\frac{2}{h^2} \left( \cos \phi-1 \right) 
+	+\xi (\lambda-1) \tilde{U}+\tilde{U}
+.\] 
+\[
+	(\lambda-1) \left( 
+	-\frac{i}{\tau}+ \frac{2\xi}{h^2}
+(1-\cos \phi)- \tilde{U} \xi\right) =
+\frac{2}{h^2}(\cos \phi-1) +\tilde{U}
+.\] 
+\[
+	\lambda= 1+ \frac{-2 (-\cos \phi+1)+
+	\tilde{U} h^2}{- \frac{i}{\tau}h^2+
+2 \xi(1-\cos \phi)-\tilde{U} \xi h^2}
+.\]
+\begin{multline*}
+\lambda= \frac{-\frac{i}{\tau}h^2+
+2 (\xi-1) (1-\cos \phi) + \tilde{U}h^2(1-\xi)}{
+-\frac{i}{\tau}h^2 +2 \xi (1-\cos \phi)-
+\tilde{U}\xi h^2}=\\=
+\frac{1- \frac{\tau i}{h^2}\cdot 4(1-\xi) \sin ^2
+\frac{\phi}{2}+ \frac{i \tau}{h^2}\tilde{U}h^2 (1-\xi)}{1+ i \frac{\tau}{h^2}\cdot 4 \xi \sin ^2 \frac{\phi}{2}+ i \tau  \tilde{U} \xi}
+.\end{multline*} 
+Видим, что  введение потенциала меняет
+только мнимую часть  в $\lambda$,  но
+синхронно в числителе и знаменателе, следовательно
+не меняет  полученный  для случая $\tilde{U}=0$ 
+результат, поэтому  схема устойчива при 
+$\xi\ge 0,5$ и сходимость имеет место  при $\xi\ge 0,5$.
+\end{sol}
+\begin{hiProb}[7.2]
+\end{hiProb}
+\begin{sol}
+\[
+u_t+  c u_x=0
+.\] 
+\[
+\alpha y_{m}^{n+1}+ \beta y_{m-1}^n+
+\gamma y_m^n+\delta y_{m+1}^n=0
+.\] 
+\begin{multline*}
+	\alpha\left(u+u_t \tau + \frac{1}{2} u_{t t}
+	\tau^2 \right)+
+	\beta\left( 
+	u- u_x h + \frac{1}{2} u_{ x x}h^2\right) +
+	\gamma u+\\+ \delta \left( u + u_x h+ u_{x x}\frac{1}{2} h^2 \right) + O\left( h^2 \right) +
+	O\left( \tau^2 \right)=0
+.\end{multline*} 
+\[
+\alpha+\beta+\gamma+\delta=0 \implies
+\gamma=-\alpha -\beta-\delta
+.\] 
+\[
+	\alpha u_t \tau +(\delta-\beta)u_x
+	h=0\implies
+	\alpha \tau =1\implies \alpha= \frac{1}{\tau},\ (\delta-\beta)h=c
+.\] 
+\[
+\left\{
+\begin{aligned}
+u_{tt}+ c u_{x t}&= 0 \\
+u_{t x}+ c u_{xx}&= 0 \\
+\end{aligned}
+\right.\implies
+u_{t t}- c^2 u_{x x}=0,\ u_{t t}= c^2 u_{x x}
+.\] 
+\[
+\alpha c^2 \tau^2+  \beta h^2+ \delta h^0
+.\] 
+\[
+	c^2\tau+ (\beta+\delta)h^2=0
+.\] 
+\[
+\delta-\beta= \frac{c}{h} \implies
+\delta= \beta + \frac{c}{h}\implies
+c^2 \tau + \left( 2\beta + \frac{c}{h} \right) h^2=0
+.\] 
+\[
+c^2 \tau+ 2\beta h^2 +ch =0\implies
+\beta=  -  \frac{c(c\tau+h)}{2h^2}= \frac{-c^2\tau
+-ch }{2h^2}
+.\] 
+\[
+\delta= \frac{c h -c^2  \tau}{2h^2},\quad
+\gamma= \frac{c^2 \tau}{h^2}-\frac{1}{\tau}
+.\] 
+Значит
+\[
+\frac{y_{m+1}^{n+1}- y_{m+1}^n}{\tau}+
+\frac{c}{2h} \left( y_{m+1}^n-y_{m-1}^n \right) -
+\frac{c^2 \tau}{2h^2}\left( 
+y_{m+1}^n-2 y_m^n+y_{m-1}^n\right) =0
+.\] 
+Порядок аппроксимации:  $O(\tau^2,\,h^2)$.
+Исследуем  устойчивость:
+\[
+u_{m}^n= \lambda^n  e^{im \phi}
+.\] 
+\[
+\frac{\lambda-1}{\tau}+
+\frac{c}{2h} \left( e^{i\phi}-e^{-i\phi} \right) 
+- \frac{c^2 \tau}{2h^2}\left( e^{i\phi}-2+
+e^{-i\phi}\right) =0
+.\] 
+\[
+\frac{\lambda-1}{\tau}+\frac{i c}{h}\sin \phi
++\frac{c^2 \tau}{h^2} (1-\cos \phi)=0
+.\] 
+\[
+	\lambda=1- \frac{ic}{h}\sin \phi +\frac{c^2 \tau}{h^2}(1-\cos \phi)=0
+.\] 
+\[
+\lambda=1- \frac{ic\tau}{h}  \sin \phi-
+\frac{c^2  \tau^2}{h^2}\left( 1- \cos \phi \right) 
+=0
+.\] 
+\[
+\sigma= \frac{c  \tau}{h}
+.\] 
+\[
+	\lambda=1-i\sigma \sin \phi-\sigma^2 (1-\cos \phi)
+.\] 
+$
+|\lambda|^2\le 1 
+$
+для устойчивости, поэтому
+\[
+	|\lambda|^2= (1- \sigma^2(1-  \cos \phi))^2+
+	\sigma^2 \sin ^2 \phi\le 1
+.\] 
+\[
+	\sigma^2 \sin ^2\phi \le 1- \left( 
+	1-\sigma^2 \left( 1- \cos \phi \right) \right) ^2= \sigma^2\left( 1-\cos \phi \right) 
+	\left( 2- \sigma^2 \left( 1- \cos \phi \right)  \right) 
+.\] 
+\[
+\frac{\sin ^2 \phi}{1- \cos \phi}\le 
+2- \sigma^2 (1- \cos \phi)
+.\] 
+\[
+\sigma^2 \le  \frac{1}{1-\cos  \phi}
+\left( 2- \frac{\sin ^2 \phi}{1- \cos \phi} \right) 
+=\frac{2 -2\cos \phi- \sin ^2 \phi}{2 \sin ^2 \left( \phi /2 \right) \left( 1- \cos  \phi \right) }=1
+.\] 
+Значит схема устойчива при 
+\[
+\frac{c\tau}{h}\le 1
+.\] 
+\end{sol}
+\begin{hiProb}[7.3]
+\end{hiProb}
+\begin{sol}
+\[
+u_t+ c u_x=0
+.\] 
+\[
+\alpha y_m^{n+1}+\beta y_m^n+\gamma
+y_{m-1}^n+ \delta y_{m-2}^n=0
+.\] 
+\begin{multline*}
+	\alpha\left( u + \tau u_t + \frac{1}{2}
+	\tau^2 u_{t t}+ \frac{1}{6}\tau^3 u_{t t t}
+\right)+ \beta u+ \gamma \left( 
+u-u_x h+ \frac{1}{2} h^2 u_{x x} - \frac{1}{6} h^3 u_{x x x }\right) +\\+
+\delta \left( u-2 h u_x +2 h^2 u_{x x}-
+\frac{4}{3} h^3 u_{x x x}\right) =0
+.\end{multline*} 
+\[
+\alpha+\beta+\gamma+\delta=0\implies\beta=
+\alpha-\gamma-\delta
+.\] 
+\[
+	\alpha c \tau + \left( \gamma+ 2\delta \right) h=0\implies \alpha= \frac{1}{\tau}
+.\] 
+\[
+\gamma+2\delta= - \frac{c}{h}\implies \gamma=
+-\frac{c}{h}-2\delta
+.\] 
+\[
+	\alpha c^2 \tau^2 + (\gamma+4\delta)h^2=0
+.\] 
+\[
+	c^2 \tau +\left( 
+	-\frac{c}{h}-2\delta +4\delta\right) h^2=0
+.\] 
+\[
+-\frac{c^2 \tau}{h^2}= -\frac{c}{h}+2\delta\implies
+\delta= \frac{c}{2h}- \frac{c^2 \tau}{2 h^2}
+.\] 
+\[
+\gamma= -\frac{c}{h}- \frac{c}{h}+
+\frac{c^2 \tau}{h^2}= -\frac{2c}{h}+\frac{c^2\tau}{
+h^2}
+.\] 
+\[
+\beta= -\frac{1}{\tau}+ \frac{2c}{h}- \frac{c^2 \tau}{h^2}- \frac{c}{2h}+ \frac{c^2 \tau}{2h^2}
+=-\frac{1}{\tau}+\frac{3c}{2h}- \frac{c^2 \tau}{2h^2}
+.\] 
+Откуда разностная схема:
+\[
+\frac{y_m^{n+1}-y_m^n}{\tau}+
+\frac{c}{h} \left( \frac{3}{2} y_m^n-2 y_{m-1}^n+
+\frac{1}{2}y_{m-2}^n\right) -
+\frac{c^2 \tau}{2h^2} \left( y_m^n-2y_{m-1}^n
++ y_{m-2}^n\right) =0
+.\] 
+Порядок аппроксимации: $O\left(\tau^2+h^2\right)$.
+
+Исследуем на устойчивость:  $u_m^n= \lambda^n e^{im\phi}$.
+\[
+	\frac{\lambda-1}{\tau}e^{i\phi}+\frac{c}{h}\left( 
+	\frac{1}{2}e^{i\phi}- \frac{1}{2}e^{- i\phi}+e^{i\phi} +e^{-i\phi}-2\right) -
+	\frac{c^2 \tau}{2h^2} \left( 
+	e^{i\phi}-2+e^{-i\phi}\right) =0
+.\] 
+\[
+\frac{\lambda-1}{\tau}e^{i\phi}+\frac{c}{h}
+\left( 2\left( \cos \phi-1 \right) +i
+\sin \phi\right) + \frac{c^2 \tau}{h^2}
+(1- \cos \phi)=0
+.\] 
+\[
+	\lambda= 1 -e ^{-i\phi} \left( \sigma^2(1-\cos  \phi)+ \sigma \left( 2 \left( \cos \phi-1 \right) +i \sin \phi \right)  \right) 
+.\] 
+Оценка этого выражения в Mathematica даёт, что
+ $|\lambda|\le 1$ для любого $\phi$ при $\sigma\le 2$,
+значит схема устойчива при $c\tau \le 2 h$.
+\end{sol}
+\begin{hiProb}[7.4]
+\end{hiProb}
+\begin{sol}
+\[
+u_t+c u_x=0
+.\] 
+Характеристика:
+\[
+	x- c t= \mathrm{const}
+.\] 
+Значит
+\[
+	u_* = u_{m}^{n+1}
+.\] 
+
+Получим значение решения в точке $x^*$ интерполяцией
+по значениям в трёх узлах сетки на нижнем слое.
+\begin{multline*}
+	P_2 (x_*)= y_{m-2} - \frac{y_{m_1}-y_{m-2}}{h}
+	(x_*-x_{m-2})+\\+
+	\frac{y_m-2y_{m-1}+ y_{m-2}}{2h^2}(x_*-x_{m-2})
+	(x_*-x_{m-1})=\\= y_{m-2}+ \frac{1}{h}
+	\left( y_{m-1}-y_{m-2} \right) (2h-c\tau)
+	+\\+ \frac{1}{2h^2}\left( 
+	y_m- 2y_{m-1}+y_{m-2}\right) \left( 2h-c\tau \right) 
+	(h-c\tau)=\\=
+	y_{m-2}+ \left( 2-\frac{c\tau}{h} \right) \left( 
+	y_{m-1}-y_{m-2}\right) +\\+
+	\left( 1-\frac{c\tau}{2h} \right) \left( 
+	1- \frac{c\tau}{h}\right) \left( 
+y_m-2 y_{m-1}+y_{m-2}\right) =\\=
+y_{m-2}+2y_{m-1}-2y_{m-2}+y_m-2y_{m-1}+y_{m-2}+\\
++\frac{c\tau}{h}\left( -y_{m-1}+ y_{m-2}-\frac{1}{2}
+y_m+y_{m-1}-\frac{1}{2}y_{m-2}-y_m+2y_{m-1}-y_{m-2}\right) +\\+
+\frac{c^2\tau^2}{h^2}\left( y_m-2y_{m-1}+2y_m \right) 
+.\end{multline*} 
+\[
+	P_2(x_*)=y_m^{n+1}
+.\] 
+Значит
+\[
+\frac{y_m^{n+1}-y_m^n}{\tau}+
+\frac{c}{h} \left( \frac{3}{2} y_m^n-2y_{m-1}^n+\frac{1}{2}
+y_{m-2}^n\right) - \frac{c^2\tau^2}{h^2}(y_m^n-2y_{m-1}^n+
+y_{m-2}^n)=0
+.\] 
+Результат совпадает с предыдущей задачей.
+\end{sol}
+\begin{hiProb}[7.8]
+\end{hiProb}
+\begin{sol}
+\[
+	\text{Ш}= \left\{ \left( x_{m-1},\,y_{k-1} \right),\,
+		\left( x_{m-1},\,y_{k+1} \right) ,\,
+		\left( x_{m+1},\,y_{k-1} \right) ,\,
+		\left( x_{m+1},\,y_{k+1},\,
+		\left( x_{m},\,y_k \right) \right) 
+	\right\} 
+.\] 
+\[
+\Delta u= u_{x x}+u_{y y}=0
+.\] 
+\begin{figure}[ht]
+    \centering
+    \incfig{1}
+    \caption{К задаче 7.8}
+    \label{fig:1}
+\end{figure}
+\[
+aY_{m+1}^{k+1}+b Y_{m+1}^{k-1}+c Y_{m-1}^{k+1}+d Y_{m-1}^{k-1}
+-l Y_{m}^k=0
+.\] 
+\begin{multline*}
+	a \left( u +h u_x +h u_y+ \frac{1}{2} h^2 u_{x x}
+	+h^2 u_{xy}+\frac{1}{2} h^2 u_{y y}\right) +\\+
+	b \left( u+ h u_x -h u_y + \frac{1}{2}h^2 u_{x x}
+	-h^2 u_{xy}+ \frac{1}{2} h^2 u_{y y}\right) +\\+
+	c\left( u-h u_x +h u_y + \frac{1}{2}h^2 u_{x x}
+	-h^2 u_{x y} + \frac{1}{2} h^2 u_{y y}\right) +\\+
+	d\left( u- h u_x - h u_y + \frac{1}{2}
+	h^2 u_{x x} + h^2 u_{x y}+ \frac{1}{2}h^2 u_{y y}\right) 
+	+lu=0
+.\end{multline*} 
+\[
+\left\{
+\begin{aligned}
+a+b+c+d+l&= 0 \\
+a+b-c-d&= 0 \\
+a-b+c-d&= 0 \\
+a-b-c+d&= 0 \\
+\end{aligned}
+\right.\implies
+\left\{
+\begin{aligned}
+a=b&=c= d \\
+l&= -4a \\
+\end{aligned}
+\right.
+\] 
+\[
+	\frac{h^2}{2} \left( a+b+c+d \right) \left( 
+	u_{x x}+u_{y y}\right) =0;\quad
+	\frac{h^2}{2} \left( a+b+c+d \right) =1
+.\] 
+\[
+a=b=c=d=\frac{1}{2h^2};\quad l=-\frac{2}{h^2}
+.\] 
+Значит разностная схема:
+\[
+\frac{Y_{m+1}^{k+1}-2 Y_{m}^k+Y_{m-1}^{k-1}}{2h^2}
++ \frac{Y_{m-1}^{k+1}-2Y_{m}^k+Y_{m+1}^{k-1}}{2h^2}=0
+.\] 
+\end{sol}
+\section*{Тема XIII. Численные методы для уравнений в
+частных производных параболического типа}
+\begin{hiProb}[7.3]
+\end{hiProb}
+\begin{sol}
+\[
+\frac{y_m^{n+1}-y_m^n}{\tau}=D \frac{y_{m-1}^n-2y_m^{n+1}+
+y_{m+1}^n}{h^2}
+\tag{*}
+\label{eq:1}
+.\] 
+\[
+	\frac{y_m^{n+1}-y_m^n}{\tau}= D \frac{y_{m-1}^n-2y_m^n
+	+y_{m+1}^n}{h^2}- \frac{2D}{h^2}\left( 
+y_m^{n+1}-y_m^n\right) 
+.\] 
+\[
+	\left( y_m^{n+1}-y_m^n \right) \left( 
+	\frac{1}{\tau}+ \frac{2D}{h^2}\right) =D \frac{
+y_{m-1}^n-2y_m^n+y_{m+1}^n}{h^2}
+.\] 
+Значит
+\[
+\frac{y_{m}^{n+1}-y_m^n}{\tau^*}=
+D \frac{y_{m-1}^n-2y_m^n+y_{m+1}^n}{h^2}
+.\] 
+\[
+	\tau^*= \frac{\tau}{1+ 2D\tau /h^2}<\tau
+.\] 
+Следовательно \eqref{eq:1} эквивалентна явной схеме
+с уменьшенным значением шага по времени.
+\end{sol}
+\begin{hiProb}[8.3]
+\end{hiProb}
+\begin{sol}
+Ознакомился.
+\end{sol}
+\begin{hiProb}[9.3]
+\end{hiProb}
+\begin{sol}
+\[
+\frac{y_m^{n+1}-y_m^n}{\tau}= \frac{y_{m+1}^n-2 y_m^n+y_{m+1}^n
+}{h^2}
+.\] 
+Разложим в окрестности $\left( t_n,\,x_m \right) $:
+\[
+u_m^n \equiv u
+.\] 
+\[
+u_{m}^{n+1}=u + \tau u_t + \frac{\tau^2}{2}u_{t t}
++ \frac{\tau^3}{6} u_{ t t t}+ O\left( \tau^4 \right) 
+.\] 
+\[
+u_{m\pm 1}^n= u \pm h u_{x} + \frac{h^2}{2}u_{x x}\pm 
+\frac{h^3}{6} u_{x x x}+ \frac{h^4}{24} u_{x x x x}\pm 
+\frac{h^5}{120}u_{x x x x x} + O\left( x^6 \right) 
+.\] 
+Значит
+\[
+r_{\tau h}= u_t + \frac{\tau}{2} u_{t t}+
+\frac{\tau^2}{6}u_{t t t }-u_{x x}-\frac{h^2}{12}u_{x x x x}
++ O\left( \tau^2 h^4 \right) 
+.\] 
+Из исходного уравнения: $u_t=u_{x x}$. Следовательно
+\[
+\left\{
+\begin{aligned}
+	u_{tt}&= u_{x x t} \\
+	u_{t x}&= u _{x x x} \\
+	u_{t x x}&= u_{x x x x}
+\end{aligned}
+\right.
+\implies u_{t t}=u_{u_{x x x x}}
+.\] 
+Поэтому
+\[
+	r_{\tau h}= \left( \frac{\tau}{2}u_{t t}-
+	\frac{h^2}{12}\underbrace{u_{x x x x}}_{=u_{t t}}\right) +O\left( \tau^2+h^4 \right) 
+.\] 
+Как итог схема будет иметь порядок аппроксимации $O\left( \tau^2,\,h^4 \right) $ при условии:
+\[
+\frac{\tau}{2}u_{tt}=\frac{h^2}{12}u_{x x x x}\implies
+\frac{h^2}{\tau}= 6
+.\] 
+\end{sol}
+\begin{hiProb}[9.1]
+\end{hiProb}
+\begin{sol}
+\[
+	\frac{\hat{y}-y}{\tau}=
+	a \xi \Lambda_{x x} \hat{y}+ a (1-\xi) \Lambda
+	_{x x}y + \xi Q^{n+1}+ (1-\xi) Q^n
+.\] 
+\renewcommand{\labelenumi}{\asbuk{enumi})}
+\begin{enumerate}
+	\item \emph{Метод энергетических неравенств}.
+
+	Представим схему в виде:
+	\[
+		\underbrace{(E-a \xi \tau \Lambda_{x x})}_{B}
+		\frac{\hat{y}-y}{\tau} \underbrace{-a \Lambda
+		_{x x}}_{A} y=0
+	.\] 
+	Условие устойчивости:
+	\[
+	B\ge \frac{\tau}{2} A
+	.\] 
+	\[
+	E-a\xi \tau \Lambda_{x x}\ge  \frac{\tau}{2}
+	\left( -a \Lambda_{x x} \right) 
+	.\] 
+	\[
+		E\ge  -\tau \Lambda_{x x}a \left( \frac{1}{2}-
+		\xi\right) 
+	.\] 
+	\[
+		1\ge -\tau a \lambda^{(k)}\left( \frac{1}{2}-
+		\xi\right) 
+	,\] 
+	где $\lambda^{(k)}$ --- спектр $\Lambda_{x x}$.
+
+	Известно, что для разностного оператора второй
+	производной верно:
+	\[
+	-\Lambda_{x x} \le \frac{4}{n^2} E \implies
+	\Lambda_{x x} \ge - \frac{4}{n^2} E
+	.\] 
+	Следовательно
+	\[
+		1\ge  \tau \cdot \frac{4}{h^2} \left( \frac{1}{2}-\xi \right) a \implies
+		\xi \ge  \frac{1}{2} - \frac{1}{4\sigma}
+	,\]
+	где $\sigma= \tau a / h^2$.
+\item \emph{Спектральный метод}.
+
+	Подставим $y=\lambda^n e^{im \phi}$:
+	\[
+	\frac{\lambda-1}{\tau}= a\xi \lambda
+	 \frac{e^{i\phi}+ e^{-i\phi}-2}{h^2}+
+	 a(1-\xi) \frac{e^{i\phi}+e^{-i\phi}-2}{h^2}
+	.\] 
+	Значит
+	\begin{multline*}
+		\lambda= 1+ \frac{1}{-\xi +\left( 
+		-2\sigma +2\sigma \cos  \phi\right) ^{-1}}=
+		1- \frac{1}{\xi+ \left( 4\left( \sin ^2 \frac{\phi}{2} \right) \sigma \right) ^{-1}}=\\=
+		1- \frac{4\sigma \sin ^2 \frac{\phi}{2}}{
+		4\xi \sigma \sin ^2 \frac{\phi}{2}+1}=
+		\frac{1- (1-\xi)\cdot 4 \sigma
+		\sin ^2 \frac{\phi}{2}}{1+ 4\xi \sigma
+	\sin ^2 \frac{\phi}{2}}
+	.\end{multline*} 
+	Для устойчивости должно выполняться: $|\lambda| \le 1$.
+	Тогда
+	\[
+	0 \le  \frac{4\sigma \sin^2 \frac{\phi}{2} }{4\xi
+	\sigma \sin ^2 \frac{\phi}{2}+1}\le 2
+	.\] 
+	\[
+	2\sigma \sin ^2 \frac{\phi}{2}\le 
+	4 \sigma \xi \sin ^2 \frac{\phi}{2}+1\implies
+	2\sigma \le 4\sigma \xi +1
+	.\] Откуда
+	\[
+	\xi \ge \frac{1}{2}-\frac{1}{4\sigma};\quad
+	\sigma= \frac{\tau a}{h^2}
+	.\] 
+	\end{enumerate}
+	Результаты совпадают.
+\end{sol}
+\begin{hiProb}[9.2]
+\end{hiProb}
+\begin{sol}
+Однородное уравнение теплопроводности:
+\[
+u_t=a u_{x x}
+.\] 
+Разностная схема:
+\[
+\frac{y_m^{n+1}-y_m^n}{\tau}=a\xi
+\frac{y_{m+1}^{n+1}-2y_m^{n+1}+y_{m-1}^{n+1}}{h^2}+
+a\left( 1-\xi \right) \frac{y_{m+1}^n-2y_m^n+
+y_{m-1}^n}{h^2}
+.\] 
+Разложим в окрестности точки $\left( t_n,\,x_m \right) $:
+\[
+	u_{m}^n\equiv u
+.\] 
+\[
+u_{m}^{n+1}=u+\tau u_t + \frac{\tau^2}{2} u_{t t}
++ \frac{\tau^3}{6}u_{t t t}+ O\left( \tau^4 \right) 
+.\] 
+\[
+u_{m\pm 1}^n= u\pm h u_x + \frac{h^2}{2}u_{x x}
+\pm  \frac{h^3}{6}u_{x x x}+ \frac{h^4}{24}u_{x x x x}
+\pm \frac{h^5}{120}u_{x x x x x}+ O\left( h^6 \right) 
+.\] 
+\[
+	\left( u_{x x} \right) _m^{n+1}=
+	u_{x x}+\tau u_{x x t}+ \frac{\tau^2}{2}u_{x x t t}
+	+ \frac{\tau^3}{6}u_{x x t t t}+
+	O\left( \tau^4 \right) 
+.\] 
+Значит
+\begin{multline*}
+r_{\tau h}= u_t + \frac{\tau}{2} u_{t t}+
+O\left( \tau^2 \right) +a (\xi-1) \left[ 
+u_{x x}+\frac{h^2}{12} u_{x x x x}+ O\left( h^4 \right) \right] -\\-
+a \xi \left[ u_{x x}+ \tau u_{x x t}+ \frac{h^2}{12}\left( 
+u_{x x x x }+\tau u_{x x x x t}+ O\left(\tau^2\right)\right)+
+O\left( \tau^2 \right) + O\left( h^4 \right) \right] =\\
+\xlongequal[]{u_t=au_{x x}}\frac{\tau}{2}
+u_{t t}+ a \left( \xi-1 \right) \frac{h^2}{12} u_{x x x x}
+-a \xi \frac{h^2}{12}u_{x x x x}- a \xi \tau u_{x x t}
+- a \xi \tau \frac{h^2}{12} u_{x x x x t}+
+O\left( \tau^2,\,h^4 \right) =\\=
+\frac{\tau}{2} u_{t t}- \frac{h^2}{12}
+u_{x x x x}-a \xi \tau u_{x x t}
+-a \xi \tau \frac{h^2}{12}u_{x x x x t}+
+O\left( \tau^2,\,h^4 \right)
+.\end{multline*} 
+\[
+u_t = a u_{x x}
+.\] 
+Поэтому
+\[
+\left\{
+\begin{aligned}
+	u_{t t}&= u_{xx t}\cdot a\\
+	u_{tx}&= u_{x x x}\cdot a\\
+	u_{t x x} &= u_{x x x x}\cdot a \\
+\end{aligned}
+\right.
+\implies
+\frac{1}{a^2} u_{t t}=
+u_{x x x x}= u_{x x t }\frac{1}{a}
+.\] 
+\[
+	r_{\tau h}= \left( \frac{\tau}{2}
+	-\frac{h^2}{12a^2}- \frac{a}{a}
+\xi \tau\right) u_{t t}+ O\left( \tau^2,\,h^4 \right) 
+.\] 
+Следовательно схема будет иметь порядок аппроксимации $O
+\left( \tau^2,\,h^4 \right) $ при условии
+\[
+\frac{\tau}{2}- \frac{h^2}{12a^2}- \xi \tau=0\implies
+\xi = \frac{1}{2}- \frac{h^2}{12 a^2 \tau}
+.\] 
+\end{sol}
+\begin{hiProb}[9.8]
+\end{hiProb}
+\begin{sol}
+\[
+u_t=u_{x x}
+.\] 
+\[
+	\frac{y_m^{n+1}-y_m^{n-1}}{2\tau}=
+	\frac{y_{m+1}^n-y_m^{n+1}-y_m^{n-1}+y
+	_{m-1}^n}{h^2}
+.\] 
+Исследуем на устойчивость: $y_{m}^n=\lambda^n e^{i m \phi}$
+\[
+\frac{\lambda^2-1}{2\tau}= \frac{\lambda e^{i\phi} -\lambda^2-
+1+\lambda e^{-i\phi}}{h^2}
+.\] 
+\[
+\lambda= \frac{2\tau \cos \phi \pm  \sqrt{ h^4 -2 \tau^2+2\tau^2
+\cos 2\phi} }{h^2+2 \tau}
+.\] 
+\[
+\sigma= \frac{\tau}{h^2}\implies
+\lambda= \frac{2\sigma \cos \phi\pm \sqrt{1-2 \sigma
+^2+2\sigma^2 \cos 2\phi} }{1+2\sigma}
+.\] 
+Построением графика функции $\lambda(\sigma)$ с
+параметром $\phi$ нетрудно убедиться, что
+условие $|\lambda|\le 1$ выполнено для любых $\phi$ и
+$\sigma>0$ (что так по определению $\sigma$). Следовательно
+схема безусловно устойчива.
+
+Разложим в окрестности точки $\left( t_n,\,x_m \right) $:
+\[
+r_{\tau h}= u_t + \frac{\tau^2}{6}u_{t t t}-u_{x x}+
+\frac{\tau^2}{h^2} u_{t t}+ O\left( \tau^2,\,h^2 \right) 
+.\] 
+Если $\tau /h=c= \mathrm{const}$, то
+ \[
+	 r_{\tau h}= -u_{x x}+u_t +c^2 u_{t t}+ O\left( 
+	 \tau^2,\,h^2\right) 
+.\] 
+Т.\:е. аппроксимируется уравнение
+\[
+u_t+c^2 u_{tt}=u_{x x}
+.\] 
+\end{sol}
+\begin{hiProb}[9.9]
+\end{hiProb}
+\begin{sol}
+\begin{multline*}
+\frac{1}{12} \frac{y_{m+1}^{n+1}-y_{m+1}^n}{\tau}
++ \frac{5}{6} \frac{y_m^{n+1}-y_{m}^n}{\tau}
+\frac{1}{12} \frac{y_{m-1}^{n+1}-y_{m-1}^n}{\tau}=\\
+\frac{1}{2} \frac{y_{m+1}^n-2y_m^n+y_{m-1}^n}{h^2}+
+\frac{1}{2} \frac{y_{m+1}^{n+1}-2y_m^{n+1}+y_{m-1}^{n+1}}{h^2}
+.\end{multline*} 
+Разложим в окрестности точки $\left( t_n,\,x_m \right) $:
+\begin{multline*}
+	r_{\tau h}= \frac{1}{12} \left( 
+	u_t+h u_{t x}+ \frac{h^2}{2}u_{t xx}
++ \frac{h^3}{6}u_{t x x x}+ O\left( h^4 \right) 
++u_t-h u_{t x} \right. + \\ + \left. \frac{h^2}{2} u_{t x x}-
+\frac{h^3}{6} u_{t x x x}+
+O\left( h^4 \right) + \frac{\tau}{2}\left( 
+u_{t t}+ \frac{h^2}{2}u_{t t x x}\cdot 2+
+\frac{h^4}{12}u_{t t x x x x}+O\left( h^6 \right) \right) \right. + \\ + \left.
+\frac{\tau^2}{6} \left( u_{t t t}+
+h^2 u_{t t t x x}+ \frac{h^4}{12} u_{t t t x x x x}
++O\left( h^6 \right) \right) \right) +
+\frac{5}{6}\left( u_t +\frac{\tau}{2}
+u_{t t}+ \frac{\tau^2}{6}u_{t t t }+O\left( \tau^3 \right) \right) 
+-\\-\frac{1}{2} \left[ 
+u_{x x} + \frac{h^2}{12} u_{x x x x} +O\left( 
+h^4\right) + u_{x x} +\tau u_{x x t}\right. + \\ + \left.
+\frac{h^2}{12} \left( u_{x x x x}+\tau
+u_{x x x x t}+ \frac{\tau^2}{2}u_{x x x x t t}+
+O\left( \tau^3 \right) \right) +O\left( \tau^2 \right) +
+O\left( h^4 \right) \right] =\\=
+u_t -u_{xx} + \frac{h^2}{12} \left( u_{t x x}-
+u_{x x x x}\right) +\frac{1}{2} \tau\left( 
+u_{t t}- u_{x x t}\right) + \frac{h^2 \tau}{24}
+\left( u_{t t x x}-u_{x x x x t}\right) +\\
++ \tau^2 \left( 
+\frac{u_{t t t}}{6}- \frac{u_{x x t t}}{4}\right) +
+h^2 \tau^2 \left( \frac{u_{t t t x x}}{72}-
+\frac{u_{x x x x tt}}{48}\right) +
+h^4 \left( \frac{u_{t x x x x}}{144}-
+\frac{u_{x x x x x x}}{360}\right) .\end{multline*} 
+\[
+u_t=u_{x x} \implies \left\{
+\begin{aligned}
+u_{t x x }&= u_{x x x x} \\
+u_{t t}&= u_{x x t}\\
+u_{t t x x}&= u_{x x x x t} \\
+\end{aligned}
+\right.
+\]
+Значит порядок аппроксимации: $O\left( \tau^2,\,h^4,\,
+h^2 \tau^2\right) $.
+
+Исследуем на устойчивость: $y_{m}^n= \lambda^n e^{i m \phi}$.
+\[
+	\frac{\left( \lambda-1 \right) e^{i\phi}}{12\tau}+
+	\frac{5 \left( \lambda-1 \right) }{6\tau}+
+	\frac{(\lambda-1)e^{-i\phi}}{12\tau}=
+	\frac{e^{i\phi}+ e^{-i\phi}-2}{2h^2}+
+	\lambda \frac{e^{i\phi}+e^{-i\phi}-2}{2h^2}
+.\] 
+\[
+	\lambda= \frac{5h^2 -6\tau +\left( h^2 +6\tau \right) 
+	\cos \phi }{5h^2 +6\tau+\left( h^2-6\tau)
+\cos  \phi\right) }
+.\]
+\[
+\sigma= \frac{\tau}{h^2}
+.\] 
+\[
+	\lambda= \frac{5-6 \sigma +\left( 1+ \sigma\cdot 6 \right) \cos  \phi}{5 + 6 \sigma + \left( 1- 6\sigma \right) 
+	\cos \phi}
+.\] 
+\[
+	\lambda= \frac{5 + \cos \phi - 6 \sigma \left( 1- \cos \phi \right) }{5 + \cos \phi + 6 \sigma (1- \cos \phi)}
+.\] 
+$|\lambda|\le 1$ при любых $\phi$ и $\sigma$ (т.\:к.
+$(1-\cos \phi)\ge 0\implies 6 \sigma (1-\cos \phi)\ge 0$).
+Значит схема безусловно устойчива.
+\end{sol}
+\section*{Тема XIV. Численные методы для уравнений в
+частных производных гиперболического типа}
+\begin{hiProb}[8.5]
+\end{hiProb}
+\begin{sol}
+\[
+	u_t+ a u_x=0,\quad a \neq \mathrm{const}
+.\] 
+Ищем дисперсионное соотношение для разностного уравнения
+в виде: $y_m^n= e^{\lambda(k) t_n}\cdot e^{ikx_m}=
+ e^{\lambda n \tau +i kmh}$.
+
+Подставим в схему <<правый уголок>>  1-го порядка аппроксимации:
+\[
+	\frac{1}{\tau}\left( e^{\lambda\tau}-1 \right) 
+	+ \frac{a}{h} \left( 1-e^{-i kh} \right) =0
+.\] 
+Значит
+\[
+	\lambda \left( \tau,\,h,\,k \right) 
+	= \frac{1}{\tau} \ln \left( 1- \frac{a \tau}{h}
+	+\frac{a\tau}{h}e^{-ikh}\right) 
+.\] 
+При $a \tau /h =1$ $\lambda(k)=\lambda\left( \tau,\,h,\,
+k\right) $.
+Предположим, что $kh \ll 1$, $h$ --- малый параметр.
+
+Аппроксимация тем лучше, чем меньше $k$. Следовательно
+\[
+	\lambda\left(\tau,\,h,\,k  \right) 
+	\approx-iak- \frac{ahk^2}{2} \left( 1- \frac{a\tau}{h} \right) = \lambda(k)-\frac{k^2}{2}
+	a h (1-\sigma)
+.\] 
+$\sigma= a \tau /h$ --- число Куранта. Частное решение:
+\[
+	\exp \left( ik \left( mh-an\tau \right)  \right) 
+	\exp  \left( -\frac{1}{2}ak^2 \left( 
+	n-a\tau\right) n\tau \right) 
+.\] 
+При $a<0$, $h-a\tau >0$ рассматриваемую схему нельзя
+использовать. Второй сомножитель имеет порядок $\exp 
+\left( k^2 |a| h t_n \right) $ --- быстро растёт при
+$k \sim h^{-1}$, $h\ll 1$. Аналогично при $a>0$, $
+р-a\tau<0$. При $a>0$, $h-a\tau>0$ численное
+решение отличается от точного наличием затухающего множителя
+для гармоник с большим $k$ (малым $\lambda$). Значит
+наблюдаем сглаживание решений.
+
+Для разностной схемы Л-В 2-го порядка аппроксимации:
+\[
+	\left( y_m^{n+1} -y_m^n \right) +
+	\frac{\sigma}{2}\left( y_{m+1}^n-
+	y_{m-1}^n\right) -
+	\frac{\sigma^2}{2} \left( y_{m-1}^n-2y_m^n+
+	y_{m+1}^n\right) =0
+.\] 
+Получаем
+\[
+	\lambda= \frac{1}{\tau} \ln \left( 1- i \sigma
+	\sin k h - 2 \sigma^2 \sin ^2 \frac{kh}{2}\right) 
+	\xlongequal[]{kh\ll 1}-ika+
+	ika\cdot  \frac{k^2 h^2}{6} \left( 1- 3\sigma^2 \right) 
+.\] 
+Значит решения дифференциального уравнения переноса имеют
+вид волн:
+\[
+	u\left( t,\,x \right) = \exp \left( 
+	ikx + \lambda(k) t\right) = \exp \left( 
+ik\left( x-at \right) \right) 
+.\] 
+Решения:
+\begin{multline*}
+	y\left( t_n,\,x_m \right) =
+	\exp \left( ikx_n+ \lambda \left( \tau,\,h,\,k \right) t_n \right) =\\=
+	\exp \left[ 
+	ik \left\{ x_m -a \left[ 1- \frac{k^2 h^2}{6}
+\left( 1-3\sigma^2 \right) \right] it_n \right\} \right] =\\
+\xlongequal[]{A_k= - \frac{k^2 h^2(1-3\sigma^2)}{6}}
+\exp  \left( ik \left\{ x_m -a \left[ 
+1+A_k(k)\right] t_n \right\}  \right) 
+.\end{multline*} 
+Следовательно каждая волна со своей частотой
+движется со скоростью $a_k=a (1+A_k)$, поэтому
+теряется монотонность профиля $u(x)$, появляется
+сеточная дисперсия.
+\end{sol}
+\begin{hiProb}[9.1]
+\end{hiProb}
+\begin{proof}
+\[
+u_t-u_x=0
+.\] 
+\[
+	u(t,\,x)= e^{i\alpha t}e^{i\alpha x}
+.\] 
+\[
+\frac{y_m^{p+1}-y_{m}^p}{\tau}-
+\frac{y_{m+1}^p-y_m^p}{h}=0
+\]
+--- имеет решение $y_m^p=\left[ 1- \sigma +\sigma e^{i\alpha h} \right] ^p\cdot e^{i\alpha h m}$, $p= \frac{t}{\tau}$, $m=\frac{x}{h}$.
+\begin{multline*}
+\sigma= \frac{\tau}{h}\implies
+\lambda= 1 - \frac{\tau}{h}+ \frac{\tau}{h}e^{i\alpha h}=
+1- \frac{\tau}{h}\left( 1-e^{i\alpha h} \right) \sim\\\sim  
+1- \frac{\tau}{h} \left[ 
+1- \left( 1+i \alpha h + \frac{i^2 \alpha^2 h^2}{2}+
+\ldots\right) \right] \sim \\\sim 
+1-\frac{\tau}{h} \left( -i\alpha h-
+\frac{\alpha^2 h^2}{2}\right) \sim 1+
+i\alpha \tau + \frac{\alpha^2 h}{2}+ \ldots \to 
+1+i\alpha \tau\ (h\to +0)
+.\end{multline*} 
+\[
+	\left( 1+i\alpha \tau \right) \frac{t}{\tau}
+	= \left( \left( 1+i\alpha \frac{1}{1 /\tau} \right) ^{\frac{1}{\tau}} \right) t
+	\xlongrightarrow[\tau \to 0]{1 /\tau\to \infty }
+	e^{i\alpha t}
+.\] 
+Значит на самом деле решение разностной схемы стремится
+к решению дифференциальной задачи при $h\to 0$, если
+дополнительно $\tau\to 0$, т.\:е. $\tau =O\left( h^n \right) $, $n\ge 1$. Наибольший  интерес представляет
+случай $n=1 \Leftrightarrow \tau =c h$,  где $c$ задаёт
+наклон характеристик: $c= 1 /a$, где $a$ --- коэффициент
+при $u_x$ в дифференциальном уравнении. Поэтому $c=-1$,
+$\sigma=-1= c\tau /h$, таким  образом случай $\sigma >1$ 
+не реализуется.
+\end{proof}
+\begin{hiProb}[9.5]
+\end{hiProb}
+\begin{sol}
+Отрицательная схемная вязкость:
+\[
+	\gamma= \frac{c h }{2}\left( 1- \frac{c\tau}{h}
+	\right)<0 \implies \frac{c \tau}{h}>1
+.\] 
+\[
+	r_{\tau h}= Lu- \frac{c h}{2}\left( 1- \frac{c\tau}{h} \right) u_{xx} + O\left( \tau^2,\,h^2 \right) 
+.\] 
+Следовательно если $\gamma<0$, то задача Коши ставится
+некорректно, а разностная схема \emph{неустойчива} (Аристова, стр. 182).
+
+Т.\:к. у всех схем  1-го порядка есть схемная вязкость,
+то точно есть порядок аппроксимации $O(\tau,\,h)$,
+но т.\:к. устойчивости нет, то \emph{сходимости нет}.
+
+\[
+c\frac{\tau}{h}>1
+.\] 
+Решим для схемы <<явный левый уголок>>, т.\:к. у  неё
+отрицательный коэффициент вязкости:
+\[
+\frac{y_m^{n+1}-y_m^n}{\tau}+c \frac{y_m^n-y_{m-1}^n}{h}=0
+.\] 
+\[
+	y_{m}^{n+1}=  -\frac{c\tau}{h} \left( y_m^n
+	-y_{m-1}^n\right) + y_{m}^n
+.\] 
+\[
+y_{m+1}^{n+1}= -  \frac{c\tau}{h}
+\left(y_{m+1}^n-y_m^n \right) + y_{m+1}^n
+.\] 
+Пусть $\left( y_{m+1}^n -y_m^n \right) >0$, тогда
+\begin{multline*}
+y_{m+1}^{n+1}-y_m^{n+1} = -\frac{c \tau}{h}
+\left[ y_{m+1}^n - \left( y_m^n -y_{m-1}^n \right)  \right]
++y_{m+1}^n-y_m^n=\\= \frac{c\tau}{h} \left( 
+y_{m}^n-y_{m-1}^n\right) -
+\left( \frac{c\tau}{h}-1 \right) \left( 
+y_{m+1}^n-y_m^n\right) >0
+.\end{multline*} 
+\[
+	\frac{c\tau}{h} \left( y_m^n-y_{m-1}^n \right) 
+	>\left( \frac{c\tau}{h}-1 \right) 
+	\left( y_{m+1}^n-y_m^n \right) >0
+.\] 
+Следовательно \emph{монотонность} есть при условии:
+\[
+	\left( y_m^n-y_{m-1}^n \right) >
+	\frac{\left( \frac{c\tau}{h}-1 \right) }{
+	c\tau /h}\left( 
+y_{m+1}^n-y_m^n\right) 
+\]
+и нет в общем случае.
+\end{sol}
+\section*{Тема XV. Численные методы для уравнений
+в частных производных эллиптического типа}
+\begin{hiProb}[5.1]
+\end{hiProb}
+\begin{sol}
+Ознакомился.
+\end{sol}
+\begin{hiProb}[7.1]
+\end{hiProb}
+\begin{sol}
+В уравнении Лапласа нет выделенных пространствеенных направлений,
+значит веса зависят только от расстояния от центра
+шаблона. Поэтому схему можно представить в виде
+\begin{multline*}
+	u_{m,l}= \alpha \left( u_{m-1,l}+
+	u_{m+1,l} \right) +\beta\left( u_{m,l-1}+
+u_{m,l+1}\right)
++\\+\gamma \left( u_{m-1,l+1}+
+u_{m-1,l-1}+ u_{m+1,l+1}+u_{m+1,l-1}\right) 
+.\end{multline*} 
+Разложим всё по Тейлору в окрестности  $u_{m,l}$ и 
+приравняем коэффициенты при соответствующих степенях
+$h_i$:
+\begin{table}[htpb]
+\centering
+\caption{}
+\label{tab:1}
+\begin{tabular}{|Cc|Cc|Cc|Cc|}
+	\hline $h^0$ & $1=2\alpha+2\beta+4\gamma$ & 
+		     $h_x^4$& $\frac{\alpha}{12}u_{x x x x}$ \\
+	\hline $h_{x}^2$ & $\alpha u_{x x}$ & 
+			 $h^4_y$& $\frac{\beta}{12}
+			 u_{y y y y}$ \\
+	\hline $h_y^2$ & $\beta u_{y y}$ & 
+		       $h_x^2 h_y^2$& 
+		       $\gamma u_{x x y y}$\\
+	\hline
+\end{tabular}
+\end{table}
+В  силу уравнения Лапласа: $\alpha h_x^2=\beta h_y^2$.
+\[
+	0=\left( u_{x x}+ u_{yy} \right) _{x x}=
+	u_{x x x x}+ u_{x x y y}
+.\] 
+\[
+0= u_{y y y y}+ u_{xxyy}
+.\] 
+\[
+	u_{x x y y}=-\frac{1}{2} \left( u_{x x x x }+
+	u_{y y y y}\right) 
+.\] 
+\begin{multline*}
+h_x^4 \cdot \frac{\alpha}{12} u_{x x x x}
++h_y^4 \frac{\beta}{12} u_{y yy y}+
+h_x^2 h_y^2 \frac{\gamma}{6}
+u_{x x y y}=\\=
+h_x^4 \frac{\alpha}{12} u_{x x x x}
++h_y^4 \frac{\beta}{12}
+u_{y y y y}-
+\frac{\gamma}{2} h_x^2 h_y^2 \left( 
+u_{x x x x}+u_{y y y y}\right) =\\=
+\frac{h_x^2}{12} \left( \alpha h_x^2 -
+6\gamma h_y^2\right) u_{x x x x}+
+\frac{h_y^2}{12} \left( 
+\beta h_y^2 - 6 \gamma h_x^2\right) u_{y y y y}
+.\end{multline*} 
+\begin{itemize}
+	\item при $h_x \neq h_y$  порядок $O\left( h_x^2,\,h_y^2 \right) $ 
+\item при $h_x=h_y=h$ коэффициенты определяются
+	системой
+\[
+\left\{
+\begin{aligned}
+2\alpha +2\beta+4\gamma&= 1 \\
+\alpha&= \beta \\
+\alpha&= 6\gamma \\
+\end{aligned}
+\right.
+\]
+Порядок $O\left( h^4 \right) $.
+\end{itemize}
+\end{sol}
+\end{document}
