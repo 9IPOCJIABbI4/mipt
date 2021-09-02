@@ -1,0 +1,73 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Лабораторная работа №4.2\\
+Исследование энергетического спектра $\beta$-частиц
+и определение их максимальной энергии при помощи
+магнитного спектрометра}
+\begin{document}
+	\maketitle
+Измерение фона:
+ \[
+	 t=100 \text{ с},\qquad N_{\text{ф}}=(0,660\pm 0,081)
+ .\] 
+Полученные экспериментальные данные приведены в табл.~\ref{tab:1}.
+	\begin{table}[htpb]
+		\centering
+		\caption{Экспериментальные данные}
+		\label{tab:1}
+		\csvreader[tabular=|c|c|c|c|c|,
+		table head={\hline $J,$ А &$N$&
+		$N-N_\text{ф}$&$p,$ кэВ/с & $T$, кэВ\\\hline},
+		late after line=\\\hline, head to column names]
+		{data.csv}{}
+		{\num{\Jexp} & \num{\Nexp} & \num{\Nwithf}
+			     & \num{\pexp} & \num{\Texp}}
+	\end{table}
+Обработанные результаты представлены на рис.~\ref{fig:1}, \ref{fig:2}.
+\begin{figure}[htpb]
+	\centering
+	\begin{tikzpicture} 
+		\begin{axis}
+			[cycle list name=colorbrewer-tab,
+			minor x tick num=0,
+			minor y tick num=1,
+			xlabel={$J$, А},
+			ylabel={$N-N_\text{ф}$},
+			xticklabel style={/pgf/number format/.cd, use comma},
+			yticklabel style={/pgf/number format/.cd, use comma},
+			grid=both,]
+			\addplot+ [
+			only marks,
+			] table [x=Jexp, y=Nwithf,
+			col sep= comma]{data.csv};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{}
+	\label{fig:1}
+\end{figure}
+\begin{figure}[htpb]
+	\centering
+	\begin{tikzpicture} 
+		\begin{axis}
+			[cycle list name=colorbrewer-tab,
+			minor x tick num=0,
+			minor y tick num=1,
+			xlabel={$T$, кэВ},
+			ylabel={$\frac{\sqrt{N-N_\text{ф}}}{p},\, \frac{\text{с}}{\text{МэВ}}$ },
+			xticklabel style={/pgf/number format/.cd, use comma},
+			yticklabel style={/pgf/number format/.cd, use comma},
+			grid=both,]
+			\addplot+ [
+			only marks,
+			] table [x=Texphi, y=aexp,
+			col sep= comma]{datahi.csv};
+			\addplot+ [domain=119.7:544.9,samples=201, color=tabblue,] {
+			4.55 -0.0072* x};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{}
+	\label{fig:2}
+\end{figure}
+Полученная по МНК прямая имеет вид $\frac{\sqrt{N-N_\text{ф}} }{p}=A\cdot T+B$, где коэффициенты $A=(7,2 \pm 0,3)\cdot 10^{-6} \frac{\text{с}}{\text{ кэВ}^2}$, $B=4,55\pm 0,12 \text{ МэВ}$.
+Откуда максимальная энергия $\beta$-спектра $E_e=633\pm 34 \text{ кэВ}$.
+\end{document}

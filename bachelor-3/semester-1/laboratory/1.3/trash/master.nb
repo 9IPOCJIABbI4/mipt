@@ -1,0 +1,110 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3163,        100]
+NotebookOptionsPosition[      2691,         83]
+NotebookOutlinePosition[      3084,         99]
+CellTagsIndexPosition[      3041,         96]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"MeanAround", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Around", "[", 
+      RowBox[{"45", ",", 
+       RowBox[{"Scaled", "[", "0.02", "]"}]}], "]"}], "-", 
+     RowBox[{"Around", "[", 
+      RowBox[{"25", ",", 
+       RowBox[{"Scaled", "[", "0.02", "]"}]}], "]"}]}], ",", 
+    RowBox[{
+     RowBox[{"Around", "[", 
+      RowBox[{"37", ",", 
+       RowBox[{"Scaled", "[", "0.02", "]"}]}], "]"}], "-", 
+     RowBox[{"Around", "[", 
+      RowBox[{"24", ",", 
+       RowBox[{"Scaled", "[", "0.02", "]"}]}], "]"}]}], ",", 
+    RowBox[{
+     RowBox[{"Around", "[", 
+      RowBox[{"48", ",", 
+       RowBox[{"Scaled", "[", "0.02", "]"}]}], "]"}], "-", 
+     RowBox[{"Around", "[", 
+      RowBox[{"25", ",", 
+       RowBox[{"Scaled", "[", "0.02", "]"}]}], "]"}]}], ",", 
+    RowBox[{
+     RowBox[{"Around", "[", 
+      RowBox[{"38", ",", 
+       RowBox[{"Scaled", "[", "0.02", "]"}]}], "]"}], "-", 
+     RowBox[{"Around", "[", 
+      RowBox[{"24", ",", 
+       RowBox[{"Scaled", "[", "0.02", "]"}]}], "]"}]}], ",", 
+    RowBox[{
+     RowBox[{"Around", "[", 
+      RowBox[{"50", ",", 
+       RowBox[{"Scaled", "[", "0.02", "]"}]}], "]"}], "-", 
+     RowBox[{"Around", "[", 
+      RowBox[{"26", ",", 
+       RowBox[{"Scaled", "[", "0.02", "]"}]}], "]"}]}], ",", 
+    RowBox[{
+     RowBox[{"Around", "[", 
+      RowBox[{"38", ",", 
+       RowBox[{"Scaled", "[", "0.02", "]"}]}], "]"}], "-", 
+     RowBox[{"Around", "[", 
+      RowBox[{"24", ",", 
+       RowBox[{"Scaled", "[", "0.02", "]"}]}], "]"}]}]}], "}"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.809209006199724*^9, 3.8092091659746857`*^9}, {
+  3.809209275077276*^9, 3.809209303911265*^9}, {3.809209338243515*^9, 
+  3.809209422195722*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"d724d00f-e9fe-4aaf-bfc4-50704bd09f43"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TemplateBox[{"17.1", "0.4"},
+   "Around"],
+  Around[17.140958337286737`, 0.3970042942286911]]], "Output",
+ CellChangeTimes->{3.8092091754338503`*^9, 3.809209424177712*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"e6ab62ef-56ea-476f-8813-5b66f77ee802"]
+}, Open  ]]
+},
+WindowSize->{808, 673},
+WindowMargins->{{303, Automatic}, {26, Automatic}},
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 9, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"ffe8b69d-ea72-4e45-a763-7390aee47481"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1807, 50, 136, "Input",ExpressionUUID->"d724d00f-e9fe-4aaf-bfc4-50704bd09f43"],
+Cell[2390, 74, 285, 6, 34, "Output",ExpressionUUID->"e6ab62ef-56ea-476f-8813-5b66f77ee802"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

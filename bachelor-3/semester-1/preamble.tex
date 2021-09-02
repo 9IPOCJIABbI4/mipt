@@ -1,0 +1,273 @@
+% Этот шаблон документа разработан в 2014 году
+% Данилом Фёдоровых (danil@fedorovykh.ru) 
+% для использования в курсе 
+% <<Документы и презентации в \LaTeX>>, записанном НИУ ВШЭ
+% для Coursera.org: http://coursera.org/course/latex .
+% Исходная версия шаблона --- 
+% https://www.writelatex.com/coursera/latex/5.3
+
+% В этом документе преамбула
+
+\usepackage{siunitx}
+%%% Работа с русским языком
+\usepackage{cmap}					% поиск в PDF
+\usepackage{mathtext} 				% русские буквы в формулах
+\usepackage[T2A]{fontenc}			% кодировка
+\usepackage[utf8]{inputenc}			% кодировка исходного текста
+\usepackage[english,russian]{babel}	% локализация и переносы
+\usepackage{indentfirst}
+\frenchspacing
+
+\renewcommand{\epsilon}{\ensuremath{\varepsilon}}
+\renewcommand{\phi}{\ensuremath{\varphi}}
+\renewcommand{\kappa}{\ensuremath{\varkappa}}
+\renewcommand{\le}{\ensuremath{\leqslant}}
+\renewcommand{\leq}{\ensuremath{\leqslant}}
+\renewcommand{\ge}{\ensuremath{\geqslant}}
+\renewcommand{\geq}{\ensuremath{\geqslant}}
+\renewcommand{\emptyset}{\varnothing}
+\renewcommand{\Im}{\operatorname{Im}}
+\renewcommand{\Re}{\operatorname{Re}}
+
+
+%%% Дополнительная работа с математикой
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} % AMS
+\usepackage{icomma} % "Умная" запятая: $0,2$ --- число, $0, 2$ --- перечисление
+
+%% Номера формул
+%\mathtoolsset{showonlyrefs=true} % Показывать номера только у тех формул, на которые есть \eqref{} в тексте.
+%\usepackage{leqno} % Нумереация формул слева
+
+%% Свои команды
+\DeclareMathOperator{\sgn}{\mathop{sgn}}
+\DeclareMathOperator{\sign}{\mathop{sign}}
+\DeclareMathOperator*{\res}{\mathop{res}}
+\DeclareMathOperator*{\tr}{\mathop{tr}}
+
+%% Перенос знаков в формулах (по Львовскому)
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}
+{\hbox{$\mathsurround=0pt #1$}}{}}
+
+%%% Работа с картинками
+\usepackage{graphicx}  % Для вставки рисунков
+\graphicspath{{figures/}}  % папки с картинками
+\setlength\fboxsep{3pt} % Отступ рамки \fbox{} от рисунка
+\setlength\fboxrule{1pt} % Толщина линий рамки \fbox{}
+\usepackage{wrapfig} % Обтекание рисунков текстом
+
+%%% Работа с таблицами
+\usepackage{array,tabularx,tabulary,booktabs} % Дополнительная работа с таблицами
+\usepackage{longtable}  % Длинные таблицы
+\usepackage{multirow} % Слияние строк в таблице
+
+%%% Теоремы
+\theoremstyle{plain} % Это стиль по умолчанию, его можно не переопределять.
+\newtheorem{theorem}{Теорема}
+\newtheorem*{thm}{Теорема}
+\newtheorem{prop}{Утверждение}
+ 
+\theoremstyle{definition} % "Определение"
+%\newtheorem{corollary}{Следствие}[theorem]
+\newtheorem*{dfn}{Определение}
+\newtheorem{problem}{Задача}
+\newtheorem*{problem*}{Задача}
+
+ 
+\theoremstyle{remark} % "Примечание"
+\newtheorem*{sol}{Решение}
+\newtheorem*{rem}{Замечание}
+
+%%% Программирование
+\usepackage{etoolbox} % логические операторы
+
+%%% Страница
+%\usepackage{extsizes} % Возможность сделать 14-й шрифт
+%\usepackage{geometry} % Простой способ задавать поля
+%	\geometry{top=25mm}
+%	\geometry{bottom=35mm}
+%	\geometry{left=35mm}
+%	\geometry{right=20mm}
+ 
+\usepackage{fancyhdr} % Колонтитулы
+%	\pagestyle{fancy}
+ %	\renewcommand{\headrulewidth}{0pt}  % Толщина линейки, отчеркивающей верхний колонтитул
+	%\lfoot{Нижний левый}
+	%\rfoot{Нижний правый}
+	%\rhead{Верхний правый}
+	%\chead{Верхний в центре}
+	%\lhead{Верхний левый}
+	%\cfoot{Нижний в центре} % По умолчанию здесь номер страницы
+
+\usepackage{setspace} % Интерлиньяж
+%\onehalfspacing % Интерлиньяж 1.5
+%\doublespacing % Интерлиньяж 2
+%\singlespacing % Интерлиньяж 1
+
+\usepackage{lastpage} % Узнать, сколько всего страниц в документе.
+
+\usepackage{soul} % Модификаторы начертания
+
+\usepackage{hyperref}
+%\usepackage[usenames,dvipsnames,svgnames,table,rgb]{xcolor}
+\hypersetup{				% Гиперссылки
+    unicode=true,           % русские буквы в раздела PDF
+    pdftitle={Заголовок},   % Заголовок
+    pdfauthor={Автор},      % Автор
+    pdfsubject={Тема},      % Тема
+    pdfcreator={Создатель}, % Создатель
+    pdfproducer={Производитель}, % Производитель
+    pdfkeywords={keyword1} {key2} {key3}, % Ключевые слова
+    colorlinks=true,       	% false: ссылки в рамках; true: цветные ссылки
+    linkcolor=red,          % внутренние ссылки
+    citecolor=black,        % на библиографию
+    filecolor=magenta,      % на файлы
+    urlcolor=cyan           % на URL
+}
+
+\usepackage{csquotes} % Еще инструменты для ссылок
+
+%\usepackage[style=apa,maxcitenames=2,backend=biber,sorting=nty]{biblatex}
+
+\usepackage{multicol} % Несколько колонок
+
+\usepackage{tikz} % Работа с графикой
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+%\usepackage{coloremoji}
+\usepackage{floatrow}
+\usepackage{subcaption}
+\newcommand*{\N}{\mathbb{N}}
+\newcommand*{\R}{\mathbb{R}}
+\newcommand*{\K}{\mathbb{K}}
+\newcommand*{\V}{\mathcal{V}}
+\newcommand*{\A}{\mathcal{A}}
+\newcommand*{\ii}{\mathbf{1}}
+\newcommand*{\oo}{\mathbf{0}}
+\newcommand*{\ba}{\mathbf{a}}
+\newcommand*{\bb}{\mathbf{b}}
+\newcommand*{\Q}{\mathbb{Q}}
+\graphicspath{{figures/}}
+%\usepackage{breqn}
+
+\renewcommand\thesubfigure{\asbuk{subfigure}}
+%\addbibresource{master.bib}
+
+\usepackage{import}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{xcolor}
+\usepackage{xifthen}
+
+%\newcommand{\incfig}[1]{%
+%    \def\svgwidth{\columnwidth}
+%    \import{./figures/}{#1.pdf_tex}
+%}
+
+
+\newcommand{\incfig}[2][1]{%
+    \def\svgwidth{#1\columnwidth}
+    \import{./figures/}{#2.pdf_tex}
+}
+%\usepackage{titlesec}
+%\titleformat{\section}{\normalfont\Large\bfseries}{}{0pt}{}
+%----------------------STANDART:
+%\titleformat{\chapter}[display]
+%  {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+%\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+%\titleformat{\subsection}
+%  {\normalfont\large\bfseries}{\thesubsection}{1em}{}
+%\titleformat{\subsubsection}
+%  {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+%\titleformat{\paragraph}[runin]
+%  {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+%\titleformat{\subparagraph}[runin]
+%  {\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
+
+\pdfsuppresswarningpagegroup=1
+\pgfplotsset{compat=1.16}
+
+\usepackage{xifthen}
+\makeatother
+%\def\@lecture{}%
+%\newcommand{\lecture}[3]{
+%    \ifthenelse{\isempty{#3}}{%
+%        \def\@lecture{Неделя #1}%
+%    }{%
+%        \def\@lecture{Неделя #1: #3}%
+%    }%
+%    \section*{\@lecture}
+%    \marginpar{\small\textsf{\mbox{#2}}}
+%}
+\makeatletter
+
+%\newcommand{\lec}{\subsection{Лекция}}
+%\newcommand{\sem}{\subsection{Семинар}}
+%\newcommand{\hw}{\subsection{Домашняя работа}}
+%\newcommand{\prob}[1]{\textbf{#1}}
+%\renewcommand{\thesubsection}{}
+%\renewcommand{\thesubsubsection}{}
+
+%\setcounter{tocdepth}{1} % only parts,chapters,sections
+%\titleformat{\subsection}{\normalfont\large\bfseries}{}{0em}{}
+%\titleformat{\subsubsection}{\normalfont\normalsize\bfseries}{}{0em}{}
+
+%\newcommand{\textover}[2]{\stackrel{\mathclap{\normalfont\mbox{#2}}}{#1}}
+
+\author{Драчов Ярослав\\
+Факультет общей и прикладной физики МФТИ}
+\newcommand{\veq}{\mathrel{\rotatebox{90}{$=$}}}
+%\newcommand{\teto}[1]{\stackrel{\mathclap{\normalfont\tiny\mbox{#1}}}{\to}}
+%\renewcommand{\thesubsection}{\arabic{subsection}}
+
+%%\setcounter{secnumdepth}{0}
+
+\definecolor{tabblue}{RGB}{30, 119, 180}
+\definecolor{taborange}{RGB}{255, 127, 15}
+\definecolor{tabgreen}{RGB}{45, 160, 43}
+\definecolor{tabred}{RGB}{214, 38, 40}
+\definecolor{tabpurple}{RGB}{148, 103, 189}
+\definecolor{tabbrown}{RGB}{140, 86, 76}
+\definecolor{tabpink}{RGB}{227, 119, 193}
+\definecolor{tabgray}{RGB}{127, 127, 127}
+\definecolor{tabolive}{RGB}{188, 189, 33}
+\definecolor{tabcyan}{RGB}{22, 190, 207}
+\pgfplotscreateplotcyclelist{colorbrewer-tab}{
+{tabblue},
+{taborange},
+{tabgreen},
+{tabred},
+{tabpurple},
+{tabbrown},
+{tabpink},
+{tabgray},
+{tabolive},
+{tabcyan},
+}
+\usepackage{csvsimple}
+\usepackage{extarrows}
+%\renewcommand{\labelenumii}{\asbuk{enumii})}
+%\renewcommand{\labelenumiv}{\Asbuk{enumiv}}
+\newcommand{\prob}[1]{\subsubsection*{#1}}
+\sisetup{output-decimal-marker = {,},separate-uncertainty = true,exponent-product = \cdot}
+
+\usepackage{braket}
+\usepackage{enumerate}
+\usepackage{chngcntr}
+%\counterwithin*{equation}{problem}
+%\usepackage{bbold}
+
+\newtheoremstyle{hiProb}% ⟨name ⟩ 
+{3pt}% ⟨Space above ⟩1 
+{3pt}% ⟨Space below ⟩1
+{}% ⟨Body font ⟩
+{}% ⟨Indent amount ⟩2
+{\bfseries}% ⟨Theorem head font⟩
+{.}% ⟨Punctuation after theorem head ⟩
+{.5em}% ⟨Space after theorem head ⟩3
+%{\thmname{#1} \thmnote{#3}}% ⟨Theorem head spec (can be left empty, meaning ‘normal’)⟩
+{\thmnote{#3}}% ⟨Theorem head spec (can be left empty, meaning ‘normal’)⟩
+\theoremstyle{hiProb} % "Определение"
+%\newtheorem{hiProb}{Задача}
+\newtheorem{hiProb}{}
+\usepackage{mmacells}
+\newcommand{\textover}[2]{\stackrel{\mathclap{\normalfont\scriptsize\mbox{#2}}}{#1}}

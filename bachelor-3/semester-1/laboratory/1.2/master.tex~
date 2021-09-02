@@ -1,0 +1,69 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Лабораторная работа №1.2\\
+Исследование эффекта Комптона}
+\begin{document}
+	\maketitle
+	Экспериментальные данные приведены в табл.\ref{tab:1}.
+	\begin{table}[htpb]
+		\centering
+		\caption{Зависимость номера канала $N$ от
+		угла рассеяния $\theta$}
+		\label{tab:1}
+		\csvreader[tabular=|c|c|,
+		table head={\hline $\theta, ^\circ$ & $N$ \\\hline},
+		late after line=\\\hline, head to column names]%
+		{exp.csv}{}%
+		{\thetaexp & \Nexp}%
+	\end{table}
+	Будем исследовать зависимость
+\[
+	\frac{1}{N( \theta )}=a(1-\cos \theta )+b
+.\] 
+
+Согласно МНК получаем (графически результаты представлены на рис.~\ref{fig:1})
+\[
+	a=(213\pm 3)\cdot 10^{-5}\qquad 
+	b=(162\pm 2) \cdot 10^{-5}
+.\]\begin{figure}[htpb]
+	\centering
+\begin{tikzpicture} \begin{axis}
+[cycle list name=colorbrewer-tab,
+minor x tick num=0,
+minor y tick num=1,
+xlabel={ $1-\cos \theta$ },
+ylabel={$1 / N(\theta)$},
+grid=both,
+]
+\addplot+ [
+only marks,
+] table [x=x, y=y , col sep= comma
+]{data.csv};
+\addplot+ [domain=-0:1.225,samples=201, color=tabblue] {0.00213*x +0.00162};
+\end{axis}
+\end{tikzpicture}
+\caption{Зависимость $1 /N(\theta) = a(1-\cos \theta)+b$}
+	\label{fig:1}
+\end{figure}Откуда
+\[
+	N(0)_{\text{наил}}=617 \pm 8\qquad
+	N(1)_\text{наил}= 267 \pm 3
+.\] 
+Следовательно
+\[
+mc^2= 504 \pm 4 \text{ кэВ}
+.\] 
+Сравнивая с табличным значением $512$ кэВ обнаруживаем лишь
+небольшое расхождение.
+%\num{15.(3)}
+%	\begin{table}[htpb]
+%		\centering
+%		\caption{hi}
+%		\label{tab:2}
+%		\csvreader[tabular=|c|c|,
+%		table head={\hline $a$ & $b$ \\\hline},
+%		late after line=\\\hline, head to column names]
+%		{datasethi.csv}{}
+%		{\num{\aexp} & \num{\bexp}}
+%	\end{table}
+\end{document}

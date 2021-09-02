@@ -1,0 +1,566 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: fig2dev Version 3.2 Patchlevel 5e -->
+<!-- CreationDate: Sun Oct  9 13:29:04 2016 -->
+<!-- Magnification: 1.050 -->
+<svg	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="9.3in" height="10.6in"
+	viewBox="876 -12614 11197 12724">
+<g style="stroke-width:.025in; fill:none">
+<!-- Line -->
+<polyline points="7559,-9354
+1795,-9354
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+stroke-dasharray:41 41;"/>
+<!-- Line -->
+<polyline points="2362,-11244
+2834,-11244
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="2362,-11385
+2834,-11385
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="2362,-11480
+2834,-11480
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="3779,-11527
+3779,-9732
+" style="stroke:#000000;stroke-width:0;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="3779,-11574
+3779,-9732
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="3496,-9732
+4015,-9732
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="3543,-10724
+4015,-10724
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="3543,-11291
+4015,-11291
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="3543,-11055
+4015,-11055
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="3543,-11433
+4015,-11433
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="4960,-11574
+4960,-10677
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="6141,-11574
+6141,-11102
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="7322,-9354
+7795,-9354
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="7322,-10488
+7795,-10488
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="7322,-11007
+7795,-11007
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="7322,-11291
+7795,-11291
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="7322,-11433
+7795,-11433
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="8503,-9685
+8976,-9685
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="8503,-10724
+8976,-10724
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="8503,-11149
+8976,-11149
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="8503,-11385
+8976,-11385
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="11102,-11574
+11102,-10629
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="9921,-11574
+9921,-9732
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="9685,-9732
+10157,-9732
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="9685,-10724
+10157,-10724
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="9685,-11149
+10157,-11149
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="9685,-11385
+10157,-11385
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="10866,-11102
+11338,-11102
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="4724,-10677
+5196,-10677
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="4724,-11055
+5196,-11055
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="4724,-11433
+5196,-11433
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="5905,-11338
+6377,-11338
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="5905,-11480
+6377,-11480
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="1889,-12283
+1889,0
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="1795,-944
+1889,-944
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="1795,-1889
+1889,-1889
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="1795,-2834
+1889,-2834
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="1795,-3779
+1889,-3779
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="1795,-4724
+1889,-4724
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="1795,-5669
+1889,-5669
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="1795,-6614
+1889,-6614
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="1795,-7559
+1889,-7559
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="1795,-8503
+1889,-8503
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="1795,-9448
+1889,-9448
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="1795,-10393
+1889,-10393
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="1795,-11338
+1889,-11338
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="10866,-10629
+11338,-10629
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="2362,-9685
+2834,-9685
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="2409,-9685
+1795,-9685
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="2598,-11574
+2598,0
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="1795,0
+3685,0
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="2362,-10913
+2834,-10913
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="1795,-11574
+11291,-11574
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="8740,-11574
+8740,-9685
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="7559,-11574
+7559,-9354
+" style="stroke:#000000;stroke-width:8;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="10866,-11385
+11338,-11385
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="4724,-11291
+5196,-11291
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line -->
+<polyline points="5905,-11102
+6377,-11102
+" style="stroke:#000000;stroke-width:32;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Line: box -->
+<rect x="4771" y="-6850" width="1795" height="755" rx="0" 
+style="stroke:#000000;stroke-width:16;
+stroke-linejoin:miter; stroke-linecap:butt;
+"/>
+<!-- Text -->
+<text xml:space="preserve" x="7322" y="-8881" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="middle">2</text>
+<!-- Text -->
+<text xml:space="preserve" x="7417" y="-9023" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="start">3</text>
+<!-- Text -->
+<text xml:space="preserve" x="7559" y="-8881" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="start">S</text>
+<!-- Text -->
+<text xml:space="preserve" x="7795" y="-8787" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="start">1</text>
+<!-- Text -->
+<text xml:space="preserve" x="1700" y="-11480" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="end">24.47</text>
+<!-- Text -->
+<text xml:space="preserve" x="1700" y="94" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="end">0</text>
+<!-- Text -->
+<text xml:space="preserve" x="1700" y="-850" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="end">2</text>
+<!-- Text -->
+<text xml:space="preserve" x="1700" y="-1795" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="end">4</text>
+<!-- Text -->
+<text xml:space="preserve" x="3779" y="-11811" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="middle">P</text>
+<!-- Text -->
+<text xml:space="preserve" x="4960" y="-11811" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="middle">D</text>
+<!-- Text -->
+<text xml:space="preserve" x="6141" y="-11811" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="middle">F</text>
+<!-- Text -->
+<text xml:space="preserve" x="11102" y="-11811" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="middle">D</text>
+<!-- Text -->
+<text xml:space="preserve" x="2598" y="-11811" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="start">S</text>
+<!-- Text -->
+<text xml:space="preserve" x="2551" y="-11952" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="middle">1</text>
+<!-- Text -->
+<text xml:space="preserve" x="1700" y="-2740" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="end">6</text>
+<!-- Text -->
+<text xml:space="preserve" x="1700" y="-3685" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="end">8</text>
+<!-- Text -->
+<text xml:space="preserve" x="1700" y="-4629" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="end">10</text>
+<!-- Text -->
+<text xml:space="preserve" x="1700" y="-5574" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="end">12</text>
+<!-- Text -->
+<text xml:space="preserve" x="1700" y="-6519" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="end">14</text>
+<!-- Text -->
+<text xml:space="preserve" x="1700" y="-7464" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="end">16</text>
+<!-- Text -->
+<text xml:space="preserve" x="1700" y="-10299" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="end">22</text>
+<!-- Text -->
+<text xml:space="preserve" x="1700" y="-8409" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="end">18</text>
+<!-- Text -->
+<text xml:space="preserve" x="1700" y="-9637" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="end">20.55</text>
+<!-- Text -->
+<text xml:space="preserve" x="3637" y="-11952" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="middle">1</text>
+<!-- Text -->
+<text xml:space="preserve" x="4818" y="-11952" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="middle">1</text>
+<!-- Text -->
+<text xml:space="preserve" x="6000" y="-11952" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="middle">1</text>
+<!-- Text -->
+<text xml:space="preserve" x="7559" y="-11811" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="middle">S</text>
+<!-- Text -->
+<text xml:space="preserve" x="7464" y="-11952" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="end">3</text>
+<!-- Text -->
+<text xml:space="preserve" x="8645" y="-11952" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="end">3</text>
+<!-- Text -->
+<text xml:space="preserve" x="9826" y="-11952" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="end">3</text>
+<!-- Text -->
+<text xml:space="preserve" x="11007" y="-11952" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="end">3</text>
+<!-- Text -->
+<text xml:space="preserve" x="2834" y="-11716" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="start">0</text>
+<!-- Text -->
+<text xml:space="preserve" x="6236" y="-11716" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="start">3</text>
+<!-- Text -->
+<text xml:space="preserve" x="8740" y="-11811" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="middle">P</text>
+<!-- Text -->
+<text xml:space="preserve" x="8834" y="-11716" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="start">2,1</text>
+<!-- Text -->
+<text xml:space="preserve" x="11244" y="-11716" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="start">3,2,1</text>
+<!-- Text -->
+<text xml:space="preserve" x="2267" y="-11149" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="middle">4</text>
+<!-- Text -->
+<text xml:space="preserve" x="2267" y="-9732" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="middle">2</text>
+<!-- Text -->
+<text xml:space="preserve" x="2267" y="-94" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="middle">1</text>
+<!-- Text -->
+<text xml:space="preserve" x="2267" y="-10866" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="middle">3</text>
+<!-- Text -->
+<text xml:space="preserve" x="3401" y="-9637" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="middle">2</text>
+<!-- Text -->
+<text xml:space="preserve" x="3401" y="-10960" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="middle">4</text>
+<!-- Text -->
+<text xml:space="preserve" x="3401" y="-11244" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="middle">5</text>
+<!-- Text -->
+<text xml:space="preserve" x="4629" y="-10582" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="middle">3</text>
+<!-- Text -->
+<text xml:space="preserve" x="4629" y="-10960" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="middle">4</text>
+<!-- Text -->
+<text xml:space="preserve" x="5763" y="-11244" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="middle">5</text>
+<!-- Text -->
+<text xml:space="preserve" x="7370" y="-9448" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="middle">2</text>
+<!-- Text -->
+<text xml:space="preserve" x="7181" y="-10393" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="middle">3</text>
+<!-- Text -->
+<text xml:space="preserve" x="7181" y="-10866" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="middle">4</text>
+<!-- Text -->
+<text xml:space="preserve" x="8409" y="-12283" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="303" text-anchor="start">Orthohelium</text>
+<!-- Text -->
+<text xml:space="preserve" x="2503" y="-11811" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="end">n</text>
+<!-- Text -->
+<text xml:space="preserve" x="3590" y="-11811" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="end">n</text>
+<!-- Text -->
+<text xml:space="preserve" x="4771" y="-11811" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="end">n</text>
+<!-- Text -->
+<text xml:space="preserve" x="5952" y="-11811" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="end">n</text>
+<!-- Text -->
+<text xml:space="preserve" x="7322" y="-11811" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="end">n</text>
+<!-- Text -->
+<text xml:space="preserve" x="8503" y="-11811" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="end">n</text>
+<!-- Text -->
+<text xml:space="preserve" x="9685" y="-11811" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="end">n</text>
+<!-- Text -->
+<text xml:space="preserve" x="10866" y="-11811" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="end">n</text>
+<!-- Text -->
+<text xml:space="preserve" x="8409" y="-11055" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="end">4</text>
+<!-- Text -->
+<text xml:space="preserve" x="9637" y="-9637" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="end">2</text>
+<!-- Text -->
+<text xml:space="preserve" x="9637" y="-11055" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="end">4</text>
+<!-- Text -->
+<text xml:space="preserve" x="8409" y="-10629" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="end">3</text>
+<!-- Text -->
+<text xml:space="preserve" x="8456" y="-9590" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="end">2</text>
+<!-- Text -->
+<text xml:space="preserve" x="9637" y="-10629" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="end">3</text>
+<!-- Text -->
+<text xml:space="preserve" x="10818" y="-10535" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="end">3</text>
+<!-- Text -->
+<text xml:space="preserve" x="10818" y="-11007" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="end">4</text>
+<!-- Text -->
+<text xml:space="preserve" x="8362" y="-11291" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="middle">5</text>
+<!-- Text -->
+<text xml:space="preserve" x="9590" y="-11338" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="middle">5</text>
+<!-- Text -->
+<text xml:space="preserve" x="5102" y="-11716" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="start">2</text>
+<!-- Text -->
+<text xml:space="preserve" x="9921" y="-11811" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="middle">P</text>
+<!-- Text -->
+<text xml:space="preserve" x="9968" y="-11716" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="start">0</text>
+<!-- Text -->
+<text xml:space="preserve" x="1559" y="-12000" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="middle">eV</text>
+<!-- Text -->
+<text xml:space="preserve" x="1700" y="-9259" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="end">19.77</text>
+<!-- Text -->
+<text xml:space="preserve" x="7700" y="-11716" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="start">1</text>
+<!-- Text -->
+<text xml:space="preserve" x="3874" y="-11716" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="start">1</text>
+<!-- Text -->
+<text xml:space="preserve" x="5149" y="-6330" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="278" text-anchor="start">n</text>
+<!-- Text -->
+<text xml:space="preserve" x="5385" y="-6472" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="202" text-anchor="start">2S+1</text>
+<!-- Text -->
+<text xml:space="preserve" x="5905" y="-6330" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="278" text-anchor="start">L</text>
+<!-- Text -->
+<text xml:space="preserve" x="6047" y="-6188" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="202" text-anchor="start">J</text>
+<!-- Text -->
+<text xml:space="preserve" x="3590" y="-12283" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="303" text-anchor="start">Parahelium</text>
+<!-- Text -->
+<text xml:space="preserve" x="10818" y="-11291" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="end">5</text>
+<!-- Text -->
+<text xml:space="preserve" x="7181" y="-11196" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="middle">5</text>
+<!-- Text -->
+<text xml:space="preserve" x="4629" y="-11196" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="middle">5</text>
+<!-- Text -->
+<text xml:space="preserve" x="3401" y="-10677" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="middle">3</text>
+<!-- Text -->
+<text xml:space="preserve" x="5763" y="-11007" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="middle">4</text>
+<!-- Text -->
+<text xml:space="preserve" x="3448" y="-8125" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="278" text-anchor="start">Termscheme for Para- and Orthohelium</text>
+<!-- Text -->
+<text xml:space="preserve" x="3448" y="-7401" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="278" text-anchor="start">one excited electron</text>
+<!-- Text -->
+<text xml:space="preserve" x="3448" y="-7763" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="278" text-anchor="start">with one electron in ground state 1s and</text>
+<!-- Text -->
+<text xml:space="preserve" x="2740" y="-5574" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="278" text-anchor="start">n = principal quantum number</text>
+<!-- Text -->
+<text xml:space="preserve" x="2740" y="-5133" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="278" text-anchor="start">S = total spin</text>
+<!-- Text -->
+<text xml:space="preserve" x="2740" y="-4692" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="278" text-anchor="start">L = angular quantum number (S=0, P=1, D=2, F=3, ...)</text>
+<!-- Text -->
+<text xml:space="preserve" x="2740" y="-4251" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="278" text-anchor="start">J = total angular momentum</text>
+<!-- Text -->
+<text xml:space="preserve" x="2881" y="-94" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="start">1</text>
+<!-- Text -->
+<text xml:space="preserve" x="3023" y="-236" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="start">1</text>
+<!-- Text -->
+<text xml:space="preserve" x="3165" y="-94" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="start">S</text>
+<!-- Text -->
+<text xml:space="preserve" x="3401" y="-47" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="177" text-anchor="start">0</text>
+<!-- Text -->
+<text xml:space="preserve" x="7984" y="-8881" fill="#000000"  font-family="Helvetica" font-style="normal" font-weight="normal" font-size="227" text-anchor="start">(metastable)</text>
+</g>
+</svg>

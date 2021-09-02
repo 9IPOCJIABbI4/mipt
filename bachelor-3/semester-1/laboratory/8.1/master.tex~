@@ -1,0 +1,165 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Лабораторная работа №8.1\\
+Определение постоянных Стефана-Больцмана и Планка из
+анализа теплового излучения нагретого тела}
+\begin{document}
+	\maketitle
+\section{Изучение работы оптического пирометра}
+Значение яркостной температуры модели АЧТ по шкале пирометра
+$T_{\text{ярк}}=\num{1113(1)} ^\circ \text{С}$. Значение температуры
+модели АЧТ, измеренное при помощи хромель-алюмелевой термопары
+\[T_{\text{термопары}}=\frac{\num{48.0(10)} \text{ мВ}}{\num{41.0
+(10)}\text{ мкВ}/ ^\circ \text{С}}=\num{117(4)e1} ^\circ\text{С}.\]
+Значения температуры, полученные обоими способами, мало отличаются друг от друга (не более 5\%) и, следовательно, оптический
+пирометр работает исправно.
+\section{Измерение яркостной температуры накалённых тел}
+Измерения яркостной температуры поверхности трубки и каждого из
+колец приведены в табл.~\ref{tab:1}
+\begin{table}[htpb]
+	\centering
+	\caption{Яркостная температура трубки и колец}
+	\label{tab:1}
+	\begin{tabular}{|c|c|}\hline
+	Трубка & 887 $^\circ$C \\ \hline
+	1, 3 кольца & 797 $^\circ$С \\ \hline
+	2, 4 кольца & 756 $^\circ$С \\ \hline
+	\end{tabular}
+\end{table}
+Различие яркостных температур колец при их одинаковой термодинамической
+температуре объясняется тем, что эти две величины связаны, в том
+числе, через спектральный коэффициент поглощения, который у
+разных материалов различный.
+\section{Проверка закона Стефана-Больцмана}
+Экспериментальные данные измерений температуры $T_\text{ярк}$, величины
+тока $I$ и падения напряжения на нити лампы $V$ представлены
+в табл.~\ref{tab:2}.
+	\begin{table}[htpb]
+		\centering
+		\caption{Экспериментальные данные}
+		\label{tab:2}
+		\csvreader[tabular=|c|c|c|,
+		table head={\hline $T_\text{ярк},^\circ$С & $I$, А &
+		$V$, В\\\hline},
+		late after line=\\\hline, head to column names]
+		{data.csv}{}
+			{\Texp & \num{\Iexp} & \num{\Vexp}}
+	\end{table}
+Зависимость $T=f(T_\text{ярк})$, представленную на графике в лабораторном
+практикуме по общей физике (рис.~\ref{fig:1}) \begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{1}
+	\caption{График зависимости $T=f(T_\text{ярк})$ для
+	вольфрама}
+	\label{fig:1}
+\end{figure}
+можно с определённой
+точностью считать линейной вида $T=-66,7+ 1,083\cdot T_\text{ярк}$. Для каждого значения термодинамической температуры
+вычислим мощность, потребляемую нитью лампы по формуле
+$W=UI$, полученные данные представлены в табл.~\ref{tab:3}.
+	\begin{table}[htpb]
+		\centering
+		\caption{Зависимость мощности, потребляемой
+		нитью лампы, $W$ от термодинамической температуры $T$}
+		\label{tab:3}
+		\csvreader[tabular=|c|c|,
+		table head={\hline $T,^\circ$С & $W$, Вт \\\hline},
+		late after line=\\\hline, head to column names]
+		{datasethi.csv}{}
+		{\num{\Texphi} & \num{\Wexp}}
+	\end{table}
+	График зависимости $W=f_2(T)$ представлен на  рис.~\ref{fig:2}.
+\begin{figure}[htpb]
+	\centering
+	\begin{tikzpicture} 
+		\begin{axis}
+			[cycle list name=colorbrewer-tab,
+			minor x tick num=0,
+			minor y tick num=1,
+			xlabel={$T,^\circ$C},
+			ylabel={$W$, Вт},
+			grid=both,]
+			\addplot+ [
+			only marks, error bars/.cd,
+			x dir=both, x explicit,
+			y dir=both, y explicit,
+			] table [x=TexpAbs, x error=TexpErr, y=WexpAbs, y error=WexpErr,
+			col sep= comma]{dataerr.csv};
+			%\addplot+ [domain=-0:0.4,samples=201] {
+			%0.5 - x};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Зависимость $W=f_2(T)$}
+	\label{fig:2}
+\end{figure}
+Для проверки закона Стефана-Больцмана построим в логарифмическом
+масштабе график зависимости $W=\epsilon_T B T^n$ (рис.~\ref{fig:3}), т.\:е.
+функцию
+\[
+	\ln W=\ln(\epsilon_T B)+n \ln T
+.\]
+\begin{figure}[htpb]
+	\centering
+	\begin{tikzpicture} 
+		\begin{loglogaxis}
+			[cycle list name=colorbrewer-tab,
+			%minor x tick num=1,
+			%minor y tick num=1,
+			xlabel={$T$, К},
+			ylabel={$W$, Вт},
+			xticklabel style={/pgf/number format/.cd, use comma},
+			yticklabel style={/pgf/number format/.cd, use comma},
+			grid=both,
+			]
+			\addplot+ [
+			only marks, error bars/.cd,
+			x dir=both, x explicit,
+			y dir=both, y explicit,
+			] table [x=TexpAbs, x error=TexpErr, y=WexpAbs, y error=WexpErr,
+			col sep= comma]{dataerr3.csv};
+			\addplot+ [domain=1191.8:2264.0,samples=201,color=tabblue] {
+			1.14e-11 *x^3.92};
+		\end{loglogaxis}
+	\end{tikzpicture}
+	\caption{График зависимости $W=\epsilon_T B T^n$ в 
+	логарифмическом масштабе}
+	\label{fig:3}
+\end{figure}Из данной зависимости получаем $n=3,92\pm 0,14$, что в пределах
+погрешности совпадает с числом 4.
+Найдём величину постоянной Стефана-Больцмана по формуле
+\[
+\sigma= \frac{W}{\epsilon_T S T^4}
+\]
+для каждого измеренного значения $T$, превыщающего 1700 К.
+Результаты данных вычислений приведены в табл.~\ref{tab:4}.
+	\begin{table}[htpb]
+		\centering
+		\caption{}
+		\label{tab:4}
+		\csvreader[tabular=|c|c|,
+		table head={\hline $T$, К & $\sigma,\, 10^{-12}\text{Вт}\cdot\text{см}^{-2}\cdot \text{К}^{-4}$ \\\hline},
+		late after line=\\\hline, head to column names]
+		{data4.csv}{}
+		{\num{\texp} & \num{\sigmahi}}
+	\end{table}
+	Среднее значение по серии измерений \[\sigma=(5,21\pm 0,18)\cdot 10^{-12}\frac{\text{Вт}}{\text{см}^{-2}\cdot \text{К}^{-4}}.\]
+По формуле
+\[
+	h= \sqrt[3]{\frac{2 \pi^5 k_\text{Б}^4}{15c^2\sigma}} 
+\]
+определим значение постоянной Планка \[h=(6,81\pm 0,08)\cdot
+10^{-27} \text{ эрг}\cdot\text{с}.\]
+
+Полученные значения $\sigma$ и $h$ почти сходятся с табличными.
+\section{Измерение <<яркостной температуры>> неоновой
+лампочки}
+Измеренная пирометром <<яркостная температура>> неоновой лампочки
+равна $T_\text{ярк}=875^\circ$С, однако дотронувшись до лампочки
+рукой, можно отметить, что термодинамическая температура
+лампочки не соответствует измеренной <<яркостной температуре>>
+нагретого тела. Это объясняется тем, что неоновая лампочка
+впринципе не является моделью абсолютно чёрного или серого тела, её
+излучение носит совершенно другую природу (переход электронов
+между энергетическими уровнями). То, что её свет имеет такой
+же цвет, что и нагретое АЧТ --- совпадение.
+\end{document}
