@@ -1,0 +1,858 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Домашняя работа по теории поля}
+%\titleformat{\subsubsection}{\normalfont\normalsize\bfseries}{}{0em}{}
+%\newcommand{\prob}[1]{\subsubsection{#1}}
+\begin{document}
+	\maketitle
+\prob{Задача 2.5}
+\begin{sol}
+%	\[
+%		\mathcal{L}=a( \partial_\mu \phi)^2 +b \partial_\mu
+%		\partial_\mu \phi+ c \phi\partial_\mu \partial_\mu \phi
+%		+\frac{m^2}{2} \phi^2 +d\phi
+%	.\] 
+%	\begin{multline*}
+%		S=\int d^4x \left[a( \partial_\mu \phi)^2 +b \partial_\mu
+%		\partial_\mu \phi+ c \phi\partial_\mu \partial_\mu \phi
+%	+\frac{m^2}{2} \phi^2 +d\phi\right]=\\
+%		=\int d^4x \left[a( \partial_\mu \phi)^2 +b \partial_\mu
+%		\partial_\mu \phi+ c \phi\partial_\mu \partial_\mu \phi
+%	+\frac{m^2}{2} \phi^2 +d\phi\right]
+%	.\end{multline*} 
+%	\begin{multline*}
+%		\delta S= S[\phi+\delta \phi,\,\partial_\mu \phi
+%		+\delta \partial_ \mu\phi,\, \partial_\mu\partial_\mu \phi+
+%		\delta\partial_\mu \partial_\mu \phi]-
+%		S[\phi,\,\partial_\mu \phi
+%		,\, \partial_\mu\partial_\mu \phi]=\\=
+%		\int d^4x \left[2a\partial_\mu \phi \delta\partial_\mu \phi
+%			+b\delta \partial_\mu
+%			\partial_\mu \phi+ c\left(\partial_\mu \partial_\mu \phi\delta\phi
+%			+\phi\delta\partial_\mu \partial_\mu \phi\right)
+%		+m^2 \phi\delta\phi +d\delta\phi\right]
+%	.\end{multline*}
+%	Далее, $\delta\partial_\mu \phi= \partial_\mu\delta \phi$ и 
+%	$\delta\partial_\mu\partial_\mu \phi=\partial_\mu\partial_\mu
+%	\delta\phi$.
+%	В первом слагаемом интегрируем по частям,
+%	\begin{multline*}
+%	\delta S=\\=\int d^4x \left[-2a\partial_\mu \partial_\mu\phi\delta\phi
+%		+b\delta \partial_\mu
+%		\partial_\mu \phi+ c\left(\partial_\mu \partial_\mu \phi\delta\phi
+%		+\phi\delta\partial_\mu \partial_\mu \phi\right)
+%	+m^2 \phi\delta\phi +d\delta\phi\right]+\\+\int d \Sigma^\mu[
+%	\partial_\mu \phi \delta \phi]
+%	,\end{multline*}
+%где второй интеграл берётся по границе объёма. Как обычно, полагаем $\delta\phi=0$ 
+%на границе четырёхмерного объёма, тогда второй интеграл исчезает,
+%	\begin{multline*}
+%		\delta S=\int d^4x \left[\left(-2a\partial_\mu\partial_\mu \phi
+%		+ c\partial_\mu \partial_\mu \phi
+%	+m^2 \phi +d\right)\delta\phi+
+%	(c\phi+b)\delta \partial_\mu
+%\partial_\mu \phi\right]=\\=
+%\int d^4x \left[\left(-2a\partial_\mu\partial_\mu \phi
+%		+ c\partial_\mu \partial_\mu \phi
+%	+m^2 \phi +d\right)\delta\phi-
+%	c\partial_\mu\phi
+%\partial_\mu \delta\phi\right]+\\+\int d\Sigma^\mu\left[ (c \phi+b)
+%\delta\partial_\mu
+%\phi\right]\xlongequal{\text{аналог.}}
+%\int d^4x \left[2(c-a)\partial_\mu\partial_\mu \phi
+%	+m^2 \phi +d\right]\delta\phi
+%\end{multline*}
+%Требуя $\delta S=0$ для всех  $\delta \phi$, получаем уравнение
+%\[
+%	2(c-a)\partial_\mu\partial_\mu\left(\phi+\frac{d}{m^2}\right)+m^2 \left(\phi+\frac{d}{m^2}
+%	\right)=0
+%.\] 
+%Пусть $\tilde{\phi}(m)$ --- решение уравнения Клейна-Гордона-Фока
+%\[
+%\partial_\mu\partial_\mu \phi+m^2 \phi=0
+%,\]
+%Тогда решение полученного нами уравнения будет представимо в виде
+%\[
+%	\phi(a,\,b,\,c,\,d,\,m)=
+%	\begin{cases}
+%		\tilde{\phi}\left( \sqrt{ \frac{m^2}{2(c-a)}} \right) -\frac{d}{m^2} & a\neq c,\\
+%		-\frac{d}{m^2}& a=c.
+%	\end{cases}\] 
+%Аналог функции Лагранжа $L$ в теории скалярногоо поля:
+%\[
+%	L=\int d^3 x \mathcal{L}= \int d^3 x\left[a( \partial_\mu \phi)^2 +b \partial_\mu
+%		\partial_\mu \phi+ c \phi\partial_\mu \partial_\mu \phi
+%	+\frac{m^2}{2} \phi^2 +d\phi\right]=
+%	\int d^3 x \left[ a \dot{\phi}^2- a \partial_i \phi
+%	\partial_i \phi +b \ddot{\phi}+b \Delta \phi+ c\right] 
+%.\] 
+\begin{multline*}
+	S= \int d^4 x\left[a( \partial_\mu \phi)^2 +b \partial_\mu
+		\partial_\mu \phi+ c \phi\partial_\mu \partial_\mu \phi
+	+\frac{m^2}{2} \phi^2 +d\phi\right]=\\=
+	 \int d^4 x\left[a( \partial_\mu \phi)^2 +(b+ c \phi)\partial_\mu \partial_\mu \phi
+	+\frac{m^2}{2} \phi^2 +d\phi\right]\xlongequal{\text{по частям}}\\
+	= \int d^4 x\left[a( \partial_\mu \phi)^2 -c \partial_\mu \phi\partial_\mu \phi
+	+\frac{m^2}{2} \phi^2 +d\phi\right]\xlongequal{+C}
+	\\= \int d^4 x\left[(a-c)( \partial_\mu \phi)^2
++\frac{m^2}{2} \left(\phi+\frac{d}{m^2}\right)^2\right]
+.\end{multline*}
+Здесь видно что $b$ пропадает после интегрирования по частям, а именно,
+после взятия производной $\partial_\mu(b+c\phi)$. После интегрирования по частям
+также появляется член 
+\[
+	\int d\Sigma^\mu (b+c\phi)\partial_\mu \phi
+,\]
+где данный интеграл берётся по границе объёма. Однако, мы ограничиваемся
+ рассмотрением случая $\delta \partial_\mu \phi=0$ на границе четырёхмерного
+ объёма, и поэтому данное слагаемое обращается в нуль.
+
+Значит
+\[
+	\mathcal{L}=(a-c)( \partial_\mu \phi)^2
++\frac{m^2}{2} \left(\phi+\frac{d}{m^2}\right)^2
+.\] 
+Аналог функции Лагранжа $L$  в теории скалярного поля
+\begin{multline*}
+	L= \int d^3 x \mathcal{L}= \int d^3 x \left[(a-c)( \partial_\mu \phi)^2
++\frac{m^2}{2} \left(\phi+\frac{d}{m^2}\right)^2
+  \right] =\\=
+  \int d^3 x \left[ 
+  (a-c) \dot{\phi}^2-(a-c)\partial_i \phi \partial_i \phi
++\frac{m^2}{2} \left(\phi+\frac{d}{m^2}\right)^2
+  \right] 
+.\end{multline*} 
+Используя
+\[
+	\frac{\delta \mathcal{L}}{\delta \dot{\phi}(\mathbf{x})}=
+	2(a-c)\dot{\phi}(\mathbf{x}),
+\]
+получим для энергии
+\[
+	E= \int d^3 x  \frac{\delta \mathcal{L}}{\delta \dot{\phi}
+	(\mathbf{x})}\dot{\phi}(\mathbf{x})-L
+\]
+выражение  вида
+\[
+E=\int d^3 x \left[ 
+  (a-c) \dot{\phi}^2+(a-c)\partial_i \phi \partial_i \phi
+-\frac{m^2}{2} \left(\phi+\frac{d}{m^2}\right)^2
+\right] 
+.\] 
+Кажется, что на физические решения в данном случае стоит наложить условие
+$a<c$ с тем, чтобы в ситуации большого и быстро осциллирующего поля  $\phi$
+энергия не равнялась нулю.
+
+Случай $a=c$ отвечает равенству
+\[
+	\frac{\delta \mathcal{L}}{\delta \dot{\phi}(\mathbf{x})}=0
+.\]
+По аналогии с классической механикой это можно интерпретировать как
+равенство нулю пространственной плотности обобщённого импульса.
+Нетрудно видеть, что в данном случае мы получаем стационарные решения
+вида
+\[
+\phi=-\frac{d}{m^2}
+.\] 
+\end{sol}
+\prob{Задача 2.6}
+\begin{sol}
+Из выражения для энергии получаем
+\[
+	[E]=\frac{L^3 [\phi]^2}{T^2}
+,\]
+\[
+	[\hbar][\omega]=L[\phi]^2
+.\] 
+Т.к. $[\hbar]=1$, $[\omega]=1 /T$ и  $L=T=1 /M$, то
+ \[
+	 [\phi]=M
+.\] 
+Следовательно
+\[
+	[m]=\left( \frac{[E]}{L^3 [\phi]^2} \right) ^\frac{1}{2}=M
+.\] 
+\end{sol}
+\prob{Задача 2.7}
+\begin{sol}
+	\[
+		E=\int d^3 x \frac{\delta \mathcal{L}}{\delta \dot{\phi}(\mathbf{x})}
+		\dot{\phi}(\mathbf{x})-L
+	.\] 
+%	\[
+%	S=-\frac{1}{4} \int d^4 x F_{\mu \nu} F_{\mu\nu}
+%	.\] 
+%	\[
+%	F_{\mu\nu}=\partial_\mu A_\nu-\partial_\nu A_\mu
+%	.\]
+%	\[
+%	\partial_\mu F_{\mu \nu}=0
+%	.\]
+%	\[
+%		E= \frac{1}{2} \int \left(\mathbf{E}^2 + \mathbf{H}^2\right) d^3x
+%	.\] 
+%	\begin{multline*}
+%		L= \int d^3x \mathcal{L}=-\frac{1}{4} \int d^3x F_{\mu\nu}
+%		F_{\mu\nu}=-\frac{1}{4} \int d^3 x (\partial_\mu A_\nu-
+%		\partial_\nu A_\mu)
+%		(\partial_\mu A_\nu-\partial_\nu A_\mu)=\\
+%		=-\frac{1}{4} \int d^3 x\left[ (\partial_\mu A_\nu)^2+
+%		(\partial_\nu A_\mu)^2-\partial_\nu A_\mu \partial_\mu
+%	A_\nu-\partial_\mu A_\nu \partial_\nu A_\mu\right] 
+%	.\end{multline*} 
+%\[
+%	E= \int d^3x \frac{\delta \mathcal{L}}{\delta \dot{A}(\mathbf{x},\,t)}\dot{A}(\mathbf{x},\,t)-L
+%.\] 
+%\begin{multline*}
+%	\mathcal{L}=-\frac{1}{4}F_{\mu \nu}F_{\mu\nu}=
+%	-\frac{1}{4}\left( \partial_\mu A_\nu -\partial_\nu A_\mu \right) \left( \partial_\mu A_\nu -\partial_\nu A_\mu \right) =\\=
+%	-\frac{1}{4}\left( \partial_\mu A_\nu \partial_\mu A_\nu+
+%	\partial_\nu A_\mu \partial_\nu A_\mu-
+%\partial_\nu A_\mu \partial_\mu A_\nu -\partial_\mu A_\nu
+%\partial_\nu A_\mu\right) = \\
+%=\frac{1}{2}\left(
+%\partial_\mu A_\nu \partial_\nu A_\mu-\partial_\mu A_\nu \partial_\mu A_\nu\right) 
+%.\end{multline*} 
+% 
+%\begin{multline*}
+%	E=\int d^3x \left( \left( \partial_\mu A_0-\partial_0 A_\mu \right) \partial_0 A_\mu - \frac{1}{2}(\partial_\mu A_\nu \partial_\nu A_\mu-\partial_\mu A_\nu
+%	\partial_\mu A_\nu )\right)=\\=
+%	\frac{1}{2}\int d^3 x\left(\partial_\mu A_0 \partial_0 A_\mu-\partial_\mu A_j \partial_j A_\mu -\partial_0A_\mu\partial_0
+%	A_\mu +\partial_i A_\nu \partial_i A_\nu\right) =\\=
+%	\frac{1}{2}\int d^3 x \left( 
+%	\partial_i A_0 \partial_0 A_i -\partial_0 A_i
+%\partial_i A_0-\partial_0 A_i \partial_i A_0+
+%\partial_i A_0 \partial_i  A_0\right) =\\=
+%\frac{1}{2} \int d^3 x\left(\partial_i A_0 -\partial_0 A_i \right) \left( \partial \right) 
+%.\end{multline*} 
+	Обозначим пространственную плотность энергии $\mathcal{H}$ следующим образом
+\[
+	E= \int d^3 x \mathcal{H}
+.\] 
+Тогда
+\[
+	\mathcal{H}= \frac{\delta \mathcal{L}}{\delta \dot{A}(\mathbf{x},\,t)}\dot{A}(\mathbf{x},\,t)-\mathcal{L}
+.\] 
+\[
+	\frac{\delta \mathcal{L}}{\delta \dot{A}(\mathbf{x},\,t)}=
+	\frac{\delta \mathcal{L}}{\delta \left( \partial_0 A_\mu \right) }= \frac{1}{2}\left( 2 \partial_\mu A_0-2 \partial_0 A_\mu \right) =F_{\mu 0}
+.\]
+\begin{multline*}
+	\mathcal{H}=F_{\mu 0}\partial_{0}A_\mu-\mathcal{L}=
+	F_{\mu 0} \partial_0 A_\mu +\frac{1}{4} F_{\mu \nu} F_{
+	\mu \nu}=\\=
+	F_{\mu 0}\left( F_{0\mu}+\partial_\mu A_0 \right) +
+	\frac{1}{4}F_{\mu\nu}F_{\mu\nu}
+	-F_{0\mu}\left( F_{0\mu}+\partial_\mu A_0 \right) =
+	\frac{1}{4} F_{\mu\nu}F_{\mu\nu}=\\=
+	-F_{0\mu}F_{0\mu}-F_{0\mu}\partial_\mu A_0+\frac{1}{4}
+	F_{\mu\nu}F_{\mu\nu}=
+	\mathbf{E}^2- F_{0i} \partial_i A_0+ \frac{1}{2}
+	\left( \mathbf{H}^2-\mathbf{E}^2 \right) =\\=
+	\frac{1}{2}\left(\mathbf{E}^2+\mathbf{H}^2\right)
+	+E_i \partial_i\phi
+.\end{multline*} 
+Используя уравнения поля получаем
+\[
+\int d^3x E_i \partial_i \phi=- \int d^3 x\phi \partial_i E_i
+=- \int d^3x\phi \nabla \cdot \mathbf{E}=0
+.\] 
+\[
+	E= \frac{1}{2} \int \left( \mathbf{E}^2+\mathbf{H}^2 \right) d^3x
+.\]
+Запишем составляющие 4-вектора плотности тока для покоящейся в
+$\mathbf{x}_0$ точечной
+частицы с зарядом $e$
+\[
+	j_0(\mathbf{x})=e\delta^{(3)}(\mathbf{x}-\mathbf{x}_0),\quad
+	\mathbf{j}=\mathbf{0}
+.\] 
+Добавка в лагранжеву плотность, обусловленная наличием точечного заряда
+\[
+	\Delta \mathcal{L}=j_\mu A_\mu
+.\] 
+Т.\:к. данная добавка не содержит $\dot{A}(\mathbf{x},\,t)$, то
+\[
+	\Delta \mathcal{H}=-\Delta \mathcal{L}
+.\] 
+\[
+	\Delta E=\int d^3 x\Delta \mathcal{H}=-eA_0 (\mathbf{x}_0)
+	=-e\phi(\mathbf{x}_0)
+.\] 
+\end{sol}
+\prob{Ещё задача}
+\begin{multline*}
+S=\int d^3 x \left[ a F_{ij}F^{ij}+b \epsilon_{ijk}A^i \partial^j A^k \right] =\\=
+\int d^3 x\left[2a\left(\partial_i A_j \partial^i A^j -\partial_i A_j \partial^j
+A^i\right)
++b \epsilon_{ijk}A^i \partial^j A^k\right]=\int d^3x \mathcal{L}
+.\end{multline*} 
+Воспользуемся уравнениями Эйлера-Лагранжа
+\[
+	\partial_l \frac{\partial \mathcal{L}}{\partial (\partial_l A_m)}=\frac{\partial \mathcal{L}}{\partial A_m}
+.\] 
+Найдём сперва
+\[
+	\frac{\partial \mathcal{L}}{\partial A_m} =
+	b\epsilon_{ijk} \eta^{in}\delta^m_n \partial^j A^k=
+	b \epsilon_{jk}^m\partial^j A^k
+.\] 
+Далее
+\begin{multline*}
+	\frac{\partial \mathcal{L}}{\partial (\partial_l A_m)} =\\=
+	\frac{\partial}{\partial(\partial_l A_m)}\left[a
+	\eta^{ij}\eta^{kn}(\partial_i A_k-\partial_k A_i)(
+\partial_j A_n -\partial_n A_j)+b \epsilon_{ijk} A^i
+\eta^{jn}\eta^{kp}\partial_n A_p \right] =\\=
+a\eta^{ij}\eta^{kn}[(\delta^l_i \delta^m_k-\delta^l_k\delta^m_i)
+(\partial_j A_n -\partial_n A_j)+(\partial_i A_k-\partial_k A_i)
+(\delta^l_j \delta^m_n-\delta^l_n\delta_j^m)]+\\+
+b\epsilon_{ijk}A^i \eta^{jn}\eta^{kp}\delta^l_n\delta^m_p=\\=
+a\left[(\eta^{lj}\eta^{mn}-\eta^{mj}\eta^{ln})(\partial_j A_n-
+\partial_n A_j)+(\partial_i A_k -\partial_k A_i)(\eta^{il}\eta^{km}-
+\eta^{im}\eta^{kl})\right]+\\+b \epsilon_{ijk}A^i\eta^{jl}\eta^{km}=\\
+a \left[ \partial^l A^m-\partial^m A^l-\partial^mA^l+\partial^l
+A^m+\partial^l A^m-\partial^mA^l-\partial^mA^l+\partial^lA^m\right] +b \epsilon^{ml}_i A^i=\\=
+4aF^{lm}+b\epsilon_i^{ml}A^i
+.\end{multline*} 
+Откуда уравнения движения
+\[
+4a \partial_l F^{lm}+b\epsilon_i^{ml}\partial_l A^i=b \epsilon_{li}^m \partial^l A^i
+.\] 
+\[
+2a \partial_l F^{lm}=b \epsilon^m_{li}\partial^lA^i
+.\] 
+\[
+2a \partial^l F_{lm}=b \epsilon_{mli}\partial^l A^i
+.\] 
+\[
+2a \partial^l F_{li}=b \epsilon_{ijk}\partial^j A^k
+.\]
+Будем искать решение в виде свободной монохроматической
+плоской волны
+\[
+	A_i=\tilde{A}_i e^{i p_i x^i}
+.\] 
+\[
+\partial^j A_i=
+	ip^j A_i
+.\] 
+Зафиксируем калибровку Лоренца
+\[
+\partial_i A^i=0
+.\] 
+\[
+\partial^l F_{li}=\partial^l \partial_l A_i -\partial^l \partial_i
+A_l=\partial^l \partial_l A_i=\square A_i
+.\] 
+%\[
+%F_{ij}=\partial_i A_j -\partial_j A_i=
+%\eta_{ik}\partial^kA_j-\eta_{jk}\partial^k A_i=
+%i\left(\eta_{ik}p^kA_j-\eta_{jk}p^kA_i\right)
+%.\] 
+\[
+	-2a p^lp_lA_i 
+	=ib \epsilon_{ijk}\eta^{kl}p^jA_l
+.\] 
+\[
+	2a p^lp_l\tilde{A}_i 
+	+ib \epsilon_{ij}^lp^j\tilde{A}_l=0
+.\]
+\[
+	\tilde{A}_i=-\frac{ib}{2ap^lp_l}\epsilon^l_{ij}p^j
+	\tilde{A}_l
+.\] 
+\[
+	2ap^lp_l \tilde{A}_i+b \epsilon^l_{ij}p^j
+	\frac{b}{2ap^l p_l}\epsilon^n_{lm}p^m\tilde{A}_n=0
+.\]
+\[
+	4(ap^lp_l)^2\tilde{A}_i +b^2 \epsilon^l_{ij}p^j
+	\epsilon^n_{lm}p^m\tilde{A}_n=0
+.\]
+\[
+	4(ap^lp_l)^2\tilde{A}_i +b^2 p^j
+	p^m\tilde{A}_n\left( \delta^n_i \delta_{jm}-\delta^n_j \delta_{im}\right) =0
+.\]
+\[
+	4(ap^lp_l)^2\tilde{A}_i +b^2\left( p_m
+	p^m\tilde{A}_i-p^n p_i \tilde{A}_n\right) =0
+.\]
+Вследствие выбранной калибровки последнее слагаемое зануляется, тогда
+\[
+4a^2 p^4+b^2 p^2=0
+.\] 
+Откуда нетривиальное решение 
+\[
+p= \pm\frac{b}{2a}
+.\] 
+Переходим в СО, где $p_2=p_3=0$. В ней $p_i =p\delta^1_i $.
+Тогда
+ \[
+\partial_i A^i=0 \implies A^1=0
+.\] 
+\[
+	2ap^2\tilde{A}_i+ib \epsilon^l_{ij}p\delta^j_1\tilde{A}_l=0
+.\] 
+\[
+	\sign(p)	\tilde{A}_i+i\epsilon^l_{i1}\tilde{A}_l=0
+.\] 
+Решая данную систему, получаем
+\[
+	\tilde{A}_i=\alpha \begin{pmatrix} 0\\1 \\ -i\sign(p) \end{pmatrix} 
+.\] 
+%\[
+%	2a p^lp_l\tilde{A}_i 
+%	+ib \epsilon_{ijk}p^j\tilde{A}^k=0
+%.\]
+%\[
+%	\tilde{A}_i=- \frac{ib}{2a p^l p_l}\epsilon_{ijk}p^j
+%	\tilde{A}^k
+%.\] 
+%\[
+%	\epsilon_{ijk} p^j \tilde{A}^k\left( ib+ \right) 
+%.\] 
+%\[
+%	2a \mathbf{p}^2 \tilde{\mathbf{A}}=-ib \mathbf{p}\times
+%	\tilde{\mathbf{A}}
+%.\] 
+%\[
+%	p^l A_i (ib \epsilon^i_{jl}+2 a p_l)=0
+%.\]
+%\[
+%-\frac{ib}{2a p^l p_l}\epsilon_{ijk}p^j=\eta_{ik}
+%.\] 
+%\[
+%- \frac{ib}{2ap^l p_l}
+%.\] 
+\prob{Задача 4.4}
+\begin{sol}
+\begin{multline*}
+\left[ D_\mu,\,D_\nu \right] =D_\mu D_\nu- D_\nu D_\mu=\\=
+(\partial_\mu -i e A_\mu)(\partial_\nu- i e A_\nu)-
+(\partial_\nu -i e A_\nu)(\partial_\mu-ie A_\mu)=\\=
+\partial_\mu \partial_\nu-i e\partial_\mu A_\nu-
+i e A_\mu \partial_\nu- \partial_\nu \partial_\mu
+-eA_\mu A_\nu+
+ie\partial_\nu A_\mu+ie A_\nu \partial_\mu+
+e A_\nu A_\mu=\\=
+-ie(\partial_\mu A_\nu-\partial_\nu A_\mu)=
+-ie F_{\mu\nu}
+.\end{multline*} 
+\end{sol}
+\prob{Задача 4.8}
+\begin{sol}
+\begin{multline*}
+	\epsilon_{\mu\nu\lambda\rho}\tr(F_{\mu\nu}F_{\lambda\rho})=\epsilon_{\mu\nu\lambda\rho}F_{\mu\nu}^aF_{\lambda\rho}^a=
+	\epsilon_{\mu\nu\lambda\rho}\left( \partial_\mu A_\nu^a
+	-\partial_\nu A_\mu^a\right) (\partial_\lambda A^a_\rho-
+	\partial_\rho A_\lambda^a)=\\=
+	\epsilon_{\mu\nu\lambda\rho}\left( 
+	\partial_\mu A^a_\nu\partial_\lambda A^a_\rho-
+\partial_\mu A_\nu^a \partial_\rho A_\lambda^a-
+\partial_\nu A^a_\mu \partial_\lambda A^a_\rho+
+\partial_\nu A_\mu^a\partial_\rho A^a_\lambda\right) =\\=
+	\partial_\mu A^a_\nu\partial_\lambda A^a_\rho
+	\epsilon_{\mu\nu\lambda\rho} -
+\partial_\mu A_\nu^a \partial_\rho A_\lambda^a\epsilon_{\mu\nu\lambda\rho} -
+\partial_\nu A^a_\mu \partial_\lambda A^a_\rho\epsilon_{\mu\nu\lambda\rho} +
+\partial_\nu A_\mu^a\partial_\rho A^a_\lambda\epsilon_{\mu\nu\lambda\rho} =\\=
+	\partial_\mu A^a_\nu\partial_\lambda A^a_\rho
+	\epsilon_{\mu\nu\lambda\rho} -
+\partial_\mu A_\nu^a \partial_\rho A_\lambda^a\epsilon_{\mu\nu\lambda\rho} -
+\partial_\mu A^a_\nu \partial_\lambda A^a_\rho\epsilon_{\nu\mu\lambda\rho} +
+\partial_\mu A_\nu^a\partial_\rho A^a_\lambda\epsilon_{\nu\mu\lambda\rho} =\\=
+	\partial_\mu A^a_\nu\partial_\lambda A^a_\rho
+	\epsilon_{\mu\nu\lambda\rho} -
+\partial_\mu A_\nu^a \partial_\rho A_\lambda^a\epsilon_{\mu\nu\lambda\rho} +
+\partial_\mu A^a_\nu \partial_\lambda A^a_\rho\epsilon_{\mu\nu\lambda\rho} -
+\partial_\mu A_\nu^a\partial_\rho A^a_\lambda\epsilon_{\mu\nu\lambda\rho} =\\=
+\partial_\mu \left(A^a_\nu\partial_\lambda A^a_\rho
+	\epsilon_{\mu\nu\lambda\rho} -
+A_\nu^a \partial_\rho A_\lambda^a\epsilon_{\mu\nu\lambda\rho} +
+A^a_\nu \partial_\lambda A^a_\rho\epsilon_{\mu\nu\lambda\rho} -
+A_\nu^a\partial_\rho A^a_\lambda\epsilon_{\mu\nu\lambda\rho}\right)
+.\end{multline*} 
+Откуда
+\begin{multline*}
+K_\mu=
+A^a_\nu\partial_\lambda A^a_\rho
+	\epsilon_{\mu\nu\lambda\rho} -
+A_\nu^a \partial_\rho A_\lambda^a\epsilon_{\mu\nu\lambda\rho} +
+A^a_\nu \partial_\lambda A^a_\rho\epsilon_{\mu\nu\lambda\rho} -
+A_\nu^a\partial_\rho A^a_\lambda\epsilon_{\mu\nu\lambda\rho}=\\=
+2\epsilon_{\mu\nu\lambda\rho}\left(A^a_{\nu}\partial_\lambda
+A_\rho^a-A^a_\nu\partial_\rho A^a_\lambda\right) =
+2\epsilon_{\mu\nu\lambda\rho}A^a_{\nu}\left(\partial_\lambda
+A_\rho^a-\partial_\rho A^a_\lambda\right) =\\=
+2\epsilon_{\mu\nu\lambda\rho}A^a_{\nu}F_{\lambda\rho}^a
+.\end{multline*} 
+Покажем, что добавление в лагранжиан полной дивергенции от любого
+вектора, зависящего от полей, не изменяет уравнения поля.
+Для $K_\mu(A_\mu,\,\partial_\mu A_\nu)$ и $G=\left\{\mathbb{R}^3\times 
+[t_1,\,t_2] \right\} $запишем его вклад в действие.
+%Проварьируем добавку
+%в лагранжиан $\mathcal{L}=\partial_\mu K_\mu(A_\mu,\,\partial_\mu A_\rho)$
+%\[
+%	\frac{\partial \mathcal{L}}{\partial A_\nu}=\frac{\partial }{\partial A_\nu} \partial_\mu K_\mu,\quad
+%	\partial_\lambda \frac{\partial \mathcal{L}}{\partial (
+%	\partial_\lambda A_\nu)} =\delta_{\mu\lambda}\delta_{
+%\rho\nu}
+%.\] 
+\[
+	\int\limits_{G}^{}   d^4 x\partial_\mu K_\mu= \int\limits_{\partial G}^{} d^3xK_\mu n_\mu \xlongequal[A_\mu|_{\partial G}=0]{\partial_\mu A_\nu|_{\partial G}=0}0
+.\] 
+Что и требовалось доказать.
+\end{sol}
+\prob{И ещё задача}
+Поле $A_\mu$ принимает значения в алгебре Ли группы $G$, т.\:е.
+\[
+	A_\mu (x)=g t^a A^a_\mu (x)
+ ,\]
+где $g$ --- некоторое число, $t^a$ --- генераторы группы $G$.
+Требуется доказать, что
+\[
+A_\mu'= \omega A_\mu \omega^{-1}+\omega \partial_\mu \omega^{-1}
+ ,\quad\omega\in G,\]
+также лежит в алгебре Ли группы $G$, т.\:е.
+\[
+	A_\mu'(x)=g t^a A_\mu'^a(x)
+.\] 
+\prob{Задача 5.5}
+\begin{sol}
+В задаче рассматривается теория трёх комплексных скалярных
+полей $f_i (x),\ i=1,\,2,\,3$, с лагранжианом
+\[
+	\mathcal{L}= \partial_\mu f_i^*\partial_\mu f_i+
+	\mu^2 f_i^* f_i -\lambda (f_i ^* f_i)^2
+.\] 
+Пусть
+\[
+	f_i=\frac{1}{\sqrt{2} }(f_{i1}+i f_{i 2})
+.\] 
+Также введём константу $c$ для удобства в дальнейшем
+\[
+	\mathcal{L}= \partial_\mu f_i^*\partial_\mu f_i+
+	\mu^2 f_i^* f_i -\lambda (f_i ^* f_i)^2-c
+.\]
+\renewcommand{\labelenumi}{\asbuk{enumi})}
+\begin{enumerate}
+\item Группой глобальной симметрии этого лагранжиана будет являться
+	$U(3)$, т.\:е. он инвариантен относительно преобразований
+\[
+	f_i(x)\to f'_i(x)=\omega_{ij}f_j (x),
+\] 
+где $\omega$ --- произвольная матрица из $U(3)$. Свойство
+инвариантности лагранжиана относительно данных преобразований
+очевидно из тождества
+\[
+f_i'^*f_i'=f_k^*\omega_{ik}^* \omega_{ij} f_j=
+f_k^*\left( \omega^\dagger \omega \right) _{kj} f_j=
+f_k^* f_k
+.\] 
+\item Рассмотрим энергию поля
+	\[
+		E= \int d^3 x \left(\partial_0 f^*_i \partial_0
+		f_i +\partial_j f^*_i \partial_j f_i+ V(f_i^*,\,
+		f_i)\right)
+	,\] 
+где 
+ \[
+	 V(f_i^*,\,f_i)=-\mu^2 f_i^* f_i +\lambda(f_i^*f_i)^2+c
+.\] 
+Основное состояние однородно в пространстве-времени,
+$f_i= \text{const}$, и представляет собой минимум потенциала.
+Потенциал $V(f_i^*,\,f_i)$
+имеет минимум при
+\[
+f_i^* f_i=f_0^2, \quad \text{где}\quad f_0= \frac{\mu}{\sqrt{\lambda} }
+.\] 
+%Потенциал зависит только от одной переменной
+%\[
+%	|f|= \sqrt{f_i^* f_i} 
+%\] 
+%и имеет непрерывный набор минимумов
+%\[
+%f_i= e^{i\alpha} \frac{f_0}{\sqrt{2} }
+% ,\]
+%где $f_0$ определяется из  условия
+%\[
+%	\left( \frac{\partial V}{\partial |f|}  \right) 
+%	\left( \frac{f_0}{\sqrt{2} } \right) =0
+%\]
+%и равно
+%\[
+%f_0= \frac{\mu}{\sqrt{\lambda}}
+%.\] 
+Рассмотрим основное состояние
+\[
+f_i =\delta_{i 1} \frac{f_0}{\sqrt{2} }
+ ,\]
+и возмущения около него, описываемые полями
+\[
+	f_{i1}(x)=\delta_{i1} f_0 +\chi_i (x),\quad
+	f_{i2}(x)=\theta_i (x)
+.\] 
+Вакуумный вектор $\mathbf{f}^{(0)}=(f_0,\,0,\,0)$ не полностью
+нарушает симметрию: имеется нетривиальная подгруппа группы
+$U(3)$, относительно которой вакуумный вектор инвариантен:
+\[
+	\omega \mathbf{f}^{(0)}=\mathbf{f}^{(0)}
+.\] 
+Эта подгруппа представляет собой группу $U(2)$,
+\[
+	f_1\to \omega_{1j}f_j,\quad
+	f_2\to \omega_{2j}f_j,\quad
+	f_3\to f_3
+.\] 
+\item Ограничимся малыми возмущениями, для  чего выделим  слагаемые
+в лагранжиане, квадратичные относительно возмущений $\chi_i$ и
+$\theta_i$. Имеем $\partial_\mu f_{i1}=\partial_\mu \chi_i$,
+$\partial_\mu f_{i 2}=\partial_\mu \theta_i$ и
+\begin{multline*}
+V= -\frac{\mu^2}{2}\left[ 
+(f_0 +\chi_1)^2+ \chi_2^2+\chi_3^2 +\theta_i\theta_i\right] +\\+
+\frac{\lambda}{4}\left[ 
+(f_0 +\chi_1)^2+ \chi_2^2+\chi_3^2 +\theta_i\theta_i\right] ^2+
+\frac{\mu^4}{4\lambda}
+,\end{multline*} 
+где константа $c$ подобрана так, что энергия основного состояния
+равна нулю.
+
+В квадратичном порядке по полям $\chi_i$ и $\theta_i$ получим
+ \[
+V=\mu^2 \chi_1^2
+.\] 
+
+Итак, квадратичный лагранжиан равен
+\[
+	\mathcal{L}_{\chi_i,\,\theta_i}^{(2)}=\frac{1}{2}
+	\partial_\mu \chi_i \partial_\mu \chi_i +
+	\frac{1}{2} \partial_\mu \theta_i \partial_\mu \theta_i-
+	\mu^2 \chi_1^2
+.\] 
+Поле $\chi_1$ имеет массу $m_{\chi_1}=\sqrt{2} \mu$, остальные
+же поля остаются безмассовыми, т.\:е. являются намбу-голдстоуновскими модами.
+\item Из всего вышесказанного получается, что безмассовые моды
+	преобразуются по тривиальному представлению $U(2)$,
+	а намбу-голдстоуновские по фундаментальному.
+\end{enumerate}
+\end{sol}
+\prob{Задача 7.1}
+\begin{sol}
+Движущиеся кинки описываются семейством решений
+\[
+	\phi_{\text{k}}(x-x_0;\,t;\, u)= \frac{\mu}{\sqrt{\lambda} }\th \left( \frac{\mu}{\sqrt{2} }\frac{(x-x_0)-ut}{\sqrt{1-u^2} } \right) 
+,\] 
+где $u$ --- это скорость солитона, $x_0$ --- это положение центра
+кинка в момент $t=0$.
+
+Классическую энергию кинка можно определить как
+\[
+	E_{\text{k}}= \int\limits_{-\infty}^{\infty}   \epsilon(x)dx,\quad \epsilon(x)=\frac{1}{2} (\partial_\nu \phi_{\text{k}})^2+V(\phi_{\text{k}}) 
+,\] 
+где 
+\[
+	V(\phi)=\frac{\lambda}{4}(\phi^2-v^2)^2,\quad
+	v=\frac{\mu}{\sqrt{\lambda} }
+.\] 
+Непосредственными расчётами получаем
+\[
+	\epsilon(x)=\frac{1}{1-u^2} v^4\frac{\lambda}{2}\ch^{-4}\left( 
+	\frac{\mu}{\sqrt{2} } \frac{(x-x_0)-ut}{\sqrt{1-u^2} }\right)
+,\] 
+и
+\[
+	E_{\text{k}}=\frac{2mv^2}{3\sqrt{1-u^2} }
+,\] 
+где $m=\sqrt{2} \mu$ --- масса элементарного возбуждения.
+
+Лагранжиан кинка
+\[
+	L_{\text{k}}=\int\limits_{-\infty}^{\infty} \mathcal{L}\,dx,\quad
+	\mathcal{L}=\frac{1}{2}(\partial_{\nu}\phi_{\text{k}})^2
+	-V(\phi_{\text{k}})
+.\] 
+Непосредственными вычислениями получаем
+\[
+	\mathcal{L}(x)=\frac{3u^2}{4(1-u^2)}\lambda v^4\ch^{-4}\left( 
+	\frac{\mu}{\sqrt{2} } \frac{(x-x_0)-ut}{\sqrt{1-u^2} }\right)
+.\]
+Плотность импульса кинка
+\[
+	\rho(x)= T^{01}=- \frac{\partial \mathcal{L}}{\partial
+	\dot{\phi}}\phi' 
+.\] 
+Непосредственными вычислениями получаем
+\[
+	\rho(x)=\frac{u}{1-u^2} v^4\frac{\lambda}{2}\ch^{-4}\left( 
+	\frac{\mu}{\sqrt{2} } \frac{(x-x_0)-ut}{\sqrt{1-u^2} }\right)
+,\]
+и
+\[
+p_\text{k}=\frac{2umv^2}{3\sqrt{1-u^2} }
+.\] 
+Заметим, что для найденных $E_{\text{k}}$, $p_\text{k}$ и
+$M_\text{k}=\frac{2}{3}mv^2$ выполняется релятивистское
+соотношение
+\[
+M_\text{k}^2=E_\text{k}^2-p_\text{k}^2
+.\] 
+\end{sol}
+\prob{Задача 12.7}
+\begin{sol}
+На сферически-симметричных конфигурациях
+\[
+E_\text{stat}=4\pi \int\limits_{0}^{\infty} r^2 dr \left[ 
+\frac{1}{2}(\phi')^2+V_0(\phi)-\epsilon V_1 (\phi)\right]  
+.\] 
+Внешняя область пузыря не даёт вклада в $E_\text{stat}$, а внутренняя
+область даёт вклад
+\[
+E_{\text{stat}}^\text{in}=-\frac{4}{3}\pi R^3 \epsilon
+.\] 
+Вклад стенки пропорционален $R^2$ и в главном порядке не зависит
+от  $\epsilon$; для его вычисления положим $r=R$ в мере $E_\text{stat}
+$ и пренебрежём $\epsilon V_1$. Получим
+\[
+	E_\text{stat}^\text{wall}=4\pi R^2 \mu
+,\] 
+где
+\[
+\mu= \int\limits_{-\infty}^{\infty} \left[ 
+\frac{1}{2}(\phi_k'(r))^2+V_0 (\phi_k(r))\right]  
+.\] 
+Итак, в главном порядке по $\epsilon$ и $R$ статическая энергия
+пузыря
+размера $R$ равна
+\[
+	E_{\text{stat}}(R)=4\pi R^2 \mu-\frac{4}{3}\pi R^3 \epsilon 
+.\] 
+Экстремум этого выражения достигается при
+\[
+R=R_\text{sph}= \frac{2\mu}{\epsilon}
+.\] 
+Для статической энергии сфалерона получим окончательно
+\[
+E_{\text{stat} }=\frac{16\pi \mu^3}{3\epsilon^2}
+.\] 
+Т.\:к. $\mu>0$ и $\epsilon>0$, то статическая энергия пузыря
+будет  иметь вид, качественно изображённый на рис.~\ref{fig:1}.
+\begin{figure}[ht]
+    \centering
+    \incfig{1}
+    \caption{}
+    \label{fig:1}
+\end{figure}
+Откуда можно заключить, что состояние пузыря с радиусом $R_\text{sph}$ --- неустойчиво.
+
+Запишем возмущение энергии из-за возмущения поля сфалерона
+\[
+	\delta E= E(\phi+\delta \phi)-E(\phi)
+.\] 
+\[
+\delta E= 4\pi \int\limits_{0}^{\infty} r^2 dr
+\left[ \phi' \delta\phi'+\frac{\partial V}{\partial \phi}  \delta \phi\right] 
+.\] 
+\begin{multline*}
+\phi' \delta \phi'+ \frac{\partial V}{\partial \phi} \delta \phi=
+\phi'\delta \phi'+ \left(\phi''+ \frac{2}{r}\phi'\right)\delta\phi
+=\phi'\delta \phi'-\phi' \delta \phi'+\frac{2}{r}\phi'\delta\phi=
+\\=\frac{2}{r}\phi'\delta \phi
+.\end{multline*} 
+Для того, чтобы возмущение $\delta E$ оказалось отрицательным
+можем взять, например, $\delta \phi=-\epsilon \phi'$, тогда
+\[
+	\delta E= -4 \pi \int\limits_{0}^{\infty} 2r\epsilon(\phi')^2 dr <0
+.\] 
+Уравнения движения поля
+\[
+\phi''+ \frac{2}{r} \phi'= \frac{\partial V}{\partial \phi} 
+.\] 
+Уравнения движения возмущённого поля
+\[
+	\phi''+\delta\phi''+ \frac{2}{r} (\phi'+\delta \phi')=
+	\frac{\partial V}{\partial (\phi+\delta \phi)} 
+.\] 
+Произведем замену $\delta \phi=g(r) e^{i \omega t}$.
+\[
+	\phi''+g'' e^{i\omega t}+ \frac{2}{r}(\phi'+
+	g' e^{i\omega t})= \frac{\partial V(\phi+g e^{i\omega t})}{\partial (\phi+
+	g e^{i\omega t})} 
+.\] 
+Сделаем замену $\phi+g ^{i\omega t}=\xi$
+\[
+	\phi''+g'' e^{i\omega t}+ \frac{2}{r}(\phi'+
+	g' e^{i\omega t})= \frac{\partial V(\xi)}{\partial \xi}
+.\]
+
+Уравнение на кинк
+\[
+	\phi''- \frac{\partial V(\phi)}{\partial \phi} =0
+.\] 
+\[
+	V(\phi)= \frac{\lambda}{4}(\phi^2-v^2)^2
+.\] 
+Статическое уравнение поля в $d$-мерном пространстве-времени
+имеет вид
+\[
+-\partial_i \partial_i \phi + \frac{\partial V}{\partial \phi} =0
+,\] 
+где индекс $i$ --- пространственный и пробегает значения 
+$i=1,\,2,\,3$. Его решения имеют сферическую симметрию
+$\phi=\phi\left( \sqrt{x_ix_i}  \right) $ и уравнение для
+$\phi$ имеет вид
+\[
+\phi''+ \frac{2}{r}\phi'= \frac{\partial V}{\partial \phi} 
+.\] 
+Пусть $\phi_\text{k}(r)$ --- статическое решение уравнений поля.
+Рассмотрим малые возмущения $f(\tau,\mathbf{x})$ около статического
+решения, так что исходное поле имеет вид
+\[
+	\phi(\tau,\,\mathbf{x})=\phi_\text{k}(r)+f(\tau,\,\mathbf{x})
+.\] 
+Поле $\phi(\tau,\,\mathbf{x})$ должно удовлетворять уравнениям
+\[
+	-\partial_\mu \partial^\mu \phi+ \frac{\partial V}{\partial \phi}  =0
+\]
+или
+\[
+	-\partial_\mu\partial^\mu(\phi_\text{k}+f)+
+	\frac{\partial V}{\partial \phi} (\phi_\text{k})+
+	\frac{\partial^2 V}{\partial \phi^2} (\phi_\text{k})
+	f+\ldots=0
+.\] 
+Поле $\phi_\text{k}$ уравнениям выше,
+поэтому в линейном порядке по $f$ получим
+\[
+	-\partial_\mu \partial^\mu f+ \frac{\partial ^2 V}{\partial \phi^2} (\phi_\text{k})f=0
+.\] 
+Т.\:к. $\frac{\partial ^2 V}{\partial \phi^2} (\phi_\text{k})$
+зависит только от $r$, переменные разделяются и решение можно
+искать в виде
+\[
+	f(\tau,\,r)= e^{i\omega t}g_\omega (r)
+ ,\]
+где $g_\omega$ удовлетворяет уравнению
+\[
+\omega^2 g_\omega+ g_\omega''+ \frac{\partial ^2V}{\partial \phi^2} 
+(\phi_\text{k})g_\omega=0
+ ,\] 
+или
+\[
+	-g''_\omega +U(r)g_\omega=\omega^2 g_\omega
+ ,\]
+где
+\[
+	U(r)= \frac{\partial ^2 V}{\partial \phi^2} (\phi_\text{k})
+.\] 
+Нулевая мода имеет вид
+\[
+	g_0(r)= \frac{\partial \phi_\text{k}(r)}{\partial r} 
+.\] 
+Действительно, $\phi_\text{k}$ удовлетворяет уравнению
+\[
+-\phi
+.\] 
+\end{sol}
+\end{document}

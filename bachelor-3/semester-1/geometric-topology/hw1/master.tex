@@ -1,0 +1,102 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\titleformat{\subsubsection}{\normalfont\normalsize\bfseries}{}{0em}{}
+\newcommand{\prob}[1]{\subsubsection*{#1}}
+\title{Домашнее задание №1}
+\begin{document}
+	\maketitle
+	\prob{Задача 1}
+	\begin{sol}
+	%$f \circ g \sim h \circ f$:
+	%\[
+	%\exists f_t
+	%.\] 
+	Гомотопическая эквивалетность --- это \emph{пара} непрерывных
+	отображений $f: X \to Y$ и $g: Y\to X$\ldots
+
+	Как понимать утверждение <<$f: X\to Y$ --- это
+	гомотопическая эквивалентность>>?
+
+	$f \circ g : Y\to Y$ --- гомотопическая эквивалентность
+	$\Leftrightarrow \exists \gamma: Y\to Y: \gamma \circ f
+	\circ g \simeq \operatorname{id}_Y$ и $f \circ g\circ
+	\gamma \simeq \operatorname{id}_Y$
+
+	$h \circ f : X\to X$ --- гомотопическая эквивалентность
+	$\Leftrightarrow \exists \rho: X\to X: \rho \circ h
+	\circ f \simeq \operatorname{id}_X$ и $h \circ f\circ
+	\rho \simeq \operatorname{id}_X$
+
+	$f \circ g \simeq h \circ f$
+
+	Требуется доказать, что $f: X\to Y$ --- гомотопическая
+	эквивалентность, т.\:е. 
+	$\exists \phi: Y\to X: \phi \circ f
+	\simeq \operatorname{id}_X$ и $f \circ \phi
+	\simeq \operatorname{id}_Y$
+	\[
+	\phi \circ h \circ f \simeq \phi \circ f \circ g \simeq g
+	.\] 
+	\[
+	h \circ f \circ \phi \simeq h
+	.\] 
+	\end{sol}
+	\prob{Задача 2}
+	\begin{sol}
+		Пусть $F(x,\,y)= \frac{x y^2}{x^2+y^4}$,
+		тогда $f_{1,\,x_0}(y)= \frac{x_0 y^2}{x_0^2+y^4}$ 
+		--- непрерывна $\forall x_0\in \mathbb{R} $,
+		$f_{2,\,y_0}(x)= \frac{x y_0^2}{x^2+y_0^4}$ ---
+		непрерывна $\forall y_0 \in \mathbb{R}$, однако при
+		$x=y^2$ справедливо равенство $F(x,\,y)=\frac{y^4}{
+		2y^4}=\frac{1}{2}$, а при $x=0$, $y \neq 0$ ---
+		равенство  $F(x,\,y)=0$, следовательно
+		$F(x,\,y)$ --- не непрерывна.
+	\end{sol}
+	\prob{Задача 3}
+	\begin{sol}
+		Будем задавать координаты на торе $\mathbb{T}^2=S^1
+		\times S^1$ углами $\alpha$ и $\beta$, а на сфере $S^2$ --- комплексным числом
+		$z = x + i y$ (стереографическая проекция $S^2$ на
+		$\overline{\mathbb{C}}$).
+		Тогда отображение
+		$
+			f(\alpha,\,\beta)=\tg \alpha+i\tg \beta
+		$ будет гомотопически нетривиальным.
+	\end{sol}
+	\prob{Задача 4}
+	\begin{sol} См. рис.~\ref{fig:2}.
+\begin{figure}[ht]
+    \centering
+    \incfig{2}
+    \caption{}
+    \label{fig:2}
+\end{figure}
+	\end{sol}
+\prob{Задача 5}
+\begin{proof}
+	$\pi_1(X \vee Y)$ представляет из себя группу классов
+	эквивалентности путей, построенных на  $X \vee Y$. Каждый
+	путь на $X \vee Y$ представим в виде последовательного
+	произведения (в смысле путей) отдельных его частей на
+	$X$ и на $Y$. Соответственно класс эквивалентности от
+	такого произведения будет представим в виде последовательного
+	произведения классов эквивалентности частей данного пути
+	на $X$ и $Y$, т.\:е. будет являться словом, составленным
+	из алфавитов $\pi_1(X)$ и $\pi_1(Y)$, следовательно
+	$\pi_1(X \vee Y)= \pi_1 (x) * \pi_1(Y)$.
+\end{proof}
+\prob{Задача 6}
+\begin{proof}
+	Рассмотрим две петли $\alpha,\,\beta :[0,\,1]\to G$ в
+	$\pi_1(G)$, определим отображение $A: [0,\,1]\times
+	[0,\,1]\to G$ правилом $A(s,\,t)=\alpha(s) \cdot \beta(t)$,
+	где умножение происходит в смысле $G$. Рассмотрим
+	гомотопическое семейство путей в прямоугольнике от $(s,\,t)
+	=(0,0)$ до $(1,\,1)$, которое начинается с горизонтального-затем-вертикального пути, двигается дальше через диагональные пути и
+	заканчивается на вертикальном-затем-горизонтальном пути.
+	Применяя к этому семейству  $A$, получим гомотопию
+	$\alpha * \beta \simeq \beta *\alpha $, которая показывает,
+	что фундаментальная группа --- абелева.
+\end{proof}
+\end{document}

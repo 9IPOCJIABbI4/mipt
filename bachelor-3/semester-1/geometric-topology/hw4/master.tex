@@ -1,0 +1,64 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Задание №4 по геометрической топологии}
+\begin{document}
+	\maketitle
+\begin{hiProb}[Задача 1]
+	Найти гомологические группы $\mathbb{R}\mathbb{P}^2$.
+\end{hiProb}
+\begin{sol}
+%	Чтобы показать, что $H_1 (\mathbb{R}\mathbb{P}^2)=\mathbb{Z}/2$ и $H_2(\mathbb{R}\mathbb{P}^2)=\{0\} $ воспользуемся последовательностью Майера-Вьеториса. Накроем $\mathbb{R}\mathbb{P}^2$ 
+%	двумя открытыми множествами $U$ и $V$, определёнными
+%	далее. $\mathbb{R}\mathbb{P}^2$ можно представить как
+%	диск $D^2$ (<<северное полушарие>>) с отождествлёнными противоположными точками
+%	на его границе $S^1$.
+%
+%	Определим $U$ как  <<северное полушарие>> без границы в $\mathbb{R}\mathbb{P}^2$. Это открытый диск, следовательно стягиваемое
+%	пространство, и поэтому его гомологии, кроме нулевой,
+%	тривиальны.
+%
+%	Определим $V$ как дополнение к небольшой окрестности
+%	северного полюса в $\mathbb{R}\mathbb{P}^2$.
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.5\textwidth]{1}
+	\caption{}
+	\label{fig:1}
+\end{figure}
+$\Delta$-комплекс для $\mathbb{R}P^2$ представлен на рис.~\ref{fig:1}. Отметим, что он имеет 2 вершины $v$ и $w$, три грани:
+$a$, $b$ и $c$, а также два 2-симплекса $U$ и $L$. $\Im \partial_1$ порождена генератором $w-v$, поэтому $H_0^\Delta(\mathbb{R}P^2)
+ \approx \mathbb{Z}$ с одной из вершин в качестве генератора.
+Т.\:к. $\partial_2 U=-a+b+c$ и $\partial_2 L=a-b+c$, то
+$\partial_2$ инъективно, поэтому $H_2^\Delta(\mathbb{R}P^2)=0$.
+Далее, $\operatorname{Ker}\approx \mathbb{Z}\oplus \mathbb{Z}$ 
+с базисом $a-b$ и $c$, а $\Im \partial_2$ подгруппа $\operatorname{Ker}\partial_1$ т.\:к. мы можем выбрать $c$ и $a-b+c$ как
+базис $\operatorname{Ker}\partial_1$ и $a-b+c$ и $2c=(a-b+c)+
+(-a+b+c)$ как базис для $\Im \partial_2$. Поэтому $H_1^\Delta
+ \approx \mathbb{Z}_2$.
+\end{sol}
+%\begin{hiProb}[Задача 2]
+%Доказать, что
+%\[
+%	\frac{\pi_1(X)}{[\pi_1(X),\,\pi_1(X)]}=H_1(X)
+%.\] 
+%\end{hiProb}
+%\begin{sol}
+%Будем пользоваться записью $f \simeq g$ для обозначения
+%гомотопической эквивалентности путей $f$ и $g$ с фиксированными
+%концами. С другой стороны, рассматривая $f$ и $g$ как цепи,
+%записывая $f \sim g$, будем иметь ввиду, что $f$ гомологична
+%$g$, т.\:е. $f-g$ --- это граница какой-нибудь $2$-цепи.
+%\end{sol}
+\prob{Задача 4}
+	Пусть отображение $f$ индуцирует гомоморфизм  $f_*\colon H_n(S^n)\to H_n
+	(S^n)$ 
+\begin{enumerate}
+\item \[
+		f(x_0)=x_0
+.\] 
+\[
+	\operatorname{id}_*=\operatorname{id}
+.\] 
+\item 
+\end{enumerate}
+\end{document}

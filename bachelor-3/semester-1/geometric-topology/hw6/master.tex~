@@ -1,0 +1,90 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Задание №6}
+\begin{document}
+	\maketitle
+\prob{Задача 1}
+На рис.~\ref{fig:1}, \ref{fig:2}, \ref{fig:3}, \ref{fig:4}, \ref{fig:5} изображены узлы, требуемые для составления скейн-соотношений.
+Для полинома HOMFLY узла $5_1$ $A(l,\,m)$ получаем следующую систему уравнений:
+\[
+\left\{
+\begin{aligned}
+	lB-l^{-1}A&=mC  \\
+	lD-l^{-1}C&=mB \\
+	l-l^{-1}B&=mD  \\
+lE-l^{-1}D&=m  \\
+l-l^{-1}&=mE  \\
+\end{aligned}
+\right.
+.\] 
+Откуда
+\[
+	A(l,\,m)=3l^4-2l^6+4l^4m^2-l^6m^2+l^4m^4
+.\] 
+Воспользовавшись выражением для зацепления хопфа
+\[
+	D(l,\,t)=l^3m^{-1}-lm-lm^{-1}
+.\] , полученного
+в купе с найденным полиномом HOMFLY для узла $5_1$, найдём
+также полином $P(l,\,m)$ для узла $5_2$ (рис.~\ref{fig:6}, \ref{fig:7}) из следующей системы
+\[
+\left\{
+\begin{aligned}
+lM-l^{-1}P-mD&= 0 \\
+l-l^{-1}M-mD&= 0 \\
+\end{aligned}
+\right. \implies P(l,\,m)=l^2+l^4-l^6+l^2m^2+l^4m^2
+.\] 
+\begin{figure}[ht]
+    \centering
+    \incfig{1}
+    \caption{}
+    \label{fig:1}
+\end{figure}
+\begin{figure}[ht]
+    \centering
+    \incfig{2}
+    \caption{}
+    \label{fig:2}
+\end{figure}
+\begin{figure}[ht]
+    \centering
+    \incfig{3}
+    \caption{}
+    \label{fig:3}
+\end{figure}
+\begin{figure}[ht]
+    \centering
+    \incfig{4}
+    \caption{}
+    \label{fig:4}
+\end{figure}
+\begin{figure}[ht]
+    \centering
+    \incfig{5}
+    \caption{}
+    \label{fig:5}
+\end{figure}
+\begin{figure}[ht]
+    \centering
+    \incfig{6}
+    \caption{}
+    \label{fig:6}
+\end{figure}
+\begin{figure}[ht]
+    \centering
+    \incfig{7}
+    \caption{}
+    \label{fig:7}
+\end{figure}
+\prob{Задача  2}
+Рассмотрим узел $7_1$. На рис.~\ref{fig:8} представлен сам узел и соответствующий
+ему элемент $\sigma_1^7$ группы кос $B_2$
+\begin{figure}[ht]
+    \centering
+    \incfig{8}
+    \caption{}
+    \label{fig:8}
+\end{figure}
+\end{document}
+

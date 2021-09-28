@@ -1,0 +1,592 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Домашняя работа по квантовой физике}
+\begin{document}
+	\maketitle
+\prob{Задача 0-6-1}
+\begin{sol}
+\[
+	E_l= \frac{\hbar^2}{2I}l(l+1)
+.\] 
+\[
+E_1 -E_0= \frac{\hbar^2}{I}
+.\] 
+\[
+kT= \frac{\hbar^2}{I}= \frac{\hbar^2}{\mu a^2}= \frac{2 \hbar^2}{m_O
+a^2}
+.\] 
+\[
+	T= \frac{2 \hbar^2}{m_O k a^2}= \frac{2 \left( 
+	1,0546 \cdot 10^{-27}\right) ^2}{16 \cdot 1,66 \cdot
+10^{-24}\cdot 1,38 \cdot 10^{-16}\cdot\left( 1,2 \cdot 10^{-8} \right) ^2}
+= 4,2 \text{ К}
+.\] 
+\end{sol}
+\prob{Задача 0-6-2}
+\begin{sol}
+\[
+	E_1= - \frac{m e^4}{2 \hbar^2} \cdot \frac{1}{1}= - \operatorname{Ry}=
+	-13,6 \text{ эВ}
+.\] 
+\[
+	E_2= - \frac{m e^4}{2 \hbar^2} \cdot \frac{1}{4}= - \operatorname{Ry}=
+	-3,4 \text{ эВ} \to \Delta E_{12}= 10,2 \text{ эВ}
+.\] 
+\[
+	E_3= - \frac{m e^4}{2 \hbar^2} \cdot \frac{1}{9}= - \operatorname{Ry}=
+	-1,51 \text{ эВ} \to \Delta E_{13}= 12,09 \text{ эВ}
+.\] 
+\[
+	E_4= - \frac{m e^4}{2 \hbar^2} \cdot \frac{1}{16}= - \operatorname{Ry}=
+	-0,85 \text{ эВ} \to \Delta E_{14}= 12,75 \text{ эВ}
+.\] 
+\[
+	\mathcal{E}=\mathcal{E}_0-\Delta E_{13}=
+	12,5-12,09=0,41 \text{ эВ}
+.\] 
+\end{sol}
+\prob{Задача 4.29}
+\begin{sol}
+\[
+\mu= \frac{m_p}{2}
+.\] 
+\[
+E_n = - \frac{\mu e^4}{2 \hbar^2 n^2}= - \operatorname{Ry} \frac{m_p}{
+m_e} \frac{1}{2 n^2} \approx -12,5 \frac{1}{n^2} \text{ кэВ}
+.\] 
+Следовательно, вклад кулоноского взаимодействия в энергию перехода
+$2p \to 1s$ в атоме протониума составляет
+\[
+	\Delta \mathcal{E}_\text{кул}= 12,5 \left( \frac{1}{1^2}-
+	\frac{1}{2^2}\right) \approx 9,4 \text{ кэВ}
+.\] 
+Расхоождение с экспериментальным значением обусловлено вкладом
+сильного взаимодействия. Таким образом,
+\[
+	\Delta \mathcal{E}_\text{сил} = \Delta \mathcal{E}_\text{эксп}
+	- \Delta \mathcal{E}_\text{кул}= 10,1-9,4 \approx 0,7 \text{ кэВ}
+.\] 
+В силу короткодействия ядерных сил их влияние на положение 
+$2p$-состояния незначительно по сравнению с $1s$ состоянием, поскольку
+ в кулоновском потенциале вероятность частице в $2p$-состоянии
+попасть в окрестность начала координат близка к нулю.
+\end{sol}
+\prob{Задача 4.38}
+\begin{sol}
+	Согласно закону Мозли энергия кванта, излученного при переходе электрона с уровня $n_2$ на уровень $n_1$ (заряд ядра $Z$, а $\sigma$ --- поправка на экранирование заряда ядра электронами $K$- оболочки)
+	\[
+		\mathcal{E}=\hbar \omega  = \operatorname{Ry}
+		(Z-\sigma)^2 \left( \frac{1}{n_1^2}-\frac{1}{n_2^2} \right) 
+	.\] 
+Для линии $K_\alpha$ $n_1=1$, $n_2=2$. Поскольку энергия такого
+кванта в спектре излучения серебра известна и равна $\mathcal{E}=
+21,6 \text{ кэВ}$, то из приведённой формулы найдём поправку $\sigma$ 
+на экранирование заряда ядра электронами на $K$-оболочке (в обоих
+случаях $Z<50$ )
+\[
+	\sigma=Z_{\text{Ag}}- \sqrt{\frac{4 \mathcal{E}}{3 \operatorname{Ry}}} \approx 1
+.\] 
+Энергия, необходимая для освобождения электрона из $K$-оболочки атома
+$_{30}\text{Zn}$ (переход с $n=1$  в $n= \infty$), равна
+ \[
+	 (\hbar \omega)_\text{Zn}= \operatorname{Ry}
+	 (Z_{Zn}-1)^2 = 13,6 \cdot 29^2=11,4 \text{ кэВ}
+ ,\] 
+а значит, кинетическая энергия $T_e$ вылетевшего оттуда электрона
+равна
+\[
+	T_e= \mathcal{E}- (\hbar \omega)_{\operatorname{Zn}}=
+	21,6-11,4=10,2 \text{ кэВ}
+.\] 
+\end{sol}
+\prob{Задача 4.42}
+\begin{sol}
+%Для кулоновского потенциала
+%\[
+%|E|= \frac{\mu_e Z^2 e^4}{2 \hbar^2},\qquad
+%r_1 = \frac{\hbar^2}{Z \mu_e e^2}
+%.\] 
+%\[
+%\Psi = \frac{1}{\sqrt{\pi r_1^3} }e ^{- \frac{r}{r_1}}
+%.\] 
+%Если считать ядро равномерно заряженным шаром, то
+%\begin{multline*}
+%	E(r)\cdot 4 \pi r^2= 4 \pi Q \cdot \frac{r^3}{r^3}
+%	\implies E = \frac{Q r }{R^3} \implies
+%	U(r)= U(R)+ \left. \frac{e Q r^2}{2 R^3} \right|_{r}^R=\\=
+%		\frac{eQ}{R}+\frac{eQ}{2R}-\frac{eQr^2}{2R^3}=
+%		\frac{3Qe}{2R}-\frac{Qr^2 e}{2R^3}
+%.\end{multline*} 
+%\[
+%\left<E \right> = \int\limits_{V}^{} \Psi^* \hat{H} \Psi dV, \qquad
+%\hat{H} = -\frac{\hbar^2}{2m} \Delta r + \hat{U} (r)
+%.\]
+%\begin{multline*}
+%\Delta E = \left<E \right>- |E|=
+%\int\limits_{V_\text{Я}}^{} \Psi \Delta \hat{U}(r) \Psi dV=\\=
+%\int\limits_{0}^{R} 4 \pi x^2 \cdot \frac{1}{\pi r_1^3}e^{
+%-\frac{2x}{r_1}}\cdot \left( \frac{3 Qe}{2R}- \frac{eQx^2}{2R^3}-
+%\frac{Qe}{x}\right) dx=\\= \int\limits_{0}^{R} \frac{4}{r_1^3}
+%e ^{-\frac{2x}{r_1}}\left( \frac{3Qx^2e}{2R}-\frac{Qx^4e}{2R^3}-
+%Qxe\right) dx\approx\\ \approx \frac{4e}{r_1^3}\left( \frac{QR^2}{2}-
+%\frac{QR^2}{10}-\frac{QR^2}{2}\right) =
+%-\frac{2QR^2e}{5r_1}
+%.\end{multline*} 
+%Следовательно
+%\[
+%	\frac{|\Delta E|}{|E|}= \frac{2Q R^2 e}{5 r_1^3 \cdot \left( \frac{Ze^2}{2r_1} \right) }= \frac{4}{5} \left( \frac{R^2}{r_1^2} \right) 
+%.\] 
+Считаем, чт решение задачи об уровнях энергии в кулоновском поле
+точечного заряда известно: $\hat{H} \phi = \mathcal{E} \psi$, где
+$\hat{H} = \frac{\hat{p}^2}{2m}-\frac{Ze^2}{r}$, $\mathcal{E}=
+-\frac{Z^2 m e^4}{2\hbar^2} \frac{1}{n^2}$. Рассмотрим $n=1$,
+тогда $\psi_1= \frac{1}{\sqrt{\pi r_1^3} } e^{-r /r_1}$. Истинный
+потенциал при $r \ge R_\text{я}$ совпадает с потенциалом точечного
+ядра и отличается от него при $r< R_\text{я}$. Если считать ядро
+равномерно заряженной по перхности сферой, то $U(r< R_\text{я}=
+-\frac{Ze^2}{R_\text{я}}$; если равномерно заряженным шаром, то
+$U(r<R_\text{я})= - \frac{3}{2} \frac{Ze^2}{R_{\text{я}}}\left( 
+1- \frac{r^2}{3R_\text{я}^2}\right) $.
+
+Представим истинный гамильтониан в виде
+\[
+\hat{H}= \frac{\hat{p}^2}{2m}- \frac{Ze^2}{r}+ \delta U
+,\] 
+где для шара
+\[
+\delta U = \begin{cases}
+	0,& r \ge R_\text{я},\\
+	\frac{Z e^2}{r}- \frac{3}{2} \frac{Z e^2}{R_\text{я}}
+	\left( 1- \frac{r^2}{3 R_\text{я}^2} \right) ,& r<R_\text{я}
+\end{cases}
+\] 
+и для сферы
+\[
+\delta U = \begin{cases}
+	0, & r \ge R_\text{я},\\
+	\frac{Ze^2}{r}- \frac{Z e^2}{R_\text{я}}, & r<R_\text{я}.
+\end{cases}
+\]
+Так как всё отличие происходит при $r <R_\text{я}\ll r_1$, то 
+рассматриваем $\delta U$ как поправку. Среднее значение $\delta U$ в
+основном состоянии и есть сдвиг уровня:
+\[
+\left< \psi_1  \left| \hat{H} \right|  \psi_1 \right> =  
+\left< \psi_1 \left| \frac{\hat{p}^2}{2m}- \frac{Z e^2}{r} \right| \psi_1 \right>+ \left<\psi_1 \left| \delta U \right| \psi_1 \right>= 
+- \frac{m Z^2 e^4}{2 \hbar^2} +\Delta \mathcal{E}
+ ,\]
+\[
+	\Delta \mathcal{E} = \int dV \psi_1^* \delta U \psi_1 =
+	\frac{1}{\pi r_1^3} 4 \pi \int\limits_{0}^{R_\text{я}} 
+	e^{-2r /r_1} 
+	\left\{
+	\begin{gathered}
+	\frac{Ze^2}{r}- \frac{Ze^2}{R_{\text{я}}}\\
+	\frac{Ze^2}{r} - \frac{3}{2} \frac{Ze^2}{R_\text{я}} \left( 
+	1 - \frac{r^2}{3 R_\text{я}^2}\right) 
+	\end{gathered}
+\right\}r^2 dr
+ ,\] 
+т.\:к. $\frac{R_\text{я}}{r_1}\le \frac{3,5 \cdot 10^{-13}}{25,6
+\cdot 10 ^{-13}} \sim 0,1,$ то $e ^{- 2r /r_1} \approx 1$. Тогда
+\[
+	\Delta \mathcal{E} \approx 
+	\frac{4}{r_1^3} \int\limits_{0}^{R_{\text{я}}} 
+	\left\{
+	\begin{gathered}
+		Ze^2 \left( r - \frac{r^2}{R_{\text{я}}} \right) \\
+		Ze^2 \left[ r - \frac{3}{2} \frac{r^2}{R_\text{я}}
+		\left( 1- \frac{r^2}{3 R_\text{я}^2} \right) \right] 
+	\end{gathered}
+\right\} dr=
+\left\{
+\begin{aligned}
+	&\frac{2}{3} \frac{Ze^2}{r_1} \left( \frac{R_\text{я}}{r_1} \right) ^2 \text{ --- сфера,}\\
+	&\frac{2}{5} \frac{Ze^2}{r_1} \left( \frac{R_\text{я}}{r_1} \right) ^2 \text{ --- шар.}
+\end{aligned}
+\right.
+\] 
+Видно, что пооправка положительна, следовательно,
+уровни сдвигаются вверх. Относительная поправка
+\[
+	\delta = \left| \frac{\Delta \mathcal{E}}{\mathcal{E}_1} \right| = \frac{\Delta \mathcal{E}}{\frac{Z e^2}{2 r_1}}=
+	\left\{
+	\begin{aligned}
+		&\frac{4}{3} \left( \frac{R_\text{я}}{r_1} \right) ^2
+		\text{ --- сфера,}\\
+		&\frac{4}{5} \left( \frac{R_\text{я}}{r_1} \right) ^2
+		\text{ --- шар,}
+	\end{aligned}
+	\right.
+\] 
+где $r_1=\frac{\hbar^2}{Z m_e e^2}$, откуда
+\[
+	 \frac{\Delta \mathcal{E}}{\mathcal{E}}=
+	\left\{
+	\begin{aligned}
+		&5,94 \cdot 10^{-7}
+		\text{ --- сфера,}\\
+		&3,56 \cdot 10^{-7}
+		\text{ --- шар.}
+	\end{aligned}
+	\right.
+\] 
+
+\end{sol}
+\prob{Задача 4.45}
+\begin{sol}
+\[
+r_\mu= \frac{\hbar^2}{m_\mu Z e^2} \frac{m_e}{m_e}=r_\text{Б}
+\frac{m_e}{Z m_\mu}= 1,27 \cdot 10^{-11} \text{ см} \ll r_{\text{Б}}
+.\] 
+\[
+	\frac{1}{\lambda_{32}}= R_\infty \left( \frac{1}{2^2}-\frac{1}{3^2} \right) 
+	= \frac{5}{36} R_\infty = \frac{5}{36}= 1,52 \cdot 10^4 \text{ см}^{-1}
+.\] 
+\[
+\lambda_{32}= 656 \text{ нм}
+.\] 
+\[
+	\mathcal{E}_{32}= \frac{hc}{\lambda_{32}}=1,89 \text{ эВ}
+.\] 
+\end{sol}
+\prob{Задача 5.16}
+\begin{sol}
+\[
+I = \mu d^2 \approx m d^2
+.\] 
+\[
+	\Delta E_l = \frac{\hbar^2}{I}(l+1)=\frac{\hbar^2}{I}
+.\] 
+\[
+	\Delta E = \frac{\hbar^2}{m d^2}= \frac{hc}{\lambda}= hc \left( \frac{1}{\lambda} \right) 
+.\] 
+\[
+	d^2 = \frac{\hbar^2}{m h c \left( \frac{1}{\lambda} \right) }=\frac{\hbar^2}{2 \pi m c \Delta}= 1,97 \cdot 10^{-16} \text{ см}^2
+.\] 
+\[
+d= 1,4 \cdot 10^{-8 } \text{ см}
+.\] 
+\end{sol}
+\prob{Задача 5.25}
+\begin{sol}
+\[
+\overline{E}= \overline{E}_\text{кин}+ \overline{E}_\text{пот}
+.\] 
+\[
+\overline{E}_\text{к}= \overline{E}_\text{п}=
+\frac{\mu \omega^2 \overline{x^2}}{2}
+.\] 
+\[
+\overline{E}= \frac{\hbar \omega}{2}
+.\] 
+\[
+\overline{x^2}= \overline{A_0^2 \cos^2 \omega t} =
+\frac{\overline{A_0^2}}{2} \to  \frac{\hbar \omega}{2}=
+2 \cdot \frac{\mu \omega^2}{2} \frac{A_0^2}{2}
+.\]
+\[
+A_0= \sqrt{\frac{\hbar}{\mu \omega}} 
+.\] 
+\[
+\mu= \frac{m_O m_C}{m_O+ m _C}= \frac{16\cdot 12}{16+12}\cdot
+1,66 \cdot 10^{-24} \text{ г}= 11,45\cdot 10^{-24} \text{ г}
+.\] 
+\[
+\omega= \frac{2 \pi c}{\lambda} \to  A_0= \sqrt{\frac{\hbar }{\mu
+\omega}} = \sqrt{ \frac{\hbar \cdot \lambda}{2 \pi c \mu}} \approx
+4,7 \cdot 10^{-10} \text{ см}
+.\]
+\[
+kT \ge \hbar \omega
+.\] 
+\[
+T\ge  \frac{2 \pi \hbar c}{k \cdot \lambda}\approx 3100 \text{ К}
+.\] 
+\end{sol}
+\prob{Задача 5.51}
+\begin{sol}
+	$\operatorname{H}\prescript{35}{}{\text{Cl}}$ :
+$\mu_{35}= \frac{1 \cdot 35 }{1+35}= 0,9722 m_p$.
+
+$\operatorname{H} \prescript{37}{}{\text{Cl}}$: $\mu_{37}=
+\frac{1\cdot 37}{1+37}= 0,9737 m_p$
+\[
+\Delta \mu = 0,0015 m_p
+.\] 
+\[
+	\lambda = \frac{hc}{\Delta \mathcal{E}_\text{кол}}=
+	\frac{hc}{\hbar \sqrt{\frac{k}{\mu}} }=
+	2 \pi c \sqrt{\frac{\mu}{k}} \propto \sqrt{\mu}  
+.\] 
+\[
+\frac{\Delta\lambda}{\lambda}= \frac{1}{2}\frac{\Delta\mu}{\mu}=
+7,7\cdot 10^{-4}
+.\] 
+\end{sol}
+\prob{Задача 5.55}
+\begin{sol}
+При $n > n_\text{max}$ не $\exists$ реальных $n$.
+ \[
+	 \frac{d E_n}{dn}= \hbar \omega \left[ 1 - 2\alpha \left( 
+	 n+\frac{1}{2}\right)  \right] =0
+.\] 
+\[
+n^{\operatorname{max}}=\frac{1-\alpha}{2\alpha}=80,9
+.\] 
+\[
+	N_{\operatorname{max}}= 81
+.\] 
+\end{sol}
+\prob{Задача 0-7-1}
+\begin{sol}
+См. табл. \ref{tab:1}.
+\begin{table}[htpb]
+	\centering
+	\caption{}
+	\label{tab:1}
+	\begin{tabular}{c|c|c}
+		$n$ & $l$ & $j$ \\ \hline
+		& 0 & $\pm 1 /2$\\
+		3 & 1 &  $3 /2;\, 1 /2$ \\
+		  & 2&  $5 /2;\, 3/2$
+	\end{tabular}
+\end{table}
+\[l= 0;\ldots;n-1=0;1;2.\]
+\[
+j=l+s, \text{ т.\:е. } j= l+ \frac{1}{2}, \text{ либо } j=l-\frac{1}{2}
+.\] 
+\[
+j= \pm \frac{1}{2};\, \frac{3}{2};\, \frac{5}{2}
+.\] 
+\end{sol}
+\prob{Задача 6.10}
+\begin{sol}
+\[
+I\omega=2lN\to \omega= \frac{2lN}{I}
+.\] 
+\[
+\omega= \frac{2N\cdot \hbar }{0,5 m r^2}; \qquad
+\nu= \frac{m}{A}= \frac{N}{N_\text{А}} \to N = \frac{m N_\text{А}}{A}
+.\] 
+\[
+\omega= \frac{4N \hbar }{m r^2}= \frac{4 \hbar }{m r^2} \cdot 
+\frac{m N_{\operatorname{A}}}{A} \cdot \frac{\pi \rho L}{\pi \rho L}=
+\frac{2 h N_{\operatorname{A}}\rho L}{A \rho \pi r^2 L}=
+\frac{2h N_{\operatorname{A}}\rho L}{m A}= 1,1 \cdot 10 ^{-3} \text{ с}^{-1}
+.\] 
+\end{sol}
+\prob{Задача 6.15}
+\[
+f_z = \mu \frac{\partial B_z}{\partial z} = m_n \cdot a_\perp
+.\] 
+\[
+a_\perp = \frac{v_\perp}{\tau};\qquad \tau = \frac{L}{v_{\parallel}}
+.\] 
+\[
+f_z = m_n\cdot \frac{v_{\parallel}v_\perp}{L}= \mu \frac{\partial B_z}{\partial z} 
+.\] 
+\[
+v_\perp= \frac{\mu \frac{\partial B_z}{\partial z} }{m_n} \frac{L}{v_{\parallel}}
+.\] 
+Дифф. уширение: $\alpha_\text{диф}\sim \frac{\lambda}{d}=\frac{h}{d
+\sqrt{2 m E} }$ 
+\[
+\alpha_\text{маг}= \frac{v_\perp}{v_\parallel}= \frac{\mu \frac{\partial B_z}{\partial z} }{m} \frac{L}{v_\parallel^2}= \alpha_\text{диф}=
+\frac{h}{d \sqrt{2 m E} }
+.\] 
+\[
+\frac{\partial B_z}{\partial z} = \frac{2 E h}{L \mu d \sqrt{2mE} }=
+150 \frac{\text{Гс}}{\text{см}}
+.\] 
+\prob{Задача 6.20}
+\begin{sol}
+\[
+	\mathcal{E}_1= \hbar \omega_1= \frac{hc}{\lambda_1}
+.\] 
+\[
+	\mathcal{E}_2= \frac{hc}{\lambda_2}
+.\] 
+\[
+	\Delta\mathcal{E}= hc \left( \frac{1}{\lambda_2}-\frac{1}{\lambda_1} \right) =2 \cdot 10^{-3} \text{ эВ}
+.\] 
+\[
+	\Delta\mathcal{E}=2 \mu B
+.\] 
+\[
+	B=\frac{\Delta\mathcal{E}}{2\mathfrak{m}_\text{Б}}=1,8 \cdot 10^5 \text{ Гс}
+.\] 
+\end{sol}
+\prob{Задача 6.48}
+\begin{sol}
+\[
+\mathbf{H}=-\beta \mathbf{M};\qquad \beta= \frac{4\pi}{3}
+.\] 
+\[
+	\mathbf{B}= \mathbf{H}+4 \pi \mathbf{M}=\left( 
+	-\frac{4\pi}{3}+4\pi\right) \mathbf{M}=\frac{8\pi}{3} \frac{
+g_s\mathfrak{m}_\text{Б}\cdot \mathbf{S}_e}{\frac{4}{3}\pi r_\text{Б}^3}
+.\] 
+Энергия взаимодействия:
+\begin{multline*}
+	U_{ep}= - \left( \boldsymbol{\mu}_p,\,\mathbf{B} \right)=
+	-g_p \mathfrak{m}_\text{яд} \mathbf{S}_p \mathbf{B}=
+	-g_p \mathfrak{m}_\text{яд} \mathbf{S}_p \cdot 2 g_s
+	\frac{\mathfrak{m}_\text{Б}}{r_\text{Б}^3}\mathbf{S}_e=\\=
+	- 2g_s g_p \frac{\mathfrak{m}_\text{яд}\mathfrak{m}_\text{Б}
+	}{r_{\text{Б}}^3}(\mathbf{S}_p,\,\mathbf{S}_e)
+.\end{multline*} 
+\[
+	\mathbf{S}=\mathbf{S}_e+\mathbf{S}_e,\quad S=1,\,0
+.\] 
+\[
+	\Delta E=\left| U_{ep}(S=1)-U_{ep}(S=0) \right| 
+.\] 
+\[
+	\overline{S^2}=\overline{\left( \mathbf{S}_e+\mathbf{S}_p \right) ^2}=\overline{S_e^2}+\overline{S_p^2}+2 \overline{\mathbf{S}_e
+	\mathbf{S}_p}
+.\] 
+\[
+	2\mathbf{S}_e\mathbf{S}_p=\left( \overline{S^2}-
+	\overline{S^2_e}-\overline{S_p^2}\right) 
+.\] 
+\[
+	\overline{S^2}= S(S+1) \xlongequal[]{S=1}1\cdot 2=2
+.\] 
+\[
+	\overline{S_e^2}=S(S+1)=\frac{1}{2}\cdot \frac{3}{2}=\frac{3}{4}
+.\]
+
+При $S=1$: $2 \overline{\mathbf{S}_e \mathbf{S}_p}=\left(1\cdot 2-\frac{3}{4}-\frac{3}{4}\right)=\frac{1}{2}$.
+
+При $S=0$: $2 \overline{\mathbf{S}_e \mathbf{S}_p}=\left( 0-
+\frac{3}{4}-\frac{3}{4}\right) =-\frac{3}{2}$
+\[
+	\Delta E= g_s g_p \frac{\mathfrak{m}_\text{яд}\mathfrak{m}_\text{Б}}{r_{\text{Б}}^3}\left( \frac{1}{2}+\frac{3}{2} \right)=
+	2 g_s g_p \frac{\mathfrak{m}_\text{Б}^2}{r_{\text{Б}}^3}
+	\frac{m_e}{m_p}
+.\] 
+\[
+\lambda= \frac{hc}{\Delta E}=\frac{hcr_\text{Б}^3 m_p}{2 g_s g_p
+\mathfrak{m}_\text{Б}^2 m_e}= 28,2 \text{ см}
+.\] 
+\end{sol}
+\prob{Задача 6.78}
+\begin{sol}
+	Энерг. спин-орб. вз-я: $\mathcal{E}_{SL}=A \overline{(\mathbf{L},\,\mathbf{S}}$.
+\begin{multline*}
+	\mathbf{J}=\mathbf{S}+\mathbf{L}\implies
+	\overline{J^2}= \overline{S^2}+\overline{L^2}+
+	2 \overline{(\mathbf{S},\,\mathbf{S})}\implies
+	\overline{(\mathbf{L},\,\mathbf{S})}=\\=\frac{1}{2}
+	\left(\overline{J^2}-\overline{S^2}-\overline{L^2}\right)=
+	\frac{1}{2} \left( J(J+1)-S(S+1)-L(L+1) \right) 
+.\end{multline*} 
+\[
+	^1D_2:\quad \mathcal{E}_{SL}(^1D_2)=\frac{A}{2}(2\cdot 3-
+	0-2\cdot 3)=0
+.\] 
+\[
+	^3 P_2:\quad \mathcal{E}_{SL} (^3P_2)=
+	\frac{A}{2}(2 \cdot 3-1 \cdot 2- 1\cdot 2)=A
+.\] 
+\[
+	^3 P_1:\quad \mathcal{E}_{SL} (^3P_2)=
+	\frac{A}{2}(1 \cdot 3-1 \cdot 2- 1\cdot 2)=-A
+.\] 
+\[
+	^3 P_0:\quad \mathcal{E}_{SL} (^3P_2)=
+	\frac{A}{2}(0 \cdot 3-1 \cdot 2- 1\cdot 2)=-2A
+.\] 
+\[
+\left\{
+\begin{aligned}
+	\frac{hc}{\lambda_1}= \mathcal{E}(^1D_2)-\mathcal{E}(^3P_2)=
+	\mathcal{E}(^1D_2)-\left( \mathcal{E}(^3P)+\mathcal{E}_{SL}(
+	^3P_2)\right) \\
+	\frac{hc}{\lambda_2}= \mathcal{E}(^1D_2)-\mathcal{E}(^3P_1)=
+	\mathcal{E}(^1D_2)-\left( \mathcal{E}(^3P)+\mathcal{E}_{SL}(
+	^3P_1)\right) \\
+\end{aligned}
+\right.
+.\] 
+\[
+	\frac{hc}{\lambda_1}-\frac{hc}{\lambda_2}=\mathcal{E}_{SL}
+	(^3P_1)- \mathcal{E}_{SL}(^3P_2)=-2A
+.\] 
+\[
+	\mathcal{E}(^3P_0)-\mathcal{E}(^3P_1)=
+	\mathcal{E}(^3P)+\mathcal{E}_{SL}(^3P_0)-
+	\mathcal{E}(^3P)-\mathcal{E}_{SL}(^3P_1)=
+	\mathcal{E}_{SL}(^3P_0)-\mathcal{E}_{SL}(^3P_1)=-A
+.\] 
+\[
+	-A= \frac{hc}{\lambda}= \left( \frac{hc}{\lambda_1}-
+	\frac{hc}{\lambda_2}\right) \cdot 2 \implies
+	\lambda=\frac{2\lambda_1 \lambda_2}{\lambda_2-\lambda_1}=
+	16634 \text{ \AA}
+.\] 
+\end{sol}
+
+\prob{Задача 6.78}
+\begin{sol}
+$S=1$ --- ортогелий, $S=0$ --- парагелий.
+\[
+E_{\text{пара}}= - W_{\text{пара}}= E + E_\text{кул}+ V_\text{пара}
+.\] 
+\[
+E_\text{орто}= - W_{\text{орто}}= E+E_\text{кул}+ V_{\text{орто}}
+.\] 
+\[
+	\overline{\mathbf{S}_1+\mathbf{S}_2}= \overline{S_1^2}+
+	\overline{S_2^2}+ 2 \overline{\mathbf{S}_1 \mathbf{S}_2}
+.\] 
+\[
+	2 \overline{\mathbf{S}_1 \mathbf{S}_2}=
+	\overline{(S_1+S_2)^2}- \overline{S_1^2}-\overline{S_2^2}=
+	S(S+1)- \frac{3}{4}-\frac{3}{4}
+.\] 
+\begin{multline*}
+	V= -\frac{A}{2}\left[ 1+4 \overline{\mathbf{S}_1 \mathbf{S}_2} \right]=
+	-\frac{A}{2} \left[ 1+2 \left( S(S+1)-\frac{6}{4} \right)  \right] =\\=-A\left[ \frac{1}{2}+S(S+1)-\frac{3}{2} \right] =-A
+	\left[ S(S+1)-1 \right] 
+.\end{multline*} 
+\[
+V_{\text{пара}}=+A;\qquad V_\text{орто}=-A
+.\] 
+\[
+E_{\text{пара}}= - W_{\text{пара}}= E + E_\text{кул}+ A
+.\] 
+\[
+E_\text{орто}= - W_{\text{орто}}= E+E_\text{кул} -A
+.\]
+В поле $Z=2$ при $1s^12s^1$
+ \[
+	 E=-13,6\cdot Z^2-13,6 \frac{Z^2}{n^2}=-13,6\left( 4+
+	 \frac{4}{4}\right) =-68 \text{ эВ}
+.\]
+\[
+	A=\left( E_\text{пара}- E_\text{орто} \right) \frac{1}{2}=
+	0,4 \text{ эВ}
+.\] 
+\[
+E_\text{кул}= \frac{E_\text{пара}+E_\text{орто}}{2}-E=-9,2 \text{ эВ}
+.\] 
+\end{sol}
+\prob{Задача Т2}
+\begin{sol}
+Термом называют макс. возможные $M_L$ при конкретных $M_S$
+или  $M_S$ при одном $M_L$. См. рис.~\ref{fig:2}.
+\begin{figure}[ht]
+    \centering
+    \incfig{2}
+    \caption{}
+    \label{fig:2}
+\end{figure}
+\[
+	\begin{pmatrix} \underline{^3P} \\ ^3 S \end{pmatrix} \qquad
+	\begin{pmatrix} \underline{^1 D} \\ ^1 P \\ ^1 S \end{pmatrix} \qquad
+	\begin{pmatrix} \underline{^1 S} \end{pmatrix} 
+.\] 
+\end{sol}
+\end{document}

@@ -1,0 +1,9 @@
+\babel@toc {russian}{}
+\beamer@sectionintoc {1}{Описание модели}{2}{0}{1}
+\beamer@sectionintoc {2}{Характеристики конфигурации решётки}{3}{0}{2}
+\beamer@sectionintoc {3}{Интерпретация суммы $S$}{7}{0}{3}
+\beamer@sectionintoc {4}{Ещё <<чуть-чуть>>}{18}{0}{4}
+\beamer@sectionintoc {5}{Фазовый переход}{19}{0}{5}
+\beamer@sectionintoc {6}{Обсуждение результатов}{23}{0}{6}
+\beamer@sectionintoc {7}{Приложения модели Изинга}{24}{0}{7}
+\beamer@sectionintoc {8}{Список литературы}{25}{0}{8}

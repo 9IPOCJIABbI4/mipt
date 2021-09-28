@@ -1,0 +1,109 @@
+\lecture{1}{Вт 08 сен 2020 12:51}{Гипотеза Планка}
+Ядерная физика: Ушханов
+
+Атомная физика: все в задавальнике
+
+\[
+k_x= \frac{\pi}{L_x}l;\qquad k_y= \frac{\pi}{L_y}n; \qquad k_z= \frac{\pi}{L_z}p,
+\]
+\[
+\Delta \Omega = \frac{\pi^3}{V};
+\] 
+\[
+	d N_{\vec{k}}=2 \cdot \frac{1}{8} \frac{4\pi k^2 dk}{
+	\Delta \Omega}= \frac{V k^2 dk}{\pi^2}
+.\]
+\[
+	d N_\omega = \frac{V \omega^2 d \omega}{\pi^2 c^3}
+.\] 
+\begin{figure}[ht]
+    \centering
+    \incfig{1}
+    \caption{}
+    \label{fig:1}
+\end{figure}
+
+\[
+E_{clas}= \frac{VT}{\pi^2 c^3}\int\limits_{0}^{\infty} \omega^2 d\omega \to  \infty 
+.\] 
+\begin{multline*}
+	\left< \epsilon_{quan}(\omega) \right> =
+	\frac{\sum_{n=0}^{\infty}n \hbar \omega A \exp\left( 
+	-\frac{n \hbar \omega}{T}\right) }{\sum_{n=0}^{\infty} A
+\exp \left( - \frac{n \hbar \omega}{T} \right) }=
+\frac{\sum_{n=0}^{\infty} n \hbar \omega \exp\left( - \frac{
+n \hbar \omega}{T} \right) }{\sum_{n=0}^{\infty} \exp \left( -
+\frac{n \hbar \omega}{T}\right) }=\\=
+\frac{\sum_{n=0}^{\infty} n \hbar \omega \exp \left(-\beta n \hbar \omega\right)}{\sum_{n=0}^{\infty} \exp\left(-\beta n \hbar \omega\right)}\equiv \frac{
+S_1}{S_0}, \text{ где } \beta=\frac{1}{T}
+.\end{multline*} 
+\[
+\epsilon=\hbar \omega= h \nu
+.\] 
+\[
+h= 2 \pi \hbar
+.\] 
+\[
+	\hbar=1,05 \cdot 10^{-27} \text{ эрг}\cdot \text{c}=
+	1,05 \cdot 10^{-34} \text{ Дж}\cdot \text{с}
+.\] 
+\[
+w_E = A e^{-\frac{E}{T}}
+.\]
+\[
+	S_0= \frac{1}{1-\exp(-\beta \hbar \omega)}
+.\] 
+\[
+S_1=-\frac{\partial S_0}{\partial \beta} =\frac{\hbar \omega
+\exp(-\beta \hbar \omega)}{[1-\exp(-\beta \hbar \omega)]^2}
+.\] 
+\[
+	\left<e_{quan}(\omega) \right> = \frac{\hbar \omega}{\exp
+	\left( \frac{\hbar\omega}{T} \right) -1}
+.\]
+\[
+	\left<n(\omega) \right> = \frac{1}{\exp\left( \frac{\hbar
+	\omega}{T} \right) -1}
+.\] 
+\[
+	E_{quan}= \frac{V}{\pi^2 c^3}\int\limits_{0}^{\infty} 
+	\frac{\hbar \omega^3 d \omega}{\exp\left( \frac{\hbar \omega}{T} \right) -1}= \frac{V T^4}{\pi^2 c^3 \hbar^3} \int\limits_{0}^{\infty} \frac{x^3 dx}{\exp(x) -1}= \frac{\pi^2 V T^4}{15c^3 \hbar^3} 
+.\]
+\[
+u = \frac{E_{quan}}{V}=\frac{\pi^2 T^4}{15 c^3 \hbar^3}
+.\] 
+$\alpha$--- коэффициент поглощения, если  $\alpha(\omega)=\text{const}$, то тело --- серое.
+\begin{figure}[ht]
+    \centering
+    \incfig{2}
+    \caption{}
+    \label{fig:2}
+\end{figure}
+\[
+	I(\theta)=I(0) \cos \theta
+.\] 
+\[
+	I(\theta)=\frac{d\Phi}{dS\cdot d\theta}
+.\] 
+\[
+R= \sigma T^4 \qquad \sigma = \frac{\pi^2 k_B^4}{60 c^2 \hbar^3}=
+5,67\cdot 10^{-8} \frac{\text{Вт}}{\text{м}^2 \text{К}^4}
+.\] 
+\begin{figure}[ht]
+    \centering
+    \incfig{3}
+    \caption{}
+    \label{fig:3}
+\end{figure}
+\[
+\hbar \omega_{max}=2,8 T=2,8 k_B T
+.\] 
+Рассмотрим тело, которое и излучает и поглощает, тогда 
+\[
+	\Phi(\omega)+(1-A(\omega))R(\omega)=R(\omega)
+.\] 
+\[
+	\frac{\Phi(\omega)}{A(\omega)}=R(\omega)
+.\]
+$\Phi(\omega)$ --- испускательная способность в узком интервале частот
+$(\omega,\, \omega+d\omega)$. 

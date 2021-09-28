@@ -1,0 +1,68 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Зачёт по геометрической топологии}
+\begin{document}
+	\maketitle
+\prob{Задача 0}
+\begin{sol}
+Имеем 
+\[
+	\partial_n (\sigma)= \sum_{i}^{} (-1)^i \sigma|_{
+	[v_0,\ldots,\hat{v}_i,\ldots,v_n]}
+ ,\]
+и поэтому
+\begin{multline*}
+	\partial_{n-1}\partial_{n}(\sigma)= \sum_{j<1}^{} (-1)^i
+	(-1)^j \sigma|_{[v_0,\ldots,\hat{v}_j,\ldots,
+	\hat{v}_i,\ldots,\,v_n]}+\\+
+	\sum_{j>i}^{} (-1)^i (-1)^{j-1}\sigma|_{[v_0,\ldots
+	\hat{v}_i,\ldots,\,\hat{v}_j,\ldots,\,v_n]}
+.\end{multline*} 
+Меняя индексы суммирования $i$ и $j$ местами во второй сумме
+получаем нечто совпадающее по модулю и отличающееся знаком
+от первой суммы, откуда следует требуемое утверждение.
+\end{sol}
+\prob{Задача 1}
+\begin{sol}
+	На рис.~\ref{fig:1} представлен $\Delta$-комплекс для $\mathbb{T}^2$ 
+\begin{figure}[ht]
+    \centering
+    \incfig[0.5]{1}
+    \caption{}
+    \label{fig:1}
+\end{figure}
+Его структура такова: одна вершина $a$, три грани $a$, $b$, и $c$,
+и два 2-симплекса $U$ и $L$. $\partial_1 a=\partial_1 b=v-v=0$,
+поэтому $H_0^\Delta(\mathbb{T}^2)\approx \mathbb{Z}$.  Т.\:к.
+$\partial_2 U=a+b-c=\partial_2 L$ и $\{a,\,b,\,a+b-c\} $ ---
+базис для $\Delta_1 (\mathbb{T}^2)$, то $H_1^\Delta(\mathbb{T}^2)
+ \approx \mathbb{Z}\oplus \mathbb{Z}$ с базисом классов гомологий
+ $[a]$ и $[b]$. Т.\:к. отсутствуют 3-симплексы, $H_2^\Delta(
+ \mathbb{T}^2)$ это фактически $\operatorname{Ker} \partial_2$,
+ которая в свою очередь является бесконечной циклической группой,
+ порождённой $U-L$,  т.\:к. $\partial(pU+qL)=(p+q)(a+b-c)=0$ 
+ только когда $p=-q$. Поэтому
+ \[
+	 H_n^\Delta(\mathbb{T}^2)\approx
+	 \begin{cases}
+		 \mathbb{Z}\oplus \mathbb{Z},& n=1,\\
+		 \mathbb{Z},& n=0,\,2,\\
+		 0,& n\ge 3.
+	 \end{cases}
+ \] 
+\end{sol}
+\prob{Задача 2}
+\begin{sol}
+Предъявив гомотопию постоянного и тождественного
+отображений мы, тем самым, докажем требуемое утверждение.
+Для этого, во-первых, определим $f_t\colon  \mathbb{R}^\infty
+\to \mathbb{R}^\infty$ как $f_t(x_1,\,x_2,\ldots)=(1-t)(x_1,\,
+x_2,\ldots)+t(0,\,x_1,\,x_2,\ldots)$. Данное отображение переводит
+все ненулевые векторы в ненулевые векторы для любых $t \in [0,\,1]$, поэтому $f_t /|f_t|$ даёт нам гомотопию между тождественным
+отображением  $S^\infty$ и отображением $(x_1,\,x_2,\ldots)\to 
+(0,\,x_1,\,x_2,\ldots)$. Далее, гомотопия между данным
+отображением и постоянным отображением задается как $g_t /|g_t|$,
+где $g_t(x_1,\,x_2,\ldots)=(1-t)(0,\,x_1,\,x_2,\ldots)+
+t(1,\,0,\,0,\ldots)$.
+\end{sol}
+\end{document}

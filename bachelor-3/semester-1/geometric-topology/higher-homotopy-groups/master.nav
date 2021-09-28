@@ -1,0 +1,62 @@
+\headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\beamer@sectionpages {1}{1}}
+\headcommand {\beamer@subsectionpages {1}{1}}
+\headcommand {\sectionentry {1}{Фундаментальная группа $\pi _1(X)$}{2}{Фундаментальная группа $\pi _1(X)$}{0}}
+\headcommand {\beamer@subsectionpages {2}{1}}
+\headcommand {\beamer@subsectionentry {0}{1}{1}{2}{Путь и гомотопия путей}}
+\headcommand {\slideentry {1}{1}{1}{2/3}{Путь и гомотопия путей}{0}}
+\headcommand {\beamer@framepages {2}{3}}
+\headcommand {\beamer@subsectionpages {2}{3}}
+\headcommand {\beamer@subsectionentry {0}{1}{2}{4}{Определение}}
+\headcommand {\slideentry {1}{2}{1}{4/4}{Определение}{0}}
+\headcommand {\beamer@framepages {4}{4}}
+\headcommand {\beamer@sectionpages {2}{4}}
+\headcommand {\beamer@subsectionpages {4}{4}}
+\headcommand {\sectionentry {2}{Определение $\pi _n(X)$}{5}{Определение $\pi _n(X)$}{0}}
+\headcommand {\beamer@subsectionpages {5}{4}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{5}{Аналогия с $\pi _1(X)$}}
+\headcommand {\slideentry {2}{1}{1}{5/5}{Аналогия с $\pi _1(X)$}{0}}
+\headcommand {\beamer@framepages {5}{5}}
+\headcommand {\slideentry {2}{1}{2}{6/7}{Аналогия с $\pi _1(X)$}{0}}
+\headcommand {\beamer@framepages {6}{7}}
+\headcommand {\beamer@subsectionpages {5}{7}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{8}{Случай $n\ensuremath {\geqslant }2$}}
+\headcommand {\slideentry {2}{2}{1}{8/9}{Случай $n\ensuremath {\geqslant }2$}{0}}
+\headcommand {\beamer@framepages {8}{9}}
+\headcommand {\beamer@sectionpages {5}{9}}
+\headcommand {\beamer@subsectionpages {8}{9}}
+\headcommand {\sectionentry {3}{Коммутативность $\pi _n(X)$ для $n\ensuremath {\geqslant }2$}{10}{Коммутативность $\pi _n(X)$ для $n\ensuremath {\geqslant }2$}{0}}
+\headcommand {\beamer@subsectionpages {10}{9}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{10}{Аддитивная запись}}
+\headcommand {\slideentry {3}{1}{1}{10/13}{Аддитивная запись}{0}}
+\headcommand {\beamer@framepages {10}{13}}
+\headcommand {\beamer@sectionpages {10}{13}}
+\headcommand {\beamer@subsectionpages {10}{13}}
+\headcommand {\sectionentry {4}{Отображения $S^n\to X$}{14}{Отображения $S^n\to X$}{0}}
+\headcommand {\beamer@subsectionpages {14}{13}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{14}{Суть $\pi _n(X)$}}
+\headcommand {\slideentry {4}{1}{1}{14/14}{Суть $\pi _n(X)$}{0}}
+\headcommand {\beamer@framepages {14}{14}}
+\headcommand {\slideentry {4}{1}{2}{15/15}{Суть $\pi _n(X)$}{0}}
+\headcommand {\beamer@framepages {15}{15}}
+\headcommand {\beamer@sectionpages {14}{15}}
+\headcommand {\beamer@subsectionpages {14}{15}}
+\headcommand {\sectionentry {5}{Базовая точка $\pi _n(X,\tmspace +\thinmuskip {.1667em}x_0)$}{16}{Базовая точка $\pi _n(X,\tmspace +\thinmuskip {.1667em}x_0)$}{0}}
+\headcommand {\beamer@subsectionpages {16}{15}}
+\headcommand {\beamer@subsectionentry {0}{5}{1}{16}{Линейно связное пространство}}
+\headcommand {\slideentry {5}{1}{1}{16/16}{Линейно связное пространство}{0}}
+\headcommand {\beamer@framepages {16}{16}}
+\headcommand {\slideentry {5}{1}{2}{17/17}{Линейно связное пространство}{0}}
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\slideentry {5}{1}{3}{18/19}{Линейно связное пространство}{0}}
+\headcommand {\beamer@framepages {18}{19}}
+\headcommand {\slideentry {5}{1}{4}{20/20}{Линейно связное пространство}{0}}
+\headcommand {\beamer@framepages {20}{20}}
+\headcommand {\slideentry {5}{1}{5}{21/23}{Линейно связное пространство}{0}}
+\headcommand {\beamer@framepages {21}{23}}
+\headcommand {\beamer@partpages {1}{23}}
+\headcommand {\beamer@subsectionpages {16}{23}}
+\headcommand {\beamer@sectionpages {16}{23}}
+\headcommand {\beamer@documentpages {23}}
+\headcommand {\gdef \inserttotalframenumber {14}}

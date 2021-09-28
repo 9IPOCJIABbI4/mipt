@@ -1,0 +1,28 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Задание по фазовым переходам\\Часть вторая}
+\begin{document}
+	\maketitle
+Воспользовавшись преобразованием Фурье
+\[
+	\phi(x)= \int \frac{d^Dp}{(2\pi)^D}\exp(-ip_\mu x_\mu)
+	\tilde{\phi}(p)
+ ,\]
+преобразуем интеграл
+\[
+	\left<\phi(x)\phi(y) \right> =  \int [\mathcal{D}\phi
+	]\phi(x)\phi(y) \exp \left( -\frac{1}{2}\int
+	d^Dx \partial_\mu \phi \partial_\mu \phi\right) 
+\] 
+следующим образом
+\[
+	\left<\phi(x)\phi(y) \right> =
+	\int \ldots \int \phi(x)\phi(y) \exp\left( -\frac{1}{2}
+	\int d^D x \partial_\mu \phi \partial_\mu \phi\right)  \prod_{x}^{}d\phi(x) \prod_{y}^{}  d\phi(y) 
+.\] 
+\[
+	\left<\phi(x)\phi(y) \right> =  \int [\mathcal{D}\phi
+	]\int \frac{d^Dp}{(2\pi)^D}\int \frac{d^Dq}{(2\pi)^D}\tilde{\phi}(p) \tilde{\phi}(q) \exp \left(-i(p_\mu x_\mu q_\mu y_\mu) -\frac{1}{2}\int
+	d^Dx \partial_\mu \phi \partial_\mu \phi\right) 
+\]
+\end{document}
