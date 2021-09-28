@@ -1,0 +1,540 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Эволюционная задача в гильбертовом пространстве}
+\begin{document}
+	\maketitle
+Пусть $H$ --- гильбертово пространство, т.\:е. Это евклидово пространство с нормой $\|f\|=\sqrt{\left( f,\,f \right) },\; f \in H$,
+полное относительно этой нормы  (т.\:е. любая фундаментальная
+последовательность из $H$ сходится в $H$:
+\[
+	\{f_n\} \subset H: \|f_n-f_m\|\to 0 \quad(n\to \infty) \implies
+	\exists f \in H: \|f_n-f\|\to 0
+.\] 
+Норма в $H$ порождена скалярным произведением
+\[
+	(f,\,g) \in \mathbb{C}\quad\forall f,\,g \in H 
+.\]
+Типичным примеров гильбертова пространства является
+$
+	H=\mathbb{L}_2 (E)
+$ 
+для $E \subset \mathbb{R}^m$ --- измеримого по Лебегу множества.
+\[
+	\mathbb{L}_2(E)= \left\{ f: E\to \mathbb{C}\mid 
+	\int\limits_{E}^{} |f|^2d\mu < +\infty \right\}  
+.\]
+\[
+	\left( f,\,g \right) =\int\limits_{E}^{} f \overline{g}
+	d \mu,\, \|f\|^2= \int\limits_{E}^{} |f|^2 d\mu 
+.\] 
+Мы будем рассматривать $H$-значные функции, определённые на
+неотрицательных вещественных аргументах $t\ge 0$ ($t$ --- <<время>>)
+\[
+	\mathcal{U}:[0,\,+\infty)\to H,
+\] 
+т.\:е. $\forall t \ge 0$ определено $\mathcal{U}(t) \in H$.
+
+Функция $\mathcal{U}: [0,\,+\infty)\to H$ называется непрерывной в точке
+$t_0\ge 0$, если \[\lim_{\substack{t \to t_0 \\ t\ge 0}} \|\mathcal{U}(t)-\mathcal{U}(t_0)\|=0\]
+
+Функция $\mathcal{U}(t) \in H,\; t\ge 0$ называется дифференцируемой в 
+$t_0>0$, если $\exists v_0 \in H$ такое, что
+\[
+	\lim_{\Delta t \to 0} \left| \frac{\mathcal{U}(t_0+\Delta t)-
+\mathcal{U}	(t_0)}{\Delta t}-v_0 \right| =0
+.\] 
+Если $\mathcal{U}(t)$ дифференцируема в $t_0>0$, то вектор $v_0 \in H$ 
+обоозначаем
+\[
+	\mathcal{U}'(t_0)=v_0,
+\] 
+т.\:е.
+ \[
+	 \lim_{\Delta t \to 0} \frac{\mathcal{U}(t_0+\Delta t)-
+	 \mathcal{U}(t_0)}{\Delta t}= \mathcal{U}'(t_0),
+\] 
+где предел \emph{по норме} пространства $H$.
+
+Как правило мы будем иметь дело с элементами $H$, представленными
+разложением по заданному ортогональному базису $\{e_n\} _{n=1}^\infty\subset H$ (в этом случае $H$ --- бесконечномерное ГП)
+
+Пусть $\{e_n\} _{n=1}^\infty$ --- ортогональный базис в $H$.
+Тогда $\forall w \in  H$ раскладывается по нему в ряд Фурье,
+сходящийся к $w$ по норме $H$ :
+\[
+	w=\sum_{n=1}^{\infty} w_n e_n, \qquad w_n =\frac{\left( 
+	w,\, e_n\right) }{\left( e_n,\,e_n \right) }
+.\] 
+\[
+	\left\lVert w- \sum_{n=1}^{N} w_n e_n\right\rVert\to 0 \qquad (n\to \infty).
+\] 
+\[
+\| w\|^2 = \sum_{n=1}^{\infty} |w_n|^2 \| e_n\|2
+.\]
+Это равенство Парсеваля.
+
+Вообще для числовой последовательности $\{a_n\} _{n=1}^\infty \subset\mathbb{C}$ ряд $\sum_{n=1}^{\infty} a_n e_n$ сходится в $H$ 
+если и только если
+\[
+\sum_{n=1}^{\infty} |a_n|^2 \| e_n\|^2 < + \infty
+.\] 
+Действительно,
+\begin{multline*}
+\exists \lim_{N \to \infty} \sum_{n=1}^{N} a_n e_n \in H \Leftrightarrow \left\{ S_N= \sum_{n=1}^{N} a_n e_n \right\} _{N=1}^\infty \text{ фундаментальна в } H \Leftrightarrow \\ \Leftrightarrow 
+\| S_N -S_{N+M}\|^2 = \left\lVert \sum_{n=N+1}^{N+M} a_n e_n\right\rVert^2 = \sum_{n=N+1}^{N+M} |a_n|^2 \| e_n\|^2 \le \epsilon \quad
+\forall N \ge  N(\epsilon) \forall M
+.\end{multline*} 
+То есть
+\[
+\sum_{n=1}^{\infty} |a_n|^2 \| e_n\|^2 < +\infty
+\Leftrightarrow \exists \lim_{N \to \infty} S_N \underbrace{\textover{=}{def}
+	\sum_{n=1}^{\infty} a_n e_n \in H}_{\substack{\text{ это обозначение}\\ \text{
+для предела }S_N \text{ в } H\\ \text{ по норме } H
+}} .\] 
+Таким образом, если $H \ni \mathcal{U}(t),\; t\ge 0$ --- $H$-значная
+функция, а $\{e_n\} _{n=1}^\infty$ --- ортогональный базис $H$,
+то \[\forall t\ge 0 \quad \mathcal{U}(t) = \sum_{n=1}^{\infty} \mathcal{U}_n(t)e_n,\]
+где
+ \[
+	 \mathcal{U}_{n}(t) = \frac{\left( \mathcal{U}(t),\, e_n \right) }{(e_n,\,e_n)}
+\]
+--- коэффициенты Фурье.
+
+При этом в силу равенства Парсеваля, имеем
+
+\[
+	\| \mathcal{U}(t)\|^2= \sum_{n=1}^{\infty} |\mathcal{U}_n(t)|^2 \| e_n\|^2
+.\] 
+Пусть $\mathcal{U}(t)$ дифференцируема в $t>0$ ( по норме $H$ ),
+т.\:е.
+ \[
+	 \exists \underbrace{\mathcal{U}'(t)}_{\in H} = \lim_{\Delta t \to 0} \frac{
+	 \mathcal{U}(t+\Delta t) - \mathcal{U}(t)}{\Delta t}
+.\] 
+Тогда $\forall n \in  \mathbb{N}$ имеем
+\[
+	\frac{\mathcal{U}_n(t+\Delta t)-\mathcal{U}_n(t)}{\Delta t}=
+	\frac{1}{(e_n,\,e_n)}\underbrace{\left( 
+	\underbrace{\frac{\mathcal{U}(t+\Delta t)-\mathcal{U}(t)}{\Delta t}}_{
+\xrightarrow{\| \|} \mathcal{U}'(t)},\, e_n\right)}_{\xrightarrow[
+(\Delta t \to 0)]{\mathbb{C}} (\mathcal{U}'(t),\,e_n)}
+.\] 
+Это следует из неравенства КБШ:
+\begin{multline*}
+	\left| \left( \frac{\mathcal{U}(t+\Delta t)-\mathcal{U}(t)}{\Delta t},\, e_n \right) -\left( \mathcal{U}'(t),\,e_n \right)  \right| =\\=
+	\left| \left( \frac{\mathcal{U}(t+\Delta t)-\mathcal{U}(t)}{\Delta t}-
+	\mathcal{U}'(t),\, e_n\right)  \right| \textover{\le}{\text{КБШ}}\\
+	\le \underbrace{\left\lVert 
+	\frac{\mathcal{U}(t+\Delta t)-U(t)}{\Delta t}-\mathcal{U}'(t)\right\rVert}_{
+\xrightarrow[\Delta t\to 0]{} 0 !}
+	\cdot \| e_n\|
+.\end{multline*} 
+Итак, если $H$-значная функция $\mathcal{U}(t) \in  H,\; t\ge 0$ разложена
+в ряд Фурье по ортог. базису
+$\{e_n\} _{n=1}^\infty$ в $H$ и дифференцируема при $t>0$ (по
+норме $H$, то её коээфициенты Фурье являются дифференцируемыми
+скалярными функциями, т.\:е. $\forall \in \mathbb{N} \quad \exists \mathcal{U}'_n(t) \in  \mathbb{C}$, причём
+ \[
+	 \mathcal{U}'_n(t)= \frac{\left( \mathcal{U}'_n(t),\, e_n \right) }{(e_n,\,e_n)}
+\]
+--- коэффициенты Фурье производной $\mathcal{U}'(t) \in  H$ :
+\[
+	\mathcal{U}'(t) = \sum_{n=1}^{\infty} \mathcal{U}'_n(t) e_n,\quad t>0
+.\]
+Пусть теперь $L \subset H$ --- некоторое линейное подпространство
+(далее --- просто подпространство)
+и отображение $A:  L \to H$ линейно на $L$, т.\:е.
+$\forall \alpha,\,\beta \in \mathbb{C} \quad \forall f,\,g \in L$ 
+выполнено $\alpha f + \beta g \in  L$ и $A(\alpha f + \beta g)=\alpha A(f) + \beta A(g)$. Тогда  $A: L \to H$ называется линейным
+оператором, а подмножество $L$ называется его областью
+определения и обозначается $D(A) \equiv L$, т.\:е.
+\[
+	A : D(A) \to H
+.\] 
+Постановка эволюциоонноой задачи (на примере уравнения Шрёдингера):
+пусть $H$ --- гильбертово пространство, $A: D(A) \to  H$ ---
+линейный оператор (здесь $D(A) \subset H$ --- подпространство-областьопределения оператора  $A$ ).
+Пусть $\mathcal{U}_0 \in  H$ --- заданный вектор. Требуется найти $H$-значную
+функцию $\mathcal{U}: (0,\,+\infty)\to  H$, дифференцируемую (по норме $H$ )
+$\forall t >0$, удовлетворяющую вложению
+\[
+	\mathcal{U}(t) \in  D(A) \forall t> 0
+\]
+и равенствам
+ \[
+\left\{
+\begin{aligned}
+	i \frac{d}{dt} \mathcal{U}(t) &= A (\mathcal{U}(t) \quad \forall t>0,\\
+	\mathcal{U}(t_0)&=\mathcal{U}_0,
+\end{aligned}
+\right.
+\] 
+т.е. $\forall t>0 \Leftrightarrow i \mathcal{U}'(t)=A \mathcal{U}(t), \; \mathcal{U}(t) \in  D(A)$ 
+и выполнено начальное условие $\lim_{t \to +0} \| 
+\mathcal{U}(t) -\mathcal{U}_0\|=0 $. Значение $\mathcal{U}_0 \in H$ естественно считать
+начальным значение $\mathcal{U}(t)$ при $t=0$, т.\:е. $\mathcal{U}(0)=\mathcal{U}_0$, при этом
+равенство $\mathcal{U}(+0)=\mathcal{U}_0\equiv \mathcal{U}(0)$ означает непрерывность $\mathcal{U}(t)$ при
+$t=0$ (относительно $H$ -нормы)
+\begin{rem}
+	Если бы мы решали задачу Коши для обыкновенного
+	числового дифф. уравнения
+	\[
+	\left\{
+	\begin{aligned}
+		i y'(t) &= a y(t), \quad t>0, \text{ где}\\
+		y(+0)&=y_0 \quad y:[0,\,+\infty) \to \mathbb{C},\; y_0 \in \mathbb{C}
+	\end{aligned}
+	\right.
+	\]
+	то мы моментально имеем классическое дифференцируемое
+	при $t>0$ решение
+	\[
+		y(t)= e^{-i a t}y_0, \quad t\ge 0,
+	\]
+	удовлетворяющее начальному условию
+	\[
+		y(+0)=y_0\equiv y(0)
+	.\] 
+\end{rem}
+Можно ли, действуя по аналогии, определить <<оператор эволюции>>
+\[
+	U(t) =\exp(-i t A) : H \to  H
+\]
+так, чтобы $\forall \mathcal{U}_0 \in H$  функция $\mathcal{U}(t) = U(t) \mathcal{U}_0=
+\exp (-itA)\mathcal{U}_0$ была бы решением эволюционной задачи для уравнения
+Шрёдингерас заданнным оператором $A$? Например можно попробовать
+воспользоваться разложением Тейлора комплексной экспоненты
+$\exp(z)=\sum_{n=0}^{\infty} \frac{z^n}{n!},\, z \in \mathbb{C}$
+представляющее собой абсолютно сходящийся в $\mathbb{C}$ степенной
+ряд, и  записмть нечто такое:
+\[
+	\sum_{n=0}^{\infty} \frac{(-it)^n}{n!}A^n \mathcal{U}_0
+\]
+для $\mathcal{U}_0 \in H$. Но тогда возникает естественная трудность
+с областью определения оператора $A$:
+даже если  $\mathcal{U}_0 \in D(A)$ и определён вектор $A(\mathcal{U}_0) \in H$,
+то разве $A(\mathcal{U}_0) \in D(A)$, чтобы вычислить $A^2(\mathcal{U}_0)=
+A(A(\mathcal{U}_0))$? Необходимо $\forall n \in  \mathbb{N}$ требовать
+\[
+	A^{n-1}(\mathcal{U}_0) \in D(A),
+\] 
+где естественно
+\[
+	A^0(\mathcal{U}_0)= \mathcal{U}_0 \in D(A)
+\]
+и далее $A^{n-1}(\mathcal{U}_0) \in D(A) \implies \exists A^n(\mathcal{U}_0)=
+A(A^{n-1})(\mathcal{U}_0)) \quad \forall n \in \mathbb{N}$. Только в этом
+случае имеем смысл обсуждать
+\[
+	\exists ? \sum_{n=0}^{\infty} \frac{(-it)^n A^n (\mathcal{U}_0)}{n!} \in H ?
+\] 
+Также требования на $\mathcal{U}_0$ довольно обременительны и неудобны, то
+есть определение $\exp(-i t A)$ через степенной ряд для
+оператора $A : D(A) \to H$ с областью определения $D(A) \neq H$ 
+\emph{явно неудачное}. Тем не менее, для наших же операторов
+такое определение $\exp (-it A)$ даёт результат.
+
+Естественно, потребуем $D(A) =H$, то есть оператор $A$ определён
+на \emph{всём $H$}. Далее потребуем непрерывность оператора
+$A: H\to H$ в нуле:
+\begin{align*}
+	H \ni f_n \xrightarrow[]{\| \|} &0 \implies A(f_n)
+	\xrightarrow[]{\| \|}0\\
+					&\Updownarrow\\
+	\forall \epsilon > 0 \quad \forall \delta_\epsilon >&0
+\quad \forall f \in H: \| f\|\le \delta_\epsilon \hookrightarrow
+\| A(f)\|\le \epsilon
+.\end{align*}
+Тогда, в силу линейнойсти $A$, этот оператор будет непрерывен
+ на всём $H$, более того, он даже будет
+липшицевым на $H$:
+\[
+	\forall f \in  H \setminus \{0\} \implies \| A\left( 
+	\delta_\epsilon \frac{f}{\| f\|}\right) \|\le \epsilon
+	\implies \| A(f)\|\le  \frac{\epsilon}{\delta_\epsilon}
+	\| f\|
+.\] 
+В частности для $\epsilon=1$ получаем $\| A(f)\|\le \frac{1}{\delta_{1}}\| f\|\quad \forall f \in H$
+Следовательно
+\[
+	\| A(f)-A(g)\|=\| A(f-g)\|\le \frac{1}{\delta_1}\| f-g\|
+	\quad \forall f,\,g \in H
+.\] 
+Следовательно $A$ --- липшицев на $H$ с коонстантой $\frac{1}{\delta_1}$.
+\begin{dfn}
+	Пусть $A: D(A) \to  H$ --- ЛО
+	\[
+	\| A\|\textover{=}{def} \sup_{\substack{\| f\|=1\\
+	f \in  D(A)}}\| A(f)\|=
+	\sup_{\substack{f \in D(A)\\ f \neq 0}}\frac{\| A(f)\|}{
+	\| f\|}
+	.\] 
+	\[
+\| A\|<+\infty \Leftrightarrow A \text{ --- непрерывен в }
+0 \in  D(A) \Leftrightarrow A \text{ --- непрерывен на } D(A)
+	.\] 
+\end{dfn}
+$\| A\|<+\infty \implies \| A\|$ --- это наименьшая
+константа Липшица непрерывного на $D(A)$ линейного оператора $A$,
+\[
+	\| A(f)\|\le \| A\|\cdot \| F\| \quad \forall f \in 
+	D(A)
+\]
+(если $\| A\|<+\infty$!).
+Вернёмся к непрерывному оператору $A: H \to H$. $\forall n \in 
+ \mathbb{N} \quad \forall f \in  H$ имеем:
+ \[
+	 \| A^n(f)\|=\| A(A^{n-1}(f))\|\le 
+	 \| A\|\cdot \| A^{n-1}(f)\|\le \ldots
+	 \le \| A\|^{n} \| f\|,
+ \] 
+ т.\:е.
+ \[
+	 \| A^{n}(f)\|\le  \| A\|^n \| f\| \quad f \in H
+ .\] 
+ Следовательно,
+ \[
+	 \sum_{n=0}^{\infty} \| \frac{(-it)^nA^n(f)}{n!}\|\le 
+	 \sum_{n=0}^{\infty} \frac{t^n \| A\|^n}{n!}\| f\|=
+	 \underbrace{\exp\left( t \| A\| \right) \cdot \| f\|}_{<+\infty}\implies \sum_{n=0}^{\infty} \frac{(-it)^nA^n(f)}{n!}
+ \] 
+ сходится абсолютно $\forall f \in  H$!
+ Тогда для частичной суммы
+ \[
+	 S_N = \sum_{n=0}^{N} \frac{(-it)^n A^n(f)}{n!}
+ \]
+ получаем
+ \[
+	 \| S_N-S_{N+M}\|= \| \sum_{n=N+1}^{N+M} \frac{(-it)^n
+	 A^n(f)}{n!}\|\le \sum_{n=N+1}^{N+M} \frac{t^n \| A\|^n}{n!}
+	 \| f\| \le \epsilon \quad N \ge N(\epsilon) \forall M
+ .\] 
+ Таким образом, последовательность
+ \[
+	 S_N = \sum_{n=0}^{\infty} \frac{(-it)^n A^n(f)}{n!}
+ \]
+ фундаментальна в полном пространстве $H$,  т.\:е.
+ \[
+ \exists \underbrace{\lim_{N \to \infty} S_N}_{\text{по норме }H} \textover{=}{def}=
+ \sum_{n=0}^{\infty} \frac{(-it)^n A^n(f)}{n!} \forall f \in H
+ .\] 
+ Итак, $\forall f \in H$ мы определили \[U(t) f= \sum_{n=0}^{\infty} \frac{(-it)^n A^n(f)}{n!} \in  H.\]
+ \[
+	 \| U(t) f\|\le \sum_{n=0}^{\infty} \frac{t^n \| A\|^n}{n!}
+	 \| f\|= \exp \left(t \| A\|\right) \cdot \| f\|\implies
+	 \| U(t)\|\le \exp\left( t \| A\| \right) \quad
+	 \forall t \ge 0
+ ,\] 
+ $U(t):H\to H$ --- линейный непрерывный оператор!
+ Рассмотрим $\forall \mathcal{U}_0 \in H$ функцию
+  \[
+	  \mathcal{U}(t) =U(t) \mathcal{U}_0 = \sum_{n=0}^{\infty} \frac{(-it)^nA^n \mathcal{U}_0}{n!}
+ .\] 
+\begin{multline*}
+	\| \mathcal{U}(t) -\mathcal{U}_0\|=\left\lVert \sum_{n=1}^{\infty} \frac{(-it)^n A^n\mathcal{U}_0}{n!}\right\rVert\le  \sum_{n=1}^{\infty} \frac{t^n \| A\|^n \mathcal{U}_0}{n!}=
+	\underbrace{\left(e^{t \| A\|}-1\right)}_{\xrightarrow[]{
+	(t \to 0)}0}\| \mathcal{U}_0\|\implies\\ \implies \mathcal{U}(+0)=\mathcal{U}_0 \text{ в }H
+.\end{multline*} 
+Рассмотрим функцию
+\[
+	\theta (t) = \sum_{n=1}^{\infty} \frac{(-it)^{n-1}(-in)A^n(\mathcal{U}_0)}{n!}
+ ,\]
+это также абсолютно сходящийся ряд в $H$,  т.\:к.
+ \[
+ \sum_{n=1}^{\infty} \left\lVert \frac{
+ (-it)^{n-1}(-in)A^n(\mathcal{U}_0)}{n!}\right\rVert \le 
+ \sum_{n=1}^{\infty} \frac{t ^{n-1}}{(n-1)!} \| A\|^n \| \mathcal{U}_0\|=
+ e ^{t \| A\|} \| A\| \| \mathcal{U}_0\|.
+ \] 
+ Следовательно, $\theta (t) \in H \quad \forall t >0$,
+  причём
+\begin{multline*}
+	\theta(t)= -i \sum_{n=0}^{\infty} \frac{(-it)^n}{n!}A(A^n \mathcal{U}_0)= - i \lim_{N \to \infty} \sum_{n=0}^{N} A\left( 
+	\frac{(-it)^n A^n(\mathcal{U}_0)}{n!}\right) =\\=
+-i \lim_{N \to \infty} \underbrace{A}_{\text{ непрерывен на }H}\left( \underbrace{\sum_{n=0}^{N} \frac{
+(-it)^n A^n(\mathcal{U}_0)}{n!}}_{\xrightarrow[\| \|]{(N \to \infty)}\mathcal{U}(t)} \right) = - i A \mathcal{U}(t)
+.\end{multline*} 
+Таким образом, $i \theta(t) = A\mathcal{U}(t) \quad t>0$. Осталось показать,
+что $\exists \mathcal{U}'(t)=\theta (t) \quad \forall t >0$.
+Имеем: $0 < |\Delta t|<t$, тогда
+\begin{multline*}
+	\left\lVert \frac{\mathcal{U}(t +\Delta t) -\mathcal{U} (t)}{\Delta t}-\theta(t)\right\rVert=
+	\left\lVert \sum_{n=1}^{\infty} \frac{(-i)^n}{n!}A^n(\mathcal{U}_0)
+	\left( \frac{(t+\Delta t)^n-t^n}{\Delta t}-n t ^{n-1} \right) \right\rVert \le\\ \le  \sum_{n=1}^{\infty} \frac{\| A\|^n}{n!}\| \mathcal{U}_0\|
+	\underbrace{\left| \frac{(t+\Delta t)^n -t^n}{\Delta t}-n
+	t ^{n-1}\right|}_{\xrightarrow[]{(\Delta t \to 0)}0} 
+\tag{*}
+\label{eq:*}
+ ,\end{multline*}
+т.\:к. по Т. Лагранжа
+\[
+	(t+\Delta t)^n -t^n= n \xi_n ^{n-1} \cdot \Delta t,
+\]
+где $\xi_n$ между $t$ и $t+\Delta t$, следовательно
+\[
+	\left| \frac{(t +\Delta t)^n -t^n}{\Delta t}- n t ^{n-1} \right| \le  n \left| \xi_n ^{n-1}-t ^{n-1} \right| \le 
+	n t ^{n-1}(2 ^{n-1}+1)\le n 2^n t ^{n-1}
+.\] 
+Следовательно,
+\[
+	\frac{\| A\|^n}{n!}\| \mathcal{U}_0\| \left| \frac{\left( t +\Delta t \right) ^n -t^n}{\Delta t}-n t ^{n-1} \right| \le 
+	\frac{n 2^n \| A\|^n}{n!}t ^{n-1}
+\]
+--- член сходящегося ряда, не зависящий от $\Delta t$. Следовательно
+ряд (\ref{eq:*}) сходится равномерно по $0 < |\Delta t| <t$. Значит
+\begin{multline*}
+	\lim_{\Delta t \to o} \left\lVert \frac{\mathcal{U}(t+\Delta t)-U(t)}{\Delta t}-\theta (t)\right\rVert\le \lim_{\Delta t \to 0} 
+	\sum_{n=1}^{\infty} \frac{\| A\|^n \| \mathcal{U}_0\|}{n!}
+	\left| \frac{(t+\Delta t)^n -t ^n}{\Delta t}- n t ^{n-1} \right| =\\= \sum_{n=1}^{\infty} \frac{\| A\|^n \| \mathcal{U}_0\|}{n!}
+	\underbrace{\lim_{\Delta t \to 0} \left| \frac{(t+\Delta t)^n-t^n}{\Delta t}- n t ^{n-1} \right| }_{=0}=0
+ ,\end{multline*} 
+ Следовательно, $\forall t >0 \quad \exists \mathcal{U}'(t)=\theta(t)$.
+ Итак, если линейный оператор  $A: H\to H$ с областью определения
+ $D(A) = H$ непрерывен, т есть $\| A\|< +\infty$, то определён
+ оператор эволюции $U(t): H\to H$, действующий по формуле
+ $U(t)f = \sum_{n=0}^{\infty} \frac{(-it)^n A^n(f)}{n!} \quad \forall
+ f \in  H,\, \| U(t)\|\le \exp\left( t \| A\| \right) \quad \forall
+ t >0$ 
+ При этом $\forall \mathcal{U}_0 \in H$ выполненоо
+ \[
+	 \forall t>0 \quad \exists \frac{d}{dt}U(t) \mathcal{U}_0=-i A
+	 U(t) \mathcal{U}_0
+ \]
+ и
+ \[
+	 \exists U(+0)\mathcal{U}_0=\mathcal{U}_0
+  ,\] 
+  значит $\mathcal{U}(t)=U(t)\mathcal{U}_0,\; t\ge 0$, является решением эволюционной задачи
+\[
+\left\{
+\begin{aligned}
+	i \frac{d}{dt} \mathcal{U}(t) &= A \mathcal{U}(t),\quad t>0\\
+	\mathcal{U}(+0)&=\mathcal{U}_0 \in H.
+\end{aligned}
+\right.
+\] 
+Заметим, что решение единственно. Действительно, пусть $\mathcal{U}_1 (t)$ и $\mathcal{U}_2(t)$ --- два решения рассматриваемой
+эволюционной задачи. Тогда
+\[
+	w(t) = \mathcal{U}_1(t)-\mathcal{U}_2(t), \quad t>0,
+\]
+удовлетворяет
+\[
+\left\{
+\begin{aligned}
+	i \frac{d}{dt} w (t) &= A w(t),\quad t>0\\
+	w(+0)&=0.
+\end{aligned}
+\right.
+\] 
+Так как $w(t+\Delta t)= w(t) + \dot{w} (t) \Delta t +o(\Delta t)$, то
+\begin{multline*}
+	\| w(t+\Delta t)\|^2 =\left( w(t+\Delta t,\, w (t+\Delta t) \right) =\\=\left( w(t),\,w(t) \right) +
+	\left( w(t),\, \dot{w}(t) \right) \Delta t+
+	\left( \dot{w}(t),\, w(t) \right) \Delta t+ o(\Delta t)
+ ,\end{multline*}
+следовательно
+\begin{multline*}
+	\exists \frac{d}{dt} \| w(t)\|^2 =\left( \dot{w}(t),\,
+	w(t)\right) +\left( w(t),\,\dot{w}(t) \right) =\\=
+	2 \operatorname{Re} \left( w(t),\,\dot{w}(t) \right) \le 
+	2\| w(t)\|\left\lVert \dot{w}(t)\right\rVert\le 
+	2 \| A\|\| w(t)\|^2
+.\end{multline*} 
+Получаем, что
+\[
+	\frac{d}{dt} \| w(t)\|^2\le 2 \| A\|\| w(t)\|^2 \quad
+	\forall t>0
+,\] 
+значит $\forall 0 <\tau \le  t$ имеем
+\[
+	\| w(t)\|^2-\| w(\tau)\|^2=
+	\int\limits_{\tau}^{t} \frac{d}{d\xi}\| w(\xi)\|^2 d\xi
+	\le 2 \| A\| \int\limits_{\tau}^{t} \| w(\xi)\|^2 d\xi, 
+\]
+то есть $\forall 0 < \tau \le t$ выполнено
+\[
+	\| w(t)\|^2 \le \| w(\tau)\|^2+ 2\| A\|\int\limits_{\tau}^{t} 
+	\| w(\xi)\|^2 d\xi.
+\] 
+По лемме Гронуолла получаем
+\[
+	\| w(t)\|^2\le \| w(\tau)\|^2 \exp \left( 2 \| A\|(t-\tau) \right) \quad \forall 0 < \tau \le t
+.\] 
+Так как $w(+0)=0$, то  $\| w(\tau)\|\xrightarrow[\tau\to +0]{} 0$ 
+Переходя к пределу при $\tau\to +0$, поолучаем $\forall t>0$
+неравенство
+\[
+	\| w(t)\|^2 \le \lim_{\tau \to 0} \underbrace{\| w(\tau)\|^2}_{\to 0} \underbrace{\exp\left( 2 \| A\|(t-\tau) \right)}_{\to 1}=0
+	\implies \| w(t)\|^2=0 \Leftrightarrow w(t) =0
+.\] 
+Например, рассмоотрим в $H=L_2(\mathbb{R})$ оператор трансляции:
+\[
+	T_a: L_2(\mathbb{R})\to L_2 (\mathbb{R})
+.\] 
+Здесь $a \in \mathbb{R}, \, a \neq 0$.
+\[
+	(T_a f)(x) =f(x+a) \quad \forall f \in  L_2(\mathbb{R})
+	\quad \forall x \in \mathbb{R}\implies
+	\| T_a f\|_2=\| f\|_2 \quad \forall f \in L_2(\mathbb{R})
+ ,\]
+ т.\:е. $\| T_a\|=1$. Очевидно, что $\forall n \in \mathbb{N}$ 
+ \[
+	 \left( (T_a)^n f \right) (x) =f(x+na) \quad \forall x \in 
+	 \mathbb{R} \quad \forall f \in \mathbb{L}_2(\mathbb{R})
+  ,\]
+  т.\:е. $(T_a)^n=T_{na}$. Тогда
+ \[
+	 \exp (-i t T_a)= \sum_{n=0}^{\infty} \frac{(-it)^n}{n!}T_{na}=U(t)
+ .\]
+ Для эволюционной задачи
+ \[
+ \left\{
+ \begin{aligned}
+	 i \frac{d}{dt} \mathcal{U}(t)&= T_a \mathcal{U}(t), \quad
+	 t> 0\\
+	 \mathcal{U}(+0)&=\mathcal{U}_0 \in H
+ \end{aligned}
+ \right.
+ \]
+ решением является
+ \[
+	 \mathcal{U}(t)= \exp \left( -i t T_a \right) \mathcal{U}_0=
+	 \sum_{n=0}^{\infty} \frac{(-it)^nT_{na}\mathcal{U}_0}{n!},
+	 \quad t\ge 0
+  ,\]
+  или $\forall t \ge 0,\, x \in \mathbb{R}$ имеем
+  \[
+	  \mathcal{U}(t,\,x)= \sum_{n=0}^{\infty} \frac{(-it)^n
+	  \mathcal{U}_0(x+na)}{n!}
+  .\] 
+  $\forall t > 0$ ряд сходится в $L_2(\mathbb{R})$ (относительно
+  переменной $x \in \mathbb{R}$)
+  \[
+	  \| \mathcal{U}(t)\|_{L_2 (\mathbb{R})}\le 
+	  \sum_{n=0}^{\infty} \frac{t^n}{n!}\| \mathcal{U}_0\|_{L_2(\mathbb{R})}=e^t \| \mathcal{U}_0\|_2 \quad \forall t >0
+  .\] 
+\begin{problem*}
+	Пусть $H=L_2[0,\,1],$ оператор  $A: L_2 [0,\,1]\to L_2[0,\,1]$ имеет вид
+	\[
+		(Af)(x) = \int\limits_{0}^{x} f(t) dt,\quad
+		x \in [0,\,1],\quad f \in L_2[0,\,1]
+	\]
+	(это оператор Вольтерра).
+	Доказать, что $\| A\|\le \frac{1}{\sqrt{2} }$ ( и даже
+	$\| A\|= \frac{2}{\pi}<\frac{1}{\sqrt{2} }$). 
+	$\forall n \in \mathbb{N}$ вычислить
+	\[
+		A^n: L_2 [0,\,1]\to L_2[0,\,1],
+	\]
+	указав $(A^n f)(x)=? \quad \forall f \in L_2 [0,\,1],\,
+	x \in [0,\,1]$ и найти оператор эволюции
+	\[
+		U(A)= \sum_{n=0}^{\infty} \frac{(-it)^nA^n}{n!}=
+		e ^{-i t A} \quad \forall t >0
+	.\]
+	\[
+		U(t) : L_2[0,\,1]\to L_2 [0,\,1]
+	.\] 
+\end{problem*}
+\end{document}

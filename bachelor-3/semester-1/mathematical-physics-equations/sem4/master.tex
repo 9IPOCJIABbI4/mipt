@@ -1,0 +1,245 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Интегральные операторы}
+\begin{document}
+	\maketitle
+\[
+	(A\phi)\left(\overline{x}\right)= \int\limits_{D}^{} \underbrace{K \left(\overline{x},\,\overline{y}\right)}_{\text{
+	ядро оператора}}\phi\left( \overline{y} \right) 
+	d \overline{y}, \qquad D \text{ --- огр. обл.}
+\]
+Если у уравнения
+\[
+\phi= \lambda A \phi
+\]
+есть решения $\phi \neq 0$, то $\lambda$ называется характеристическим числом, а решение --- собственной функцией.
+\[
+	K\left( \overline{x},\, \overline{y} \right) = \sum_{i=1}^{n} F_i \left( \overline{x} \right) \cdot G_i \left( \overline{y} \right) \leftarrow \text{ вырожденное ядро}
+.\]
+(У Конст. опрератор с конечномерным образом.)
+\subsubsection*{Контрольная 14-15 гг.}
+\[
+	u(x)= \lambda \int\limits_{-1}^{1} \left(x y^3 - \ch x\right)
+	u(y) dy+ x^2
+.\] 
+\[
+	u(x)=\lambda x \underbrace{ \int\limits_{-1}^{1} y^3 u(y) dy}_{C_1 \text{ --- число}} -
+	\lambda \ch x \underbrace{\int\limits_{-1}^{1} u(y) dy +x^2
+}_{C_2 \text{ --- число}}.\] 
+\[
+	u(x)= \lambda x C_1 - \lambda \ch x \cdot C_2 +x^2
+.\] 
+\begin{multline*}
+	C_1=\int\limits_{-1}^{1} y^3 u(y) dy=
+	\int\limits_{-1}^{1} y^3 \left( \lambda y C_1-
+	\lambda \ch y  C_2 +y^2\right) dy =\\= \lambda C_1
+	\int\limits_{-1}^{1} y^4 dy- \lambda C_2 \underbrace{\int\limits_{-1}^{1} 
+	y^3 \ch y dy}_{=0} + \underbrace{\int\limits_{-1}^{1} y^5 dy}_{=0}=\left. \lambda C_1 \frac{y^5}{5}\right|_{-1}^1= \frac{2 \lambda}{5}C_1 
+.\end{multline*} 
+\begin{multline*}
+	C_2= \int\limits_{-1}^{1}  u(y) dy= \int\limits_{-1}^{1} 
+	(\lambda y C_1- \lambda \ch y C_2)+y^2) dy=
+	-\left.\lambda C_2 \sh y \right|_{-1}^1+ \left.\frac{y^3}{3}
+			\right|_{-1}^1=\\= -2  \lambda \sh 1 C_2+\frac{2}{3}
+.\end{multline*} 
+\[
+\left\{
+\begin{aligned}
+	\left(1- \frac{2}{5} \lambda\right) C_1&=0\\
+	\left( 1 + 2 \lambda \sh 1 \right) C_2&=\frac{2}{3}
+\end{aligned}
+\right.
+.\] 
+\[
+	A= \begin{pmatrix} 1-\frac{2}{5}\lambda & 0\\
+	0 & 1+2 \lambda \sh 1\end{pmatrix} 
+.\] 
+\begin{enumerate}
+	\item $\det A \neq 0$ 
+	\[
+	\lambda \neq \frac{5}{2};\quad \lambda \neq \frac{-1}{2 \sh 1} \to \text{ единств. реш.}
+	.\] 
+	\[
+		C_1=0;\quad C_2= \frac{2}{3(1+2 \lambda \sh 1)}
+	.\] 
+	\[
+		u= \frac{-\lambda \ch x \cdot 2}{3(1+2\lambda \sh 1)}
+		+x^2
+	.\] 
+\item $\lambda=\frac{5}{2}$ 
+	\[
+	\left\{
+	\begin{aligned}
+		0 \cdot C_1&=0\\
+		(1+5 \sh 1) C_2 &=\frac{2}{3}
+	\end{aligned}
+	\right.\to  C_1 \text{ --- любоое}, \, C_1=C
+	.\] 
+	\[
+		C_2= \frac{2}{3(1+5 \sh 1)}
+	.\] 
+	\[
+		u= \frac{5}{2} x C - \frac{5}{2} \ch x \frac{2}{3(1+5 \sh 1)}+ x^2
+	.\] 
+	\begin{multline*}
+	\left\{
+	\begin{aligned}
+		0\cdot C_1&=0\\
+		(1+5 \sh 1) C_2&=0
+	\end{aligned}
+	\right.\to C_1 \text{ --- любое},\, C_2 =0, u= C_1 \frac{5}{2}x \to\\ \to   \lambda= \frac{5}{2} \text{ --- характ. число, }u_{\text{собств.}}=x
+	.\end{multline*} 
+	\item $\lambda= \frac{-1}{2 \sh 1}$ 
+	\[
+	\left\{
+	\begin{aligned}
+		\left( 1+ \frac{1}{5 \sh 1} \right) C_1&=0\\
+		0\cdot C_2&= \frac{2}{3}
+	\end{aligned}
+	\right. \to  \text{ реш. нет}
+	.\]
+	\[
+	\lambda -\frac{1}{2 \sh 1} \text{ --- хар. число, } u_\text{собств.}= \ch x
+	.\] 
+\end{enumerate} 
+\subsubsection*{Задача 2.1г}
+
+\[
+	B= \left\{ x \in \mathbb{R}^3, |x|<1 \right\} \quad
+	A: L_2 (B) \to  L_2(B)
+.\] 
+\[
+	(Af)\left( \overline{x} \right) = \int\limits_{B}^{} 
+	\left( \frac{\left| \overline{y} \right| }{\left| \overline{x} \right| }+ \frac{\left| \overline{x} \right| }{\left| \overline{y} \right| } \right) f\left( \overline{y} \right) d \overline{y} 
+.\] 
+\[
+f = \lambda A f +g
+.\] 
+\[
+	f= \lambda \int\limits_{|y|<1}^{} \left( \frac{|x|}{|y|}+
+	\frac{|x|}{|y|}\right) f\left( \overline{y} \right) dy+g 
+.\] 
+\[
+	f = \lambda \frac{1}{|x|} \underbrace{\int\limits_{|y|<1}^{} \left| \overline{y} \right| f\left( \overline{y} \right) d \overline{y}}_{C_1}+
+	\lambda |x| \underbrace{\int\limits_{|y|<1}^{} \frac{1}{\left| \overline{y} \right|}f\left( \overline{y} \right) dy}_{C_2} +g 
+.\] 
+\[
+f= \frac{\lambda C_1}{|x|}+\lambda C_2 |x| +g
+.\] 
+\begin{multline*}
+	C_1= \int\limits_{|y|<1}^{} |y| \left( \frac{\lambda
+	C_1}{|y|}+\lambda C_2 |y| +g \right) dy=\\=
+	\lambda C_1 \int\limits_{|y|<1}^{} dy + \lambda C_2
+	\int\limits_{|y|<1}^{} |y|^2 dy + \underbrace{\int\limits_{|y|<1}^{} 
+	g dy}_{G_1}=\\=\frac{4 \pi}{3} \lambda C_1 + \lambda C_2
+	\int\limits_{0}^{1}  dr \int\limits_{0}^{2\pi} d\phi
+	\int\limits_{0}^{\pi} d \theta r^2 \cdot r^2 \sin \theta+G_1=\\
+	= \frac{4 \pi}{3} \lambda C_1 +\lambda C_2 \cdot 2 \pi
+	\cdot 2 \cdot \frac{1}{5} +G_1= \frac{4}{3} \pi \lambda C_1+
+	\frac{4}{5}\pi \lambda C_2+G_1
+.\end{multline*} 
+\begin{multline*}
+	C_2 = \int\limits_{|y|<1}^{} \frac{1}{|y|} \left( 
+	\frac{\lambda C_1}{|y|}+\lambda C_2 |y| +g\right) dy=\\=
+	\lambda C_1 \int\limits_{0}^{1} dr \int\limits_{0}^{2\pi} d\phi
+	\int\limits_{0}^{\pi} d\theta \frac{1}{r^2}\cdot r^2 \sin\theta+\lambda C_2 \frac{4}{3}
+	\pi+ \underbrace{\int\limits_{|y|<1}^{} \frac{g}{|y|}dy}_{G_2}=\\= 4 \pi \lambda C_1 + \frac{4}{3}\pi \lambda C_2+ G_2 
+.\end{multline*} 
+\[
+\left\{
+\begin{aligned}
+	\left( 1- \frac{4}{3}\pi \lambda \right) C_1 -
+	\frac{4}{5} \pi \lambda C_2&=G_1\\
+	-4 \pi \lambda C_1 + \left( 1- \frac{4}{3}\pi\lambda \right) C_2&= G_2 \\
+\end{aligned}
+\right.
+\] 
+\begin{multline*}
+	\Delta = \begin{vmatrix} 1- \frac{4}{3}\pi \lambda &
+	-\frac{4}{5}\pi \lambda \\ -4 \pi \lambda &
+1- \frac{4}{3}\pi \lambda\end{vmatrix} =
+\left( 1- \frac{4}{3} \pi \lambda \right) ^2 - 16 \pi^2 \lambda^2=\\=
+\left( 1 - \frac{4}{3}\pi \lambda - \frac{4}{\sqrt{5}} \pi \lambda  \right) \left( 1- \frac{4}{3}\pi \lambda+  \frac{4}{\sqrt{5} }\pi\lambda \right) =0
+.\end{multline*} 
+\begin{enumerate}
+	\item $\lambda \neq \frac{1}{\frac{4}{3}\pi + \frac{4}{\sqrt{5} }\pi}$ ; $\lambda \neq \frac{1}{\frac{4}{3}\pi - \frac{4}{\sqrt{5} }\pi}$
+
+		$\Delta \neq 0\to $  ед. реш.
+\[
+	C_1 = \frac{\begin{vmatrix}G_1 & - \frac{4}{5} \pi \lambda \\
+	G_2 & 1 - \frac{4}{3 }\pi \lambda\end{vmatrix}}{\left(1-\frac{4}{3}
+\pi \lambda\right)^2- \frac{16}{5}\pi^2 \lambda^2}=
+\frac{\left( 1 - \frac{4}{3 }\pi \lambda \right) G_1+
+\frac{4}{5}\pi\lambda G_2}{\left( 1- \frac{4}{3}\pi\lambda \right) ^2
+-\frac{16}{5}\pi^2 \lambda^2}
+.\] 
+\[
+	C_2= \frac{\begin{vmatrix}1- \frac{4}{3} \pi\lambda & G_1\\
+	-4\pi\lambda & G_2\end{vmatrix} }{\Delta}=
+	\frac{\left( 1 - \frac{4}{3 \pi \lambda} \right) G_2+
+	4 \pi \lambda G_1}{\left( 1 - \frac{4}{3}\pi\lambda \right) ^2-\frac{16}{5} \pi^2 \lambda^2}
+\]
+и подставить $f = \ldots$
+\item $\lambda = \frac{1}{\frac{4}{3}\pi + \frac{4}{\sqrt{5} }\pi}$ 
+\[
+\left\{
+\begin{aligned}
+\frac{\frac{4}{\sqrt{5} \pi}}{\frac{4}{3}\pi+\frac{4}{\sqrt{5} \pi}}C_1
+- \frac{4}{5} \pi \frac{1}{\frac{4}{3}\pi + \frac{4}{\sqrt{5} \pi}}C_2&=G_1\\
+-4 \pi \frac{1}{\frac{4}{3}\pi + \frac{4}{\sqrt{5} \pi}}C_1+
+\frac{\frac{4}{\sqrt{5} }\pi}{\frac{4}{3}\pi+ \frac{4}{\sqrt{5} \pi}}C_2&= G_2 \\
+\end{aligned}
+\right.
+.\]
+\[
+\left\{
+\begin{aligned}
+	- 4 \pi C_1+\frac{4}{\sqrt{5} }\pi C_2 &= G_1\left( - \frac{
+	4 \sqrt{5} }{3}- 4 \pi \right) \\
+	- 4 \pi C_1 + \frac{4}{\sqrt{5} }\pi C_2&= G_2 \left( \frac{4}{3}
+	\pi+ \frac{4}{\sqrt{5} }\pi\right) 
+\end{aligned}
+\right.
+.\] 
+\begin{enumerate}
+	\item $
+		G_1\left( - \frac{4\sqrt{5} }{3}\pi- 4 \pi \right) 	= G_2 \left( \frac{4}{3} \pi + \frac{4 \pi}{\sqrt{5} } \right)
+	$, то решения
+\[
+	C_1=C; \quad C_2 = \frac{G_1 \left( - \frac{4 \sqrt{5} }{3}\pi- 4 \pi  \right) +4\pi C}{\frac{4}{\sqrt{5}}\pi}=
+	G_1 \left(-\frac{5}{3}-\sqrt{5} \right) +\sqrt{5} C
+.\] 
+\[
+f = \frac{\lambda C}{|x|}+ \lambda \left[ 
+G_1\left(-\frac{5}{3}-\sqrt{5} \right)+\sqrt{5} C\right] |x|+g
+.\] 
+\item $
+		G_1\left( - \frac{4\sqrt{5} }{3}\pi- 4 \pi \right) 	\neq G_2 \left( \frac{4}{3} \pi + \frac{4 \pi}{\sqrt{5} } \right)
+	$, решения нет.
+\end{enumerate}
+\[
+\lambda= \frac{1}{\frac{4}{3}\pi+ \frac{4}{\sqrt{5} }\pi} \text{ ---
+ хар. число}
+.\] 
+\[
+f_\text{собств.}= \frac{1}{|x|}+\sqrt{5} |x|
+.\] 
+\item $\lambda = \frac{1}{\frac{4}{3}\pi- \frac{4}{\sqrt{5} }\pi}$ 
+\begin{enumerate}
+	\item $G_1\left( \frac{4 \sqrt{5} }{3}\pi - 4\pi \right) =
+		G_2 \left( \frac{4}{3}\pi - \frac{4 \pi}{\sqrt{5} } \right) $, то решения
+\[
+	f= \frac{\lambda C}{|x|}+ \lambda \left[ G_1 \left(-\frac{5}{3}+\sqrt{5} \right)- \sqrt{5} C \right] |x|+g
+.\] 
+\item $G_1\left( \frac{4 \sqrt{5} }{3}\pi - 4\pi \right) \neq
+		G_2 \left( \frac{4}{3}\pi - \frac{4 \pi}{\sqrt{5} } \right) $, то реш. нет.
+\end{enumerate}
+\[
+\lambda= \frac{1}{\frac{4}{3}\pi- \frac{4}{\sqrt{5} }\pi} \text{ ---
+ хар. число}
+.\] 
+\[
+f_\text{собств.}= \frac{1}{|x|}-\sqrt{5} |x|
+.\]
+\end{enumerate}
+\end{document}

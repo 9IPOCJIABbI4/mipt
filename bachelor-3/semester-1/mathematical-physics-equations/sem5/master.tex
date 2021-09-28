@@ -1,0 +1,138 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Что то про сф. ф-ии?}
+\begin{document}
+	\maketitle
+    $\mathbb{R}^3$
+
+    $\Delta u = 0 $ в $D$ 
+
+    $D$: шар, внешность шар или сф. слой
+    либо $u \mid _{\partial D}= u_0$, либо $u_r \mid _{\partial D}=u_1$, либо $(\alpha u +\beta u_r)\mid _{\partial D}=u_2$
+   \[
+   \Delta u = u_{rr}+ \frac{2}{r} u_r+ \frac{1}{r^2}\underbrace{\left[ 
+   \frac{1}{\sin \theta} \frac{\partial }{\partial \theta} \left( 
+   \sin \theta \frac{\partial u}{\partial \theta} \right) +
+   \frac{1}{\sin^2 \theta} \frac{\partial ^2u}{\partial \phi^2} \right]}_{\Delta _{\text{угл}} \text{ --- оператор Лапласа-Бельтрами}} 
+   .\] 
+   Собственные функции $\Delta_\text{угл}$ называются сферическими
+   функциями.
+
+Полиномы Лежандра:
+\[
+	P_{n}(t) = \frac{1}{2^n n!} \frac{d^n}{dt^n} (t^2 -1)^n \text{ --- полная ортоогональная система (базис) в } L_2[-1,\,1]
+.\] 
+Присоединённые полиномы Лежандра
+\[
+	P^m_n (t)= \left( \sqrt{1-t^2}  \right) ^m \frac{d^m}{dt^m}
+	P_n(t)
+\text{ --- образуют базис в } L_2[-1,\,1] \text{ при каждом }m\] 
+\[
+m=0,\,1,\,2,\ldots,\,n
+.\] 
+Сферические функции
+\[
+	Y_{n,\,m}(\theta,\,\phi)=
+	\begin{cases}
+		P^m_n (\cos \theta) \cos m\phi\\
+		P_n^m(\cos\theta)\sin m \phi
+	\end{cases} \subset 
+\lambda_n =-n (n+1)\] 
+\[
+	Y_{n}(\theta,\,\phi)= \sum_{m=0}^{n} \left[ 
+	a_{n,\,m}P^{m}_n(\cos \theta) \cos m \phi+
+b_{n,\,m}P^m_n(\cos \theta) \sin m \phi\right] 
+.\] 
+\[
+	\Delta_\text{угл} Y_n(\theta,\,\phi)=- n(n+1) Y_n(\theta,\,\phi)
+.\] 
+\[
+	u(z,\,\theta,\,\phi)= \sum_{n=0}^{\infty} A_n (z) Y_n(\theta,\,\phi)
+.\] 
+\[
+\sum_{n=0}^{\infty} A''_n Y_n+ \frac{2}{r} \sum_{n=0}^{\infty} A'_n
+Y_n + \frac{1}{r^2}\sum_{n=0}^{\infty} (-n)(n+1)  A_n Y_n=0
+.\] 
+\[
+	A''_n+\frac{2}{r} A'_n - \frac{n(n+1)}{r^2}A_n=0
+.\] 
+\[
+	r^2 A''_n +2 r A'_n - n(n+1)A_n=0
+.\] 
+\[
+	\lambda (\lambda-1) +2 \lambda -n(n+1)=0
+.\] 
+\[
+	\lambda^2 +\lambda -n(n+1)=0
+.\]
+\[
+	\lambda_{1,\,2}= \frac{-1\pm\sqrt{1+4n(n+1)} }{2}=
+	\frac{-1\pm \sqrt{1+4 n^2+4n} }{2}=\frac{-1 \pm(2n+1)}{2}=
+	n,\, -n-1
+.\] 
+\[
+A_n=C_n r^n +d_n \frac{1}{r^{n+1}}
+.\] 
+\begin{enumerate}
+	\item В сф. слое
+		\begin{multline*}
+		u= \sum_{n=0}^{\infty} \left[ 
+		r^n Y_n (\theta,\,\phi)+\frac{1}{r^{n+1}}\tilde{Y}_n
+	(\theta,\,\phi)\right] =\\=
+	\sum_{n=0}^{\infty} \sum_{m=0}^{n} \left[ 
+	a_{n,\,m}r^n P^m_n (\cos \theta)\cos n \phi+b_{m,\,n}
+\frac{1}{r^{n+1}}P_n^m (\cos\theta) \cos m \phi 
+\right.+\\+ \left.c_{m,\,n}r^n P^m_n (\cos\theta) \sin m\phi +
+d_{m,\,n} \frac{1}{m+1} P^m_n (\cos \theta) \sin m \phi\right] 
+		.\end{multline*} 
+		\item  В шаре
+\[
+	u = \sum_{n=0}^{\infty} \sum_{m=0}^{n} \left[a_{n,\,m} r^n P^m_n
+	(\cos\theta) \cos m \phi + C_{n,\,m}r^n P^m_n (\cos\theta)
+\sin m \phi\right]
+.\] 
+\item Вне шара (+ огр. на $+\infty$)
+ \[
+u= a + \sum_{n=0}^{\infty} \sum_{m=0}^{n} \left[ b_{n,\,m}
+\frac{1}{r^{n+1}}P^m_n (\cos\theta)\cos m \phi + d_{n,\,m}
+\frac{1}{r^{n+1}}P^m_n (\cos \theta) \sin m \phi\right] 
+.\] 
+\end{enumerate}
+Задача $\Delta u = 0$, $|x|<1$,  \begin{multline*}u\mid _{|x|=1}=x^2_2 x_3=r^3
+ \sin^2 \theta \sin^2 \phi \cos \theta\mid _{r=1}=\frac{1}{2}
+ (1-\cos 2\phi) \sin^2 \theta \cos \theta =\\= \frac{1}{2}\sin^\theta
+ \cos\theta - \frac{1}{2 }\sin^2 \theta \cos\theta \cos 2\phi\end{multline*}
+ \begin{multline*}
+	 P_3 (t) = \frac{1}{8 \cdot 6} \left( (t^2-1)^3 \right) '''=
+	 \frac{1}{48} (t^6 -3 t^4 +3t^2-1)''=
+	 \frac{1}{48}(6 \cdot 5 \cdot 4 t^3 - 3 \cdot 4 \cdot 3
+	 \cdot 2 t)=\\= \frac{1}{2} (5 t^2 - 3t) \to  P_3 (\cos\theta)= -\frac{1}{5} P_3 (\cos\theta) +\frac{1}{5}P_1 (\cos\theta) -\frac{1}{30}P_3^2 (\cos\theta) \cos 2 \phi
+	 \frac{1}{2} (5 \cos^3 \theta -3 \cos \theta)
+ .\end{multline*} 
+ \[
+ \frac{1}{2} \sin^2 \theta \cos\theta = \frac{1}{2}
+ \cos \theta - \frac{1}{2} \cos^3 \theta=
+ -\frac{1}{5} \cdot \underbrace{\frac{1}{2} (5 \cos^3 \theta- 3 \cos \theta)}_{P_3(\cos\theta)}+
+ \frac{1}{5} \underbrace{\cos \theta}_{P_1(\cos\theta)}
+ .\] 
+ \[
+	 P_1(t)= \frac{1}{2}(t^2 -1)'= t \to  P_1 (\cos\theta)=\cos \theta
+ .\] 
+ \[
+	 P^2_3(t)= (1 - t^2)\cdot \frac{1}{2}(5t^3 - 3t)''=
+	 15 (1-t^2)t\to  P^2_3 (\cos \theta)= 15 \sin^2 \theta
+	 \cos \theta
+ .\] 
+ \[
+	 u= A P_3 (\cos \theta) r^3 + B P_1 ( \cos \theta)r +
+	 C P_3^2 (\cos\theta) \cos 2\phi r^3
+ .\] 
+ \begin{multline*}
+	 u\mid _{r=1}=AP_3(\cos\theta) + B P_1 (\cos\theta)+C
+	 P_3^2 (\cos\theta) \cos 2\phi =\\= -\frac{1}{5} P_3 (\cos\theta) + \frac{1}{5}P_1 (\cos\theta)- \frac{1}{30 } P_3 ^2 (\cos\theta)
+	 \cos_2\phi
+ .\end{multline*} 
+ \[
+ A=-\frac{1}{5},\, B=\frac{1}{5},\, C= - \frac{1}{30}
+ .\] 
+\end{document}

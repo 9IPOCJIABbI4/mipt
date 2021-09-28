@@ -1,0 +1,11 @@
+\babel@toc {russian}{}
+\contentsline {section}{\numberline {1}Начально-краевая задача на отрезке}{1}{section.1}%
+\contentsline {section}{\numberline {2}Начально-краевая задача в прямоугольнике}{8}{section.2}%
+\contentsline {section}{\numberline {3}Уравнение Лапласа в круговых областях}{13}{section.3}%
+\contentsline {section}{\numberline {4}Замыкание оператора Лапласа на плоскости}{14}{section.4}%
+\contentsline {section}{\numberline {5}Сферические функции}{17}{section.5}%
+\contentsline {section}{\numberline {6}Замыкание оператора Лапласа в пространстве}{18}{section.6}%
+\contentsline {section}{\numberline {7}Интегральные уравнения с вырожденным ядром}{19}{section.7}%
+\contentsline {section}{\numberline {8}Самосопряжённые интегральные операторы}{20}{section.8}%
+\contentsline {section}{\numberline {9}Задача Штурма-Лиувилля}{26}{section.9}%
+\contentsline {section}{\numberline {10}Начально-краевая задача в секторе}{29}{section.10}%

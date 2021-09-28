@@ -1,0 +1,186 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{какой то семинар}
+\begin{document}
+\maketitle
+	\[
+	H =L_2 \left( \left[ 0,1 \right] \times [0,1] \right) 
+.\] 
+\[
+	A= \frac{\partial ^2}{\partial x^2} + i \frac{\partial }{\partial y} 
+.\] 
+\[
+	D(A)= \left\{  u \in  H : u'_x \mid _{x=0}=u \mid _{x=1}=0, \; u \mid _{y=0}=-u \mid _{y=1} \right\} 
+.\] 
+\begin{problem}
+	\begin{enumerate}
+		\item Д-ть, что $A$ -- сим.
+		\item Найти  в $H$ ортогон. базис из с. ф. $A$ 
+		\item Найти обл. опр. и спектр. разл. $\overline{A}$ 
+		\item Решение задачи
+			\[
+				\frac{d}{dt}u(t) +\left(\overline{A}\right)^2 u= e^{it}, \quad t >0 ,\quad u(t) \in D\left(\overline{A}^2\right)
+			\]
+			\[
+				u(+0)=0
+			.\] 
+	\end{enumerate}
+\end{problem}
+
+\begin{sol}
+\begin{enumerate}
+\item
+	$u,\,v \in D(A)$ 
+	\[
+		\left( Au,\,v \right) \textover{=}{?} (u,\,Av)
+	.\] 
+\begin{multline*}
+	\left( Av,\,u \right) = \int\limits_{0}^{1} \int\limits_{0}^{1}  (u_{x x} + i u_{y}) \overline{v} dx dy= \int\limits_{0}^{1} 
+	dy \int\limits_{0}^{1} u_{x x} \overline{v}dx+i
+	\int\limits_{0}^{1} dx \int\limits_{0}^{1}  u_y \overline{v} dy =\\= \int\limits_{0}^{1} dy \left( 
+	\underbrace{u_x \overline{v}\mid _{0}^1}_{u_{x}\mid _{x=1}
+\cdot \underbrace{\overline{v}\mid _{x=1}}_{=0}-\underbrace{u_x \mid _{x=0}\cdot \overline{v}\mid _{x=0}}_{}}\right)   
+\ldots\end{multline*} 
+\begin{enumerate}
+	\item $L_2 \left( [0,1] \times [0,1] \right) =
+		L_2 [0,1] \otimes L_2[0,1], \; \otimes$ --- это $\cdot$ 
+	\item $H_1\otimes H_2$, $\{f_n\} $ --- ортог. базис в
+		$H_1$, $\{g_n\} $ --- ортог. базис в $H_2$ 
+		$\implies$ $\{f_n \otimes g_m\} $ --- ортог. базис в 
+		$H_1 \otimes H_2$
+\end{enumerate}
+\item
+\begin{enumerate}
+	\item $f_(x)$ т.ч. $f'' =\lambda f,\; f'(0)=0, f(1)=0$
+ \begin{enumerate}
+	\item $\lambda> 0$ 
+		\[
+		f=
+		A \sh \sqrt{\lambda} x +B \ch \sqrt{\lambda}  x
+		\]
+			\[
+			\begin{aligned}
+			f'(0) = A \sqrt{\lambda} =0 \to  A=0\\ f(1)= B \ch \sqrt{\lambda} \to B=0
+			\end{aligned} \to \emptyset
+		.\] 
+	\item  $\lambda=0$
+		 \[
+		f=\underbrace{Ax}_{=0}+B
+		.\]
+		\[
+			\begin{aligned}
+			f'(0)=A=0
+			f(1)=B=0	
+			\end{aligned}\implies \emptyset
+		.\] 
+	\item $\lambda<0$ 
+		\[
+		f= A \underbrace{\sin \sqrt{-\lambda} x}_{=0}+
+		B \cos \sqrt{-\lambda} x
+		.\] 
+		\[
+			f'(0) = A \sqrt{ -\lambda} =0,\, A=0
+		.\] 
+		\[
+			f(1)=B \cos \sqrt{-\lambda} =0 \implies
+			\cos \sqrt{-\lambda} =0 \implies
+			\sqrt{-\lambda} = \frac{\pi}{2} +\pi n
+		.\] 
+		\[
+			\lambda_n = -\left( \frac{\pi}{2}+\pi n \right) ^2
+		.\] 
+		\[
+			f_n = \cos \left( \frac{\pi}{2}+\pi n \right) x
+		.\] 
+\end{enumerate}
+\item   $g(y)$ т.ч. $i g' = \mu g$, $g(0)=-g (1)$ 
+	\[
+	g'=-i \mu g
+	.\] 
+	\[
+	g = A e ^{-i \mu g}
+	.\] 
+	\[
+		g(0) =A = -g(1) = -A e ^{-i\mu}
+	.\] 
+	\[
+	1= -e ^{i\mu}
+	.\] 
+	\[
+	e^{-i\mu}= -1 = e ^{i \pi +2 \pi m i}
+	.\] 
+	\[
+	-i \mu = i \pi +2 \pi m i
+	.\] 
+	\[
+	\mu_m = - \pi - 2 \pi m
+	.\] 
+	\[
+		g_m= e ^{\left( \pi +2 \pi m  \right) iy}
+	.\] 
+	\[
+		e_{n,\,m}= \cos \left( \frac{\pi}{2} +\pi n \right)
+		x \cdot e^{(\pi +2 \pi m) i y}
+	.\] 
+	\[
+		\lambda_{n,\,m}= -\left( \frac{\pi}{2}+\pi n \right) ^2 - \left( \pi +2 \pi m \right) 
+	.\] 
+	\[
+	\sqrt{-\lambda_n} = \frac{\pi}{2}+ \pi n
+	.\] 
+\end{enumerate}
+\item  
+	\[
+		\overline{A} = \sum_{n=0}^{\infty} \sum_{m=-\infty}^{+\infty}  \lambda_{n,\,m} \frac{(u,\, e_{n,\,m})}{(e_{n,\,m},\,
+		e_{n,\,m}}e_{n,\,m} \leftarrow \text{спектр. разл}
+	.\] 
+	\[
+		D\left(\overline{A}\right) =
+		\left\{ u \in L_2 \left( [0,\,1]\times [0,\,1] \right): \sum_{n=0}^{\infty} \sum_{m=-\infty}^{+\infty} \lambda_{n,\,m}^2
+		\frac{\left| \left( u,\,e_{n,\,m} \right)  \right| ^2}{\| e_{n,\,m}\|^2}<\infty\right\} 
+	.\] 
+\item 
+\[
+	u = \sum_{n,\,m}^{\infty} T_{n,\,m}(t) e_{n,\,m}; \;
+	\overline{A}^2 u = \sum_{n,\,m}^{} \lambda_{n,\,m}^2
+	T_{n,\,m} e_{n,\,m}
+.\] 
+\begin{multline*}
+1= \sum_{n,\, m}^{} \alpha_{n,\,m} e_{n,\,m}, \; \alpha_{n,\,m}
+= \frac{\left( 1,\, e_{n,\,m} \right) }{\left( e_{n,\,m},
+e_{n,\,m}\right) }=\\=
+\frac{\int\limits_{0}^{1} \int\limits_{0}^{1}  \cos
+\left( \frac{\pi}{2} +\pi n \right) x \cdot e ^{-i (\pi+2
+\pi m) y}dx dy}{\int\limits_{0}^{1}  \cos^2 \left( \frac{\pi}{2}
++\pi n\right) x dx \int\limits_{0}^{1}  e ^{i \left( \pi
++2m \pi\right) y} e^{-i(\pi+2\pi m)y}dy
+ }=\\=\sum_{n,\,m}^{} T_{n,\,m}' e_{n,\,m}+ \sum_{n,\,m}^{} \lambda^2_{n,\,m}T_{n,\,m} e_{n,\,m} = \sum_{n,\,m}^{} \alpha_{n,\,m}e_{n,\,m}
+ \cdot e^{it}.\end{multline*} 
+ \[
+\left\{
+\begin{aligned}
+	T_{n,\,m}'+\lambda_{n,\,m}^2 T_{n,\,m}&=\alpha_{n,\,m}e^{it}\\
+	T_{n,\,m}(0)&=0
+\end{aligned}
+\right.
+ \] 
+\[
+T_{n,\,m}= C_{n,\,m} e ^{-\lambda^2_{n,\,m} t}+ \beta_{n,\,m}e^{it}
+.\] 
+\[
+\beta_{n,\,m }\ldots
+\]
+\[
+	u(t,\,x,\,y)= \sum_{n,\,m}^{} \frac{\alpha_{n,\,m}}{i +\lambda_{n,\,m}^2}\left[ -e ^{- \lambda_{n,\,m}^2 t}+e^{it} \right] e_{n,\,m}
+.\] 
+\emph{Проверки}
+\[
+	u \in  L_2 [0,\,1]\times [0,\,1])
+.\] 
+\begin{multline*}
+|u|^2= \sum_{n,\,m}^{} \frac{|\alpha_{n,\,m}|^2}{|i+\lambda_{n,\,m}^2|^2}\left| -e ^{- \lambda_{n,\,m}^2 t}+ e ^{it} \right| ^2 \| e_{n,\,m}\|^2 \le  \sum_{n,\,m}^{} \frac{|\alpha_{n,\,m}|^2}{1+\lambda_{,\,m}^4}\cdot 4 \| e_{n,\,m}\|<\\<\ldots< +\infty
+.\end{multline*} 
+\end{enumerate}
+\end{sol}
+
+\end{document}

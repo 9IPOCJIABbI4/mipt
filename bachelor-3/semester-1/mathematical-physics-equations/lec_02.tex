@@ -1,0 +1,811 @@
+\lecture{2}{Пт 11 сен 2020 13:48}{Введение в функциональное исчисление операторов в гильбертовом пр-ве}
+\lec
+Рассмоотрим сначала конечно-мерное евклидово проостранство $\mathcal{E}^n$ размерности $n \in \mathbb{N}$ 
+(оно автоматически  полное относительно евклидовой нормы)
+и рассмотрим линейный оператор $A : \mathcal{E}_n\to \mathcal{E}_n$.
+Пусть $e=\{e_1,\ldots,e_n\} $ --- ОНБ в $\mathcal{E}_n$. Тогда в базисе $e$ оператор $A$ задатся $n \times n$ 
+матрицей $A \in  \mathbb{C}^{n \times n}$, так что $\forall x \in  \mathcal{E}_n$
+с координатным  столбцом $\xi \in  \mathbb{C}^n$ в базисе $e$ координаты $A(x)$ 
+образуют столбец $A \xi \in  \mathbb{C}^n$.
+Алгебраически мы можем определить оператор
+\[
+	A^* : \mathcal{E}_n \to  \mathcal{E}_n
+ ,\]
+ сопряжённый к оператору $A$, так, чтобы
+ \begin{align*}
+	 (A(&x),\,y)= (x,\, A^* (y)) \quad \forall x,\, y \in \mathcal{E}_n\\
+	    & \veq\\
+	 (A &\xi)^T \overline{\eta}= \eta^T A^T \overline{\eta} = \xi \overline{\overline{
+	 A^T}\eta},
+ \end{align*} 
+ где $x= e \xi$ и $y = e \eta$, $\xi,\,\eta \in \mathbb{C}^n$.
+ То есть матрица $A^*$ оператора  $A^*$ в базисе $e$ равна
+ \[
+	 \overline{A^T} \in  \mathbb{C}^{n \times n}
+ .\] 
+\begin{dfn}
+Оператор $A$ называется \emph{самосопряжённым}, если
+\[
+A=A^* \Leftrightarrow A= \overline{A^T}
+.\] 
+\end{dfn} 
+Как хорошо известноо из линейной алгебры, все собственные
+числа самосопряжённого оператора $A: \mathcal{E}_n \to  \mathcal{E}_n$ вещественны, а его собственные векторы, отвечающие различным
+собственным числам --- ортогональны в $\mathcal{E}_n$.
+Обозначим $\Lambda \subset \mathbb{R}$ --- все сообственные
+числа ССО $A$, это конечное множество,
+\[
+	\forall \lambda \in \Lambda \implies \underbrace{\operatorname{Ker}
+(A- \lambda I)}_{\substack{\text{собственное
+подпр-во,}\\ \text{ соответствующее}\\
+\lambda \in \Lambda}} \neq 0
+\] 
+(здесь $I : \mathcal{E}_n \to \mathcal{E}_n$  --- тождественный
+оператор). Обозначим $A_\lambda\equiv A- \lambda I$.
+Таким образом $\forall \lambda,\,\mu \in \Lambda : \lambda \neq
+ \mu$, следовательно
+\[
+	\operatorname{Ker} A_\lambda \perp \operatorname{Ker}
+	A_\mu
+.\] 
+Более того, хорошо известно, что
+\[
+\sum_{\lambda \in \Lambda}^{} \dim  \operatorname{Ker}
+A_\lambda = n,
+\]
+т.\:е. имеет место равенство
+\[
+	\underset{\lambda \in \Lambda}{\oplus} \operatorname{Ker}
+	A_\lambda = \mathcal{E}_n \text{ !}
+\] 
+Этот факт ещё формулируется как существование у ССО
+в конечно-мерном евкл. $\mathcal{E}_n$ ортогонального базиса
+из его собственных векторов. Можно это переформулировать
+на языке ортогональных  проекторов в $\mathcal{E}_n$:
+$\forall \lambda \in  \Lambda$ обозначим $P(\lambda):
+ \mathcal{E}_n \to  \operatorname{Ker}A_\lambda$ --- ортопроектор
+ из $\mathcal{E}_n$ на $\operatorname{Ker}A_\lambda$,
+ то есть $\forall x \in  \mathcal{E}_n \implies P(\lambda) x$ ---
+ ортогональная проекция $x$ на собственное подпр-во
+$\operatorname{Ker}A_\lambda$ оператора $A$
+ \begin{align*}
+	  \lambda,\, \mu \in  \Lambda : \lambda \neq \mu &\implies
+	 \operatorname{Ker} A_{\lambda} \perp \operatorname{Ker}A_\mu \\
+&\Downarrow \\
+	 \forall x \in \mathcal{E}_n &\implies P(\lambda) x
+\perp P(\mu) x,\end{align*} 
+то есть образы  $P(\lambda)$ и $P(\mu)$ ортогональны.
+При этом 
+\[
+	\underset{\lambda \in \Lambda}{\oplus} \operatorname{Ker}
+	A_\lambda = \mathcal{E}_n \implies \forall
+	x \in \mathcal{E}_n \implies x = \sum_{\lambda \in \Lambda}^{
+	} P(\lambda) x
+.\] 
+То есть $I = \sum_{\lambda \in \Lambda}^{} P(\lambda)$ 
+--- это разложение тождественного в $\mathcal{E}_n$ ( то есть 
+единичного) оператора в конечную сумму ортогональных проекторов
+на собственные подпространства ССО $A$. Так как
+$\forall \lambda \in  \Lambda \; \forall x \in \mathcal{E}_n$ 
+имеем $P(\lambda) x \in  \operatorname{Ker}A_\lambda$, то
+\begin{align*}
+	\underbrace{A_\lambda P(\lambda) x}_{\veq} &= 0\\
+	AP(\lambda)x - \lambda P (&\lambda) x =0
+,\end{align*} 
+т.\:е.
+\[
+	AP(\lambda) x = \lambda P(\lambda) x
+.\] 
+Тогда $\forall x \in  \mathcal{E}_n$ имеем
+\[
+	x = \sum_{\lambda \in \Lambda}^{} P(\lambda) x
+	\implies Ax= \sum_{\lambda \in \Lambda}^{} A P(\lambda) x=
+	\sum_{\lambda \in  \Lambda}^{} \lambda P (\lambda) x,
+\] 
+т.\:е.
+\[
+	A = \sum_{\lambda \in  \Lambda}^{} \lambda P(\lambda):
+	\mathcal{E}_n \to \mathcal{E}_n
+\]
+--- это разложение $A$ в сумму ортопроекторов на собственные подпространства ССО $A$ с коэфф. из соотв. собственных чисел $A$.
+\begin{dfn}
+Это разложение наз. \emph{спектральным разложением} ССО $A$.
+\end{dfn}
+Итак, если $A: \mathcal{E}_n \to \mathcal{E}_{n}$ --- ССО (самосопряжённый оператор),
+\[
+\Lambda = \left\{ \substack{\text{все собств.}\\
+\text{числа} A} \right\}  \subset \mathbb{R}
+,\] 
+\[
+	\forall \lambda \in \Lambda \hookrightarrow P(\lambda)
+	: \mathcal{E}_n \to  \operatorname{Ker}A_\lambda
+\text{ --- ортопроектор}
+,\] 
+то
+\[
+	A = \sum_{\lambda \in \Lambda}^{} \lambda P(\lambda)
+.\] 
+Заметим, что $\forall \lambda,\,\mu : \lambda \neq \mu$ имеем
+$P(\lambda)P(\mu)=0$ и $P(\mu)P(\lambda)=0$, так как
+$\operatorname{Im} P(\lambda)= \operatorname{Ker}A_\lambda$ и
+$\operatorname{Im}P(\mu)= \operatorname{Ker}A_\mu$ --- \emph{ортогональные подпр-ва}!
+
+При этом также по определению оптопроектора очевидно, что
+$\forall \lambda \in \Lambda$ вып.
+\[
+	(P(\lambda))^2=P(\lambda)\implies
+	(P(\lambda))^k =P(\lambda) \quad \forall k \in \mathbb{N}
+.\] 
+Следовательно, из разложения
+\[
+	A= \sum_{\lambda \in \Lambda}^{} \lambda P(\lambda):
+	\mathcal{E}_n \to  \mathcal{E}_n
+\]
+мы $\forall k \in \mathbb{N}$ находим:
+\[
+	A^k= \sum_{\lambda \in \Lambda}^{} \lambda^k P(\lambda):
+	\mathcal{E}_n \to \mathcal{E}_n
+.\] 
+Тогда для любого многочлена
+\[
+	T(z)= a_0 +a_1 z + \ldots+ a_N z^N,\qquad 
+	a_0, \ldots, a_n \in \mathbb{C},\, N \in \mathbb{N}
+\]
+получаем равенствоо
+\[
+	T(A) = \sum_{\lambda \in \Lambda}^{} T(\lambda)
+	P(\lambda): \mathcal{E}_n \to \mathcal{E}_n
+.\] 
+Теперь для любой целой функции $f : \mathbb{C}\to \mathbb{C}$ 
+вида $f(z) = \sum_{k=0}^{\infty} a_k z^k, \; z \in \mathbb{C}$ с
+радиусом сходимости $\infty$ рассмотрим оператор
+\[
+	f(A)= \sum_{\lambda \in \Lambda} f(\lambda)P(\lambda):
+	\mathcal{E}_n\to \mathcal{E}_n
+.\] 
+Для частичной суммы
+$f_N(z)=\sum_{k=0}^{N} a_k z^k$ мы имеем
+ \[
+	 f_N (A)=\sum_{\lambda \in \Lambda}^{} f_N (\lambda)
+	 P(\lambda), 
+\]
+и тогда получим сходимость
+$f_N(A)$ и $f(A)$ по операторной норме:
+\[
+	\| f(A) -f_N (A)\|= \left\lVert \sum_{\lambda \in \Lambda
+	}^{} \left( f(\lambda) - f_N (\lambda) \right) P(\lambda)\right\rVert\le  \sum_{\lambda \in \Lambda}^{}|f(\lambda)-
+f_N(\lambda)| \| P(\lambda)\|\xrightarrow[]{N\to \infty}0
+,\] 
+т.\:к. $|f(\lambda)-f_N(\lambda)|\xrightaroow[N\to \infty]{}0 $(
+$\forall \lambda \in \Lambda$ --- конечное мн-во),
+$\|P(\lambda)\|=1$ (как норма  $\forall$ нетривиального
+ортопроектора).
+Т.\:о. $\| f(A)-f_N(A)\|\xrightarrow[]{N\to  \infty}0$.
+
+Можно пойти дальше и вообще для любой функции $\phi: \mathbb{C}\to 
+\mathbb{C}$ (не обязательно дяже непрерывной), определить
+\[
+	\phi(A)= \sum_{\lambda \in \Lambda}^{} \phi(\lambda)
+	P(\lambda) :
+	\mathcal{E}_n \to  \mathcal{E}_n
+.\] 
+При этом $\phi(\Lambda)$ --- это все собств. числа $\phi(A)$.
+Итак, для самосопряжённых операторов, действующих в конечномерном
+евклидовом пространстве, мы в терминах
+их спектрального разложения в сумму ортопроекторов мы определили
+суперпозицию $\forall$ комплексной функции с $\forall$ такими
+оператором.
+
+Чтобы обобщить этот подход и на бесконечномерное гильбертово пространство,
+требуется для любого оператора $A: D(A)\to H$ определить понятие
+сопряжённого оператора \[\underbrace{A^*}_{?}: \underbrace{D(A^*)}_{?} \to  H,\]
+и далее для самосопр. операторов поолучить их спектр. разложение.
+
+Приступим к определению сопряжённого оператора для произвольного
+линейного оператора
+$A : D(A) \to H$.
+
+Хотим прежде всего понять, где должен быть определён сопряжённый
+оператор, \underline{$D(A^*)=?$}
+
+\underline{Желание}: $\forall f \in  D(A) \; \forall g \in 
+В(A^*)=?$ иметь равенство 
+ \[
+	 \left( Af,\,g \right) =\left(f,\,\underbrace{A^*g}_{?}\right) \in \mathbb{C}
+ .\] 
+
+ \underline{Вопрос}: для каких $g \in  H$ можно найти вектор
+ $h \in H$ такой, что $\forall f \in  D(A)$ выполнено
+ $\left( Af,\,g \right) =(f,\,h)$. Так как оотображение
+\[
+	D(A) \ni f \mapsto (f,\,h) \in \mathbb{C}
+\]
+является непрерывны по $f \in  D(A)$ в силу КБШ:
+\[
+	|(f,\,h)|\le \| f\| \| h\| \qquad F \in D(A)
+\]
+--- липшицево с конст. $\| h\|$,
+то естественно определяем подпространство
+\[
+	D(A^*) = \left\{  g \in H :
+\substack{ \text{отображение } \\ 
+D(A) \ni f \mapsto (Af,\,g) \in \mathbb{C}\\
+\text{ непрерывно}\\ \text{по } f \in D(A)}\right\} 
+=
+\left\{ g \in H:
+\substack{\exists C_g > 0 \quad \forall f \in D(A) \text{ вып.}\\
+|(Af,\,g)|\le C_g \| f\|}\right\} 
+\]
+($C_g>0$ --- это константа Липшица линейного непр. ф-ла
+$D(A) \ni f \mapsto (Af,\,g) \in \mathbb{C}$).
+Итак, $g \in  D(A^*)\subset H \Leftrightarrow
+ D(A) \ni f \mapsto  (Af,\,g) \in \mathbb{C}$ непрерывно по 
+$f \in D(A)$. Очевидно, что $0 \in D(A^*)$, и 
+$\forall g_{1,\,2} \in  D(A^*)$ и $\alpha_{1,\,2} \in \mathbb{C}$ 
+будет $g=\alpha_1 g_1 + \alpha_2 g_2 \in D(A^*)$, т.\:к.
+$\forall f \in D(A)$ 
+\[
+	|(Af,\,g)|\le |\alpha_1|
+	\underbrace{|(Af,\,g_1)|}_{\le C_{g_1}\| f\|}+
+	|\alpha_2| \underbrace{|(Af,\,g_2)}_{\le C_{g_2}\| f\|}\le 
+	(|\alpha_1| C_{g_1}+ |\alpha_2| C_{g_2}) \| f\|
+.\] 
+Теперь линейный непрерывный функционал $\phi : D(A) \to \mathbb{C}$ 
+вида 
+\[
+	\phi(f) =(Af,\,g), \quad f \in D(A)
+\]
+(Здесь $g \in D(A^*)$ ) можно по непрерывности продолжить на
+замыкание $D(A)$ --- замкнутое подпространство $\overline{D(A)}
+ \subset H$. Действительно, мы имеем $C_g>0$:
+ \[
+	 |\phi(f)|= |(Af,\,g)|\le 
+	 C_g \| f\| \forall f \in D(A)
+ .\] 
+ Теперь берём $\forall f \in \overline{D(A)}$, имеем последовательность
+ \[
+	 \{f_n\} \subset D(A): f_n \xrightarrow[]{\| \cdot\|}f,
+\]
+и тогда $|\phi(f_n) -\phi(f_m)=|\phi(f_n -f_m)|\le 
+ C_g \| f_n -f_m\|\xrightarrow[(n,\,m\to \infty)]{} 0$.
+Следовательно $\{\phi(f_n)\} $ --- фундам. числовая посл-ть,
+т.\:е. $\exists \lim_{n \to \infty}\phi(f_n) \textover{=}{def} 
+\mathrm{hi o}
+\psi (t) \in \mathbb{C}$
+Заметим, что число $\psi(t) \in \mathbb{C}$ не зависит от
+выбора посл-ти $D(A) \ni f_n \xrightarrow[]{\| \cdot\|}f$.
+Если $\tilde{f}_n \in D(A),\,\tilde{f}_n \xrightarrow[]{\| \cdot\|}$,
+то
+\begin{multline*}
+	\left|\phi(f_n)- \phi \left( \tilde{f}_n \right) \right|
+	\le  C_g \left\lVert  f_n - \tilde{f}_n\right\rVert\le 
+	\underbrace{\| f_n - f\|}_{\to 0}+
+	\underbrace{\left\lVert \tilde{f}_n - f\right\rVert}_{\to 0}\to 0 \implies \\ \implies
+	\lim_{n \to \infty} \phi\left(\tilde{f}_n\right)=
+	\lim_{n \to \infty} \phi(f_n) = \psi(t) \qquad
+	(n\to  \infty)
+.\end{multline*} 
+Итак, мы определили функционал $\psi: \overline{D(A)}\to \mathbb{C}$, и $\forall f \in  \overline{D(A)} \implies |\psi(f)|\le 
+ C_g \| f\|$, так как для $f_n \in D(A)\quad f_n \xrightarrow[]{\| \cdot\|} f $ имеем
+ \[
+	 |\psi(f)|= \lim_{n \to \infty} \underbrace{|\phi(f_n)}_{\le 
+	 C_g \| f_n\|}\le C_g \underbrace{\lim_{n \to \infty} \| f_n\|}_{= \| f\|}=C_g \| f\|
+ .\] 
+ Также $\psi : \overline{D(A)}\to  \mathbb{C}$ очевидно линеен
+ на $\overline{D(A)}$, т.\:к. для $\tilde{f}$ и $\hat{f} \in 
+ \overline{D(A)}$ строим $\tilde{f}_n \in D(A)$ и 
+ $\hat{f}_n \in D(A)$ вида 
+ $\tilde{f}_n \xrightarrow[]{\| \cdot \|}\tilde{f}$ и $
+ \hat{f}_n \xrightarrow[]{\| \cdot \|}\hat{f}$,
+ и тогда $\forall \tilde{\alpha}$ и $\hat{\alpha}\in \mathbb{C}$
+ имеем
+\begin{multline*}
+	\psi\left( \tilde{\alpha} \tilde{f}+ \hat{\alpha}
+	\hat{f}\right) = \lim_{n \to \infty} \phi\left( 
+\tilde{\alpha}\tilde{f}_n+ \hat{\alpha}\hat{f}_n\right) =
+\lim_{n \to \infty} \left( \tilde{\alpha}\underbrace{
+\phi\left( \tilde{f}_n \right) }_{\to \psi\left( \tilde{f} \right) }+\hat{\alpha} \underbrace{\phi\left( \tilde{f}_n \right) }_{\to 
+\psi\left( \tilde{f} \right) } \right) =\\=
+\tilde{\alpha} \psi\left( \tilde{f} \right) +
+\hat{\alpha} \psi\left( \hat{f} \right) 
+.\end{multline*} 
+
+Итак, $\psi: \overline{D(A)}\to \mathbb{C}$ линейный
+непрерывный функциоонал, $\psi\mid _{D(A)}\equiv \phi$.
+При этом $\overline{D(A)}$ как замкнутое подпространство в $H$ 
+само является гильбертвым пространством.
+
+\underline{Вопрос}: каков общий вид линейного непрерывного функционала в гильб. пр-ве?
+
+Ответ даёт теорема \emph{Рисса-Фреше}.
+\begin{thm}[Рисса-Фреше]
+Пусть $H$ --- гильб.
+пр-во, $\phi : H \to \mathbb{C}$ линейный непрерывный
+функционал. Тогда $\exists! h_\phi \in H: \phi(f) =(f,\,h_\phi)
+ \; \forall f \in H$
+\end{thm}
+\begin{proof}
+	Если $\phi \equiv 0$, то очевидно $h_\phi=0 \in H$ 
+	подойдёт.
+
+	Пусть $\phi \not\equiv \Rightarrow \operatorname{Ker}
+	\phi \neq H$ и $\operatorname{Ker} \phi$ --- замкнутое
+	подпространство в $H$ в силу непрерывности $\phi$.
+	Тогда по теореме Рисса об ортогональности дополнения
+	замкнутго подпространств в гильбертовоо пр-ве,
+	имеем равенство
+	\[
+		\operatorname{Ker}\phi \oplus (\operatorname{Ker}\phi)^\perp = H
+	.\]
+	Т.\:к. $\operatorname{Ker}\phi \neq H$, то 
+	$\left( \operatorname{Ker}\phi \right) ^\perp \neq
+	\{0\} $, т.\:е. $\exists g \in \left( \operatorname{Ker}\phi \right)^\perp \setminus \{0\}  $.
+	Далее, $\forall f \in  H$ рассмотрим вектор
+	\[
+		f - \frac{\phi(f)}{\phi(g)}g \in H
+	.\] 
+	Имеем 
+	\[
+		\phi\left(f - \frac{\phi(f)}{\phi(g)}g\right)=
+		\phi(f)- \frac{\phi(f) \phi(g)}{\phi(g)}=
+		\phi(f) - \phi(f)=0
+	,\]
+	следовательно
+	\[
+		f - \frac{\phi(f)}{\phi(g)}g \in \operatorname{Ker}
+		\phi \Rightarrow f - \frac{\phi(f)}{\phi(g)}\perp g
+		\Rightarrow (f,\,g) - \left( 
+		\frac{\phi(f)}{\phi(g)}g,\,g\right) =0,
+	\]
+	значит
+	\[
+		(f,\,g)= \frac{\phi(f)}{\phi(g)}\| g\|^2,
+	\]
+	т.\:е.
+	\[
+		\phi(f) = \left( f,\, \frac{\overline{\phi(g)}}{
+		\|g \|^2}g \right) \quad \forall f \in H
+	.\] 
+	Итак,
+	\[
+		h_\phi= \frac{\overline{\phi(g)}}{\| g\|^2}g,
+		\quad g \in \left( \operatorname{Ker}\phi \right) ^\perp \setminus \{0\} 
+	,\]
+	\[
+		\phi(f) = (f,\, h_\phi) \quad f \in H
+	.\]
+
+	\emph{Единственность вектора $h_\phi$}
+	
+	Если $ \tilde{h}$ и $ \hat{h}\in H$ таковы, что
+	\[
+		\phi(t) =\left(f,\,\tilde{h}\right)=
+		\left( f,\, \hat{h} \right) \quad \forall
+		f \in H
+	,\]
+	то        получаем $    \left(f,\,\tilde{h}-\hat{h}\right)=0
+	\;          \forall f \in H $. В       частности,
+	для $f = \tilde{h}- \hat{h} \Rightarrow 
+	 \left( \tilde{h}-\hat{h},\,\tilde{h}-
+	 \hat{h}\right)=0 \Leftrightarrow \left\lVert 
+  \tilde{h}- \hat{h}\right\rVert^2=0$, т.\:е.  $\tilde{h}=\hat{h}$.
+\end{proof}
+Возвращаемся к определению сопряжённого оператора.
+Итак, в нашем распоряжении линейный непрерывный функционал
+\[
+	\psi: \overline{D(A)}\to \mathbb{C},
+	\quad \psi\mid _{D(A)}= (Af,\,g) \quad \forall
+	f \in D(A)
+.\] Т.\:к. $\overline{D(A)}$ --- замкнутое под-во в $H$, то
+само  $\overline{D(A)}$ явл. гильбертовым пр-вом. $\Rightarrow$ 
+по Т. Рисса-Фреше $\exists! h_\psi\in \overline{D(A)}$ такой. что
+\[
+	\psi(f) = (f,\, h_\psi) \quad \forall f \in \overline{D(A)}
+.\] 
+В частнсти, для любогоо $f \in D(A)$ имеем равенство
+\[
+	(Af,\,g)= (f,\,h_\psi), \quad f \in D(A)
+.\] 
+По определению полагаем, что
+\[
+	A^* g = h_\psi,\quad g \in D(A^*)
+.\] 
+\begin{dfn}
+Таким образом определён \emph{сопряжённый оператор} $A^*: D(A^*)\to H$,
+при этом $\operatorname{Im}A^*\subset \overline{D(A)}$.
+\end{dfn}
+Заметим, что $A^* : D(A^*) \to H$
+является линейным оператором. Действительно,
+$\forall g_{1,\,2} \in D(A^*) \; \forall \alpha_{1,\,2} \in 
+ \mathbb{C}$ имеем
+ \[
+\left\{
+\begin{aligned}
+	(Af,\, g_1) = (f,\, A^* g_1)\\
+	(Af, g_2) =(f,\,A^* g_2)
+\end{aligned}
+\right.
+\quad \forall f \in D(A)
+ .\] 
+ Т.\:к. $\alpha_1 g_1+\alpha_2 g_2 \in D(A^*)$ --- под-во в $H$,
+ то  $\exists! A^* (\alpha_1 g_1 +\alpha_2 g_2) \in \overline{D(A)}$ 
+такой, что
+\[
+	(Af,\, \alpha_1 g_1+\alpha_2 g_2)=(f,\, A^*(\alpha_1 g_1+
+	\alpha_2 g_2)) \quad \forall f \in D(A)
+.\] 
+Но мы также имеем
+\[
+	\overline{\alpha_1} (Af,\, g_1)+ \overline{\alpha_2}(Af,\, g_2)=
+	(A f,\,\alpha_1 g_1+\alpha_2 g_2)
+ ,\]
+а также
+\[
+	\overline{\alpha_1}(Af,\, g_1) +\overline{\alpha_2} (Af,\,g_2)= \overline{\alpha_1} (f,\,
+	A^* g_1)+ \overline{\alpha_2} (f,\, A^* g_2)=
+	(f,\,\alpha_1 A^* g_1+ \alpha_2 A^* g_2)
+.\]
+Следовательноо, получаем:
+\[
+	\left(f,\, \underbrace{\alpha_1 A^* g_1 +\alpha_2 A^* g_2}_{\in 
+	\overline{D(A)}}\right)=
+	(Af,\, \alpha_1 g_1 +\alpha_2 g_2)=
+	\left( f,\, \underbrace{A^*(\alpha_1 g_1 +\alpha_2 g_2}_{\in 
+	\overline{D(A)}} \right) 
+,\]
+значит в силу единственности вектра из $\overline{D(A)}$, реализующего
+это равенство $\forall f \in D(A)$
+\[
+	A^*(\alpha_1 g_1+\alpha_2 g_2) = \alpha_1 A^* g_1+
+	\alpha_2 A^* g_2 !
+\] 
+\begin{dfn}
+	Линейный оператор $A: D(A) \to  H$ называется
+	\emph{самосопряжённым}, если
+	\[
+		D(A^*)=D(A) \text{ и } A^*=A
+	\]
+	на их общей области определения
+	$D(A)=D(A^*)$.
+\end{dfn}
+Т.\:о. для исследования св-ва ССО требуется прежде всего иметь
+равенство \underline{$D(A)=D(A^*)$}, и $\forall f \in  D(A)$ иметь
+$Af= A^* f$.
+ \begin{dfn}
+	 Линейный оператор  $A : D(A)\to  H$ называется \emph{симметричным},
+	 если 
+	 \[
+		 \underbrace{(Af,\, g) =(f,\,Ag) \quad f,\,g \in D(A)}_{\Downarrow}
+	 \]
+\[
+	\forall g \in D(A) \Rightarrow g \in D(A^*),
+\]
+при этом $A^* g = P_{\overline{D(A)}}A g$, где
+$P_{\overline{D(A)}}: H \to \overline{D(A)}$ --- ортопроектор
+на $\overline{D(A)}$.
+\end{dfn}
+Таким образом, $A : D(A) \to  H$ симметричен, если и только если
+\[
+\left\{
+\begin{aligned}
+	D(A) \subset D(A^*)\\,
+	A^*\mid _{D(A)}= P_{\overline{D(A)}}A.
+\end{aligned}
+\right.
+\] 
+Если $\overline{D(A)}=H$, т.\:е. $A $ --- плотно определённый
+оператор, тогда $P_{\overline{D(A)}}=I$ --- тождественный
+оператор в $H$, и в случае $\overline{D(A)}=H$ свойство
+симметри оператора $A : D(A) \to H$ равносильно условиям
+\[
+\left\{
+\begin{aligned}
+	D(A) \subset D(A^*),\\
+	A^*\mid _{D(A)}=A,
+\end{aligned}
+\right.
+\] 
+эти условия часто пишут коротко  \underline{$A \subset A^*$}.
+\begin{center}
+	\emph{Пример симметричного несамосопряжённого оператора}
+\end{center}
+Пусть $H= \mathbb{L}_2 [0,\,1]$,
+\[
+	A= i \frac{d}{dx} : D(A) \to \mathbb{L}_2[0,\,1],
+\]
+где
+\[
+	D(A)= \left\{ f \in W^{1,\,2}[0,\,2]\mid f(0)=f(1)=0 \right\} 
+.\]
+Тогда $\forall f,\,g \in D(A)$ имеем
+\begin{multline*}
+	(Af,\,g) = \int\limits_{0}^{1} i f'(x) \overline{g(x)}dx=
+	=\underbrace{i f(x) \overline{g(x)}\mid _0^1}_{=0}-\int\limits_{0}^{1} i f(x) \overline{g'(x)}dx  =\\=
+	\int\limits_{0}^{1} f(x) \overline{i g'(x)}dx=
+	(f,\,Ag),
+\end{multline*} 
+т.\:е. $A$ --- симметричный оператор. Но очевидно, что
+$W^{1,\,2}[0,\,1]\subset D(A^*)$, так как $\forall g \in 
+ W^{1,\,2}[0,\,1]$ имеем
+\begin{multline*}
+	\forall f \in D(A) \hookrightarrow (Af,\,g)=
+	\int\limits_{0}^{1} i f'(x) \overline{g(x)}dx=\\=
+	\underbrace{i f(x) \overline{g(x)}\mid _{0}^1}_{\substack{=0\\ \text{т.\:к. }f(0)=f(1)=0}}+
+	\int\limits_{0}^{1} f(x) \overline{i g'(x)}dx=
+	(f,\,i g')
+ ,\end{multline*} 
+ значит $\forall f \in  D(A)$ получаем $(Af,\,g)=(f,\,i g')$ ---
+ непрерывно по  $f \in D(A)$, для любой $g \in W^{1,\,2}[0,\,2]$ 
+\[
+	W^{1,\,2}[0,\,1] \subset D(A^*) \text{ и }
+	\forall g \in W^{1,\,2}[0,\,1]
+\]
+выполнено
+\[
+A^* g = i g'= i \frac{d}{dx} g
+.\] 
+Полагаем, что на самом деле имеет место и обратное вложение
+\[
+	D(A^*) \subset W^{1,\,2}[0,\,1]
+.\] 
+Берём $\forall g \in D(A^*)$, тогда
+для $h =A^*g$ имеем
+\begin{align*}
+	(Af&,\,g)=(f,\,h) \quad \forall f \in D(A)\\
+	   &\veq\\
+	\int\limits_{0}^{1} i & f' \overline{g} dx=
+	\int\limits_{0}^{1} f \overline{h}dx 
+.\end{align*}
+Определим функцию
+\[
+	\psi(x) = \int\limits_{0}^{x} h(t) dt, \quad x \in [0,\,1] 
+.\] 
+Тогда $\psi \in W^{1,\,2}[0,\,1]$ и $\psi(0)=0$, при этом
+$\psi'=h$ для п.\:в. $x \in [0,\,1]$, следовательно
+\[
+\int\limits_{0}^{1} f \overline{h}dx= \int\limits_{0}^{1} f
+\overline{\psi'}dx= \underbrace{f(x) \overline{\psi(x)}\mid _{0}^1}_{
+=0 \text{ т.\:к. } f(0)=f(1)=0}- \int\limits_{0}^{1} 
+f'(x) \overline{\psi(x)}dx
+.\] 
+Следовательно $\forall f \in D(A)$ имеем
+\[
+\int\limits_{0}^{1} i f' \overline{g} = - \int\limits_{0}^{1}
+f'\overline{\psi},
+\]
+т.\:е.
+\[
+	\int\limits_{0}^{1} f'\left(i \overline{g} +\overline{\psi}\right)dx = 0 
+.\] 
+Рассмотрим подпространство
+\[
+	\left\{ f' \mid f \in D(A) \right\} =M
+.\]
+\[
+	\forall f \in D(A) \Rightarrow \int\limits_{0}^{1} f'dx=
+	\underbrace{f(1)}_{=0}-\underbrace{f(0)}_{=0}=0,
+\]
+т.\:е. имеем вложение
+\[
+	M=\left\{ f'\mid f \in D(A) \right\} \subset \left( 
+	\operatorname{Lin}1\right) ^\perp
+.\] 
+Наоборот, если $\phi\in \left( \operatorname{Lin}1 \right) ^\perp$,
+т.\:е. 
+\[
+	\int\limits_{0}^{1}  \phi(x) dx =0, 
+\]
+то определев 
+\[
+	f(x) =\int\limits_{0}^{x} \phi(x) dt, \quad x \in [0,\,1]
+	\Rightarrow f \in W^{1,\,2}[0,\,1], \quad f (0)=f(1)=0,
+\]
+т.\:е. $f \in D(A)$ и $f'=\phi\Rightarrow \phi \in M$, т.\:е.
+получаем равенство
+\begin{multline*}
+	M= \left\{ f '\mid  f \in  D(A) \right\} =(\operatorname{Lin}1)^\perp \implies \int\limits_{0}^{1} f' \overline{(\psi-i g)}dx=0
+	\quad f \in D(A)
+	\Leftrightarrow \\
+	\Leftrightarrow(f',\, \psi-i g)=0 \forall f \in D(A)
+	\Leftrightarrow \psi-ig \in \left( \left( \operatorname{Lin}
+	1\right) ^\perp \right) ^\perp= \operatorname{Lin}1,
+\end{multline*} 
+ то есть выполнено
+\[
+	\psi - ig\equiv \operatorname{const} \text{ п.\:в. на }
+	[0,\,1]
+.\] 
+Но
+\[
+	\psi(x) = \int\limits_{0}^{x} h(t) dt \text{ для }
+	h=A^* g
+,\] 
+т.\:е.
+\begin{multline*}
+	\int\limits_{0}^{x}  h dt= ig(x) + \operatorname{const}
+	\implies g \in W^{1,\,2}[0,\,1]\implies\\ \implies
+	h(x) = i \frac{d}{dx} g(x)= (A^* g)(x) \text{ для п.\:в. }
+	x \in [0,\,1]
+.\end{multline*} 
+Итак, мы доказали
+\[
+	D(A^*)=W^{1,\,2}[0,\,1]
+\]
+и
+\[
+	A^* g = i \frac{d}{dx} g \quad \forall g \in W^{1,\,2}[0,\,1]
+.\]
+Видим, что $A\neq A^*$, хотя $A$ --- симметричный.
+При этом $A^*$ уже не явл. симметричным.
+\sem
+A -- сим. +$\{e_n\} $ --- ортог. базис из с.в. $A$ т.\:е.  $A e_n =\lambda_n e_n$ 
+\begin{enumerate}
+	\item $D(A) \in  \left\{  f \in  M : \sum_{n=1}^{\infty} \lambda^2_n \frac{
+		\left| \left( f,\, e_n \right)  \right| ^2}{\|e_n\|^2}< \infty \right\} =B $ 
+		\[
+			Af=\sum_{n=1}^{\infty} \lambda_n \frac{\left( f,\,e_n \right) }{(e_n,\,e_n)} e_n \text{ --- спектр
+			разложение }A
+		.\] 
+	\item было $D(A^*) \subset B$ 
+	\item $D(A^*) \supset B$ 
+		\[
+			\forall f \in B \implies f \subset D(A^*)
+		.\] 
+		\[
+			\forall y \in  D(A) \qquad \left| (Ag,\,f) \right| \le C_f \|g\| \text{?}
+		.\] 
+		\begin{multline*}
+			\left| \left( Ag,\, f \right)  \right| =\text{спектр. разл. }A= \left| \left( 
+			\sum_{n=1}^{\infty} \lambda_n \frac{\left( g,\, e_n \right) }{\left( e_n,\,e_n \right) }e_n,f\right)  \right|= \\=
+			\text{непрерывность скалярного произведения}=\\= \left| \sum_{n=1}^{\infty} \lambda_n
+			\frac{(g,\, e_n)}{(e_n,\,e_n)}\left( e_n,\, f \right) \right| =
+			\left| \sum_{n=1}^{\infty} \left(g,\, \lambda_n \frac{\left( f,\, e_n \right) }{(e_n,\,e_n)}e_{n}\right) \right|\\=\\
+			\text{непрерывность скалярного произведения}=\\= \left| \left( g,\, \sum_{n=1}^{\infty} \lambda_n
+			\frac{(f,\,e_n)}{(e_n,\,e_n)}e_n\right)  \right| \le \text{неравенство К-Б}\le\\ \le  
+			\|g\|\cdot \|\sum_{n=1}^{\infty} \lambda_n \frac{(f,\,e_n)}{(e_n,\,e_n)}e_n\|=
+			\|g\|\cdot \underbrace{\sqrt{\sum_{n=1}^{\infty} \lambda_n^2 \frac{\left| \left( f,\,e_n \right)  \right| ^2}{
+			\|e_n\|^2}}}_{C_f}< \infty \implies D(A^*)=B
+		.\end{multline*} 
+		\[
+			A^*f=\sum_{n=1}^{\infty} \lambda_n \frac{\left( f,\,e_n \right) }{(e_n,\,e_n)} \text{ ---
+			спектральное разложение }A^*
+		.\]
+	\item $A^{**}=A^*$ и $D\left(A^{* *}\right)$
+	\item  $\overline{A}$ --- замыкание
+		\[
+			D(A^*) \subset D\left(\overline{A}\right)\text{
+			т.\:е. }\forall f \in D(A^*)=B \to ? \to 
+			f \in  D\left(\overline{A}\right)
+		.\] 
+		\begin{multline*}
+			f=\text{р. Ф.}= \sum_{n=1}^{\infty} \frac{(f,\,e_n)}{
+			\left( e_n,\,e_n \right) }e_n
+			\qquad \text{и}\qquad
+			\sum_{n=1}^{\infty} \lambda_n
+			\frac{(f,\,e_n)}{(e_n,\,e_n)}=A^* f\\
+			\text{т.\:к.} f  \in  D\left(A^*\right)
+		.\end{multline*} 
+		\[
+			f_N=\sum_{n=1}^{N} \frac{(f,\,e_n)}{(e_n,\,
+			e_n)}e_n \in D(A)
+		.\] 
+		\[
+			Af_N = \sum_{n=1}^{N} \lambda_N \frac{(f,\,
+			e_n)}{(e_n,\,e_n)}e_n
+		.\] 
+		\[
+			\operatorname{Gr} \ni
+			\begin{pmatrix} f_N\\ Af_n \end{pmatrix} 
+			\to (N\to \infty) \to 
+			\begin{pmatrix} f\\
+			\sum_{n=1}^{\infty} \lambda_n
+		\frac{(f,\,e_n)}{(e_n,\,e_n)}e_n\end{pmatrix} =
+		\begin{pmatrix} f\\ A^* f \end{pmatrix} \ni
+		\operatorname{Gr} \overline{A}\implies
+		f \in D\left( \overline{A} \right) ,\, A^*f=\overline{A}f
+		.\] 
+	\item $D(A^*)\supset D\left( \overline{A} \right) $
+		\[
+			\forall f \in  D\left( \overline{A} \right)
+			\text{, т.\:е.} \begin{pmatrix} 
+			f_N\\ Af_N\end{pmatrix} \to (N\to \infty)
+			\to \begin{pmatrix} f \\
+			\overline{A} f\end{pmatrix} (f_N \in D(A))
+		.\] 
+		\[
+			\left( Af_n,\, e_k \right) =
+			\text{ сим., }f  \in D(A),\,e_k \in D(A)=
+			\left( f_N,\, Ae_k \right) = \text{с.в.}=
+			(f_N,\, \lambda_k e_k)=\lambda_k
+			\left( f_N,\,e_k \right) \to 
+			(N\to \infty, \text{ непр. ск. произв.}\to 
+			\lambda_k (f,\, e_k)
+		.\] 
+		\[
+			\left( Af_N,\, e_k \right) \to 
+			(N\to \infty, \text{ непр. ск. произв.})\to 
+			\left( \overline{A}f,\,e_k \right) \implies
+			(\overline{A}f,\,e_k)=\lambda_k
+			(f,\,e_k)
+		.\] 
+		\[
+		\overline{A}f= \text{р. Ф.}=
+		\sum_{n=1}^{\infty} \frac{\left( \overline{A}f,e_k \right) }{(e_k,\,e_k)}e_k= \sum_{n=1}^{\infty} \lambda \frac{\left( 
+		f,\, e_k\right) }{\left( e_k,\, e_k\right) }e_k
+		\implies \|\overline{A}f\|^2 = \text{Парс.}=
+		\sum_{n=1}^{\infty} \lambda_k^2 \frac{
+		\left| \left( f,\,e_k \right)  \right| ^2}{\|e_k\|^2}
+		< \infty
+		.\] 
+\end{enumerate}
+$\R^1$
+\begin{dfn}
+	\emph{Обобщенная производная}
+	\[
+	f \in L_2\left[ a,\,b \right] \text{ и }
+	h \in L_2 \left[ a,\,b \right] \text{ называется
+	\emph{обобщённой производной} } f \text{ если}
+	\] 
+	\[
+		\forall \alpha \in C^1 [a,\,b] \text{ и }
+		\alpha(a)=\alpha(b)=0 \text{ выполнено}
+	\] 
+	\[
+	\int\limits_{a}^{b} f \alpha' dx= -
+	\int\limits_{a}^{b} h \alpha dx 
+	.\] 
+	Если $f \in  C^1[a,\,b]$
+	\[
+		\int\limits_{a}^{b} f \alpha dx= \underbrace{f \alpha  \left. \right|_a^b}_{=0}-
+	\int\limits_{a}^{b} f' \alpha dx  \implies f'=h
+	.\] 
+
+\end{dfn}
+\begin{dfn}
+	$f \in  L_2[a,\,b]$ и $h \in  L_2 [a,\,b]$, тогда $h$ ---
+	2-я об. производная, если
+	 \[
+	 \forall \alpha \in C^2[a,\,b] \text{ и }
+	 \alpha(a)=\alpha(b)=0
+	 \] 
+	\[
+		\int\limits_{a}^{b} f \alpha'' dx=(-1)^2
+		\int\limits_{a}^{b} h \cdot \alpha dx  
+	.\] 
+\end{dfn}
+\emph{Св-во}: Если у $f$  $\exists$ об. произв.  $F$  и  $\exists$
+об. произв. у  $F$  $G$, тогда  $G$ --- вторая об. произв. для  $f$.
+
+ \begin{dfn}
+	 \emph{Пространство Соболева} $W^{k,\,2}[a,\,b]$
+	 \[
+		 f \in  W^{k,\,2}[a,\,b], \text{ если } f \in 
+		 L_2[a,\,b] \text{ и } \exists \text{ об. произв.
+		 } f
+	 \]
+	 \[
+		 f^{(5)} \in  L_2[a,\,b] \text{ для } s=1,\,2, \ldots,\, k
+	 .\] 
+\end{dfn}
+\emph{Св-ва}
+\begin{enumerate}
+	\item Теорема вложения Соболева
+
+		Если $k> \frac{1}{2}+l$, то $W^{k,\,2}[a,\,b]\subset
+		C^l [a,\,b]$ 
+
+	\[
+		k=1 \qquad W^{1,\,2}[a,\,b] \subset C[a,\,b]
+	.\] 
+	\[
+		k=2 \qquad W^{2,\,2}[a,\,b]\subset C^1[a,\,b]
+	.\] 
+	\item Ф-ла интегр. по частям
+		\[
+			f \in  W^{1,\,2}[a,\,b] \text{ и }
+			g \in W^{1,\,2}[a,\,b], \text{ то}
+			\int\limits_{a}^{b}  =
+			f' g dx=f \cdot g\left. \right|_a^b- \int\limits_{a}^{b}g' f dx  
+		\] 
+		$g'$ и $f'$ - об. произв. 
+\end{enumerate}
