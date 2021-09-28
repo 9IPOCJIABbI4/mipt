@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{The traveling salesman’s problems}{3}{0}{1}
+\beamer@sectionintoc {2}{Hardness and complexity}{4}{0}{2}
+\beamer@sectionintoc {3}{The hardness of Math, English and fatherhood}{5}{0}{3}
+\beamer@sectionintoc {4}{Race, gender and brain chips}{6}{0}{4}
