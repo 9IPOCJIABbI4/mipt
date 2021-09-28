@@ -1,0 +1,1538 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\usepackage{esint}
+\usetikzlibrary{decorations.markings}
+\title{Домашняя работа по ТФКП, \\
+2 задание}
+\begin{document}
+	\maketitle
+	\prob{\textsection 13 №2(5)}
+\begin{sol}
+	Особыми точками функции
+\[
+	\frac{1}{(z^2+1)(z-1)^2}
+\]
+будут нули функций $z^2+1$ и  $(z-1)^2$,  т.\:е. точки
+$z_1=1$, $z_2=i$, $z_3=-i$. Причём $z_1$ --- полюс второго
+порядка, а $z_2$ и $z_3$ --- полюса первого порядка, т.\:к.
+данные точки не являются нулями числителя, $z_1$ --- нуль
+кратности $2$ функции $(z-1)^2$, а  $z_2$ и $z_3$ --- нули
+кратности $1$ функции  $z^2+1$.
+
+Точка  $z=\infty$ --- точка регулярности функции  $f(z)$,
+так как 
+ \[
+	 \lim_{z \to \infty} f(z)=0
+.\] 
+\[
+	\res_{z=z_1} f(z)= \frac{g(z)}{(z-1)^2}=
+	\frac{1}{(2-1)!}\left. \left( \frac{1}{z^2+1} \right) ' \right|_{z=1}=-\frac{2\cdot 1}{(1^2+1)^2}=-\frac{1}{2}
+.\] 
+\[
+	\res_{z=z_2} f(z)= \frac{g(z)}{(z-i)}=
+	g(i)=\frac{1}{(i+i)(i-1)^2}=\frac{1}{2i\cdot(-2i)}=
+	\frac{1}{4}
+.\] 
+\[
+	\res_{z=z_3} f(z)=
+	\frac{g(z)}{(z+i)}=g(-i)=\frac{1}{(-i-i)\cdot(2i)}=
+	\frac{1}{4}
+.\] 
+\end{sol}
+\prob{\textsection 13  №3(5)}
+\begin{sol}
+\begin{multline*}
+	f(z)=z^2 \sin \left(1+ \frac{1}{z-1} \right) =
+	z^2 \left( \sin 1 \cos \frac{1}{z-1}+ \cos 1
+	\sin \frac{1}{z-1}\right) =\\ \xlongequal[]{t=z-1}
+	(t^2+2t+1)\left(\sin 1 \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n)!t^{2n
+	}}+\cos 1 \sum_{n=0}^{\infty} \frac{(-1)^n}{(2n+1)!t
+^{2n+1}}\right)
+.\end{multline*}
+\[
+	\res_{z=1}f(z)=c_{-1}=\frac{5}{6}\cos 1
+-\sin 1.\] 
+%\[
+%	(\cos \alpha +i \sin \alpha)(\cos \beta+ i \sin \beta)=
+%	\cos \alpha \cos\beta - \sin\alpha \sin\beta+
+%	i(\sin \alpha \cos \beta +\sin \beta \cos\alpha)=
+%	\cos(\alpha+\beta) + i \sin (\alpha+\beta)
+%.\] 
+\end{sol}
+\prob{\textsection 13 №4(6)}
+\begin{sol}
+\[
+z \cos^2 \frac{\pi}{z}=
+z \left( \sum_{n=0}^{\infty} \frac{(-1)^n \pi^{2n}}{(2n)!z^{2n}} \right)^2=z-\frac{\pi^2 }{z}+\ldots 
+\]
+\[
+	\res_{z=\infty}f(z)=-c_{-1}=\pi^2
+.\] 
+\end{sol}
+\prob{\textsection 13 №5(3)}
+\begin{sol}
+Особые точки: $z_1=0,\,z_2=2i,\,z_3=-2i$.
+\[
+	\res_{z=2i}f(z)=\frac{1+(2i)^{10}}{(2i)^6(2i+2i)}=
+	-\frac{1023i}{256}
+.\] 
+\[
+	\res_{z=-2i}f(z)=\frac{1023i}{256}
+.\] 
+\[
+	\frac{1+z^{10}}{z^6(z^2+4)}=
+	\frac{1+z^{10}}{4z^6}\left(1-\frac{z^2}{4}+
+	\frac{z^4}{16}+\frac{z^6}{64}+\ldots\right) 
+.\] 
+\[
+	\res_{z=0}f(z)=c_{-1}=0
+.\] 
+По теореме о вычетах
+\[
+	\res_{z=\infty}f(z)= \res_{z=2i}f(z)+\res_{z=-2i}f(z)+
+	\res_{z=0}f(z)=0
+.\] 
+\end{sol}
+\prob{\textsection14 №1(6)}
+\begin{sol}
+\[
+	\ointctrclockwise\limits_{|z+i|=2} \frac{dz}{z^2(z^2-7z+12)}
+.\] 
+\[
+	\frac{1}{z^2(z^2-7z+12)}= \frac{1}{z^2(z-3)(z-4)}
+.\] 
+Особые точки в круге $|z+i|\le 2$: $z_1=0$
+\[
+	\ointctrclockwise\limits_{|z+i|=2}f(z)dz= 2\pi i \res_{z=0}f(z)=\pi i \frac{7}{72}
+.\] 
+\end{sol}
+\prob{\textsection14 №2(3)}
+\begin{sol}
+\[
+\ointctrclockwise\limits_{\left| z-\frac{1}{2} \right|=1 }
+\frac{z^3 e^{\frac{1}{z}}}{1-z^2}dz
+.\] 
+Особые точки внутри области: $z_1=1,\,z_2=0$
+\[
+	\res_{z=-1}f(z)=-\frac{1}{2e}
+.\] 
+\[
+\frac{z^3 e^{\frac{1}{z}}}{1-z^2}=
+ze^{\frac{1}{z}}\left(1-\frac{1}{z^2}  \right)^{-1} =
+z \sum_{n=0}^{\infty} \frac{1}{z^n n!}\sum_{n=0}^{\infty} \frac{1}{z^{2n}}
+%z^3\left( 1+\frac{1}{z}+\frac{1}{2z^2}+ \frac{1}{6z^3}+
+%\frac{1}{24z^4}+\ldots\right) \left( 
+%1+z^2+z^4+\ldots\right) 
+.\] 
+\[
+	\res_{z=\infty}f(z)=-c_{-1}=-\frac{3}{2}
+.\] 
+\begin{multline*}
+	\ointctrclockwise\limits_{\left| z-\frac{1}{2} \right| =1} f(z)=2\pi i \left(\res_{z=1}f(z)+\res_{z=0}f(z)\right)=2 \pi i\left( \res_{z=\infty}f(z)-\res_{z=-1}f(z)\right)=\\=
+	\pi i \left(e^{-1}-3\right)
+.\end{multline*} 
+\end{sol}
+\prob{\textsection 14 №2(8)}
+\begin{sol}
+\[
+\ointctrclockwise\limits_{|z|=5 /2} \frac{z^2}{z-3} \sin
+\frac{z}{z-2}dz
+.\] 
+Особые точки: $z_1=3,\,z_2=2$.
+\[
+	\res_{z=2}f(z)
+.\] 
+\[
+	\res_{z=3}f(z)=9 \sin 3
+.\] 
+\begin{multline*}
+\frac{z^2}{z-3}\sin \frac{z}{z-2}=
+z\left( 1-\frac{3}{z} \right) ^{-1}\sin\left(\frac{1}{1-\frac{2}{z}} \right)=\\=
+z \sum_{n=0}^{\infty} \frac{3^n}{z^n}\left( 
+\sin 1+2\cos 1 \frac{1}{z}+(4\cos 1 -2\sin 1)\frac{1}{z^2}+\ldots\right)
+%\\=z\left( 1-\frac{3}{z} \right) ^{-1}\left( 
+%\sin 1 \cos \frac{2}{z-2}+ \cos 1 \sin \frac{2}{z-2}\right) =
+%z \left( 1-\frac{3}{z} \right) ^{-1}\left( 
+%\sin 1 \cos \right) =\\=
+%z\left( 1-\frac{3}{z} \right)^{-1}\left( 
+%\sin 1 \left(\cos 1 -\frac{1}{4}\sin 1 z  \right) \right)  
+.\end{multline*} 
+\[
+	\res_{z=\infty}f(z)= -c_{-1}=
+	7 \sin 1+ 10 \cos 1
+.\] 
+По теореме о вычетах
+\[
+	\res_{z=2}f(z)=\res_{z=\infty}f(z)- \res_{z=3}f(z)\ldots
+.\] 
+\end{sol}
+\prob{\textsection 14 №2(17)}
+\begin{sol}
+\[
+	\ointctrclockwise\limits_{|z|=1} \frac{(z-i) \sin \frac{1}{iz}}{
+	(z - 3i)^2} dz
+.\] 
+Особые точки: $z_1=3i,\,z_2=0$.
+\[
+	\res_{z=3i}f(z)=\sin\left(- \frac{1}{3}\right)+
+	\frac{2}{9} \cos\left( -\frac{1}{3} \right)
+.\] 
+\begin{multline*}
+	\frac{(z-i) \sin \frac{1}{iz}}{(z-3i)^2}=
+	\frac{z-i}{z^2} \left(1-\frac{3i}{z}\right)^{-2}
+	\sin \frac{1}{iz}=\\=\frac{z-i}{z^2}\sum_{n=0}^{\infty} (n+1)
+	\left( \frac{3i}{z} \right) ^n
+	\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!(iz)^{2n+1}}
+.\end{multline*} 
+\[
+	\res_{z=\infty}f(z)=-c_{-1}=0
+.\] 
+По теореме о вычетах
+\[
+	\ointctrclockwise\limits_{|z|=1} f(z)dz=
+	2\pi i \res_{z=0}f(z)=
+	2\pi i \left( \res_{z=\infty}f(z)-
+	\res_{z=3i}f(z)\right) =
+	2\pi i\left( \sin \frac{1}{3}- \frac{2}{9} \cos \frac{1}{3} \right) 
+.\] 
+\end{sol}
+\prob{\textsection 14 №2(24)}
+\begin{sol}
+	\[
+	\ointctrclockwise\limits_{|z-1|=1}\frac{zdz}{
+	(\pi-3z)(1+\cos 3z)}  
+	.\] 
+	Особые точки: $z_1=\pi /3$, $\tilde{z}_k=\pi /3 +2 \pi n /3
+	,\, n \in \mathbb{Z}$.
+\begin{multline*}
+	\frac{z}{(\pi-3z)(1+\cos 3z)}=
+	\frac{z}{(\pi-3z)\left(1-\cos(\pi-3z)\right)}=\\=
+	\frac{z}{(\pi-3z)\left(1- \sum_{n=0}^{\infty} \frac{(-1)^n}{
+	(2n)!}(\pi-3z)^{2n}\right)}=
+	\frac{z}{(\pi-3z)^3 \sum_{n=1}^{\infty} \frac{(-1)^{n}}{
+	(2n)!}(\pi-3z)^{2n-2}}=\\
+	\xlongequal[]{t=\pi -3z}
+	\frac{t-\pi}{3t^3}\left( \frac{1}{2}-\frac{t^2}{12}+\ldots \right) 
+.\end{multline*} 
+\[
+\res_{z=\pi /3}f(z)=c_{-1}=
+.\] 
+\end{sol} 
+\prob{\textsection 14 №3(1)}
+\begin{sol}
+\[
+	I=\int\limits_{0}^{2\pi} \frac{d\phi}{a+\cos\phi} \quad (a>1)
+.\] 
+Пусть $z=e^{i\phi}$, $\phi  \in [0,\,2\pi]$, тогда
+\[
+	\cos \phi = \frac{e^{i\phi}+e ^{-i \phi}}{2}= \frac{1}{2}\left( 
+	z+\frac{1}{z}\right) 
+,\]
+\[
+dz=ie^{i\phi}d\phi= iz d\phi,\quad d\phi= \frac{dz}{iz}
+.\] 
+Интеграл $I$ сводится к интегралу по замкнутому контуру
+$\left\{z\colon |z|=1\right\}$:
+\[
+	I= \ointctrclockwise\limits_{|z|=1} \frac{dz}{iz\left( 
+	a+\frac{1}{2}\left( z+\frac{1}{z} \right) \right) }=
+	\ointctrclockwise\limits_{|z|=1} \frac{-2idz}{z^2+2za+
+	1} 
+.\] 
+Найдём все особые точки подынтегральной функции $f(z)$, решив
+уравнение
+ \[
+z^2+2za+1=0
+.\] 
+Так  как $D=4a^2-4=4(a^2-1)$, то 
+\[
+z_{1,\,2}=-a\pm \sqrt{a^2-1} 
+.\] 
+Внутри круга $\{z\colon  |z| <1\}$ лежит только одна особая точка
+\[
+z_1=\sqrt{a^2-1} -a
+.\] 
+Точка $z_1$ --- полюс первого порядка для $f(z)$. Поэтому
+ \[
+	 \res_{z=z_1}f(z)= \left. \frac{-2i}{\left( z^2+2za+1 \right) '} \right|_{z=z_1}= \left. \frac{-2i}{2z+2a} \right|_{z=z_1}=
+			 \frac{-i}{\sqrt{a^2-1} }
+.\] 
+\[
+	I= 2\pi i \res_{z=z_1}f(z)= \frac{2\pi}{\sqrt{a^2-1} }
+.\] 
+\end{sol}
+\prob{\textsection 23 №1(4)}
+\begin{sol}
+\[
+\int\limits_{-\infty}^{\infty} \frac{x^2+1}{x^4+1}=
+2\pi i \sum_{\Im a>0} \res_{z=a}\frac{z^2+1}{z^4+1}
+.\] 
+Особые точки:
+\[
+	e^{4i\phi}=e^{i(\pi+2\pi n)},\quad n \in \mathbb{Z}
+.\] 
+\[
+	\phi= \frac{\pi}{4}+\frac{\pi}{2} n,\quad n \in \mathbb{Z}
+.\] 
+\[
+	z_1= e^{\frac{i\pi}{4}},\qquad
+	z_2=e^{\frac{3i\pi}{4}}
+.\] 
+\[
+\res_{z=z_k}f(z)=\left. \frac{z^2+1}{4z^3} \right|_{z_k}=
+	\frac{z_k^{-1}+z_k^{-3}}{4}
+.\] 
+\begin{multline*}
+	I=2\pi i \left( \res_{z=z_1}f(z)+\res_{z=z_2}f(z) \right) =
+	\frac{2\pi i}{4}\left( 2e^{-\frac{i \pi}{4}}+
+	2e^{-\frac{3i\pi }{4}}\right) =\\=
+	\pi e^{i\pi /2}\left( e^{-i\pi /4}+
+	e^{- i 3 \pi /4}\right)=
+	2\pi \frac{e^{i \pi 4}+e^{- i \pi /4}}{2}= 2\pi \cos\frac{\pi}{4}=\pi\sqrt{2} 
+.\end{multline*} 
+\end{sol}
+\prob{\textsection 23 №1(8)}
+\begin{sol}
+\[
+	\int\limits_{-\infty}^{\infty} \frac{dx}{(x^2+1)^3} =
+	2\pi i \sum_{\Im a>0}^{} \res_{z=a} \frac{1}{(z^2+1)^3}
+.\] 
+Особые точки в исследуемой области: $z_1=i$ 
+\[
+\res_{z=z_1}f(z)=
+	\frac{1}{2!}\left. \left( \frac{1}{(z+i)^3} \right)''\right|_{z=z_1}
+		=\frac{6}{(2i)^5}=\frac{3}{16i}
+.\] 
+\[
+I=\frac{3}{8} \pi 
+.\] 
+\end{sol}
+\prob{\textsection 23 №2(9) }
+\begin{sol}
+\[
+	I=\int\limits_{-\infty}^{\infty} \frac{(2x+3) \sin (x+5)}{
+	x^2+4x+8}dx 
+.\] 
+\[
+	\max_{z \in \Gamma_R}\left| g(z)\right| =
+\max_{z \in \Gamma_R}\left| \frac{2z+3}{z^2+4z+8} \right| \to 0
+\] 
+при $R\to \infty$, следовательно
+\[
+	\lim_{R \to \infty} \int\limits_{\Gamma_R}^{} \frac{2z+3}{z^2+4z+8}e^{i(z+5)}
+	dz=0
+.\] 
+Значит
+\[
+	I=\Im \left[ 2\pi i \sum_{\Im a>0}^{} \res_{z=a}\left( 
+	g(z)e^{i(z+5)}\right)  \right] 
+.\] 
+Особые точки будут решениями уравнения $z^2+4z+8=0$ с $\Im z>0$:
+ \[
+D=16-32=-16
+.\] 
+\[
+z_1=-2 + 2i
+.\] 
+\[
+	\res_{z=z_1}f(z)=
+	\frac{-1+4i}{4i}e^{3i-2}
+.\] 
+\[
+	I=\Im \left[ \frac{\pi}{2}(-1+4i)e^{-2} (\cos 3+i\sin 3) \right] 
+	=\frac{\pi e^{-2}}{2}(4 \cos 3-\sin 3)
+.\] 
+\end{sol}
+\prob{\textsection 23 №2(13)}
+\begin{sol}
+\[
+	I_1=\int\limits_{-\infty}^{\infty} \frac{\cos(3-8x)}{4x^2-7x+5}
+	dx
+	=\int\limits_{-\infty}^{\infty} \frac{\cos(8x-3)}{4x^2-7x+5}
+	dx
+.\] 
+%\[
+%	I=\ointctrclockwise\limits_{\Gamma_R}   \frac{e^{3-8z}}{4z^2-7z+5}
+%	dz=  \ointctrclockwise\limits_{\Gamma_R}   g(z) e^{3-8z}dz  \text{ при } R\to \infty
+%.\]
+\[
+	\max_{z \in \Gamma_R}|g(z)|=
+	\max_{z \in \Gamma_R}\left|\frac{1}{4z^2-7z+5}\right|\to 0 \text{ при } z\to \infty
+,\]
+следовательно
+\[
+	I_1 = \Re \left[2 \pi i \sum_{\Im a>0}^{} \res_{z=a}g(z)
+	e^{i(8z-3)}\right] 
+.\] 
+Особые точки $g(z)e^{i(8z-3)}$ внутри $\Gamma_R$ будут являться
+решениями уравнения $4z^2-7z+5=0$ с  $\Im z>0$:
+ \[
+D=-31
+.\] 
+\[
+z_1=\frac{7+i \sqrt{31} }{8}
+.\] 
+\[
+\res_{z=z_1}f(z)=\frac{e^{-\sqrt{31}+4i }}{i\sqrt{31} }
+.\] 
+\[
+I_1=\Re\left[ 2\pi \frac{e^{-\sqrt{31}+4i }}{\sqrt{31} } \right] 
+=\frac{2\pi}{\sqrt{31} }e^{-\sqrt{31} }\cos 4
+.\] 
+\end{sol} 
+\prob{\textsection 23 №2(20)}
+\begin{sol}
+\[
+	I=\int\limits_{-\infty}^{\infty} \frac{x^3 \sin(2-x)}{(x^2+2)^2}dx 
+.\] 
+\[
+	\max_{z \in \Gamma_R}|g(z)|=
+	\left| \frac{z^3}{(z^2+2)^2} \right| \to 0 \text{ при }
+	R\to \infty
+ ,\] 
+следовательно
+\[
+	I= \Im \left[ 2\pi i \sum_{\Im a<0}^{} \res_{z=a}g(z)
+	e^{i(2-z)}\right] 
+.\] 
+\[
+z_1=-\sqrt{2} i
+.\] 
+\begin{multline*}
+	\res_{z=z_1}f(z)=\left. \left( \frac{z^3 e^{i(2-z)}}{\left(z-\sqrt{2} i\right)^2} \right)' \right|_{z=z_1}=\\=
+		\frac{\left( 
+			3z^2 e^{i(2-z)}-iz^3e^{i(2-z)}\right)\left( 
+		z-\sqrt{2} i\right)^2 -
+	\left(z^3 e^{i(2-z)}  \right)\cdot 2\left(z-\sqrt{2} i
+\right) }{\left(z-\sqrt{2} i\right)^4}=
+\\= \frac{e^{-\sqrt{2} +2i}\left( 2\sqrt{2} -6 \right) \left( 
+-8\right)-16e^{-\sqrt{2} +2i} }{64}=
+\frac{16-8\sqrt{2} }{32}e^{-\sqrt{2} +2i}
+.\end{multline*} 
+\[
+I=\frac{\sqrt{2}-2 }{2}\pi e^{-\sqrt{2} }\cos 2
+.\] 
+\end{sol}
+\prob{T1}
+\begin{sol}
+\[
+I=\int\limits_{-\infty}^{\infty} \frac{\sin x}{x^2-3i x+4}dx=
+\frac{1}{2i} \left( \underbrace{\int\limits_{-\infty}^{\infty} \frac{e^{ix}}{
+x^2-3ix+4}dx}_{I_1}- \underbrace{\int\limits_{-\infty}^{\infty}  \frac{e^{-ix}}{x^2-3ix+4}dx}_{I_2}  \right) 
+.\] 
+\[
+	\max_{z \in \Gamma_R}|g(z)|=
+	\max_{z \in \Gamma_R}\left| \frac{1}{z^2-3iz+4} \right| \to 0\quad \text{при } t\to  \infty
+.\] 
+Следовательно
+\[
+	I_1=2\pi i \sum_{\Im a>0}^{} \res_{z=a}g(z) e^{iz} 
+.\] 
+Особенные точки:
+\[
+z^2-3iz+4=0
+.\] 
+\[
+D=-25
+.\] 
+\[
+z_{1,\,2}=\frac{3i \pm 5i}{2}
+.\] 
+Из них только для $z_1=4i$ выполняется  $\Im z>0$.
+ \[
+\res_{z=z_1}f(z)= \frac{e^{-4}}{5i}=
+.\] 
+\[
+I_1=\frac{2\pi}{5e^{4}}
+.\] 
+\[
+I_2=2\pi i \sum_{\Im a<0}^{} \res_{z=a}g(z)e^{-iz}
+.\] 
+\[
+\res_{z=z_2}f(z)=\frac{e^{-1}}{-5i}
+.\] 
+\[
+I_2=-\frac{2\pi}{5e}
+.\] 
+\[
+	I= \frac{1}{2i}\left( I_1+I_2 \right) =
+	\frac{1}{2i}\left(\frac{2\pi}{5e^4}-\frac{2\pi}{5e}  \right) 
+	=\frac{\pi i}{5e^4}(e^3-1)
+.\] 
+\end{sol}
+\prob{\textsection 16 №2}
+\begin{sol}
+\[
+	x(t)=(2+t) \sin 4 \pi t,\qquad y(t)=(1+t) \cos 4\pi t +\frac{3}{2}
+.\] 
+\[
+	z(0)=\frac{5}{2}i,\qquad z(1)=\frac{7}{2}i
+.\]
+Нули $x(t)$ и $y(t)$:
+ \begin{align*}
+	 t=0&:\qquad x=0,\quad y=\frac{5}{2},\\
+	 t=\frac{1}{8}&:\qquad x=0,\quad y=\frac{21}{8},\\
+	 t=\frac{3}{8}&:\qquad x=0,\quad y=\frac{1}{8},\\
+	 t=\frac{5}{8}&:\qquad x=0,\quad y=\frac{25}{8},\\
+	 t=\frac{7}{8}&:\qquad x=0,\quad y=-\frac{3}{8},\\
+	 t=1&:\qquad x=0,\quad y=\frac{7}{2}
+.\end{align*}
+Построение на рис.~\ref{fig:1}.
+\usetikzlibrary{decorations.markings}
+\begin{figure}
+\begin{tikzpicture} \begin{axis}[
+xmin=-4.5, xmax=4.5,
+axis equal,
+axis lines=middle,
+axis line style={->},
+tick style={color=black},
+]
+%\addplot [samples=20, domain=0:1,->,%blue,
+        % the default choice ’variable=\x’ leads to
+        % unexpected results here!
+ %       variable=\t,
+        %quiver={
+%u={-sin(deg(t))}, v={cos(deg(t))}, scale arrows=0.5,
+  %      },
+%	] ( {(2+t)sin(4*pi*deg(t))}, {(1+t)cos(4 * pi*deg(t))} );
+    \addplot [color=tabblue,
+        samples=1000, domain=0:1,
+postaction={decorate},% ------ 
+decoration={markings, % ------
+mark=at position 0.25 with {\arrow{stealth}},
+mark=at position 0.5 with {\arrow{stealth}},
+mark=at position 0.75 with {\arrow{stealth}}}
+	] ( {(2+x)*sin(4*pi*deg(x))}, {(1+x)*cos(4 * pi*deg(x))+3/2} );
+\end{axis}
+\end{tikzpicture}
+\caption{}
+\label{fig:1}
+\end{figure}
+Откуда
+\[
+\Delta_\gamma \arg z=-2\pi
+.\] 
+\end{sol}
+\prob{\textsection 16 №4}
+\begin{sol}
+Кривая $\gamma$ представлена на  рис.~\ref{fig:2}
+\begin{figure}
+\begin{tikzpicture} \begin{axis}[
+	xmin=-2.5, xmax=4.5,
+	ymin=-1, ymax=3,
+axis equal,
+axis lines=middle,
+axis line style={->},
+tick style={color=black},
+]
+%\addplot [samples=20, domain=0:1,->,%blue,
+        % the default choice ’variable=\x’ leads to
+        % unexpected results here!
+ %       variable=\t,
+        %quiver={
+%u={-sin(deg(t))}, v={cos(deg(t))}, scale arrows=0.5,
+  %      },
+%	] ( {(2+t)sin(4*pi*deg(t))}, {(1+t)cos(4 * pi*deg(t))} );
+    \addplot [tabblue,
+        samples=100, domain=0:pi/2,
+postaction={decorate},% ------ 
+decoration={markings, % ------
+mark=at position 0.25 with {\arrow{stealth}},
+mark=at position 0.5 with {\arrow{stealth}},
+mark=at position 0.75 with {\arrow{stealth}}}
+] ( {3* sin(deg(x))}, {2*cos(deg(x))} );
+    \addplot [taborange,
+        samples=100, domain=-2:0,
+] ( {x}, {x+2} );
+
+\end{axis}
+\end{tikzpicture}
+\caption{}
+\label{fig:2}
+\end{figure}
+Приращение  аргумента функции $\frac{1}{z^2+2z}$:
+\[
+	-\Delta_\gamma \arg\left(\frac{1}{z^2+2z}\right)=
+	-\Delta_\gamma\arg z-\Delta_\gamma \arg\left(z+2\right)
+	=-\frac{\pi}{2}-\frac{\pi}{4}=-\frac{3\pi}{4}
+.\] 
+\end{sol}
+\prob{\textsection 16 №5}
+\begin{sol}
+Построение приведено на рис.~\ref{fig:3}.
+\[
+\Delta_\gamma \frac{z^2+1}{z^2-4}=
+\Delta_\gamma (z+i) +\Delta_\gamma (z-i)- \Delta_\gamma (z+2)-
+\Delta_\gamma (z-2)=\pi+\pi-\frac{\pi}{2}+\frac{\pi}{2}=2\pi
+.\] 
+\begin{figure}
+\begin{tikzpicture} \begin{axis}[
+	xmin=-1.5, xmax=1,
+	ymin=-2.5, ymax=2.5,
+axis equal,
+axis lines=middle,
+axis line style={->},
+tick style={color=black},
+]
+%\addplot [samples=20, domain=0:1,->,%blue,
+        % the default choice ’variable=\x’ leads to
+        % unexpected results here!
+ %       variable=\t,
+        %quiver={
+%u={-sin(deg(t))}, v={cos(deg(t))}, scale arrows=0.5,
+  %      },
+%	] ( {(2+t)sin(4*pi*deg(t))}, {(1+t)cos(4 * pi*deg(t))} );
+    \addplot [tabblue,
+        samples=100, domain=pi/2:3*pi/2,
+postaction={decorate},% ------ 
+decoration={markings, % ------
+mark=at position 0.25 with {\arrow{stealth}},
+mark=at position 0.5 with {\arrow{stealth}},
+mark=at position 0.75 with {\arrow{stealth}}}
+] ( {cos(deg(x))}, {2*sin(deg(x))} );
+
+\end{axis}
+\end{tikzpicture}
+\caption{}
+\label{fig:3}
+\end{figure}
+\end{sol}
+\prob{\textsection 18 №9(2,\,3)}
+\begin{sol}
+	\[
+		\phi(z)^3=1-z^2=f(z)
+	.\] 
+	\begin{itemize}
+\item[2)] Область $G$ представлена на рис.~\ref{fig:4}.
+\begin{figure}[ht]
+    \centering
+    \incfig{1}
+    \caption{}
+    \label{fig:4}
+\end{figure}
+\[
+		\phi(z)=
+		\phi(0) \cdot \sqrt[n]{\left| 
+		\frac{f(z)}{f(0)}\right| } 
+		e^{\frac{i}{n}\Delta_{\gamma_{0z}}\arg f(z)}
+	.\]
+	Следовательно
+\[
+	\phi(-3)=\sqrt[3]{8}e^{\frac{i}{n}\Delta_{\gamma_{0z}}\arg
+	(1-z^2)} 
+.\] 
+\[
+	\Delta_{\gamma}\arg (1-z^2)=
+	\Delta_\gamma \arg(1-z) +\Delta_\gamma (1+z)=
+	0-\pi=-\pi
+.\] 
+Значит
+\[
+	\phi(-3)=2 \cdot e^{\frac{i}{3}(-\pi)}=1-i\sqrt{3} 
+.\] 
+\item[3)] Область $G$ представлена на рис.~\ref{fig:5}.
+\begin{figure}[ht]
+    \centering
+    \incfig{5}
+    \caption{}
+    \label{fig:5}
+\end{figure}
+Аналогично предыдущему пункту
+\[
+	\Delta_\gamma (1-z^2)=\Delta_\gamma(1-z) \Delta_\gamma
+	(1+z)=\pi+0=\pi
+.\] 
+Следовательно
+\[
+	\phi(-3)=2 e^{\frac{i}{3}\pi}=1+i\sqrt{3} 
+.\] 
+	\end{itemize}
+\end{sol}
+\prob{\textsection 18 №25}
+\begin{sol}
+\[
+	g(-2)=(-1)\cdot\sqrt[3]{2} \exp\left( \frac{i}{3}
+	2\pi\right)  
+.\] 
+\[
+	g(-3)=(-1) \sqrt[3]{3} \exp \left( \frac{i}{3}4\pi \right)  
+.\] 
+\[
+	g(z)^3=z \implies 3 g(z)^2 g'(z)=1 \implies
+	g'(-3)= \frac{1}{3 g(z)^2}=
+	\frac{1}{3\cdot \sqrt{9}  }\exp\left( -\frac{2\pi i}{3} \right) 
+.\] 
+Разложение в ряд Тейлора в окрестности $z=2$ 
+\[
+	g(z)=g(2) \sum_{k=0}^{\infty} C_{\frac{1}{3}}^k
+	\frac{(z-2)^k}{2^k}
+	=-\sqrt[3]{2} \exp\left( \frac{i}{3}3\pi \right)   \sum_{k=0}^{\infty} C_{\frac{1}{3}}^k
+	\frac{(z-2)^k}{2^k}
+	=\sqrt[3]{2}   \sum_{k=0}^{\infty} C_{\frac{1}{3}}^k
+	\frac{(z-2)^k}{2^k}
+.\] 
+\end{sol}
+\prob{\textsection 18 №27}
+\begin{sol}
+График к задаче на рис.~\ref{fig:6}.
+\[
+	g(z)= \sqrt[4]{7}\qquad f(z)=7 
+.\] 
+\[
+	g(b)=g(a) \cdot \sqrt[4]{\left| \frac{f(b)}{f(a)} \right| } \cdot \exp \left( 
+	\frac{i}{4}\Delta_{\gamma_{ab}}\arg z\right) 
+.\] 
+\[
+	g(1+i 0)=1
+.\] 
+\[
+	g(1-i 0)= 1\cdot \exp \left( 
+	\frac{i}{4}2\pi\right) = \exp
+	\left( \frac{i\pi}{2} \right) =i
+.\] 
+\[
+	g(16- i 0)= i\cdot 2=2i
+.\] 
+\[
+	g(-16)=1 \cdot \sqrt[4]{16} \cdot \exp \left( 
+	\frac{i}{4}\pi\right) = 2 e^{\frac{i \pi}{4}}
+.\] 
+\[
+	g'(-16)= \frac{1}{4\left( g(-16) \right) ^3}=
+	\frac{1}{32} \cdot e^{-\frac{3 i \pi}{4}}
+.\] 
+\[
+	g''(-16)= \frac{-3}{4 \left( g(-16) \right) ^4}\cdot g'(-16)=
+	-\frac{3}{64}\cdot e^{-i\pi} \cdot \frac{1}{32}
+	e^{-\frac{3\pi i}{4}}=\frac{3}{2^{11}}e^{-\frac{3}{\pi i}4}
+.\] 
+\begin{figure}[ht]
+    \centering
+    \incfig[0.5]{6}
+    \caption{}
+    \label{fig:6}
+\end{figure}
+\end{sol}
+\prob{\textsection 18 №35}
+\begin{sol}
+Чертёж к задаче на рис.~\ref{fig:7}.
+\[
+	g(z)= \sqrt[3]{z+9}
+.\] 
+\[
+	G= \mathbf{C} \setminus \left\{\left\{z(t)=
+	9 e^{it},\, t \in  \left[ -\pi,\, \frac{\pi}{2} \right] \right\} , \left\{z(t)= 9i+ti,\, t\ge 0\right\}  \right\} 
+.\] 
+\[
+	\arg g(10)= \frac{2\pi}{3}
+.\] 
+\begin{figure}[ht]
+    \centering
+    \incfig[0.5]{7}
+    \caption{7}
+    \label{fig:7}
+\end{figure}
+\[
+	g(-8)= \sqrt[3]{19} \cdot e^{i \frac{2\pi}{3}}\cdot
+	\sqrt[3]{\frac{1}{19}} \cdot \exp \left( \frac{i}{3}
+	(-2 \pi)\right) =1
+.\] 
+$g(-1)=2$, т.\:к. точки (-1)  и (-8) можно соединить отрезками,
+лежащими в $G$.
+\[
+	g(-9+8i)=  \sqrt[3]{19}\cdot e^{i \frac{2\pi}{3}}
+	\cdot \sqrt[3]{\frac{8}{19}} \cdot \exp \left( 
+	\frac{i}{3}\cdot \left(-\frac{3}{2}\pi\right)\right)=
+	2 e^{i\left( \frac{2\pi}{3}-\frac{\pi}{2} \right) }=
+	2 e^{i \frac{\pi}{6}}
+.\] 
+\[
+	g(0)= \sqrt[3]{19}\cdot e^{i \frac{2\pi}{3}}\cdot \sqrt[3]{\frac{9}{19}} \cdot \exp \left( \frac{i}{3} \cdot \left( - 2\pi \right)  \right) = \sqrt[3]{9}  
+.\] 
+\[
+	g'(z)= \frac{1}{3 \left( g (z) \right) ^2}\implies
+	g'(0)= \frac{1}{3 \cdot 3^{\frac{4}{3}}}=
+	\frac{1}{9 \sqrt[3]{3} }
+.\] 
+В окр-ти $z_0=3$
+\[
+	g(z)= g(3)\cdot \sum_{n=0}^{\infty} C_{\frac{1}{3}}^n
+	\frac{\left( z-3 \right) ^n}{\left( g(3) \right) ^{3n}}
+.\] 
+\[
+	g(3)= \sqrt[3]{12}\implies g(z) = \sqrt[3]{12} \cdot
+	\sum_{n=0}^{\infty} C^n_{\frac{1}{3}} \frac{\left( z-3 \right) ^n}{12^n}
+.\] 
+Область сходимости --- круг радиуса 6 с центром в т. $z_0$.
+\end{sol}
+\prob{\textsection 18 №8}
+\begin{sol}
+\[
+	f(z)= \operatorname{Ln} (z+5)
+.\] 
+\[
+	\Im f(6)=- 2\pi
+.\] 
+Чертёж к задаче на рис.~\ref{fig:8}.
+\begin{figure}[ht]
+    \centering
+    \incfig{8}
+    \caption{}
+    \label{fig:8}
+\end{figure}
+\[
+	J= \ointctrclockwise\limits_{|z|=4,5} \frac{f(z)}{z^2 (z+4)}
+	dz
+.\] 
+\[
+z_1=0;\qquad z_2=-4
+.\] 
+\[
+	f(6)= \ln 11 + 2 \pi i k; \qquad k =-1 \implies \arg
+	g(6)= - 2\pi
+.\] 
+\[
+	f(z)= \ln |g(z)|+ i \left( \arg g(6) +\Delta_{\gamma_{6,\,z}}\arg g(z) \right) 
+.\] 
+\[
+	f(-4)= i \cdot \left( -2\pi +2\pi \right) =0
+.\]
+\[
+	f(0)= \ln + i (-2\pi +2 \pi)= \ln 5
+.\] 
+В т. $z_1=0$:
+\[
+	f(z)= \ln 5 + \sum_{n=1}^{\infty} \frac{(-1)^{n-1}\cdot
+	z^4}{n\cdot 5^n}\implies z_1 \text{ --- полюс порядка }2
+.\] 
+Значит
+\[
+	\res_{z=0}\frac{f(z)}{z^2 (z+4)}= \frac{d}{dz} \left. 
+		\left( \frac{f(z)}{z+4} \right) \right|_{z=0}=
+		\left. \left( \frac{1}{(z+4)(z+5)}- \frac{f(z)}{(z+4)^2} \right)  \right|_{z=0}= \frac{1}{20}- \frac{\ln 5}{16}
+.\] 
+В т. $z_2=-4$ 
+\[
+	f(z) = \sum_{n=1}^{\infty} \frac{(-1)^{n-1}(z+4)^n}{n}
+.\] 
+Значит $z_2$ --- устранимая особая точка.
+\[
+	J= 2\pi i \cdot \res_{z=0} \frac{f(z)}{z^2(z+4)}=\pi i
+	\left( \frac{1}{10}- \frac{1}{8}\ln 5 \right) 
+.\] 
+\end{sol}
+\prob{\textsection 19 №10}
+\begin{sol}
+\[
+	f(z)= \sqrt[3]{z-1}\qquad f(1-i)=i 
+.\] 
+\[
+J= \ointctrclockwise\limits_{|z-8|=2} 
+\frac{z\left( f(z)-2 \right) }{(z-9)^2}dz
+.\] 
+Чертёж к задаче на рис.~\ref{fig:9}
+\begin{figure}[ht]
+    \centering
+    \incfig{9}
+    \caption{}
+    \label{fig:9}
+\end{figure}
+
+$z=9$:
+ \[
+	 f(9)= f(1-i) \cdot \sqrt[3]{\frac{8}{1}} \cdot
+	 \exp \left( \frac{i}{3}-\frac{3\pi}{2} \right) =
+	 2i \cdot \exp \left( - \frac{i\pi}{2} \right) =2
+.\] 
+\[
+	f(z)= \sqrt[3]{(z-9)+8}= 2 \sum_{n=0}^{\infty} C^n_{\frac{1}{3}} \frac{(z-9)^n}{8^n}\implies z=9 \text{ --- полюс порядка }1 
+.\] 
+Следовательно
+\[
+	J= 2\pi i \res_{z=9} \frac{z(f(z)-2)}{(z-9)^2}=
+	2\pi i \lim_{z \to 9} \frac{z(f(z-2)}{(z-9)}=
+	9\cdot \frac{C_{\frac{1}{3}}^1}{8}\cdot 4 \pi i = \frac{3}{2
+	\pi i}
+.\] 
+\end{sol}
+\prob{\textsection 19 №24}
+\begin{sol}
+\[
+	f(z)= \sqrt{2 z^2 +1};\qquad f(0)=1
+.\] 
+\[
+	J= \ointctrclockwise\limits_{|z|=1} \frac{zdz}{(z+2)(f(z)+3)} 
+	\qquad g(z)= \frac{z}{(z+2)(f(z+3)}
+.\] 
+Чертёж к задаче на рис.~\ref{fig:10}.
+\begin{figure}[ht]
+    \centering
+    \incfig{10}
+    \caption{}
+    \label{fig:10}
+\end{figure}
+\[
+	f(z)=-3 \implies 2z^2+1=9 \implies z= \pm 2
+.\] 
+Проверим ф-ию $f$ в найденных точках
+$
+z_1=2
+ :$
+\[
+	f(z)= f(0) \cdot \sqrt{\frac{9}{1}} \cdot \exp \left( 
+	\frac{i}{2}\Delta_{\gamma_{0,\,2}} \arg (2z^2+1)\right) =
+	3 \exp \left( \frac{i}{2} \Delta_{\gamma_{0,\,2}}\arg
+	(2z^2+1)\right) 
+.\] 
+\[
+	\Delta_{\gamma_{0,\,2}}\arg (2z^2 +1)= \Delta_{\gamma_{0,\,2}}\arg \left(z- \frac{i}{2}\right) + \Delta_{\gamma_{0,\,2}}
+	\arg \left( z + \frac{i}{2} \right) =-2\pi
+.\] 
+Значит
+\[
+	f(2)= 3 \exp (-i\pi)=-3\qquad
+	f(2)+3=0;
+.\] 
+\[
+	f'(2)= \left. \left( \frac{4z}{2f(z)} \right)  \right|_{
+		z=2}= \frac{8}{-6}= \frac{-4}{3}\neq 0
+.\] 
+Следовательно
+\[
+	f(2)+3 = (z-2) \cdot h(z)
+.\] 
+$h(z)$ --- голоморфная в  $U(2)$ функция: $h(2) \neq 0$. Поэтому
+ \[
+	 g(z)= \frac{z}{(z+2)(z-2)\cdot h(z)}\implies
+	 z_1=2 \text{ --- полюс 1-го порядка}
+.\] 
+$z_2=2$:
+\[
+	f(-2)= 3\cdot \exp (i\cdot 0)=3\implies
+	z_2 \text{ --- также полюс 1-го порядка}
+.\] 
+Заметим, что $\lim_{z \to \infty} z g(z) = \frac{1}{\sqrt{2} }\cdot
+\sqrt[3]{1} $
+\[
+	\lim_{x \to \infty} \frac{x}{f(x)}= \lim_{x \to -\infty} 
+	\left( \frac{x}{\sqrt{\frac{|2x^2+1|}{1}} } \right) =
+	\frac{-1}{\sqrt{2} }\implies
+	\lim_{z \to \infty} z g(z)= -\frac{1}{\sqrt{2} }
+	\implies \res_{z=\infty}g(z) = \frac{1}{\sqrt{2} }
+.\] 
+\[
+	J+ 2\pi i \left( \res_{z=2}g(z)+ \res_{z=-2}g(z)+
+	\res_{z=-\infty}g(z)\right) =0
+.\] 
+\[
+	\res_{z=2}g(z)= \frac{2}{4f'(2)}=-\frac{3}{8};\qquad
+	\res_{z=-2}g(z)= \frac{-2}{f(-z)+3}=-\frac{1}{3}
+	\implies J= \pi i \left( \frac{17}{12}-\sqrt{2}  \right) 
+.\] 
+\end{sol}
+\prob{\textsection 19 №42}
+\begin{sol}
+	\[
+		f(z)= \operatorname{Ln} \underbrace{\frac{
+		3+z}{z-3}}_{h(z)}
+	.\] 
+\[
+	f(\infty)= -\frac{5}{2}i\pi\qquad
+	J= \ointctrclockwise\limits_{\gamma=\{|z|=1\} } 
+	\frac{dz}{\left( f^2(z)+\pi^2 \right) ^2}
+.\] 
+Чертёж к задаче приведён на рис.~\ref{fig:11}
+\begin{figure}[ht]
+    \centering
+    \incfig{11}
+    \caption{}
+    \label{fig:11}
+\end{figure}
+\[
+	f(z) = \pm i \pi \implies 
+	-1= \frac{3+z}{iz-3}\implies
+	- i z+3 =3+z\implies z=0
+.\] 
+\begin{multline*}
+	f(\infty)=\underbrace{\ln |h(\infty)|}_{=0}+
+	i\left( \arg h(0)+\Delta_{\Gamma_{0,\,\infty}}\arg h(z) \right) = i \left( \arg h(0) + \left( -\pi  -\frac{\pi}{2} \right)  \right) =\\=
+	i \arg h(0) - \frac{3\pi}{2}i= -\frac{5}{2}\pi i \implies
+	\arg h(0)= -\pi, \implies
+	f(z)=-i\pi+ \ln \frac{ 1+ \frac{z}{3}}{1- \frac{i}{3}z}=\\=
+	-i\pi + \frac{z}{3}(1+i)- \frac{z^2}{18}(1+1)+
+	o(z^2)= -i\pi +\frac{z}{3}(1+i)- \frac{z^2}{9}+o(z^2)
+.\end{multline*} 
+\begin{multline*}
+	\frac{1}{\left( f^2(z)+\pi^2 \right) ^2}= \frac{1}{
+	\left( -\frac{2}{3}i\pi (1+i) z +z^2 \left( 
+\frac{(1+i)^2}{9}+ \frac{2i\pi}{9}\right)+o(z^2)  \right) ^2}=\\=
+\frac{1}{z^2\cdot \frac{4}{9} \cdot (-1) \cdot \pi^2 \cdot 2i
+\cdot \left( 1+z \cdot \frac{2i}{9} (1+\pi)\cdot \left( 
+\frac{-3}{2i\pi (1+i)}\right)+o(z)  \right)^2 }
+.\end{multline*} 
+Следовательно
+\[
+	C_1= \frac{-\frac{4}{9} i (1+\pi)\cdot \left( 
+	\frac{-3}{2i\pi (1+i)}\right) }{\frac{4}{9}\cdot (-2i)
+\cdot \pi^2}
+.\] 
+Значит 
+\[
+	J= 2\pi i \cdot \res_{z=0} \frac{1}{\left( f^2(z)+\pi^2 \right) ^2}= \frac{i( 1+ \pi)\cdot \frac{3}{1+i}}{(-2i) \pi^2}=
+	\frac{-3 (1+\pi)}{2 \pi^2 (1+i)}=\frac{3(1+\pi)}{4\pi^2}
+	(i-1)
+.\] 
+\end{sol}
+\prob{\textsection 23 № 5(2)}
+\begin{sol}
+	\[
+	J= \int\limits_{0}^{2} \frac{dx}{\sqrt[3]{x^2(2-x)} } 
+.\] 
+Чертёж к задаче представлен на рис.~\ref{fig:12}.
+\begin{figure}[ht]
+    \centering
+    \incfig{12}
+    \caption{}
+    \label{fig:12}
+\end{figure}
+Необходимо определить регулярную ветвь $\sqrt[3]{z^2(2-z)} $
+в нек. области $D$:
+$\forall \gamma$ --- замкн. кус. гл $\subset D \hookrightarrow
+\Delta_{\gamma}\arg z^2(2-z)= 2 \Delta_\gamma \arg z+\Delta_\gamma
+ \arg (z-2)= 3\cdot_2\pi k$. Внешняя область $D_\epsilon$ вполне
+  для этого подходит.
+  Саму ветвь зададим условием: $f(R)= - \sqrt[3]{|R^2(2-R)|} $ 
+при $R>2$. Тогда для  $\lambda_- \ni z = x +i 0$, $x \in 
+\epsilon,\,2-\epsilon]$:
+\[
+	f(z)= f(R) \cdot \sqrt[3]{\frac{|z^2(2-z)|}{|R^2(2-R)|}}\cdot
+	\exp \left( \frac{i}{3}\cdot \pi \right) =
+	- \sqrt[3]{x^2(2-x)}\cdot \exp \left( \frac{i \pi}{3} \right)  
+.\] 
+А  для $\lambda_+ \ni x - i 0$  аналогичноо
+ \[
+	 f(z)= - \sqrt[3]{x^2 (2-x)}\cdot \exp \left( - \frac{i\pi}{3} \right)  
+.\] 
+При больших $z$
+ \[
+	 f(z)= z\cdot \sqrt[3]{1-\frac{2}{z}} \cdot \sqrt[3]{-1}=
+	 \sqrt[3]{-1}\left( z\cdot\left( 
+	 1- \frac{2}{3z}+\frac{1}{3}\cdot\left( -\frac{2}{3} \right) \cdot \frac{1}{2}\cdot\left( \frac{2}{z} \right) ^2+o
+	 \left( \frac{1}{z^2} \right) \right)  \right)  
+.\] 
+Из условия на выбранную ветвь $\sqrt[3]{-1}=-1\implies $
+для ф-ии $\frac{1}{f(z)}$ $c_{-1}=-1\implies \res_{z=\infty}\frac{1}{f(z)}=1$.
+\[
+	\int\limits_{\lambda_-}^{} \frac{dz}{f(z)}+
+	\int\limits_{\gamma(0)}^{} \frac{dz}{f(z)}+
+	\int\limits_{\lambda_+}^{} \frac{dz}{f(z)}+
+	\int\limits_{\gamma(2)}^{} \frac{dz}{f(z)}+
+	2\pi i \res_{z=\infty}\frac{1}{f(z)}=0
+.\] 
+\[
+	\int\limits_{\lambda_-}^{} \frac{dz}{f(z)}=
+	\exp\left( - \frac{i\pi}{3} \right) \cdot \int\limits_{\epsilon}^{2-\epsilon} \frac{dx}{\sqrt{x^2(2-x)} }  ;
+.\] 
+\[
+	\int\limits_{\lambda_+}^{} \frac{dz}{f(z)}=
+	- \exp\left( \frac{i\pi}{3} \right) \cdot
+	\int\limits_{\epsilon}^{ 2- \epsilon }\frac{dx}{\sqrt{
+	x^2(2-x)} }  
+.\] 
+На мн-ве $\gamma(0)$:
+ \[
+ |f(z)| \ge  \left( \min_{z \in \gamma(0)}|z^2(2-z)| \right) ^{\frac{1}{3}}
+ \ge \frac{\epsilon^2}{3}\implies
+ \left| \int\limits_{\gamma(0)}^{} \frac{dz}{f(z)}  \right| \le 
+ \int\limits_{\gamma(0)}^{} \frac{|dz|}{|f(z)|}\le 
+ 2\pi \epsilon \cdot \epsilon^{-\frac{2}{3}} \xrightarrow[]{\epsilon\to 0}0
+.\] 
+На мн-ве $\gamma(2)$
+ \[
+	 |f(z)|\ge \epsilon^{\frac{1}{3}}\implies
+	 \left| \int\limits_{\gamma(2)}^{} \frac{dz}{f(z)}  \right| 
+	 \le 2 \pi \epsilon^{\frac{2}{3}} \xrightarrow[]{\epsilon\to 0}0
+.\] 
+Следовательно
+\[
+	\int\limits_{0}^{2} \underbrace{\frac{dx}{\sqrt{x^2(2-x)} }}_{J}\cdot\left(e^{- \frac{i\pi}{3}} - e^{\frac{i \pi}{3}}\right)
+	=- 2 \pi i \implies J= \frac{\pi}{\sin \frac{\pi}{3}}=
+	\frac{2\pi}{\sqrt{3} }
+.\] 
+\end{sol}
+\prob{\textsection 23 №5(4)}
+\begin{sol}
+	\[
+J= \int\limits_{0}^{6} \frac{1}{x+2}\cdot \sqrt{\frac{x}{6-x}}dx  
+	.\] 
+Чертёж для задачи представлен на рис.~\ref{fig:13}
+\begin{figure}[ht]
+    \centering
+    \incfig{13}
+    \caption{}
+    \label{fig:13}
+\end{figure}
+Нужно определить область $G:  x_0=6 \not\in G $ и $\forall \gamma
+ \in G \hookrightarrow \Delta_\gamma \arg \frac{z}{6-z}=4 \pi k$ 
+ Пусть $G = \mathbb{C}\setminus [0,\,6]$. Все названные условия
+ выполняются, значит в $G$ $\exists f(z)= \sqrt{\frac{z}{6-z}} $ 
+ --- регулярная ветвь корня.
+ Зададим эту ветвь $f(x) = \sqrt{|x|} $ при $x>0$.
+При  $x \in  [0,\,6]$ 
+\[
+	f(x+i 0)= \sqrt{\left| \frac{x}{6-x} \right| } \cdot
+	\exp\left( - i \frac{\pi}{2} \right) 
+.\] 
+\[
+	f(x- i 0)= \sqrt{\left| \frac{x}{6-x} \right| } 
+	\cdot \exp \left( i \frac{\pi}{2} \right) 
+.\] 
+\[
+	\int\limits_{\lambda_-}^{} \frac{1}{z+2}f(z)dz =
+	- \int\limits_{\epsilon}^{6 - \epsilon }
+	\frac{1}{x+2}\cdot \sqrt{\frac{x}{6-x}} \cdot
+	\exp \left( -i \frac{\pi}{2} \right) dx=
+	i \cdot \cdot \int\limits_{\epsilon }^{6 - \epsilon } 
+	\frac{1}{x+2}\cdot \sqrt{\frac{x}{6-x}} dx
+.\] 
+Аналогично
+\[
+	\int\limits_{\lambda_+}^{} \frac{1}{z+2}f(z) dz= i \cdot
+	\int\limits_{\epsilon }^{6-\epsilon } 
+	\frac{1}{x+2}\cdot \sqrt{\frac{x}{6-x}} dx
+.\] 
+\[
+\left| 
+\int\limits_{\gamma(0)}^{} \frac{1}{z+2}f(z) dz \right| \le 
+\frac{1}{2 - \epsilon}\cdot \sqrt{\frac{\epsilon}{6- \epsilon }} 
+\cdot_2\pi \epsilon \xrightarrow[]{\epsilon\to 0}0
+.\] 
+Аналогично оценивается и интеграл по $\gamma(6)$
+ \[
+	 2J\cdot i + 2 \pi i \left( \res_{z=-2}\frac{1}{z+2}f(z)+
+	 \res_{z=\infty}\frac{1}{z+2}f(z)\right) =0
+.\] 
+Т.\:к. $f(-2)\neq 0$ и $f$ голоморфна, то $z=-2$  --- полюс
+порядка 1, значит
+ \[
+	 \res_{z=-2}f(z) \frac{1}{z+2}= f(-2)= \sqrt{\left| 
+	 -\frac{2}{6+2}\right| } =\frac{1}{2}
+.\] 
+\[
+\frac{1}{z+2}\cdot \sqrt{\frac{z}{6-z}} \cdot \sqrt{1}
+=\frac{1}{1+\frac{2}{z}}\cdot \frac{1}{z}\cdot \left( 
+1- \frac{6}{z}\right) ^{-\frac{1}{2}}\cdot \sqrt{1} 
+.\] 
+Отсюда уже видно, что $c_{-1}= \sqrt{1} $, т.\:к. 
+\[
+	\lim_{x \to \infty} f(x) = 1 \equiv \sqrt{1} 
+ ,\] 
+то $c_{-1}=1$, следовательно
+\[
+\res_{z=\infty}f(z) \frac{1}{z+2}=-1 \implies
+J= \pi\left( 1- \frac{1}{2} \right) = \frac{\pi}{2}
+.\] 
+\end{sol}
+\prob{\textsection 23  №5(8)}
+\begin{sol}
+\[
+	J= \int\limits_{0}^{2} \frac{\sqrt[3]{x^2(2-x)} }{(x+2)^2}dx 
+.\] 
+Регулярную ветвь $f(z)= \sqrt[3]{z^2 (2-z)} $ определим так же,
+как и в 5(2).
+
+При $x \in [0,\,2]$
+\[
+	f(x +i 0)= - \sqrt{x^2 (2-x)} e^{i \frac{\pi}{3}}\qquad
+	f(x-i 0)=- \sqrt{x^2 (2-x)} e^{- i \frac{\pi}{3}}
+.\] 
+\[
+	\int\limits_{\lambda_-+\gamma(0)+\lambda_+
+	+\gamma(2)}^{} \frac{f(z) dz}{(z+2)^2} \xrightarrow[]{\epsilon\to 0} \left( e ^{i \frac{\pi}{3}}-
+e^{-i \frac{\pi}{3}}\right) J= - 2 \pi i \left( 
+\res_{z=-2}\frac{f(z)}{z(+2)^2}+ \res_{z=\infty}\frac{f(z)}{(z+2)^2}\right) 
+.\] 
+$z=-2$ --- полюс порядка 2, значит
+ \[
+	 \res_{z=-2}\frac{f(z)}{(z+2)^2}=f'(-2)=\frac{-8-12}{
+	 3\cdot 4\cdot\sqrt[3]{4} }=\frac{-5}{3 \sqrt[3]{4} }
+.\] 
+\[
+	f(-2)= - \sqrt[3]{|4\cdot 4|}\cdot e^{i\pi}= 2 ^{\frac{4}{3}} 
+.\] 
+\[
+	\frac{1}{(z+2)^2}\cdot f(z)= \frac{z \cdot \sqrt[3]{1- \frac{2}{z}} }{z^2\left(1+\frac{2}{z}\right)}\cdot \sqrt[3]{1} \implies
+	c_{-1}= \sqrt[3]{-1} 
+.\] 
+Т.\:к.
+\[
+	\lim_{x \to \infty} \frac{f(x)}{x}= - 1
+ ,\]
+ то $\sqrt[3]{-1}=-1=c_{-1} $, значит
+ \[
+	 J= \frac{-\pi \cdot \left( \frac{-5\sqrt[3]{2} }{6}+1 \right) }{\sin \frac{\pi}{3}}= \frac{\pi \left( \frac{5\sqrt[3]{2}}{6}-1 \right) }{\sin \frac{\pi}{3}}
+ .\] 
+\end{sol}
+\prob{\textsection 23 № 6(6)}
+\begin{sol}
+\[
+	J= \int\limits_{1}^{\infty} \frac{dx}{(x^2+1) \sqrt{x-1} } 
+.\] 
+Область $G$ изображена на рис.~\ref{fig:14}.
+\begin{figure}[ht]
+    \centering
+    \incfig{14}
+    \caption{}
+    \label{fig:14}
+\end{figure}
+В $G$ можно определить регулярную ветвь $f(z)= \sqrt{z-1} $ 
+\[
+	\int\limits_{\partial G}^{} \frac{dz}{(z^2+1)f(z)}=
+	\int\limits_{\gamma_R}^{} \ldots +
+	\int\limits_{\gamma_{\epsilon}}^{} \ldots+
+	\int\limits_{\lambda_+}^{} \ldots+
+	\int\limits_{\lambda_-}^{} \ldots=
+	2\pi i \left( \res_{z=i}\frac{1}{(z^2+1)f(z)}+
+	\res_{z=-i} \frac{1}{(z^2+1)f(z)}\right) 
+.\] 
+Зададим ветвь условием $f(0)= e^{i \frac{\pi}{2}}$, тогда при
+$x \in [1,\,R]$ 
+ \[
+	 f(x+i 0)= \sqrt{|x-1|} \cdot \exp \left( 
+	 i\frac{\pi}{2}+ \frac{i}{2}\cdot(-\pi)\right) =
+	 \sqrt{x-1} 
+.\] 
+\[
+	f(x- i 0)= \sqrt{ x-1} \cdot \exp \left( 
+	i \frac{\pi}{2}+ \frac{i}{2}\cdot\pi\right) =
+	-\sqrt{x-1} 
+.\] 
+\[
+\int\limits_{\lambda_-}^{} \ldots=
+\int\limits_{\epsilon }^{R} \frac{dx}{(x^2+1)\cdot \sqrt{x-1} }=
+\int\limits_{\lambda_-}^{\infty}  
+.\] 
+\[
+	\left| \int\limits_{\gamma_\epsilon }^{} \frac{dz}{(z^2+1)
+	\cdot f(z)}  \right| \le  \frac{1}{2-3\epsilon}\cdot
+	\frac{1}{\sqrt{\epsilon} }\cdot 2\pi \epsilon
+	\xrightarrow[]{\epsilon\to 0}
+.\] 
+Значит в пределе $\epsilon\to 0$
+\[
+\int\limits_{\lambda_++\lambda_-+\gamma_\epsilon }^{} \ldots=
+2 \int\limits_{0}^{R} \frac{dx}{(x^2+1)\sqrt{x-1} } 
+.\] 
+\[
+	\left| \int\limits_{\gamma_R}^{} \frac{dz}{(z^2+1)f(z)}  \right| \le  \frac{1}{R^2-1}\cdot \frac{1}{\sqrt{R-1} }\cdot
+	2 \pi R \xrightarrow[]{R\to \infty}0
+.\] 
+Следовательно
+\[
+	2 J = 2 \pi i \left( 
+	\res_{z=i}\frac{1}{(z^2)f(z)}+\res_{z=-i}\frac{1}{(z^2+1)
+f(z)}\right) 
+.\] 
+Т.\:к. $z= \pm i$ --- полюсы первого порядка, то
+\[
+	\res_{z=i} \frac{1}{(z^2+1)f(z)}=
+	\frac{1}{2i f(i)}= \frac{1}{ 2 i \sqrt{2}e^{i \frac{3\pi}{8}} }
+.\] 
+\[
+	\res_{z=-i}\frac{1}{(z^2+1) f(z)}=\frac{1}{-2if(-i)}=
+	\frac{-1}{2 i \sqrt{2} e^{i \frac{5\pi}{8}}}
+.\] 
+Поэтому
+\[
+	J= \pi i \left( \frac{1}{2 i \sqrt[4]{2} }e^{
+	- i \frac{3\pi}{8}}-
+\frac{1}{2 i \sqrt[4]{2}}e^{- \frac{5\pi}{8}i}\right) =
+\frac{\pi}{2 \sqrt[4]{2} }\cdot \sin \frac{\pi}{8}=
+\frac{\pi}{\sqrt[4]{2} }\sin \frac{\pi}{8}
+.\] 
+\end{sol}
+\prob{\textsection 23 № 6(7)}
+\begin{sol}
+	\[
+	J= \int\limits_{0}^{\infty} \frac{dx}{\sqrt[5]{x}(x+1)^2 } 
+.\] 
+Область  $G$ изображена на рис.~\ref{fig:15}.
+\begin{figure}[ht]
+    \centering
+    \incfig{15}
+    \caption{15}
+    \label{fig:15}
+\end{figure}
+\[
+	g(z)=\left( \sqrt[5]{x}\cdot (z+1)^2  \right) ^-1
+.\] 
+Определим ветвь $f(z)= \sqrt[5]{z} $ в $G$ условием $f(x)=
+-\sqrt[5]{|x|} $ при $x<0$. Тогда при  $x>0$
+ \[
+	 f(x+i 0)= \sqrt{x}\cdot \exp \left( i \cdot (-\pi)
+	 - \frac{i}{5}\pi\right) =\sqrt{x} \cdot \exp \left( -i
+ \frac{6\pi}{5}\right)  
+.\] 
+\[
+	f(x - i 0) = \sqrt{x}\cdot \exp \left( - i
+	\frac{4\pi}{5}\right)  
+.\] 
+\[
+	\int\limits_{\partial G}^{} g(z) dz = \int\limits_{\lambda_-}^{} g(z) dz +
+	\int\limits_{\lambda_+}^{} g(z)dz+
+	\int\limits_{\gamma_\epsilon }^{} g(z)dz+
+	\int\limits_{\gamma_R}^{} g(z)dz 
+.\] 
+\[
+	\left| \int\limits_{\gamma_\epsilon }^{} g(z) dz  \right| 
+	\le  \frac{1}{\epsilon^{\frac{1}{5}}\cdot (1-\epsilon)^2}
+	\cdot 2 \pi \epsilon \xrightarrow[]{\epsilon\to 0}0
+.\] 
+Значит при $\epsilon\to 0$ получим
+\[
+	\int\limits_{\partial G}^{} g(z)dz= 
+	- \int\limits_{0}^{R} \frac{dx}{\sqrt[5]{x}(x+1)^2 }\cdot
+	\exp \left( i \frac{4\pi}{5} \right) +
+	\int\limits_{0}^{R}  \frac{dx}{\sqrt[5]{(x+1)^2} }\cdot
+	\exp\left( i \frac{6\pi}{5} \right) +
+	\int\limits_{\gamma_R}^{} g(z) dz 
+.\] 
+\[
+	\left| \int\limits_{\gamma_R}^{} g(z) dz  \right| \le 
+	\frac{1}{R^{\frac{1}{5}}\cdot (R-1)^2}\cdot 2\pi R
+	\xrightarrow[]{R\to \infty}0
+.\] 
+Переходя к пределу при $R\to \infty$
+\[
+	J\cdot\left( \exp \left( i \frac{6\pi}{5} \right) -
+	\exp \left( i \frac{4\pi}{5} \right) \right) =
+	2\pi i \res_{z=-1}g(z)
+.\] 
+$z=-1$ --- полюс второго порядка, значит
+\[
+	\res_{z=-1}g(z) = \frac{d}{dz} \left. \left( \frac{1}{f(z)} \right) \right|_{z=-1}=\left. \left( 
+			-\frac{1}{(f(z))^2}\cdot f'(z)\right)  \right| _{z=-1}
+.\] 
+\[
+	f'(z)= \frac{1}{5(f(z))^4}\implies \res_{z=-1}g(z)=
+	-\left. \left( \frac{1}{5(f(z))^6} \right) \right|_{z=-1}=
+		|f(-1)=-1|= -\frac{1}{5}
+.\] 
+Поэтому
+\[
+	J\cdot (-2) \sin \frac{\pi}{5} i= - \frac{2 \pi i }{5}
+.\] 
+Значит
+\[
+J= \frac{\pi}{5 \sin \frac{\pi}{5}}
+.\] 
+\end{sol}
+\prob{\textsection 23 №6(8)}
+\begin{sol}
+	\[
+		J= \int\limits_{0}^{\infty} \frac{\sqrt{x} \ln x}{(x+1)(x+2)}dx 
+	.\] 
+Область $G$ изображена на рис.~\ref{fig:16}.
+\begin{figure}[ht]
+    \centering
+    \incfig{16}
+    \caption{}
+    \label{fig:16}
+\end{figure}
+\[
+	g(z)= \frac{\sqrt{z}\ln z }{(z+1) (z+2)}
+.\] 
+Регулярные ветви $f(z)= \sqrt{z} $ и $h(z)= \ln z $
+в области $G$ заданы условиями
+$\sqrt{x} = i \sqrt{|x|} $, $\ln x = \ln |x| - i \pi$, $x <0$.
+\[
+	\int\limits_{\partial G}^{} g(z)dz= \int\limits_{\lambda_+
+	+\lambda_- +\gamma_\epsilon + \gamma_R}^{} g(z) dz  
+.\] 
+При $x>0$ 
+\[
+	f(x+i 0)= \sqrt{|x|} \cdot \exp \left( i \frac{\pi}{2}-\frac{i}{2}\pi \right) = \sqrt{x} 
+.\] 
+\[
+	f(x-i 0)= \sqrt{ |x|} \cdot \exp \left( i \frac{\pi}{2}
+	+i \frac{\pi}{2}\right) = - \sqrt{x} 
+.\] 
+\[
+	g(x+i 0)= \ln x - i\pi -i\pi = \ln x - 2 i \pi
+.\] 
+\[
+	g(x-i 0)= \ln x
+.\] 
+\[
+	\left| \int\limits_{\gamma_\epsilon }^{} g(z)dz  \right| \le 
+	\frac{\epsilon^\frac{1}{2}\cdot \sqrt{(\ln \epsilon)^2
+	+4 \pi^2} }{(1-\epsilon)}\cdot 2\pi \epsilon \xrightarrow[]{\epsilon \to 0}0
+.\] 
+\[
+	\left| \int\limits_{\gamma_R}^{} g(z) dz  \right| \le 
+	\frac{R^{\frac{1}{2}} \sqrt{(\ln R)^2+4\pi^2} }{(R-1)
+	(R-2)}\cdot 2\pi R \xrightarrow[]{R\to \infty}0
+.\] 
+Следовательно 
+\begin{multline*}
+	\int\limits_{\partial G}^{} g(z) dz =
+	\int\limits_{0}^{\infty} 
+	\frac{\sqrt{x} (\ln x - 2\pi i)}{(x+1)(x+2)}dx-
+	\int\limits_{0}^{\infty} \frac{- \sqrt{x} \ln x}{(x+1)
+	(x+2)}dx =\\= 2J- 2\pi i \underbrace{\int\limits_{0}^{\infty} \frac{
+\sqrt{x} dx}{(x+1)(x+2)}}_{\tilde{J}}=
+2 \pi i \left( \res_{z=-1}g(z)+ \res_{z=-2}g(z) \right) 
+.\end{multline*} 
+$z=-1$ и $z=-2$ --- полюса порядка 1, значит
+\[
+	\res_{z=-1}g(z)= \frac{i\cdot (- i \pi)}{1}=\pi
+.\] 
+\[
+	\res_{z=-2}g(z)= \frac{i \sqrt{2} \cdot \left( \ln 2
+	- i\pi\right)  }{-1}= - \sqrt{2} \left( \ln 2\cdot i+
+\pi\right) 
+.\] 
+Аналогичные оценки верны и для $\tilde{g}= \frac{\sqrt{z} }{(z+1)
+(z+2)}$, следовательно
+\[
+	2 \tilde{J}= 2\pi i \left( \res_{z=-1}\tilde{g}(z)+
+	\res_{z=-2}\tilde{g}(z)\right) =
+	2\pi i \cdot \left( i + \frac{\sqrt{2} i}{-1} \right) =
+	2\pi \left( \sqrt{2}-1  \right) 
+.\] 
+Поэтому
+\[
+	J= \pi i \left( \pi \left( \sqrt{2} -1 \right) +
+	\pi - \sqrt{2} \left( \ln 2 \cdot i + \pi \right) \right) =
+	\sqrt{2}\pi \ln 2
+.\] 
+\end{sol}
+\prob{\textsection 23 №7(1)}
+\begin{sol}
+\[
+	\int\limits_{0}^{\infty} \frac{\ln x}{(x+1)^2}dx 
+.\] 
+Область $G$ изображена на рис.~\ref{fig:17}.
+\begin{figure}[ht]
+    \centering
+    \incfig{17}
+    \caption{}
+    \label{fig:17}
+\end{figure}
+\[
+	g(x)= \frac{(\ln z)^2}{(z+1)^2}
+.\] 
+Зададим ветвь $f_9z)= \ln z$ условием при $x<0$ $\ln x = \ln |x|-
+ i\pi$.
+
+При $x>0$
+\[
+	f(x+i 0)= \ln x - 2 \pi i
+.\]
+\[
+	f(x-i 0)= \ln x
+.\] 
+\[
+	\int\limits_{\partial G}^{} g(z) dz=
+	\int\limits_{\lambda_+ + \lambda_- +\gamma_\epsilon+
+	\gamma_R}^{} g(z)dz 
+.\] 
+\[
+	\left| \int\limits_{\gamma_\epsilon}^{}g(z)dz   \right| \le 
+	\frac{(\ln \epsilon)^2+4\pi^2}{(1-\epsilon)^2}\cdot
+	2 \pi \epsilon \xrightarrow[]{\epsilon\to 0}0
+.\] 
+\[
+	\left| \int\limits_{\gamma_R}^{} g(z)dz  \right| \le 
+	\frac{(\ln R)^2+4\pi^2}{(R-1)^2}\cdot  2 \pi R \xrightarrow[]{R\to \infty}0
+.\] 
+Значит
+\[
+	\int\limits_{\partial G}^{} g(z) dz=
+	\int\limits_{0}^{\infty} \frac{(\ln x - 2\pi i)^2}{(x+1)^2}
+	dx- \int\limits_{0}^{\infty} \frac{(\ln x)^2}{(x+1)^2}dx=
+	- 4 \pi i \cdot J - 4 \pi^2 \int\limits_{0}^{\infty} 
+	\frac{dx}{(x+1)^2}= 2\pi i  \res_{z=-1}g(z)
+.\] 
+Т.\:к. $z=-1$ --- полюс втоорого порядка, то
+\[
+	\res_{z=-1}g(z)= \frac{d}{dz} \left. \left( 
+		(\ln z)^2\right)  \right|_{z=-1}=
+		\left. \left( 2 \ln z \cdot \frac{1}{z} \right)  \right|_{z=-1}= - 2i \pi \cdot (-1)= 2 \pi i
+.\] 
+Следовательно
+\[
+J=0
+.\] 
+\end{sol}
+\prob{\textsection 15 № 1(1)}
+\begin{sol}
+\[
+z^4 - 3 z +1 =0 \qquad |z|<1
+.\] 
+На $\gamma= \{ |z|=1\} $:
+\[
+	\underbrace{|-3z+1|}_{f(z)}\ge \underbrace{|z^4|}_{\phi(x)}
+.\] 
+Значит $z^4 - 3 z +1 =0 $ имеет в $D$ стоолько же нулей,
+сколько и $-3z+1$, т.\:е. ровно один
+\end{sol} 
+\prob{\textsection 15 № 1(3)}
+\begin{sol}
+\[
+z^7- 5 z^4 +z^2 -2 =0 \qquad |z|<1
+.\] 
+На $\gamma = \{ |z| =1\} $ 
+\[
+	\underbrace{|-5 z^4 +z^2 - 2|}_{f(z)}\ge 
+	5 - |z^2 -2| \ge  5 -3 = 2 >1 \ge 
+	\underbrace{|z^7|}_{\phi(x)}
+.\] 
+Значит исходное ур-е имеет столько же нулей, сколько и
+ур-е $f(z)=0$ в $D$. Т.\:к. при $|z|\ge 1\hookrightarrow
+|-5z^4+z^2-2|\ge  5 |z|^4  - (|z|^2 +2)>0$, то все нули ф-ии
+$f$ лежат в $D$, следовательно ур-е имеет 4 корня в $D$ 
+(с учётом их кратностей).
+\end{sol}
+\prob{\textsection 15 № 1(7)}
+\begin{sol}
+\[
+z^6-6z+10=0\qquad |z|>1
+.\] 
+На $\gamma=\{|z|=1\} $ 
+\[
+	\underbrace{|-6z+10|}_{f(z)}\ge  4 > 1 \ge  \underbrace{|z^6|}_{\phi(z)}
+.\] 
+Значит в области $D= \{|z|<1\} $ данное ур-е не имеет нулей.
+На $\gamma$
+ \[
+|z^6-6z+10|\ge |-6z+10|-|z^6|\ge 3
+.\] 
+Следовательно в области $|z|>1$ исходное ур-е имеет 6 корней.
+\end{sol}
+\prob{Т.4}
+\begin{sol}
+	\[
+	4 z^6+4z^3+\underbrace{9z-4}_{}=0 \qquad |z|<1
+	.\] 
+\end{sol}
+\prob{Т.5}
+\begin{sol}
+	\[
+	J= \ointctrclockwise\limits_{|z|=1} z^6 \frac{1}{3z^4+z+1}dz 
+	.\] 
+\[
+|3z^4|\ge  3 >2 \ge  |z+1| 
+\]
+на $\gamma= \{|z|=1\} $. Значит у многочлена $3z^4+z+1=0$ 4 корня
+в  $D=\{|z|<1\} $.
+\[
+	J= -2\pi i \res_{z=\infty} \frac{z^6}{3z^4+z+1}= f(z)
+.\] 
+\[
+	f(z)= \frac{z^2}{3} \cdot \frac{1}{ 1+ \frac{1}{3z^2}+
+	o\left( \frac{1}{z^3} \right) }=\frac{z^2}{3}\left(1-\frac{1}{
+3z^2}+o\left( \frac{1}{z^3} \right) \right)\implies c_{1}=-\frac{1}{9}\implies J= - \frac{2\pi i }{9}
+.\] 
+\end{sol}
+\end{document}

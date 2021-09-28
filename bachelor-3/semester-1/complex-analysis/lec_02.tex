@@ -1,0 +1,408 @@
+\lecture{2}{Пт 11 сен 2020 17:06}{}
+\lec
+\[
+e^z= \sum_{n=0}^{\infty} \frac{z^n}{n!}
+\]
+--- голом. в $\mathbb{C}$
+ \[
+\overline{e^z}= e 
+\]
+\begin{thm}[Теорема сложения]
+	$\forall z_1,\, z_2 \in \mathbb{C}$ 
+	\[
+	e ^{z_1 + z_2}= e^{ z_1}\cdot e^{z_2}
+	.\] 
+\end{thm}
+\[
+	f(x)=e^{z}\cdot e^{a-z}
+.\] 
+\[
+	f'(x)=e^{z}(-1) e^{a-z}+e^{z}\cdot e^{a-z}
+.\] 
+\[
+	f(x)= \text{const} \qquad f(0)= e^a \qquad e^z e ^{a-z}=e^{a}
+.\] 
+\[
+	a,\,z \in \mathbb{C} \qquad z=z_1 \qquad a=z_1+z_2
+.\]
+\[
+e^{z_1} \cdot e^{z_2}= e ^{z_1 +z_2} \qquad e^{ z}\cdot e^{-z} \impliese ^{-z} = \frac{1}{e^{z}}
+.\] 
+\[
+e^{z} \neq \text{ в } \mathbb{C} \qquad z=x+i y 
+.\] 
+\[
+e ^{z}= e ^{ x} \cdot e ^{iy} \qquad e^{iy} \cdot \overline{e^{iy}}= e ^{iy} \cdot e  ^{-iy}=1 \implies |e ^{iy}|=1
+.\] 
+\[
+	|e ^{z}|= e ^{\operatorname{Re} z}
+.\] 
+\[
+	\cos z = \frac{1}{2} \left( e ^{iz}+ e ^{ -iz} \right) , \qquad \sin z = \frac{1}{2i} \left( e ^{iz}- e ^{-iz} \right) 
+.\] 
+\[
+	\ch z= \frac{1}{2}\left( e ^{z}+e ^{-z} \right) , \sh z= \frac{1}{2}\left(e ^{z}- e^{-z}\right)
+.\] 
+\[
+	\forall z \in \mathbb{C} \qquad e^{iz}= \cos z + i \sin z
+.\] 
+\[
+	e^{z}= \sum_{n=0}^{\infty} \frac{z^n}{n!}\qquad (\cos z)'= -\sin z\qquad (\sin z )'= \cos z
+.\] 
+Периоодичность
+\[
+	f(z+c)= f(z) \forall z
+.\] 
+\[
+e^{z+c}= e^{ z} \implies e ^{c}=1
+.\] 
+\[
+c= \alpha +i \beta \qquad e ^{\alpha} \cdot e ^{i\beta}=1\implies \alpha=0
+.\] 
+\[
+\left\{
+\begin{aligned}
+\cos \beta = 1 \\
+\sin \alpha = 0
+\end{aligned}
+\right.\implies
+\beta= 2 k \pi, \qquad k \in \mathbb{Z}\implies c = 2k \pi i \text{ --- период. эксп-ты}
+.\] 
+Логарифм
+\[
+	a \in  \mathbb{C} \qquad \ln a - ?
+.\] 
+\[
+z= \ln a \qquad e ^{z}=a \qquad a\neq_0
+.\] 
+\[
+	e^{z}=a \implies a = r e^{i \phi} \qquad \phi \in  \operatorname{Arg} \{a\} 
+.\] 
+\[
+e ^{ x+i y}= e^{x} \cdot e ^{i y}
+.\] 
+\[
+\left\{
+\begin{aligned}
+e ^{x}=r
+y = \phi+ 2k \pi
+\end{aligned}
+\right.
+.\] 
+\[
+x = \ln r= \ln |a| \qquad y = \phi + 2k \pi
+.\] 
+\[
+	\forall a \neq 0 \qquad \operatorname{Ln} \{a\} = \ln |a| + \operatorname{Arg} \{a\} 
+.\]
+$D$-область
+\[
+	f(z) \qquad e^{f(z)}=z
+.\] 
+\[
+f(z) \in \operatorname{Ln} \{z\} \qquad f \text{ --- ветвь } \operatorname{Ln} \{z\} \text{ в обл. } D
+.\] 
+\[
+	f(z)= \ln |z| + i \operatorname{z}
+.\] 
+\begin{figure}[ht]
+    \centering
+    \incfig{3}
+    \caption{}
+    \label{fig:3}
+\end{figure}
+\[
+	\ln(1+z) = \ln |1 +z|+ i \operatorname{arg} (1+z)
+.\] 
+\begin{figure}[ht]
+    \centering
+    \incfig{4}
+    \caption{4}
+    \label{fig:4}
+\end{figure}
+\[
+	a ^{b} \qquad a \neq 0 \qquad a,\,b \in \mathbb{C}
+.\] 
+\[
+i^i \qquad \{a^ b\} = e ^{b \operatorname{Ln} \{a\} } \text{ --- по определению}
+.\] 
+\[
+	\{i^i\} =e ^{i \operatorname{Ln} \{i\} }=e ^{- \frac{\pi}{2}+2 \pi k}
+.\] 
+\[
+	\operatorname{Ln} \{ i\} = 0 + i [\ldots]
+.\] 
+Комплексное интегрирование
+\begin{figure}[ht]
+    \centering
+    \incfig{5}
+    \caption{}
+    \label{fig:5}
+\end{figure}
+\[
+t \to -t \qquad \tau = -t \qquad -\beta \le  \tau \le  \alpha
+.\] 
+\[
+\gamma \to -\gamma
+.\] 
+Плоская кривая
+\[
+	z = z(t) \qquad z'(t) = x'(t)+ i y'(t)\qquad \ldots
+.\] 
+\begin{figure}[ht]
+    \centering
+    \incfig{6}
+    \caption{6}
+    \label{fig:6}
+\end{figure}
+\[
+	w = f(x) = u (z) + i v(z) , \qquad z = x +i y
+.\] 
+$f$ --- непр.
+ \[
+	 \gamma: z = z(t) , \qquad \alpha \le  t \le  \beta
+.\] 
+\[
+t_0= \alpha< t_1 < \ldots < t_n = \beta
+.\] 
+\[
+	\theta_k = [t_{k-1},\,t_k]
+.\] 
+\[
+	\Delta z_k = z(t_k) - z(t_{k-1})
+.\] 
+\[
+	\sum_{k=1}^{n} f\left( \left( x(\theta_k) \right)  \right) \Delta z_k= \sum_{k=1}^{n} \left( u (z(\theta_k))\Delta x_k +
+	v ( z(\theta_k)) \Delta y_k \right) 
+.\]
+
+Св-ва интеграла
+Линейность
+\[
+	\int\limits_{\gamma}^{} \left( a f(x) + b g (x) \right) dx= a \int\limits_{\gamma}^{} f(x) dx + b \int\limits_{\gamma}^{} g(x)
+	dx
+.\] 
+\[
+	\int\limits_{-\gamma}^{} f(x) dx= - \int\limits_{\gamma}^{} f(x) dx  
+.\] 
+\[
+	\int\limits_{-\gamma}^{} f(z) |dz|= \int\limits_{\gamma}^{} f(x) |dx|  
+.\] 
+Нер-во
+\[
+	\left| \int\limits_{\gamma}^{} f(x) dx  \right| \le  \int\limits_{\gamma}^{} |f(x)| |dx| 
+.\] 
+\[
+\gamma= \gamma_1 + \gamma_2
+.\] 
+\[
+	\int\limits_{\gamma_1 +\gamma_2}^{} f(x) dx= \int\limits_{\gamma_1}^{} f(x) dx + \int\limits_{\gamma_2}^{} dx   
+.\] 
+$f(z)$ опр. в обл. $D$ 
+
+Будем говорить, что $f(z)dz$ является полным дифференциалом в области $D$ если сцществует голоморфная в $D$ функция
+$F(z)$ :
+\[
+	F'(z) = f(z) \qquad dF(z)= f(z) dz
+ ,\] 
+ $F$ --- первообразная $f$.
+\sem
+
+\[
+	(\sin x)'=(-i \ch  i z)'= - i^2 \ch i z = \ch iz= \cos z
+.\] 
+\[
+	\ch z= \frac{e^z+e^{-z}}{2}
+.\] 
+\[
+	(\ch z)'=\frac{e^z - e^{-z}}{2}=\sh z
+.\] 
+\[
+	(\sh z)'=\ch z = \left( \frac{e^z-e^{-z}}{2} \right) '=
+	\frac{e^z-e^{-z}}{2}?
+.\]
+\[
+	f(z)=(z^n)'=n z^{n-1}
+.\] 
+\[
+z'=1
+.\] 
+\[
+	(z^{n+1})'=(z^n z)'=(z^n)'z+z^n z'=n z^{n-1}z+z^n=(n+1)z^n
+.\] 
+\begin{figure}[ht]
+    \centering
+    \incfig{1}
+    \caption{}
+    \label{fig:1}
+\end{figure}
+\begin{dfn}
+	$f$ --- $R$- дифф-ма
+\end{dfn}
+\begin{dfn}
+	\[
+	df=du+i dv
+	.\] 
+\end{dfn}
+\begin{dfn}
+	\[\frac{\partial f}{\partial x} =\frac{\partial u}{\partial x} +i \frac{\partial v}{\partial x} \]
+	\[
+	\frac{\partial f}{\partial y} =\frac{\partial u}{\partial y} +i \frac{\partial v}{\partial y} 
+	.\] 
+\end{dfn}
+
+$df=du + idv=\left( \frac{\partial u}{\partial x} dx+
+\frac{\partial u}{\partial y} dy\right) +i\left( 
+\frac{\partial v}{\partial x} dx+ \frac{\partial v}{\partial y} dy\right) =\left(i \frac{\partial v}{\partial x} +\frac{\partial u}{\partial x}  \right) dx+\left(i \frac{\partial v}{\partial y} +
+\frac{\partial u}{\partial y} \right) dy=\frac{\partial f}{\partial x} dx+ \frac{\partial f}{\partial y} dy$ 
+\begin{thm}
+	\[
+	df= \frac{\partial f}{\partial x} dx+\frac{\partial f}{\partial y} dy
+	.\] 
+\end{thm}
+\[\left\{
+	\frac{\partial f}{\partial z} = \frac{1}{2}\left(\frac{\partial f}{\partial x} -i \frac{\partial f}{\partial x} \right)\\
+	\frac{\partial f}{\partial z} =\frac{1}{2}\left( 
+	\frac{\partial f}{\partial x} +i \frac{\partial f}{\partial y} \right) \right.
+.\] 
+\begin{thm}
+	\[
+	df=\frac{\partial f}{\partial z} dz+\frac{\partial f}{\partial z} d \overline{z}
+	.\] 
+\end{thm}
+\begin{proof}
+	\ldots
+\end{proof}
+\begin{thm}
+	\[
+		df=Adz+bd \overline{z} =A(dx+i dy)+
+		B(dx-i dy)=(A+B)dx+i (A-B)dy= \frac{\partial f}{\partial x} dx+\frac{\partial f}{\partial y} dy
+	.\] 
+	\[
+	\frac{\partial f}{\partial x} =A+B;\qquad
+	\frac{\partial f}{\partial y} =i(A-B)
+	.\] 
+\end{thm}
+\begin{dfn}
+	$f=u+iv$ --- $\mathbb{C}$-дифференцируема в точке
+	$z_0=x_0+iy_0$ равносильно
+	\[
+		f- \mathbb{R}	\text{-дифф.}\qquad
+		\text{и}\qquad \frac{\partial f}{\partial \overline{z}} =0
+	.\] 
+\end{dfn}
+
+\begin{thm}
+	$f$ --- $\mathbb{C}$-дифф-ма в т. $z_0$ равносильно
+	$\exists f'(z_0)\in \mathbb{C}$. 
+	\[
+		f'(z_0)= \lim_{\Delta z \to 0} \frac{f(z_0+\Delta z)-f(z_0)}{\Delta z}
+	.\] 
+\end{thm}
+\begin{proof}
+	Пусть $f=u+iv$--- $\mathbb{R}$-дифф-ма
+\[
+	\Delta f= \frac{\partial f}{\partial z} \Delta z +\frac{\partial f}{\partial \overline{z}} \Delta \overline{z}+o(\Delta z)
+.\]\ldots
+\[
+\frac{\Delta f}{\Delta z}= \frac{\partial f}{\partial z}+
+\frac{\partial f}{\partial \overline{z}} e^{-iz\theta}+o(1)
+.\] 
+\begin{enumerate}
+	\item \[
+			\frac{\partial f}{\partial z} =0 \implies \exists f'(z_0)= \lim_{\Delta z \to 0} \frac{\Delta f}{\Delta z}
+	.\] 
+	\item обратно 
+		\[
+			\exists f'(z_0)=\lim_{\Delta z \to 0}
+			\frac{\Delta f}{\Delta z}
+		.\] 
+		\[
+			\frac{\Delta f}{\Delta z}= f'(z_0)+o(1)
+		.\] 
+\ldots
+\end{enumerate}
+\end{proof}
+\[
+	f'(z)= \frac{\partial f}{\partial z} =\text{Коши-Риман}=
+	\frac{\partial u}{\partial x} +i \frac{\partial v}{\partial x} 
+.\]
+\[
+	f(z)=e^{z}=e^x\left( \cos y + i \sin y  \right) 
+.\] 
+\[
+\left\{ 
+\begin{aligned}
+	 u=e^x \cos y\\ v= e^x \sin y
+\end{aligned}
+\right. \Leftrightarrow
+\left\{
+	\begin{aligned}
+		u_x=v_y\\ u_y= -v_x
+	\end{aligned}\ldots \right.
+\] 
+ Функция 
+\[
+f = x + 2y i
+\] 
+дифференцируема только в точке $(0,\,0)$ по условию К-Р.
+
+ \begin{problem}
+Доказать
+\[
+	\frac{1}{2i} \int\limits_{\partial D}^{} f(z)=
+	\iint\limits_{D}^{}  \frac{\partial f}{\partial \overline{z}} 
+	dxdy
+.\] 
+\[
+\left\{
+	\begin{aligned}
+		f \text{ --- } \mathbb{R}\text{-дифф.}\\
+		f \text{ --- непр. в } \overline{D}
+	\end{aligned}
+	\right.
+.\] 
+\end{problem}
+\begin{proof}
+\begin{figure}[ht]
+    \centering
+    \incfig{2}
+    \caption{}
+    \label{fig:2}
+\end{figure}
+\[
+\int\limits_{\partial D}^{} Pdx+Qdy= \iint\limits_{D}^{} 
+(Q_x-P_y) dxdy
+.\] 
+\[
+	P=P(x,\,y)\qquad Q=Q(x,\,y)
+.\] 
+\[
+P,\,Q,\,Q_x,\,P_y \text{ напр. в } \overline{D}
+.\] 
+\begin{multline*}
+	\int\limits_{\partial D}^{} f(z)dz= \int\limits_{\partial D}^{} (u +i v)(dx+i dy)=
+\int\limits_{\partial D}^{} udx - v dy +i \int\limits_{}^{} v dx+udy
+=\text{Грин}= \\=i\left( i \iint\limits_{D}^{} \left( v_x+u_y \right)dxdy 
++ \iint\limits_{D}^{} (u_x-v_y)dxdy \right)=\\=
+2i \iint\limits_{D}^{} \underbrace{\left[ \frac{(u_x-v_y)+i (v_x+u_y)}{2} \right]}_{\frac{\partial f}{\partial \overline{z}} } dxdy=2i \int\limits_{D}^{} \frac{\partial f}{\partial z} dxdy  
+.\end{multline*} 
+\end{proof}
+\begin{problem}
+Существует ли такая функция
+\[
+	f \in \mathbb{O}(U_\epsilon (0)) \qquad
+	f\left(\frac{1}{n}\right)=\sin \frac{\pi n}{2},
+	\qquad n \in \mathbb{N}, \qquad n\ge n_0
+.\] 
+\end{problem}
+\begin{proof}
+	Пусть такая $f$ сущ.
+	\begin{enumerate}
+		\item $n=2k \implies f\left(\frac{1}{n}\right)
+			f\left( \frac{1}{2k} \right) =\sin \pi k =0$\ldots 
+		\item \ldots
+	\end{enumerate} 
+	теорема о единственности
+\end{proof}
+

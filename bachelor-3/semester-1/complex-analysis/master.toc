@@ -1,0 +1,3 @@
+\babel@toc {russian}{}
+\contentsline {subsection}{\numberline {}Лекция}{1}{subsection.0.1}%
+\contentsline {subsection}{\numberline {}Семинар}{5}{subsection.0.2}%

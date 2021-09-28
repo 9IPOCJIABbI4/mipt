@@ -1,0 +1,434 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Третье задание по ТФКП}
+\begin{document}
+	\maketitle
+\renewcommand{\thesection}{\Roman{section}.}
+\section{Принцип максимума модуля}
+\begin{hiProb}[Т.1]
+	\label{prob:1}
+	Пусть $P(z)=z^n+c_1 z^{n-1}+\ldots+c_n$. Доказать, что
+	если $P(z)\not \equiv z^n$, то найдётся на единичной окружности
+	точка $z_0$, в которой $|P(z_0)|>1$.
+\end{hiProb}
+\begin{proof}
+%	Из $P(z)\not\equiv z^n$ следует, что существует
+%	хотя бы один
+%	$c_i\not=0$.
+%	\[
+%		g(z)= \frac{P(z)}{z^n}= 1+\frac{c_1}{z}+\ldots
+%		+\frac{c_n}{z^n}
+%	.\] 
+%	\[
+%		\lim_{n \to \infty} g(z)=1 \implies
+%	z=\infty \text{ --- УОТ для } g (z)	.\] 
+%Доопределим $g(\infty)=1$ и тогда $g(z)$ голоморфна в окрестности
+%бесконечности.
+%\[
+%	f(\xi)= g\left( \frac{1}{\xi} \right) 
+%.\] 
+\[
+	g(z)= \frac{P(z)}{z^n};\quad f(\xi)= g\left( \frac{1}{\xi} \right) 
+.\] 
+\[
+	g(z)=1+ \sum_{k=1}^{n} \frac{c_k}{z^k};\quad
+	f(\xi)= 1+ \sum_{k=1}^{n} c_k \xi^k
+.\] 
+Заметим, что $f(0)=1$. Рассмотрим $D=B_1 (0)$ --- единичный круг.
+\[
+	\max_{\xi \in \overline{B_1(0)}}|f(\xi)| \xlongequal[]{\substack{\text{принцип}\\ \max \text{мод.}}}
+	\max_{|\xi|=1}|f(\xi)|>|f(0)|=1
+.\] 
+Следовательно существует $\xi_0$ такой, что $|\xi_0|=1$ и
+$|f(\xi_0)|>1$. Значит
+\[
+	|f(\xi_0)|= \left|g \left( \frac{1}{\xi_0} \right)  \right| = \left| \frac{P\left( \frac{1}{\xi_0} \right) }{\left( 1 /\xi_0 \right) ^n} \right| =|P(z_0)|>1
+,\] 
+где $z_0=\frac{1}{\xi_0}$, $|z_0|=1$
+\end{proof}
+\begin{hiProb}[Т.2]
+	Пусть $P(z)$ --- полином степени $n$ и $M(r)=
+	\max\limits_{|z|=r}|P(z)|$. Докажите, что для $0<r_1<r_2$ 
+	выполняется неравенство
+	\[
+		\frac{M(r_1)}{r_1^n}\ge \frac{M(r_2)}{r_2^n}
+	.\] 
+\end{hiProb}	
+\begin{proof}
+Аналогично Т.1 рассмотрим
+\[
+	f(\xi)= \xi ^n P\left( \frac{1}{\xi} \right) 
+.\] 
+Т.\:к. $\overline{B_{\rho_1}  (0)}\supset \overline{B_{\rho_2}(0)}$
+при $0< \rho_1 < \rho_2$, то
+\[
+	\max_{\xi \in \overline{B_{\rho_2(0)}}}|f(\xi)|\ge 
+\max_{\xi \in  \overline{B_{\rho_1}(0)}}|f(\xi)|
+.\] 
+Следовательно по принципу максимума модуля
+\[
+	\max_{|\xi|=\rho_2}|f(\xi)|\ge  \max_{|\xi|=\rho_1}|f(\xi)|
+.\] 
+Значит
+\[
+	\max_{|z| = 1 /\rho_2} \left| \frac{P(z)}{z^n} \right| 	\ge  \max_{|z|= 1 /\rho_1} \left| \frac{P(z)}{z^n} \right| 
+.\]
+\[
+r_1= \frac{1}{\rho_2},\quad r_2= \frac{1}{\rho_1},\quad 
+0<r_1<r_2
+.\] 
+Поэтому
+\[
+	\frac{M(r_1)}{r_1^n}\ge \frac{M(r_2)}{r_2^n}
+.\] 
+\end{proof}
+\section{Конформные отображения}
+\begin{hiProb}[\S 27 №4(5)]
+Найти образ полуплоскости $\{z: \Re z<1\} $ при отображении
+\[
+	w=\frac{z-3+i}{z+1+i} 
+.\] 
+\end{hiProb}
+\begin{sol}
+\[
+	w(-1-i)=\infty,\quad w(3-i)=0,\quad w(\infty)=1
+.\]
+Т.\:к. $-1-i \not\in \{z: \Re z=1\} $, то данная прямая
+перейдёт в окружность. Точки $-1-i$ и $3-i$ симметричны относительно
+прямой $\Re z=1$, поэтому после отображения $\infty$ и $0$ будут симметричны
+относительно окружности --- образа этой прямой. Следовательно
+$0$ --- центр окружности. Также можно заметить что бесконечная
+точка принадлежит прямой и отображается в единицу, следовательно
+единица будет принадлежать получившейся окружности, и, поэтому,
+радиус окружности будет равен единице.
+\begin{figure}[htpb]
+    \centering
+    \incfig{1}
+    \caption{}
+    \label{fig:1}
+\end{figure}
+\end{sol}
+\begin{hiProb}[\S 27 №7(2)]
+	Отыскать дробно-линейную функцию $w(z)$, удовлетворяющие
+	условиям
+	\[
+		w(i)=0,\quad w(\infty)=1,\quad w(-i)=\infty
+	.\] 
+\end{hiProb}
+\begin{sol}
+Дробно-линейные функции можно представить в виде
+\[
+	w(z)= \frac{az+b}{cz+d}
+.\] 
+Из второго условия получаем $a=c$, из первого $b=-ia$, из
+третьего $d=ic$. Тогда
+\[
+	w(z)= \frac{az-ia}{az+ia}= \frac{z-i}{z+i}
+.\] 
+\end{sol}
+\begin{hiProb}[\S 27 №8]
+	Найти функцию $w(z)$, конформно отображающую область
+	$D$ на область $D_1$ и удовлетворяющую указанным
+	условиям:
+	\renewcommand{\labelenumi}{\arabic{enumi})}
+	\begin{enumerate}
+		\setcounter{enumi}{1}
+	\item $D= \{ z: |z|<1\} $, $D_1= \{w: |w|<1\} $,
+		$w(z_0)=w_0$, $\arg w'(z_0)=\alpha$ ($|z_0|<1$,
+		$|w_0|<1$);
+		\setcounter{enumi}{3}
+	\item  $D= \{z: |\Im z|>0\} $, $D_1=\{w: |w|<1\} $,
+		$w(z_0)=w_0$, $\arg w'(z_0)=\alpha$ 
+		($\Im z_0>0$, $|w_0|<1$).
+	\end{enumerate}
+\end{hiProb}
+\begin{sol}
+\renewcommand{\labelenumi}{\arabic{enumi})}
+\begin{enumerate}
+\setcounter{enumi}{1}
+\item %Поскольку при дробно-линейном отображении $w(z)$ точка
+%	$z_0$ должна перейти в точку  $w_0$, то по
+%	свойству дробно линейных отображений точка $\tilde{z}_0$,
+%	симметричная точке $z_0$ относительно окружности
+%	$|z|=1$, должна будет перейти в точку $\widetilde{w}_0$, симметричную
+%	$|w|=1$.
+%	Докажем, что
+%	\[
+%		\tilde{z}_0= \frac{1}{\overline{z}_0}
+%	.\] 
+%	Для этого заметим, что точки $\tilde{z}_0$ и $z_0$ лежат
+%	на одном луче, выходящем из $z=0$, причём
+%	\[
+%		|z_0|\cdot |\tilde{z}_0|=1
+%	.\] 
+%Тогда, записывая $z_0$ в виде
+%\[
+%z_0= |z_0| \cdot e^{i\phi}
+% ,\] 
+% получаем
+% \[
+%	 \tilde{z}_0=|\tilde{z}_0|\cdot e^{i\phi}=
+%	 \frac{1}{|z_0| e^{-i\phi}}= \frac{1}{\overline{z}_0}
+% .\] 
+% Аналогично $\widetilde{w}_0=1 / \overline{w}_0$.
+%	Любое конформное отображение круга $D$ на круг $D_1$ 
+%	имеет вид
+%	\[
+%		w(z)= \frac{z-a}{1-\overline{a}z}\cdot
+%		e^{i\theta}
+%	,\] 
+%	где $|a|<1$, $\theta \in \mathbb{R}$.
+%	В нашем случае
+%	\[
+%	w_0=\frac{z_0-a}{1-\overline{a}z_0}\cdot e^{i\theta},\quad
+%	w'(z_0)= \frac{(1-\overline{a}z_0)+\overline{a}(z_0-a)}{
+%	(1-\overline{a}z_0)^2}\cdot e^{i\theta}=
+%	\frac{1-\overline{a}a}{(1-\overline{a}z_0)^2}\cdot e^{i\theta}
+%	.\] 
+%	А также имеем следующее равенство
+%	\[
+%	\frac{1}{\overline{w}_0}=\frac{1 /\overline{z}_0-a}{1-
+%	\overline{a} /\overline{z}_0}\cdot e^{i \theta}=
+%	.\] 
+%	\[
+%		|w'(z_0)|^2= \frac{1}{\left(1-\overline{a}z_0\right)
+%		\left( 1-a \overline{z}_0 \right) }
+%	.\] 
+%	\[
+%		\frac{w'(z_0)}{|w'(z_0)|}=(1-a \overline{z}_0)
+%		e^{i\theta}=
+%		e^{i \arg w'(z_0)}=e^{i\alpha}
+%	.\] 
+%	\[
+%		w_0= \frac{z_0-a}{|1-\overline{a}z_0|^2}e^{i\alpha}
+%	.\] 
+%	И
+%	\[
+%		w(z)=
+%	.\] 
+%
+%	Пусть
+%	\[
+%		w(z)= \frac{az+b}{cz+d}
+%	.\]
+%Тогда
+%\[
+%	w'(z_0)= \frac{a(cz_0+d)-c(az_0+b)}{(cz_0+d)^2}=
+%	\frac{ad-c b}{(cz_0+d)^2}
+%.\] 
+%\[
+%	w(z_0)= \frac{az_0+b}{cz_0+d}=w_0
+%.\] 
+Рассмотрим отображение из диска в диск
+\[
+	t(z)= \frac{z-z_0}{1- z\overline{z}_0}e^{i\alpha}
+,\] 
+переводящее точку $z_0$ в нуль. Для него $\arg (t'(z_0))=\alpha$.
+
+Рассмотрим также еще одно отображение из диска в диск
+\[
+	w(t)= \frac{t+w_0}{1+t \overline{w}_0}
+,\] 
+переводящее нуль в точку $w_0$. Для него $\arg (w'(0))=0$.
+Следовательно $w(t(z_0))=w_0$. А также
+\[
+	\arg \left( \left. \frac{d w(t(z))}{dz} \right|_{z=z_0} \right) =\alpha
+.\] 
+Этим мы показали, что композиция данных отображений и будет
+искомой функцией $w(z)$. Упростим её
+\[
+	w(z)=w(t(z))= \frac{\frac{z-z_0}{1-z \overline{z}_0}e^{
+	i\alpha}+w_0}{1+ \frac{z-z_0}{1-z \overline{z}_0}e^{
+	i\alpha}\overline{w}_0}=
+	\frac{\left(e^{i\alpha}-w_0 \overline{z}_0\right)z
+	-z_0 e^{i\alpha}+w_0}{\left( e^{i\alpha}\overline{w}_0-
+\overline{z}_0\right)z+1-z_0 \overline{w}_0 e^{i\alpha} }
+.\] 
+\setcounter{enumi}{3}
+\item Рассмотрим отображение из верхней полуплоскости на
+	единичный круг
+	\[
+		t(z)= \frac{z-z_0}{z-\overline{z}_0}e^{i\alpha}
+	,\]
+переводящее $z_0$ в нуль, и отображение из единичного
+круга в единичный круг
+\[
+	w(t)=\frac{t+w_0}{1+t \overline{w}_0}
+,\] переводящее нуль в $w_0$. Заметим, что
+\[
+	\arg w'(t(z_0))= \underbrace{w'(0)}_{=0}+
+	\arg (t'(z_0))=\alpha
+.\] 
+Тем самым мы показали, что искомое отображение $w(z)$ будет
+композицией $w(t(z))$ рассмотренных отображений, и
+\[
+	w(z)= \frac{(z-z_0)e^{i\alpha}+w_0(z-\overline{z}_0}{
+	(z-\overline{z}_0)+(z-z_0)e^{i\alpha}\overline{w}_0}=
+	\frac{(w_0+e^{i\alpha})z-z_0 e^{\alpha}-w_0 \overline{z}_0}{(1+\overline{w}_0 e^{i\alpha})z-\overline{z}_0-z_0 \overline{w}_0 e^{i\alpha}}
+.\] 
+\end{enumerate}
+\end{sol}
+\begin{hiProb}[\S 28 №5]
+	Найти какие-либо функции $w(z)$, осуществляющие
+	конформные отображения областей, изображённых на
+	рис.~\ref{fig:6} на полуплоскость $\{w\colon  \Im  w >0\} $.
+\begin{figure}[ht]
+	\begin{subfigure}[b]{0.4\textwidth}
+    \centering
+    \incfig{2}
+    \caption{}
+    \label{fig:2}
+\end{subfigure}\qquad
+\begin{subfigure}[b]{0.4\textwidth}
+    \centering
+    \incfig{3}
+    \label{fig:3}
+    \caption{}
+\end{subfigure}\\
+\begin{subfigure}[b]{0.4\textwidth}
+    \centering
+    \incfig{4}
+    \label{fig:4}
+    \caption{}
+\end{subfigure}\qquad
+\begin{subfigure}[b]{0.4\textwidth}
+    \centering
+    \incfig{5}
+    \label{fig:5}
+    \caption{}
+\end{subfigure}
+\caption{}
+\label{fig:6}
+\end{figure}
+\end{hiProb}
+\begin{sol}
+\renewcommand{\labelenumi}{\asbuk{enumi})}
+\begin{enumerate}
+	\item См. рис.~\ref{fig:7}, \ref{fig:8}, \ref{fig:9}.
+\begin{figure}[htpb]
+    \centering
+    \incfig{7}
+    \caption{}
+    \label{fig:7}
+\end{figure}
+\begin{figure}[ht]
+    \centering
+    \incfig{8}
+    \caption{}
+    \label{fig:8}
+\end{figure}
+\begin{figure}[ht]
+    \centering
+    \incfig{9}
+    \caption{}
+    \label{fig:9}
+\end{figure}
+\item См. рис.~\ref{fig:10}, \ref{fig:11}.
+\begin{figure}[ht]
+    \centering
+    \incfig{10}
+    \caption{}
+    \label{fig:10}
+\end{figure}
+\begin{figure}[ht]
+    \centering
+    \incfig{11}
+    \caption{}
+    \label{fig:11}
+\end{figure}
+\item См. рис.~\ref{fig:12}, \ref{fig:13}, \ref{fig:14}.
+\begin{figure}[ht]
+    \centering
+    \incfig{12}
+    \caption{}
+    \label{fig:12}
+\end{figure}
+\begin{figure}[ht]
+    \centering
+    \incfig{13}
+    \caption{}
+    \label{fig:13}
+\end{figure}
+\begin{figure}[ht]
+    \centering
+    \incfig{14}
+    \caption{}
+    \label{fig:14}
+\end{figure}
+\item См. рис.~\ref{fig:15}, далее как в первом пункте данной задачи.
+\begin{figure}[ht]
+    \centering
+    \incfig{15}
+    \caption{}
+    \label{fig:15}
+\end{figure}
+	\end{enumerate}
+\end{sol}
+\begin{hiProb}[\S28 №10]
+	Найти какие-либо функции $w(z)$, осуществляющие
+	конформные отображения областей, изображённых
+	на рис.~\ref{fig:19} на полуплоскость
+	$\{w\colon \Im  w>0\} $.
+
+\begin{figure}[ht]
+\begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \incfig{16161616161616161616161616161616}
+    \caption{}
+    \label{fig:16}
+\end{subfigure}\qquad
+\begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \incfig{17}
+    \caption{}
+    \label{fig:17}
+\end{subfigure}\\
+\begin{subfigure}[b]{0.9\textwidth}
+    \centering
+    \incfig{18}
+    \caption{}
+    \label{fig:18}
+\end{subfigure}
+\label{fig:19}
+\caption{}
+\end{figure}
+\end{hiProb}
+\begin{sol}
+\renewcommand{\labelenumi}{\asbuk{enumi})}
+\begin{enumerate}
+\item См. рис.~\ref{fig:20}.
+\begin{figure}[ht]
+    \centering
+    \incfig{20}
+    \caption{}
+    \label{fig:20}
+\end{figure}
+\item См. рис.~\ref{fig:21}.
+\begin{figure}[ht]
+    \centering
+    \incfig{21}
+    \caption{}
+    \label{fig:21}
+\end{figure}
+\item См. рис.~\ref{fig:22}.
+\begin{figure}[ht]
+    \centering
+    \incfig{22}
+    \caption{}
+    \label{fig:22}
+\end{figure}
+\end{enumerate}
+\end{sol}
+\begin{hiProb}[\S 28 №11]
+	Найти какие либо функции $w(z)$, осуществляющие
+	конформные отображения области, изображённой
+	на рис.~\ref{fig:23}, на круг $\{w\colon |w|<1\} $.
+\begin{figure}[ht]
+    \centering
+    \incfig{23}
+    \caption{23}
+    \label{fig:23}
+\end{figure}
+\end{hiProb}
+
+\end{document}
