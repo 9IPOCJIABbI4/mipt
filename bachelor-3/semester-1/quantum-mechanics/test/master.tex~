@@ -1,0 +1,53 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Контрольная работа по квантовой механике}
+\begin{document}
+	\maketitle
+\prob{Задача 1}
+С помощью теории возмущений найдём поправки к уровням энергии
+линейного гармонического осциллятора, возмущённого полем вида
+$\hat{V}=ax$. Для расчётов используем выражение оператора
+координаты  $\hat{x}$ для гармонического осциллятора через
+операторы рождения и уничтожения ( $x_0$ --- осцилляторная
+единица длины)
+\[
+	\hat{x}= \frac{x_0}{\sqrt{2} }\left(\hat{a}^++ \hat{a}\right)
+.\] 
+Поправка первого приближения $E_n^{(1)}=0$, т.\:к. $\left<
+\hat{x}^{2k+1}\right> = 0$. Поправка второго приближения
+\[
+	E_n^{(2)}= \sum_{k \neq n}^{} \frac{|V_{nk}|^2}{E_n^{(0)}-E_k^{(0)}}=\frac{a^2 x_0^2}{2}\left( \frac{n}{\hbar \omega}-
+	\frac{n+1}{\hbar \omega}\right) =
+	-\frac{\alpha^2}{2m \omega^2}
+ ,\] 
+ где $V_{nk}=\left<n \left| \hat{V} \right| k \right>$,
+ $E_n^{(0)}=\hbar \omega (n+ 1 /2)$.
+\begin{multline*}
+\frac{m \omega^2 x^2}{2}+a x=\frac{m \omega^2 x^2}{2}+ax+
+\frac{a^2}{2m\omega^2}- \frac{a^2}{2 m \omega^2}=
+\left( \omega \sqrt{\frac{m}{2}} x+ \frac{a}{\omega} \sqrt{\frac{1}{2m}}  \right)^2 - \frac{a^2}{2 m \omega^2} =\\=
+\frac{m \omega^2}{2}\left( x+ \frac{a}{\omega^2 m} \right)^2 -
+\frac{a^2}{2m \omega^2} \xlongequal[]{y= x + a / (\omega^2 m)}
+\frac{m\omega^2 y^2}{2}- \frac{a^2}{2 m \omega^2}
+.\end{multline*} 
+Запишем стационарное уравнение Шрёдингера в координатном представлении
+
+\[
+	\left\{ - \frac{\hbar^2}{2m} \frac{d^2}{dx^2}+V(x) \right\} 
+	\psi_E(x)=E \psi_E(x)
+.\] 
+\[
+	\left\{ - \frac{\hbar^2}{2m} \frac{d^2}{dy^2}+V(y) \right\} 
+	\psi_E\left( y - \frac{a}{m \omega^2} \right) =E \psi_E\left( y - \frac{a}{m \omega^2} \right)
+.\]
+\prob{Задача 2}
+\begin{sol}
+\[
+	\left[ \hat{L}_j,\, \hat{x}_k \hat{p}_l \right] =
+	\hat{x}_k \left[ \hat{L}_j,\,\hat{p}_l \right] +
+	\left[ \hat{L}_j,\,\hat{x}_k \right] \hat{p}_l=
+	i\hat{x}_k \epsilon_{jli} \hat{p}_i+
+	i  \epsilon_{jki}\hat{x}_i\hat{p}_l
+.\] 
+\end{sol}
+\end{document}
