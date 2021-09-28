@@ -1,0 +1,1561 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\usepackage{mmacells}
+\title{Второе задание по вычислительной математике}
+\begin{document}
+	\maketitle
+	\section*{Тема IV. Нелинейные уравнения}
+\begin{hiProb}[11.3]
+Построить метод Ньютона для вычисления числа $1 /a$ так, чтобы
+расчётные формулы не содержали операций деления. Определить
+область сходимости метода при $a>0$.
+\end{hiProb}
+\begin{sol}
+%Пусть
+%\[
+%	F(x)= \frac{1}{ax}-1
+% ,\] 
+%\[
+%	F(x)=af(x),\quad F'(x)=\frac{f(x)}{a}
+%.\] 
+%\[
+%	\frac{dF}{dx}=a f'(x)= \frac{f(x)}{a}
+%.\] 
+%\[
+%\frac{df}{f}=\frac{dx}{a^2}
+%.\] 
+%\[
+%\ln f=\frac{x}{a^2}+C
+%.\] 
+%\[
+%	f =\tilde{C}e^{\frac{x}{a^2}}
+%.\] 
+%\[
+%	F(x)=a \tilde{C}e^{\frac{x}{a^2}}
+%.\] 
+%\[
+%\frac{F}{F'}=e^{-n}
+%.\] 
+%тогда корнем данного уравнения будет являться число $x =1 /a$.
+%
+%Строим итерационный процесс
+%\[
+%x^{n+1}
+%.\] 
+	Пусть
+\[
+	F(x)= \frac{1}{x^2}-a^2=0
+.\] 
+Строим итерационный процесс
+\[
+	x^{n+1}= \frac{x_n \left(3-a^2 (x^n)^2\right)}{2}
+.\] 
+%Функция $F(x)$ определена и дважды непрерывно дифференцируема
+%на любом интервале $|x-x^0|<r\; (r>0)$ который не включает
+%точку $x=0$. $F(x^0)\neq 0$, если $x^0 \neq a$,
+%$F'(x)= - 2 /x^3\neq 0 \;\forall x$.
+%\[
+%	M=\sup \left| \frac{F''(x)}{F'(x^0)} \right|=
+%	\sup \left| \frac{(3 x^0)^3}{x^4} \right|
+%	=\sup \left| \frac{(3x^0)^3}{\inf\limits_{|x-x^0|<r}|x|} \right| >0
+%.\] 
+%\[
+%	2M \cdot \left| \frac{F(x^0)}{F'(x^0)} \right| =
+%	2M\cdot \left| \frac{1}{4}x^0\left(a^2 (x^0)^2-2\right) \right| 
+%.\] 
+Т.\:к. $F'(1 /a)=-2a^3\neq 0$ то $\exists U_\delta$:
+\[
+	\forall x \in U_\delta: \left| \frac{FF''(x)}{(F'(x))^2} \right|= \left| \frac{3}{2}(1-a^2 x^2) \right|  <1
+.\]
+Откуда находим область сходимости
+\[
+	\left(-\frac{1}{a} \sqrt{\frac{5}{3}} ,\,-\frac{1}{\sqrt{3} a} \right) \cup \left( \frac{1}{\sqrt{3} a},\, \frac{1}{a}\sqrt{\frac{5}{3}}  \right) 
+.\] 
+\end{sol}
+\begin{hiProb}[11.14]
+Для нахождения положительного корня нелинейного уравнения
+\[
+	x \ln (x+2) +x^2-1=0,
+\] 
+предложено несколько вариантов МПИ:
+\begin{enumerate}
+	\item $x_{n+1}=(1-x_n^2) / \ln(x_n+2)$,
+	\item $x_{n+1}=\exp (1 /x_n-x_n)-2$,
+	\item  $x_{n+1}=\sqrt{1-x_n \ln(x_n+2)} $,
+	\item $x_{n+1}= 1 /x_n -\ln (x_n+1)$
+\end{enumerate}
+Исследовать эти методы
+и сделать выводы о целесообразности использования каждого
+из них.
+\end{hiProb}
+\begin{sol}
+График данного нелинейного уравнения, а также графики
+всех $f'(x)$ задаваемых соотношениями $x_{n+1}=f(x_n)$
+представлены на рис.~\ref{fig:1}.\begin{figure}[]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			xmin= 0.5, xmax= 0.7,
+			ymin= -25, ymax= 1,
+			axis lines = middle,
+legend pos=south east,
+		]
+			\addplot[tabbrown,domain=0.5:0.7, samples=100]{x*
+				ln(x+2)+x^2-1};
+			\addplot[tabblue,domain=0.5:0.7, samples=100]{
+			(-1+x^2-2*x*(2+x)*ln(2+x))/((2+x)*(ln(2+x))^2};
+			\addplot[tabred,domain=0.5:0.7, samples=100]{exp(1/x-x)*(-1-1/(x^2))};
+			\addplot[taborange,domain=0.5:0.7, samples=100]{
+		(-(x/(2 + x)) - ln(2 + x))/(2.*sqrt(1 - x*ln(2 + x)))	};
+			\addplot[tabgreen,domain=0.5:0.7, samples=100]{
+	-x^(-2) - 1/(1 + x)	};
+			\addplot[dashed,domain=0.5:0.7, samples=100]{
+	-1};
+\legend{$F(x)$,$f'_1(x)$,$f_2'(x)$,$f_3'(x)$, $f_4'(x)$,$-1$},
+		\end{axis}
+	\end{tikzpicture}
+	\caption{}
+	\label{fig:1}
+\end{figure}
+В некоторой окрестности единственного
+положительного корня лишь одна $f'_3(x)$ может принимать значения
+меньше единицы. Следовательно лишь третий МПИ будет сходиться
+в окрестности положительного корня данного нелинейного уравнения.
+\end{sol} 
+\begin{hiProb}[11.1а]
+Определить область изменения параметров $a$, $b$ и $c$, при
+которых метод простой итерации $x^{(n+1)}=\phi\left( x^{(n)} \right) $ сходится для любого начального приближения $x_0 \in \mathbb{R}$, если 
+\[
+	\phi(x)=a \sin x +b \cos x+c
+.\] 
+\end{hiProb}
+\begin{sol}
+Найдём
+\[
+	\phi'(x)=a \cos x-b \sin x
+ ,\] 
+\[
+	\phi''(x)=-a \sin x- b \cos x
+.\] 
+Для нахождения экстремумов $\phi'(x)$ решим уравнение
+\[
+	\phi''(x)=0 \implies x_\text{extr} = -\arctg \frac{b}{a}
+.\]
+Тогда
+\[
+	\phi'(x_{\text{extr}})=\sqrt{a^2+b^2} 
+.\] 
+И условие сходимости будет выглядеть как
+\[
+\sqrt{a^2+b^2} <1
+.\] 
+\end{sol}
+\begin{hiProb}[12.4б]
+Отделить корни уравнения
+\[
+3x+4x^3-12x^2-5=0
+ ,\] 
+а затем уточнить один из них с помощью подходящего итерационного
+процесса.
+\end{hiProb}
+\begin{sol}
+Построим график функции
+\[
+	f(x)=3x+4x^3-12x^2-5
+\] 
+(см. рис.~\ref{fig:2}).
+\begin{figure}[]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			xmin= -2, xmax= 4,
+			ymin= -50, ymax = 30,
+			xlabel={$x$},
+			ylabel={$f(x)$},
+			axis lines = middle,
+		]
+			\addplot[domain=-2:4, samples=100]{3*x+4*x^3-12*x^2-5};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{}
+	\label{fig:2}
+\end{figure}
+Из рисунка очевидно, что исследуемое уравнение имеет лишь один
+корень на действительной прямой.
+
+График функции
+\[
+	 \frac{f(x) f''(x)}{(f'(x))^2}=
+\frac{8 (x-1) \left(4 x^3-12 x^2+3 x-5\right)}{3 \left(4 x^2-8 x+1\right)^2}
+\]
+в окрестности $(2,8;\,3,0)$ ($f(2,8)<0,\; f(3,0)>0$) изображён
+на рис.~\ref{fig:3}.
+\begin{figure}[]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			xmin= 2.8, xmax= 3,
+			axis lines = middle,
+			xlabel={$x$},
+			ylabel={$\dfrac{f(x) f''(x)}{(f'(x))^2}$},
+		]
+			\addplot[domain=2.8:3, samples=100]{(8*(-1 + x)*(-5 + 3*x - 12*x^2 + 4*x^3))/(3.*(1 - 8*x + 4*x^2)^2)};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{}
+	\label{fig:3}
+\end{figure}
+Заметим, что
+\[
+	\left| \frac{f(x)f''(x)}{(f'(x))^2} \right| <1
+\]
+на $(2,8;\,3,0)$ поэтому метод Ньютона в данном случае будет
+сходиться. Применим его:
+\[
+x_{n+1}=\frac{8 x_n^3-12 x_n^2+5}{12 x_n^2-24 x_n+3} 
+.\] 
+На 12-й итерации метода получим значение, не отличающеюся от
+11-й с точностью до машинной погрешности
+\[
+x_{12}=2,8901453858415
+.\] 
+\end{sol}
+\begin{hiProb}[12.5а]
+Вычислить с точностью $\epsilon=10^{-3}$ координаты точек пересечения кривых
+\[
+	\sin(x+1)-y=1.2,\quad 2x+\cos y=2
+.\] 
+\end{hiProb}
+\begin{sol}
+Построение к данной задаче приведено на рис.~\ref{fig:4}.
+\begin{figure}[]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			xmin= -3, xmax= 3,
+			ymin= -3, ymax = 4,
+			%axis lines = middle,
+			grid=both,
+			legend pos= north west
+		]
+		\addplot[tabgreen,domain=-3:3, samples=100]{sin(deg(x+1))-1.2};
+		\addplot[tabblue,domain=0.5:1.5, samples=100]{-rad(acos(2*(1-x)))};
+		\addplot[taborange,domain=0.5:1.5, samples=100]{rad(acos(2*(1-x)))};
+		\legend{$\sin(1+x)-1.2$,$-\arccos (2(x-1))$,$\arccos (2(x-1))$}
+		\end{axis}
+	\end{tikzpicture}
+	\caption{}
+	\label{fig:4}
+\end{figure}
+Видно, что у данной системы есть единственное решение на пересечении $\sin (1+x)-1.2$ и $-\arccos(2(x-1))$.
+В нашем случае
+\[
+	\mathbf{u}= \begin{pmatrix} x\\y \end{pmatrix} ,\quad
+	\mathbf{F}(\mathbf{u})=
+	\begin{pmatrix} y+1.2-\sin(x+1)\\2x+\cos y -2 \end{pmatrix} 
+.\] 
+\[
+	\mathbf{J}=	\frac{d\mathbf{F}}{d\mathbf{u}}= \begin{pmatrix} 
+	\dfrac{\partial F_1}{\partial x} &
+\dfrac{\partial F_1}{\partial y}\\
+\dfrac{\partial F_2}{\partial x} &
+\dfrac{\partial F_2}{\partial y} \end{pmatrix} 
+=\begin{pmatrix} 
+-\cos(1+x)& 1\\ 2& -\sin y\end{pmatrix} 
+.\] 
+Как начальное приближение выберем
+\[
+	\mathbf{u}^0= \begin{pmatrix} 0.5 \\-0.2 \end{pmatrix} 
+.\] 
+Следующее приближение к корню согласно методу Ньютона тогда
+будет построено как
+\[
+	\mathbf{u}^{k+1}\approx \mathbf{u}^k +\mathbf{J}^{-1}\cdot
+	\mathbf{F}\left( \mathbf{u}^k \right) 
+.\]
+Данную систему можно представить в эквивалентном виде
+\[
+	\mathbf{u}=\mathbf{f}(\mathbf{u})
+,\]
+где
+\[
+	\mathbf{f}(\mathbf{u})=\begin{pmatrix} 
+	1- 0.5 \cos y\\ \sin (x+1)-1.2\end{pmatrix} 
+.\] 
+Значит для неё можно построить МПИ
+\[
+	\mathbf{u}^{n+1}=\mathbf{f}\left( \mathbf{u}^n \right) 
+.\] 
+Ниже приведена программная реализация данного алгоритма
+на Mathematica.
+\begin{mmaCell}[moredefined={RealAbs,testcell, f, u, i},morepattern={x_, y_, y, x, k_, k}]{Input}
+  f[x_,y_]:=\{1-0.5 Cos[y], Sin[x+1]-1.2\}
+  u[0] = \{0.5, -0.2\};
+  u[k_]:=u[k]=f[x,y]/.\{x\(\pmb{\to}\)u[k-1][[1]],y\(\pmb{\to}\)u[k-1][[2]]\}
+  i=1;
+  While[
+  RealAbs[u[i][[1]]-u[i-1][[1]]]>\mmaSup{10}{-3}u[i-1][[1]]&&
+  RealAbs[u[i][[2]]-u[i-1][[2]]]>\mmaSup{10}{-3}u[i-1][[2]],
+  i++
+  ]
+  i
+  u[i]
+\end{mmaCell}
+\begin{mmaCell}[]{Output}
+  16
+\end{mmaCell}
+\begin{mmaCell}{Output}
+  \{0.5101297456452708`,-0.20183868954136786`\}
+\end{mmaCell}
+Откуда с точностью до $\epsilon=10^{-3}$ находим координаты
+точки пересечения:
+\[
+	\mathbf{u}=\begin{pmatrix} 
+	0.510\\ -0.202\end{pmatrix} 
+.\] 
+\end{sol}
+\begin{hiProb}[6.1]
+	Привести пример функции $f(x)$, заданной на множестве
+	$U=R$ и обладающей следующим свойством
+\renewcommand{\labelenumi}{\asbuk{enumi})}
+	\begin{enumerate}
+		\item глобальный минимум $f(x)$ достигается на
+			счётном множестве точек;
+		\item  $f(x)$ имеет бесконечное число точек
+			локального минимума, но глобальный
+			минимум $f(x)$ на $U$ не достигается;
+		\item $f(x)$ ограничена снизу на $U$, но не
+			достигает минимума.
+	\end{enumerate}
+\end{hiProb}
+\begin{sol}
+\renewcommand{\labelenumi}{\asbuk{enumi})}
+\begin{enumerate}
+\item $\sin x$ ;
+\item $x \sin x$ ;
+\item $\arctg x$.
+\end{enumerate}
+\end{sol}
+\section*{Тема V. Задачи нахождения экстремума функции}
+\begin{hiProb}[7.1а]
+Используя методы дихотомии и сведения вариационной задачи к
+задаче алгебраического уравнения, найти точку локального минимума
+функции
+\[
+	f(x)= 2x^2 -\ln x
+.\] 
+\end{hiProb}
+\begin{sol}
+График данного уравнения приведён на рис.~\ref{fig:5}.
+\begin{figure}[htpb]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			xmin= 0, xmax= 2.25,
+			ymin= 0, ymax = 9,
+			axis lines = middle,
+			ylabel={$f(x)$},
+			xlabel={$x$}
+		]
+		\addplot[domain=0:2.25, samples=100]{2*x^2-ln(x)};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{}
+	\label{fig:5}
+\end{figure}
+Из построения видно, что минимум локализован на отрезке $[0,\,1]$.
+Далее представлен код в Mathematica для метода дихотомии.
+\begin{mmaCell}[moredefined={u,x,min,f, a, b, i},morepattern={x_, n_, n}]{Input}
+  f[x_]:=2\mmaSup{\mmaPat{x}}{2}-Log[\mmaPat{x}]
+  a[0]=0.;
+  b[0]=1.;
+  \mmaDef{\(\pmb{\Delta}\)}[n_]:=\mmaFrac{b[n]-a[n]}{100}
+  \mmaSub{u}{1}[n_]:=\mmaFrac{b[n-1]+a[n-1]-\mmaDef{\(\pmb{\Delta}\)}[n-1]}{2}
+  \mmaSub{u}{2}[n_]:=\mmaFrac{b[n-1]+a[n-1]+\mmaDef{\(\pmb{\Delta}\)}[n-1]}{2}
+  a[n_]:=a[n]=Piecewise[\{\{a[n-1],f[\mmaSub{u}{1}[n]]\(\pmb{\leq}\) f[\mmaSub{u}{2}[n]]\},
+  \{\mmaSub{u}{1}[n],f[\mmaSub{u}{1}[n]]\(\pmb{\geq}\)f[\mmaSub{u}{2}[n]]\}\}]
+  b[n_]:=b[n]=Piecewise[\{\{\mmaSub{u}{2}[n],f[\mmaSub{u}{1}[n]]\(\pmb{\leq}\) f[\mmaSub{u}{2}[n]]\},
+  \{b[n-1],f[\mmaSub{u}{1}[n]]\(\pmb{\geq}\)f[\mmaSub{u}{2}[n]]\}\}]
+  \mmaSub{x}{min}[n_]:=\mmaFrac{a[n]+b[n]}{2}
+  i=1;While[\mmaSub{x}{min}[i]=!=\mmaSub{x}{min}[i-1],i++] 
+  i
+  \mmaSub{x}{min}[i]
+\end{mmaCell}
+\begin{mmaCell}[]{Output}
+  61
+\end{mmaCell}
+\begin{mmaCell}{Output}
+  0.49999988529080724`
+\end{mmaCell}
+Теперь найдём точку локального минимума методом сведения
+вариационной задачи к задаче алгебраического уравнения:
+\[
+	f'(x)=4x-\frac{1}{x}=0 \implies x_{\text{min}}= \frac{1}{2}
+.\] 
+\end{sol}
+\begin{hiProb}[7.5а]
+Методом покоординатного спуска найти точки локального минимума
+функции
+\[
+	f(x,\,y)=\left( x^2+y-11 \right) +(x+y^2-7)^2
+.\] 
+\end{hiProb}
+\begin{sol}
+	График данной функции представлен на рис.~\ref{fig:6}.
+	\begin{figure}[htpb]
+\begin{tikzpicture}
+\begin{axis}
+\addplot3[
+    surf,
+]
+{
+	( x^2+y-11 ) +(x+y^2-7)^2
+};
+\end{axis}
+\end{tikzpicture}
+\caption{}
+\label{fig:6}
+\end{figure}
+	Если рассмотреть функцию $f(x,\,y)$ как функцию одной
+	переменной $x$ при фиксированном $y$, то минимум
+	для неё можно найти следующим образом
+	\[
+		f_y'(x_{\text{min}})=0 \implies x_\text{min}=
+		\frac{1}{2}\left( 7-y^2 \right) 
+	.\]
+	Аналогично для $y$ 
+	\[
+		f_x'(y_\text{min})=0\implies4 x y_{\min }+4 y_{\min }^3-28 y_{\min }+1=0
+	.\]
+	Аналитические выражения можно получить для всех трёх
+	вообще говоря комплексных корней данного уравнения.
+	Из них как минимум один будет действительным, в
+	процессе метода будем выбирать именно его (один
+	из пары, если таковых два).
+%	Откуда
+%	\[y_{\text{min}}=
+%\frac{1}{12} \sqrt[3]{\sqrt{(48 x-336)^3+46656}-216}-\frac{4 (x-7)}{\sqrt[3]{\sqrt{(48 x-336)^3+46656}-216}}	
+%	.\] 
+	За начальное приближение возьмём пару
+	$(x,\,y)=(0,\,0)$. Код в Mathematica для метода
+	покоординатного спуска приведён далее
+\begin{mmaCell}[moredefined={x, y, i},morepattern={n_, n}]{Input}
+  x[0]=0.;
+  y[0]=0.;
+  x[n_]:=x[n]=\mmaFrac{1}{2} (7-\mmaSup{y[n-1]}{2})
+  y[n_]:=y[n]=y/.First[
+  Solve[1+4 y(-7+x+\mmaSup{y}{2})==0,y,\(\mmaDef{\mathbb{R}}\)]/.x\(\pmb{\to}\)x[n]]
+  i=1;While[x[i]=!=x[i-1]&&y[i]=!=y[i-1],i++] 
+  i
+  x[i]
+  y[i]
+\end{mmaCell}
+\begin{mmaCell}[]{Output}
+  51
+\end{mmaCell}
+\begin{mmaCell}{Output}
+  -0.09325687922159798`
+\end{mmaCell}
+\begin{mmaCell}{Output}
+  -2.680767382381992`
+\end{mmaCell}
+Откуда координаты минимума
+\[
+x_\text{min} = -0.09325687922159798
+,\] 
+\[
+y_\text{min} =
+  -2.680767382381992
+.\] 
+\end{sol}
+\section*{Тема VI. Интерполяция}
+\begin{hiProb}[7.3]
+Доказать, что если узлы интерполяции расположены симметрично
+относительно некоторой точки $c$, а значения интерполируемой
+функции в симметричных узлах равные, то интерполяционный
+многочлен в форме Лагранжа --- чётная функция аргумента $x-c$
+\end{hiProb}
+\begin{proof}
+Интерполяционный многочлен в форме Лагранжа имеет следующий вид
+\[
+	P_n(x)=P_n(x,\,f,\,x_0,\ldots,\,x_n)=f(x_0)l_0(x)+
+	f(x_1)l_1(x)+\ldots+f(x_{n})l_n(x)
+,\] 
+где
+\[
+	l_k= \frac{(x-x_0)\ldots(x-x_{k-1})(x-x_{k+1})\ldots
+	(x-x_{n})}{(x_k-x_0)\ldots(x_k-x_{k-1})(x_k-x_{k+1})\ldots
+(x_k-x_n)}
+.\] 
+Пусть $y=x-c$. Тогда
+\[
+	l_k= \frac{(y+c-x_0)\ldots(y+c-x_{k-1})(y+c-x_{k+1})\ldots
+	(y+c-x_{n})}{(x_k-x_0)\ldots(x_k-x_{k-1})(x_k-x_{k+1})\ldots
+(x_k-x_n)}
+.\]
+Пронумеруем узлы следующим образом: узел находящийся в точке $c$ (если таковой имеется) будет иметь индекс 0, все остальные узлы
+будут нумероваться по порядку удаления от $c$, т.\:е. 1, 2, 3 \ldots, $N$ справа и $-1$, $-2$, $-3$ \ldots, $N$ слева.
+Также введём обозначение
+$\Delta_n=x_n-c$.
+Тогда
+\[
+	l_k= \frac{y\ldots (y^2 -\Delta_{k-1}^2)(y+\Delta_k)
+	(y^2-\Delta_{k+1}^2)\ldots (y^2-\Delta_{N}^2)}{
+(\Delta_k-\Delta_{-N}) \ldots(\Delta_k-\Delta_{k-1})(\Delta_k-\Delta_{k+1})\ldots(\Delta_k-\Delta_N)}
+.\] 
+Из симметрии задачи следует, что для любых $k$ и $n$ выполняются
+соотношения
+\[
+\Delta_k=-\Delta_{-k},\quad\Delta_k-\Delta_n=\Delta_{-n}-\Delta_{-k}
+.\] 
+Следовательно
+\[
+	l_k(-y)=l_{-k}(y)
+.\] 
+Для случая отсутствия точки $x_0$ аналогично доказывается
+такое же тождество.
+Окончательно
+\begin{multline*}
+	P_n(-y)=f(x_0)l_0(-y)+
+	f(x_1)l_1(-y)+\ldots+f(x_{n})l_n(-y)=\\=
+	f(x_0)l_0(y)+ f(x_1)l_1 (y)+\ldots +
+	f(x_{n})l_n(y)=P_n(y)
+.\end{multline*}
+%\[
+%	l_k(-y)= \frac{(2c-x-x_0)\ldots(2c-x-x_{k-1})(2c-x-x_{k+1})\ldots
+%	(2c-x-x_{n})}{(x_k-x_0)\ldots(x_k-x_{k-1})(x_k-x_{k+1})\ldots
+%(x_k-x_n)}
+%.\]
+%\[
+%c+
+%.\] 
+\end{proof}
+\begin{hiProb}[7.11]
+	Показать, что на равномерной сетке норма многочлена
+	\[
+		\omega_{n+1}(x)=(x-x_0)(x-x_1)\ldots (x-x_n)
+	,\]
+	\[
+		\| \omega_{n+1}(x)\|\approx n! h^{n+1},\quad
+		h=(x_n-x_0)/n
+	.\] 
+\end{hiProb}
+\begin{sol}
+%Пусть $x_k=x_0+k h$, $y=x-x_0$. Тогда
+%\[
+%	\omega_{n+1}(x)=(x-x_0)\left(x-x_0-h\right)\ldots\left(x-x_0 -n h\right)
+%.\] 
+%\[
+%	\omega_{n+1}(x)=y\left(y-h\right)\ldots\left(y-n h\right)
+%.\]
+Очевидно, что для $x \in [x_{i-1},\,x_i]$
+\[
+|x-x_{i-1}| |x-x_i|\le \frac{h^2}{4}
+.\] 
+Для $j<i-1$ очевидна оценка $|x-x_j|\le (i-j)h$, а
+для $j>i$ --- $|x-x_i|\le (j+i-i)h$. Учитывая все
+эти оценки, получим для $x \in [x_{i-1},\,x_i]$ 
+\[
+	|\omega_{n+1}(x)|= \prod_{j=0}^{n} |x-x_j|\le 
+	\frac{h^2}{4}i! h^{i-1} (n+1-i)!h^{n-i}\le 
+	\frac{i!(n+1-i)!}{4}h^{n+1}
+.\] 
+
+Пусть $n\ge 2$ и $i \in \{1,\,2,\ldots,\,n-1\} $ обозначает номер внутреннего интервала. Для произвольной точки
+$x \in (x_{i-1},\,x_i)$ построим симметричную относительно
+середины отрезка $[x_0,\,x_i]$ точку $y \in (x_0,\,x_1)$,
+т.\:е. возьмём $y=x_0+x_i-x$. Тогда $|x-x_j|=|y-x_{i-j}|$ 
+для всех $j = \overline{0,\,i}$, так что $|\omega_{i+1}(y)|=|\omega_{i+1}(x)|$. Но $|y-x_j|>|x-x_j|$ для
+$j=i + \overline{1,\,n}$. Поэтому $|\omega_{n+1}(y)|>
+\omega_{n+1}(x)$. В силу произвольности $x \in (x_{i-1},\,
+ x_i)$ это означает, что максимальное по модулю
+ значение  $\omega_{n+1}$ на первом отрезке строго больше
+максимального значения $|\omega_{n+1}|$ на любом внутреннем. Наконец, осталось заметить, что в силу симметричного
+относительно середины отрезка $[x_0,\,x_n]=[a,\,b]$
+расположения узлов, этом максимум достигается также
+на отрезке $[x_{n-1},\,x_n]$. Тогда, применяя предыдущую
+оценку для $i=1$, получаем
+\[
+	\| \omega_{n+1}(x)\|\le \frac{n!}{4}h^{n+1}\approx n! h^{n+1}
+.\] 
+\end{sol}
+\begin{hiProb}[8.7]
+С какой точностью можно извлечь кубический корень из $1200$,
+интерполируя функцию $f(x)= \sqrt[3]{x} $ между узлами
+$x_0=10^3$, $x_1=11^3=1331$, $x_2=12^3=1728$?
+\end{hiProb}
+\begin{sol}
+Выпишем вспомогательные многочлены
+\[
+	l_0=\frac{(x-x_1)(x-x_2)}{(x_0-x_1)(x_0-x_2)}
+,\] 
+\[
+	l_1=\frac{(x-x_0)(x-x_2)}{(x_1-x_0)(x_1-x_2)}
+,\]
+\[
+	l_2=\frac{(x-x_0)(x-x_1)}{(x_2-x_0)(x_2-x_1)}
+.\]
+Интерполяционный многочлен в форме Лагранжа тогда будет иметь вид
+\[
+	P_2(x)=f(x_0)l_0+f(x_1)l_1+f(x_2)l_2
+.\] 
+Погрешность алгебраической интерполяции можно оценить как
+\[
+	\| R_2(x)\|\le  \frac{\left\| \left( \sqrt[3]{x}  \right)''' \right\|}{3!}\| (x-x_0)(x-x_1)(x-x_2)\|
+.\] 
+\[
+	\| R_2(1200)\|\approx0,005
+.\] 
+%\[
+%	(x-x_0)(x-x_1)(x-x_2)'=0\implies x_{1,\,2}^\text{extr}=
+%\frac{1}{3} \left(4059\pm\sqrt{398577}\right)
+%.\] 
+%\[
+%\| (x-x_0)(x-x_1)(x-x_2)\|=\| (x^\text{extr}_1-x_0)(x^\text{extr}_1-x_1)(x^\text{extr}_1-x_2)\|\approx 2.16 \cdot 10^7
+%.\] 
+%\[
+%	\left( \sqrt[3]{x}  \right) '''=\frac{10}{27 x^{8/3}},\quad
+%	\left\|\left( \sqrt[3]{x}  \right) '''\right\|=
+%	\frac{10}{27x_0^{8 /3}}=3.70\cdot 10^{-9}
+%.\] 
+%\[
+%	\| R_2 (x)\|\le 1.33 \cdot 10^{-2}
+%.\] 
+\end{sol}
+\begin{hiProb}[8.13]
+Задана табличная функция.
+\begin{table}[htpb]
+	\centering
+	\label{tab:1}
+	\begin{tabular}{|c|c|c|c|c|}
+	\hline
+	$x$&0  &$\pi /6$  &$\pi /4$  &$\pi /3$  \\ \hline
+	$\sin (x)$ & 0& 0.5 & 0.71&0.87 \\ \hline
+	\end{tabular}
+\end{table}
+С какой точностью можно восстановить значение в точке $x = 7 \pi /24$,
+если известно, что функция в узлах задана с абсолютной погрешностью, не превосходящей $10^{-2}$?
+\end{hiProb}
+\begin{sol}
+\[
+	l_0= \frac{(x-x_1)(x-x_2)(x-x_3)}{(x_0-x_1)(x_0-x_2)
+	(x_0-x_3)}
+.\] 
+\[
+	l_1=\frac{(x-x_0)(x-x_2)(x-x_3)}{(x_1-x_0)(x_1-x_2)(
+	x_1-x_3)}
+.\] 
+\[
+	l_2= \frac{(x-x_0)(x-x_1)(x-x_3)}{(x_2-x_0)(x_2-x_1)
+	(x_2-x_3)}
+.\] 
+\[
+	l_3= \frac{(x-x_0)(x-x_1)(x-x_2)}{(x_3-x_0)(x_3-x_1)(x_3-x_2)}
+.\] 
+\[
+	P_3(x)=f(x_0)l_0+f(x_1)l_1+f(x_2)l_2+f(x_3)l_3
+.\] 
+\[
+	L_3(x)= \sum_{k=0}^{3} |l_k(x)|
+.\] 
+Возмущение интерполяционного многочлена при возмущении задания
+функции в узлах на $10^{-2}$ можно оценить как
+\[
+	\left\| P_3\left(\frac{7\pi}{24},\,\delta f\right)\right\|\le \left\| \delta f\left(\frac{7\pi}{24}\right)\right\|L_3\left(\frac{7\pi}{24}\right)=
+	10^{-2}\cdot 1.44
+.\] 
+Погрешность интерполяции
+\[
+	\left\| R_3\left( \frac{7\pi}{24} \right) \right\|
+	\le \frac{\left\lVert  \left. \sin  x ^{(4)} \right|_{x= \frac{7\pi}{24}}\right\rVert}{4!}\left\| \omega_4\left( \frac{7\pi}{24} \right) \right\|\approx 2 \cdot 10^{-4}
+.\] 
+\end{sol}
+\begin{hiProb}[8.18в]
+Выбрать вид аппроксимации Паде и найти коэффициенты аппроксимации
+для функции
+\[
+	f(x)=x^2 \exp \left( -x^2 \right) 
+.\] 
+\end{hiProb}
+\begin{sol}
+\[
+	f(x) = x^2-x^4-\ldots
+.\] 
+Вычислим аппроксимацию Паде $[5 /1]$ этой функции
+ \[
+	 \frac{a_0+a_1 x+a_2 x^2+a_3 x^3}{1+b_1 x}=x^2-x^4 +O(x^6)
+,\] 
+или, умножая на знаменатель,
+\[
+	a_0+a_1 x+a_2 x^2+a_3 x^3+a_4 x^4+a_5 x^5=(1+b_1 x)\left(x^2-x^4+O(x^6)\right)
+.\] 
+Откуда
+\[
+	[5 /1]= \frac{x^2+x^3-x^4-x^5}{1+x}
+.\] 
+\end{sol}
+\begin{hiProb}[9.1в]
+Методом обратной интерполяции найти корень нелинейного
+уравнения
+\[
+4x- \cos x=0
+,\] 
+используя приведённую таблицу. Оценить точность
+полученного решения.
+\begin{table}[htpb]
+	\centering
+	\label{tab:2}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+	$x$ & $x_1=0$  & $x_2=0.1$ & $x_3=0.3$ & $x_4=0.5$  \\
+	\hline $f(x)$ & $-1$ & $-0.595$ &$0.245$ & $1.122$ \\ \hline
+	\end{tabular}
+\end{table}
+\end{hiProb}
+\begin{sol}
+\[
+	f'(x)=4+\sin x \neq 0\; \forall x\implies \exists f^{-1}(x)=
+	x(f)
+.\] 
+\[
+	l_0= \frac{(f-f_1)(f-f_2)(f-f_3)}{(f_0-f_1)(f_0-f_2)
+	(f_0-f_3)}
+.\] 
+\[
+	l_1=\frac{(f-f_0)(f-f_2)(f-f_3)}{(f_1-f_0)(f_1-f_2)(
+	f_1-f_3)}
+.\] 
+\[
+	l_2= \frac{(f-f_0)(f-f_1)(f-f_3)}{(f_2-f_0)(f_2-f_1)
+	(f_2-f_3)}
+.\] 
+\[
+	l_3= \frac{(f-f_0)(f-f_1)(f-f_2)}{(f_3-f_0)(f_3-f_1)(f_3-f_2)}
+.\] 
+\[
+	P_3(f)=x(f_0)l_0+x(f_1)l_1+x(f_2)l_2+x(f_3)l_3
+.\] 
+\[
+	P_3(0)\approx 0.243
+.\] 
+\[
+	L_3(x)= \sum_{k=0}^{3} |l_k(x)|
+.\] 
+Входные данные даны с точностью $10^{-3}$. Погрешность, обусловленная возмущением такого порядка можно оценить следующим образом
+\[
+	\| P_3(0,\,\delta f)\|\le  \|\delta f \| 
+	L_3(0)=10^{-3}\cdot 1.40
+.\] 
+Погрешность интерполяции
+\[
+	\| R_3\left( 0 \right) \|\le \frac{\| - \cos 0\|}{4!}
+	\| \omega_4 (0)\|\approx 6.81 \cdot 10^{-3}
+.\] 
+\end{sol}
+\begin{hiProb}[9.2c]
+	Для функции, заданной таблично, найти значение $f'(3.)$ с максимально возможной точностью
+\begin{enumerate}
+\item с помощью интерполяции
+\item методом неопределённых коэффициентов
+\end{enumerate}
+\begin{table}[htpb]
+	\centering
+	\label{tab:3}
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+	$x$ & $x_0=0$ & $x_1=1$ & $x_2=2$ & $x_3=3$ & $x_4=4$\\
+	\hline $f(x)$& $4$& $2.5$ &$1$ & $-1$  &$-2$ \\
+	\hline
+	\end{tabular}
+\end{table}
+\end{hiProb}
+\begin{sol}
+\begin{enumerate}
+\item 
+\begin{gather*}
+l_0=\frac{\left(x-x_1\right) \left(x-x_2\right) \left(x-x_3\right) \left(x-x_4\right)}{\left(x_0-x_1\right) \left(x_0-x_2\right) \left(x_0-x_3\right)
+   \left(x_0-x_4\right)},\\l_1=
+   \frac{\left(x-x_0\right) \left(x-x_2\right) \left(x-x_3\right) \left(x-x_4\right)}{\left(x_1-x_0\right) \left(x_1-x_2\right)
+   \left(x_1-x_3\right) \left(x_1-x_4\right)},\\l_2=
+   \frac{\left(x-x_0\right) \left(x-x_1\right) \left(x-x_3\right) \left(x-x_4\right)}{\left(x_2-x_0\right)
+   \left(x_2-x_1\right) \left(x_2-x_3\right) \left(x_2-x_4\right)},\\l_3=
+   \frac{\left(x-x_0\right) \left(x-x_1\right) \left(x-x_2\right)
+   \left(x-x_4\right)}{\left(x_3-x_0\right) \left(x_3-x_1\right) \left(x_3-x_2\right) \left(x_3-x_4\right)},\\l_4=
+   \frac{\left(x-x_0\right) \left(x-x_1\right)
+   \left(x-x_2\right) \left(x-x_3\right)}{\left(x_4-x_0\right) \left(x_4-x_1\right) \left(x_4-x_2\right) \left(x_4-x_3\right)}.
+\end{gather*}
+\[
+	P_4(x)=f(x_0)l_0+f(x_1)x_1+f(x_2)x_2+f(x_3)x_3+
+	f(x_4)x_4
+.\] 
+\[
+	P'_4(3)\approx -1.9
+.\] 
+\item \[
+		f'(x)= a_0 f(x_0)+a_1 f(x_1)+a_2 f(x_2)+
+		a_3 f(x_3)+ a_4 f(x_4)
+.\] 
+\[
+	f(x_0)=f(x)+f'(x)(x_0-x)+\frac{1}{2} f''(x)(x_0-x)^2+
+	\frac{1}{6}f'''(x)(x_0-x)^3+\ldots
+.\] 
+\[
+	f(x_1)=f(x)+f'(x)(x_1-x)+\frac{1}{2} f''(x)(x_1-x)^2+
+	\frac{1}{6}f'''(x)(x_1-x)^3+\ldots
+.\]
+\[
+	f(x_2)=f(x)+f'(x)(x_2-x)+\frac{1}{2} f''(x)(x_2-x)^2+
+	\frac{1}{6}f'''(x)(x_2-x)^3+\ldots
+.\]
+\[
+	f(x_3)=f(x)+f'(x)(x_3-x)+\frac{1}{2} f''(x)(x_3-x)^2+
+	\frac{1}{6}f'''(x)(x_3-x)^3+\ldots
+.\]
+\[
+	f(x_4)=f(x)+f'(x)(x_4-x)+\frac{1}{2} f''(x)(x_4-x)^2+
+	\frac{1}{6}f'''(x)(x_4-x)^3+\ldots
+.\]
+\[
+\left\{
+\begin{aligned}
+a_0+a_1+a_2+a_3+a_4=0\\
+a_0(x_0-x)+a_1(x_1-x)+a_2(x_2-x)+a_3(x_3-x)+a_4(x_4-x)=1\\
+a_0(x_0-x)^2+a_1(x_1-x)^2+a_2(x_2-x)^2+a_3(x_3-x)^2+a_4(x_4-x)^2=0\\
+a_0(x_0-x)^3+a_1(x_1-x)^3+a_2(x_2-x)^3+a_3(x_3-x)^3+a_4(x_4-x)^3=0\\
+a_0(x_0-x)^4+a_1(x_1-x)^4+a_2(x_2-x)^4+a_3(x_3-x)^4+a_4(x_4-x)^4=0\\
+\end{aligned}
+\right.
+.\] 
+Решая данную систему, находим
+\[
+a_0= -\frac{1}{12},\quad a_1= \frac{1}{2},\quad a_2= -\frac{3}{2},\quad a_3= \frac{5}{6},\quad a_4= \frac{1}{4}
+.\] 
+Откуда
+\[
+	f'(x)=4 a_0+2.5 a_1+a_2-a_3-2 a_4= -\frac{23}{12}\approx -1.9
+.\] 
+\end{enumerate}
+\end{sol}
+\section*{Тема VII. Численное интегрирование}
+\begin{hiProb}[6.1]
+Доказать, что вычисление интеграла от строго выпуклой функции
+$f''>0$ по формулам прямоугольников со средней точкой даёт
+заниженное значение интеграла.
+\end{hiProb}
+\begin{proof}
+%:При вычислении интеграла по формуле прямоугольников
+%со средней точкой
+%мы приближаем функцию на всём промежутке $[x_k,\,x_{k+1})$ 
+%её значением в средней точке $\xi_k=0.5(x_{k+1}+x_k)$,
+%а соответственно интеграл на данном промежутке принимаем
+%приближённо равным
+%\[
+%	I_k=(x_{k+1}-x_k)f(\xi_k)
+%.\] 
+%В то время, как точное значение интеграла на данном промежутке
+%\[
+%	I_k =\int\limits_{x_k}^{x_{k+1}} f(x)dx 
+%.\] 
+По определению строго выпуклой функции на
+промежутке $[a,\,b]$
+\[
+	\forall u,\,v \in [a,\,b],\, u\le v,\, \forall t \in [0,\,1]:
+	f(tu+(1-t)v)\le  t f(u)+(1-t)f(v)
+.\] 
+Тогда для $t=\frac{1}{2}$ 
+\[
+	f\left( \frac{x_1+x_2}{2} \right) \le \frac{f(x_1)+f(x_2)}{2}
+.\] 
+\begin{multline*}
+	\frac{1}{b-a} \int\limits_{a}^{b} f(x) dx=
+	\frac{1}{b-a} \left( \int\limits_{a}^{(a+b) /2} f(x)dx +\int\limits_{(a+b) /2}^{b} f(x) dx   \right) =\\=
+	\frac{1}{2} \int\limits_{0}^{1} \left[ 
+	f\left( \frac{a+b-t(b-a)}{2} \right) +
+f\left( \frac{a+b+t(b-a)}{2} \right) \right] dt \ge f
+\left( \frac{a+b}{2} \right) 
+.\end{multline*} 
+Откуда тривиально следует доказываемое утверждение.
+\end{proof}
+\begin{hiProb}[8.3]
+	Пусть $\triangle ABC$ --- треугольник в плоскости $(x,\,y)$, точки $M,\,N,\,K$ --- середины его сторон. Показать, что
+	квадратурная формула
+\[
+	\iint\limits_{\triangle ABC}^{}  f(x,\,y) dxdy=\frac{1}{3}
+	S_{\triangle ABC} \left( f(M)+f(N)+f(K) \right) 
+\]
+точна для всех многочленов второй степени
+\[
+	f(x,\,y)=a_{11}x^2 +a_{12}xy +a_{22}y^2 +b_1x+b_2y+c
+.\] 
+\end{hiProb}
+\begin{sol}
+%Для дальнейших вычислений нужно заменой координат привести треугольник к более простому виду. Назовём координаты $i$-й вершины
+%треугольника $(x_i,\,y_{i})$.
+%Нам нужно построить отображение вида
+%\[
+%	(x_i,\,y_i)\mapsto (\tilde{x}_i,\,\tilde{y}_i)\quad
+%	\tilde{x}_i=c_{11} x_i+c_{12} y_i +c_{13},\quad
+%	\tilde{y}_i=c_{21}x_i+c_{22}y_i+c_{23}
+%,\] 
+%переводящее
+%\[
+%	(x_1,\,y_1)\mapsto (1,\,0),\quad
+%	(x_2,\,y_2)\mapsto (0,\,1),\quad
+%	(x_3,\,y_3)\mapsto (0,\,0)
+%.\] 
+%Составляя и решая систему уравнений относительно $c_{ij}$ 
+%получаем
+%\[
+%c_{11}= -\frac{y_3-y_2}{y_1-2 y_2+y_3},\quad c_{12}= \frac{1}{y_1-2 y_2+y_3},\quad
+%c_{13}= -\frac{3 y_2-2 y_3}{y_1-2 y_2+y_3},
+% \] 
+%\[
+%c_{21}= -\frac{y_1-y_3}{y_1-2
+%   y_2+y_3},\quad
+%c_{22}= -\frac{2}{y_1-2 y_2+y_3},\quad
+%c_{23}= -\frac{y_3-3 y_1}{y_1-2 y_2+y_3}
+%.\] 
+Для упрощения интеграла в левой части данного равенства
+сначала отобразим первую вершину в начало координат,
+вторую вершину в точку $(1,\,0)$ и третью вершину в
+точку $(0,\,1)$. Т.\:е.
+\[
+	x(s,\,t)=x_1+(x_2-x_1)s+(x_3-x_1)t
+ ,\]
+\[
+	y(s,\,t)=y_1+(y_2-y_1)s+(y_3-y_1)t
+.\] 
+Откуда
+\[
+	\frac{\partial (x,\,y)}{\partial (s,\,t)} =
+	(x_2-x_1)(y_3-y_1)-(x_3-x_1)(y_2-y_1)=
+	2S_{\triangle ABC}
+.\] 
+Обозначим $\phi(s,\,t)=f(x(s,\,t),\,y(s,\,t))$ и
+\[
+	\phi(s,\,t)=\xi_{11}s^2 +\xi_{12} st+
+	\xi_{22}t^2+\eta_1 s+\eta_2 t +\zeta
+.\]
+Тогда
+\[
+	f(M)=\phi\left(0,\, \frac{1}{2}\right)=
+	\zeta +\frac{\eta _2}{2}+\frac{\xi _{22}}{4},\quad
+,\] 
+\[
+	f(N)=\phi\left( \frac{1}{2},\,0 \right)=
+\zeta +\frac{\eta _1}{2}+\frac{\xi _{11}}{4}
+.\] 
+\[
+	f(K)=\phi\left(\frac{1}{2},\frac{1}{2}\right)=
+	\zeta +\frac{\eta _1}{2}+\frac{\eta _2}{2}+\frac{\xi _{11}}{4}+\frac{\xi _{12}}{4}+\frac{\xi _{22}}{4}
+.\] 
+Следовательно
+\begin{multline*}
+	\iint\limits_{\triangle ABC}^{}  f(x,\,y)dxdy=
+	2S_{\triangle ABC} \int\limits_{0}^{1} 
+	\int\limits_{0}^{1-s} \phi(s,\,t)dt ds 
+	=\\=2S_{\triangle ABC}\left( 
+\frac{\zeta }{2}+\frac{\eta _1}{6}+\frac{\eta _2}{6}+\frac{\xi _{11}}{12}+\frac{\xi _{12}}{24}+\frac{\xi _{22}}{12}	\right) =\\=
+\frac{1}{3}S_{\triangle ABC}(f(M)+f(N)+f(K))
+.\end{multline*} 
+\end{sol}
+\begin{hiProb}[8.12з]
+Построить квадратуру Гаусса-Кристоффеля с двумя узлами для
+вычисления интеграла:
+\[
+	\int\limits_{-1}^{1} \sqrt{1-x^2} f(x) dx 
+.\] 
+\end{hiProb}
+\begin{sol}
+Весовая функция
+\[
+	p(x)=\sqrt{1-x^2} 
+.\] 
+Найдём $c_1,\; c_2,\; x_1,\; x_2$:
+\[
+\left\{
+\begin{aligned}
+	\int\limits_{-1}^{1} \sqrt{1-x^2}\,dx&= c_1+c_2,\\
+	\int\limits_{-1}^{1} x \sqrt{1-x^2}\,dx&=c_1 x_1+c_2 x_2,\\
+	\int\limits_{-1}^{1} x^2\sqrt{1-x^2}\,dx &=c_1 x_1^2+c_2 x_2^2,\\
+	\int\limits_{-1}^{1} x^3 \sqrt{1-x^2}\,dx &=c_1 x_1^3+c_2 x_2^3. 
+\end{aligned}
+\right.
+\Leftrightarrow 
+\left\{
+\begin{aligned}
+c_1+c_2 &= \frac{\pi}{2}, \\
+c_1 x_1+c_2 x_2 &= 0, \\
+c_1 x_1^2+c_2 x_2^2 &= \frac{\pi}{8}, \\
+c_1 x_1^3+c_2 x_2^3 &= 0, \\
+\end{aligned}
+\right.
+\Leftrightarrow
+\left\{
+\begin{aligned}
+	c_{1,\,2}&=\frac{\pi}{4},\\
+	x_{1,\,2}&=\pm\frac{1}{2}.\\
+\end{aligned}
+\right.
+\] 
+Следовательно квадратурная формула Гаусса-Кристоффеля будет
+иметь следующий вид
+\[
+	\int\limits_{-1}^{1} f(x) \sqrt{1-x^2} \, dx=
+	\frac{\pi}{4}\left( f\left(\frac{1}{2}\right)+f
+	\left( -\frac{1}{2} \right) \right) 
+.\] 
+\end{sol}
+\begin{hiProb}[8.25б]
+Предложить алгоритм вычисления интеграла
+\[
+	\int\limits_{0}^{3} \frac{\sin \left( \sqrt{x}  \right) }{\sqrt{3x^2-x^3} }dx 
+\] с заданной точностью
+$\epsilon $, используя метод регуляризации подынтегральной
+функции.
+\end{hiProb}
+\begin{sol}
+%	На заданном промежутке $3x^2-x^3\ge 0 $, следовательно
+%\begin{multline*}
+%	I= \int\limits_{0}^{3} \frac{\sin\left( \sqrt{x}  \right) }{\sqrt{3x^2-x^3} }dx= \int\limits_{0}^{3} \frac{\sin \left( \sqrt{x}  \right) }{x \sqrt{3-x} }  dx\xlongequal[]{3-x=t^2}
+%	\int\limits_{\sqrt{3} }^{0} \frac{\sin\left( 
+%	\sqrt{3-t^2} \right) }{3-t^2}dt =\\=
+%	\int\limits_{\sqrt{3} }^{ 0  } \frac{\sin\left( 
+%	\sqrt{\left(\sqrt{3} -t\right)\left(\sqrt{3} +t\right)} \right) }{\left(\sqrt{3} -t\right)\left(\sqrt{3}+t \right)}dt
+%	\xlongequal[]{y=\sqrt{3} -t}
+%	\int\limits_{0 }^{\sqrt{3} } \frac{
+%	}{}  
+%.\end{multline*}
+У данного интеграла две особенности: $x=0$ и $x=3$.
+В рассматриваемом случае  представим его в виде
+суммы трёх интегралов:
+\[
+I=I_1+I_2+I_3,
+\] 
+\[
+I_1= \int\limits_{0}^{\delta_1} \frac{
+\sin\left( \sqrt{x}  \right) }{\sqrt{3x^2-x^3} }dx,\quad
+I_2= \int\limits_{\delta_1}^{3-\delta_2} \frac{\sin\left( \sqrt{x}  \right) }{\sqrt{3x^2-x^3} }dx ,\quad
+I_3= \int\limits_{3-\delta_2}^{3} \frac{\sin\left( \sqrt{x}  \right) }{\sqrt{3x^2-x^3} }dx 
+.\] 
+
+Второй интеграл особенности не содержит и вычисляется по
+любой квадратурной формуле. Вопрос о выборе величин $\delta_1$ 
+и $\delta_2$
+обсуждается ниже.
+
+Первый интеграл с требуемой точностью вычисляем аналитически,
+используя представление подынтегральной функции в окрестности
+особой точки $(x=0)$ в виде отрезка ряда по степеням $x$
+\begin{multline*}
+I_1= \int\limits_{0}^{\delta_1} dx
+\frac{\dfrac{x^{1/2}}{1!}-\dfrac{x^{3/2}}{3!}+\ldots+(-1)^m \dfrac{x^{(2m+1)/2}}{
+(2m+1)!}}{\sqrt{3} x}\times\\ \times\left( 1+ \frac{-1 /2}{1!}\left( -\frac{x}{3} \right) + \frac{(-1 /2)(-3 /2)}{2!}\left( - \frac{x}{3} \right) ^2 +\ldots+\frac{C_{-1 /2}^n}{n!}\left( - \frac{x}{3} \right) ^n\right) =
+\\=\int\limits_{0}^{\delta_1} dx \left(\frac{1}{\sqrt{3x} }+
+%\frac{x^{3 /2}}{45\sqrt{3} }+
+O\left( x^{3 /2} \right) \right)=
+\frac{2 \sqrt{\delta_1} }{\sqrt{3} }+
+%\frac{2\delta^{5 /2}}{225\sqrt{3} }+
+O\left( \delta_1^{5 /2} \right) 
+.\end{multline*} 
+%\[
+%I_1= \int\limits_{0}^{\delta}
+%\frac{\dfrac{x^{1/2}}{1!}-\dfrac{x^{3/2}}{3!}+\ldots+(-1)^m \dfrac{x^{(2m+1)/2}}{
+%(2m+1)!}}{\sqrt{3x^2-x^3}} dx
+%.\]
+%Пусть
+%\[
+%I_3=\int\limits_{0}^{\delta}
+%\frac{x^{1/2}}{\sqrt{3x^2-x^3}} dx
+%.\] 
+Для выбора параметра $\delta_1$ имеем следующий критерий
+\[
+\frac{2\sqrt{\delta_1} }{\sqrt{3} }\le \frac{\epsilon}{3}
+.\]
+
+Третий интеграл также с требуемой точностью  вычислим аналогично
+аналитически
+\begin{multline*}
+	I_3=\int\limits_{3-\delta_2}^{3} \frac{\sin\left( \sqrt{x}  \right) }{x\sqrt{3-x} }dx \xlongequal[]{t=3-x} 
+	\int\limits_{0}^{\delta_2} \frac{\sin\left( 
+	\sqrt{3-t} \right) }{(3-t)\sqrt{t} }dt =
+	\int\limits_{0}^{\delta_2} dt\left(\frac{\sin \sqrt{3}   }{3\sqrt{t} }+O\left(t^{1 /2}\right) \right)=\\=
+	\frac{2}{3} \sqrt{\delta_2} \sin \sqrt{3} 
+.\end{multline*}
+Критерий для $\delta_2$:
+\[
+\frac{2}{3}\sqrt{\delta_2} \sin\sqrt{3} \le \frac{\epsilon}{3}
+.\] 
+Оставшуюся $\epsilon /3$ отведём в качестве допустимого уровня
+погрешности  при вычислении $I_2$.
+\end{sol}
+\begin{hiProb}[9.5б]
+Для функции, заданной таблично, вычислить значение определённого
+интеграла методом трапеций, сделать уточнение результата
+экстраполяцией Ричардсона. Сравнить уточнённый результат с
+вычислениями по методу Симпсона.
+\begin{table}[htpb]
+	\centering
+	\label{tab:95}
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+	 $x$& $0$ & $0.125$ & $0.25$ & $0.375$ &$0.5$   \\ \hline
+	 $f(x)$  &0.000000& 0.021470 &0.293050  & 0.494105 &0.541341  \\\hline
+	 $x$&$0.625$  &$0.75$  & $0.875$ & $1$&\\ \hline
+$f(x)$ & 
+0.516855&0.468617  & 0.416531 &0.367879&  \\ \hline
+	\end{tabular}
+\end{table}
+\end{hiProb}
+\begin{sol}
+Метод трапеций:
+\begin{mmaCell}[morepattern={i_, i, k_},morefunctionlocal={k},moredefined={Ih}]{Input}
+  \mmaSub{x}{i_}:=0.125i
+  \mmaSub{f}{i_}:=\{0.,0.021470,0.293050,0.494105,0.541341,
+  0.516855,0.468617,0.416531,0.367879\}[[i+1]]
+  \mmaSub{h}{k_}:=\mmaSub{x}{\mmaPat{k}+1}-\mmaSub{x}{\mmaPat{k}}
+  Ih=\mmaUnderOver{\(\pmb{\sum}\)}{k=0}{7}\mmaFrac{\mmaSub{h}{k}}{2}(\mmaSub{f}{k+1}+\mmaSub{f}{k})
+\end{mmaCell}
+\begin{mmaCell}[]{Output}
+  0.3669885625`
+\end{mmaCell}
+Уточнение результата экстраполяцией Ричардсона:
+\begin{mmaCell}[moredefined={I2h, IR, Ih},morefunctionlocal={k}]{Input}
+  I2h=\mmaUnderOver{\(\pmb{\sum}\)}{k=0}{3}\mmaFrac{\mmaSub{h}{2k}+\mmaSub{h}{2k+1}}{2}(\mmaSub{f}{2k+2}+\mmaSub{f}{2k});
+  IR= Ih+\mmaFrac{Ih-I2h}{\mmaSup{2}{2}-1}
+\end{mmaCell}
+\begin{mmaCell}[]{Output}
+  0.3654057916666667`
+\end{mmaCell}
+Вычисления по методу Симпсона:
+\begin{mmaCell}[moredefined={IS},morefunctionlocal={k}]{Input}
+  IS=\mmaUnderOver{\(\pmb{\sum}\)}{k=0}{3}\mmaFrac{\mmaSub{h}{2k}+\mmaSub{h}{2k+1}}{6}(\mmaSub{f}{2k+2}+4\mmaSub{f}{2k+1}+\mmaSub{f}{2k})
+\end{mmaCell}
+\begin{mmaCell}{Output}
+  0.36540579166666665`
+\end{mmaCell}
+Уточнённый экстраполяцией Ричардсона результат совпадает со
+значением, полученным методом Симпсона, чего и следовало ожидать.
+\end{sol}
+\begin{hiProb}[9.10г]
+Вычислить несобственный интеграл
+\[
+	\int\limits_{0}^{1} \frac{\ln \left( x^2+1 \right) }{\sqrt{x} }dx 
+\] 
+с точностью $10^{-4}$. Укажите и сравните различные приёмы
+для решения данной задачи.
+\end{hiProb}
+\begin{sol}
+Сделаем замену $x=t^2$:
+\begin{multline*}
+	I=2\int\limits_{0}^{1}  \ln\left( t^4+1 \right) dt=
+	\int\limits_{-1}^{1} \ln(t^4+1)dt=
+	\left. 2 \ln (t^4+1)t
+ \right|_0^1-2 \int\limits_{0}^{1} \frac{4t^3dt}{t^4+1}t=\\=
+ 2 \ln (2)-8+8 \int\limits_{0}^{1} \frac{dt}{t^4+1}=\ldots
+ \\ =
+2\ln 2 - 8+\sqrt{2} \left( \ln \frac{2+\sqrt{2} }{2-\sqrt{2} }+
+2 \arctg \left(1+\sqrt{2} \right)-2 \arctg\left(1-\sqrt{2}\right) \right)\approx 0.322078 .\end{multline*} 
+Для достижения требуемой точности методом
+Гаусса проведём оценку
+остаточного члена интегрирования:
+\[
+	r_2^{\Gamma}= \frac{1}{135}\max_{\xi \in [-1,\,1]} \left|f^{(4)}(\xi)\right|\approx 0.18,\quad
+	r_3^{\Gamma}= \frac{1}{15750}\max_{\xi \in [-1,\,1]} \left|f^{(6)}(\xi)\right|\approx 0.12
+\] 
+\[
+	r_4^{\Gamma}= \frac{2}{3472875}\max_{\xi \in [-1,\,1]} \left|f^{(8)}(\xi)\right|\approx 0.053,\quad
+	r_5^{\Gamma}= \frac{13}{1237732650}\max_{\xi \in [-1,\,1]} \left|f^{(10)}(\xi)\right|\approx 0.24\ldots
+\] 
+\[
+	r_{10}^\Gamma= \frac{2^{21}(10!)^4}{21(20!)^3}\max_{\xi \in [-1,\,1]} \left|f^{(20)}(\xi)\right|\approx 6.2 \cdot 10^{-5}
+.\] 
+Возможно, искать нули и веса для полиномов Лежандра 10-й
+степени не лучшая идея, так что перейдём к другим методам\ldots
+
+На первый взгляд особой точки в данном интеграле нет, т.\:к. в окрестности нуля $\ln\left( x^2+1 \right) \sim x^2$ .
+Однако $f''(0)\to \infty$, поэтому воспользуемся методом замены
+переменных, т.\:е. будем искать интеграл в виде
+\[
+	I=2 \int\limits_{0}^{1} \ln(t^4+1)dt 
+.\] Как было показано выше, методами замены переменных
+и интегрирования по частям интеграл вычислился точно.
+
+Будем вычислять данный интеграл по формуле трапеций.
+Сперва найдём шаг сетки для заданной точности
+\[
+	10^{-4}=\epsilon \le \frac{1}{12} \max_{0\le x\le 1} |f''(x)|h^2\implies h<0.007
+.\] 
+Шаг $h=0.005$ удовлетворит нашу потребность в точности.
+Далее приведён код в Mathematica для формулы трапеций. 
+\begin{mmaCell}[morepattern={i_, i, k_},morefunctionlocal={k},moredefined={Ih}]{Input}
+  \mmaSub{x}{i_}:=0.005i
+  \mmaSub{f}{i_}:=2Log[\mmaSup{\mmaSub{x}{i}}{4}+1]
+  \mmaSub{h}{k_}:=\mmaSub{x}{\mmaPat{k}+1}-\mmaSub{x}{\mmaPat{k}}
+  Ih=\mmaUnderOver{\(\pmb{\sum}\)}{k=0}{199}\mmaFrac{\mmaSub{h}{k}}{2}(\mmaSub{f}{k+1}+\mmaSub{f}{k})
+\end{mmaCell}
+\begin{mmaCell}[]{Output}
+  0.3220865931864013`
+\end{mmaCell}
+Результат с нужной точностью согласуется с аналитическим, чего и следовало ожидать.
+\end{sol}
+\begin{hiProb}[9.13б]
+	Функция $f(x)$ задана своими сеточными значениями.
+	Найти $\int\limits_{a}^{b} f(x) \sin 80x \, dx $ 
+	построением сплайна для аппроксимации $f(x)$.
+	\begin{table}[htpb]
+		\centering
+		\label{tab:913}
+		\begin{tabular}{|c|c|c|c|c|c|}\hline
+		 $i$& $0$ & $1$ &$2$  &$3$  &$4$ \\ \hline 
+		 $x_{i}$& $0.1$  & $0.5$ & $0.9$ &$1.3$  &$1.7$ \\ \hline 
+		 $f_{i}$ & $-2.3026$ & $-0.69315$ & $-0.10536$ & $0.26236$ & $0.53063$ \\ \hline 
+		\end{tabular}
+	\end{table}
+\end{hiProb}
+\begin{sol}
+Код для построения свободного кубического сплайна и его последующего интегрирования в Mathematica:
+\begin{mmaCell}[morepattern={i_, x_, x},morefunctionlocal={i, j},moredefined={f, sol}]{Input}
+  \mmaSub{p}{i_}[x_]:=\mmaSub{a}{\mmaPat{i}} \mmaSup{x}{3}+\mmaSub{b}{\mmaPat{i}} \mmaSup{x}{2}+\mmaSub{c}{\mmaPat{i}} x+\mmaSub{d}{\mmaPat{i}}
+  \mmaSub{\mmaUnd{x}}{i_}:=\{0.1,0.5,0.9,1.3,1.7\}[[\mmaPat{i}+1]]
+  \mmaSub{f}{i_}:=\{-2.3026,-0.69315,-0.10536,0.26236,0.53063\}[[\mmaPat{i}+1]]
+  sol=Solve[\{\mmaSub{p}{1}[\mmaSub{\mmaUnd{x}}{0}]==\mmaSub{f}{0},\mmaSub{p}{4}[\mmaSub{\mmaUnd{x}}{4}]==\mmaSub{f}{4}, \mmaSub{p}{1}''[\mmaSub{\mmaUnd{x}}{0}]==0,\mmaSub{p}{4}''[\mmaSub{\mmaUnd{x}}{4}]==0,
+  Table[\mmaSub{p}{i}[\mmaSub{\mmaUnd{x}}{i}]==\mmaSub{p}{i+1}[\mmaSub{\mmaUnd{x}}{i}]==\mmaSub{f}{i},\{i,3\}],
+  Table[Derivative[j][\mmaSub{p}{i}][\mmaSub{\mmaUnd{x}}{i}]==
+  Derivative[j][\mmaSub{p}{i+1}][\mmaSub{\mmaUnd{x}}{i}],\{i,3\},\{j,2\}]\}//Flatten,
+  Table[\{\mmaSub{a}{i},\mmaSub{b}{i},\mmaSub{c}{i},\mmaSub{d}{i}\},\{i,4\}]//Flatten]
+  f[x_]:=Piecewise[\{\{\mmaSub{p}{1}[x],\mmaSub{x}{0}<x<\mmaSub{x}{1}\},\{\mmaSub{p}{2}[x],\mmaSub{x}{1}<x<\mmaSub{x}{2}\},
+  \{\mmaSub{p}{3}[x],\mmaSub{x}{2}<x<\mmaSub{x}{3}\},\{\mmaSub{p}{4}[x],\mmaSub{x}{3}<x<\mmaSub{x}{4}\}\}]/.sol
+  \mmaSubSupM{\int}{\mmaSub{\mmaFnc{x}}{0}}{\mmaSub{\mmaFnc{x}}{4}}f[\mmaFnc{x}]Sin[80\mmaFnc{x}]d\mmaFnc{x}
+\end{mmaCell}
+\begin{mmaCell}[]{Output}
+  \{\{\mmaSub{a}{1}\(\to\)-4.0580552455357095`,\mmaSub{b}{1}\(\to\)1.217416573660713`,
+  \mmaSub{c}{1}\(\to\)4.551172181919641`,\mmaSub{d}{1}\(\to\)-2.7658333286830357`,
+  \mmaSub{a}{2}\(\to\)4.3268387276785525`,\mmaSub{b}{2}\(\to\)-11.35992438616068`,
+  \mmaSub{c}{2}\(\to\)10.839842661830337`,\mmaSub{d}{2}\(\to\)-3.8139450753348183`,
+  \mmaSub{a}{3}\(\to\)-0.7244559151785411`,\mmaSub{b}{3}\(\to\)2.27857114955348`,
+  \mmaSub{c}{3}\(\to\)-1.4348033203124082`,\mmaSub{d}{3}\(\to\)-0.13155128069199595`,
+  \mmaSub{a}{4}\(\to\)0.45567243303569954`,\mmaSub{b}{4}\(\to\)-2.3239294084820488`,
+  \mmaSub{c}{4}\(\to\)4.5484474051338415`,\mmaSub{d}{4}\(\to\)-2.724293261718706`\}\}
+\end{mmaCell}
+\begin{mmaCell}[]{Output}
+  \{0.007454746884931084`\}
+\end{mmaCell}
+Т.\:е.
+\[
+	\int\limits_{a}^{b} f(x) \sin 80 x \, dx \approx
+	0.007455
+.\] 
+\end{sol}
+\section*{Тема VIII. Решение ОДУ}
+\begin{hiProb}[7.6]
+Нелинейное автономное дифференциальное уравнение решается
+с помощью явного метода Рунге-Кутты второго порядка аппроксимации
+с числом стадий, равным двум. Указать коэффициенты метода, имеющего
+ минимальную погрешность аппроксимации для данного класса задач.
+\end{hiProb}
+\begin{sol}
+В указанном методе разностная схема имеет вид
+\[
+	\frac{y_{n+1}-y_n}{\tau}=b_1 f(y_n)+b_2 f\left( y_n+
+	\tau a_{21} f(y_n)\right) 
+.\] 
+В таком случае невязка в точке $x$ вычисляется как
+\[
+	\phi(x)= \frac{y(x+\tau)-y(x)}{\tau} - b_1 f\left( 
+	y(x)\right) -b_2 f\left( y(x)+\tau a_{21} f\left( y(x) \right)  \right) 
+ ,\] 
+ где $y(\cdot)$ есть точное решение дифференциального уравнения.
+
+Найдём условия на коэффициенты $b_1,\,b_2,\,a_{21}$ необходимые
+для условий $\phi(0)$, $\phi'(0)=0$. Это и будет означать, что
+ разностная схема имеет второй порядок аппроксимации.
+
+Имеем, что
+\[
+	\phi(0)= y''(x)-2 a_{12} b_2 f(y(x))f'(y(x))
+.\] 
+Так как 
+\[
+	y''(x)= f'(y(x))y'(x)=f'(y(x))f(y(x))
+ ,\] 
+ то верно, что $\phi'(0)=0$ при $1= 2 a_{12} b_2$.
+
+Проверим, что в общем случае вторую производную $\phi$ 
+невозможно занулить. Имеем, что  
+\begin{multline*}
+	\phi''(0)= y'''(x)- 3a_{21}^2 b_2 f(y(x))^2f''(y(x))=
+\\=	f(y(x))^2 f''(y(x))(1-3a_{21}^2b_2)+f'(y(x))^2f(y(x))
+.\end{multline*} 
+Видим, что засчёт выбора коэффициентов невозможно для всякой
+функции $f$ занулить величину $\phi''(0)$.
+
+Введём параметр $\lambda$. Тогда можно выразить все коэффициенты
+через данный параметр:
+\[
+	b_1=\lambda,\quad b_2=1-\lambda,\quad a_{12}=\frac{1}{2(1-\lambda)}
+.\] 
+Видим, что параметр $\lambda$ может пробегать множество $\mathbb{R}\setminus {1}$.
+
+Таким образом получаем однопараметрическое семейство
+коэффициентов, которые дают требуемый порядок аппроксимации:
+\[
+	b_1=\lambda,\quad b_2=1-\lambda,\quad a_{12}=\frac{1}{2(1-\lambda)}
+,\]
+где $\lambda$ пробегает множество $\mathbb{R} \setminus {1}$.
+\end{sol}
+\begin{hiProb}[9.7-2]
+Приближенное решение задачи Коши
+\[
+	\frac{dx}{dt}=ax;\quad x(0)=X_0;\quad 0\le t\le T
+\]
+вычисляется по разностной схеме
+\[
+\frac{x_{n+1}-\frac{4}{3}x_n+ \frac{1}{3}x_{n-1}}{2\tau}=\frac{1}{3}
+ax_{n+1};\quad x_0=X_0
+.\] 
+Способ задания дополнительного краевого условия $x_1$ предложить
+самостоятельно.
+
+Найти порядок аппроксимации разностной схемы. Исследовать влияние способа
+ задания $x_1$ на порядок аппроксимации. Исследовать на
+устойчивость разностную схему. Найти точное решение разностной
+задачи. Исследовать его сходимость к точному решению
+дифференциальной задачи.
+\end{hiProb}
+\begin{sol}
+%Разностное уравнение можно переписать в следующем виде
+%\[
+%	\frac{3x_{n+1}-4x_n+x_{n-1}}{2\tau}=f(x_{n+1})\equiv
+%	f_{n+1}
+%.\] 
+%	\[
+%		\frac{1}{2}\left(\frac{x_{n+1}- x_n}{\tau}-\frac{1}{3} \frac{x_{n}
+%		-x_{n-1}}{\tau}\right)= \frac{1}{3}a x_{n+1}
+%	.\] 
+Найдём порядок аппроксимации разностной схемы.
+\begin{multline*}
+r_\tau= \frac{3u_{m+1}- 4u_m +u_{m-1}}{2\tau}-
+f_{m+1}=\\=
+\frac{3 u_{m+1}-4\left(u_{m+1}-u'_{m+1}\tau+u''_{m+1}\frac{\tau^2}{2}+
+	u'''_{m+1}\frac{\tau^3}{6}+O\left(\tau^4\right)\right)
+}{2\tau}
++\\+
+\frac{u_{m+1}- 2u'_{m+1}\tau+2u''_{m+1}\tau^2-
+\frac{4}{3}u'''_{m+1}\tau^3+O\left(\tau^4\right)}{2\tau}-f_{m+1}=
+-u'''_{m+1}\tau^2
+,\end{multline*}  
+--- второй порядок.
+
+Если мы зададим $x_1$ с точностью до второго порядка или выше,
+то и у всей схемы будет второй порядок, если же точность будет
+первого порядка, то и вся схема будет такой же точности. Поэтому
+для нахождения $x_1$ решим на первом шаге уравнение
+(метод трапеций)
+\[
+	\frac{x_1-x_0}{\tau}=\frac{a}{2}\left(x_0+x_1  \right) 
+	\implies x_1=-\frac{x_0 (a \tau +2)}{a \tau -2}
+.\] 
+Предположим,
+что для собственных значений оператора перехода $\lambda$
+последовательные значения $x$ связаны соотношением
+\[
+x_{n+1}=\lambda x_n,\quad x_n=\lambda x_{n-1}
+.\] 
+Перепишем разностную схему следующим образом
+\[
+	x_{n+1}\left( 1-\frac{2}{3}a\tau \right) -\frac{4}{3}
+	x_n+\frac{1}{3}x_{n-1}=0
+.\] 
+Составим характеристическое уравнение
+\[
+	\lambda\left( 1-\frac{2}{3}a\tau \right) -\frac{4}{3}+
+	\frac{1}{3\lambda}=0
+.\] 
+Его корнями являются числа
+\[
+\lambda_{1,\,2}= \frac{2\pm\sqrt{1+2a\tau} }{3-2a\tau}
+.\] 
+Таким образом получаем общее решение разностного уравнения
+\[
+	x_n= C_1 \left( \frac{2 -\sqrt{1+2a\tau} }{3-2a\tau} \right) ^n+C_2 \left( \frac{2+\sqrt{1+2a\tau} }{3-2a\tau} \right) ^n
+,\]
+где $C_1$ и $C_2$ --- произвольные константы.
+
+Исследуем на устойчивость данную разностную схему.  Имеют
+место следующие разложения
+\[
+	\frac{2-\sqrt{1+2a\tau} }{3-2a\tau}= \frac{1}{3}+ O(\tau)
+	,\quad
+	\frac{2+\sqrt{1+2a \tau} }{3-2a\tau}=1+a\tau +O\left( \tau^2 \right) 
+.\] 
+Видим, что при всех достаточно малых положительных значениях
+$\tau$ верно, что 
+\[
+	|\lambda_1|\le 1+\left(|a|+1\right) \tau,\quad
+	|\lambda_2|\le 1+\left( |a|+1 \right) \tau
+.\] 
+Т.\:е. данная разностная схема нестого устойчива.
+
+Если $a\le 0$, то при всех достаточно малых $\tau$ верно, что
+$|\lambda_1|\le 1$ и $|\lambda_2|\le 1$, поэтому в таком
+случае имеет место строгая устойчивость. Если $a>0$, то $\lambda_2>1$ при всех достаточно малых положительных значения $\tau$,
+поэтому в таком случае строгая устойчивость отсутствует. Таким
+образом имеет место нестрогая устойчивость разностной схемы
+во всех случаях, а строгая устойчивость имеет место только
+при $a\le 0$.
+\end{sol}
+\begin{hiProb}[9.9а]
+	Для решения задачи Коши на отрезке $[0,\,T]$ введена
+	равномерная сетка с шагом $\tau$. Рассматривается
+	дифференциальное уравнение, которому в соответствие
+	ставится численный метод
+	\[
+		y'-y=0,\quad 0\le x\le 1,\quad y(0)=1,
+	\] 
+	\[
+		(y_{n+1}-y_n) /h - (3y_{n+1}-y_n) /2=0,\quad
+		y_0=1
+	.\] 
+	Выписать общее решении разностного уравнения и
+	исследовать сходимость численного решения к решению
+	дифференциальной задачи на основе определения сходимости.
+
+	Пусть по данной схеме проводятся вычисления на компьютере,
+	где для хранения мантиссы отводится 10 бит. Оценить
+	максимальную ошибку округления для данной задачи.
+\end{hiProb}
+\begin{sol}
+Запишем характеристическое уравнение
+\[
+y_{n+1}=\lambda y_n,\quad \frac{\lambda-1}{h}= \frac{3\lambda-1}{2}\implies \lambda=\frac{h-2}{3 h-2}
+.\] 
+Разностное уравнение с учётом начального условия имеет общее решение
+\[
+	y_n=\left( \frac{h-2}{3h-2} \right) ^n
+.\] 
+Исследуем сходимость решения разностного уравнения к решению
+дифференциального уравнения. Общее решение дифференциального
+уравнения имеет вид $y(x)=e^x$. Обозначим через $N_h$ число
+узлов сетки, в которых вычисляется искомое решение, при
+данном значении $h$.
+
+Сходимость решения разностного уравнения к решению дифференциального
+уравнения означает, что
+\[
+\lim_{h \to +0} \max_{k \in  \overline{0,\,N_h}}|y_k-
+y(kh)|=0
+.\]
+Имеем следующие разложения по формуле Тейлора:
+\[
+	e^{h}=1+\tau +\frac{h^2}{2}+O\left( h^3 \right) ,\quad \frac{h-2}{3h-2}=1+h+\frac{3h^2}{2}+
+	O\left( h^3 \right) 
+.\] 
+Видим, что при всех достаточно малых положительных значениях
+$h$ верно, что $e^{h}< \frac{h-2}{3h-2}$.
+Отсюда следует, что
+\[
+	\max_{k \in  \overline{0,\, N_h}}|y_k-y(kh)|=\left| \frac{h-2}{3h-2}-e^h \right| 
+.\] 
+Можно считать, что при малых $h$ верно, что $N_h h=1$, поэтому
+$e^{N_h h}=e$ и $\left(\frac{h-2}{3h-2}\right)^{N_h}=
+\left( \frac{h-2}{3h-2} \right) ^{2 /h}$.
+
+Имеем следующее разложение
+\[
+	\left( \frac{h-2}{3h-2} \right) ^{1 /h}=e+O(h)
+.\] 
+Таким образом получаем, что
+\[
+	\lim_{h \to +0}  \max_{k \in  \overline{0,\, N_h}}|y_k-y(kt))=0
+.\] 
+Получаем, что решение разностного уравнения сходится к решению
+дифференциального уравнения.
+
+Пусть $y_n$ есть точное решение разностного уравнения, пусть
+$\tilde{y}_n$ есть соответствующие записанные на компьютере
+значения.
+
+Имеет место следующая оценка для ошибки округления
+\[
+	R= \max_{k \in  \overline{0,\,N_h}}|y_k -\tilde{y}_k|
+\simeq e^L |y_0-\tilde{y}_0|+2 \epsilon \frac{e^L}{L}
+,\] 
+где $L$ --- это константа Липшица правой части исходного
+дифференциального уравнения, $\epsilon$ есть максимальная
+ошибка округления на компьютере.
+
+В нашем случае правая часть дифференциального уравнения имеет вид $y$, поэтому $L=1$. Т.\:к. в нашем случае под мантиссу отведено
+10 бит, то  $\epsilon= 2^{-10}$. Т.\:к. $y_0=y(0)=1$, то
+$|y_0- \tilde{y}_0|\le  \epsilon |y_0|=\epsilon$. Получаем, что
+\[
+	R \simeq \epsilon e^L \left( 1+\frac{2}{L} \right) 
+	= \frac{1}{2^10}e(1+2) \simeq 10^{-2}
+.\] 
+Таким образом получаем оценку для максимальной погрешности
+округления: $R \approx 10^{-2}$.
+\end{sol}
+\begin{hiProb}[10.3]
+Приближённо решить задачу Коши:
+\[
+	\frac{d^2 y}{dt^2}= y \sin x,\quad y(0)=0;\;
+	y'(0)=1;\, 0\le x\le 1
+.\] 
+\renewcommand{\labelenumi}{\asbuk{enumi})}
+\begin{enumerate}
+\item Описать алгоритм, основанный на переходе к системе двух
+	уравнений первого порядка с последующим решением
+	этой системы.
+\item Описать алгоритм, основанный на замене уравнения $y''=
+	y \sin x$ разностным уравнением второго порядка.
+\item Решить задачу любым из этих методов
+\end{enumerate}
+\end{hiProb}
+\begin{sol}
+\renewcommand{\labelenumi}{\asbuk{enumi})}
+\begin{enumerate}
+\item Обозначим $y'=z$, тогда получаем систему из двух
+	уравнений
+	 \[
+	\left\{
+	\begin{aligned}
+		y'&=z \\
+		z'&=y \sin x
+	\end{aligned}
+	\right.
+	.\] 
+	Явная схема Эйлера для данной системы ($x_n=\tau n$)
+	\[
+	\left\{
+	\begin{aligned}
+		\frac{y_{n+1}-y_n}{\tau}&=z_n\\
+	\frac{z_{n+1}-z_n}{\tau}&=y_n \sin x_n
+	\end{aligned}
+	\right.
+	.\] 
+\item Вторая производная вычисляется по приближённой формуле
+	\[
+		y''(x)= \frac{y(x+\tau)-2f(x)+f(x-\tau)}{\tau^2}
+	.\]
+Значит явная схема Эйлера для данного уравнения будет иметь вид
+\[
+\frac{y_{n+1}-2 y_n+y_{n-1}}{\tau^2}=y_n \sin x_n
+.\] 
+\item Алгоритм в Mathematica для первого метода:
+\begin{mmaCell}[morepattern={n_, n},moredefined={sol,ListLinePlot},morefunctionlocal={i}]{Input}
+  \mmaSub{y}{0}=0;
+  \mmaSub{z}{0}=1;
+  \mmaDef{\(\pmb{\tau}\)}=0.01;
+  \mmaSub{x}{n_}:=\mmaSub{x}{n}=\mmaDef{\(\pmb{\tau}\)} n
+  \mmaSub{y}{n_}:=\mmaSub{y}{n}=\mmaSub{z}{n-1}\mmaDef{\(\pmb{\tau}\)}+\mmaSub{y}{n-1}
+  \mmaSub{z}{n_}:=\mmaSub{z}{n}=\mmaSub{y}{n-1}Sin[\mmaSub{x}{n-1}]\mmaDef{\(\pmb{\tau}\)}+\mmaSub{z}{n-1}
+  sol=Table[\{\mmaSub{x}{i},\mmaSub{y}{i}\},\{i,0,100\}];
+  ListLinePlot[sol]
+  
+\end{mmaCell}
+ \begin{mmaCell}[moregraphics={moreig={scale=.5}}]{Output}
+  \mmaGraphics{1}
+ \end{mmaCell}
+\end{enumerate}
+\end{sol}
+\end{document}

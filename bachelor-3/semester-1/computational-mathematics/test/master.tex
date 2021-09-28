@@ -1,0 +1,70 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{ПКР по вычислительной математике}
+\begin{document}
+	\maketitle
+	Разделённой разностью нулевого порядка $f(x_k)$
+	функции $f(x)$ в точке $x_k$ называют значение
+	функции в этой точке
+	\[
+		f(x_k)=f(x_k)
+	.\] 
+	Разделённой разностью первого порядка $f(x_k,\, x_t)$ 
+	функции $f(x)$ для произвольной пары точек $x_k$, и
+	$x_t$ определяют через разделённые разности
+	нулевого порядка:
+	\[
+		f(x_k,\,x_t)= \frac{f(x_t)-f(x_k)}{x_t-x_k}
+	.\] 
+	Разделённую разность $f(x_0,\,x_1,\ldots,x_{n})$ 
+порядка $n$ определяют через разделённую разность порядка 
+ $n-1$, положив
+ \[
+	 f(x_0,\,x_1,\ldots,\,x_n)=
+	 \frac{f(x_1,\ldots,\,x_n)-f(x_0,\ldots,\,x_{n-1})}{x_n-x_0}
+ .\] 
+ Интерполяционный многочлен в форме Ньютона $P_n(x,\,x_0,\,x_1,
+ \ldots,\,x_n)$ может быть записан через разделённые разности
+ следующим образом:
+ \begin{multline*}
+	 P_n(x,\,f,\,x_0,\,x_1,\ldots,\,x_n)=
+	 f(x_0)+f(x_0,\,x_1)(x-x_0)+f(x_0,\,x_1,\,x_2)(x-x_0)
+	 (x-x_1)+\ldots\\+ f(x_0,\,x_1,\ldots,x_n)(x-x_0)\ldots
+	 (x-x_{n-1})
+ .\end{multline*} 
+ Пусть мы строим интерпол. мн-ны Лагранжа
+\[
+	P_n(x)=P_0(x)+\left[ P_1(x)-P_0(x) \right] +
+	\left[ P_2(x)-P_1(x) \right] +\ldots
+	+\left[ P_n(x)-P_{n-1}(x) \right] 
+.\] 
+$P_m(x)$ --- мн-н степ. $m$ по точкам $x_0,\,x_1,\ldots,\,x_m$.
+\[
+	P_m(x)-P_{m-1}(x)= A_m \cdot \omega_m(x)
+.\]
+$P_m(x)$ обр. в 0 в $(\cdot)$ $x_0,\,x_1,\ldots,\,x_{m-1}$ ($m$ точек).
+\[
+	\omega_n(x)= (x-x_0)(x-x_1)\ldots(x-x_{m-1})
+.\]
+\[
+	P_m(x_k)=f_k,\quad k=0,\,1,..,\,m
+.\] 
+\[
+	f(x_m)-P_{m-1}(x_m)=A_m \omega_m (x_m)
+.\] 
+\begin{multline*}
+	f(x)-P_n(x)=f(x)- \sum_{k=0}^{n} f(x_k) l_k(x)=
+	f(x)- \sum_{k=0}^{n} f(x_k) \frac{\omega_{n+1}(x)}{(x-x_k) \prod_{\substack{j=0 \\ j\neq k}}^{m}  x_k-x_j }=\\=
+	\omega_{n+1}(x) \cdot
+	\left\{ \frac{f(x)}{\omega_{n+1}(x)}+
+	\sum_{k=0}^{n}\frac{f(x_k)}{(x-x_k) \prod_{\substack{j=0 \\ j\neq k}}^{m}  x_k-x_j} \right\} =
+	\omega_{n+1}(x)\cdot f(x,\,x_0,\,x_1,\ldots,\,x_n)
+.\end{multline*} 
+\[
+	f(x_m)-P_{m-1}(x)= \omega_{n+1}(x_m)\cdot f(x_m,\,x_0,\,x_1,\ldots,x_{m+1})
+.\] 
+\[
+	A_m=f(x_0,\,x_1,\,x_2,\ldots,x_m)
+.\] 
+Что и требовалось доказать.
+\end{document}

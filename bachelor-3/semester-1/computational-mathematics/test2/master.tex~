@@ -1,0 +1,46 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\usepackage{mmacells}
+\title{}
+\begin{document}
+	\maketitle
+\begin{mmaCell}[addtoindex=9,morepattern={i_, i, k_},moredefined={f, Ih},morefunctionlocal={k}]{Input}
+  \mmaSub{x}{i_}:=-4+i
+  \mmaSub{f}{i_}:=\{-21.4,-13.0,-6.37,-1.63,1.00,1.37,-0.63,-5.00,-11.6\}[[i+1]]
+  \mmaSub{h}{k_}:=\mmaSub{x}{\mmaPat{k}+1}-\mmaSub{x}{\mmaPat{k}}
+  Ih=\mmaUnderOver{\(\pmb{\sum}\)}{k=0}{7}\mmaFrac{\mmaSub{h}{k}}{2}(\mmaSub{f}{k+1}+\mmaSub{f}{k})
+\end{mmaCell}
+\begin{mmaCell}[addtoindex=3]{Output}
+  -40.760000000000005`
+\end{mmaCell}
+\begin{mmaCell}[moredefined={I2h, f, IR, Ih},morefunctionlocal={k}]{Input}
+  I2h=\mmaUnderOver{\(\pmb{\sum}\)}{k=0}{3}\mmaFrac{\mmaSub{h}{2k}+\mmaSub{h}{2k+1}}{2}(\mmaSub{f}{2k+2}+\mmaSub{f}{2k});
+  IR= Ih+\mmaFrac{Ih-I2h}{\mmaSup{2}{2}-1}
+\end{mmaCell}
+\begin{mmaCell}[addtoindex=1]{Output}
+  -39.34666666666667`
+\end{mmaCell}
+\begin{mmaCell}[moredefined={IS, f},morefunctionlocal={k}]{Input}
+  IS=\mmaUnderOver{\(\pmb{\sum}\)}{k=0}{3}\mmaFrac{\mmaSub{h}{2k}+\mmaSub{h}{2k+1}}{6}(\mmaSub{f}{2k+2}+4\mmaSub{f}{2k+1}+\mmaSub{f}{2k})
+\end{mmaCell}
+\begin{mmaCell}{Output}
+  -39.346666666666664`
+\end{mmaCell}
+Метод трапеций:
+\[
+I=-40.76
+.\]
+Уточнение экстраполяцией Ричардсона
+\[
+I_R=-39.3467
+.\] 
+Что совпадает с результатом, полученным методом Симпсона
+Погрешность для метода трапеций
+\[
+\epsilon\le  \frac{1}{12} 1.7 \cdot 8 \cdot 1^2 \approx 1.13
+.\] 
+Для метода Симпсона
+\[
+\epsilon \le  \frac{8}{2880}
+.\] 
+\end{document}

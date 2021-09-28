@@ -1,0 +1,127 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{Работа над ошибками\\
+Вариант 2}
+\begin{document}
+	\maketitle
+\prob{Задача 3}
+Далее будем считать, что
+\[
+	\mathbf{f}=\begin{pmatrix} 2 \\ -2 \\ 2 \end{pmatrix} 
+.\] 
+\begin{enumerate}
+	\item Вычислим евклидовы нормы матриц $\mathbf{A}$ и $\mathbf{A}^{-1}$:
+\[
+	\| \mathbf{A}\|_3=5,\qquad \| \mathbf{A}^{-1}\|=1
+.\] 
+Тогда число обусловленности $\mu_3$ матрицы $\mathbf{A}$ будет равно:
+\[
+	\mu_3(\mathbf{A})=\| \mathbf{A}\|\| \mathbf{A}^{-1}\|=5
+.\] 
+\item Приведём разложение матрицы $\mathbf{A}$ на диагональную  $\mathbf{D}$,
+нижнюю и верхнюю треугольные матрицы с нулевыми элементами на главной
+диагонали ($\mathbf{L}$ и $\mathbf{U}$ --- соответственно):
+\[
+	\mathbf{D}= \operatorname{diag}(1,\,1,\,4),\qquad
+	\mathbf{L}=\begin{pmatrix}0 & 0 & 0 \\ -2 & 0 & 0 \\ -1 & 1 & 0
+	\end{pmatrix}, \qquad \mathbf{U} =\mathbf{L}^T
+.\]
+Пользуясь следующими обозначениями для общего вида итерационного
+метода
+\[
+	\mathbf{u}^{(k+1)}=\mathbf{R}\mathbf{u}^{(k)}+\mathbf{F}
+\] 
+запишем вычислительные формулы для
+метода Якоби:
+\[
+	\mathbf{R}=-\mathbf{D}^{-1}(\mathbf{L}+\mathbf{U})
+	=\begin{pmatrix} 0 & 2 &1\\2&0&-1\\\frac{1}{4}&
+		-\frac{1}{4}&0\end{pmatrix} ,\qquad \mathbf{F}=\mathbf{D}^{-1}\mathbf{f}= \begin{pmatrix} 2 \\ -2 \\ \frac{1}{2}
+	\end{pmatrix} 
+ ,\]
+и метода Зейделя:
+\[
+	\mathbf{R}=-(\mathbf{L}+\mathbf{D})^{-1}\mathbf{U}
+	=\begin{pmatrix} 0 & 2&1\\0&4&1\\0&-\frac{1}{2}&0
+		\end{pmatrix} ,\qquad \mathbf{F}=(\mathbf{L}+\mathbf{D})^{-1}\mathbf{f}= \begin{pmatrix} 2 \\ 2 \\ \frac{1}{2} \end{pmatrix} 
+.\] 
+Далее воспользуемся критерием сходимости метода Якоби
+(для сходимости необходимо и достаточно, чтобы все корни уравнения
+\[
+	\begin{vmatrix}\lambda a_{11} & a_{12}& a_{13}\\
+	a_{21} & \lambda a_{22} & a_{23} \\
+a_{31} & a_{32} & \lambda a_{33}\end{vmatrix} =0
+\]
+по модулю не превосходили единицы):
+\[
+\begin{vmatrix} 
+ \lambda  & -2 & -1 \\
+ -2 & \lambda  & 1 \\
+ -1 & 1 & 4 \lambda  \\
+\end{vmatrix} =4-18\lambda +4\lambda^3=
+2 (\lambda -2) \left(2 \lambda ^2+4 \lambda -1\right)=0
+.\] 
+Заметим, что данное уравнение имеет как минимум один корень $\lambda_1=2$, по модулю превосходящий единицу. Следовательно итерационный
+метод Якоби по приведённому критерию не сходится.
+
+Для сходимости метода Зейделя необходимо и достаточно, чтобы
+все корни уравнения
+ \[
+	 \begin{vmatrix} \lambda a_{11} & a_{12} & a_{13} \\
+	 \lambda a_{21} & \lambda a_{22} & a_{23} \\
+ \lambda a_{31} & \lambda a_{32} & \lambda a_{33}\end{vmatrix}=0 
+\]
+по модулю не превосходили единицы.
+\[
+\begin{vmatrix} 
+ \lambda  & -2 & -1 \\
+ -2 \lambda  & \lambda  & 1 \\
+ -\lambda  & \lambda  & 4 \lambda  
+\end{vmatrix} =
+4 \lambda ^3-16 \lambda ^2+2 \lambda=
+2 \lambda  \left(2 \lambda ^2-8 \lambda +1\right)=0
+.\] 
+Решением данного уравнения, кроме прочих, будет корень \[\lambda_1=
+\frac{1}{2}\left(4 +\sqrt{14}\right)>1. \]
+Следовательно метод Зейделя по критерию в данном случае также не сходится.
+\item Считая начальным приближением вектор
+\[
+	\mathbf{u}^{(0)}=\mathbf{x}=\begin{pmatrix} 0 \\ 2\\0 \end{pmatrix} 
+\] 
+и пользуясь полученными ранее значениями $\mathbf{R}$ и $\mathbf{F}$ 
+для методов Якоби и Зейделя для итерационного метода вида
+$\mathbf{u}^{(k+1)}= \mathbf{R} \mathbf{u}^{(k)}+\mathbf{F}$,
+выполним по три итерации данных методов:
+\begin{itemize}
+	\item \emph{Метод Якоби}:
+\[
+	\mathbf{u}^{(1)}=\mathbf{R}\mathbf{u}^{(0)}+\mathbf{F}=
+	\begin{pmatrix} 6 \\ -2 \\ 0 \end{pmatrix} 
+,\] 
+\[
+	\mathbf{u}^{(2)}=\mathbf{R}\mathbf{u}^{(1)}+\mathbf{F}=
+	\begin{pmatrix} -2 \\ 10 \\ \frac{5}{2} \end{pmatrix} 
+,\] 
+
+\[
+	\mathbf{u}^{(3)}=\mathbf{R}\mathbf{u}^{(2)}+\mathbf{F}=
+	\begin{pmatrix} \frac{49}{2} \\ -\frac{17}{2} \\ -\frac{5}{2} \end{pmatrix} 
+.\] 
+\item \emph{Метод Зейделя}:
+
+\[
+	\mathbf{u}^{(1)}=\mathbf{R}\mathbf{u}^{(0)}+\mathbf{F}=
+	\begin{pmatrix} 6 \\ 10 \\ -\frac{1}{2} \end{pmatrix} 
+,\] 
+
+\[
+	\mathbf{u}^{(2)}=\mathbf{R}\mathbf{u}^{(1)}+\mathbf{F}=
+	\begin{pmatrix} \frac{43}{2} \\ \frac{83}{2} \\ -\frac{9}{2} \end{pmatrix} 
+,\] 
+\[
+	\mathbf{u}^{(3)}=\mathbf{R}\mathbf{u}^{(2)}+\mathbf{F}=
+	\begin{pmatrix} \frac{161}{2} \\ \frac{327}{2} \\ -\frac{81}{4} \end{pmatrix} 
+.\] 
+\end{itemize}
+\end{enumerate}
+\end{document}

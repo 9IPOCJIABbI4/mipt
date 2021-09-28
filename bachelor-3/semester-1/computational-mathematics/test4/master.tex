@@ -1,0 +1,23 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{}
+\begin{document}
+	\maketitle
+\[
+	\int\limits_{0}^{\delta} \frac{1}{x^{2 /3}\sqrt[3]{1+x^3}}dx=
+	\int\limits_{0}^{\delta} \left( \frac{1}{x^{2 /3}}+ O\left( 
+	x^{7 /3}\right)  \right)  dx=
+	3 \delta^{ 1 /3}+O\left( \delta^{10 /3} \right) 
+.\] 
+Пусть 
+$3 \delta^{1 /3 }\le \frac{\epsilon}{2}$ 
+\[
+	M=\max_{x \in [\delta,\,1]} f''(x)=\frac{2 \left(20 \delta ^6+7 \delta ^3+5\right)}{9 \left(\delta ^4+\delta
+   \right)^2 \sqrt[3]{\delta ^5+\delta ^2}}
+.\] 
+Методом трапеций можно вычислить оставшуюся часть интеграла
+с точностью $\frac{\epsilon}{2}$ с шагом
+\[
+h = \sqrt{ \frac{24\epsilon}{M}} 
+.\] 
+\end{document}

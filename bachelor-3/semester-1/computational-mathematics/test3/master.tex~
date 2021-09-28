@@ -1,0 +1,26 @@
+\documentclass[a4paper]{article}
+\input{../../preamble.tex}
+\title{}
+\begin{document}
+	\maketitle
+\[
+\left\{
+\begin{aligned}
+	2 x +y = \tg (x) \\
+	x^2 +y^2 =3
+\end{aligned}
+\right.
+.\] 
+\[
+	\mathbf{F}(\mathbf{u})=
+	\begin{pmatrix} 2x+y -\tg x \\ x^2+y^2-3 \end{pmatrix} 
+.\] 
+\[
+	\mathbf{J}= \frac{\partial \mathbf{F}}{\partial \mathbf{u}}=
+	\begin{pmatrix} 2 -\dfrac{1}{\cos^2 x}& 1\\ 2x& 2y \end{pmatrix} 
+.\] 
+\[
+	\mathbf{u}^{k+1} \begin{pmatrix} x^{k+1}\\ y^{k+1} \end{pmatrix} \approx \mathbf{u}^k+ \mathbf{J}\cdot\mathbf{F}\left(\mathbf{u}^k\right)=\begin{pmatrix}x^k+(x^k)^2-\left(\dfrac{1}{\cos^2 x^k}-2\right) (2 x^k-\tg (x^k)+y^k)+(y^k)^2-3\\y^k+2 y^k
+	\left((x^k)^2+(y^k)^2-3\right)+2 x^k (2 x^k-\tg (x^k)+y^k)
+  \end{pmatrix} .\] 
+\end{document}

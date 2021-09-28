@@ -1,0 +1,98 @@
+\documentclass[a4paper]{article}
+
+\input{../../preamble.tex}
+\title{Домашняя работа по вычислительной математике}
+\begin{document}
+	\maketitle
+\subsection{Задача 6.6}
+\begin{sol}
+	Пусть
+	\[
+		f'(x_0)=
+		\frac{a_0 f(x_0) + a_1 f(x_1)+ a_2 f(x_2)}{h}
+	.\] 
+	\[
+		f(x_0+h)= f(x_0)+ h f'(x_0)+\frac{h^2}{2}
+		f''(x_0) + \frac{h^3}{6} f'''(x_0)+
+		\frac{h^4}{24} f^{IV} (x_0+\theta h)
+	.\] 
+	\[
+		f(x_0+2h)= f(x_0)+ 2h f'(x_0)+\frac{4h^2}{2}
+		f''(x_0) + \frac{8h^3}{6} f'''(x_0)+
+		\frac{16h^4}{24} f^{IV} (x_0+2\theta h)
+	.\] 
+	\begin{multline*}
+		f'(x_0)= \frac{1}{h}\left( 
+		a_0 f (x_0) + a_1 \left( f(x_0)+h f'(x_0)+
+	\frac{h^2}{2} f''(x_0)\right)\right. +\\ \left.+a_2\left( f(x_0)+ 2h f'(x_0)+\frac{4h^2}{2}f''(x_0) \right)\right) +O(h^2)
+	.\end{multline*} 
+	$O(h^2)$:
+	\[
+	\left\{
+	\begin{aligned}
+	f: a_0+a_1+a_2=0\\
+	f' h : a_1+2a_2=1\\
+	\frac{f'' h^2}{2}: a_1+4a_2=0
+	\end{aligned}
+	\right.
+	.\] 
+ \[
+	 (a_0,\,a_1,\,a_2)= \left( -\frac{3}{2},\, 2,\,-\frac{1}{2} \right) 
+.\] 
+\begin{multline*}
+\epsilon_\text{мет}= \left| 
+\frac{a_0 f(x_0) + a_1 f(x_1)+ a_2 f(x_2)}{h}-f'(x_0)
+\right| =\\=
+\left| 
+\frac{1}{h}\left( 
+		a_0 f (x_0) + a_1 \left( f(x_0)+h f'(x_0)+
+	\frac{h^2}{2} f''(x_0+\theta h)\right) +a_2\left( f(x_0)+ 2h f'(x_0)+\frac{4h^2}{2}f''(x_0+2\theta h) \right)\right)
+\right| 
+.\end{multline*} 
+
+	Пусть
+	\[
+		f'(x_0)=
+		\frac{a_0 f(x_0) + a_1 f(x_1)+ a_2 f(x_2)+ a_3
+		f(x_3)}{h}
+	.\] 
+	\[
+		f(x_0+h)= f(x_0)+ h f'(x_0)+\frac{h^2}{2}
+		f''(x_0) + \frac{h^3}{6} f'''(x_0)+
+		\frac{h^4}{24} f^{IV} (x_0) + O(h^5)
+	.\] 
+	\[
+		f(x_0+2h)= f(x_0)+ 2h f'(x_0)+\frac{4h^2}{2}
+		f''(x_0) + \frac{8h^3}{6} f'''(x_0)+
+		\frac{16h^4}{24} f^{IV} (x_0) + O(h^5)
+	.\] 
+	\[
+		f(x_0+3h)= f(x_0)+ 3h f'(x_0)+\frac{9h^2}{2}
+		f''(x_0) + \frac{27h^3}{6} f'''(x_0)+
+		\frac{81h^4}{24} f^{IV} (x_0) + O(h^5)
+	.\] 
+	\begin{multline*}
+		f'(x_0)= \frac{1}{h}\left( 
+		a_0 f (x_0) + a_1 \left( f(x_0)+h f'(x_0)+
+	\frac{h^2}{2} f''(x_0)\right)\right. +\\ \left.+a_2\left( f(x_0)+ 2h f'(x_0)+\frac{4h^2}{2} \right) + a_3\left(f(x_0)+ 3h f'(x_0)+\frac{9h^2}{2}\right)\right) +O(h^2)
+	.\end{multline*} 
+	$O(h^2)$:
+	\[
+	\left\{
+	\begin{aligned}
+	f: a_0+a_1+a_2+a_3=0\\
+	f' h : a_1+2a_2+3a_3=1\\
+	\frac{f'' h^2}{2}: a_1+4a_2=0
+	\end{aligned}
+	\right.
+	.\] 
+ \[
+	 (a_0,\,a_1,\,a_2)= \left( -\frac{3}{2},\, 2,\,-\frac{1}{2} \right) 
+.\] 
+\[
+\epsilon_\text{мет}= \left| 
+\frac{a_0 f(x_0) + a_1 f(x_1)+ a_2 f(x_2)}{h}-f'(x_0)
+\right| 
+.\] 
+\end{sol}
+\end{document}
