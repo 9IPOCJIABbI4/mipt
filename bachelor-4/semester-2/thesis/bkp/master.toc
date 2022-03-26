@@ -1,0 +1,15 @@
+\babel@toc {russian}{}
+\contentsline {section}{\numberline {1}Иерархия КП}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Пары Лакса}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Билинейное тождество Хироты}{3}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Полиномы Шура, соотношения Плюккера, гипергеометрические $\tau $-функции}{4}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}$\tau $-функция чисел Гурвица}{5}{subsection.1.4}%
+\contentsline {subsection}{\numberline {1.5}Фермионный формализм и бозон-фермионное соответствие}{6}{subsection.1.5}%
+\contentsline {section}{\numberline {2}Квантовая деформация иерархии КП}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Фермионный формализм}{8}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}$\tau $-функция чисел Гурвица}{8}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Иерархия $B$КП}{9}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Билинейное тождество $B$КП}{9}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}$Q$-полиномы Шура, соотношения Плюккера $B$КП, гипергеометрические $\tau ^{B\text {КП}}$-функции}{10}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}$\tau $-функция спиновых чисел Гурвица}{11}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Квантовая деформация иерархии $B$КП}{11}{section.4}%

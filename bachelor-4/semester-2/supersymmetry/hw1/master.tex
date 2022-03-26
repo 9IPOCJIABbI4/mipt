@@ -1,0 +1,618 @@
+\documentclass[a4paper, 14pt]{extarticle}
+\usepackage{fullpage}
+\input{../../preamble-rus.tex}
+\title{Д/з по суперсимметрии}
+\begin{document}
+	\maketitle
+\section*{Задание 1.1}
+\begin{hiProb}[Задача 1]
+\end{hiProb}
+\begin{sol}
+%Уравнения Эйлера-Лагранжа
+%\[
+%	\frac{\partial L}{\partial x}-\frac{\mathrm{d} }{\mathrm{d} t} \frac{\partial L}{\partial \dot{x}}=0,\qquad
+%\frac{\partial L}{\partial \psi}-\frac{\mathrm{d} }{\mathrm{d} t} \frac{\partial L}{\partial \dot{\psi}}=0,
+%\qquad \frac{\partial L}{\partial \psi^\dagger}-\frac{\mathrm{d} }{\mathrm{d} t} \frac{\partial L}{\partial \dot{\psi}^\dagger}=0
+%.\] 
+%Откуда
+%\[
+%\ddot{x}=0,\qquad -\mathrm{i}  \dot{\psi}^\dagger+
+%\psi^\dagger \ddot{h}=0,\qquad
+%\mathrm{i} \dot{\psi}+\psi \ddot{h}=0
+%.\] 
+Найдём вариацию действия
+\begin{multline*}
+	\delta S= \int \mathrm{d} t \left[ 
+	\dot{x} \delta \dot{x} + \mathrm{i} 
+\delta \psi^\dagger \dot{\psi} + \mathrm{i} \psi^\dagger
+\delta \dot{\psi} -h' h''
+\delta x \right. + \\ + \left. h''' \delta x \psi^\dagger
+\psi + h''\left( \delta \psi^\dagger \psi+ \psi^\dagger
+\delta \psi\right) \right] =\\=
+\int \mathrm{d} t \left[ 
+\left(-\ddot{x}-h'h''+h''' \psi^\dagger \psi\right)\delta x\right. + \\ + \left.\left( -\mathrm{i} \dot{\psi}^\dagger+ h'' \psi^\dagger \right) \delta \psi+\left( -\mathrm{i} \dot{\psi}-h''\psi  \right)\delta\psi^\dagger  \right] 
+.\end{multline*} 
+Откуда
+\[
+\ddot{x}= h''' \psi^\dagger \psi-h' h'' ,\qquad
+\dot{\psi}=\mathrm{i} h'' \psi,\qquad
+\dot{\psi}^\dagger=-\mathrm{i} h'' \psi^\dagger
+.\] 
+Далее
+\[
+h''= \frac{h'''\psi^\dagger \psi-\ddot{x}}{h'}
+.\] 
+\[
+\dot{\psi}=-\mathrm{i} \frac{\ddot{x}}{h'}\psi,\qquad
+\dot{\psi}^\dagger=  \mathrm{i} \frac{\ddot{x}}{h'} \psi^\dagger
+.\] 
+%\begin{multline*}
+%	0=\int \mathrm{d} t \left( 
+%\ddot{x} \psi +\mathrm{i} h'\dot{\psi} \right) =C+
+%\int \mathrm{d} t \left(-\dot{x}\dot{\psi} +\mathrm{i} h' \dot{\psi} \right) =\\=
+%C- \int \mathrm{d} \psi \left(\dot{x}- \mathrm{i} h'  \right) =
+%C- \left( \dot{x}-\mathrm{i} h' \right) \int \mathrm{d} \psi=C
+%.\end{multline*} 
+%\[
+%	\frac{\mathrm{d} \psi / \mathrm{d} t}{\mathrm{d} \dot{x} / \mathrm{d} t}=\mathrm{i} \frac{\psi}{h'}, \implies
+%h' \mathrm{d} \psi- \mathrm{i} \psi \mathrm{d} \dot{x}=0
+%.\] 
+%\[
+%	0= \int \mathrm{d} t \ \left( 
+%	h' \dot{\psi}- \mathrm{i}  \ddot{x} \psi\right) 
+%.\]  
+Дифференцируя суперзаряды по времени, получаем
+\begin{multline*}
+	0=\dot{Q}=\ddot{x}\psi+ \dot{x}\dot{\psi} - \mathrm{i} \left( h''\dot{x}\psi + h' \dot{\psi} \right) =\\=
+	\left( \ddot{x} \psi-\mathrm{i} h'\dot{\psi} \right)+
+	\dot{x}\left(\dot{\psi}-\mathrm{i} h''\psi \right)=0 
+.\end{multline*} 
+\begin{multline*}
+	0=\dot{Q}^\dagger=\ddot{x}\psi^\dagger+ \dot{x}\dot{\psi}^\dagger + \mathrm{i} \left( h''\dot{x}\psi^\dagger + h' \dot{\psi} ^\dagger\right) =\\=
+	\left( \ddot{x} \psi^\dagger+\mathrm{i} h'\dot{\psi} ^\dagger\right)+
+	\dot{x}\left(\dot{\psi}^\dagger+\mathrm{i} h''\psi ^\dagger\right)=0 .\end{multline*} 
+%\[
+%\dot{Q}=0\implies
+%.\] 
+%\[
+%	0=\delta Q= \psi\delta \dot{x} + \dot{x} \delta \psi- \mathrm{i} \left( h''\delta x \psi +h' \delta \psi \right),\qquad
+%	\] 
+%\[
+%0=\delta Q^\dagger= \psi^\dagger \delta \dot{x}+\dot{x}\delta \psi^\dagger+\mathrm{i} 
+%	\left( h''\delta x \psi^\dagger +h' \delta \psi^\dagger \right) 
+%.\] 
+%\[
+%	0=\psi \delta Q= \left( \dot{x}-\mathrm{i} h' \right) \psi \delta\psi=Q \delta \psi\implies
+%	\delta 	\psi\sim  Q
+%.\] 
+%\begin{multline*}
+%	0=\psi^\dagger \left(  \psi\delta \dot{x} + \dot{x} \delta \psi- \mathrm{i} \left( h''\delta x \psi +h' \delta \psi \right)\right) +\\+\psi \left( 
+%	\psi^\dagger \delta \dot{x}+\dot{x}\delta \psi^\dagger+\mathrm{i} 
+%	\left( h''\delta x \psi^\dagger +h' \delta \psi^\dagger \right) 
+%\right) =\\=\left(\dot{x}-\mathrm{i}  h' \right)\psi^\dagger \delta \psi +
+%\left( \dot{x}+\mathrm{i} h' \right) \psi \delta \psi^\dagger+\mathrm{i} \left( \psi\psi^\dagger-\psi^\dagger \psi  \right) h''\delta x
+%.\end{multline*} 
+%Из сохранения суперзарядов получим суперсимметрию
+%\[
+%\delta x= \mathrm{i} \left[ \epsilon ^\dagger
+%Q-\epsilon Q^\dagger,\,x\right] =\epsilon ^\dagger \psi
+%-\epsilon \psi^\dagger
+%,\] 
+%\[
+%	\delta \psi= \mathrm{i} \left\{ \epsilon ^\dagger Q-\epsilon Q^\dagger,\,\psi \right\} =\epsilon \left( -\mathrm{i} \dot{x}+h' \right) 
+%,\] 
+%\[
+%	\delta \psi^\dagger= \mathrm{i} \left\{ \epsilon ^\dagger Q-\epsilon Q^\dagger,\,\psi^\dagger \right\} =\epsilon^\dagger \left( \mathrm{i} \dot{x}+h' \right) 
+%.\]
+%Подставим в полученную вариацию действия найденные преобразования симметрии
+%\begin{multline*}
+%\delta S= \int \mathrm{d} t \ \epsilon \left[ 
+%-\dot{x} \dot{\psi}^\dagger - \mathrm{i} \psi^\dagger \frac{\mathrm{d} }{\mathrm{d} t} \left( -\mathrm{i} \dot{x}
+%+h'\right) +h'h'' \psi^\dagger-h''' \psi^\dagger\psi
+%^\dagger \psi\right. - \\ - \left.h'' \psi^\dagger \left( -\mathrm{i} \dot{x}+h' \right) \right] 
+%+\epsilon ^\dagger \left[ 
+%\dot{x}\dot{\psi}+\mathrm{i} \left( \mathrm{i} \dot{x}
+%+h'\right) \dot{\psi}-h'h''\psi\right. + \\ + \left.h'''\psi\psi^\dagger
+%\psi+h'' \left( \mathrm{i} \dot{x}+h' \right) \psi\right]=\\=
+%\int \mathrm{d} t \ \epsilon  \left[ 
+%\mathrm{i} \dot{\psi}^\dagger h'+ h'h''\psi^\dagger
+%-h'' \psi^\dagger \left( -\mathrm{i} \dot{x}+h' \right) \right]+\\+\epsilon ^\dagger \left[ 
+%\mathrm{i} h' \dot{\psi}-h'h'' \psi+h''\left( \mathrm{i} \dot{x}+h' \right) \psi\right] =\\=
+%\int \mathrm{d} t \ \mathrm{i} \epsilon  \frac{\mathrm{d} }{\mathrm{d} t} \left( h'\psi^\dagger \right) +\mathrm{i} \epsilon ^\dagger \frac{\mathrm{d} }{\mathrm{d} t}
+%\left( h' \psi \right) =0
+%.\end{multline*} 
+Квантовомеханическое следствие теоремы Нётер
+\[
+	\delta \left( \text{бозонное поле} \right) =
+	\mathrm{i} \epsilon \left[\text{заряд},\,\text{поле}  \right] 
+,\] 
+\[
+	\delta \left( \text{фермионное поле} \right) =
+	\mathrm{i} \epsilon \left\{\text{заряд},\,\text{поле}  \right\} 
+.\] 
+В нашем случае из сохранения заряда $Q$ следует симметрия
+\[
+\delta x=\epsilon \psi,\qquad \delta \psi=0,\qquad
+\delta \psi^\dagger=\epsilon \left(\mathrm{i} \dot{x}+h'\right)
+.\] 
+Проверим, что вариация действия на данной симметрии
+действительно равна нулю
+\begin{multline*}
+\delta S=\int \mathrm{d}  t \ \epsilon  \left[ 
+\dot{x} \dot{\psi}^\dagger+ \mathrm{i} 
+ \left( \mathrm{i} \dot{x}+h' \right)\dot{\psi} -h'h''\psi^\dagger\right. + \\ + \left.h'''\psi^\dagger \psi^\dagger \psi +h''
+\left( \mathrm{i} \dot{x}+h' \right)\psi \right] =
+\\=\int \mathrm{d} t\ \epsilon  \left[ \mathrm{i} h'\dot{\psi}  -h'h''\psi+
+h''\left(\mathrm{i} \dot{x}+h'  \right)\psi \right] 
+=\\= \int \mathrm{d} t\ \mathrm{i} \epsilon  \frac{\mathrm{d} }{\mathrm{d} t}\left( h' \psi\right) =0
+.\end{multline*} 
+Из сохранения заряда $Q^\dagger$ следует симметрия
+\[
+	\delta x=\epsilon \psi^\dagger,\qquad \delta \psi=\epsilon \left( \mathrm{i} \dot{x}-h' \right) ,\qquad
+\delta \psi^\dagger=0
+.\] 
+Аналогично
+\begin{multline*}
+\delta S=\int \mathrm{d}  t \ \epsilon  \left[ 
+\dot{x} \dot{\psi}^\dagger- \mathrm{i} 
+\psi^\dagger \frac{\mathrm{d} }{\mathrm{d} t}
+\left( \mathrm{i} \dot{x}-h' \right) -h'h''\psi^\dagger\right. + \\ + \left.h'''\psi^\dagger \psi^\dagger \psi -h''\psi^\dagger
+\left( \mathrm{i} \dot{x}-h' \right) \right] =
+\\=\int \mathrm{d} t\ \epsilon  \left[ -\mathrm{i} \dot{\psi}^\dagger h' -h'h''\psi^\dagger-
+h''\psi^\dagger\left(\mathrm{i} \dot{x}-h'  \right) \right] 
+=\\=- \int \mathrm{d} t\ \mathrm{i} \epsilon  \frac{\mathrm{d} }{\mathrm{d} t}\left( h' \psi^\dagger \right) =0
+.\end{multline*} 
+Найдём канонические сопряжённые импульсы
+\[
+	p(t)= \frac{\delta S}{\delta \dot{x}(t)}=
+	\dot{x}(t),\qquad
+	\pi(t)= \frac{\delta S}{\delta \dot{\psi}(t)}=\mathrm{i} 
+	\psi^\dagger(t)
+.\] 
+Гамильтониан
+\[
+H=p \dot{x}+\pi \dot{\psi}-L
+.\] 
+Его <<суперсимметризация>>
+\[
+	H=\frac{1}{2}\left( p^2 +h'^2 \right) -\frac{1}{2}
+	h''\left( \psi^\dagger\psi-\psi \psi^\dagger \right) 
+.\] 
+%Для $Q$ имеем симметрии
+%\[
+%\delta x= \epsilon  \frac{\partial Q}{\partial p} =
+%\epsilon \psi,\qquad
+%\delta \psi= \epsilon \frac{\partial Q}{\partial \pi} 
+%=-\epsilon h',
+%.\] 
+%\[
+%\delta L= \frac{\partial L}{\partial x} \delta x+
+%\frac{\partial L}{\partial \psi}\delta \psi +\frac{\partial L}{\partial \psi^\dagger} \delta \psi^\dagger+
+%.\] 
+\end{sol}
+\begin{hiProb}[Задача 2]
+\end{hiProb}
+\begin{sol}
+Можем сконструировать гамильтониан вида
+\[
+H= \frac{1}{2} \left\{ c^\dagger,\,c \right\} =\frac{1}{2}
+\mathbbold{1} 
+,\] 
+однако, кажется, что система с одним энергетическим
+уровнем плохо подходит под определение фермионного осциллятора.
+Системой с двумя энергетическими уровнями будет, например,
+\[
+	H=\frac{1}{2} \left[ c^\dagger,\,c \right] =F-\frac{1}{2}\mathbbold{1} 
+.\] 
+Откуда
+\[
+H \ket{0}= -\frac{1}{2}\ket{0},\qquad
+H\ket{1}=\frac{1}{2} \ket{1}
+.\] 
+Это уже похоже на то, что должно называться фермионным осциллятором и совпадает с последним членом в гамильтониане
+суперсимметричной частицы при $h''=1$.
+
+Рассмотрим нестационарное равнение Шрёдингера
+\[
+\mathrm{i} \frac{\partial }{\partial t} \ket{\psi}=
+H \ket{\psi}
+\] 
+с начальным условием
+\[
+\ket{\psi}= a \ket{0}+b \ket{1}
+.\] 
+Его решением будет
+\[
+	\ket{\psi}=\mathrm{e} ^{-\mathrm{i} Ht }
+	\left( a \ket{0}+b\ket{1} \right) =
+	a \mathrm{e} ^{\mathrm{i} t /2}\ket{0}+
+	b \mathrm{e} ^{-\mathrm{i} t /2}\ket{1}
+.\] 
+\end{sol}
+\begin{hiProb}[Задача 3]
+\end{hiProb}
+\begin{sol}
+Представлением алгебры нескольких фермионных осцилляторов
+может быть, например,
+\[
+c^i=\underbrace{\sigma_3 \otimes \sigma_3 \otimes \cdots \otimes
+\sigma_3 }_{i-1 \text{ раз}}\otimes \begin{pmatrix} 0&0\\1&0 \end{pmatrix} 
+\otimes \mathbbold{1} \otimes \cdots \otimes \mathbbold{1} 
+.\] 
+\[
+c^{i\dagger}=\underbrace{\sigma_3 \otimes \sigma_3 \otimes \cdots \otimes
+\sigma_3 }_{i-1 \text{ раз}}\otimes \begin{pmatrix} 0&1\\0&0 \end{pmatrix} 
+\otimes \mathbbold{1} \otimes \cdots \otimes \mathbbold{1} 
+.\] 
+Т.\:к.
+\[
+\left\{ \sigma_3,\,\begin{pmatrix} 0&0\\1&0 \end{pmatrix} 
+ \right\} =0,\qquad
+\left\{ \sigma_3,\,\begin{pmatrix} 0&1\\0&0 \end{pmatrix} 
+ \right\} =0
+,\] 
+(остальные коммутационные соотношения известны), то выполнено 
+\[
+\left\{ c^i,\,c^j \right\} =\left\{ c^{i\dagger},\,c^{j\dagger} \right\} =0,\qquad \left\{ c^{i\dagger},\,c^{j} \right\} =\delta^{ij}
+.\] 
+Гамильтониан системы фермионных осцилляторов
+может иметь вид
+\[
+H=\frac{1}{2} \sum_{i=1}^{n} \left[ c^{i\dagger},\,c^i \right]+ \sum_{i,j,k,l}^{} c^{i\dagger}c^{j\dagger}c^kc^l 
+.\] 
+\end{sol}
+\begin{hiProb}[Задача 4]
+\end{hiProb}
+\begin{sol}
+%Тогда
+%\begin{multline*}
+%H= \frac{1}{2}\left\{ Q^\dagger,\,Q \right\} =\\=
+%\frac{1}{2} \sum_{i=1}^{2} \left( p_i^2+\left( \partial
+%_i h\right) ^2 \right) \otimes \mathbbold{1} \otimes \mathbbold{1} -\frac{1}{2}\partial_1^2 h \otimes \sigma_3 \otimes \mathbbold{1}-\frac{1}{2}
+%\partial_2^2 h \otimes \mathbbold{1} \otimes \sigma_3
+%.\end{multline*} 
+Пусть
+\[
+	Q=\left( p_i-\mathrm{i} \partial_i h \right) \psi^i,
+	\qquad Q^\dagger=
+	\left( p_i+\mathrm{i} \partial_i h \right) \psi^{\dagger i}
+.\] 
+Тогда
+%\begin{multline*}
+%\left\{ Q,\,Q^\dagger \right\} =
+%\left( p_i- \mathrm{i} \partial_i h \right) \psi^i
+%\left( p_j +\mathrm{i} \partial_j h \right)
+%\psi^{\dagger j}+
+%\left( p_i+\mathrm{i} \partial_i h \right) \psi^{\dagger i}
+%\left( p_j-\mathrm{i} \partial_{j} h \right) \psi^{j}=
+%\\=
+%\sum_{i=1}^{2} \left( p_i^2+ \left( \partial_i h \right) ^2 \right) -\mathrm{i} \partial_i h p_j \psi^i\psi^{\dagger
+%j}+\mathrm{i}p_i\partial_j h \psi^i   \psi^{\dagger j}
+%-\mathrm{i} p_i \partial_j h \psi^{\dagger i}\psi^j+
+%\mathrm{i} \partial_i h p_j \psi^{\dagger i}\psi^{j}=\\=
+%\sum_{i=1}^{2} \left( p_i^2+ \left( \partial_i h \right) ^2 \right) -\mathrm{i} \partial_j h p_i \psi^j\psi^{\dagger
+%i}+\mathrm{i}p_j\partial_i h \psi^j   \psi^{\dagger i}
+%-\mathrm{i} p_i \partial_j h \psi^{\dagger i}\psi^j+
+%\mathrm{i} \partial_i h p_j \psi^{\dagger i}\psi^{j}=
+%.\end{multline*} 
+%Тогда
+%\begin{multline*}
+%\left\{ Q,\,Q^\dagger \right\} =
+%\left( p_i- \mathrm{i} \partial_i h \right) \psi^i
+%\left( p_j +\mathrm{i} \partial_j h \right)
+%\psi^{\dagger j}+
+%\left( p_j+\mathrm{i} \partial_j h \right) \psi^{\dagger j}
+%\left( p_i-\mathrm{i} \partial_{i} h \right) \psi^{i}=
+%\end{multline*}
+%\begin{multline*}
+%	\left( p_1\psi^1-\mathrm{i} \partial_1 h\psi^1 
+%	+p_1 \psi^2 -\mathrm{i}  \partial_2 h \psi^2\right) 
+%	\left( p_1 \psi^{\dagger 1}+\mathrm{i} \partial_1
+%	h \psi^{\dagger 1}
+%+p_2 \psi^{\dagger 2} +\mathrm{i} \partial_2 h \psi^{\dagger 2}\right) +\\+\left( p_1 \psi^{\dagger 1}+\mathrm{i} \partial_1
+%	h \psi^{\dagger 1}
+%+p_2 \psi^{\dagger 2} +\mathrm{i} \partial_2 h \psi^{\dagger 2}\right)\left( p_1\psi^1-\mathrm{i} \partial_1 h\psi^1 
+%	+p_1 \psi^2 -\mathrm{i}  \partial_2 h \psi^2\right)=
+%p_1^2+ p_2^2
+%.\end{multline*} 
+\begin{multline*}
+\left\{ Q,\,Q^\dagger \right\} =
+\left(p_i p_j +\partial_i h \partial_j h\right)\left\{ \psi^i,\,\psi^{\dagger j} \right\}  +\left( 
+\mathrm{i} p_i \partial_j h-\mathrm{i} \partial_i h p_j\right) \psi^i \psi^{\dagger j}+\\+
+\left( \mathrm{i} \partial_j h p_i - \mathrm{i} p_j
+\partial_i h\right) \psi^{\dagger j}\psi^{i}=
+\sum_{i=1}^{n} \left( p_i^2 +\left( \partial_i h \right) ^2 \right) +\\+
+\left( -\partial_i \partial_j h+\mathrm{i} \partial_j h
+p_i-\mathrm{i} \partial_i h p_j\right) \psi^i \psi^{\dagger j}+ \left( \mathrm{i} \partial_j h p_i + \partial_j \partial_i h-\mathrm{i} \partial_ih p_j \right) \psi^{\dagger
+j }\psi^i=\\=
+\sum_{i=1}^{n} \left( p_i^2 +\left( \partial_i h \right) ^2 \right) +\partial_j \partial_i h \left[ \psi^{\dagger j},\,
+	\psi^i\right] +\mathrm{i} \left(\partial_j h p_i -
+	\partial_i h p_j\right)\left\{ 
+\psi^i,\,\psi^{\dagger j}\right\} =\\=
+\sum_{i=1}^{n} \left( p_i^2 +\left( \partial_i h \right) ^2 \right) + \partial_i \partial_j h  \left[ 
+\psi^{\dagger i},\,\psi^j\right] 
+.\end{multline*} 
+И
+\[
+H=\frac{1}{2} \left\{ Q,\,Q^\dagger\right\} 
+.\] 
+Будем работать в представлении
+\[
+	Q= \left( 
+	p_1 -\mathrm{i}  \partial_1 h \right) \otimes 
+	\begin{pmatrix} 0&0\\1&0 \end{pmatrix}\otimes \mathbbold{1} +
+	\left(p_2 -\mathrm{i}  \partial_2 h \right)\otimes  \sigma_3
+	\otimes \begin{pmatrix} 0&0\\1&0 \end{pmatrix}
+,\] 
+\[
+	Q^\dagger= \left( 
+	p_1 +\mathrm{i}  \partial_1 h \right) \otimes 
+	\begin{pmatrix} 0&1\\0&0 \end{pmatrix}\otimes \mathbbold{1} +
+	\left(p_2 +\mathrm{i}  \partial_2 h \right)\otimes  \sigma_3
+	\otimes \begin{pmatrix} 0&1\\0&0 \end{pmatrix}
+.\]
+В котором
+\[
+	\Psi(x)= \begin{pmatrix} \psi_1(x)\\ \psi_2(x)\\ \psi_3(x)\\ \psi_4(x)\\ \end{pmatrix} 
+.\] 
+Из условия
+$
+Q\Psi=0
+$ получаем уравнения
+\[
+-\psi_1 \partial_2 h +\partial_2 \psi_1=0,\qquad
+-\psi_1 \partial_1 h+\partial_1 \psi_1=0
+,\] 
+\[
+\psi_3 \partial_2 h-\partial_2 \psi_3 -
+\psi_2 \partial_1  h+\partial_1 \psi_2=0
+.\] 
+Аналогично для $Q^\dagger \Psi =0$ 
+\[
+\psi_2 \partial_2 h+ \partial_2 \psi_2 +\psi_3 \partial_1 h+\partial_1 \psi_3=0
+.\] 
+\[
+\psi_4 \partial_1 h+ \partial_1 \psi_4=0,\qquad
+\psi_4 \partial_2 h+\partial_2 \psi_4=0
+.\] 
+\[
+\left\{
+\begin{aligned}
+\psi_3 \frac{\partial h}{\partial x_2} -\frac{\partial \psi_3}{\partial x_2} -\psi_2 \frac{\partial h}{\partial x_1} + \frac{\partial \psi_2}{\partial x_1} &= 0, \\
+\psi_2 \frac{\partial h}{\partial x_2} +
+\frac{\partial \psi_2}{\partial x_2} +
+\psi_3 \frac{\partial h}{\partial x_1} +
+\frac{\partial \psi_3}{\partial x_1} &=0.
+\end{aligned}
+\right.
+\] 
+\[
+\left\{
+\begin{aligned}
+	\left( \frac{\partial h}{\partial x_2} -\frac{\partial }{\partial x_2}  \right) \psi_3+
+\left( \frac{\partial }{\partial x_1} -\frac{\partial h}{\partial x_1}  \right) \psi_2&= 0, \\
+\left( \frac{\partial h}{\partial x_2} +\frac{\partial }{\partial x_2}  \right) \psi_2+
+\left( \frac{\partial h}{\partial x_1} +\frac{\partial }{\partial x_1}  \right) \psi_3&=0.
+\end{aligned}
+\right.
+\] 
+\[
+	\begin{pmatrix}\frac{\partial }{\partial x_1} -\frac{\partial h}{\partial x_1} &
+	\frac{\partial h}{\partial x_2} -\frac{\partial }{\partial x_2} \\
+\frac{\partial h}{\partial x_2} +\frac{\partial }{\partial x_2} & \frac{\partial h}{\partial x_1} +\frac{\partial }{\partial x_1} \end{pmatrix} \begin{pmatrix} 
+\psi_2 \\ \psi_3\end{pmatrix} =\begin{pmatrix} 0\\0 \end{pmatrix} 
+.\] 
+\end{sol}
+\begin{hiProb}[Доп. задача]
+\end{hiProb}
+\begin{sol}
+\[
+Q_+= p_i \Psi^i- \frac{\mathrm{i} }{2} \bar{\partial}_{\bar{i}}\bar{W}\bar{\tilde{\Psi}}^{\bar{i}},\qquad
+Q_+^\dagger= \bar{p}_{\bar{i}}\bar{\Psi}^{\bar{i}}
++\frac{\mathrm{i} }{2} \partial_i W \tilde{\Psi}^i
+.\] 
+\[
+	Q_-=\bar{p}_{\bar{i}}\bar{\tilde{\Psi}}^{\bar{i}}
+	- \frac{\mathrm{i} }{2} \partial_i W \Psi^i,\qquad
+	Q_-^\dagger=p_i \tilde{\Psi}^i+\frac{\mathrm{i} }{2}
+	\partial_{\bar{i}} \bar{W} \bar{\Psi}^{\bar{i}}
+.\] 
+\begin{multline*}
+\left\{ Q_+,\,Q_+^\dagger \right\} =
+\left\{ p_i \Psi^i- \frac{\mathrm{i} }{2} \bar{\partial}_{\bar{i}}\bar{W}\bar{\tilde{\Psi}}^{\bar{i}},\,\bar{p}_{\bar{j}}\bar{\Psi}^{\bar{j}}
++\frac{\mathrm{i} }{2} \partial_j W \tilde{\Psi}^j \right\} 
+=  p_i \bar{p}_{\bar{j}} \left\{ 
+\Psi^i,\,\bar{\Psi}^{\bar{j}}\right\} +\\+
+\frac{1}{4} \bar{\partial}_{\bar{i}} \bar{W}  \partial_j W
+\left\{ \bar{ \tilde{\Psi}}^{\bar{i}},\,\tilde{\Psi}^i \right\} - \frac{\mathrm{i} }{2}\left( 
+	\bar{\partial}_{\bar{i}} \bar{W}\bar{p}_{\bar{j}}-\bar{\partial}_{\bar{i}} \bar{W}\bar{p}_{\bar{j}}+\mathrm{i} \bar{\partial}_{\bar{i}}\bar{\partial}_{\bar{j}}\bar{W}\right) 
+\bar{\tilde{\Psi}}^{\bar{i}}\bar{\Psi}^{\bar{j}}+\\+
+\frac{\mathrm{i} }{2} \left( \partial_jWp_i- \partial_jWp_i -\mathrm{i} \partial_i \partial_j W\right)\Psi^i \tilde{\Psi}^j=
+\sum_{i=1}^{n} \left(\left| p_i \right| ^2+\frac{1}{4}
+\left| \partial_iW \right| ^2\right)+\\+
+\frac{1}{2} \sum_{i,j}^{} \left( 
+\partial_i \partial_j W \Psi^i \tilde{\Psi}^j+\bar{\partial}_{\bar{i}}\bar{\partial}_{\bar{j}}\bar{W}\bar{\tilde{\Psi}}^{\bar{i}}\bar{\Psi}^{\bar{j}}
+\right) =H
+.\end{multline*} 
+\end{sol}
+\section*{Задание 1.2}
+\begin{hiProb}[Задача 1]
+\end{hiProb}
+\begin{sol}
+Найдём канонически сопряжённые импульсы
+\[
+	\pi_M= \frac{\delta S_M}{\delta\dot{\psi}}=
+	\frac{\mathrm{i} }{2}\psi,\qquad
+	\pi_F= \frac{\delta S}{\delta \dot{\psi}}=
+	\frac{\mathrm{i} }{2} \psi^\dagger
+.\] 
+Канонические коммутационные соотношения
+\[
+\left\{ \psi,\,\pi_M \right\} =0,\qquad
+\left\{ \psi,\,\pi_F \right\} =\frac{\mathrm{i} }{2}
+.\] 
+Найдём гамильтонианы
+\[
+H_M= \pi_M \dot{\psi}-L_M=0,\qquad
+H_F=\pi_F \dot{\psi}-L_F=0
+.\] 
+Спектром будет $\lambda=0$ $\forall \psi$. Статсумма
+\[
+Z= \Tr \mathrm{e} ^{-\beta H}= \int \mathrm{d} \psi \braket{\psi|\psi} = \int \mathrm{d} \psi=0
+.\] 
+\end{sol}
+\begin{hiProb}[Задача 2]
+\end{hiProb}
+\begin{sol}
+Пусть $D$ обозначает дифференцирование по грассманновой
+переменной, а $I$ --- интегрирование по грассманновой
+переменной, где интегрирование понимается как определённый
+интеграл. Пусть они удовлетворяют соотношениям
+\renewcommand{\labelenumi}{(\arabic{enumi})}
+\begin{enumerate}
+\item $ID=0$,
+\item $DI=0$,
+\item $D(A)=0 \implies I(BA)=I(B)A$,
+\end{enumerate}
+где  $A$ и $B$ --- произвольные функции  грассманновых
+переменных. Первое соотношение говорит о том, что
+интеграл от производной любой функции является разностью
+значений функции на границе, которую мы полагаем
+равной нулю. Второе соотношение говорит о том, что
+производная определённого интеграла равна нулю. Третье
+соотношение говорит о том, что из выражения $D(A)=0$ 
+следует, что $ A$ --- константа и поэтому её можно 
+выносить за знак интеграла. Эти соотношения будут
+выполнены, если взять $I \propto D$. Используя нормировку
+$I=D$ и, полагая
+\[
+	\int \mathrm{d} \theta\  f(\theta)= \frac{\partial f(\theta)}{\partial(\theta)}
+,\] 
+находим из определений производной функции грассманновых
+переменных, что
+\[
+\int \mathrm{d} \theta=\frac{\partial \,1}{\partial \theta} 
+=0,\qquad
+\int d\theta\ \theta=\frac{\partial \theta}{\partial \theta} =1
+.\] 
+\end{sol}
+\begin{hiProb}[Задача 3]
+\end{hiProb}
+\begin{sol}
+Можно показать, что для грассманновых векторов $\boldsymbol{\theta}$ и $\boldsymbol{\theta}^\dagger$ выполняется
+\[
+\int \mathrm{d} \theta_1^\dagger \mathrm{d} \theta_1
+\cdots \mathrm{d} \theta_n^\dagger \mathrm{d} \theta_n
+\exp \left( \boldsymbol{\theta}^\dagger \boldsymbol{M\theta} \right) =\det \boldsymbol{M}
+.\] 
+Тогда
+\begin{multline*}
+	\int D\psi^\dagger D\psi \exp \left( 
+	-\int \mathrm{d} \tau \left[ 
+\psi^\dagger \frac{\mathrm{d} \psi}{\mathrm{d} \tau}
++\omega \psi^\dagger \psi\right] \right)=\\=
+\int D\psi^\dagger D\psi \exp \left( 
+	-\int \mathrm{d} \tau \left[ 
+		\psi^\dagger \left(\frac{\mathrm{d} }{\mathrm{d} \tau}
++\omega  \right)\psi\right] \right)\sim \\\sim 
+\lim_{\Delta \tau \to 0} 
+\int \prod_{i}^{}  \mathrm{d} \psi^\dagger_i \mathrm{d} \psi_i \exp \left( 
+	-\Delta \tau \sum_{j}^{} \left[ 
+		\psi^\dagger_j \left(\frac{\mathrm{d} }{\mathrm{d} \tau}
++\omega  \right)_j\psi_j\right] \right)\sim \\\sim 
+\det \left[ \frac{\mathrm{d} }{\mathrm{d} \tau}+\omega \right] 
+.\end{multline*} 
+Для антипериодических граничных условий собственные функции
+будут иметь вид
+\[
+	\psi(\tau)= \eta_0 \mathrm{e} ^{\mathrm{i}  k\tau}
+	\implies \left( \frac{\mathrm{d} }{\mathrm{d} \tau}
+	+\omega\right) \psi=\left( \mathrm{i} k+\omega \right) \psi
+ \] 
+для некого грассманного параметра $\eta_0$.
+Из условия антипериодичности $\psi(\tau+\beta)=-\psi(\tau)$ 
+следует
+\[
+	k=\frac{2\pi (n- 1/2)}{\beta},\qquad
+	n \in \mathbb{Z}
+,\] 
+далее имеем
+\begin{multline*}
+	\det \left( \frac{\mathrm{d} }{\mathrm{d} \tau}+
+	\omega\right) 
+	= \prod_{n \in \mathbb{Z}}^{} 
+	\left( \frac{2\pi \mathrm{i} \left( n- 1 /2 \right) }{\beta}+\omega \right) =\\=
+	\prod_{n=1}^{\infty} \left( \left( 
+	\frac{2\pi \left( n- 1 /2 \right) }{\beta}\right) ^2+\omega^2\right) =\\=
+	\prod_{n'=1}^{\infty} \left( \frac{2\pi \left( n' -1 /2 \right) }{\beta} \right) ^2 \prod_{n=1}^{\infty} 
+	\left( 1+ \left( \frac{\beta \omega}{2\pi\left(n- 1 /2  \right) } \right) ^2 \right)=\\=
+	  \prod_{n=0}^{\infty} \left( \frac{2\pi\left( n+1 /2 \right) }{\beta} \right) ^{2}
+\ch \left( \frac{\beta \omega}{2} \right)   
+.\end{multline*} 
+\[
+	\zeta_1\left( s \right) 
+	=\left( \frac{\beta}{2\pi} \right) ^{2s}
+	\zeta\left( 2s,\,1 /2 \right) =
+	\sum_{n=0}^{\infty} \left( \frac{2\pi\left( n+1 /2 \right) }{\beta} \right) ^{-2s}
+.\] 
+\begin{multline*}
+	\zeta_1'(s)=2\left( \frac{\beta}{2\pi} \right) ^{2s}
+	\left( \ln \left( \frac{\beta}{2\pi} \right) 
+	\zeta\left( 2s,\,1 /2 \right) +
+\zeta'(2s,\,1 /2)\right) =\\=
+\sum_{n=0}^{\infty} \left( \frac{2\pi\left( n+1 /2 \right) }{\beta} \right) ^{-2s} \ln \left( \frac{2\pi\left( n+1 /2 \right) }{\beta} \right) ^{-2}
+.\end{multline*} 
+Вычисляя при $s=0$, получаем
+\[
+	\zeta_1(0)=2\ln \left( \frac{\beta}{2\pi} \right) 
+	\zeta\left( 0,\,1 /2 \right) +2 \zeta'(0,\,1 /2)
+	=\sum_{n=1}^{\infty} \ln \left( 
+	\frac{2\pi (n+1 /2)}{\beta}\right) ^{-2}
+.\] 
+Экспоненциируя с двух сторон
+\[
+	\prod_{n=0}^{\infty} \left( \frac{2\pi(n+1 /2)}{\beta} \right) ^{-2}=\left( \frac{\beta}{2\pi} \right) ^{2\zeta(0,\,1 /2)}\mathrm{e} ^{2\zeta'(0,\,1 /2)} 
+.\] 
+Используя табличные данные $\zeta(0,\,1 /2)=0$,
+$\zeta'(0,\,1 /2)=- \frac{1}{2}\ln 2$, заключаем, что
+\[
+\prod_{n=0}^{\infty} \left( \frac{2\pi(n+1 /2)}{\beta} \right) ^{-2}=\frac{1}{2}
+.\] 
+И
+\[
+	\left. \det \left( \frac{\mathrm{d} }{\mathrm{d} \tau}+\omega \right)  \right|_{\text{анти-пер.}}=
+		2\ch \left( \frac{\beta\omega}{2} \right) 
+.\] 
+\end{sol}
+\begin{hiProb}[Задача 4]
+\end{hiProb}
+\begin{sol}
+Статсумма будет даваться выражением
+\[
+Z=\Tr \mathrm{e} ^{-\beta H}= \int
+\mathcal{D}x \mathcal{D}\psi \mathcal{D}\psi^\dagger
+\ \mathrm{e} ^{-S_E}=
+\sum_{X}^{} \frac{\det \left( \mathrm{d} / \mathrm{d} \tau
++h''(X)\right) }{\det ^{1 /2}\left( -\mathrm{d} ^2 / \mathrm{d} \tau^2 +h''(X) \right) }
+,\]
+где, в отличие от индекса Виттена, граничные условия
+для фермионов антипериодичны. Бозонный вклад
+\[
+	\det {}^{1 /2} \left( - \frac{\mathrm{d} }{\mathrm{d} \tau^2} +\omega^2\right) 
+	=2 \sh \left( \frac{\beta |\omega|}{2} \right) 
+.\] 
+Фермионный вклад
+\[
+	\det \left( \frac{\mathrm{d} }{\mathrm{d} \tau}+\omega \right) =2 \ch \left( \frac{\beta \omega}{2} \right)
+.\] 
+Итого
+\[
+	Z=\sum_{X}^{} \left| \cth \frac{\beta h''(X)}{2}  \right| 
+.\] 
+\end{sol}
+\begin{hiProb}[Задача 5]
+\end{hiProb}
+\begin{sol}
+
+\end{sol}
+\end{document}

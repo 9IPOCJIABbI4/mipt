@@ -1,0 +1,29 @@
+\documentclass[a4paper, 14pt]{extarticle}
+\usepackage{fullpage}
+\input{../../preamble-rus.tex}
+\title{Доклад по ММ}
+\begin{document}
+	\maketitle
+Было
+\[
+	\tau\left( \Lambda \right) ={\mathrm{e} ^{-\Tr  \frac{\Lambda^3}{3}}\sqrt{\det \Lambda} 
+}\left( \prod_{k=1}^{N-1} k!  \right) \int
+\prod_{i=1}^{N} \mathrm{d} h_i
+\frac{\det \mathrm{e} ^{\frac{\lambda_j^2}{2}h_k}}{
+\Delta \left( \frac{\lambda^2}{2} \right) 
+}\Delta (h) \mathrm{e} ^{-\frac{h_i^3}{3!}}
+.\] 
+Имеем
+\[
+	\prod_{i=1}^{N} \mathrm{d} h_i \ \mathrm{e} ^{- \frac{h_i^3}{3!}}=\det \left(\mathrm{d} h_i \ \mathrm{e} ^{- \frac{h_i^3}{3!}}\right),\qquad \Delta(h)= \det h_{i}^{j-1}
+.\] 
+Тогда
+\begin{multline*}
+	\tau\left( \Lambda \right) =\frac{\mathrm{e} ^{-\Tr  \frac{\Lambda^3}{3}}\sqrt{\det \Lambda} 
+}{\Delta \left( \frac{\lambda^2}{2} \right)}\left( \prod_{k=1}^{N-1} k!  \right) \int
+\det \left[ \mathrm{d} h_k\ h_k^{j-1} \exp \left(-\frac{h_k^3}{3!}+\frac{\lambda_j^2}{2}h_k\right)\right]=\\=
+\frac{\mathrm{e} ^{-\Tr  \frac{\Lambda^3}{3}}\sqrt{\det \Lambda} 
+}{\Delta \left( \frac{\lambda^2}{2} \right)}\left( \prod_{k=1}^{N-1} k!  \right) 
+\det \left[\int \mathrm{d} h_k\ h_k^{j-1} \exp \left(-\frac{h_k^3}{3!}+\frac{\lambda_j^2}{2}h_k\right)\right]
+.\end{multline*}
+\end{document}

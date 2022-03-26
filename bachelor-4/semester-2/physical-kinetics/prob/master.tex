@@ -1,0 +1,89 @@
+\documentclass[a4paper, 14pt]{extarticle}
+\usepackage{fullpage}
+\input{../../preamble-rus.tex}
+\title{Сечение рассеяния бильярдных шаров}
+\begin{document}
+	\maketitle
+%	Будем пользоваться обозначениями $\mathbf{q}_i$, $\mathbf{p}_i$ ---
+%	исходные координаты и импульсы шаров, $\mathbf{q}_i'$, $\mathbf{p}_i'$ --- координаты и импульсы шаров после столкновения, $\mathbf{q}_{\text{цм}}=(\mathbf{q}_1+\mathbf{q}_2) /2$,
+%$\mathbf{p}_{\text{цм}}=(\mathbf{p}_1+\mathbf{p}_2) /2$ --- координата и импульс центра масс.
+%\begin{figure}[ht]
+%    \centering
+%    \incfig{1}
+%    \caption{Столкновение в лабораторной системе отсчёта}
+%    \label{fig:1}
+%\end{figure}
+%\begin{figure}[ht]
+%    \centering
+%    \incfig{2}
+%    \caption{Столкновение в системе отсчёта центра масс}
+%    \label{fig:2}
+%\end{figure}
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.6\textwidth]{3-1}
+	\caption{Рассеяние с прицельным расстоянием $b$ и углом рассеяния $\theta$}
+	\label{fig:3-1}
+\end{figure}
+Рассматриваем задачу упругого соударения бильярдного шара радиусом
+$R$ с таким же бильярдным шаром (рис.~\ref{fig:4}).
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{4}
+	\caption{Упругое рассеяние твёрдых шаров}
+	\label{fig:4}
+\end{figure}
+В
+терминах угла $\alpha$ прицельный параметр $b=R \sin \alpha$,
+а угол рассеяния $\theta=\pi-2\alpha$, поэтому
+\[
+	b=R \sin \left( \frac{\pi}{2}-\frac{\theta}{2} \right) =R \cos \left( \frac{\theta}{2} \right) 
+.\] 
+Очевидно, что
+\[
+\theta= \begin{cases}
+	2 \arccos \left(b /R\right),& b\le R,\\
+	0,& b>R.
+\end{cases}
+\] 
+Дифференциальное сечение
+рассеяния определяется как $D(\theta)\equiv \mathrm{d} \sigma/\mathrm{d} \Omega$ (рис.~\ref{fig:5}). 
+\begin{figure}[htpb]
+	\centering
+	\includegraphics[width=0.8\textwidth]{5}
+	\caption{Влетающие в $d\sigma$ частицы рассеиваются в телесный угол $d\Omega$}
+	\label{fig:5}
+\end{figure}
+В терминах
+прицельного параметра и азимутального угла $\phi$,
+$\mathrm{d} \sigma= b \, \mathrm{d} b\, \mathrm{d} \phi$ и
+$\mathrm{d} \Omega=\sin \theta\, \mathrm{d} \theta\, \mathrm{d} \phi$, поэтому
+\[
+	D(\theta)= \frac{b}{\sin \theta} \left| 
+	\frac{\mathrm{d} b}{\mathrm{d} \theta}\right| 
+.\] 
+(Т.\:к. $\theta$ --- обычно убывающая функция от $b$,
+следовательно производная --- отрицательна, отсюда
+знак модуля.)
+
+В нашем конкретном случае
+\[
+\frac{\mathrm{d} b}{\mathrm{d} \theta}=-\frac{1}{2}
+R \sin \left( \frac{\theta}{2} \right) ,
+\]
+поэтому
+\[
+	D(\theta)=\frac{R \cos (\theta /2)}{\sin \theta}
+	\left( \frac{R \sin (\theta /2)}{2} \right) =
+	\frac{R^2}{4}
+.\] 
+Полное сечение рассеяния --- это интеграл от $D(\theta)$ 
+по всем телесным углам:
+\[
+	\sigma \equiv \int D(\theta)\, \mathrm{d} \Omega
+.\] 
+Для рассеяния бильярдных шаров имеем
+\[
+	\sigma= \left( R^2 /4 \right) \int \mathrm{d} \Omega=\pi R^2
+.\] 
+\end{document}

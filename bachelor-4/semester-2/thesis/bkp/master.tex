@@ -1,0 +1,491 @@
+\documentclass[a4paper, 14pt]{extarticle}
+\usepackage{fullpage}
+\input{../../preamble-rus.tex}
+\usepackage{ytableau}
+\ytableausetup{boxsize=0.2em}
+\title{Квантовая деформация иерархии $B$КП}
+\begin{document}
+\maketitle
+\tableofcontents
+\section{Иерархия КП}
+\emph{Иерархия КП} --- бесконечный набор нелинейных дифференциальных
+уравнений, первое из которых даётся как
+\begin{equation}
+\frac{1}{4} \frac{\partial ^2F}{\partial t_2^2} =
+\frac{1}{3} \frac{\partial ^2 F}{\partial t_1 \partial t_3} 
+-\frac{1}{2} \left( \frac{\partial ^2 F}{\partial t_1^2}  \right) ^2 -\frac{1}{12} \frac{\partial ^4F}{\partial t_1^4} 
+\label{eq:FKP}
+.\end{equation} 
+Далее будут обсуждаться экспоненциированные решения
+данной иерархии ($\tau$\emph{-функции}) $\tau\left( \mathbf{t} \right) =\exp \left( F(\mathbf{t}) \right) $.
+В разделах \ref{subsec:lp} и \ref{subsec:bh}
+опишем методы получения уравнений данной
+иерархии. \subsection{Пары Лакса}
+\label{subsec:lp}
+Для псевдодифференциального оператора
+	\begin{equation}
+L=\partial + \sum_{j=1}^{\infty} f_j \partial^{-j},\qquad
+\text{где}\qquad \partial = \frac{\partial }{\partial t_1},
+\end{equation} 
+условия совместности системы линейных уравнений
+\begin{equation}
+\left\{
+\begin{aligned}
+Lw&= kw, \\
+\frac{\partial w}{\partial t_j} &=  B_j w,
+\end{aligned}
+\right.\qquad\text{где }
+B_j=\left( L^j \right) _+.
+\end{equation} 
+могут быть записаны в Лаксовой форме
+\begin{equation}
+	\frac{\partial L}{\partial t_j} =\left[ 
+	B_j,\,L\right] 
+.\end{equation} 
+Из второго уравнения данной иерархии получаем
+\begin{equation}
+\frac{\partial f_1}{\partial t_2} =
+\frac{\partial ^2 f_1}{\partial t_1^2} +
+2 \frac{\partial f_2}{\partial t_1} ,\qquad
+\frac{\partial f_2}{\partial t_2} =\frac{\partial^2
+f_2}{\partial t_1^2}+ 2 \frac{\partial f_3}{\partial t_1} 
++2 \frac{\partial f_1}{\partial t_1} f_1
+,\qquad\ldots\end{equation} 
+Из третьего --- 
+\begin{equation}
+\frac{\partial f_1}{\partial t_3} =
+\frac{\partial ^3f_1}{\partial t_1^3} +3 \frac{\partial ^2f_2}{\partial t_1^2} +3 \frac{\partial f_3}{\partial t_1} 
++6 \frac{\partial f_1}{\partial t_1} f_1
+,\qquad\ldots\end{equation} 
+Устраняя $f_2$ и $f_3$ из данных уравнений и
+пользуясь обозначениями  $u=-2f_1$, получаем
+\emph{уравнение КП}
+\begin{equation}
+3 \frac{\partial ^2 u}{\partial t_2^2} =
+\frac{\partial }{\partial t_1} \left( 
+4 \frac{\partial u}{\partial t_3} +6 u \frac{\partial u}{\partial t_1} -\frac{\partial ^3u}{\partial t_1^3} \right) 
+\label{eq:ukp}
+.\end{equation} 
+Требует пояснений введённое обозначение для $u$.
+Решение первоначальной задачи на собственные значения
+можно искать в виде
+\begin{equation}
+	w=\mathrm{e} ^{\xi\left( \mathbf{t},\,k \right) }\left( 1+ \frac{w_1}{k}+\frac{w_2}{k^2}+\ldots \right) ,\qquad \text{где}\qquad \xi\left( \mathbf{t},\,k \right) =
+	\sum_{j=1}^{\infty} t_j k^j
+.\end{equation} 
+Тогда связь между $w_i$ и $f_i$ может быть найдена, например, из уравнений
+\begin{equation}
+\frac{\partial w}{\partial t_j} =B_j w
+.\end{equation} 
+Из уравнения на $t_1$ получаем
+\begin{equation}
+\frac{\partial w_1}{\partial t_1} =-f_1,\qquad\ldots
+\label{eq:wf}
+.\end{equation} 
+Оказывается, что все функции $w_1,\,w_2,\ldots$ могут
+быть выражены через одну функцию $\tau$ по формуле
+\begin{equation}
+	w=\frac{\displaystyle \tau\left( t_1- \frac{1}{k},\,t_2-\frac{1}{2k^2},\,t_3 -\frac{1}{3k^3},\ldots \right) }{\tau\left( t_1,\,t_2,\,t_3,\ldots \right) }
+	\mathrm{e} ^{\xi\left( \mathbf{t},\,k \right) }
+.\end{equation} 
+Откуда, например,
+\begin{equation}
+w_1=-\frac{\partial \tau}{\partial t_1} \cdot \tau^{-1}
+\label{eq:wtau}
+.\end{equation} 
+Иерархия КдФ получается из иерархии КП условием $L^2=\partial^2+u$ и бесконечный набор функций  $f_i$ выражается через $u$. Таким же свойством обладает
+$\tau$-функция, между ними имеется связь
+\begin{equation}
+u= 2\frac{\partial ^2}{\partial t_1^2} \ln \tau
+\label{eq:utau}
+.\end{equation} 
+Обозначение $u=-2f_1$ теперь поясняется формулами
+\eqref{eq:wf}, \eqref{eq:wtau}, \eqref{eq:utau}.
+Также, интегрируя два раза по $t_1$ уравнение  \eqref{eq:ukp} и принимая во внимание обозначение для $F$, получаем
+в точности уравнение \eqref{eq:FKP}.
+\subsection{Билинейное тождество Хироты}
+\label{subsec:bh}
+\begin{dfn*}
+	\emph{Производные хироты} $\mathrm{D}_1^{n_1} \cdots \mathrm{D}_m^{n_m}$ 
+задаются из соотношения
+\begin{equation}
+	\mathrm{e} ^{y_1 \mathrm{D}_1+y_2 \mathrm{D}_2+ \ldots}f\cdot g=
+f\left( x_1+y_1,\,x_2+y_2,\ldots \right) 
+g\left( x_1-y_1,\,x_2-y_2,\ldots \right) 
+.\end{equation} 
+\end{dfn*}
+\begin{thm*}[билинейное тождество]
+Для любых $x$ и $x'$ положим
+\begin{equation}
+	\xi=\xi\left( \mathbf{t},\,k \right) ,\qquad
+	\xi'=\xi\left( \mathbf{t}',\,k \right) 
+.\end{equation} 
+Тогда справедливо следующее тождество:
+\begin{equation}
+0= \oint \frac{\mathrm{d} k}{2\pi \mathrm{i} }
+\mathrm{e} ^{\xi-\xi'} \tau\left( t_1-\frac{1}{k},\,
+t_2- \frac{1}{2k^2},\ldots\right) \tau\left( 
+t_1'+\frac{1}{k},\,t_2'+ \frac{1}{2k^2},\ldots\right) 
+.\end{equation} 
+\end{thm*}
+Уравнения КП получаются из билинейного
+тождества после замены $t_j=x_j+y_j$, $t_j'=x_j-y_j$:
+ \begin{multline}
+\oint \frac{\mathrm{d} k}{2\pi \mathrm{i} }
+\exp \left( 2 \sum_{j=1}^{\infty} k^j y_j \right) 
+\tau \left( x_1+y_1-\frac{1}{k},\,x_2+y_2-\frac{1}{2k^2},\ldots \right)\times\\\times
+\tau\left( x_1-y_1+\frac{1}{k},\,x_2-y_2+\frac{1}{2k^2},\ldots \right) =\\= \oint \frac{\mathrm{d} k}{2\pi \mathrm{i}}
+\exp \left( 2 \sum_{j=1}^{\infty} k^j y_j \right) 
+\exp \left( \sum_{j=1}^{\infty} \left( y_l-\frac{1}{l k^l} \right) \mathrm{D}_l \right) \tau\cdot \tau
+.\end{multline} 
+Раскладывая подынтегральную функцию в ряд по степеням
+$y_j$ и вычисляя коэффициент при $k^{-1}$, получаем
+уравнения КП. Например
+\begin{equation}
+	(\mathrm{D}_1^4 +3\mathrm{D}_2^2-4\mathrm{D}_1 \mathrm{D}_3)\tau\cdot \tau=0,\qquad
+	(\mathrm{D}_1^3 \mathrm{D}_2+2\mathrm{D}_2 \mathrm{D}_3-3\mathrm{D}_1 \mathrm{D}_4)\tau\cdot \tau=0
+.\end{equation} 
+Первое из них --- буквально \eqref{eq:FKP} с учётом
+определения $F$.
+\subsection{Полиномы Шура, соотношения Плюккера, гипергеометрические $\tau$-функции}
+\label{subsec:schur}
+Решения данной иерархии
+могут быть разложены по базису полиномов Шура
+\begin{equation}
+	\tau\left( \mathbf{t} \right) =\sum_{\lambda}^{} C_\lambda s_\lambda\left( \mathbf{t} \right) 
+\label{eq:2}
+.\end{equation} 
+Можно показать, что $\tau(\mathbf{t})$ --- решение
+иерархии КП тогда и только тогда, когда коэффициенты
+$C_\lambda$ удовлетворяют соотношениям Плюкера, первое
+из которых
+\begin{equation}
+C_{\left[ 2,\,2 \right] }C_{\left[ \emptyset \right] }
+-C_{\left[ 2,\,1 \right] }C_{\left[ 1 \right] }
++C_{\left[ 2 \right] }C_{\left[ 1,\,1 \right] }=0
+.\end{equation} 
+Имеется важное подмножество решений иерархии КП --- 
+\emph{гипергеометрические} $\tau$\emph{-функции}.
+Они определяются как
+\begin{equation}
+	\tau\left( \mathbf{t} \right) 
+	=\sum_{\lambda}^{} r_\lambda
+	s_\lambda (\beta) s_\lambda \left( \mathbf{t} \right) 
+,\end{equation} 
+где $s_\lambda(\beta)$ --- полином Шура от переменных
+$\beta_k$,
+\begin{equation}
+	r_\lambda=\prod_{w \in \lambda}^{} r\left( c\left( w \right)  \right)  
+,\end{equation} 
+\begin{equation}
+	c(w)=j-i,\qquad 1\le  i\le l(\lambda),\qquad
+	1\le j\le \lambda_i
+.\end{equation} 
+\subsection{$\tau$-функция чисел Гурвица}
+Производящая функция простых чисел Гурвица
+\begin{equation}
+	\tau_H(\mathbf{t})=
+	\sum_{m=0}^{\infty} \sum_{\mu}^{} h_{m;\mu}^{\circ}
+	t_{\mu_1} t_{\mu_2} \cdots t_{\mu_{l(\mu)}}
+	\frac{u^m}{m!}
+,\end{equation} 
+где
+\begin{equation}
+h^{\circ}_{m;\mu}= \frac{1}{|\mu|!}
+\left| \left\{ \left( \eta_1,\ldots,\,\eta_m \right) ,\ 
+\eta_i \in C_2 \left( S_{|\mu|} \right) \colon
+\eta_m \circ \cdots \circ \eta_1 \in C_\mu\left( S_{|\mu|} \right) \right\}  \right| 
+,\end{equation} 
+$S_{|\mu|}$ --- симметрическая группа перестановок $\mu$ 
+элементов, $C_2\left( S_{|\mu|} \right) $ --- множество
+всех транспозиций в $S_{|\mu|}$ и $C_\mu \left( S_{|\mu|} \right) $ --- множество всех перестановок циклического типа $\mu$.
+
+Можно показать (TODO), что
+\begin{equation}
+	\tau_H(\mathbf{t})=\sum_{\lambda}^{} \mathrm{e}^{u c(\lambda)}s_\lambda \left( \beta_k=\delta_{k,\,1} \right) 
+	s_\lambda(\mathbf{t})
+\label{eq:4}
+,\end{equation} 
+где $c(\lambda)= \sum_{w \in \lambda}^{} c(w)$. 
+То есть данная производящая функция --- гипергеометрическая
+$\tau$-функция с параметрами
+\begin{equation}
+	r(n)=\mathrm{e} ^{un},\qquad
+	\beta_1=1,\qquad \beta_k=0,\ k\ge 2
+.\end{equation} 
+\subsection{Фермионный формализм и бозон-фермионное соответствие}
+Будем рассматривать бесконечномерную алгебру Клиффорда
+с генераторами $\left\{ \psi_n,\,\psi^*_m \mid n,\,m \in \mathbb{Z} \right\} $, обладающими коммутационными соотношениями
+\begin{equation}
+\left\{ \psi_n,\,\psi_m \right\} =0,\qquad
+\left\{ \psi_n^*,\,\psi^*_{m} \right\}=0,\qquad
+\left\{ \psi_n,\,\psi_{m}^* \right\}=\delta_{n,\,m}
+.\end{equation} 
+Пространство Фока для фермионов определим дествием
+алгебры Клиффорда на вакуумный вектор $\ket{0}$ <<моря Дирака>>. Действие генераторов алгебры на вакуумный вектор
+даётся как
+\begin{equation}
+\psi_k\ket{0}=0,\quad k<0;\qquad\psi^* \ket{0}=0,\quad
+k\ge 0
+.\end{equation} 
+То есть операторы $\psi_k$ при $k\ge 0$ и $\psi^*_k$ при
+$k<0$ --- это операторы рождения, а $\psi_k$ при $k<0$ 
+и $\psi_k^*$ при  $k\ge 0$ --- операторы уничтожения.
+
+Введём также производящие функции для фермионов
+\[
+\psi(z)=\sum _{k\in \mathbb{Z}}^{} \psi_k z^k,\qquad
+\psi^* (z)=\sum_{k \in \mathbb{Z}}^{} \psi^*_k z^{-k-1}
+.\] 
+Будем обозначать нормальное упорядочение фермионных
+операторов как $\normord{\left( \ldots \right) }$.
+Результатом нормального упорядочения будет перемещение
+всех операторов уничтожения направо, а операторов
+рождения --- налево, где каждая транспозиция двух
+фермионов будет производиться в согласии с антикоммутационным
+соотношением и, следовательно, давать множитель $(-1)$. 
+
+Рассмотрим так же матричную алгебру Ли $gl(\infty)$.
+Элементами данной алгебры будут бесконечномерные матрицы,
+у которых конечное количество диагоналей отличны от нулевых.
+Базисом данной алгебры можно выбрать матрицы  $E_{ij}$,
+у которых единственный, отличный от нуля, элемент равен 1 и находится
+на пересечении $i$-й строки и $j$-го столбца.
+
+Можно показать, что представлением данной алгебры
+на введённом пространстве Фока будет
+\begin{equation}
+	r(E_{ij})=\normord{\psi_i \psi_j^{*}}
+.\end{equation} 
+Бозон-фермионное соответствие $\Phi: \mathcal{F} \to \mathcal{B}$:
+\ytableausetup{boxsize=0.5em}
+\begin{equation}
+	\Phi\left( \ket{0,\,\lambda} \right) =s_\lambda(\mathbf{t})
+.\end{equation} 
+\begin{equation}
+	\Phi\left( G \ket{0} \right) = \braket{0 | \mathrm{e} ^{H(\mathbf{t})}G | 0},\qquad H(\mathbf{t})= \sum_{k=1}^{\infty} t_k H_k,\qquad
+	H_n= \sum_{k \in \mathbb{Z}}^{} \normord{\psi_k \psi_{k+n}^{*}}
+.\end{equation} 
+В случае иерархии КП $\tau$-функция в фермионном представлении имеет вид
+ \begin{equation}
+	 \tau(\mathbf{t})= \braket{0 | \mathrm{e}^{H(\mathbf{t})}G | 0}
+.\end{equation} 
+Сравнивая с $\tau$-функцией в бозонном представлении \eqref{eq:2}
+можно получить, что
+\begin{equation}
+	C_\lambda= \det_{l(\lambda)\times l(\lambda)}
+	\left( G^{-1,-2,-3,\ldots}_{i_{-1},i_{-2},i_{-3},\ldots} \right) 
+,\end{equation} 
+где $i_{-1},\,i_{-2},\ldots$ определяются из $\lambda= \left[ i_{-1}+1,\,i_{-2}+2,\ldots \right] $.
+Для гипергеометрических $\tau$-функций выполняется
+\begin{equation}
+	G=\mathrm{e} ^{A(\beta)},\qquad
+	A(\beta)=\sum_{k=1}^{\infty} \beta_k A_k
+.\end{equation} 
+\begin{equation}
+A_k= \oint \frac{dz}{2\pi \mathrm{i} } \normord{
+\left[ \left( \frac{1}{z} r(D) \right) ^k \psi(z) \right] \cdot \psi^*(z)}
+,\end{equation} 
+где $D=z \frac{\mathrm{d} }{\mathrm{d} z}$.
+
+\section{Квантовая деформация иерархии КП}
+
+
+В $\hbar $\emph{-деформированной иерархии КП} связь между $F$ и $\tau$ будет следующей
+\begin{equation}
+	F^\hbar \left( \mathbf{t} \right) =
+	\hbar ^2 \ln \left( \tau^\hbar \left( \mathbf{t} \right)  \right) 
+.\end{equation} 
+Уравнения иерархии $\hbar$-КП получаются  из
+иерархии КП заменой  $\mathbf{t}\to \mathbf{t} /\hbar $.
+Первое уравнение деформированной иерархии
+\begin{equation}
+	\frac{1}{4} \frac{\partial ^2 F}{\partial t_2^2} =\frac{1}{3} \frac{\partial ^2 F}{\partial t_1 \partial t_3} -\frac{1}{2} \left( \frac{\partial^2 F}{\partial t_1^2} \right) ^2-\frac{\hbar ^2}{12} \frac{\partial^4 F}{
+	\partial t_1^4}
+.\end{equation} 
+$\tau$-функции  иерархии $\hbar $-КП
+\begin{equation}
+	\tau^\hbar \left( \mathbf{t} \right) =
+	\sum_{\lambda}^{} C_\lambda^\hbar 
+	s_\lambda \left( \frac{\mathbf{t}}{\hbar } \right) 
+	\label{eq:3}
+,\end{equation} 
+где $C^\hbar _{\lambda}$ удовлетворяют соотношениям Плюкера.
+В разделах далее будем добавлять $\hbar $
+в $\tau$-функции так, чтобы полученные $\tau^\hbar $-функции
+удовлетворяли $\hbar$-деформированной иерархии, а также
+имели  <<хорошее>> разложение по степеням $\hbar $.
+\subsection{Фермионный формализм}
+Рецепт деформации $\tau$-функций в фермионном формализме
+\begin{equation}
+	\tau^\hbar (\mathbf{t})= \braket{0 | \mathrm{e} ^{H\left( \mathbf{t} /\hbar  \right) } \exp \left( \frac{1}{\hbar }A^\hbar  \right) | 0}
+,\end{equation} 
+где
+\begin{equation}
+A^\hbar = \oint \frac{dz}{2\pi \mathrm{i} }
+\normord{\left[ \hat{A}\left( z,\,\hbar \frac{\mathrm{d} }{\mathrm{d} z}\right)\psi(z)   \right] \cdot \psi^*(z)}
+\end{equation} 
+и
+\begin{equation}
+	\hat{A}\left( z,\,\hbar  \frac{\mathrm{d} }{\mathrm{d} z} \right) = \sum_{i \in \mathbb{Z},j\ge 0}^{} a_{ij}
+	z^i \left( \hbar  \partial_z \right) ^j
+.\end{equation} 
+\subsection{$\tau$-функция чисел Гурвица}
+Формула Римана-Гурвица
+\begin{equation}
+	2g-2=m-\left| \mu \right| -l(\mu)
+,\end{equation} 
+позволяет нам разделить вклады различных родов $g$ 
+в производящую функцию. Каждая точка простого ветвления
+даёт вклад $+1$ к степени $\hbar $, каждый цикл
+длины $\mu_i$ даёт вклад $-\mu_i -1$ к степени $\hbar $.
+Получаем замену переменных
+\begin{equation}
+t_{\mu_i}\to  \hbar ^{-\mu_i -1} t_{\mu_i},\qquad
+u\to \hbar u
+\label{eq:1}
+.\end{equation} 
+Умножая производящую функцию на $\hbar ^2$, чтобы
+избавиться от отрицательных степеней $\hbar $ 
+в разложении, получаем
+\begin{equation}
+	F^\hbar _H(\mathbf{t})=\sum_{g=0}^{\infty} \hbar ^{2g}F_H^g(\mathbf{t})
+.\end{equation}
+Покажем, что топологической деформацией \eqref{eq:1}
+из $\tau$-функции иерархии КП \eqref{eq:4} действительно можно
+получить $\tau$-функцию иерархии  $\hbar $-КП \eqref{eq:3}.
+Имеем
+\begin{equation}
+	\tau^\hbar _H(\mathbf{t})=
+	\sum_{\lambda}^{} \mathrm{e} ^{u\hbar c(\lambda)}
+	s_\lambda\left( \beta_k =\delta_{k,1} \right) 
+	s_\lambda\left( \frac{t_1}{\hbar ^2},\,
+	\frac{t_2}{\hbar ^3},\ldots\right) 
+.\end{equation}
+Можно показать (это вопросов не вызывает), что
+\begin{equation}
+	\tau^\hbar _H(\mathbf{t})=
+	\sum_{\lambda}^{} \mathrm{e} ^{u\hbar c(\lambda)}
+	s_\lambda\left( \frac{1}{\hbar },\,0,\,0,\ldots \right) s_\lambda\left( \frac{\mathbf{t}}{\hbar } \right) 
+\end{equation}
+и что коэффициенты
+\begin{equation}
+	C_\lambda^\hbar = \mathrm{e} ^{u\hbar  c(\lambda)}
+	s_\lambda \left( \beta_k =\frac{\delta_{k,1}}{\hbar } \right) 
+\end{equation}
+удовлетворяют соотношениям Плюкера. Это показывает, что $\hbar $-деформацией
+мы получаем $\tau$-функцию иерархии $\hbar $-КП. Для найденной функции было явно посчитано разложение по $\mathbf{t}$ для первых порядков и проверено, что в неё действительно входят только чётные степени $\hbar $.
+\section{Иерархия $B$КП}
+\subsection{Билинейное тождество $B$КП}
+\emph{Билинейное тождество иерархии $B$КП}
+\begin{multline}
+\frac{1}{2\pi \mathrm{i} } \oint
+\mathrm{e}^{\xi^{\text{н}}\left( \mathbf{t}-\mathbf{t}',\,k \right) }\tau_{B\text{КП}}\left( \mathbf{t}-2 \left[ k^{-1} \right]  \right) \tau_{B\text{КП}}\left( \mathbf{t}'+2 \left[ k^{-1} \right]  \right) \frac{\mathrm{d} k}{k}=\\=
+\tau_{B\text{КП}}\left( \mathbf{t} \right) \tau_{B\text{КП}}
+(\mathbf{t}')
+,\end{multline} 
+где
+\begin{equation}
+	\mathbf{t}\pm \left[ k^{-1} \right] 
+	\xlongequal[]{\text{опр}}
+	\left\{ t_1\pm k^{-1},\,t_2 \pm \frac{1}{2}
+	k^{-2},\,t_3\pm \frac{1}{3}k^{-3},\ldots\right\} 
+\end{equation} 
+и
+\begin{equation}
+	\xi^\text{н}\left( \mathbf{t},\,k \right)=
+	\sum_{j \in \mathbb{Z}_{\text{неч}}^+}^{} t_j k^j
+.\end{equation} 
+Первое уравнение иерархии $B$КП в терминах производных
+Хироты
+\begin{equation}
+	\left( \mathrm{D}_1^6-5\mathrm{D}_1^3 \mathrm{D}_3
+	-5 \mathrm{D}_3^2+9 \mathrm{D}_1 \mathrm{D}_5\right) \tau_{B\text{КП}}\cdot \tau_{B \text{КП}}
+.\end{equation} 
+Что можно переписать как
+\begin{multline}
+-60 \left(\frac{\partial ^2F}{\partial
+   t_1^2}\right)^3-30 \frac{\partial ^4F}{\partial
+   t_1^4} \frac{\partial ^2F}{\partial
+   t_1^2}+30 \frac{\partial ^2F}{\partial t_1\, \partial t_3}
+   \frac{\partial ^2F}{\partial t_1^2}-\frac{\partial
+   ^6F}{\partial t_1^6}+\\+5 \frac{\partial ^2F}{\partial
+   t_3^2}-9 \frac{\partial ^2F}{\partial t_1\, \partial t_5}+5
+   \frac{\partial ^4F}{\partial t_1^3\, \partial t_3}=0	
+	\label{}
+.\end{multline}
+\subsection{$Q$-полиномы Шура, соотношения Плюккера  $B$КП,
+гипергеометрические  $\tau^{B\text{КП}}$-функции}
+\emph{Соотношения Плюккера} для $B$КП
+\begin{multline}
+c_{\left[ \alpha_1,\ldots,\,\alpha_k \right] }c_{\left[ 
+\alpha_1,\ldots,\,\alpha_k,\,\beta_1,\,\beta_2,\,\beta_3,\,\beta_4\right] }-c_{\left[ \alpha_1,\ldots,\,\alpha_k,\,
+\beta_1,\,\beta_2\right] }c_{\left[ \alpha_1,\ldots,\,
+\alpha_k,\,\beta_3,\,\beta_4\right] }+\\+c_{\left[ \alpha_1,\ldots,\,\alpha_k,\,
+\beta_1,\,\beta_3\right] }c_{\left[ \alpha_1,\ldots,\,
+\alpha_k,\,\beta_2,\,\beta_4\right] }-c_{\left[ \alpha_1,\ldots,\,\alpha_k,\,
+\beta_1,\,\beta_4\right] }c_{\left[ \alpha_1,\ldots,\,
+\alpha_k,\,\beta_2,\,\beta_3\right] }=0
+.\end{multline} 
+\ytableausetup{boxsize=0.2em}
+Простейшее соотношение Плюккера \begin{equation}
+	c_{\emptyset}c_{\ydiagram{3,2,1}}-c_{\ydiagram{1}}c_{\ydiagram{3,2}}+c_{\ydiagram{2}}c_{\ydiagram{3,1}}-c_{\ydiagram{3}}c_{\ydiagram{2,1}}=0
+.\end{equation} 
+Проверено, что \emph{$Q$-полиномы Шура} действительно удовлетворяют
+простейшему соотношению Плюккера.
+
+Для определения гипергеометрических $\tau$-функций зададим функцию
+\begin{equation}
+	r_\lambda= \prod_{w \in \lambda}^{} r\left( c(w) \right)  
+,\end{equation} 
+где
+\begin{equation}
+	c(w)=j,\qquad  1\le i\le l(\lambda),\qquad
+	1\le j\le \lambda_i
+.\end{equation} 
+Визуализация функции $c(w)$ на таблице Юнга:
+\ytableausetup{boxsize=1.5em}
+\begin{center}
+\begin{ytableau}
+	1&2&3&4\\
+	1&2&3\\
+	1&2
+\end{ytableau}
+\end{center}
+\emph{Гипергеометрическими $\tau$-функциями $B$КП} будем называть
+функции вида
+\begin{equation}
+	\tau(\mathbf{t})=\sum_{\lambda}^{} r_\lambda
+	Q_\lambda(\boldsymbol{\beta}) Q_\lambda(\mathbf{t})
+.\end{equation} 
+Данные функции действительно решают иерархию $B$КП,  т.\:к.
+$Q$-полиномы Шура удовлетворяют соотношениям Плюккера $B$КП,
+а множители $r(c(w))$ выносятся как общие. Например,
+для простейшего соотношения Плюккера общим множителем
+будет
+\begin{equation}
+	r(1)^3r(2)^2 r(3)
+.\end{equation} 
+\subsection{$\tau$-функция спиновых чисел Гурвица}
+Следующая $\tau$-функция является решением иерархии $B$КП:
+\begin{equation}
+	\tau \left( \mathbf{p},\,\bar{\mathbf{p}} \right) =
+	\sum_{R \in \mathrm{SP}}^{} \left( \mathrm{e} ^{u \left[ 
+	\Phi_R\left( \left[ 3 \right]  \right) +\frac{1}{2}\Phi_R \left( \left[ 1,\,1 \right]  \right) \right] } \right) Q_R\left(\frac{\mathbf{p}}{2}\right)Q_R \left(\frac{\bar{\mathbf{p}}}{2}\right)
+	\label{}
+.\end{equation}
+\section{Квантовая деформация иерархии $B$КП}
+Аналогично деформации иерархии КП получаем первое уравнение $\hbar $-$B$КП
+\begin{multline}
+-60 \left(\frac{\partial ^2F}{\partial
+   t_1^2}\right)^3-30\hbar ^2 \frac{\partial ^4F}{\partial
+   t_1^4} \frac{\partial ^2F}{\partial
+   t_1^2}+30 \frac{\partial ^2F}{\partial t_1\, \partial t_3}
+   \frac{\partial ^2F}{\partial t_1^2}-\hbar ^4\frac{\partial
+   ^6F}{\partial t_1^6}+\\+5 \frac{\partial ^2F}{\partial
+   t_3^2}-9 \frac{\partial ^2F}{\partial t_1\, \partial t_5}+5
+   \hbar ^2\frac{\partial ^4F}{\partial t_1^3\, \partial t_3}=0	
+	\label{}
+.\end{multline}
+
+\end{document}

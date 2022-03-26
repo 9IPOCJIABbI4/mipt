@@ -1,0 +1,296 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10046,        286]
+NotebookOptionsPosition[      9570,        269]
+NotebookOutlinePosition[      9963,        285]
+CellTagsIndexPosition[      9920,        282]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}], ";", 
+  RowBox[{"ClearAll", "[", "Subscript", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ord", "=", "6"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[CapitalPhi]", "[", 
+   RowBox[{"i_", ",", "z_", ",", "ord_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"\[CapitalPhi]", "[", 
+    RowBox[{"i", ",", "z", ",", "ord"}], "]"}], "=", 
+   TagBox[GridBox[{
+      {"\[Piecewise]", GridBox[{
+         {
+          RowBox[{
+           UnderoverscriptBox["\[Sum]", 
+            RowBox[{"k", "=", "0"}], "ord"], 
+           RowBox[{
+            FractionBox[
+             RowBox[{
+              SuperscriptBox["2", "k"], 
+              RowBox[{"Gamma", "[", 
+               RowBox[{
+                RowBox[{"3", "k"}], "+", 
+                FractionBox["1", "2"]}], "]"}]}], 
+             RowBox[{
+              SuperscriptBox["9", "k"], 
+              RowBox[{"Factorial", "[", 
+               RowBox[{"2", "k"}], "]"}], 
+              RowBox[{"Gamma", "[", 
+               FractionBox["1", "2"], "]"}]}]], 
+            SuperscriptBox["z", 
+             RowBox[{"3", "k"}]]}]}], 
+          RowBox[{"i", "\[Equal]", "1"}]},
+         {
+          RowBox[{"Normal", "@", 
+           RowBox[{"Series", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{
+                  FractionBox["1", "z"], "#"}], "-", 
+                 RowBox[{
+                  SuperscriptBox["z", "3"], 
+                  RowBox[{"(", 
+                   RowBox[{
+                    SubscriptBox["\[PartialD]", "z"], "#"}], ")"}]}], "-", 
+                 RowBox[{
+                  FractionBox[
+                   SuperscriptBox["z", "2"], "2"], "#"}]}], ")"}], "&"}], "@", 
+              RowBox[{"\[CapitalPhi]", "[", 
+               RowBox[{
+                RowBox[{"i", "-", "1"}], ",", "z", ",", 
+                RowBox[{"ord", "+", "1"}]}], "]"}]}], ",", 
+             RowBox[{"{", 
+              RowBox[{"z", ",", "0", ",", "ord"}], "}"}]}], "]"}]}], "True"}
+        },
+        AllowedDimensions->{2, Automatic},
+        Editable->True,
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}},
+           "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.84]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}},
+        Selectable->True]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+       "RowsIndexed" -> {}},
+     GridBoxItemSize->{
+      "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.35]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    "Piecewise",
+    DeleteWithContents->True,
+    Editable->False,
+    SelectWithContents->True,
+    Selectable->False,
+    StripWrapperBoxes->True]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"arr", "[", "n_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"arr", "[", "n", "]"}], "=", 
+   RowBox[{
+    RowBox[{"Array", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"\[CapitalPhi]", "[", 
+        RowBox[{"#1", ",", 
+         SubscriptBox["z", "#2"], ",", "n"}], "]"}], "&"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"n", ",", "n"}], "}"}]}], "]"}], "/.", 
+    RowBox[{
+     SubscriptBox["z", "i_"], "\[Rule]", 
+     RowBox[{"\[Epsilon]", " ", 
+      SubscriptBox["z", "i"]}]}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Tau]", "[", "ord_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"\[Tau]", "[", "ord", "]"}], "=", 
+   RowBox[{"Expand", "[", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"Series", "[", 
+        RowBox[{
+         FractionBox[
+          RowBox[{"Det", "[", 
+           RowBox[{"arr", "[", "ord", "]"}], "]"}], 
+          RowBox[{"Det", "[", 
+           RowBox[{"Array", "[", 
+            RowBox[{
+             RowBox[{
+              SuperscriptBox[
+               RowBox[{"(", 
+                RowBox[{"\[Epsilon]", " ", 
+                 SubscriptBox["z", "#1"]}], ")"}], 
+               RowBox[{"-", 
+                RowBox[{"(", 
+                 RowBox[{"#2", "-", "1"}], ")"}]}]], "&"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"ord", ",", "ord"}], "}"}]}], "]"}], "]"}]], ",", 
+         RowBox[{"{", 
+          RowBox[{"\[Epsilon]", ",", "0", ",", "ord"}], "}"}]}], "]"}], "//", 
+       "Normal"}], ")"}], "/.", 
+     RowBox[{"\[Epsilon]", "\[Rule]", "1"}]}], 
+    "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Lambda]s", "=", 
+   RowBox[{"Flatten", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"IntegerPartitions", "[", "#", "]"}], "&"}], "/@", 
+      RowBox[{"Range", "[", "ord", "]"}]}], ",", "1"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Tau]t", "=", 
+   RowBox[{"1", "+", 
+    RowBox[{"Sum", "[", 
+     RowBox[{
+      RowBox[{
+       SubscriptBox["c", "\[Lambda]"], 
+       RowBox[{"Times", "@@", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           SubscriptBox["t", "#"], "&"}], "/@", "\[Lambda]"}], ")"}]}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"\[Lambda]", ",", "\[Lambda]s"}], "}"}]}], "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sol", "=", 
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"#", "\[Equal]", "0"}], "&"}], "/@", 
+      RowBox[{"Flatten", "[", 
+       RowBox[{"CoefficientList", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"\[Tau]t", "-", 
+           RowBox[{"\[Tau]", "[", "ord", "]"}]}], "/.", 
+          RowBox[{
+           SubscriptBox["t", "k_"], "\[Rule]", 
+           RowBox[{
+            FractionBox["1", "k"], 
+            RowBox[{
+             UnderoverscriptBox["\[Sum]", 
+              RowBox[{"j", "=", "1"}], "ord"], 
+             SubsuperscriptBox["z", "j", "k"]}]}]}]}], ",", 
+         RowBox[{
+          RowBox[{
+           SubscriptBox["z", "#"], "&"}], "/@", 
+          RowBox[{"Range", "[", "ord", "]"}]}]}], "]"}], "]"}]}], ",", 
+     RowBox[{
+      RowBox[{
+       SubscriptBox["c", "#"], "&"}], "/@", "\[Lambda]s"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"\[Tau]t", "/.", 
+  RowBox[{
+  "sol", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}]}], "Input",
+ CellChangeTimes->{{3.854623954767313*^9, 3.854624151155308*^9}, {
+  3.8546241827168217`*^9, 3.854624194752172*^9}, {3.854624244362523*^9, 
+  3.854624268011114*^9}, {3.8546243512339287`*^9, 3.854624351597159*^9}, {
+  3.854624396300907*^9, 3.854624396643751*^9}, {3.8546245061585207`*^9, 
+  3.854624562790065*^9}, {3.8546247932959023`*^9, 3.8546247934606867`*^9}, {
+  3.854624836216477*^9, 3.854624836938994*^9}, {3.854624926281514*^9, 
+  3.854624928197962*^9}, {3.854625090262188*^9, 3.854625110356503*^9}, {
+  3.8546252166629333`*^9, 3.854625217029256*^9}, {3.854625274114279*^9, 
+  3.85462527434686*^9}, {3.8546253370996037`*^9, 3.854625365105671*^9}, {
+  3.854625431291947*^9, 3.85462548947665*^9}, {3.8546256023180943`*^9, 
+  3.85462560273868*^9}, {3.854625716273604*^9, 3.854625727657281*^9}, {
+  3.854626872268381*^9, 3.85462691112239*^9}, {3.8546270354100122`*^9, 
+  3.854627081909133*^9}},
+ CellLabel->
+  "In[296]:=",ExpressionUUID->"942cddfc-b25b-4e59-90ec-294a4e6c2c66"],
+
+Cell[BoxData[
+ RowBox[{"1", "+", 
+  FractionBox[
+   SubsuperscriptBox["t", "1", "3"], "6"], "+", 
+  FractionBox[
+   SubsuperscriptBox["t", "1", "6"], "72"], "+", 
+  FractionBox[
+   SubscriptBox["t", "3"], "8"], "+", 
+  RowBox[{
+   FractionBox["25", "48"], " ", 
+   SubsuperscriptBox["t", "1", "3"], " ", 
+   SubscriptBox["t", "3"]}], "+", 
+  FractionBox[
+   RowBox[{"25", " ", 
+    SubsuperscriptBox["t", "3", "2"]}], "128"], "+", 
+  FractionBox[
+   RowBox[{"5", " ", 
+    SubscriptBox["t", "1"], " ", 
+    SubscriptBox["t", "5"]}], "8"]}]], "Output",
+ CellChangeTimes->{
+  3.854624369764839*^9, 3.854624493995366*^9, 3.854624560492259*^9, 
+   3.854624735396029*^9, 3.8546247941449757`*^9, 3.8546248375219717`*^9, 
+   3.854624929314033*^9, {3.854625105544731*^9, 3.854625111919168*^9}, 
+   3.8546252748624487`*^9, {3.854625440344215*^9, 3.854625490170561*^9}, {
+   3.854625708385688*^9, 3.854625728569522*^9}, 3.854626911876318*^9, {
+   3.854627037785512*^9, 3.854627079022737*^9}, 3.854627308540297*^9},
+ CellLabel->
+  "Out[304]=",ExpressionUUID->"b58d9896-20c1-49b8-a806-a409e34c7b11"]
+}, Open  ]]
+},
+WindowSize->{905, 747},
+WindowMargins->{{Automatic, 106}, {49, Automatic}},
+FrontEndVersion->"12.1 for Mac OS X x86 (64-bit) (June 9, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"af7b443d-45c9-4875-963a-f0273edb7575"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 7884, 215, 405, "Input",ExpressionUUID->"942cddfc-b25b-4e59-90ec-294a4e6c2c66"],
+Cell[8467, 239, 1087, 27, 54, "Output",ExpressionUUID->"b58d9896-20c1-49b8-a806-a409e34c7b11"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

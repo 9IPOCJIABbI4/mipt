@@ -1,0 +1,4 @@
+PWD /mnt/psf/Home/mipt/bachelor-4/semester-2/diploma/bkp
+INPUT /usr/share/texmf-dist/web2c/texmf.cnf
+INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
+OUTPUT texput.log
