@@ -245,18 +245,152 @@ $k<0$ --- это операторы рождения, а $\psi_k$ при $k<0$
 фермионов будет производиться в согласии с антикоммутационным
 соотношением и, следовательно, давать множитель $(-1)$. 
 
-Рассмотрим так же матричную алгебру Ли $gl(\infty)$.
+Рассмотрим так же матричную алгебру Ли $\bar{\mathfrak{a}}_\infty$.
 Элементами данной алгебры будут бесконечномерные матрицы,
 у которых конечное количество диагоналей отличны от нулевых.
 Базисом данной алгебры можно выбрать матрицы  $E_{ij}$,
 у которых единственный, отличный от нуля, элемент равен 1 и находится
 на пересечении $i$-й строки и $j$-го столбца.
+ \begin{equation}
+	(E_{ij})_{kl}=\delta_{ik}\delta_{jl}
+.\end{equation} 
+\begin{multline}
+\left[ E_{ij},\,E_{kl} \right] =
+E_{ij}E_{kl}-E_{kl}E_{ij}=
+\delta_{in}\delta_{jm}\delta_{km}\delta_{lp}-
+\delta_{kn}\delta_{lm}\delta_{im}\delta_{jp}=\\=
+\delta_{jk}E_{il}-\delta_{il}E_{kj}
+.\end{multline} 
 
-Можно показать, что представлением данной алгебры
+
+Представлением данной алгебры
 на введённом пространстве Фока будет
 \begin{equation}
-	r(E_{ij})=\normord{\psi_i \psi_j^{*}}
-.\end{equation} 
+	r(E_{ij})=\psi_i \psi_j^{*}
+\end{equation} 
+т.\:к.
+\begin{multline}
+	\left[ \psi_i \psi^*_j,\,\psi_k \psi^*_l \right] 
+	=\psi_i \psi_j^* \psi_k \psi^*_l -\psi_k \psi^*_l
+	\psi_i \psi^*_j=\\=\psi_i \left( \delta_{jk} -\psi_k \psi_j^* \right) \psi^*_l-\psi_k \psi_l^* \psi_i \psi^*_j=\\=\delta_{jk}\psi_i \psi^*_l-\psi_k \psi_i  \psi_l^*
+	\psi_j^*-\psi_k \psi_l^* \psi_i \psi_j^*=\\=
+	\delta_{jk} \psi_i \psi_{l}^*-
+	\delta_{il}\psi_k \psi_j^*
+.\end{multline}
+
+Далее рассмотрим центральное расширение алгебры Ли
+$\bar{\mathfrak{a}}_\infty$, а именно алгебру Ли $\mathfrak{a}_\infty$, определённую как
+\begin{equation}
+	\mathfrak{a}_\infty= \bar{\mathfrak{a}}_\infty
+	\oplus  \mathbb{C}c
+\end{equation} 
+с центром $\mathbb{C}c$ и скобкой
+\begin{equation}
+	\left[ a,\,b \right] =ab-ba+ \alpha\left( a,\,b \right) c
+,\end{equation} 
+где два-коцикл $\alpha(a,\,b)$ линеен по каждому
+переменному и определён на матрицах $E_{ij}$ как
+\begin{equation}
+	\begin{aligned}
+		&\alpha\left( E_{ij},\,E_{ji} \right) =-\alpha
+	\left( E_{ji},\,E_{ij} \right) =1\quad
+	\text{при } i< 0,\ j\ge 0,\\
+	&\alpha\left( E_{ij},\,E_{kl} \right) =0
+		\quad \text{во всех остальных случаях.}
+	\end{aligned}
+	\label{}
+\end{equation}
+%Коммутационными соотношениями данной алгебры будут
+%\begin{align}
+%	\left[ E_{ij},\,E_{kl} \right] &=0 &&
+%	\text{при } j \neq k ,\ l \neq i,\\
+%	\left[ E_{ij},\,E_{jl} \right] &=
+%	E_{il} && \text{при } l\neq i,\\
+%	\left[ E_{ij},\,E_{ki} \right] &=-E_{kj}
+%				       && \text{при } j
+%				       \neq k,
+%	\left[ E_{ij},\,E_{ji} \right] =
+%.\end{align}
+
+Покажем, что представлением данной
+алгебры на пространстве Фока будет
+\[
+	\hat{r}(E_{ij})= \normord{\psi_i \psi_j^*}
+.\] 
+%\[
+%	\braket{0 | \left[ \normord{\psi_i\psi_j^*},\,\normord{\psi_k \psi^*_l} \right] |0}=
+%.\] 
+%\[
+%	\braket{\mathcal{S} | \normord{\psi_i \psi_j^*} |\ldots,\,n_{-1},\,n_0,\,n_1,\ldots}
+%.\] 
+%\begin{multline*}
+%	\left[ \normord{\psi_i\psi_j^*},\,\normord{\psi_k \psi^*_l} \right]=
+%\begin{cases}
+%	\left[ \psi_i\psi_j^*,\,\psi_k \psi^*_l \right],&
+% j\ge 0,\, l\ge 0,\\
+%	\left[ \psi_i\psi_j^*,\,\psi_k \psi^*_l \right],&
+% j\ge 0,\, l< 0,\,k\ge 0,\\
+%	\left[ \psi_i\psi_j^*,\,\psi^*_l \psi_k \right],&
+% j\ge 0,\, l< 0,\,k< 0,\\
+%		\left[ \psi_i\psi_j^*,\,\psi_k \psi^*_l \right],&
+%j<0,\, l\ge 0,\,i\ge 0,\\
+%		\left[ \psi_j^*\psi_i,\,\psi_k \psi^*_l \right],&
+%j<0,\, l\ge 0,\,i< 0,\\
+%		\left[ \psi_i\psi_j^*,\,\psi_k \psi^*_l \right],&
+%j<0,\, l< 0,\,i\ge  0,\,k\ge 0,\\
+%		\left[ \psi_i\psi_j^*,\,\psi^*_l\psi_k  \right],&
+%j<0,\, l< 0,\,i\ge  0,\,k< 0,\\
+%		\left[ \psi_j^*\psi_i,\,\psi_k \psi^*_l \right],&
+%j<0,\, l< 0,\,i<  0,\,k\ge  0,\\
+%		\left[ \psi_j^*\psi_i,\,\psi^*_l\psi_k  \right],&
+%j<0,\, l< 0,\,i<  0,\,k<0,  \\
+%\end{cases}
+%\end{multline*}
+По определению свёртки
+\begin{equation}
+	\normord{\psi_i \psi_j^*}=\psi_i \psi_j^*-
+	\wick{\c\psi_i \c\psi_j^*}
+	\label{}
+.\end{equation}
+Откуда
+\begin{align}
+	\wick{\c\psi_i \c\psi_i^*}&=1 && \text{при }
+	i<0,\\
+	\wick{\c \psi_i \c \psi_j^*}&=0 && \text{во всех остальных случаях}
+.\end{align}
+Тогда
+\begin{multline}
+	\left[ \normord{\psi_i \psi_j^*},\,\normord{
+	\psi_k \psi_l^*} \right] =
+	\wick{\left[ \psi_i\psi_j^*-\c\psi_i \c\psi_j^* ,\,\psi_k \psi_l^*- \c1 \psi_k \c1 \psi_l^* \right]}=\\=
+	\left[ \psi_i \psi_j^*,\,\psi_{k}\psi_l^* \right]
+	=\delta_{jk} \psi_i \psi_l^* -\delta_{il}\psi_k \psi_j^*=\\=\delta_{jk} \wick{\left( \normord{\psi_i \psi_l^*}+
+	\c\psi_i \c\psi_l^*\right) }-\delta_{il} \wick{\left( \normord{\psi_k \psi_j^*}+
+	\c\psi_k \c\psi_j^*\right) }=\\=
+	\delta_{jk} \normord{\psi_i\psi_l^*}
+	-\delta_{il} \normord{\psi_k \psi_j^*}+
+	\delta_{jk} \wick{\c \psi_i \c\psi_l^*}-
+	\delta_{il} \wick{\c \psi_k \c \psi_j^*}=\\=
+	\delta_{jk} \normord{\psi_i\psi_l^*}
+	-\delta_{il} \normord{\psi_k \psi_j^*}+
+	\alpha\left( E_{ij},\,E_{kl} \right) 
+	\label{}
+.\end{multline}
+%\begin{multline*}
+%	\left[ \normord{\psi_i\psi_j^*},\,\normord{\psi_k \psi^*_l} \right]=\normord{\psi_i \psi_j^*}\normord{\psi_k \psi_l^*}-\normord{\psi_k \psi_l^*}\normord{\psi_i \psi_j^*}=\\=
+%\begin{cases}
+%	\psi_i \psi^*_j \psi_k \psi_l^*-
+%	\psi_k \psi_l^* \psi_i \psi_j^*,&
+% j\ge 0,\, l\ge 0,\\
+%	\psi_i \psi^*_j \psi_k \psi_l^*-
+%	\psi_k \psi_l^* \psi_i \psi_j^*,&
+% j\ge 0,\, l< 0,\,k\ge 0,\\
+%	\psi_i \psi^*_j \psi_k \psi_l^*-
+%	\psi_k \psi_l^* \psi_i \psi_j^*,&
+% i,\,l\ge 0,\ j< 0,\\
+%\end{cases}
+%\end{multline*}
+
 Бозон-фермионное соответствие $\Phi: \mathcal{F} \to \mathcal{B}$:
 \ytableausetup{boxsize=0.5em}
 \begin{equation}
