@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.9.25)  31 MAR 2022 19:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.9.25)  8 APR 2022 19:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1302,135 +1302,140 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 184.
 
-
-Overfull \hbox (5.3293pt too wide) in paragraph at lines 216--216
-[]\T2A/cmr/bx/n/17.28 Фермионный фор-ма-лизм и бозон-фермионное со-
+[5]
+Overfull \hbox (15.3767pt too wide) in paragraph at lines 225--228
+[]\T2A/cmr/m/n/14.4 Пространство Фо-ка для фер-ми-о-нов опре-де-лим де-стви-ем ал-геб-ры Клиф-
  []
 
-[5]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 248.
+[6]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 335.
  (/usr/share/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) [6] [7] [8]
+) [7] [8] [9]
+Overfull \hbox (2.6931pt too wide) in paragraph at lines 529--533
+\T2A/cmr/m/n/14.4 Отображение $\OT1/cmr/m/n/14.4 ^^H$ \T2A/cmr/m/n/14.4 бук-валь-но за-да-јт бозонно-фермионное со-от-вет-ствие. Как
+ []
+
+[10] [11]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 467.
+(hyperref)                removing `math shift' on input line 635.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\tau' on input line 467.
+(hyperref)                removing `\tau' on input line 635.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 467.
+(hyperref)                removing `math shift' on input line 635.
 
-[9]
-Overfull \hbox (24.28906pt too wide) in paragraph at lines 509--512
+[12]
+Overfull \hbox (24.28906pt too wide) in paragraph at lines 677--680
 \T2A/cmr/m/n/14.4 удовлетворяют со-от-но-ше-ни-ям Плю-ке-ра. Это по-ка-зы-ва-ет, что $\U/msb/m/n/14.4 ~$\T2A/cmr/m/n/14.4 -деформацией
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 512.
+(hyperref)                removing `math shift' on input line 680.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 512.
+(hyperref)                removing `math shift' on input line 680.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 513.
+(hyperref)                removing `math shift' on input line 681.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 513.
+(hyperref)                removing `math shift' on input line 681.
 
-
-Overfull \hbox (12.96463pt too wide) in paragraph at lines 552--552
+[13]
+Overfull \hbox (12.96463pt too wide) in paragraph at lines 720--720
 []$\OML/cmm/m/it/17.28 Q$\T2A/cmr/bx/n/17.28 -полиномы Шу-ра, со-от-но-ше-ния Плюк-ке-ра $\OML/cmm/m/it/17.28 B$\T2A/cmr/bx/n/17.28 КП,
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 552.
+(hyperref)                removing `math shift' on input line 720.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 552.
+(hyperref)                removing `math shift' on input line 720.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 552.
+(hyperref)                removing `math shift' on input line 720.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 552.
+(hyperref)                removing `math shift' on input line 720.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 552.
+(hyperref)                removing `math shift' on input line 720.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\tau' on input line 552.
+(hyperref)                removing `\tau' on input line 720.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 552.
+(hyperref)                removing `superscript' on input line 720.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 552.
+(hyperref)                removing `math shift' on input line 720.
 
-[10]
-Overfull \hbox (12.4592pt too wide) in paragraph at lines 594--600
+[14]
+Overfull \hbox (12.4592pt too wide) in paragraph at lines 762--768
 \T2A/cmr/m/n/14.4 Данные функ-ции дей-стви-тель-но ре-ша-ют иерар-хию $\OML/cmm/m/it/14.4 B$\T2A/cmr/m/n/14.4 КП, т.к. $\OML/cmm/m/it/14.4 Q$\T2A/cmr/m/n/14.4 -полиномы
  []
 
 
-Overfull \hbox (12.427pt too wide) in paragraph at lines 594--600
+Overfull \hbox (12.427pt too wide) in paragraph at lines 762--768
 \T2A/cmr/m/n/14.4 Шу-ра удо-вле-тво-ря-ют со-от-но-ше-ни-ям Плюк-ке-ра $\OML/cmm/m/it/14.4 B$\T2A/cmr/m/n/14.4 КП, а мно-жи-те-ли $\OML/cmm/m/it/14.4 r\OT1/cmr/m/n/14.4 (\OML/cmm/m/it/14.4 c\OT1/cmr/m/n/14.4 (\OML/cmm/m/it/14.4 w\OT1/cmr/m/n/14.4 ))$
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 603.
+(hyperref)                removing `math shift' on input line 771.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\tau' on input line 603.
+(hyperref)                removing `\tau' on input line 771.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 603.
+(hyperref)                removing `math shift' on input line 771.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 611.
+(hyperref)                removing `math shift' on input line 779.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 611.
+(hyperref)                removing `math shift' on input line 779.
 
-[11] 
+
 AED: lastpage setting LastPage
-[12] (./master.aux)
+[15] (./master.aux)
 Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: 780E4DBE6F21A41FF1CCAD69719247EE;4176.
+(rerunfilecheck)             Checksum: 8AE6EC66BBE241EF8650D1E8766F25EE;4192.
  ) 
 Here is how much of TeX's memory you used:
- 41093 strings out of 478994
- 921159 string characters out of 5864751
- 1364075 words of memory out of 5000000
- 57620 multiletter control sequences out of 15000+600000
- 430740 words of font info for 107 fonts, out of 8000000 for 9000
+ 41279 strings out of 478994
+ 925103 string characters out of 5864751
+ 1374241 words of memory out of 5000000
+ 57776 multiletter control sequences out of 15000+600000
+ 431081 words of font info for 108 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 97i,14n,94p,786b,872s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb>
-Output written on master.pdf (12 pages, 312954 bytes).
+ 97i,15n,94p,786b,872s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc}{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm2488.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1440.pfb>
+Output written on master.pdf (15 pages, 335935 bytes).
 PDF statistics:
- 348 PDF objects out of 1000 (max. 8388607)
- 300 compressed objects within 3 object streams
- 99 named destinations out of 1000 (max. 500000)
+ 401 PDF objects out of 1000 (max. 8388607)
+ 349 compressed objects within 4 object streams
+ 127 named destinations out of 1000 (max. 500000)
  149 words of extra memory for PDF output out of 10000 (max. 10000000)
 

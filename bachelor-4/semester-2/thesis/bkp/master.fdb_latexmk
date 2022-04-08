@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1648745357 "master.tex" "master.pdf" "master" 1648745361
+["pdflatex"] 1649434150 "master.tex" "master.pdf" "master" 1649434155
   "../../preamble-rus.tex" 1644083464 1086 c03e37bb8f3fef71834e7dff83aed013 ""
   "../../preamble.tex" 1648739770 10328 c40549e7002142dce245375f186220d5 ""
   "/home/nyxapuk/.texlive/texmf-var/fonts/tfm/lh/lh-t2a/labx1000.tfm" 1632847140 3300 6abb8e321227ead2a8e929e5abc72bd3 ""
@@ -15,8 +15,10 @@
   "/home/nyxapuk/.texlive/texmf-var/fonts/tfm/lh/lh-t2a/larm2488.tfm" 1638557472 3264 102508a989355317d27912fb22a38399 ""
   "/home/nyxapuk/.texlive/texmf-var/fonts/tfm/lh/lh-t2a/lati1440.tfm" 1638557475 3528 460e6901416a816cf4afa844b5d54101 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t2a.enc" 1617738065 3141 82d5616418ed8d5de703b3951bedecb4 ""
+  "/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1617738065 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1617738065 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1617738065 1536 06717a2b50de47d4087ac0e6cd759455 ""
+  "/usr/share/texmf-dist/fonts/tfm/jknappen/ec/tcrm1440.tfm" 1617738065 1536 3290a75021d32d016616fe527bc9884c ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1617738065 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1617738065 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib7.tfm" 1617738065 1508 6e807ff901c35a5f1fde0ca275533df8 ""
@@ -322,13 +324,13 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1617738065 39911 2da6c67557ec033436fe5418a70a8a61 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1632525895 5047985 d881339e8a99e4b22688e395bcbb185d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1632523429 2812681 39aab857ef3603c12ce5d1ae8f513f77 ""
-  "master.aux" 1648745361 5608 eff26504181bfd593a06aaef28cad9c0 "pdflatex"
-  "master.out" 1648745361 4176 780e4dbe6f21a41ff1ccad69719247ee "pdflatex"
-  "master.tex" 1648745352 29852 ec36afb64afa1c196505b69b9b0d2461 ""
-  "master.toc" 1648745361 1785 4e683147976cb7f27c05ccf6fd753cfb "pdflatex"
+  "master.aux" 1649434154 8677 704b97ec74ceee89a7c450dfc6276c8e "pdflatex"
+  "master.out" 1649434154 4192 8ae6ec66bbe241ef8650d1e8766f25ee "pdflatex"
+  "master.tex" 1649434148 39362 da5c43472fdbc005de0a049bcdad807e ""
+  "master.toc" 1649434154 1792 e834094e2b1c91dc3544e2ffa6370e86 "pdflatex"
   (generated)
-  "master.aux"
   "master.log"
+  "master.out"
+  "master.aux"
   "master.toc"
   "master.pdf"
-  "master.out"

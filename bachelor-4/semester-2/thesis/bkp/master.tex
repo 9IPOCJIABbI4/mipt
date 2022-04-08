@@ -213,7 +213,7 @@ $\tau$-функция с параметрами
 	r(n)=\mathrm{e} ^{un},\qquad
 	\beta_1=1,\qquad \beta_k=0,\ k\ge 2
 .\end{equation} 
-\subsection{Фермионный формализм и бозон-фермионное соответствие}
+\subsection{Фермионный формализм и бозонно-фермионное соответствие}
 Будем рассматривать бесконечномерную алгебру Клиффорда
 с генераторами $\left\{ \psi_n,\,\psi^*_m \mid n,\,m \in \mathbb{Z} \right\} $, обладающими коммутационными соотношениями
 \begin{equation}
@@ -221,22 +221,34 @@ $\tau$-функция с параметрами
 \left\{ \psi_n^*,\,\psi^*_{m} \right\}=0,\qquad
 \left\{ \psi_n,\,\psi_{m}^* \right\}=\delta_{n,\,m}
 .\end{equation} 
+
 Пространство Фока для фермионов определим дествием
 алгебры Клиффорда на вакуумный вектор $\ket{0}$ <<моря Дирака>>. Действие генераторов алгебры на вакуумный вектор
 даётся как
 \begin{equation}
-\psi_k\ket{0}=0,\quad k<0;\qquad\psi^* \ket{0}=0,\quad
-k\ge 0
+\psi_k\ket{0}=0,\quad k\le 0;\qquad\psi^* \ket{0}=0,\quad
+k> 0
 .\end{equation} 
-То есть операторы $\psi_k$ при $k\ge 0$ и $\psi^*_k$ при
-$k<0$ --- это операторы рождения, а $\psi_k$ при $k<0$ 
-и $\psi_k^*$ при  $k\ge 0$ --- операторы уничтожения.
+То есть операторы $\psi_k$ при $k>0$ и $\psi^*_k$ при
+$k\le 0$ --- это операторы рождения, а $\psi_k$ при $k\le 0$ 
+и $\psi_k^*$ при  $k> 0$ --- операторы уничтожения.
+
+Далее определим $m$-е вакуумы
+\begin{equation}
+\psi_k\ket{m}=0,\quad k\le m;\qquad\psi^* \ket{m}=0,\quad
+k> m
+,\end{equation}
+и состояния
+\[
+	\ket{m,\,\lambda}= \psi_{\lambda_1+m}\psi^*_m\psi_{\lambda_2+m-1}\psi^*_{m-1}\cdots\psi_{\lambda_{l(\lambda)}+m-l(\lambda)}\psi^*_{m-l(\lambda)}\ket{m}
+.\] 
 
 Введём также производящие функции для фермионов
-\[
+\begin{equation}
 \psi(z)=\sum _{k\in \mathbb{Z}}^{} \psi_k z^k,\qquad
 \psi^* (z)=\sum_{k \in \mathbb{Z}}^{} \psi^*_k z^{-k-1}
-.\] 
+.\end{equation} 
+
 Будем обозначать нормальное упорядочение фермионных
 операторов как $\normord{\left( \ldots \right) }$.
 Результатом нормального упорядочения будет перемещение
@@ -245,9 +257,11 @@ $k<0$ --- это операторы рождения, а $\psi_k$ при $k<0$
 фермионов будет производиться в согласии с антикоммутационным
 соотношением и, следовательно, давать множитель $(-1)$. 
 
-Рассмотрим так же матричную алгебру Ли $\bar{\mathfrak{a}}_\infty$.
-Элементами данной алгебры будут бесконечномерные матрицы,
-у которых конечное количество диагоналей отличны от нулевых.
+Алгебра Ли $gl_\infty$ определяется как пространство
+\begin{equation}
+	gl_\infty= \left\{ \left( a_{ij} \right) _{i,j \in \mathbb{Z}}\mid\text{все }a_{ij}\text{, кроме конечного
+	числа, равны 0} \right\} 
+.\end{equation} 
 Базисом данной алгебры можно выбрать матрицы  $E_{ij}$,
 у которых единственный, отличный от нуля, элемент равен 1 и находится
 на пересечении $i$-й строки и $j$-го столбца.
@@ -263,10 +277,34 @@ E_{ij}E_{kl}-E_{kl}E_{ij}=
 .\end{multline} 
 
 
+Данную алгебру можно рассматривать как алгебру Ли группы
+$\mathrm{GL}_\infty$, определённой следующим образом
+\begin{equation}
+	\mathrm{GL}_\infty= \left\{ 
+	A=\left( a_{ij} \right) _{i,j \in \mathbb{Z}} \mid \substack{A\text{ обратима и все числа } a_{ij} -\delta_{ij},\\ \text{кроме конечного числа, равны 0}}\right\} 
+.\end{equation} 
+Представление $R$ группы $\mathrm{GL}_\infty$ и представление
+$\rho$ алгебры Ли $gl_\infty$ в пространстве $\mathcal{F}$ 
+задаётся формулами
+\begin{align}
+	R\left( A \right) \left( \psi_{i_1} \wedge 
+	\psi_{i_2} \wedge \ldots\right) &=
+	A \psi_{i_1} \wedge A \psi_{i_2}\wedge 
+	\ldots,
+	\label{eq:GLr}\\
+	\rho(a)\left( \psi_{i_1} \wedge \psi_{i_2}\wedge 
+\ldots\right) &=a \psi_{i_1} \wedge \psi_{i_2}
+	\wedge \ldots+ \psi_{i_1} \wedge 
+	a \psi_{i_2}\wedge \ldots+\ldots
+.\end{align} 
+Последние две формулы связаны соотношением
+\begin{equation}
+	\mathrm{e} ^{\rho(a)}=R\left( \mathrm{e} ^{a} \right) ,\qquad a \in gl_{\infty}
+.\end{equation} 
 Представлением данной алгебры
 на введённом пространстве Фока будет
 \begin{equation}
-	r(E_{ij})=\psi_i \psi_j^{*}
+	\rho(E_{ij})=\psi_i \psi_j^{*}
 \end{equation} 
 т.\:к.
 \begin{multline}
@@ -277,6 +315,36 @@ E_{ij}E_{kl}-E_{kl}E_{ij}=
 	\delta_{jk} \psi_i \psi_{l}^*-
 	\delta_{il}\psi_k \psi_j^*
 .\end{multline}
+Пользуясь формулой \eqref{eq:GLr} и стандартным исчислнием внешних степней найдём оператор представления $R$ элемента $A \in \mathrm{GL}_\infty$ в пространстве $\mathcal{F}$
+\begin{multline}
+	R(A)\left( \psi_{i_m}\wedge \psi_{i_{m-1}}\wedge \ldots	 \right) =\sum_{j_m,j_{m-1},\ldots \in \mathbb{Z}}^{}
+	A_{j_m,i_{m}}\psi_{j_m}\wedge A_{j_{m-1},i_{m-1}} \psi_{j_{m-1}}\wedge  \ldots	=\\= \sum_{j_m >j_{m-1}> \ldots}^{} \left( 
+		\det A_{j_m,j_{m-1},\ldots}^{i_{m},\,i_{m-1},\ldots}\right) \psi_{j_m} \wedge \psi_{j_{m-1}}\wedge \ldots
+	\label{}
+.\end{multline}
+где $A^{i_m,i_{m-1},\ldots}_{j_m,j_{m-1},\ldots}$ означает
+матрицу, состоящую из элементов, стоящих
+на пересечении строк $j_m,\,j_{m-1},\ldots$ и столбцов
+$i_m,\,i_{m-1},\ldots$ матрицы $A$.
+
+В альтернативных обозначениях
+\begin{equation}
+	R(A) \ket{m,\,\lambda} =\sum_{\mu \in \mathrm{Par}}^{} \left( 
+	\det A_{\mu_1+m,\mu_2+m-1,\ldots}^{\lambda_1+m,\lambda_2+m-1,\ldots}\right) \ket{m,\,\mu}.\end{equation} 
+
+Определим также бóльшую алгебру Ли $\bar{\mathfrak{a}}_\infty$.
+Элементами данной алгебры будут бесконечномерные матрицы,
+у которых конечное количество диагоналей отличны от нулевых:
+\begin{equation}
+	\bar{\mathfrak{a}}_\infty=\left\{ 
+	\left( a_{ij} \right) \mid i,\,j \in \mathbb{Z},\ a_{ij}=0 \text{ при } \left| i-j \right| \gg 0\right\} 
+.\end{equation} 
+$\bar{\mathfrak{a}}_\infty$ является алгеброй Ли
+с матричным коммутатором в качестве операции, содержащей
+алгебру Ли $gl_{\infty}$ как подалгебру.
+
+
+
 
 Далее рассмотрим центральное расширение алгебры Ли
 $\bar{\mathfrak{a}}_\infty$, а именно алгебру Ли $\mathfrak{a}_\infty$, определённую как
@@ -287,19 +355,40 @@ $\bar{\mathfrak{a}}_\infty$, а именно алгебру Ли $\mathfrak{a}_\
 с центром $\mathbb{C}c$ и скобкой
 \begin{equation}
 	\left[ a,\,b \right] =ab-ba+ \alpha\left( a,\,b \right) c
-,\end{equation} 
-где два-коцикл $\alpha(a,\,b)$ линеен по каждому
-переменному и определён на матрицах $E_{ij}$ как
+.\end{equation} 
+Функцию $\alpha(a,\,b)$ называют \emph{два-коциклом}, для
+корректности определения скобки Ли на неё накладываются
+дополнительные ограничения:
+\begin{itemize}
+	\item Антисимметричность скобки влечёт антисимметричность $\alpha(a,\,b)$.
+	\item Линейность скобки по обоим аргументам влечёт аналогичную линейность $\alpha(a,\,b)$.
+	\item Из тождества Якоби скобки
+\begin{equation}
+\left[ \left[ x,\,y \right],\,z \right] +\left[ \left[ y,\,z \right] ,\,x \right] +\left[ \left[ z,\,x \right] ,\,y \right] =0
+\end{equation} 
+следует, что
+\begin{multline}
+	\left[ xy -yx+\alpha\left( x,\,y \right) c,\,z \right] +\left[ yz-zy+\alpha\left( y,\,z \right) c,\,x \right] +\\+\left[ zx-xz+\alpha\left( z,\,x \right) c,\,y \right] =0
+\end{multline} 
+и, как итог,
+\begin{equation}
+	\alpha\left( xy-yx,\,z \right) +\alpha\left( yz-zy,\,x \right) +\alpha\left( zx-xz,\,y \right) =0
+.\end{equation} 
+\end{itemize}
+Центр $c$ в алгебре бесконечномерных матриц --- бесконечномерная единичная матрица $I$.
+Два-коцикл $\alpha(a,\,b)$  определим на матрицах $E_{ij}$ как
 \begin{equation}
 	\begin{aligned}
 		&\alpha\left( E_{ij},\,E_{ji} \right) =-\alpha
 	\left( E_{ji},\,E_{ij} \right) =1\quad
-	\text{при } i< 0,\ j\ge 0,\\
+	\text{при } i\le  0,\ j\ge 1,\\
 	&\alpha\left( E_{ij},\,E_{kl} \right) =0
 		\quad \text{во всех остальных случаях.}
 	\end{aligned}
-	\label{}
+	\label{alph}
 \end{equation}
+Антисимметричность, линейность по каждому
+аргументу данного два-коцикла очевидны.
 %Коммутационными соотношениями данной алгебры будут
 %\begin{align}
 %	\left[ E_{ij},\,E_{kl} \right] &=0 &&
@@ -314,9 +403,9 @@ $\bar{\mathfrak{a}}_\infty$, а именно алгебру Ли $\mathfrak{a}_\
 
 Покажем, что представлением данной
 алгебры на пространстве Фока будет
-\[
-	\hat{r}(E_{ij})= \normord{\psi_i \psi_j^*}
-.\] 
+\begin{equation}
+	\hat{\rho}(E_{ij})= \normord{\psi_i \psi_j^*}
+.\end{equation} 
 %\[
 %	\braket{0 | \left[ \normord{\psi_i\psi_j^*},\,\normord{\psi_k \psi^*_l} \right] |0}=
 %.\] 
@@ -352,11 +441,18 @@ $\bar{\mathfrak{a}}_\infty$, а именно алгебру Ли $\mathfrak{a}_\
 	\wick{\c\psi_i \c\psi_j^*}
 	\label{}
 .\end{equation}
+Для неё выполняется
+\begin{equation}
+	\wick{\c\psi_i \c\psi_j^*}=\wick{\c\psi_i \c\psi_j^*}\braket{0  | 0}=\wick{\braket{0 | \c\psi_i \c\psi_j^* | 0}}
+	=\braket{0 | \psi_i \psi_j^*-\normord{\psi_i \psi_j^*} | 0}=\braket{0 | \psi_i \psi_j^*| 0}
+.\end{equation} 
 Откуда
 \begin{align}
 	\wick{\c\psi_i \c\psi_i^*}&=1 && \text{при }
-	i<0,\\
+	i\le 0,
+	\label{eq:contr1}\\
 	\wick{\c \psi_i \c \psi_j^*}&=0 && \text{во всех остальных случаях}
+\label{eq:contr2}
 .\end{align}
 Тогда
 \begin{multline}
@@ -376,6 +472,41 @@ $\bar{\mathfrak{a}}_\infty$, а именно алгебру Ли $\mathfrak{a}_\
 	\alpha\left( E_{ij},\,E_{kl} \right) 
 	\label{}
 .\end{multline}
+В последнем переходе мы воспользовались соотношением
+\begin{equation}
+\alpha\left( E_{ij},\,E_{kl} \right)= \delta_{jk} \wick{\c \psi_i \c\psi_l^*}-
+	\delta_{il} \wick{\c \psi_k \c \psi_j^*}
+,\end{equation} 
+верность которого следует из \eqref{alph}, \eqref{eq:contr1} и \eqref{eq:contr2}. Далее проверим, что скобка с определённым выше два-коциклом удовлетворяет тождеству Якоби
+\begin{multline}
+	\alpha\left( E_{ij}E_{kl}-E_{kl}E_{ij},\,E_{mn}  \right) +
+	\alpha\left( E_{kl}E_{mn}-E_{mn}E_{kl},\,E_{ij} \right) +\\+
+	\alpha\left( E_{mn}E_{ij}-E_{ij}E_{mn},\,E_{kl} \right) =0
+,\end{multline} 
+\begin{multline}
+	\alpha\left( \delta_{jk}E_{il}-\delta_{il}E_{kj},\,E_{mn}  \right) +	\alpha\left( \delta_{lm}E_{kn}-\delta_{kn}E_{ml},\,E_{ij} \right) +\\+
+	\alpha\left( \delta_{ni}E_{mj}-\delta_{mj}E_{in},\,E_{kl} \right) =0
+,\end{multline}
+\begin{multline}
+	\delta_{jk}\alpha \left(E_{il},\,E_{mn}\right)-\delta_{il}\alpha\left(E_{kj},\,E_{mn}\right)  +\\+
+	\delta_{lm}\alpha \left(E_{kn},\,E_{ij}\right)-\delta_{kn}\alpha\left(E_{ml},\,E_{ij}\right) +\\+
+	\delta_{ni}\alpha \left(E_{mj},\,E_{kl}\right)-\delta_{mj}\alpha\left(E_{in},\,E_{kl}\right) =0
+,\end{multline}
+\begin{multline}
+	\delta_{jk}\wick{\left( \delta_{lm} \c \psi_i \c\psi_n^*-
+	\delta_{in} \c1 \psi_m \c1 \psi_l^* \right)} -\delta_{il}\wick{\left( \delta_{jm} \c \psi_k \c\psi_n^*-
+	\delta_{kn} \c1 \psi_m \c1 \psi_j^* \right)} +\\+	\delta_{lm}\wick{\left( \delta_{in} \c \psi_k \c\psi_j^*-
+	\delta_{kj} \c1 \psi_i \c1 \psi_n^* \right)}-\delta_{kn}\wick{\left( \delta_{il} \c \psi_m \c\psi_j^*-
+	\delta_{mj} \c1 \psi_i \c1 \psi_l^* \right)}+\\+	\delta_{ni}\wick{\left( \delta_{jk} \c \psi_m \c\psi_l^*-
+	\delta_{lm} \c1 \psi_k \c1 \psi_j^* \right)}-\delta_{mj}\wick{\left( \delta_{kn} \c \psi_i \c\psi_l^*-
+	\delta_{il} \c1 \psi_k \c1 \psi_n^* \right)}=0
+,\end{multline}
+\begin{equation}
+0=0
+.\end{equation} 
+
+
+
 %\begin{multline*}
 %	\left[ \normord{\psi_i\psi_j^*},\,\normord{\psi_k \psi^*_l} \right]=\normord{\psi_i \psi_j^*}\normord{\psi_k \psi_l^*}-\normord{\psi_k \psi_l^*}\normord{\psi_i \psi_j^*}=\\=
 %\begin{cases}
@@ -390,27 +521,64 @@ $\bar{\mathfrak{a}}_\infty$, а именно алгебру Ли $\mathfrak{a}_\
 % i,\,l\ge 0,\ j< 0,\\
 %\end{cases}
 %\end{multline*}
-
-Бозон-фермионное соответствие $\Phi: \mathcal{F} \to \mathcal{B}$:
-\ytableausetup{boxsize=0.5em}
+Оказывается, можно построить изоморфизм между описанным
+фермионным пространством Фока $\mathcal{F}$ и бозонным пространством $\mathcal{B}$ полиномов
+от $x_1,\,x_3,\ldots,\,z$ и $z^{-1}$:
 \begin{equation}
-	\Phi\left( \ket{0,\,\lambda} \right) =s_\lambda(\mathbf{t})
+	\Phi: \mathcal{F}\to \mathcal{B}= \mathbb{C}\left[ x_1,\,x_2,\ldots;\,z,\,z^{-1} \right] 
 .\end{equation} 
+Отображение $\Phi$ буквально задаёт бозонно-фермионное соответствие. Как следствие, можно построить бозонные представления
+$\rho^B=\Phi \rho \Phi^{-1}$ и $\hat{\rho}^B= \Phi \hat{\rho} \Phi^{-1}$ на данном пространстве.
+\ytableausetup{boxsize=0.5em}
+
+Определим
 \begin{equation}
-	\Phi\left( G \ket{0} \right) = \braket{0 | \mathrm{e} ^{H(\mathbf{t})}G | 0},\qquad H(\mathbf{t})= \sum_{k=1}^{\infty} t_k H_k,\qquad
+	 H(\mathbf{t})= \sum_{k=1}^{\infty} t_k H_k,\qquad
 	H_n= \sum_{k \in \mathbb{Z}}^{} \normord{\psi_k \psi_{k+n}^{*}}
 .\end{equation} 
-В случае иерархии КП $\tau$-функция в фермионном представлении имеет вид
- \begin{equation}
-	 \tau(\mathbf{t})= \braket{0 | \mathrm{e}^{H(\mathbf{t})}G | 0}
+Тогда
+\begin{multline}
+	H_n= \sum_{k \in \mathbb{Z}}^{} \normord{\psi_k \psi_{k+n}^*}= \sum_{k \in \mathbb{Z}}^{} \wick{\left( 
+	\psi_{k}\psi_{k+n}^*-\c \psi_k \c \psi_{k+n}^*\right) }=\\=\begin{cases}
+		\displaystyle \sum_{k \in \mathbb{Z}}^{} \psi_k \psi_{k+n}^*, & n\neq 0,\\
+		\displaystyle \sum_{i>0}^{} \psi_k \psi_k^*-
+		\sum_{i\le 0}^{} \psi^*_k \psi_k,&
+		n=0.
+	\end{cases}
+	\label{}
+\end{multline}
+\begin{equation}
+	\mathrm{e} ^{H(\mathbf{t})}=
+	\exp  \left( \sum_{k\ge 1}^{} t_k H_k  \right)=
+	\exp \left( \sum_{k\ge 1}^{} t_k H_1^k  \right) =
+	\sum_{k\ge 0}^{} s_k(\mathbf{t}) H_k
 .\end{equation} 
+\begin{equation}
+	\left(	\mathrm{e} ^{H(\mathbf{t})}\right)_{mn}=
+	s_{n-m}(\mathbf{t})
+.\end{equation} 
+Получаем явный вид бозонно-фермионного соответствия (TODO привести мотивацию)
+\begin{multline}
+	\Phi\left( \ket{m,\,\lambda} \right) =z^m
+	\braket{m | \mathrm{e} ^{H(\mathbf{t})} | m,\,\lambda}=\\=z^m\braket{m | \sum_{\mu \in \mathrm{Par}}^{} \det \left[\left(\mathrm{e} ^{H(\mathbf{t})}\right)_{\mu_1+m,\mu_2+m-1,\ldots}^{\lambda_1+m,\lambda_2+m-1,\ldots}\right] | m,\,\mu}=\\=z^m
+	\det\left[ \left( \mathrm{e} ^{H(\mathbf{t})} \right)_{m,m-1,\ldots}^{\lambda_1+m,\lambda_2+m-1,\ldots}
+	\right] =z^m\det \left[ \left( \mathrm{e} ^{H(\mathbf{t})} \right) _{m,\,m-1,\ldots}^{\lambda_1+m,\,\lambda_{2}+m-1,\ldots} \right]=\\=z^m\det_{i,\,j}  
+	s_{\lambda_i-i+j}(\mathbf{t})
+ = z^m s_{\lambda}(\mathbf{t})
+	\label{}
+.\end{multline}
+Рассмотрим выражение
+\begin{multline}
+\braket{0 | \mathrm{e}^{H(\mathbf{t})}G | 0}=
+\braket{0 | \mathrm{e} ^{H(\mathbf{t})} \sum_{\lambda \in \mathrm{Par}}^{} \det \left(G_{\lambda_1,\lambda_2-1,\ldots}^{0,-1,\ldots}\right) |0,\,\mu }=\\=
+\sum_{\lambda \in \mathrm{Par}}^{} \det \left(G_{\lambda_1,\lambda_2-1,\ldots}^{0,-1,\ldots}\right)\braket{0 | \mathrm{e} ^{H(\mathbf{t})}  |0,\,\lambda }=\sum_{\lambda \in \mathrm{Par}}^{} \det \left(G_{\lambda_1,\lambda_2-1,\ldots}^{0,-1,\ldots}\right)s_\lambda(\mathbf{t})
+.\end{multline} 
 Сравнивая с $\tau$-функцией в бозонном представлении \eqref{eq:2}
 можно получить, что
 \begin{equation}
-	C_\lambda= \det_{l(\lambda)\times l(\lambda)}
-	\left( G^{-1,-2,-3,\ldots}_{i_{-1},i_{-2},i_{-3},\ldots} \right) 
-,\end{equation} 
-где $i_{-1},\,i_{-2},\ldots$ определяются из $\lambda= \left[ i_{-1}+1,\,i_{-2}+2,\ldots \right] $.
+	\tau(\mathbf{t})=\braket{0 | \mathrm{e}^{H(\mathbf{t})}G | 0}\quad \text{при} \quad C_\lambda= \det
+	\left( G^{0,-1,\ldots}_{\lambda_1,\lambda_2-1,\ldots} \right) 
+.\end{equation} 
 Для гипергеометрических $\tau$-функций выполняется
 \begin{equation}
 	G=\mathrm{e} ^{A(\beta)},\qquad
