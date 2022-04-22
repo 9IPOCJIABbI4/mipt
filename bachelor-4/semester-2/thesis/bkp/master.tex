@@ -1,8 +1,20 @@
-\documentclass[a4paper, 14pt]{extarticle}
-\usepackage{fullpage}
+\documentclass[a5paper,twoside]{extarticle}
+%\usepackage{fullpage}
 \input{../../preamble-rus.tex}
+\usepackage[top=1cm,bottom=1cm,left=1cm,right=1.5cm,includeheadfoot]{geometry}
 \usepackage{ytableau}
 \ytableausetup{boxsize=0.2em}
+%\pagestyle{headings}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LO]{\sl Драчов Ярослав}
+\fancyhead[RE]{\sl КВАНТОВАЯ ДЕФОРМАЦИЯ ИЕРАРХИИ $B$КП}
+\fancyhead[LE,RO]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+%\usepackage[sc]{titlesec}
+%\usepackage[titles]{tocloft}
+%\renewcommand{\cftsecfont}{\scshape}
 \title{Квантовая деформация иерархии $B$КП}
 \begin{document}
 \maketitle
@@ -226,8 +238,8 @@ $\tau$-функция с параметрами
 алгебры Клиффорда на вакуумный вектор $\ket{0}$ <<моря Дирака>>. Действие генераторов алгебры на вакуумный вектор
 даётся как
 \begin{equation}
-\psi_k\ket{0}=0,\quad k\le 0;\qquad\psi^* \ket{0}=0,\quad
-k> 0
+\psi_k\ket{0}=0,\quad k< 0;\qquad\psi^* \ket{0}=0,\quad
+k\ge  0
 .\end{equation} 
 То есть операторы $\psi_k$ при $k>0$ и $\psi^*_k$ при
 $k\le 0$ --- это операторы рождения, а $\psi_k$ при $k\le 0$ 
@@ -235,12 +247,12 @@ $k\le 0$ --- это операторы рождения, а $\psi_k$ при $k\l
 
 Далее определим $m$-е вакуумы
 \begin{equation}
-\psi_k\ket{m}=0,\quad k\le m;\qquad\psi^* \ket{m}=0,\quad
-k> m
+\psi_k\ket{m}=0,\quad k< m;\qquad\psi^* \ket{m}=0,\quad
+k\ge  m
 ,\end{equation}
 и состояния
 \[
-	\ket{m,\,\lambda}= \psi_{\lambda_1+m}\psi^*_m\psi_{\lambda_2+m-1}\psi^*_{m-1}\cdots\psi_{\lambda_{l(\lambda)}+m-l(\lambda)}\psi^*_{m-l(\lambda)}\ket{m}
+	\ket{m,\,\lambda}= \psi_{\lambda_1+m-1}\psi_{\lambda_2+m-2}\cdots\psi_{\lambda_{l(\lambda)}+m-l(\lambda)}\psi^*_{m-l(\lambda)}\cdots\psi^*_{m-2}\psi^*_{m-1}\ket{m}
 .\] 
 
 Введём также производящие функции для фермионов
@@ -375,13 +387,12 @@ $\bar{\mathfrak{a}}_\infty$, а именно алгебру Ли $\mathfrak{a}_\
 	\alpha\left( xy-yx,\,z \right) +\alpha\left( yz-zy,\,x \right) +\alpha\left( zx-xz,\,y \right) =0
 .\end{equation} 
 \end{itemize}
-Центр $c$ в алгебре бесконечномерных матриц --- бесконечномерная единичная матрица $I$.
 Два-коцикл $\alpha(a,\,b)$  определим на матрицах $E_{ij}$ как
 \begin{equation}
 	\begin{aligned}
 		&\alpha\left( E_{ij},\,E_{ji} \right) =-\alpha
 	\left( E_{ji},\,E_{ij} \right) =1\quad
-	\text{при } i\le  0,\ j\ge 1,\\
+	\text{при } i<  0,\ j\ge 0,\\
 	&\alpha\left( E_{ij},\,E_{kl} \right) =0
 		\quad \text{во всех остальных случаях.}
 	\end{aligned}
@@ -449,7 +460,7 @@ $\bar{\mathfrak{a}}_\infty$, а именно алгебру Ли $\mathfrak{a}_\
 Откуда
 \begin{align}
 	\wick{\c\psi_i \c\psi_i^*}&=1 && \text{при }
-	i\le 0,
+	i< 0,
 	\label{eq:contr1}\\
 	\wick{\c \psi_i \c \psi_j^*}&=0 && \text{во всех остальных случаях}
 \label{eq:contr2}
@@ -589,7 +600,64 @@ A_k= \oint \frac{dz}{2\pi \mathrm{i} } \normord{
 \left[ \left( \frac{1}{z} r(D) \right) ^k \psi(z) \right] \cdot \psi^*(z)}
 ,\end{equation} 
 где $D=z \frac{\mathrm{d} }{\mathrm{d} z}$.
+\[
+	D^n z^k=D^{n-1}z \frac{\partial }{\partial z} z^k=kD^{n-1}z^k=k^n z^k
+.\] 
+\[
+	\left( \hbar D- j \right) ^n z^k=
+	\left( \hbar D-j \right) ^{n-1}\left( \hbar k -j\right) z^k=\left( \hbar k-j \right) ^n z^k 
+.\] 
 
+\begin{multline*}
+	 \frac{1}{z}r(D) \psi(z)  =\frac{1}{z} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}D^n \sum_{k \in \mathbb{Z}}^{} \psi_k z^k  =
+	 \sum_{n=0}^{\infty} \sum_{k \in \mathbb{Z}}^{} 
+	 \frac{r^{(n)}(0)}{n!}\psi_k k^n z^{k-1}=\\=
+	 \sum_{k \in \mathbb{Z}}^{} r(k)\psi_k z^{k-1}
+.\end{multline*} 
+\begin{multline*}
+	\frac{1}{z}r(\hbar D) \psi(z)  =\frac{1}{z} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}(\hbar D)^n \sum_{k \in \mathbb{Z}}^{} \psi_k z^k  =\\=
+	 \sum_{n=0}^{\infty} \sum_{k \in \mathbb{Z}}^{} 
+	 \frac{r^{(n)}(0)}{n!}\psi_k (\hbar k)^n z^{k-1}=
+	 \sum_{k \in \mathbb{Z}}^{} r(\hbar k)\psi_k z^{k-1}
+.\end{multline*}
+\begin{multline}
+	\frac{1}{z} r(\hbar D) \sum_{k \in \mathbb{Z}}^{} r(\hbar k) \psi_k z^{k-1}=\frac{1}{z}  \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!} \left( \hbar D \right) ^n
+	\sum_{k \in \mathbb{Z}}^{} r\left( \hbar k \right) 
+	\psi_k z^{k-1}=\\=
+	\frac{1}{z}\sum_{n=0}^{\infty} \sum_{k \in \mathbb{Z}}^{} \frac{r^{(n)}(0)}{n!}\hbar ^n
+	r\left( \hbar k \right) \psi_k \left( k-1 \right) ^nz^{k-1}=\\=\sum_{k \in \mathbb{Z}}^{} r\left( \hbar (k-1) \right) r(\hbar k)\psi_k z^{k-2}
+	\label{}
+.\end{multline}
+\begin{multline*}
+	\frac{1}{z}r(D)\frac{1}{z}r(D)=
+	\frac{1}{z} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}
+	D^n \frac{1}{z}\sum_{k=0}^{\infty} \frac{r^{(k)}(0)}{k!} D^k=\\=\frac{1}{z} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}
+	\sum_{i=0}^{n} \binom{n}{i}\left(D^{n-i} \frac{1}{z}\right)\sum_{k=0}^{\infty} \frac{r^{(k)}(0)}{k!} D^{k+i}=\\=\frac{1}{z^2} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}
+	\sum_{i=0}^{n} \binom{n}{i}(-1)^{n-i} \sum_{k=0}^{\infty} \frac{r^{(k)}(0)}{k!} D^{k+i}=
+\\=\frac{1}{z^2} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}
+ (D-1)^n \sum_{k=0}^{\infty} \frac{r^{(k)}(0)}{k!} D^{k}=
+ \frac{1}{z^2}r(D-1)r(D)
+.\end{multline*}
+\begin{multline*}
+	\frac{1}{z}r(\hbar D)\frac{1}{z}r(\hbar D)=
+	\frac{1}{z} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}
+	(\hbar D)^n \frac{1}{z}\sum_{k=0}^{\infty} \frac{r^{(k)}(0)}{k!} (\hbar D)^k=\\=\frac{1}{z} \sum_{n=0}^{\infty}\frac{r^{(n)}(0)}{n!} \hbar ^n
+	\sum_{i=0}^{n} \binom{n}{i}\left(D^{n-i} \frac{1}{z}\right)\sum_{k=0}^{\infty} \frac{r^{(k)}(0)}{k!} \hbar ^kD^{k+i}=\\=\frac{1}{z^2} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}\hbar ^n
+	\sum_{i=0}^{n} \binom{n}{i}(-1)^{n-i} \sum_{k=0}^{\infty} \frac{r^{(k)}(0)}{k!} \hbar ^kD^{k+i}=
+\\=\frac{1}{z^2} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}
+\left(\hbar (D-1)\right)^n \sum_{k=0}^{\infty} \frac{r^{(k)}(0)}{k!} (\hbar D)^{k}=\\=
+\frac{1}{z^2}r\left(\hbar (D-1)\right)r(\hbar D)
+.\end{multline*}
+\begin{multline*}
+	\left[ \left( \frac{1}{z}r(D)  \right) ^k
+	\psi(z)\right] \cdot \psi^*(z)=\\=
+	\sum_{n \in \mathbb{Z}}^{} r(n)r(n-1)\cdots
+	r\left( n-k+1 \right) \psi_n z^{n-k}\sum_{j \in \mathbb{Z}}^{} \psi_j^* z^{-j-1}
+.\end{multline*}
+\begin{equation}
+	A_k=\sum_{n\in \mathbb{Z}}^{} \prod_{i=n-k+1}^{n} 
+	r(i)\normord{\psi_n \psi_{n-k}}	\label{}
+.\end{equation}
 \section{Квантовая деформация иерархии КП}
 
 
@@ -776,6 +844,120 @@ $Q$-полиномы Шура удовлетворяют соотношения�
 	\Phi_R\left( \left[ 3 \right]  \right) +\frac{1}{2}\Phi_R \left( \left[ 1,\,1 \right]  \right) \right] } \right) Q_R\left(\frac{\mathbf{p}}{2}\right)Q_R \left(\frac{\bar{\mathbf{p}}}{2}\right)
 	\label{}
 .\end{equation}
+\subsection{Фермионный формализм и бозонно-фермионное соответствие}
+Нейтральные фермионы определяются как
+\[
+	\phi_m= \frac{\psi_m +\left( -1 \right) ^m \psi^*_{-m}}{\sqrt{2} }
+,\] 
+\[
+	\phi_m^*= \frac{\psi_m^* +\left( -1 \right) ^m \psi_{-m}}{\sqrt{2} }
+.\]
+Откуда сразу можно заметить что 
+\[
+	\phi_m^*= (-1)^m \phi_{-m}
+.\] 
+Благодаря этому свойству далее мы можем ограничиться
+рассмотрением лишь фермионов $ \phi_m  $.
+Прямой подстановкой можно получить каноническое коммутационное соотношение нейтральных
+фермионов
+\begin{equation}
+	\left\{ \phi_k,\,\phi_m \right\} =\left( -1 \right) ^k
+	\delta_{k+m,0}
+,\end{equation} 
+а также их действие на вакуум <<моря Дирака>>
+\[
+\phi_m \ket{0}=0,\quad
+\bra{0}\phi_{-m} =0,\quad m<0.\] 
+Легко видеть, что 
+\[
+	\braket{0 | \phi_k \phi_m | 0}=\delta_{k+m,0} H[m]
+,\]
+где
+\[
+	H[m]= \begin{cases}
+		0,& m<0,\\
+		\frac{1}{2},& m=0,\\
+		(-1)^m,& m>0.
+	\end{cases}
+\] 
+Коммутационные соотношениям
+билинейных комбинаций нейтральных фермионов $\phi_k \phi_m$
+\begin{multline*}
+\left[ \phi_{a}\phi_b,\,\phi_{c}\phi_d \right] =
+\phi_a \phi_b \phi_c \phi_d -\phi_c \phi_d \phi_a \phi_b=
+\phi_a \left( \left( -1 \right) ^b \delta_{b+c,0}-\phi_c \phi_b
+ \right) 	\phi_d-\\-
+ \phi_c \left( \left( -1 \right) ^a \delta_{a+d,0}-\phi_a \phi_d \right) \phi_b=
+\left( -1 \right) ^b \delta_{b+c,0} \phi_a \phi_d-
+(\left( -1 \right)^a \delta_{a+c,0}- \phi_c \phi_a) \phi_b \phi_d-\\-\left( -1 \right) ^a
+\delta_{a+d,0} \phi_c \phi_b+\phi_c \phi_a \left(\left( -1 \right) ^b \delta_{b+d,0}-\phi_b \phi_d
+\right) =\left( -1 \right) ^b \delta_{b+c,0} \phi_a \phi_d-\\-
+\left( -1 \right)^a \delta_{a+c,0} \phi_b \phi_d+ \left( -1 \right) ^b \delta_{b+d,0} \phi_c \phi_a-\left( -1 \right) ^a
+\delta_{a+d,0} \phi_c \phi_b
+%\phi_a \phi_b \phi_c \phi_d -\\-
+%\phi_c \left( \left(-1\right)^a \delta_{a+d,0}-\phi_a \phi_d \right) \phi_b=
+%\phi_a \phi_b \phi_c \phi_d -
+%\left( -1 \right) ^a \delta_{a+d,0}\phi_c \phi_b
+%+\\+\left( \left( -1 \right) ^a \delta_{a+c,0}- \phi_a \phi_c \right) \left( \left( -1 \right) ^b\delta_{b+d,0} -\phi_b \phi_d \right) =\\=
+%\phi_a \phi_b \phi_c \phi_d -\left( -1 \right) ^a
+%\delta_{a+d,0} \phi_c \phi_b
+%\left( -1 \right) ^b \delta_{b+c,0}
+%	\phi_a \phi_d-\left( -1 \right) ^a
+%	\delta_{a+c,0}
+%	\phi_b \phi_d+\left( -1 \right) ^b
+%	\delta_{b+d,0}\phi_c \phi_a-\\-
+%	\left( -1 \right) ^a \delta_{a+d,0}
+%	\phi_c \phi_b
+.\end{multline*} 
+Элементами матричной алгебры Ли $\mathfrak{go}(\infty)$
+являются матрицы
+\[
+	F_{k,m}=(-1)^m E_{k,-m}-(-1)^k E_{m,-k}
+.\] 
+Их коммутационные соотношения
+\begin{multline*}
+	\left[ F_{a,b},\,F_{c,d} \right] =(-1)^{b+d}\left[ E_{a,-b},\, E_{c,-d} \right] -(-1)^{b+c} \left[ 
+	E_{a,-b},\,E_{d,-c}\right] -\\-\left( -1 \right) ^{
+a+d}\left[ E_{b,-a},\,E_{c,-d} \right] +
+\left( -1 \right) ^{a+c}\left[ E_{b,-a},\,E_{d,-c} \right] =
+\\=(-1)^{b+d}\left( \delta_{b+c,0} E_{a,-d}-
+\delta_{a+d,0} E_{c,-b}\right) -
+\left( -1 \right) ^{b+c}\left( \delta_{b+d,0}E_{a,-c}-
+\delta_{a+c,0}E_{d,-b}\right)-\\-
+\left( -1 \right) ^{a+d} \left( \delta_{a+c,0} E_{b,-d}
+-\delta_{b+d,0}E_{c,-a}\right) +\left( -1 \right) ^{a+c}
+\left( \delta_{a+d,0} E_{b,-c} -\delta_{b+c,0} E_{d,-a} \right) =\\=
+(-1)^b \delta_{b+c,0} F_{a,d}-(-1)^a \delta_{a+c}F_{b,d}+
+\left( -1 \right) ^b\delta_{b+d,0} F_{c,a}-\left( -1 \right) ^a \delta_{a+d,0} F_{c,b}
+\end{multline*} 
+совпадают с коммутационными соотношениями билинейных
+комбинаций нейтральных фермионов. Значит представление
+алгебры $\mathfrak{go}(\infty)$ может быть реализовано
+на введённом пространстве Фока элементами $\phi_k \phi_m$.
+\[
+	\phi_k \phi_m=
+	\frac{1}{2}\left(\psi_k +\left( -1 \right) ^k \psi^*_{-k}
+	\right)\left( \psi_m+\left( -1 \right) ^m \psi_{-m}^* \right) =???
+.\] 
+Нормальное упорядочение на этот раз определим как
+\[
+\normord{\phi_k \phi_m}= \phi_k \phi_m - \braket{0 | \phi_k
+\phi_m| 0}
+.\] 
+Коммутационное соотношение алгебры нормально упорядоченных пар нейтральных
+фермионов 
+\begin{multline*}
+	\left[ \normord{\phi_a \phi_b},\,\normord{\phi_c \phi_d} \right] =\left( -1 \right) ^b \delta_{b+c,0}
+	\normord{\phi_a \phi_d}-\left( -1 \right) ^a
+	\delta_{a+c,0}
+	\normord{\phi_b \phi_d}+\left( -1 \right) ^b
+	\delta_{b+d,0}\normord{\phi_c \phi_a}-\\-
+	\left( -1 \right) ^a \delta_{a+d,0}
+	\normord{\phi_c \phi_b}+
+	\left(\delta_{c,b}\delta_{a,d}-\delta_{a-c,0}
+	\delta_{b-d,0}\right) \left( 
+\left( -1 \right) ^a H[b]-\left( -1 \right) ^b H[a]\right) 
+.\end{multline*} 
 \section{Квантовая деформация иерархии $B$КП}
 Аналогично деформации иерархии КП получаем первое уравнение $\hbar $-$B$КП
 \begin{multline}
