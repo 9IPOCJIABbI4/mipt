@@ -12,6 +12,7 @@
 \fancyhead[RE]{\sl КВАНТОВАЯ ДЕФОРМАЦИЯ ИЕРАРХИИ $B$КП}
 \fancyhead[LE,RO]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
+\numberwithin{equation}{section}
 %\usepackage[sc]{titlesec}
 %\usepackage[titles]{tocloft}
 %\renewcommand{\cftsecfont}{\scshape}
@@ -673,26 +674,26 @@ A_k= \oint \frac{dz}{2\pi \mathrm{i} } \normord{
 \left[ \left( \frac{1}{z} r(D) \right) ^k \psi(z) \right] \cdot \psi^*(z)}
 ,\end{equation} 
 где $D=z \frac{\mathrm{d} }{\mathrm{d} z}$.
-\[
+\begin{equation}
 	D^n z^k=D^{n-1}z \frac{\partial }{\partial z} z^k=kD^{n-1}z^k=k^n z^k
-.\] 
-\[
+.\end{equation} 
+\begin{equation}
 	\left( \hbar D- j \right) ^n z^k=
 	\left( \hbar D-j \right) ^{n-1}\left( \hbar k -j\right) z^k=\left( \hbar k-j \right) ^n z^k 
-.\] 
+.\end{equation} 
 
-\begin{multline*}
+\begin{multline}
 	 \frac{1}{z}r(D) \psi(z)  =\frac{1}{z} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}D^n \sum_{k \in \mathbb{Z}}^{} \psi_k z^k  =
 	 \sum_{n=0}^{\infty} \sum_{k \in \mathbb{Z}}^{} 
 	 \frac{r^{(n)}(0)}{n!}\psi_k k^n z^{k-1}=\\=
 	 \sum_{k \in \mathbb{Z}}^{} r(k)\psi_k z^{k-1}
-.\end{multline*} 
-\begin{multline*}
+.\end{multline} 
+\begin{multline}
 	\frac{1}{z}r(\hbar D) \psi(z)  =\frac{1}{z} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}(\hbar D)^n \sum_{k \in \mathbb{Z}}^{} \psi_k z^k  =\\=
 	 \sum_{n=0}^{\infty} \sum_{k \in \mathbb{Z}}^{} 
 	 \frac{r^{(n)}(0)}{n!}\psi_k (\hbar k)^n z^{k-1}=
 	 \sum_{k \in \mathbb{Z}}^{} r(\hbar k)\psi_k z^{k-1}
-.\end{multline*}
+.\end{multline}
 \begin{multline}
 	\frac{1}{z} r(\hbar D) \sum_{k \in \mathbb{Z}}^{} r(\hbar k) \psi_k z^{k-1}=\frac{1}{z}  \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!} \left( \hbar D \right) ^n
 	\sum_{k \in \mathbb{Z}}^{} r\left( \hbar k \right) 
@@ -701,7 +702,7 @@ A_k= \oint \frac{dz}{2\pi \mathrm{i} } \normord{
 	r\left( \hbar k \right) \psi_k \left( k-1 \right) ^nz^{k-1}=\\=\sum_{k \in \mathbb{Z}}^{} r\left( \hbar (k-1) \right) r(\hbar k)\psi_k z^{k-2}
 	\label{}
 .\end{multline}
-\begin{multline*}
+\begin{multline}
 	\frac{1}{z}r(D)\frac{1}{z}r(D)=
 	\frac{1}{z} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}
 	D^n \frac{1}{z}\sum_{k=0}^{\infty} \frac{r^{(k)}(0)}{k!} D^k=\\=\frac{1}{z} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}
@@ -710,8 +711,8 @@ A_k= \oint \frac{dz}{2\pi \mathrm{i} } \normord{
 \\=\frac{1}{z^2} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}
  (D-1)^n \sum_{k=0}^{\infty} \frac{r^{(k)}(0)}{k!} D^{k}=
  \frac{1}{z^2}r(D-1)r(D)
-.\end{multline*}
-\begin{multline*}
+.\end{multline}
+\begin{multline}
 	\frac{1}{z}r(\hbar D)\frac{1}{z}r(\hbar D)=
 	\frac{1}{z} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}
 	(\hbar D)^n \frac{1}{z}\sum_{k=0}^{\infty} \frac{r^{(k)}(0)}{k!} (\hbar D)^k=\\=\frac{1}{z} \sum_{n=0}^{\infty}\frac{r^{(n)}(0)}{n!} \hbar ^n
@@ -720,16 +721,16 @@ A_k= \oint \frac{dz}{2\pi \mathrm{i} } \normord{
 \\=\frac{1}{z^2} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}
 \left(\hbar (D-1)\right)^n \sum_{k=0}^{\infty} \frac{r^{(k)}(0)}{k!} (\hbar D)^{k}=\\=
 \frac{1}{z^2}r\left(\hbar (D-1)\right)r(\hbar D)
-.\end{multline*}
-\begin{multline*}
+.\end{multline}
+\begin{multline}
 	\left[ \left( \frac{1}{z}r(D)  \right) ^k
 	\psi(z)\right] \cdot \psi^*(z)=\\=
 	\sum_{n \in \mathbb{Z}}^{} r(n)r(n-1)\cdots
 	r\left( n-k+1 \right) \psi_n z^{n-k}\sum_{j \in \mathbb{Z}}^{} \psi_j^* z^{-j-1}
-.\end{multline*}
+.\end{multline}
 \begin{equation}
-	A_k=\sum_{n\in \mathbb{Z}}^{} \prod_{i=n-k+1}^{n} 
-	r(i)\normord{\psi_n \psi_{n-k}}	\label{}
+	A_k=\sum_{n\in \mathbb{Z}}^{} \normord{\psi_n \psi_{n-k}}	\prod_{i=0}^{k-1} 
+	r(n-i)\label{}
 .\end{equation}
 \section{Квантовая деформация иерархии КП}
 
@@ -880,13 +881,13 @@ c_{\left[ \alpha_1,\ldots,\,\alpha_k \right] }c_{\left[
 Для определения гипергеометрических $\tau$-функций зададим функцию
 \begin{equation}
 	r_\lambda= \prod_{w \in \lambda}^{} r\left( c(w) \right)  
-,\end{equation} 
+\label{eq:rl},\end{equation} 
 где
 \begin{equation}
 	c(w)=j,\qquad  1\le i\le l(\lambda),\qquad
 	1\le j\le \lambda_i
 .\end{equation} 
-Визуализация функции $c(w)$ на таблице Юнга:
+Визуализация функции $c(w)$ на диаграмме Юнга:
 \ytableausetup{boxsize=1.5em}
 \begin{center}
 \begin{ytableau}
@@ -895,11 +896,33 @@ c_{\left[ \alpha_1,\ldots,\,\alpha_k \right] }c_{\left[
 	1&2
 \end{ytableau}
 \end{center}
-\emph{Гипергеометрическими $\tau$-функциями $B$КП} будем называть
-функции вида
+Также данную функцию можно проще записать как
 \begin{equation}
-	\tau(\mathbf{t})=\sum_{\lambda}^{} r_\lambda
-	Q_\lambda(\boldsymbol{\beta}) Q_\lambda(\mathbf{t})
+	r_\lambda= \prod_{i=1}^{l} r(1)r(2)\cdots r(\lambda_i)  
+.\end{equation} 
+
+Для $k \in \mathbb{Z}_{\text{неч}}^+$ и функции $r$, удовлетворяющей условию
+\begin{equation}
+	r(n)=r(1-n)
+,\end{equation} можно ввести операторы
+\begin{equation}
+B_k= \oint \frac{\mathrm{d} z}{4\pi \mathrm{i} }
+\normord{\left[\left( \frac{1}{z}r(D) \right) ^k \phi(z)  \right]\cdot  \phi(-z)}=\frac{1}{2}
+\sum_{n \in \mathbb{Z}}^{} (-1)^n   \normord{\phi_n}\phi_{k-n}\prod_{i=0}^{k-1} r(n-i)
+,\end{equation} 
+\begin{equation}
+	B(\boldsymbol{\beta})=\sum_{n \in \mathbb{Z}_{\text{неч}}^+}^{} \beta_n B_n
+.\end{equation} 
+\emph{Гипергеометрические $\tau$-функции $B$КП}
+задаются как 
+\begin{equation}
+	\tau\left( \mathbf{t} \right) =
+	\braket{0 | \mathrm{e} ^{H(\mathbf{t})}\mathrm{e} ^{- B(\boldsymbol{\beta})} | 0}
+,\end{equation} 
+и могут быть представлены в виде сумм по строгим разбиениям $\mathrm{SP}$.
+\begin{equation}
+	\tau(\mathbf{t})=\sum_{\lambda \in \mathrm{SP}}^{} r_\lambda
+	Q_\lambda\left(\frac{\boldsymbol{\beta}}{2}\right) Q_\lambda\left(\frac{\mathbf{t}}{2}\right)
 .\end{equation} 
 Данные функции действительно решают иерархию $B$КП,  т.\:к.
 $Q$-полиномы Шура удовлетворяют соотношениям Плюккера $B$КП,
@@ -909,6 +932,28 @@ $Q$-полиномы Шура удовлетворяют соотношения�
 \begin{equation}
 	r(1)^3r(2)^2 r(3)
 .\end{equation} 
+\subsection{$\tau$-функция модели БГВ}
+Статсумма данной матричной модели даётся как
+\begin{equation}
+	Z_{\text{БГВ}}\left( J,\,J^\dagger \right) =
+	\frac{1}{V_N} \int\limits_{N \times N}^{}
+	DU\,
+	\mathrm{e} ^{\Tr \left( J^\dagger U+ J U^\dagger \right) }
+,\end{equation} 
+где интеграл берётся по пространству унитарных матриц
+$N \times N$ с мерой Хаара $DU$ и \begin{equation}V_N= \int\limits_{N\times N}^{} DU \end{equation} --- объём унитарной группы.
+Нас будет интересовать так называемая фаза Концевича
+данной модели, где времена $t_k$ определены как
+\begin{equation}
+	t_k= - \frac{1}{2k-1} \Tr \left( J J^\dagger \right) ^{-k+1 /2}
+.\end{equation} 
+Известно, что статсумма модели БГВ в временах, нормализованных подобающим образом, $\tau_{\text{БГВ}}\left( \mathbf{t} /2 \right) $, является
+гипергеометрической с параметрами
+\begin{equation}
+	r(n)= \frac{\left( 2n-1 \right) ^2}{16},\qquad
+	\beta_k=2 \delta_{k,1}
+\label{eq:rn}
+.\end{equation} 
 \subsection{$\tau$-функция спиновых чисел Гурвица}
 Следующая $\tau$-функция является решением иерархии $B$КП:
 \begin{equation}
@@ -917,6 +962,7 @@ $Q$-полиномы Шура удовлетворяют соотношения�
 	\Phi_R\left( \left[ 3 \right]  \right) +\frac{1}{2}\Phi_R \left( \left[ 1,\,1 \right]  \right) \right] } \right) Q_R\left(\frac{\mathbf{p}}{2}\right)Q_R \left(\frac{\bar{\mathbf{p}}}{2}\right)
 	\label{}
 .\end{equation}
+
 \subsection{Фермионный формализм и бозонно-фермионное соответствие}
 Нейтральные фермионы определяются как
 \begin{equation}
@@ -941,6 +987,21 @@ $Q$-полиномы Шура удовлетворяют соотношения�
 \begin{equation}
 \phi_m \ket{0}=0,\quad
 \bra{0}\phi_{-m} =0,\quad m<0.\end{equation} 
+
+Множеством строгих разбиений $\mathrm{SP}\subset \mathrm{Par}$ будем называть множество таких $\lambda \in \mathrm{Par}$, для которых выполнено $\lambda_1>\lambda_2\ldots>\lambda_{l}$.
+
+
+Для разбиений $\lambda \in \mathrm{SP}$ определим
+состояния
+\begin{equation}
+\ket{\lambda}= \begin{cases}
+\phi_{\lambda_1} \phi_{\lambda_2} \cdots \phi_{\lambda_{l}}
+\ket{0},& l=0 \mod 2,\\
+\sqrt{2} \phi_{\lambda_1}\phi_{\lambda_2}\cdots 
+\phi_{\lambda_l} \phi_0 \ket{0},& l=1 \mod 2.
+\end{cases}
+\end{equation} 
+Такое же определение для $\lambda \notin \mathrm{SP}$ очевидно влечёт $\ket{\lambda}=0$ и любое суммирование по разбиениям $\lambda \in \mathrm{Par}$ сводится к суммированию по $\lambda \in \mathrm{SP}$.
 
 Введём также производящую функцию нейтральных фермионов
 \begin{equation}
@@ -1043,34 +1104,34 @@ a+d}\left[ E_{b,-a},\,E_{c,-d} \right] +
 	J_k= \frac{1}{2} \sum_{m \in \mathbb{Z}}^{} (-1)^{m+1} \normord{\phi_m \phi_{-m-k}}
 .\end{equation} 
 Заметим, что
-\[
+\begin{equation}
 J_0=\frac{1}{2}\left(\sum_{m<0}^{} \left( \phi_m \phi_{-m}-(-1)^m \right)+\phi_0^2-\frac{1}{2}+\sum_{m>0}^{} \phi_m \phi_{-m} \right)=0
-.\] 
+.\end{equation} 
 И тогда
-\[
+\begin{equation}
 J_k = \begin{cases}
 	\displaystyle \frac{1}{2} \sum_{m \in \mathbb{Z}}^{} (-1)^{m+1}
 	\phi_m \phi_{-m-k},& k\neq 0,\\
 	0,& k=0,
 \end{cases}
-\] 
+\end{equation} 
 Пусть $k\neq 0$ --- чётное число, тогда
-\begin{multline*}
+\begin{multline}
 	J_k=\frac{1}{2} \left(\sum_{m\ge -k /2}^{} (-1)^{m+1}
 	\phi_m \phi_{-m-k}+
 \sum_{m<-k /2}^{} (-1)^{m+1}\phi_m \phi_{-m-k}\right)=\\=
 \frac{1}{2}\left( \sum_{m\ge 0}^{} \left( -1 \right) ^{m-k /2+1}\phi_{m-k /2} \phi_{-m-k/2}\right. + \\ + \left. \sum_{m>0}^{} \left( -1 \right) ^{m+k /2+1}\phi_{-m-k /2}\phi_{m-k /2} \right) =\\=
 \frac{1}{2}\left(\phi_{-k /2}^2+ \sum_{m>0}^{}\left( -1 \right) ^{m+k /2+1}\left( -1 \right) ^{-m-k /2}\delta_{-k,0}
 \right) =0
-.\end{multline*} 
+.\end{multline} 
 Для нечётных же $k$
-\begin{multline*}
+\begin{multline}
 	J_k=\frac{1}{2} \left(\sum_{m\ge -(k-1) /2}^{} (-1)^{m+1}
 	\phi_m \phi_{-m-k}+
 \sum_{m\le -(k+1) /2}^{} (-1)^{m+1}\phi_m \phi_{-m-k}\right)=\\=
 \frac{1}{2}\left( \sum_{m\ge 0}^{} \left( -1 \right) ^{m+(k+1) /2}\phi_{m-(k-1) /2} \phi_{-m-(k+1)/2}\right. + \\ + \left. \sum_{m\ge 0}^{} \left( -1 \right) ^{m+(k-1) /2}\phi_{-m-(k+1) /2}\phi_{m-(k-1) /2} \right) =\\=
  \sum_{m\ge 0}^{}\left( -1 \right) ^{m+(k+1) /2}\phi_{m-(k-1) /2} \phi_{-m-(k+1)/2}
-.\end{multline*}
+.\end{multline}
 Поэтому далее будет подразумеваться что $J_k$ имеют лишь нечётные индексы.
 Коммутатор данных операторов
 \begin{equation}
@@ -1085,10 +1146,19 @@ J_m  \ket{0}=0,\qquad
 .\end{equation} 
 Определим также производящую функцию данных операторов
 \begin{equation}
-	J(\mathbf{t})= \sum_{k \in \mathbb{Z}_\text{неч}}^{} t_k J_k%,\qquad
+	J(\mathbf{t})= \sum_{k \in \mathbb{Z}_\text{неч}^+}^{} t_k J_k%,\qquad
 %	J_-(\mathbf{s})= \sum_{k \in \mathbb{Z}_\text{odd}}^{} s_k J_{-k}
 .\end{equation} 
 
+Как и в случае иерархии КП определим бозонно-фермионное
+соответствие как
+\[
+	\Phi\left( \ket{\lambda} \right) =\braket{0 | \mathrm{e} ^{J(\mathbf{t})} | \lambda}
+.\] 
+Оказывается, что (TODO?)
+\[
+	\Phi(\ket{\lambda})=2^{-l /2} Q_\lambda\left( \frac{\mathbf{t}}{2} \right) 
+.\] 
 $\tau$-функции иерархии $B$КП можно получить как (TODO)
 \begin{equation}
 	\tau_G(\mathbf{t})= \braket{0 | \mathrm{e} ^{J(\mathbf{t}) }G | 0}
@@ -1106,5 +1176,164 @@ $\tau$-функции иерархии $B$КП можно получить ка�
    \hbar ^2\frac{\partial ^4F}{\partial t_1^3\, \partial t_3}=0	
 	\label{}
 .\end{multline}
+
+\subsection{Разложение по родам $\tau$-функции модели БГВ
+в фазе Концевича}
+Добавление $1 /\hbar $ в экспоненту матричного интеграла
+модели БГВ
+\begin{equation}
+	Z_{\hbar \text{БГВ}}=\frac{1}{V_N}
+	\int_{N\times N} DU\, \exp \left( \frac{1}{\hbar }
+	\Tr \left( J^\dagger U+ J U^\dagger \right) \right) 
+\end{equation} 
+даёт разложение по родам для фазы Концевича. Деформация
+в данной фазе принимает вид
+\begin{equation}
+t_k\to t_k \hbar ^{k-1}
+.\end{equation} 
+Имеем соотношение
+ \begin{equation}
+	 \tau_{\text{БГВ}}\left( \frac{\mathbf{t}}{2} \right) =\sum_{\lambda \in \mathrm{SP}}
+	 r_\lambda Q_\lambda\left( \delta_{k,1} \right) Q_\lambda\left( \frac{\mathbf{t}}{2} \right) 
+.\end{equation} 
+Откуда
+\begin{equation}
+	\tau^\hbar _{\text{БГВ}}\left( \frac{\mathbf{t}}{2} \right) =\sum_{\lambda \in \mathrm{SP}}
+	 r_\lambda Q_\lambda\left( \delta_{k,1} \right) Q_\lambda\left( \frac{t_k \hbar ^{k-1}}{2} \right) 
+.\end{equation} 
+\begin{stm*}
+Выполнено равенство
+\begin{equation}
+Q_\lambda \left(\frac{ t_k\hbar ^{k-1}}{2}\right) 
+	=
+	\hbar ^{|\lambda|} Q_{\lambda} \left( \frac{\mathbf{t}}{2\hbar }\right) 
+.\end{equation} 
+\end{stm*}
+\begin{proof}
+Известно, что
+\begin{equation}
+	Q_R(\mathbf{p})= \sum_{ \substack{\Delta \in \mathrm{OP}\\ \Delta\vdash |R|}}^{} \frac{\Psi_R(\Delta)}{z_\Delta}p_\Delta
+,\end{equation} 
+где 
+\begin{itemize}
+\item $\mathrm{OP}$ --- множество нечётных разбиений, то есть разбиений, где все элементы разбиения --- нечётные.
+\item $\Psi_R(\Delta)$ 
+--- характеры группы Сергеева
+\item $z_\Delta$ ---
+порядок автоморфизма разбиения $\Delta$
+\item $p_\Delta= \prod_{i=1}^{l} p_{\Delta_i} $
+\item $p_k= k t_k$
+\end{itemize}
+Тогда
+\begin{equation}
+	\prod_{i=1}^{l} p_{\lambda_i}\hbar ^{\lambda_i}=
+	\hbar ^{|\lambda|}p_\lambda
+.\end{equation} 
+Значит
+\begin{equation}
+	Q_\lambda \left( \frac{t_k\hbar ^{k-1}}{2} \right) 
+	=
+	\hbar ^{|\lambda|} Q_{\lambda} \left( \frac{\mathbf{t}}{2\hbar } \right) 
+.\end{equation} 
+\end{proof}
+Теперь имеем
+\begin{equation}
+	\tau^\hbar _{\text{БГВ}}\left( \frac{\mathbf{t}}{2} \right) =\sum_{\lambda \in \mathrm{SP}}
+	r_\lambda \hbar ^{|\lambda|}Q_\lambda\left( \delta_{k,1} \right) Q_\lambda\left( \frac{\mathbf{t} }{2\hbar } \right) 
+.\end{equation}
+\begin{stm*}
+
+Выполнено равенство
+\begin{equation}
+	\frac{Q_{\lambda}\left( \delta_{k,1} \right) 
+}{\hbar ^{|\lambda|}}= Q_\lambda \left( \frac{\delta_{k,1}}{\hbar } \right)  .\end{equation} 
+\end{stm*}
+\begin{proof}
+Напрямую следует из 
+\[
+	Q_R\left( \delta_{k,1} \right) =
+	\frac{\Psi_R\left( \left\{ 1,\ldots,\,1 \right\}  \right) }{z_{\left\{ 1,\ldots,\,1 \right\} }}p_1^{|R|}
+.\] 
+\end{proof}
+Это позволяет нам написать
+\begin{equation}
+	\tau^\hbar _{\text{БГВ}}\left( \frac{\mathbf{t}}{2} \right) =\sum_{\lambda \in \mathrm{SP}}
+	r_\lambda \hbar ^{2|\lambda|}Q_\lambda\left( \frac{\delta_{k,1}}{\hbar } \right) Q_\lambda\left( \frac{\mathbf{t} }{2\hbar } \right) 
+.\end{equation}
+Вспоминая определение $r_\lambda$ \eqref{eq:rl} и функцию
+$r(n)$ для модели БГВ  \eqref{eq:rn}, можем
+записать для модели БГВ
+\begin{equation}
+	r_\lambda= \prod_{w \in \lambda}^{} \frac{(2c(w)-1)^2}{16} 
+.\end{equation} 
+Это позволяет записать
+\begin{equation}
+r_\lambda^\hbar =\hbar ^{2|\lambda|}r_\lambda=\prod_{w \in \lambda}^{} 
+\frac{\hbar ^2 \left( 2c(w)-1 \right) ^2}{16}
+,\end{equation} 
+и мотивирует ввести
+\begin{equation}
+	r^\hbar(n) = \frac{\hbar ^2 (2n-1)^2}{16}=
+	\left( \frac{\hbar}{2}\left( n-\frac{1}{2} \right)  \right) ^2
+.\end{equation} 
+Замена
+\begin{equation}
+	n\to \frac{1}{2}+ \hbar \left( n-\frac{1}{2} \right) 
+\end{equation} 
+позволяет перейти от 
+\begin{equation}
+	r(n)=\left( \frac{1}{2}\left( n-\frac{1}{2} \right)  \right) ^2
+\end{equation} 
+к $r^\hbar (n)$. Таким образом, мы представили  $\hbar $-деформацию $\tau$-функции модели БГВ в виде
+\begin{equation}
+	\tau^\hbar _{\text{БГВ}}\left( \frac{\mathbf{t}}{2} \right) =\sum_{\lambda \in \mathrm{SP}}
+	r_\lambda^\hbar Q_\lambda\left( \frac{\delta_{k,1}}{\hbar } \right) Q_\lambda\left( \frac{\mathbf{t} }{2\hbar } \right) 
+,\end{equation} 
+имеющем следующую интерпретацию в терминах фермионного формализма
+\begin{equation}
+	\tau^\hbar _{\text{БГВ}}=\braket{0 | \mathrm{e} ^{H(\mathbf{t} /\hbar )}\exp \left( -\frac{1}{\hbar }B^\hbar  \right)  |0 }
+,\end{equation} 
+\begin{equation}
+	B^\hbar =\sum_{n \in \mathbb{Z}_{\text{неч}}^+}^{} \beta_n B_n^\hbar 
+,\end{equation} 
+\begin{equation}
+	B^\hbar_k = \oint \frac{\mathrm{d} z}{4\pi \mathrm{i} }\normord{\left[ \left(\frac{1}{z}r\left[ \frac{1}{2}+\hbar \left(D-\frac{1}{2}\right) \right]  \right)^k \phi(z)  \right] \cdot \phi(-z)}
+\end{equation} 
+Получается интригующая замена для оператора $D$
+ \begin{equation}
+	 D\to \frac{1}{2} +\hbar \left( D-\frac{1}{2} \right) 
+.\end{equation} 
+
+\subsection{$\hbar $-деформация  гипергеометрических $\tau$-функций
+иерархии $B$КП}
+Гипотеза состоит в том, что деформация
+\begin{equation}
+\left\{
+\begin{aligned}
+	t_k &\to \frac{t_k}{\hbar },\\
+	\beta_k &\to  \frac{\beta_k}{\hbar },\\
+	r(n) &\to r \left( \frac{1}{2}+ \hbar \left( n-\frac{1}{2} \right)  \right) 
+\end{aligned}
+\right.
+\end{equation} 
+даёт для гипергеометрических $\tau$-функций иерархии
+ $B $КП разложение по родам\ldots 
+
+
+%Имеем
+%\[
+%	Q^2_\lambda\left( \frac{\mathbf{t}}{2} \right) 
+%	=\tilde{s}_{\tilde{\lambda}}(\mathbf{t})
+%,\] 
+%где  $\tilde{s}_{\lambda}(\mathbf{t})= s_\lambda\left( t_1,\,0,\,t_{3},\ldots \right) $, а $\tilde{\lambda}=\left( \lambda_1-1,\,\lambda_2-1,\ldots| \lambda_1,\,\lambda_2,\ldots \right) $.
+%
+%Известно, что \[s_\lambda\left( t_k \hbar ^{k-1} \right) =
+%\hbar ^{|\lambda|}s_\lambda \left( \frac{\mathbf{t}}{\hbar }  \right) .\]
+%Тогда 
+%\[
+%	Q_\lambda \left( \frac{t_k\hbar ^{k-1}}{2} \right) 
+%	=\hbar^{\left| \tilde{\lambda} \right|  /2} Q_\lambda\left( \frac{\mathbf{t}}{2\hbar } \right)=
+%	\hbar ^{|\lambda|} Q_{\lambda} \left( \frac{\mathbf{t}}{2\hbar } \right) 
+%.\] 
 
 \end{document}
