@@ -1304,6 +1304,60 @@ r_\lambda^\hbar =\hbar ^{2|\lambda|}r_\lambda=\prod_{w \in \lambda}^{}
 	 D\to \frac{1}{2} +\hbar \left( D-\frac{1}{2} \right) 
 .\end{equation} 
 
+\subsection{Разложение по родам спиновых чисел Гурвица}
+Формула Римана-Гурвица (простые точки ветвления имеют профиль $(r+1,\,1,\ldots,\,1)$, где $r$ --- чётное)
+\[
+	2g-2=-2|\mu|+\left( |\mu|-\ell\left(\mu\right) \right) +
+	\left( |\nu|-\ell\left(\nu\right) \right)+m r 
+.\] 
+Т.\:к. $|\mu|=|\nu|$, то
+ \[
+	 2g-2=mr- \ell(\mu)- \ell(\nu)
+.\] 
+\[
+	\Phi_R(\left\{ 3 \right\} )= 
+	\frac{\left( |R|-3 \right) !}{\left( |R|-3 \right) !}\Phi_{R}\left( \left\{ 3,\,1^{|R|-3} \right\}  \right) =\Phi_R\left( \left\{ 3,\,1^{|R|-3} \right\}  \right) 
+.\] 
+\[
+	\Phi_R\left( \left\{ 1,\,1 \right\}  \right) =
+	\frac{\left( |R|-2+2 \right) !}{2!\left( |R|-2 \right) !}\Phi_{R}\left( \left\{ 1^{|R|} \right\}  \right)=
+	\frac{|R|!}{ (|R|-2)!}=|R|\left(|R|-1\right)
+.\] 
+Значит
+\begin{multline*}
+	Z^{\mathrm{(spin)}}\left( \mathbf{p},\,\bar{\mathbf{p}} \right) =
+	\sum_{R \in \mathrm{SP}}^{} \exp \left( {u \left[ \Phi_R \left( \left\{ 3 \right\}  \right) +\frac{1}{2}\Phi_R \left( \left\{ 1,\,1 \right\}  \right)  \right] } \right) Q_{R}(\mathbf{p})Q_R\left(\bar{\mathbf{p}} \right) =\\=
+	\sum_{R \in \mathrm{SP}}^{} 
+	\exp \left( u \left[ 
+	\Phi\left( \left\{ 3,\,1^{|R|-3} \right\} \right) +\frac{|R|\left( |R|-1 \right)}{2} \right]  \right) Q_R\left( \mathbf{p} \right) Q_R\left(\bar{\mathbf{p}}\right)=\\=
+\sum_{m=0}^{\infty} \sum_{R \in \mathrm{SP}}^{} 
+\exp \left(\frac{u|R|\left( |R|-1 \right) }{2}\right)
+\frac{\left(\Phi\left( \left\{ 3,\,1^{|R|-3} \right\} \right)u \right)^m}{m!}   Q_R\left( \mathbf{p} \right) Q_R\left(\bar{\mathbf{p}}\right)=\\=\sum_{m=0}^{\infty} \sum_{R \in \mathrm{SP}}^{} \sum_{\substack{\Delta_1,\Delta_2 \in \mathrm{OP}\\ |\Delta_1|=|\Delta_2|=|R|}}^{} 
+\exp \left(\frac{u|R|\left( |R|-1 \right) }{2}\right)
+\left(\Phi\left( \left\{ 3,\,1^{|R|-3} \right\} \right) \right)^m   \times \\ \times \mathfrak{d}_R^2 \Phi_R\left( \Delta_1 \right) \Phi_R\left(\Delta_2\right)p_{\Delta_1}p_{\Delta_2}  \frac{u^m}{m!}=\\=\sum_{m=0}^{\infty}\sum_{n=0}^{\infty} 
+\exp \left( \frac{un(n-1)}{2} \right) 
+\sum_{\substack{R \vdash n\\R \in \mathrm{SP}}}^{} \sum_{\substack{\Delta_1,\Delta_2 \in \mathrm{OP}\\ |\Delta_1|=|\Delta_2|=|n|}}^{} \mathfrak{d}_R^2
+\left(\Phi\left( \left\{ 3,\,1^{|R|-3} \right\} \right) \right)^m   \times \\ \times  \Phi_R\left( \Delta_1 \right) \Phi_R\left(\Delta_2\right)p_{\Delta_1}p_{\Delta_2}  \frac{u^m}{m!}=\\=\sum_{m=0}^{\infty}\sum_{n=0}^{\infty}\sum_{\substack{\Delta_1,\Delta_2 \in \mathrm{OP}\\ |\Delta_1|=|\Delta_2|=|n|}}^{} 
+\exp \left( \frac{un(n-1)}{2} \right) \times\\\times
+\mathrm{Hur}_{0,n}^{\mathrm{(spin)}}\bigl( \Delta_1,\,\Delta_2,\,\underbrace{\left\{ 3,\,1^{n-3} \right\}, \ldots,\,\left\{ 3,\,1^{n-3} \right\}}_{m}  \bigr)  p_{\Delta_1}p_{\Delta_2}  \frac{u^m}{m!}
+.\end{multline*} 
+   \centering
+    \begin{tabular}{r@{}l}
+    \raisebox{-6ex}{$|R|-3\left\{\vphantom{\begin{array}{c}~\\[6ex] ~
+    \end{array}}\right.$} &
+    \begin{ytableau}
+    ~                &  &  \\
+    ~               & \none & \none\\
+    \none[\vdots]   & \none & \none \\
+    ~               & \none & \none \\
+    \end{ytableau}
+    \end{tabular}
+\begin{figure}[ht]
+    \centering
+    \incfig{1}
+    \caption{1}
+    \label{fig:1}
+\end{figure}
 \subsection{$\hbar $-деформация  гипергеометрических $\tau$-функций
 иерархии $B$КП}
 Гипотеза состоит в том, что деформация
