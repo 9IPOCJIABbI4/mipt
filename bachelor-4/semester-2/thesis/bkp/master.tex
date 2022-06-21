@@ -1,25 +1,912 @@
-\documentclass[a5paper,twoside]{article}
+\documentclass[a4paper,14pt]{extarticle}
 %\usepackage{fullpage}
 \input{../../preamble-rus.tex}
-\usepackage[top=1cm,bottom=1cm,left=1cm,right=1.5cm,includeheadfoot]{geometry}
+\usepackage[top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
 \usepackage{ytableau}
 \ytableausetup{boxsize=0.2em}
 %\pagestyle{headings}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[LO]{\sl Драчов Ярослав}
-\fancyhead[RE]{\sl КВАНТОВАЯ ДЕФОРМАЦИЯ ИЕРАРХИИ $B$КП}
-\fancyhead[LE,RO]{\thepage}
-\renewcommand{\headrulewidth}{0pt}
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\fancyhf{}
+%\fancyhead[LO]{\sl Драчов Ярослав}
+%\fancyhead[RE]{\sl КВАНТОВАЯ ДЕФОРМАЦИЯ ИЕРАРХИИ $B$КП}
+%\fancyhead[LE,RO]{\thepage}
+%\renewcommand{\headrulewidth}{0pt}
 \numberwithin{equation}{section}
 %\usepackage[sc]{titlesec}
 %\usepackage[titles]{tocloft}
 %\renewcommand{\cftsecfont}{\scshape}
+
+\usepackage[backend=biber,bibencoding=utf8,sorting=ynt,maxcitenames=2,style=authoryear]{biblatex}
+\addbibresource{bibliography.bib}
+
 \title{Квантовая деформация иерархии $B$КП}
 \begin{document}
 \maketitle
+\begin{abstract}
+Целью данной работы является изучение интегрируемой иерархии
+$B$КП, её $\hbar $-деформации и разложений по родам частных
+решений данной иерархии. Основная задача работы --- проверить,
+являются ли известные разложения по родам решений иерархии $B$КП
+решениями деформированной иерархии $\hbar $-$B$КП. К результатам можно отнести проверку для статсуммы матричной модели БГВ, выдвижение на основании этого гипотезы относительно вида разложения по родам
+всех гипергеометрических $\tau$-функций $B$КП.
+\end{abstract}
+\section*{Благодарности и библиографическая информация}
+\addcontentsline{toc}{section}{Благодарности и библиографическая информация}
+По желанию, не больше 1 стр.
 \tableofcontents
+\section{Введение}
+\emph{Демонстрирует понимание студентом научного контекста и умение
+представлять свое исследование широкой аудитории, содержит постановку
+задачи с обзором научной литературы и с указанием предмета, целей, объектов,
+инструментов и значения исследования, а также актуальности работы и личного
+вклада автор, краткий обзор разделов ВКР.}
+
+Проще всего определить иерархию $B$КП как бесконечный
+набор нелинейных дифференциальных уравнений, первое
+из которых даётся как
+\begin{multline}
+-60 \left(\frac{\partial ^2F}{\partial
+   t_1^2}\right)^3-30 \frac{\partial ^4F}{\partial
+   t_1^4} \frac{\partial ^2F}{\partial
+   t_1^2}+30 \frac{\partial ^2F}{\partial t_1\, \partial t_3}
+   \frac{\partial ^2F}{\partial t_1^2}-\frac{\partial
+   ^6F}{\partial t_1^6}+\\+5 \frac{\partial ^2F}{\partial
+   t_3^2}-9 \frac{\partial ^2F}{\partial t_1\, \partial t_5}+5
+   \frac{\partial ^4F}{\partial t_1^3\, \partial t_3}=0	
+	\label{}
+,\end{multline}
+где функция $F$ зависит от бесконечного набора 
+времён $\mathbf{t}= \left\{t_1,\,t_{3},\,t_5,\ldots \right\} $. На статсуммы и корреляторы различных квантовых систем можно смотреть как на
+$\tau$ функции ($\tau=\exp F$) некоторых интегрируемых
+иерархий. Исторически, первой была открыта иерархия Кадомцева-Петвиашвили при описании движения нелинейных волн в двумерной
+среде. В дальнейшем было найдено соответствие
+между интегрируемыми иерархиями и бесконечномерными алгебрами Ли. Оказалось, что иерархия КП соответствует
+бесконечномерной алгебре Ли серии $A$. В свою очередь бесконечномерной алгебре Ли серии $B$ соответствует своя
+интегрируемая иерархия, которая в связи с этим получила
+называние $B$КП. На данный момент известно, что иерархия
+$B$КП связана с многими фундаментальными структурами
+современной теоретической физики, такими как, собственно,
+бесконечномерные алгебры Ли, матричные модели 2D гравитации,
+решёточные калибровочные теории КХД и др.
+
+Было предложено ввести  <<постоянную Планка>> $\hbar $ 
+в иерархию $B$КП и изучать бездисперсионный предел
+этой иерархии при $\hbar \to 0$. Этот предел
+можно  понимать как квазиклассический предел в 2D гравитации,
+ т.\:е. он согласован с разложением по родам, следующем
+из условий Вирасоро в двумерной квантовой гравитации.
+Полагая $\hbar =1$,  мы получаем классическую иерархию
+$B$КП. После введения $\hbar $ уравнения $B$КП деформируются.
+Например, первое уравнение иерархии принимает вид
+ \begin{multline}
+-60 \left(\frac{\partial ^2F^\hbar }{\partial
+   t_1^2}\right)^3-30\hbar ^2 \frac{\partial ^4F^\hbar }{\partial
+   t_1^4} \frac{\partial ^2F^\hbar }{\partial
+   t_1^2}+30 \frac{\partial ^2F^\hbar }{\partial t_1\, \partial t_3}
+   \frac{\partial ^2F^\hbar }{\partial t_1^2}-\hbar ^4\frac{\partial
+   ^6F^\hbar }{\partial t_1^6}+\\+5 \frac{\partial ^2F^\hbar }{\partial
+   t_3^2}-9 \frac{\partial ^2F^\hbar }{\partial t_1\, \partial t_5}+5
+   \hbar ^2\frac{\partial ^4F^\hbar }{\partial t_1^3\, \partial t_3}=0	
+	\label{}
+.\end{multline}
+
+Явное введение $\hbar $ путём масштабирования времён
+называют $\hbar $-расширением иерархии  $B$КП,  или
+коротко $\hbar $-$B$КП. Мы также часто будем называть
+это $\hbar $-деформацией иерархии $B$КП, несмотря на то, что
+это не деформация в общепринятом понимании этого слова.
+$\hbar $-деформация может быть явно проведена для
+всех элементов теории $B$КП: оператора Лакса, $W$-симметрий
+и элемента группы $B_\infty$.
+
+Формальная $\hbar $-$B$КП страдает от недостатка явных
+примеров, поэтому \emph{наша первая цель} ---
+привести набор примеров решений $\hbar $-$B$КП,
+которые получаются путём добавления зависимости от $\hbar $ 
+в некоторые хорошо известные решения обычной $B$КП.
+Выбор этих примеров неслучаен. Будут рассмотрены решения
+$B$КП, представляющие особый интерес как для физики высоких энергий, так и для соответствующей математики: статсумма Брезана-Гросса-Виттена, производящая функция спиновых чисел Гурвица и модель Концевича. 
+
+Статсумма БГВ и модель
+Концевича имеют представление в виде матричных моделей. 
+В определённой области параметров матричные модели имеют
+пертурбативное разложение, отдельные слагаемые в котором
+можно связать с фейнмановскими диаграммами. Каждая диаграмма --- это ленточный граф, который можно изобразить на определённой
+римановой поверхности.  Это естественно определяет разложение
+по родам (что соответствует разложению $1 /N$ после
+подходящего масштабирования параметров матричной модели)
+статсуммы и корреляторов, что и является предметом
+изучения во многих физических теориях.
+
+Один из подходов к нахождению разложения по родам заключается
+в использовании так называемых петлевых уравнений,
+которые являются следствием тождеств Уорда для матричных
+моделей и могут быть решены рекурсивно.
+Каждый член разложения, соответствующий поверхности
+старшего рода может быть явно посчитан  из
+корреляторов поверхностей нулевого, первого и второго родов.
+Данные начальные условия в определенном приближении, слабо ограничивающим общность, могут быть представлены 
+в виде алгеброгеометрической структуры на определённой
+римановой поверхности, которую называют спектральной кривой.
+
+Впервые понятие спектральной кривой было введено в 
+теории интегрируемых систем, и, поэтому, разложение
+по родам матричных моделей тесно связано с интегрируемыми
+структурами, в частности, с иерархией  $B$КП. Связь эта
+может заключаться в соответствии $\hbar $-деформации
+иерархии $B$КП и разложения по родам матричных моделей.
+\emph{Нашей второй целью} будет проверить это на конкретных примерах.
+
+Тут можно еще обсудить важность БГВ, спиновых чисел Гурвица и модели Концевича.
+
+Данная работа идейно продолжает ранее исследованное 
+соответствие между $\hbar $ деформацией иерархии КП и
+разложением по родам соответствующих матричных моделей и
+поэтому будет организована следующим образом.
+
+
+\section{Бозонно-фермионное соответствие КП}
+\subsection{Полиномы Шура}
+Введём сперва несколько общепринятых обозначений, которыми
+будем пользоваться на протяжении всей работы
+\begin{dfn*}
+Упорядоченный набор целых неотрицательных чисел
+\[
+	\lambda_1 \ge \lambda_2 \ge \ldots\ge \lambda_l\ge 0
+\]
+будем обозначать как $\lambda =\left[ \lambda_1,\,
+\lambda_2,\ldots,\,\lambda_l\right] $ и называть его \emph{диаграммой
+Юнга}. 
+\end{dfn*}
+\begin{dfn*}
+Каждой диаграмме Юнга поставим в соответствие
+число
+\[
+	|\lambda|=\lambda_1+\lambda_2+\ldots+\lambda_l
+.\]
+\end{dfn*}
+Сразу отметим, что диаграмма Юнга соответствует разбиению числа
+$|\lambda|$
+на $l(\lambda)$ чисел  $\lambda_i$.
+Графическим представлением диаграммы Юнга называется конечный
+набор клеток, организованных в выровненные по левому краю ряды
+длин $\lambda_1,\,\lambda_2,\ldots,\,\lambda_l$. Например, диаграмму $\left[ 5,\,4,\,4,\,1 \right] $ графически можно представить как
+\ytableausetup
+ {mathmode, boxsize=2em}
+\begin{center}
+\begin{ytableau}
+	\, & & & &\\
+	   & & &  \\
+	& & &  \\
+	   \\
+	\end{ytableau}
+\end{center}
+
+\begin{dfn*}
+Диаграммы Юнга можно однозначно задать как набором длин строк $\lambda=\left[ \lambda_1,\ldots,\, \lambda_{l} \right] $, так и с помощью набора переменных
+$\alpha_i=\lambda_i-i$ и $\beta_i=\lambda'_i-i$, (см. рис.~\ref{fig:1}), где $\lambda'_i$ --- длина $i$-го столбца
+диаграммы Юнга $\lambda$.
+Второй способ называют \emph{записью Фробениуса} и символически
+обозначают диаграмму Юнга как $\left( \alpha| \beta \right) =\left( \alpha_1,\ldots,\,\alpha_d|\beta_1,\ldots,\,\beta_d \right) $, где $d=d(\lambda)$ --- количество клеток на главной диагонали диаграммы $\lambda$.
+\end{dfn*}
+\begin{figure}[htpb]
+	\centering
+\begin{ytableau}
+	 *(lightgray) & 1 & 2 & \none[\dots]&
+\scriptstyle \alpha_1-1 & \alpha_1 \\
+1& *(lightgray) & 1 & \none[\dots] &\alpha_2\\
+2& 1 &\none[\ddots] \\
+\none[\vdots] & \none[\vdots]\\
+\scriptstyle \beta_1-1 & \beta_2 \\
+\beta_1
+\end{ytableau}
+	\caption{$\alpha_i$ и  $\beta_i$ в записи Фробениуса (серым цветом выделена \emph{главная диагональ} диаграммы Юнга)}
+	\label{fig:1}
+\end{figure}
+
+\begin{dfn*}
+Понимая зависимость от $t$ как зависимость от переменных
+$t_1,\,t_2,\ldots$ \emph{полиномы Шура} $s_k(t)$ для диаграмм
+вида $\lambda=\left[ k \right] $ даются как коэффициенты 
+разложения
+\[
+\exp \left( \sum_{k=1}^{\infty} t_k z^k \right) =
+\sum_{k=0}^{\infty} s_{ k  }(t)z^k
+.\] 
+С их помощью \emph{полиномы Шура} $s_\lambda(t)$ для 
+произвольных диаграмм $\lambda$  определяются как
+\[
+s_\lambda(t)= \det s_{ \lambda_i-i+j  }(t)
+,\] 
+где определитель считается по матрице, строки в которой
+нумерует индекс $i$, а столбцы --- $j$, причём оба пробегают
+значения от 1 до $l(\lambda)$.
+\end{dfn*}
+
+Для ясности приведём несколько простейших полиномов Шура
+\[
+s_\emptyset(t)=1,
+\]
+\[
+s_{\left[ 1 \right] }(t)=t_1,
+\]
+\[
+s_{\left[ 2 \right] }(t)= \frac{t_1^2}{2}+t_2,\qquad
+s_{\left[ 1,\,1 \right] }(t)= \frac{t_1^2}{2}-t_2
+,\] 
+\[
+s_{\left[ 3 \right] }(t)= \frac{t_1^3}{6}+t_1t_2+t_3,\qquad
+s_{\left[ 2,1 \right] }(t)=\frac{t_1^3}{3}-t_3,\qquad
+s_{\left[ 1,1,1 \right] }(t)=\frac{t_1^3}{6}-t_1t_2+t_3
+.\] 
+
+Далее ещё не раз нам пригодится следующее соотношение
+\begin{stm*}[тождество Коши-Литлвуда]
+Справедливо следующее равенство
+\[
+\sum_{\lambda}^{} s_\lambda(t) s_\lambda(t')=\exp \left( \sum_{k=1}^{\infty} k t_k t_k' \right) 
+,\] 
+где суммирование в левой части ведётся по всем возможным диаграммам Юнга
+\end{stm*}
+В дальнейшем мы будем пользоваться введённым обозначением для суммирования
+по диаграммам Юнга в случаях, когда это не вызывает неоднозначности.
+\subsection{Пространство Фока, фермионы и алгебра $\widehat{gl(\infty)}$}
+Будем рассматривать \emph{бесконечномерную алгебру Клиффорда}
+с генераторами $\left\{ \psi_n,\,\psi^*_m \mid n,\,m \in \mathbb{Z} \right\} $, обладающими коммутационными соотношениями
+\begin{equation}
+\left\{ \psi_n,\,\psi_m \right\} =0,\qquad
+\left\{ \psi_n^*,\,\psi^*_{m} \right\}=0,\qquad
+\left\{ \psi_n,\,\psi_{m}^* \right\}=\delta_{n,\,m}
+.\end{equation} 
+
+
+\begin{dfn*}
+Действие генераторов алгебры на \emph{вакуумный вектор}
+даётся как
+\begin{equation}
+\psi_k\ket{0}=0,\quad k< 0;\qquad\psi^* \ket{0}=0,\quad
+k\ge  0
+.\end{equation} 
+То есть операторы $\psi_k$ при $k>0$ и $\psi^*_k$ при
+$k\le 0$ --- это операторы рождения, а $\psi_k$ при $k\le 0$ 
+и $\psi_k^*$ при  $k> 0$ --- операторы уничтожения.
+
+Далее определим 
+\emph{$m$-е вакуумы}
+\begin{equation}
+\psi_k\ket{m}=0,\quad k< m;\qquad\psi^* \ket{m}=0,\quad
+k\ge  m
+,\end{equation}
+и 
+\emph{состояния}
+\begin{equation}
+	\ket{m,\,\lambda}= \psi_{\lambda_1+m-1}\psi_{\lambda_2+m-2}\cdots\psi_{\lambda_{l}+m-l}\ket{m-l}
+	\label{eq:2281}
+.\end{equation} 
+
+%Пространство Фока для фермионов $\mathcal{F}$ определим действием
+%алгебры Клиффорда на вакуумные вектора $\ket{m}$ <<моря Дирака>>.
+\end{dfn*}
+
+\begin{stm*}
+В записи Фробениуса
+\begin{equation}
+	\ket{m,\,\lambda}=(-1)^{b}
+	\psi_{m+\alpha_{1}}\cdots
+	\psi_{m+\alpha_d}\psi^*_{m-\beta_d -1} \cdots \psi_{m-\beta_{1}-1}^* \ket{m}
+,\end{equation}
+где
+\begin{equation}
+	b= \sum_{i=1}^{d} \beta_i
+,\end{equation}
+\end{stm*}
+\begin{proof}
+В записи Фробениуса имеем
+\begin{multline}
+	\ket{m,\,\lambda}= \psi_{\lambda_1+m-1}\psi_{\lambda_2+m-2}\cdots\psi_{\lambda_{l}+m-l}\ket{m-l}=\\=
+\psi_{m+\alpha_1} \cdots \psi_{m+\alpha_d}
+\psi_{\lambda_{d+1}+m-(d+1)}\cdots \psi_{\lambda_l+m-l}
+\psi^*_{m-l}\cdots \psi^*_{m-1}\ket{m}
+.\end{multline}
+\ytableausetup
+ {mathmode, boxsize=2em}
+
+\begin{figure}[htpb]
+	\centering
+\begin{ytableau}
+	*(lightgray) & & & &\\
+	   & *(lightgray)& &  \\
+	& & *(lightgray)&  \\
+	\scriptstyle 3\rightarrow & \none[\scriptstyle \overset{\uparrow}{2}]& \none[\scriptstyle \overset{\uparrow}{1}]\\
+	\none[\scriptstyle \overset{\uparrow}{4}]\\
+\end{ytableau}
+	\caption{Нумерация внешних рёбер диаграммы $\lambda=\left[ 5,\,4,\,4,\,1 \right] $}
+	\label{fig:2}
+\end{figure}
+
+Пронумеруем внешние рёбра диаграммы $\lambda$  начиная от нижнего ребра первого столбца и двигаясь против часовой стрелки числами $l,\,l-1,\ldots,\,2,\,1$ (см. пример на рис.~\ref{fig:2}).
+Тогда вертикальные рёбра будут занумерованы
+числами $i-\lambda_i$, а горизонтальные --- числами
+$\beta_i+1$. Отсюда следует, что
+\begin{equation}\left\{ i-\lambda_i \right\}_{i=d+1}^{l}=
+ \left\{ 1,\,2,\ldots,\,l\right\} \setminus
+ \left\{ \beta_i +1 \right\} _{i=1}^{d},\end{equation}
+а также
+\begin{equation}
+\left\{\lambda_i+m-i \right\}_{i=d+1}^{l}=
+ \left\{ m-l,\,m-l+1,\ldots,\,m-1 \right\} \setminus
+ \left\{ m-\beta_i -1 \right\} _{i=1}^{d}
+.\end{equation} 
+Теперь можем переписать
+\begin{equation}
+\psi^*_{m-l}\cdots \psi^*_{m-1}=
+(-1)^b \psi^*_{\lambda_l+m-l}\cdots \psi^*_{\lambda_{d+1}+m-(d+1)}
+\psi_{m-\beta_d-1}^*\cdots \psi_{m-\beta_1-1}^*
+,\end{equation} 
+где
+\begin{equation}
+	b= \sum_{i=1}^{d} \beta_i
+,\end{equation} 
+и, как итог,
+\begin{equation}
+	\ket{m,\,\lambda}=(-1)^{b}
+	\psi_{m+\alpha_{1}}\cdots
+	\psi_{m+\alpha_d}\psi^*_{m-\beta_d -1} \cdots \psi_{m-\beta_{1}-1}^* \ket{m}
+,\end{equation} 
+
+\end{proof}
+
+
+\begin{dfn*}
+Введём также \emph{производящие функции для фермионов}
+\begin{equation}
+\psi(z)=\sum _{k\in \mathbb{Z}}^{} \psi_k z^k,\qquad
+\psi^* (z)=\sum_{k \in \mathbb{Z}}^{} \psi^*_k z^{-k-1}
+.\end{equation} 
+\end{dfn*}
+
+\begin{dfn*}
+Будем обозначать \emph{нормальное упорядочение} фермионных
+операторов как $\normord{\left( \ldots \right) }$.
+Результатом нормального упорядочения будет перемещение
+всех операторов уничтожения направо, а операторов
+рождения --- налево, где каждая транспозиция двух
+фермионов будет производиться в согласии с антикоммутационным
+соотношением и, следовательно, давать множитель $(-1)$. 
+
+\end{dfn*}
+Для строгого определения пространства Фока потребуется ввести несколько дополнительных обозначений. Пусть
+\[
+	V=\bigoplus_{j \in \mathbb{Z}} \mathbb{C}  v_j
+\]
+--- бесконечномерное комплексное векторное пространство с фиксированным базисом $\left\{ v_j \mid j \in \mathbb{Z} \right\} $. Будем понимать $v_j$ как вектор с единицей
+на $j$-м месте и нулями на остальных.
+Обозначая через $\wedge$ внешнее произведение векторов, можем
+реализовать на данном пространстве наши физические состояния
+$\ket{m,\,\lambda}$  в согласии с \eqref{eq:2281} как
+\[
+\ket{m,\,\lambda}\equiv v_{\lambda_1+m-1}\wedge v_{\lambda_2+m-2}\wedge\ldots\wedge   v_{\lambda_l+m-l}\wedge v_{m-l-1}\wedge
+ v_{m-l-2}\wedge \ldots
+.\] 
+Линейное пространство, в котором находится данное состояние тогда
+будет задаваться как
+\[
+	\mathcal{F}^{(m)}= \bigwedge \nolimits ^{\mkern-4mu\infty}_{(m)}V
+.\] 
+\begin{dfn*}
+\emph{Пространством Фока} будем называть
+\[
+	\mathcal{F}=\bigoplus_{m \in \mathbb{Z}} \mathcal{F}^{(m)}
+.\] 
+\end{dfn*}
+
+\begin{dfn*}
+Элементами алгебры $gl(\infty)$ будут бесконечномерные матрицы,
+у которых конечное количество диагоналей отличны от нулевых:
+\begin{equation}
+	gl(\infty)=\left\{ 
+	\left( a_{ij} \right) \mid i,\,j \in \mathbb{Z},\ a_{ij}=0 \text{ при } \left| i-j \right| \gg 0\right\} 
+.\end{equation} 
+Базисом данной алгебры можно выбрать матрицы  $E_{ij}$,
+у которых единственный, отличный от нуля, элемент равен 1 и находится
+на пересечении $i$-й строки и $j$-го столбца.
+ \begin{equation}
+	(E_{ij})_{kl}=\delta_{ik}\delta_{jl}
+.\end{equation} 
+Понятно, что
+\[
+E_{ij}v_k= \delta_{jk} v_i
+.\] 
+
+\end{dfn*}
+Нетрудно получить коммутационные соотношения для данной алгебры.
+\begin{stm*}
+\[
+\left[ E_{ij},\,E_{kl} \right] =
+\delta_{jk}E_{il}-\delta_{il}E_{kj}
+.\]
+\end{stm*}
+\begin{proof}
+\begin{multline}
+\left[ E_{ij},\,E_{kl} \right] =
+E_{ij}E_{kl}-E_{kl}E_{ij}=
+\delta_{in}\delta_{jm}\delta_{km}\delta_{lp}-
+\delta_{kn}\delta_{lm}\delta_{im}\delta_{jp}=\\=
+\delta_{jk}E_{il}-\delta_{il}E_{kj}
+.\end{multline} 
+\end{proof}
+
+
+
+
+Представление $R$ группы $\mathrm{GL}(\infty)$ (получаемой 
+экспоненциированием $gl(\infty)$)и представление
+$\rho$ алгебры Ли $gl(\infty)$ в пространстве $\mathcal{F}$ можно задать формулами
+\begin{align}
+	R\left( A \right) \left(  v_{i_1} \wedge 
+	 v_{i_2} \wedge \ldots\right) &=
+	A  v_{i_1} \wedge A  v_{i_2}\wedge 
+	\ldots,
+	\label{eq:GLr}\\
+	\rho(a)\left(  v_{i_1} \wedge  v_{i_2}\wedge 
+\ldots\right) &=a  v_{i_1} \wedge  v_{i_2}
+	\wedge \ldots+  v_{i_1} \wedge 
+	a  v_{i_2}\wedge \ldots+\ldots
+.\end{align} 
+Последние две формулы связаны соотношением
+\begin{equation}
+	\mathrm{e} ^{\rho(a)}=R\left( \mathrm{e} ^{a} \right) ,\qquad a \in gl_{\infty}
+.\end{equation} 
+\begin{stm*}
+Отображение
+\begin{equation}
+	\rho(E_{ij})=\psi_i \psi_j^{*}
+	\label{eq:2283}
+\end{equation} 
+является представлением алгебры $gl_\infty$
+на введённом пространстве Фока.
+\end{stm*}
+\begin{proof}
+Т.\:к.
+\begin{multline}
+	\left[ \psi_i \psi^*_j,\,\psi_k \psi^*_l \right] 
+	=\psi_i \psi_j^* \psi_k \psi^*_l -\psi_k \psi^*_l
+	\psi_i \psi^*_j=\\=\psi_i \left( \delta_{jk} -\psi_k \psi_j^* \right) \psi^*_l-\psi_k \psi_l^* \psi_i \psi^*_j=\\=\delta_{jk}\psi_i \psi^*_l-\psi_k \psi_i  \psi_l^*
+	\psi_j^*-\psi_k \psi_l^* \psi_i \psi_j^*=\\=
+	\delta_{jk} \psi_i \psi_{l}^*-
+	\delta_{il}\psi_k \psi_j^*
+.\end{multline}
+Следовательно скобка Ли при отображении сохраняется.
+\end{proof}
+
+\begin{stm*}
+Оператор представления $R$ элемента $A \in \mathrm{GL}(\infty)$ в пространстве $\mathcal{F}$
+даётся как
+\begin{equation}
+	R(A) \ket{m,\,\lambda} =\sum_{\mu \in \mathrm{Par}}^{} \left( 
+	\det A_{\mu_1+m,\mu_2+m-1,\ldots}^{\lambda_1+m,\lambda_2+m-1,\ldots}\right) \ket{m,\,\mu}.\end{equation}
+\end{stm*}
+
+\begin{proof}
+Пользуясь формулой \eqref{eq:GLr} и стандартным исчислнием внешних степней найдём \begin{multline}
+	R(A)\left( v_{i_m}\wedge v_{i_{m-1}}\wedge \ldots	 \right) =\sum_{j_m,j_{m-1},\ldots \in \mathbb{Z}}^{}
+	A_{j_m,i_{m}}v_{j_m}\wedge A_{j_{m-1},i_{m-1}} v_{j_{m-1}}\wedge  \ldots	=\\= \sum_{j_m >j_{m-1}> \ldots}^{} \left( 
+		\det A_{j_m,j_{m-1},\ldots}^{i_{m},\,i_{m-1},\ldots}\right) v_{j_m} \wedge v_{j_{m-1}}\wedge \ldots
+	\label{}
+.\end{multline}
+где $A^{i_m,i_{m-1},\ldots}_{j_m,j_{m-1},\ldots}$ означает
+матрицу, состоящую из элементов, стоящих
+на пересечении строк $j_m,\,j_{m-1},\ldots$ и столбцов
+$i_m,\,i_{m-1},\ldots$ матрицы $A$.
+
+\end{proof}
+
+
+
+\begin{dfn*}
+\begin{equation}
+	\widehat{gl(\infty)}= gl(\infty)
+	\oplus  \mathbb{C}c,
+\end{equation} 
+где $\mathbb{C}c$ называют \emph{центром} и скобка Ли задаётся как
+\begin{equation}
+	\left[ a,\,b \right] =ab-ba+ \alpha\left( a,\,b \right) c
+.\end{equation} 
+\end{dfn*}
+Функцию $\alpha(a,\,b)$ называют \emph{два-коциклом}, для
+корректности определения скобки Ли на неё накладываются
+дополнительные ограничения.
+\begin{stm*}
+Два-коцикл должен удовлетворять соотношению
+\begin{equation}
+	\alpha\left( xy-yx,\,z \right) +\alpha\left( yz-zy,\,x \right) +\alpha\left( zx-xz,\,y \right) =0
+,\end{equation}
+а также должен быть  линеен по обоим аргументам  и антисимметричен.
+\end{stm*}
+\begin{proof}
+\begin{itemize}
+	\item Антисимметричность скобки влечёт антисимметричность $\alpha(a,\,b)$.
+	\item Линейность скобки по обоим аргументам влечёт аналогичную линейность $\alpha(a,\,b)$.
+	\item Из тождества Якоби скобки
+\begin{equation}
+\left[ \left[ x,\,y \right],\,z \right] +\left[ \left[ y,\,z \right] ,\,x \right] +\left[ \left[ z,\,x \right] ,\,y \right] =0
+\end{equation} 
+следует, что
+\begin{multline}
+	\left[ xy -yx+\alpha\left( x,\,y \right) c,\,z \right] +\left[ yz-zy+\alpha\left( y,\,z \right) c,\,x \right] +\\+\left[ zx-xz+\alpha\left( z,\,x \right) c,\,y \right] =0
+\end{multline} 
+и, как итог,
+\begin{equation}
+	\alpha\left( xy-yx,\,z \right) +\alpha\left( yz-zy,\,x \right) +\alpha\left( zx-xz,\,y \right) =0
+.\end{equation} 
+\end{itemize}
+
+\end{proof}%Коммутационными соотношениями данной алгебры будут
+%\begin{align}
+%	\left[ E_{ij},\,E_{kl} \right] &=0 &&
+%	\text{при } j \neq k ,\ l \neq i,\\
+%	\left[ E_{ij},\,E_{jl} \right] &=
+%	E_{il} && \text{при } l\neq i,\\
+%	\left[ E_{ij},\,E_{ki} \right] &=-E_{kj}
+%				       && \text{при } j
+%				       \neq k,
+%	\left[ E_{ij},\,E_{ji} \right] =
+%.\end{align}
+
+Центрально расширенная алгебра $\widehat{gl(\infty)}$ пригодится нам для изучения нормально упорядоченных пар операторов
+$\normord{\psi_i \psi_j^*}$.
+
+Покажем, что представлением данной
+алгебры на пространстве Фока будет
+\begin{equation}
+	\hat{\rho}(E_{ij})= \normord{\psi_i \psi_j^*}
+.\end{equation} 
+%\[
+%	\braket{0 | \left[ \normord{\psi_i\psi_j^*},\,\normord{\psi_k \psi^*_l} \right] |0}=
+%.\] 
+%\[
+%	\braket{\mathcal{S} | \normord{\psi_i \psi_j^*} |\ldots,\,n_{-1},\,n_0,\,n_1,\ldots}
+%.\] 
+%\begin{multline*}
+%	\left[ \normord{\psi_i\psi_j^*},\,\normord{\psi_k \psi^*_l} \right]=
+%\begin{cases}
+%	\left[ \psi_i\psi_j^*,\,\psi_k \psi^*_l \right],&
+% j\ge 0,\, l\ge 0,\\
+%	\left[ \psi_i\psi_j^*,\,\psi_k \psi^*_l \right],&
+% j\ge 0,\, l< 0,\,k\ge 0,\\
+%	\left[ \psi_i\psi_j^*,\,\psi^*_l \psi_k \right],&
+% j\ge 0,\, l< 0,\,k< 0,\\
+%		\left[ \psi_i\psi_j^*,\,\psi_k \psi^*_l \right],&
+%j<0,\, l\ge 0,\,i\ge 0,\\
+%		\left[ \psi_j^*\psi_i,\,\psi_k \psi^*_l \right],&
+%j<0,\, l\ge 0,\,i< 0,\\
+%		\left[ \psi_i\psi_j^*,\,\psi_k \psi^*_l \right],&
+%j<0,\, l< 0,\,i\ge  0,\,k\ge 0,\\
+%		\left[ \psi_i\psi_j^*,\,\psi^*_l\psi_k  \right],&
+%j<0,\, l< 0,\,i\ge  0,\,k< 0,\\
+%		\left[ \psi_j^*\psi_i,\,\psi_k \psi^*_l \right],&
+%j<0,\, l< 0,\,i<  0,\,k\ge  0,\\
+%		\left[ \psi_j^*\psi_i,\,\psi^*_l\psi_k  \right],&
+%j<0,\, l< 0,\,i<  0,\,k<0,  \\
+%\end{cases}
+%\end{multline*}
+\begin{dfn*}
+\emph{Свёрткой} будем называть разность произведения операторов
+и их нормального упорядочения
+\begin{equation}
+	\wick{\c\psi_i \c\psi_j^*}=\psi_i \psi_j^*-
+	\normord{\psi_i \psi_j^*}
+	\label{}
+.\end{equation}
+\end{dfn*}
+\begin{stm*}
+Свёртка буквально равна вакуумному среднему двух операторов
+\begin{equation}
+	\wick{\c\psi_i \c\psi_j^*}=\braket{0 | \psi_i \psi_j^*| 0}
+.\end{equation}
+\end{stm*}
+\begin{proof}
+\begin{equation}
+	\wick{\c\psi_i \c\psi_j^*}=\wick{\c\psi_i \c\psi_j^*}\braket{0  | 0}=\wick{\braket{0 | \c\psi_i \c\psi_j^* | 0}}
+	=\braket{0 | \psi_i \psi_j^*-\normord{\psi_i \psi_j^*} | 0}=\braket{0 | \psi_i \psi_j^*| 0}
+.\end{equation} 
+
+\end{proof}
+Явное вычисление вакуумных средних даёт
+\begin{align}
+	\wick{\c\psi_i \c\psi_i^*}&=1 && \text{при }
+	i< 0,
+	\label{eq:contr1}\\
+	\wick{\c \psi_i \c \psi_j^*}&=0 && \text{во всех остальных случаях}
+\label{eq:contr2}
+.\end{align}
+\begin{stm*}
+Коммутатор нормально упорядоченных пар операторов равен
+\begin{equation}
+	\left[ \normord{\psi_i \psi_j^*},\,\normord{
+	\psi_k \psi_l^*} \right] =
+	\delta_{jk} \normord{\psi_i\psi_l^*}
+	-\delta_{il} \normord{\psi_k \psi_j^*}+
+	\alpha\left( E_{ij},\,E_{kl} \right) 
+	\label{}
+,\end{equation}
+где
+\begin{equation}
+\alpha\left( E_{ij},\,E_{kl} \right)= \delta_{jk} \wick{\c \psi_i \c\psi_l^*}-
+	\delta_{il} \wick{\c \psi_k \c \psi_j^*}
+	\label{eq:2282}
+,\end{equation}
+\end{stm*}
+\begin{proof}
+\begin{multline}
+	\left[ \normord{\psi_i \psi_j^*},\,\normord{
+	\psi_k \psi_l^*} \right] =
+	\wick{\left[ \psi_i\psi_j^*-\c\psi_i \c\psi_j^* ,\,\psi_k \psi_l^*- \c1 \psi_k \c1 \psi_l^* \right]}=\\=
+	\left[ \psi_i \psi_j^*,\,\psi_{k}\psi_l^* \right]
+	=\delta_{jk} \psi_i \psi_l^* -\delta_{il}\psi_k \psi_j^*=\\=\delta_{jk} \wick{\left( \normord{\psi_i \psi_l^*}+
+	\c\psi_i \c\psi_l^*\right) }-\delta_{il} \wick{\left( \normord{\psi_k \psi_j^*}+
+	\c\psi_k \c\psi_j^*\right) }=\\=
+	\delta_{jk} \normord{\psi_i\psi_l^*}
+	-\delta_{il} \normord{\psi_k \psi_j^*}+
+	\delta_{jk} \wick{\c \psi_i \c\psi_l^*}-
+	\delta_{il} \wick{\c \psi_k \c \psi_j^*}=\\=
+	\delta_{jk} \normord{\psi_i\psi_l^*}
+	-\delta_{il} \normord{\psi_k \psi_j^*}+
+	\alpha\left( E_{ij},\,E_{kl} \right) 
+	\label{}
+.\end{multline}
+
+\end{proof}
+Непосредственным вычислением из \eqref{eq:2282}, \eqref{eq:contr1} и \eqref{eq:contr2} получаем, что 
+\begin{equation}
+	\begin{aligned}
+		&\alpha\left( E_{ij},\,E_{ji} \right) =-\alpha
+	\left( E_{ji},\,E_{ij} \right) =1\quad
+	\text{при } i<  0,\ j\ge 0,\\
+	&\alpha\left( E_{ij},\,E_{kl} \right) =0
+		\quad \text{во всех остальных случаях.}
+	\end{aligned}
+	\label{alph}
+\end{equation}
+\begin{stm*}
+$\alpha\left( E_{ij},\,E_{kl} \right) $ действительно является два-коциклом.
+\end{stm*}
+
+\begin{proof}
+Линейность по каждому
+аргументу и антисимметричность $\alpha\left( E_{ij},\,E_{kl} \right) $ очевидны.
+Далее проверим условие, следующее из тождества Якоби
+\begin{multline}
+	\alpha\left( E_{ij}E_{kl}-E_{kl}E_{ij},\,E_{mn}  \right) +
+	\alpha\left( E_{kl}E_{mn}-E_{mn}E_{kl},\,E_{ij} \right) +\\+
+	\alpha\left( E_{mn}E_{ij}-E_{ij}E_{mn},\,E_{kl} \right) =0
+,\end{multline} 
+\begin{multline}
+	\alpha\left( \delta_{jk}E_{il}-\delta_{il}E_{kj},\,E_{mn}  \right) +	\alpha\left( \delta_{lm}E_{kn}-\delta_{kn}E_{ml},\,E_{ij} \right) +\\+
+	\alpha\left( \delta_{ni}E_{mj}-\delta_{mj}E_{in},\,E_{kl} \right) =0
+,\end{multline}
+\begin{multline}
+	\delta_{jk}\alpha \left(E_{il},\,E_{mn}\right)-\delta_{il}\alpha\left(E_{kj},\,E_{mn}\right)  +\\+
+	\delta_{lm}\alpha \left(E_{kn},\,E_{ij}\right)-\delta_{kn}\alpha\left(E_{ml},\,E_{ij}\right) +\\+
+	\delta_{ni}\alpha \left(E_{mj},\,E_{kl}\right)-\delta_{mj}\alpha\left(E_{in},\,E_{kl}\right) =0
+,\end{multline}
+\begin{multline}
+	\delta_{jk}\wick{\left( \delta_{lm} \c \psi_i \c\psi_n^*-
+	\delta_{in} \c1 \psi_m \c1 \psi_l^* \right)} -\delta_{il}\wick{\left( \delta_{jm} \c \psi_k \c\psi_n^*-
+	\delta_{kn} \c1 \psi_m \c1 \psi_j^* \right)} +\\+	\delta_{lm}\wick{\left( \delta_{in} \c \psi_k \c\psi_j^*-
+	\delta_{kj} \c1 \psi_i \c1 \psi_n^* \right)}-\delta_{kn}\wick{\left( \delta_{il} \c \psi_m \c\psi_j^*-
+	\delta_{mj} \c1 \psi_i \c1 \psi_l^* \right)}+\\+	\delta_{ni}\wick{\left( \delta_{jk} \c \psi_m \c\psi_l^*-
+	\delta_{lm} \c1 \psi_k \c1 \psi_j^* \right)}-\delta_{mj}\wick{\left( \delta_{kn} \c \psi_i \c\psi_l^*-
+	\delta_{il} \c1 \psi_k \c1 \psi_n^* \right)}=0
+,\end{multline}
+\begin{equation}
+0=0
+.\end{equation} 
+\end{proof}
+
+
+%\begin{multline*}
+%	\left[ \normord{\psi_i\psi_j^*},\,\normord{\psi_k \psi^*_l} \right]=\normord{\psi_i \psi_j^*}\normord{\psi_k \psi_l^*}-\normord{\psi_k \psi_l^*}\normord{\psi_i \psi_j^*}=\\=
+%\begin{cases}
+%	\psi_i \psi^*_j \psi_k \psi_l^*-
+%	\psi_k \psi_l^* \psi_i \psi_j^*,&
+% j\ge 0,\, l\ge 0,\\
+%	\psi_i \psi^*_j \psi_k \psi_l^*-
+%	\psi_k \psi_l^* \psi_i \psi_j^*,&
+% j\ge 0,\, l< 0,\,k\ge 0,\\
+%	\psi_i \psi^*_j \psi_k \psi_l^*-
+%	\psi_k \psi_l^* \psi_i \psi_j^*,&
+% i,\,l\ge 0,\ j< 0,\\
+%\end{cases}
+%\end{multline*}
+\ytableausetup{boxsize=0.5em}
+
+\begin{dfn*}
+	\emph{Операторами сдвигов} будем называть
+\begin{equation}
+	H_n= \sum_{k \in \mathbb{Z}}^{} \normord{\psi_k \psi_{k+n}^{*}}
+.\end{equation}
+\emph{Производящая функция операторов сдвига} тогда даётся как
+\begin{equation}
+	 H(t)= \sum_{k=1}^{\infty} t_k H_k
+.\end{equation}
+\end{dfn*}
+\begin{dfn*}
+	\emph{Алгеброй Гейзенберга} (осцилляторной алгеброй) $\mathcal{A}$  будем называть комплексную алгебру Ли с базисом $\left\{ a_n,\,n\in \mathbb{Z};\, \hbar  \right\} $ и коммутационными соотношениями
+	\[
+	\left[ \hbar ,\,a_n \right] =0,\qquad \left[ a_m,\,a_n \right] = m \delta_{m,-n}\hbar 
+	.\] 
+\end{dfn*}
+
+\begin{stm*}
+	В фермионном пространстве Фока $\mathcal{F}$ подалгебра Гейзенберга будет реализовываться операторами $\hat{\rho}\left( \delta_{i,j-n} \right) =H_n$.
+\end{stm*}
+\begin{stm*}
+	В бозонном пространстве Фока $\mathcal{B}=\mathbb{C}\left[ t_1,\,t_2,\ldots \right] $ для $\mu  \in \mathbb{R}$, $n \in \mathbb{N}$ реализацией алгебры Гейзенберга будет
+	\[
+	a_n= \frac{\partial }{\partial t_n} ,\qquad a_{-n}=
+	n  t_{n},\qquad a_0=\mu
+	.\] 
+\end{stm*}
+
+Следовательно, можно предположить, что существует некоторое \emph{<<бозонное>>} представление $\hat{\rho}^B$ алгебры $\widehat{gl(\infty)}$ на  пространстве $\mathcal{B}$, для которого
+выполняется ($n \in \mathbb{N}$)
+\[
+\hat{\rho}^B\left( \delta_{i,j-n} \right) =\frac{\partial }{\partial t_n} ,\qquad \hat{\rho}^B\left( \delta_{i,j+n} \right) =nt_n,\qquad \hat{\rho}^B\left( \delta_{i,j} \right) =\mu
+.\] 
+В рамках этого предположения связь данного представления с $\hat{\rho}$ может быть явно задана
+с помощью следующего определения.
+\begin{dfn*}
+Изоморфизм между описанным
+фермионным пространством Фока $\mathcal{F}$ и бозонным пространством $\mathcal{B}$ полиномов
+от $t_1,\,t_3,\ldots$
+%$,\,z$ и $z^{-1}$
+\begin{equation}
+	\Phi: \mathcal{F}\to \mathcal{B}= \mathbb{C}\left[ t_1,\,t_2,\ldots
+	%;\,z,\,z^{-1} 
+\right] 
+\end{equation} 
+задаёт \emph{бозонно-фермионное соответствие}.
+\end{dfn*} Как следствие, можно построить бозонные представления
+$\rho^B=\Phi \rho \Phi^{-1}$ и $\hat{\rho}^B= \Phi \hat{\rho} \Phi^{-1}$ на данном пространстве.
+
+%\begin{stm*}
+%	Бозонное представление базисного элемента алгебры $\overline{gl}_\infty$ $\hat{\rho}^B\left( E_{ij} \right) $,
+%	действующего на состояние $\ket{m,\,\lambda}$ может
+%быть найдено из производящей функции
+%\[
+%\sum_{i,j}^{} u ^i v^{-j} \hat{\rho}^B\left( E_{ij} \right) =
+%\frac{1}{1-v /u}\left( \left( \frac{u}{v} \right) ^m \Gamma\left( u,\,v \right) -1 \right) 
+%,\]
+%где
+%\[
+%\Gamma\left( u,\,v \right) =\exp \left( \sum_{j\ge 1}^{} \left( u^j-v^j \right) x_j \right) \exp \left( -\sum_{j\ge 1}^{} \frac{u^{-j}-v^{-j}}{j}\frac{\partial }{\partial x_j}  \right) 
+%.\] 
+%\end{stm*}
+
+Для непосредственных вычислений полезным будет следующее свойство.
+\begin{stm*}
+\[
+	H(t)= \sum_{k=1}^{\infty} t_k \sum_{n \in \mathbb{Z}}^{} \psi_n \psi_{k+n}
+.\]
+\end{stm*}
+\begin{proof}
+Имеем
+\begin{multline}
+	H_n= \sum_{k \in \mathbb{Z}}^{} \normord{\psi_k \psi_{k+n}^*}= \sum_{k \in \mathbb{Z}}^{} \wick{\left( 
+	\psi_{k}\psi_{k+n}^*-\c \psi_k \c \psi_{k+n}^*\right) }=\\=\begin{cases}
+		\displaystyle \sum_{k \in \mathbb{Z}}^{} \psi_k \psi_{k+n}^*, & n\neq 0,\\
+		\displaystyle \sum_{i>0}^{} \psi_k \psi_k^*-
+		\sum_{i\le 0}^{} \psi^*_k \psi_k,&
+		n=0.
+	\end{cases}
+	\label{}
+\end{multline}
+Откуда получаем, что
+\[
+	H(t)= \sum_{k=1}^{\infty} t_k \sum_{n \in \mathbb{Z}}^{} \psi_n \psi_{k+n}
+.\] 
+\end{proof}
+\begin{stm*}
+	Для $n \in \mathbb{N}$
+\[
+H_n \ket{0}=0,\qquad H_0 \ket{0}\sim \ket{0}
+,\]
+а состояния вида
+\[
+H_{_-1}^{k_1}\cdots H_{-n}^{k_n} \ket{0}
+\]
+линейно независимы.
+\end{stm*}
+\begin{stm*}
+	Вакуумным вектором в пространстве $\mathcal{B}$ 
+	может быть выбрана единица.
+\end{stm*}
+\begin{proof}
+	Т.\:к. для $n \in \mathbb{N}$ $a_n(1)=0
+,$ состояния вида $a_{-1}^{k_1} \cdots a_{-n}^{k_n}\cdot 1$  линейно независимы, а $a_0(1)=\mu$.
+\end{proof}
+\begin{stm*}
+Бозонно-фермионное соответствие явно задаётся как
+\[
+\Phi\left( \ket{\lambda} \right) = s_\lambda(t)
+.\] 
+\end{stm*}
+\begin{proof}
+Линейность представления позволяет записать
+\begin{equation}
+	H_n =\sum_{k \in \mathbb{Z}}^{} \normord{\psi_k \psi_{k+n}^*}=
+	\sum_{k \in \mathbb{Z}}^{} \hat{\rho}\left( E_{k,k+n} \right) =
+	\hat{\rho} \left( \sum_{k \in \mathbb{Z}}^{}\delta_{ik}
+	\delta_{j,k+n}\right) =
+	\hat{\rho}\left( \delta_{i,j-n} \right) 
+	\label{eq:2284}
+.\end{equation} 
+Откуда
+\begin{equation}
+H(t)= \sum_{k=1}^{\infty} t_k H_k= \sum_{k=1}^{\infty} 
+t_k \hat{\rho}\left( \delta_{i,j-k} \right) =
+\hat{\rho} \left(\sum_{k=1}^{\infty} t_k  \delta_{i,j-k} \right)
+\label{eq:2285}
+.\end{equation} 
+Необходимо, чтобы отображение бозонно-фермионного соответствия
+удовлетворяло тождеству
+\[
+\Phi\left[ \exp \left( \sum_{k\ge 1}^{} \eta_k H_k \right) \ket{\lambda} \right] =
+\hat{R}^B \left[ \exp \left( \sum_{k\ge 1}^{} \eta_k \delta_{i,j-k} \right) \right] \Phi\left( \ket{\lambda} \right) 
+,\]
+где подразумевается, что $\Phi\left( \ket{\lambda} \right) =
+ \Phi\left( \ket{\lambda} \right) (t)$.
+Имеем
+\[
+\hat{R}^B \left[ \exp \left( \sum_{k\ge 1}^{} \eta_k \delta_{i,j-k} \right) \right] =
+ \exp \left[ \sum_{k\ge 1}^{} \eta_k \hat{\rho}^B \left(\delta_{i,j-k}\right)  \right] =
+\exp \left( \sum_{k\ge 1}^{} \eta_k \frac{\partial }{\partial t_k}  \right) 
+.\] 
+Правая часть тождества тогда
+\[
+\hat{R}^B \left[ \exp \left( \sum_{k\ge 1}^{} \eta_k \delta_{i,j-k} \right) \right] \Phi\left( \ket{\lambda} \right) =\Phi\left( \ket{\lambda} \right) \left( t+\eta \right) 
+.\] 
+В левой же части 
+\begin{multline}
+	\exp \left( \sum_{k\ge 1}^{} \eta_k H_k \right) =\exp \left[ \hat{\rho} \left( \sum_{k=1}^{\infty} \eta_k \delta_{i,j-k} \right)  \right] =\hat{R} \left[\exp \left( \sum_{k=1}^{\infty} \eta_k \delta_{i,j-k}\right) \right] =\\=
+	\hat{R}\left[ \exp \left( \sum_{k=1}^{\infty} \eta_k \delta_{i,j-1}^k \right)  \right] =\hat{R}\left[ 
+	\sum_{k=1}^{\infty} s_k(\eta)\delta_{i,j-k}\right]\equiv
+	\hat{R} \left( A \right) 
+.\end{multline} 
+Элемент введённой матрицы $A$, находящийся на пересечении
+$i$-й строки и $j$-го столбца тем самым принимает вид
+\[
+A_{ij}=s_{j-i}(\eta)
+.\] 
+Имеем
+\begin{multline}
+	\Phi\left[\exp \left( \sum_{k\ge 1}^{} \eta_k H_k \right) \ket{\lambda}\right] = \Phi\left[\sum_{\mu \in \mathrm{Par}}^{} \det \left(A_{\mu_1+m,\mu_2+m-1,\ldots}^{\lambda_1+m,\lambda_2+m-1,\ldots}\right) \ket{\mu}\right]=\\=\sum_{\mu \in \mathrm{Par}}^{} \det \left(A_{\mu_1+m,\mu_2+m-1,\ldots}^{\lambda_1+m,\lambda_2+m-1,\ldots}\right) \Phi\left(\ket{\mu}\right)		\label{}
+.\end{multline}
+Теперь можем рассмотреть случай $t=0$, тогда, используя то, что
+$\Phi\left( \ket{\mu} \right)|_{t=0} =0$ для всех состояний, отличных от вакуумного, получаем
+\[
+\det\left( A_{m,m-1,\ldots}^{\lambda_1+m,\lambda_2+m-1,\ldots}
+	\right) =\Phi\left( \ket{\lambda} \right) (\eta).\] 
+\[
+\det  
+s_{\lambda_i-i+j}(\eta)
+ =\Phi\left( \ket{\lambda} \right) (\eta) 
+.\] 
+\[
+	s_{\lambda}(\eta)
+ =\Phi\left( \ket{\lambda} \right) (\eta) 
+.\]
+\[
+ \Phi\left( \ket{\lambda} \right) =
+	s_{\lambda}(t)
+.\]
+Также в ходе доказательства было получено соотношение
+\[
+\Phi\left( \ket{\lambda} \right) =\braket{0 | e^{H(t)} | \lambda}
+.\] 
+\end{proof}
 \section{Иерархия КП}
 \emph{Иерархия КП} --- бесконечный набор нелинейных дифференциальных
 уравнений, первое из которых даётся как
@@ -30,7 +917,7 @@
 \label{eq:FKP}
 .\end{equation} 
 Далее будут обсуждаться экспоненциированные решения
-данной иерархии ($\tau$\emph{-функции}) $\tau\left( \mathbf{t} \right) =\exp \left( F(\mathbf{t}) \right) $.
+данной иерархии ($\tau$\emph{-функции}) $\tau\left( t \right) =\exp \left( F(t) \right) $.
 В разделах \ref{subsec:lp} и \ref{subsec:bh}
 опишем методы получения уравнений данной
 иерархии. \subsection{Пары Лакса}
@@ -127,7 +1014,7 @@ f\left( x_1+y_1,\,x_2+y_2,\ldots \right)
 g\left( x_1-y_1,\,x_2-y_2,\ldots \right) 
 .\end{equation} 
 \end{dfn*}
-\begin{thm*}[билинейное тождество]
+\begin{stm*}[билинейное тождество]
 Для любых $x$ и $x'$ положим
 \begin{equation}
 	\xi=\xi\left( \mathbf{t},\,k \right) ,\qquad
@@ -140,7 +1027,7 @@ g\left( x_1-y_1,\,x_2-y_2,\ldots \right)
 t_2- \frac{1}{2k^2},\ldots\right) \tau\left( 
 t_1'+\frac{1}{k},\,t_2'+ \frac{1}{2k^2},\ldots\right) 
 .\end{equation} 
-\end{thm*}
+\end{stm*}
 Уравнения КП получаются из билинейного
 тождества после замены $t_j=x_j+y_j$, $t_j'=x_j-y_j$:
  \begin{multline}
@@ -160,15 +1047,15 @@ $y_j$ и вычисляя коэффициент при $k^{-1}$, получае
 .\end{equation} 
 Первое из них --- буквально \eqref{eq:FKP} с учётом
 определения $F$.
-\subsection{Полиномы Шура, соотношения Плюккера, гипергеометрические $\tau$-функции}
+\subsection{Соотношения Плюккера, фермионное представление}
 \label{subsec:schur}
 Решения данной иерархии
 могут быть разложены по базису полиномов Шура
 \begin{equation}
-	\tau\left( \mathbf{t} \right) =\sum_{\lambda}^{} C_\lambda s_\lambda\left( \mathbf{t} \right) 
+	\tau\left( t \right) =\sum_{\lambda}^{} C_\lambda s_\lambda\left( t \right) 
 \label{eq:2}
 .\end{equation} 
-Можно показать, что $\tau(\mathbf{t})$ --- решение
+Можно показать, что $\tau(t)$ --- решение
 иерархии КП тогда и только тогда, когда коэффициенты
 $C_\lambda$ удовлетворяют соотношениям Плюкера, первое
 из которых
@@ -177,13 +1064,74 @@ C_{\left[ 2,\,2 \right] }C_{\left[ \emptyset \right] }
 -C_{\left[ 2,\,1 \right] }C_{\left[ 1 \right] }
 +C_{\left[ 2 \right] }C_{\left[ 1,\,1 \right] }=0
 .\end{equation} 
-Имеется важное подмножество решений иерархии КП --- 
-\emph{гипергеометрические} $\tau$\emph{-функции}.
-Они определяются как
+Пусть $\hat{R}(G)$ --- оператор на пространстве Фока, являющийся представлением элемента  $G$ группы $\widehat{GL(\infty)}$. 
+Рассмотрим выражение
+\begin{multline}
+	\braket{0 | \mathrm{e}^{H(t)}\hat{R}(G) | 0}=
+\braket{0 | \mathrm{e} ^{H(t)} \sum_{\lambda \in \mathrm{Par}}^{} \det \left(G_{\lambda_1,\lambda_2-1,\ldots}^{0,-1,\ldots}\right) |\mu }=\\=
+\sum_{\lambda \in \mathrm{Par}}^{} \det \left(G_{\lambda_1,\lambda_2-1,\ldots}^{0,-1,\ldots}\right)\braket{0 | \mathrm{e} ^{H(t)}  |\lambda }=\sum_{\lambda \in \mathrm{Par}}^{} \det \left(G_{\lambda_1,\lambda_2-1,\ldots}^{0,-1,\ldots}\right)s_\lambda(t)
+.\end{multline} 
+Сравнивая с $\tau$-функцией в бозонном представлении \eqref{eq:2}
+можно получить, что
 \begin{equation}
-	\tau\left( \mathbf{t} \right) 
+	\tau(t)=\braket{0 | \mathrm{e}^{H(t)}\hat{R}(G) | 0}\quad \text{при} \quad C_\lambda= \det
+	\left( G^{0,-1,\ldots}_{\lambda_1,\lambda_2-1,\ldots} \right) 
+.\end{equation} 
+Такой способ записи $\tau$-функций будем называть \emph{фермионным представлением}.
+\subsection{Гипергеометрические $\tau$-функции}
+Имеется очень важный подкласс решений иерархии КП, который
+ включает множество физический примеров --- гипергеометрические $\tau$-функции. Они ограничены особым видом элемента $G$ группы
+ $\widehat{GL(\infty)}$, а именно в фермионном представлении задаются как
+\[
+\tau(t)= \braket{0 | e^{H(t)}e^{A(\beta)} | 0}
+.\] 
+\begin{equation}
+A(\beta)=\sum_{k=1}^{\infty} \beta_k A_k,\qquad A_k= \oint \frac{dz}{2\pi \mathrm{i} } \normord{
+\left[ \left( \frac{1}{z} r(D) \right) ^k \psi(z) \right] \cdot \psi^*(z)}
+,\end{equation} 
+где $D=z \frac{\partial }{\partial z}$.
+Данный оператор действует на степени $z$ следующим образом
+\begin{equation}
+	D^n z^k=D^{n-1}z \frac{\partial }{\partial z} z^k=kD^{n-1}z^k=k^n z^k
+.\end{equation} 
+ 
+Функция от дифференциального оператора $D$ понимается в смысле
+ряда Тейлора этой функции в окрестности нуля
+\begin{multline}
+	 \frac{1}{z}r(D) \psi(z)  =\frac{1}{z} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}D^n \sum_{k \in \mathbb{Z}}^{} \psi_k z^k  =
+	 \sum_{n=0}^{\infty} \sum_{k \in \mathbb{Z}}^{} 
+	 \frac{r^{(n)}(0)}{n!}\psi_k k^n z^{k-1}=\\=
+	 \sum_{k \in \mathbb{Z}}^{} r(k)\psi_k z^{k-1}
+.\end{multline} 
+При $k=2$ получаем
+\begin{multline}
+	\frac{1}{z}r(D)\frac{1}{z}r(D)=
+	\frac{1}{z} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}
+	D^n \frac{1}{z}\sum_{k=0}^{\infty} \frac{r^{(k)}(0)}{k!} D^k=\\=\frac{1}{z} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}
+	\sum_{i=0}^{n} \binom{n}{i}\left(D^{n-i} \frac{1}{z}\right)\sum_{k=0}^{\infty} \frac{r^{(k)}(0)}{k!} D^{k+i}=\\=\frac{1}{z^2} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}
+	\sum_{i=0}^{n} \binom{n}{i}(-1)^{n-i} \sum_{k=0}^{\infty} \frac{r^{(k)}(0)}{k!} D^{k+i}=
+\\=\frac{1}{z^2} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}
+ (D-1)^n \sum_{k=0}^{\infty} \frac{r^{(k)}(0)}{k!} D^{k}=
+ \frac{1}{z^2}r(D-1)r(D)
+.\end{multline}
+Для любой степени $k$ нетрудно получить по индукции общий результат и тогда
+\begin{multline}
+	\left[ \left( \frac{1}{z}r(D)  \right) ^k
+	\psi(z)\right] \cdot \psi^*(z)=\\=
+	\sum_{n \in \mathbb{Z}}^{} r(n)r(n-1)\cdots
+	r\left( n-k+1 \right) \psi_n z^{n-k}\sum_{j \in \mathbb{Z}}^{} \psi_j^* z^{-j-1}
+.\end{multline}
+После чего можем получить альтернативный, более простой для непосредственных вычислений, способ записи $A_k$
+\begin{equation}
+	A_k=\sum_{n\in \mathbb{Z}}^{} \normord{\psi_n \psi_{n-k}}	\prod_{i=0}^{k-1} 
+	r(n-i)\label{}
+.\end{equation}
+В бозонном представлении оказывается, что
+гипергеометрические $\tau$-функции КП имеют вид
+\begin{equation}
+	\tau\left( t \right) 
 	=\sum_{\lambda}^{} r_\lambda
-	s_\lambda (\beta) s_\lambda \left( \mathbf{t} \right) 
+	s_\lambda (\beta) s_\lambda \left( t \right) 
 ,\end{equation} 
 где $s_\lambda(\beta)$ --- полином Шура от переменных
 $\beta_k$,
@@ -194,10 +1142,19 @@ $\beta_k$,
 	c(w)=j-i,\qquad 1\le  i\le l(\lambda),\qquad
 	1\le j\le \lambda_i
 .\end{equation} 
+Визуализация функции $c(w)$ на диаграмме Юнга:
+\ytableausetup{boxsize=1.5em}
+\begin{center}
+\begin{ytableau}
+	0&1&2&3\\
+	-1&0&1\\
+	-2&-1
+\end{ytableau}
+\end{center}
 \subsection{$\tau$-функция чисел Гурвица}
 Производящая функция простых чисел Гурвица
 \begin{equation}
-	\tau_H(\mathbf{t})=
+	\tau_H(t)=
 	\sum_{m=0}^{\infty} \sum_{\mu}^{} h_{m;\mu}^{\circ}
 	t_{\mu_1} t_{\mu_2} \cdots t_{\mu_{l(\mu)}}
 	\frac{u^m}{m!}
@@ -213,10 +1170,10 @@ $S_{|\mu|}$ --- симметрическая группа перестаново
 элементов, $C_2\left( S_{|\mu|} \right) $ --- множество
 всех транспозиций в $S_{|\mu|}$ и $C_\mu \left( S_{|\mu|} \right) $ --- множество всех перестановок циклического типа $\mu$.
 
-Можно показать (TODO), что
+Можно показать, что
 \begin{equation}
-	\tau_H(\mathbf{t})=\sum_{\lambda}^{} \mathrm{e}^{u c(\lambda)}s_\lambda \left( \beta_k=\delta_{k,\,1} \right) 
-	s_\lambda(\mathbf{t})
+	\tau_H(t)=\sum_{\lambda}^{} \mathrm{e}^{u c(\lambda)}s_\lambda \left( \beta_k=\delta_{k,\,1} \right) 
+	s_\lambda(t)
 \label{eq:4}
 ,\end{equation} 
 где $c(\lambda)= \sum_{w \in \lambda}^{} c(w)$. 
@@ -226,522 +1183,33 @@ $\tau$-функция с параметрами
 	r(n)=\mathrm{e} ^{un},\qquad
 	\beta_1=1,\qquad \beta_k=0,\ k\ge 2
 .\end{equation} 
-\subsection{Фермионный формализм и бозонно-фермионное соответствие}
-Будем рассматривать бесконечномерную алгебру Клиффорда
-с генераторами $\left\{ \psi_n,\,\psi^*_m \mid n,\,m \in \mathbb{Z} \right\} $, обладающими коммутационными соотношениями
-\begin{equation}
-\left\{ \psi_n,\,\psi_m \right\} =0,\qquad
-\left\{ \psi_n^*,\,\psi^*_{m} \right\}=0,\qquad
-\left\{ \psi_n,\,\psi_{m}^* \right\}=\delta_{n,\,m}
-.\end{equation} 
-
-Пространство Фока для фермионов определим дествием
-алгебры Клиффорда на вакуумный вектор $\ket{0}$ <<моря Дирака>>. Действие генераторов алгебры на вакуумный вектор
-даётся как
-\begin{equation}
-\psi_k\ket{0}=0,\quad k< 0;\qquad\psi^* \ket{0}=0,\quad
-k\ge  0
-.\end{equation} 
-То есть операторы $\psi_k$ при $k>0$ и $\psi^*_k$ при
-$k\le 0$ --- это операторы рождения, а $\psi_k$ при $k\le 0$ 
-и $\psi_k^*$ при  $k> 0$ --- операторы уничтожения.
-
-Далее определим $m$-е вакуумы
-\begin{equation}
-\psi_k\ket{m}=0,\quad k< m;\qquad\psi^* \ket{m}=0,\quad
-k\ge  m
-,\end{equation}
-и состояния
-\begin{equation}
-	\ket{m,\,\lambda}= \psi_{\lambda_1+m-1}\psi_{\lambda_2+m-2}\cdots\psi_{\lambda_{l}+m-l}\ket{m-l}
-.\end{equation} 
-
-Диаграммы Юнга можно однозначно задать как набором длин строк $\lambda=\left\{ \lambda_1,\ldots,\, \lambda_{l} \right\} $, так и с помощью набора переменных
-$\alpha_i=\lambda_i-i$ и $\beta_i=\lambda'_i-i$, (см. рис.~\ref{fig:1}), где $\lambda'_i$ --- длина $i$-го столбца
-диаграммы Юнга $\lambda$.
-Второй способ называют записью Фробениуса и символически
-обозначают диаграмму Юнга как $\left( \alpha| \beta \right) =\left( \alpha_1,\ldots,\,\alpha_d|\beta_1,\ldots,\,\beta_d \right) $, где $d=d(\lambda)$ --- количество клеток на главной диагонали диаграммы $\lambda$.
-
-В записи Фробениуса имеем
-\begin{multline}
-	\ket{m,\,\lambda}= \psi_{\lambda_1+m-1}\psi_{\lambda_2+m-2}\cdots\psi_{\lambda_{l}+m-l}\ket{m-l}=\\=
-\psi_{m+\alpha_1} \cdots \psi_{m+\alpha_d}
-\psi_{\lambda_{d+1}+m-(d+1)}\cdots \psi_{\lambda_l+m-l}
-\psi^*_{m-l}\cdots \psi^*_{m-1}\ket{m}
-.\end{multline}
-\ytableausetup
- {mathmode, boxsize=2em}
-\begin{figure}[htpb]
-	\centering
-\begin{ytableau}
-	 *(lightgray) & 1 & 2 & \none[\dots]&
-\scriptstyle \alpha_1-1 & \alpha_1 \\
-1& *(lightgray) & 1 & \none[\dots] &\alpha_2\\
-2& 1 &\none[\ddots] \\
-\none[\vdots] & \none[\vdots]\\
-\scriptstyle \beta_1-1 & \beta_2 \\
-\beta_1
-\end{ytableau}
-	\caption{$\alpha_i$ и  $\beta_i$ в записи Фробениуса}
-	\label{fig:1}
-\end{figure}
-\begin{figure}[htpb]
-	\centering
-\begin{ytableau}
-	*(lightgray) & & & &\\
-	   & *(lightgray)& &  \\
-	& & *(lightgray)&  \\
-	\scriptstyle 3\rightarrow & \none[\scriptstyle \overset{\uparrow}{2}]& \none[\scriptstyle \overset{\uparrow}{1}]\\
-	\none[\scriptstyle \overset{\uparrow}{4}]\\
-\end{ytableau}
-	\caption{Нумерация внешних рёбер диаграммы $\lambda=\left\{ 5,\,4,\,4,\,1 \right\} $}
-	\label{fig:2}
-\end{figure}
-
-Пронумеруем внешние рёбра диаграммы $\lambda$  начиная от нижнего ребра первого столбца и двигаясь против часовой стрелки числами $l,\,l-1,\ldots,\,2,\,1$ (см. пример на рис.~\ref{fig:2}).
-Тогда вертикальные рёбра будут занумерованы
-числами $i-\lambda_i$, а горизонтальные --- числами
-$\beta_i+1$. Отсюда следует, что
-\begin{equation}\left\{ i-\lambda_i \right\}_{i=d+1}^{l}=
- \left\{ 1,\,2,\ldots,\,l\right\} \setminus
- \left\{ \beta_i +1 \right\} _{i=1}^{d},\end{equation}
-а также
-\begin{equation}
-\left\{\lambda_i+m-i \right\}_{i=d+1}^{l}=
- \left\{ m-l,\,m-l+1,\ldots,\,m-1 \right\} \setminus
- \left\{ m-\beta_i -1 \right\} _{i=1}^{d}
-.\end{equation} 
-Теперь можем переписать
-\begin{equation}
-\psi^*_{m-l}\cdots \psi^*_{m-1}=
-(-1)^b \psi^*_{\lambda_l+m-l}\cdots \psi^*_{\lambda_{d+1}+m-(d+1)}
-\psi_{m-\beta_d-1}^*\cdots \psi_{m-\beta_1-1}^*
-,\end{equation} 
-где
-\begin{equation}
-	b= \sum_{i=1}^{d} \beta_i
-,\end{equation} 
-и, как итог,
-\begin{equation}
-	\ket{m,\,\lambda}=(-1)^{b}
-	\psi_{m+\alpha_{1}}\cdots
-	\psi_{m+\alpha_d}\psi^*_{m-\beta_d -1} \cdots \psi_{m-\beta_{1}-1}^* \ket{m}
-,\end{equation} 
-
-
-Введём также производящие функции для фермионов
-\begin{equation}
-\psi(z)=\sum _{k\in \mathbb{Z}}^{} \psi_k z^k,\qquad
-\psi^* (z)=\sum_{k \in \mathbb{Z}}^{} \psi^*_k z^{-k-1}
-.\end{equation} 
-
-Будем обозначать нормальное упорядочение фермионных
-операторов как $\normord{\left( \ldots \right) }$.
-Результатом нормального упорядочения будет перемещение
-всех операторов уничтожения направо, а операторов
-рождения --- налево, где каждая транспозиция двух
-фермионов будет производиться в согласии с антикоммутационным
-соотношением и, следовательно, давать множитель $(-1)$. 
-
-Алгебра Ли $gl_\infty$ определяется как пространство
-\begin{equation}
-	gl_\infty= \left\{ \left( a_{ij} \right) _{i,j \in \mathbb{Z}}\mid\text{все }a_{ij}\text{, кроме конечного
-	числа, равны 0} \right\} 
-.\end{equation} 
-Базисом данной алгебры можно выбрать матрицы  $E_{ij}$,
-у которых единственный, отличный от нуля, элемент равен 1 и находится
-на пересечении $i$-й строки и $j$-го столбца.
- \begin{equation}
-	(E_{ij})_{kl}=\delta_{ik}\delta_{jl}
-.\end{equation} 
-\begin{multline}
-\left[ E_{ij},\,E_{kl} \right] =
-E_{ij}E_{kl}-E_{kl}E_{ij}=
-\delta_{in}\delta_{jm}\delta_{km}\delta_{lp}-
-\delta_{kn}\delta_{lm}\delta_{im}\delta_{jp}=\\=
-\delta_{jk}E_{il}-\delta_{il}E_{kj}
-.\end{multline} 
-
-
-Данную алгебру можно рассматривать как алгебру Ли группы
-$\mathrm{GL}_\infty$, определённой следующим образом
-\begin{equation}
-	\mathrm{GL}_\infty= \left\{ 
-	A=\left( a_{ij} \right) _{i,j \in \mathbb{Z}} \mid \substack{A\text{ обратима и все числа } a_{ij} -\delta_{ij},\\ \text{кроме конечного числа, равны 0}}\right\} 
-.\end{equation} 
-Представление $R$ группы $\mathrm{GL}_\infty$ и представление
-$\rho$ алгебры Ли $gl_\infty$ в пространстве $\mathcal{F}$ 
-задаётся формулами
-\begin{align}
-	R\left( A \right) \left( \psi_{i_1} \wedge 
-	\psi_{i_2} \wedge \ldots\right) &=
-	A \psi_{i_1} \wedge A \psi_{i_2}\wedge 
-	\ldots,
-	\label{eq:GLr}\\
-	\rho(a)\left( \psi_{i_1} \wedge \psi_{i_2}\wedge 
-\ldots\right) &=a \psi_{i_1} \wedge \psi_{i_2}
-	\wedge \ldots+ \psi_{i_1} \wedge 
-	a \psi_{i_2}\wedge \ldots+\ldots
-.\end{align} 
-Последние две формулы связаны соотношением
-\begin{equation}
-	\mathrm{e} ^{\rho(a)}=R\left( \mathrm{e} ^{a} \right) ,\qquad a \in gl_{\infty}
-.\end{equation} 
-Представлением данной алгебры
-на введённом пространстве Фока будет
-\begin{equation}
-	\rho(E_{ij})=\psi_i \psi_j^{*}
-\end{equation} 
-т.\:к.
-\begin{multline}
-	\left[ \psi_i \psi^*_j,\,\psi_k \psi^*_l \right] 
-	=\psi_i \psi_j^* \psi_k \psi^*_l -\psi_k \psi^*_l
-	\psi_i \psi^*_j=\\=\psi_i \left( \delta_{jk} -\psi_k \psi_j^* \right) \psi^*_l-\psi_k \psi_l^* \psi_i \psi^*_j=\\=\delta_{jk}\psi_i \psi^*_l-\psi_k \psi_i  \psi_l^*
-	\psi_j^*-\psi_k \psi_l^* \psi_i \psi_j^*=\\=
-	\delta_{jk} \psi_i \psi_{l}^*-
-	\delta_{il}\psi_k \psi_j^*
-.\end{multline}
-Пользуясь формулой \eqref{eq:GLr} и стандартным исчислнием внешних степней найдём оператор представления $R$ элемента $A \in \mathrm{GL}_\infty$ в пространстве $\mathcal{F}$
-\begin{multline}
-	R(A)\left( \psi_{i_m}\wedge \psi_{i_{m-1}}\wedge \ldots	 \right) =\sum_{j_m,j_{m-1},\ldots \in \mathbb{Z}}^{}
-	A_{j_m,i_{m}}\psi_{j_m}\wedge A_{j_{m-1},i_{m-1}} \psi_{j_{m-1}}\wedge  \ldots	=\\= \sum_{j_m >j_{m-1}> \ldots}^{} \left( 
-		\det A_{j_m,j_{m-1},\ldots}^{i_{m},\,i_{m-1},\ldots}\right) \psi_{j_m} \wedge \psi_{j_{m-1}}\wedge \ldots
-	\label{}
-.\end{multline}
-где $A^{i_m,i_{m-1},\ldots}_{j_m,j_{m-1},\ldots}$ означает
-матрицу, состоящую из элементов, стоящих
-на пересечении строк $j_m,\,j_{m-1},\ldots$ и столбцов
-$i_m,\,i_{m-1},\ldots$ матрицы $A$.
-
-В альтернативных обозначениях
-\begin{equation}
-	R(A) \ket{m,\,\lambda} =\sum_{\mu \in \mathrm{Par}}^{} \left( 
-	\det A_{\mu_1+m,\mu_2+m-1,\ldots}^{\lambda_1+m,\lambda_2+m-1,\ldots}\right) \ket{m,\,\mu}.\end{equation} 
-
-Определим также бóльшую алгебру Ли $\bar{\mathfrak{a}}_\infty$.
-Элементами данной алгебры будут бесконечномерные матрицы,
-у которых конечное количество диагоналей отличны от нулевых:
-\begin{equation}
-	\bar{\mathfrak{a}}_\infty=\left\{ 
-	\left( a_{ij} \right) \mid i,\,j \in \mathbb{Z},\ a_{ij}=0 \text{ при } \left| i-j \right| \gg 0\right\} 
-.\end{equation} 
-$\bar{\mathfrak{a}}_\infty$ является алгеброй Ли
-с матричным коммутатором в качестве операции, содержащей
-алгебру Ли $gl_{\infty}$ как подалгебру.
-
-
-
-
-Далее рассмотрим центральное расширение алгебры Ли
-$\bar{\mathfrak{a}}_\infty$, а именно алгебру Ли $\mathfrak{a}_\infty$, определённую как
-\begin{equation}
-	\mathfrak{a}_\infty= \bar{\mathfrak{a}}_\infty
-	\oplus  \mathbb{C}c
-\end{equation} 
-с центром $\mathbb{C}c$ и скобкой
-\begin{equation}
-	\left[ a,\,b \right] =ab-ba+ \alpha\left( a,\,b \right) c
-.\end{equation} 
-Функцию $\alpha(a,\,b)$ называют \emph{два-коциклом}, для
-корректности определения скобки Ли на неё накладываются
-дополнительные ограничения:
-\begin{itemize}
-	\item Антисимметричность скобки влечёт антисимметричность $\alpha(a,\,b)$.
-	\item Линейность скобки по обоим аргументам влечёт аналогичную линейность $\alpha(a,\,b)$.
-	\item Из тождества Якоби скобки
-\begin{equation}
-\left[ \left[ x,\,y \right],\,z \right] +\left[ \left[ y,\,z \right] ,\,x \right] +\left[ \left[ z,\,x \right] ,\,y \right] =0
-\end{equation} 
-следует, что
-\begin{multline}
-	\left[ xy -yx+\alpha\left( x,\,y \right) c,\,z \right] +\left[ yz-zy+\alpha\left( y,\,z \right) c,\,x \right] +\\+\left[ zx-xz+\alpha\left( z,\,x \right) c,\,y \right] =0
-\end{multline} 
-и, как итог,
-\begin{equation}
-	\alpha\left( xy-yx,\,z \right) +\alpha\left( yz-zy,\,x \right) +\alpha\left( zx-xz,\,y \right) =0
-.\end{equation} 
-\end{itemize}
-Два-коцикл $\alpha(a,\,b)$  определим на матрицах $E_{ij}$ как
-\begin{equation}
-	\begin{aligned}
-		&\alpha\left( E_{ij},\,E_{ji} \right) =-\alpha
-	\left( E_{ji},\,E_{ij} \right) =1\quad
-	\text{при } i<  0,\ j\ge 0,\\
-	&\alpha\left( E_{ij},\,E_{kl} \right) =0
-		\quad \text{во всех остальных случаях.}
-	\end{aligned}
-	\label{alph}
-\end{equation}
-Антисимметричность, линейность по каждому
-аргументу данного два-коцикла очевидны.
-%Коммутационными соотношениями данной алгебры будут
-%\begin{align}
-%	\left[ E_{ij},\,E_{kl} \right] &=0 &&
-%	\text{при } j \neq k ,\ l \neq i,\\
-%	\left[ E_{ij},\,E_{jl} \right] &=
-%	E_{il} && \text{при } l\neq i,\\
-%	\left[ E_{ij},\,E_{ki} \right] &=-E_{kj}
-%				       && \text{при } j
-%				       \neq k,
-%	\left[ E_{ij},\,E_{ji} \right] =
-%.\end{align}
-
-Покажем, что представлением данной
-алгебры на пространстве Фока будет
-\begin{equation}
-	\hat{\rho}(E_{ij})= \normord{\psi_i \psi_j^*}
-.\end{equation} 
-%\[
-%	\braket{0 | \left[ \normord{\psi_i\psi_j^*},\,\normord{\psi_k \psi^*_l} \right] |0}=
-%.\] 
-%\[
-%	\braket{\mathcal{S} | \normord{\psi_i \psi_j^*} |\ldots,\,n_{-1},\,n_0,\,n_1,\ldots}
-%.\] 
-%\begin{multline*}
-%	\left[ \normord{\psi_i\psi_j^*},\,\normord{\psi_k \psi^*_l} \right]=
-%\begin{cases}
-%	\left[ \psi_i\psi_j^*,\,\psi_k \psi^*_l \right],&
-% j\ge 0,\, l\ge 0,\\
-%	\left[ \psi_i\psi_j^*,\,\psi_k \psi^*_l \right],&
-% j\ge 0,\, l< 0,\,k\ge 0,\\
-%	\left[ \psi_i\psi_j^*,\,\psi^*_l \psi_k \right],&
-% j\ge 0,\, l< 0,\,k< 0,\\
-%		\left[ \psi_i\psi_j^*,\,\psi_k \psi^*_l \right],&
-%j<0,\, l\ge 0,\,i\ge 0,\\
-%		\left[ \psi_j^*\psi_i,\,\psi_k \psi^*_l \right],&
-%j<0,\, l\ge 0,\,i< 0,\\
-%		\left[ \psi_i\psi_j^*,\,\psi_k \psi^*_l \right],&
-%j<0,\, l< 0,\,i\ge  0,\,k\ge 0,\\
-%		\left[ \psi_i\psi_j^*,\,\psi^*_l\psi_k  \right],&
-%j<0,\, l< 0,\,i\ge  0,\,k< 0,\\
-%		\left[ \psi_j^*\psi_i,\,\psi_k \psi^*_l \right],&
-%j<0,\, l< 0,\,i<  0,\,k\ge  0,\\
-%		\left[ \psi_j^*\psi_i,\,\psi^*_l\psi_k  \right],&
-%j<0,\, l< 0,\,i<  0,\,k<0,  \\
-%\end{cases}
-%\end{multline*}
-По определению свёртки
-\begin{equation}
-	\normord{\psi_i \psi_j^*}=\psi_i \psi_j^*-
-	\wick{\c\psi_i \c\psi_j^*}
-	\label{}
-.\end{equation}
-Для неё выполняется
-\begin{equation}
-	\wick{\c\psi_i \c\psi_j^*}=\wick{\c\psi_i \c\psi_j^*}\braket{0  | 0}=\wick{\braket{0 | \c\psi_i \c\psi_j^* | 0}}
-	=\braket{0 | \psi_i \psi_j^*-\normord{\psi_i \psi_j^*} | 0}=\braket{0 | \psi_i \psi_j^*| 0}
-.\end{equation} 
-Откуда
-\begin{align}
-	\wick{\c\psi_i \c\psi_i^*}&=1 && \text{при }
-	i< 0,
-	\label{eq:contr1}\\
-	\wick{\c \psi_i \c \psi_j^*}&=0 && \text{во всех остальных случаях}
-\label{eq:contr2}
-.\end{align}
-Тогда
-\begin{multline}
-	\left[ \normord{\psi_i \psi_j^*},\,\normord{
-	\psi_k \psi_l^*} \right] =
-	\wick{\left[ \psi_i\psi_j^*-\c\psi_i \c\psi_j^* ,\,\psi_k \psi_l^*- \c1 \psi_k \c1 \psi_l^* \right]}=\\=
-	\left[ \psi_i \psi_j^*,\,\psi_{k}\psi_l^* \right]
-	=\delta_{jk} \psi_i \psi_l^* -\delta_{il}\psi_k \psi_j^*=\\=\delta_{jk} \wick{\left( \normord{\psi_i \psi_l^*}+
-	\c\psi_i \c\psi_l^*\right) }-\delta_{il} \wick{\left( \normord{\psi_k \psi_j^*}+
-	\c\psi_k \c\psi_j^*\right) }=\\=
-	\delta_{jk} \normord{\psi_i\psi_l^*}
-	-\delta_{il} \normord{\psi_k \psi_j^*}+
-	\delta_{jk} \wick{\c \psi_i \c\psi_l^*}-
-	\delta_{il} \wick{\c \psi_k \c \psi_j^*}=\\=
-	\delta_{jk} \normord{\psi_i\psi_l^*}
-	-\delta_{il} \normord{\psi_k \psi_j^*}+
-	\alpha\left( E_{ij},\,E_{kl} \right) 
-	\label{}
-.\end{multline}
-В последнем переходе мы воспользовались соотношением
-\begin{equation}
-\alpha\left( E_{ij},\,E_{kl} \right)= \delta_{jk} \wick{\c \psi_i \c\psi_l^*}-
-	\delta_{il} \wick{\c \psi_k \c \psi_j^*}
-,\end{equation} 
-верность которого следует из \eqref{alph}, \eqref{eq:contr1} и \eqref{eq:contr2}. Далее проверим, что скобка с определённым выше два-коциклом удовлетворяет тождеству Якоби
-\begin{multline}
-	\alpha\left( E_{ij}E_{kl}-E_{kl}E_{ij},\,E_{mn}  \right) +
-	\alpha\left( E_{kl}E_{mn}-E_{mn}E_{kl},\,E_{ij} \right) +\\+
-	\alpha\left( E_{mn}E_{ij}-E_{ij}E_{mn},\,E_{kl} \right) =0
-,\end{multline} 
-\begin{multline}
-	\alpha\left( \delta_{jk}E_{il}-\delta_{il}E_{kj},\,E_{mn}  \right) +	\alpha\left( \delta_{lm}E_{kn}-\delta_{kn}E_{ml},\,E_{ij} \right) +\\+
-	\alpha\left( \delta_{ni}E_{mj}-\delta_{mj}E_{in},\,E_{kl} \right) =0
-,\end{multline}
-\begin{multline}
-	\delta_{jk}\alpha \left(E_{il},\,E_{mn}\right)-\delta_{il}\alpha\left(E_{kj},\,E_{mn}\right)  +\\+
-	\delta_{lm}\alpha \left(E_{kn},\,E_{ij}\right)-\delta_{kn}\alpha\left(E_{ml},\,E_{ij}\right) +\\+
-	\delta_{ni}\alpha \left(E_{mj},\,E_{kl}\right)-\delta_{mj}\alpha\left(E_{in},\,E_{kl}\right) =0
-,\end{multline}
-\begin{multline}
-	\delta_{jk}\wick{\left( \delta_{lm} \c \psi_i \c\psi_n^*-
-	\delta_{in} \c1 \psi_m \c1 \psi_l^* \right)} -\delta_{il}\wick{\left( \delta_{jm} \c \psi_k \c\psi_n^*-
-	\delta_{kn} \c1 \psi_m \c1 \psi_j^* \right)} +\\+	\delta_{lm}\wick{\left( \delta_{in} \c \psi_k \c\psi_j^*-
-	\delta_{kj} \c1 \psi_i \c1 \psi_n^* \right)}-\delta_{kn}\wick{\left( \delta_{il} \c \psi_m \c\psi_j^*-
-	\delta_{mj} \c1 \psi_i \c1 \psi_l^* \right)}+\\+	\delta_{ni}\wick{\left( \delta_{jk} \c \psi_m \c\psi_l^*-
-	\delta_{lm} \c1 \psi_k \c1 \psi_j^* \right)}-\delta_{mj}\wick{\left( \delta_{kn} \c \psi_i \c\psi_l^*-
-	\delta_{il} \c1 \psi_k \c1 \psi_n^* \right)}=0
-,\end{multline}
-\begin{equation}
-0=0
-.\end{equation} 
-
-
-
-%\begin{multline*}
-%	\left[ \normord{\psi_i\psi_j^*},\,\normord{\psi_k \psi^*_l} \right]=\normord{\psi_i \psi_j^*}\normord{\psi_k \psi_l^*}-\normord{\psi_k \psi_l^*}\normord{\psi_i \psi_j^*}=\\=
-%\begin{cases}
-%	\psi_i \psi^*_j \psi_k \psi_l^*-
-%	\psi_k \psi_l^* \psi_i \psi_j^*,&
-% j\ge 0,\, l\ge 0,\\
-%	\psi_i \psi^*_j \psi_k \psi_l^*-
-%	\psi_k \psi_l^* \psi_i \psi_j^*,&
-% j\ge 0,\, l< 0,\,k\ge 0,\\
-%	\psi_i \psi^*_j \psi_k \psi_l^*-
-%	\psi_k \psi_l^* \psi_i \psi_j^*,&
-% i,\,l\ge 0,\ j< 0,\\
-%\end{cases}
-%\end{multline*}
-Оказывается, можно построить изоморфизм между описанным
-фермионным пространством Фока $\mathcal{F}$ и бозонным пространством $\mathcal{B}$ полиномов
-от $x_1,\,x_3,\ldots,\,z$ и $z^{-1}$:
-\begin{equation}
-	\Phi: \mathcal{F}\to \mathcal{B}= \mathbb{C}\left[ x_1,\,x_2,\ldots;\,z,\,z^{-1} \right] 
-.\end{equation} 
-Отображение $\Phi$ буквально задаёт бозонно-фермионное соответствие. Как следствие, можно построить бозонные представления
-$\rho^B=\Phi \rho \Phi^{-1}$ и $\hat{\rho}^B= \Phi \hat{\rho} \Phi^{-1}$ на данном пространстве.
-\ytableausetup{boxsize=0.5em}
-
-Определим
-\begin{equation}
-	 H(\mathbf{t})= \sum_{k=1}^{\infty} t_k H_k,\qquad
-	H_n= \sum_{k \in \mathbb{Z}}^{} \normord{\psi_k \psi_{k+n}^{*}}
-.\end{equation} 
-Тогда
-\begin{multline}
-	H_n= \sum_{k \in \mathbb{Z}}^{} \normord{\psi_k \psi_{k+n}^*}= \sum_{k \in \mathbb{Z}}^{} \wick{\left( 
-	\psi_{k}\psi_{k+n}^*-\c \psi_k \c \psi_{k+n}^*\right) }=\\=\begin{cases}
-		\displaystyle \sum_{k \in \mathbb{Z}}^{} \psi_k \psi_{k+n}^*, & n\neq 0,\\
-		\displaystyle \sum_{i>0}^{} \psi_k \psi_k^*-
-		\sum_{i\le 0}^{} \psi^*_k \psi_k,&
-		n=0.
-	\end{cases}
-	\label{}
-\end{multline}
-\begin{equation}
-	\mathrm{e} ^{H(\mathbf{t})}=
-	\exp  \left( \sum_{k\ge 1}^{} t_k H_k  \right)=
-	\exp \left( \sum_{k\ge 1}^{} t_k H_1^k  \right) =
-	\sum_{k\ge 0}^{} s_k(\mathbf{t}) H_k
-.\end{equation} 
-\begin{equation}
-	\left(	\mathrm{e} ^{H(\mathbf{t})}\right)_{mn}=
-	s_{n-m}(\mathbf{t})
-.\end{equation} 
-Получаем явный вид бозонно-фермионного соответствия (TODO привести мотивацию)
-\begin{multline}
-	\Phi\left( \ket{m,\,\lambda} \right) =z^m
-	\braket{m | \mathrm{e} ^{H(\mathbf{t})} | m,\,\lambda}=\\=z^m\braket{m | \sum_{\mu \in \mathrm{Par}}^{} \det \left[\left(\mathrm{e} ^{H(\mathbf{t})}\right)_{\mu_1+m,\mu_2+m-1,\ldots}^{\lambda_1+m,\lambda_2+m-1,\ldots}\right] | m,\,\mu}=\\=z^m
-	\det\left[ \left( \mathrm{e} ^{H(\mathbf{t})} \right)_{m,m-1,\ldots}^{\lambda_1+m,\lambda_2+m-1,\ldots}
-	\right] =z^m\det \left[ \left( \mathrm{e} ^{H(\mathbf{t})} \right) _{m,\,m-1,\ldots}^{\lambda_1+m,\,\lambda_{2}+m-1,\ldots} \right]=\\=z^m\det_{i,\,j}  
-	s_{\lambda_i-i+j}(\mathbf{t})
- = z^m s_{\lambda}(\mathbf{t})
-	\label{}
-.\end{multline}
-Рассмотрим выражение
-\begin{multline}
-\braket{0 | \mathrm{e}^{H(\mathbf{t})}G | 0}=
-\braket{0 | \mathrm{e} ^{H(\mathbf{t})} \sum_{\lambda \in \mathrm{Par}}^{} \det \left(G_{\lambda_1,\lambda_2-1,\ldots}^{0,-1,\ldots}\right) |0,\,\mu }=\\=
-\sum_{\lambda \in \mathrm{Par}}^{} \det \left(G_{\lambda_1,\lambda_2-1,\ldots}^{0,-1,\ldots}\right)\braket{0 | \mathrm{e} ^{H(\mathbf{t})}  |0,\,\lambda }=\sum_{\lambda \in \mathrm{Par}}^{} \det \left(G_{\lambda_1,\lambda_2-1,\ldots}^{0,-1,\ldots}\right)s_\lambda(\mathbf{t})
-.\end{multline} 
-Сравнивая с $\tau$-функцией в бозонном представлении \eqref{eq:2}
-можно получить, что
-\begin{equation}
-	\tau(\mathbf{t})=\braket{0 | \mathrm{e}^{H(\mathbf{t})}G | 0}\quad \text{при} \quad C_\lambda= \det
-	\left( G^{0,-1,\ldots}_{\lambda_1,\lambda_2-1,\ldots} \right) 
-.\end{equation} 
-Для гипергеометрических $\tau$-функций выполняется
-\begin{equation}
-	G=\mathrm{e} ^{A(\beta)},\qquad
-	A(\beta)=\sum_{k=1}^{\infty} \beta_k A_k
-.\end{equation} 
-\begin{equation}
-A_k= \oint \frac{dz}{2\pi \mathrm{i} } \normord{
-\left[ \left( \frac{1}{z} r(D) \right) ^k \psi(z) \right] \cdot \psi^*(z)}
-,\end{equation} 
-где $D=z \frac{\mathrm{d} }{\mathrm{d} z}$.
-\begin{equation}
-	D^n z^k=D^{n-1}z \frac{\partial }{\partial z} z^k=kD^{n-1}z^k=k^n z^k
-.\end{equation} 
-\begin{equation}
-	\left( \hbar D- j \right) ^n z^k=
-	\left( \hbar D-j \right) ^{n-1}\left( \hbar k -j\right) z^k=\left( \hbar k-j \right) ^n z^k 
-.\end{equation} 
-
-\begin{multline}
-	 \frac{1}{z}r(D) \psi(z)  =\frac{1}{z} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}D^n \sum_{k \in \mathbb{Z}}^{} \psi_k z^k  =
-	 \sum_{n=0}^{\infty} \sum_{k \in \mathbb{Z}}^{} 
-	 \frac{r^{(n)}(0)}{n!}\psi_k k^n z^{k-1}=\\=
-	 \sum_{k \in \mathbb{Z}}^{} r(k)\psi_k z^{k-1}
-.\end{multline} 
-\begin{multline}
-	\frac{1}{z}r(\hbar D) \psi(z)  =\frac{1}{z} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}(\hbar D)^n \sum_{k \in \mathbb{Z}}^{} \psi_k z^k  =\\=
-	 \sum_{n=0}^{\infty} \sum_{k \in \mathbb{Z}}^{} 
-	 \frac{r^{(n)}(0)}{n!}\psi_k (\hbar k)^n z^{k-1}=
-	 \sum_{k \in \mathbb{Z}}^{} r(\hbar k)\psi_k z^{k-1}
-.\end{multline}
-\begin{multline}
-	\frac{1}{z} r(\hbar D) \sum_{k \in \mathbb{Z}}^{} r(\hbar k) \psi_k z^{k-1}=\frac{1}{z}  \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!} \left( \hbar D \right) ^n
-	\sum_{k \in \mathbb{Z}}^{} r\left( \hbar k \right) 
-	\psi_k z^{k-1}=\\=
-	\frac{1}{z}\sum_{n=0}^{\infty} \sum_{k \in \mathbb{Z}}^{} \frac{r^{(n)}(0)}{n!}\hbar ^n
-	r\left( \hbar k \right) \psi_k \left( k-1 \right) ^nz^{k-1}=\\=\sum_{k \in \mathbb{Z}}^{} r\left( \hbar (k-1) \right) r(\hbar k)\psi_k z^{k-2}
-	\label{}
-.\end{multline}
-\begin{multline}
-	\frac{1}{z}r(D)\frac{1}{z}r(D)=
-	\frac{1}{z} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}
-	D^n \frac{1}{z}\sum_{k=0}^{\infty} \frac{r^{(k)}(0)}{k!} D^k=\\=\frac{1}{z} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}
-	\sum_{i=0}^{n} \binom{n}{i}\left(D^{n-i} \frac{1}{z}\right)\sum_{k=0}^{\infty} \frac{r^{(k)}(0)}{k!} D^{k+i}=\\=\frac{1}{z^2} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}
-	\sum_{i=0}^{n} \binom{n}{i}(-1)^{n-i} \sum_{k=0}^{\infty} \frac{r^{(k)}(0)}{k!} D^{k+i}=
-\\=\frac{1}{z^2} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}
- (D-1)^n \sum_{k=0}^{\infty} \frac{r^{(k)}(0)}{k!} D^{k}=
- \frac{1}{z^2}r(D-1)r(D)
-.\end{multline}
-\begin{multline}
-	\frac{1}{z}r(\hbar D)\frac{1}{z}r(\hbar D)=
-	\frac{1}{z} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}
-	(\hbar D)^n \frac{1}{z}\sum_{k=0}^{\infty} \frac{r^{(k)}(0)}{k!} (\hbar D)^k=\\=\frac{1}{z} \sum_{n=0}^{\infty}\frac{r^{(n)}(0)}{n!} \hbar ^n
-	\sum_{i=0}^{n} \binom{n}{i}\left(D^{n-i} \frac{1}{z}\right)\sum_{k=0}^{\infty} \frac{r^{(k)}(0)}{k!} \hbar ^kD^{k+i}=\\=\frac{1}{z^2} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}\hbar ^n
-	\sum_{i=0}^{n} \binom{n}{i}(-1)^{n-i} \sum_{k=0}^{\infty} \frac{r^{(k)}(0)}{k!} \hbar ^kD^{k+i}=
-\\=\frac{1}{z^2} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}
-\left(\hbar (D-1)\right)^n \sum_{k=0}^{\infty} \frac{r^{(k)}(0)}{k!} (\hbar D)^{k}=\\=
-\frac{1}{z^2}r\left(\hbar (D-1)\right)r(\hbar D)
-.\end{multline}
-\begin{multline}
-	\left[ \left( \frac{1}{z}r(D)  \right) ^k
-	\psi(z)\right] \cdot \psi^*(z)=\\=
-	\sum_{n \in \mathbb{Z}}^{} r(n)r(n-1)\cdots
-	r\left( n-k+1 \right) \psi_n z^{n-k}\sum_{j \in \mathbb{Z}}^{} \psi_j^* z^{-j-1}
-.\end{multline}
-\begin{equation}
-	A_k=\sum_{n\in \mathbb{Z}}^{} \normord{\psi_n \psi_{n-k}}	\prod_{i=0}^{k-1} 
-	r(n-i)\label{}
-.\end{equation}
 \section{Квантовая деформация иерархии КП}
 
 
-В $\hbar $\emph{-деформированной иерархии КП} связь между $F$ и $\tau$ будет следующей
-\begin{equation}
-	F^\hbar \left( \mathbf{t} \right) =
-	\hbar ^2 \ln \left( \tau^\hbar \left( \mathbf{t} \right)  \right) 
-.\end{equation} 
-Уравнения иерархии $\hbar$-КП получаются  из
-иерархии КП заменой  $\mathbf{t}\to \mathbf{t} /\hbar $.
+%В $\hbar $\emph{-деформированной иерархии КП} связь между $F$ и $\tau$ будет следующей
+%\begin{equation}
+%	F^\hbar \left( t \right) =
+%	\hbar ^2 \ln \left( \tau^\hbar \left( t \right)  \right) 
+%.\end{equation} 
+%В разделах далее будем добавлять $\hbar $
+%в $\tau$-функции так, чтобы полученные $\tau^\hbar $-функции
+%удовлетворяли $\hbar$-деформированной иерархии, а также
+%имели  <<хорошее>> разложение по степеням $\hbar $.
+\subsection{Деформация Такасаки-Такебе}
+$\hbar $-формулировка иерархии КП была введена Такасаки и Такебе 
+путём добавления формального параметра $\hbar $ в уравнения
+иерархии. Главной целью было исследовать 
+бездисперсионную иерархию КП в пределе  $\hbar \to 0$.
+Существование такого предела влечёт дополнительные
+ограничения на свободную энергию $F$: параметр $\hbar $ 
+должен быть добавлен в логарифм $\tau$-функции
+<<правильно>> --- $F$ не должна содержать отрицательных степеней $\hbar $. Связь между свободной энергией и $\tau$-функцией
+в деформированной иерархии даётся как
+\[
+F (t)=\hbar ^2 \ln \tau (t)
+.\] 
+Уравнения $\hbar $-деформированной иерархии КП получаются  из
+иерархии КП заменой  $t_k\to t_k /\hbar $.
 Первое уравнение деформированной иерархии
 \begin{equation}
 	\frac{1}{4} \frac{\partial ^2 F}{\partial t_2^2} =\frac{1}{3} \frac{\partial ^2 F}{\partial t_1 \partial t_3} -\frac{1}{2} \left( \frac{\partial^2 F}{\partial t_1^2} \right) ^2-\frac{\hbar ^2}{12} \frac{\partial^4 F}{
@@ -749,31 +1217,86 @@ A_k= \oint \frac{dz}{2\pi \mathrm{i} } \normord{
 .\end{equation} 
 $\tau$-функции  иерархии $\hbar $-КП
 \begin{equation}
-	\tau^\hbar \left( \mathbf{t} \right) =
-	\sum_{\lambda}^{} C_\lambda^\hbar 
-	s_\lambda \left( \frac{\mathbf{t}}{\hbar } \right) 
+	\tau \left( t \right) =
+	\sum_{\lambda}^{} C_\lambda 
+	s_\lambda \left( \frac{t}{\hbar } \right) 
 	\label{eq:3}
 ,\end{equation} 
-где $C^\hbar _{\lambda}$ удовлетворяют соотношениям Плюкера.
-В разделах далее будем добавлять $\hbar $
-в $\tau$-функции так, чтобы полученные $\tau^\hbar $-функции
-удовлетворяли $\hbar$-деформированной иерархии, а также
-имели  <<хорошее>> разложение по степеням $\hbar $.
-\subsection{Фермионный формализм}
-Рецепт деформации $\tau$-функций в фермионном формализме
+где $C _{\lambda}$ удовлетворяют соотношениям Плюкера.
+
+Первое уравнение бездисперсионной ($\hbar \to 0$) иерархии принимает вид
+\[
+\frac{1}{4} \frac{\partial ^2 F}{\partial  t_2^2} =
+\frac{1}{3} \frac{\partial ^2 F}{\partial t_1 \partial t_3} 
+-\frac{1}{2} \left( \frac{\partial ^2 F}{\partial t_1^2}  \right) ^2
+.\] 
+Согласно Такасаки и Такебе $\tau$-функции с <<хорошим>>
+квазиклассическим поведением имеют вид
+\[
+\tau(t)= \braket{0 | e^{H(t)}e^{A(\beta)} | 0}
+.\] 
 \begin{equation}
-	\tau^\hbar (\mathbf{t})= \braket{0 | \mathrm{e} ^{H\left( \mathbf{t} /\hbar  \right) } \exp \left( \frac{1}{\hbar }A^\hbar  \right) | 0}
+A(\beta)=\sum_{k=1}^{\infty} \beta_k A_k,\qquad A_k= \frac{1}{\hbar }\oint \frac{dz}{2\pi i } \normord{
+\left(  \frac{1}{z} r_k(\hbar D)   \psi(z) \right) \cdot \psi^*(z)}
 ,\end{equation} 
-где
-\begin{equation}
-A^\hbar = \oint \frac{dz}{2\pi \mathrm{i} }
-\normord{\left[ \hat{A}\left( z,\,\hbar \frac{\mathrm{d} }{\mathrm{d} z}\right)\psi(z)   \right] \cdot \psi^*(z)}
-\end{equation} 
-и
-\begin{equation}
-	\hat{A}\left( z,\,\hbar  \frac{\mathrm{d} }{\mathrm{d} z} \right) = \sum_{i \in \mathbb{Z},j\ge 0}^{} a_{ij}
-	z^i \left( \hbar  \partial_z \right) ^j
-.\end{equation} 
+где, как и прежде, $D= z \frac{\partial }{\partial z}$.
+
+Заметим, что масштабированием времён $t_k \to \frac{t_k}{\hbar }$ 
+любой $\tau$-функции КП можно получить решение $\hbar $-КП.
+Однако такой простой деформацией можно получить функцию $F$,
+которая не будет удовлетворять требуемым свойствам.
+Нетривиальная деформация может быть получена, когда параметр
+$\hbar $ также присутствует в деформированных коэффициентах
+Плюкера $C_\lambda$. В фермионном
+представлении мы знаем как деформировать $\tau$-функции так,
+чтобы функции $F(t)$ могли иметь корректный квазиклассический
+предел. Более того, полученные функции могут иметь явную геометрическую структуру, например, разложение по родам.
+Тем не менее, описанная деформация не даёт рецепта, как
+деформировать произвольную  $\tau$-функцию, чтобы получить
+хорошее квазиклассическое поведение.
+%
+%\begin{equation}
+%	\tau^\hbar (t)= \braket{0 | \mathrm{e} ^{H\left( t /\hbar  \right) } \exp \left( \frac{1}{\hbar }A^\hbar  \right) | 0}
+%,\end{equation} 
+%где
+%\begin{equation}
+%A^\hbar = \oint \frac{dz}{2\pi \mathrm{i} }
+%\normord{\left[ \hat{A}\left( z,\,\hbar \frac{d }{d z}\right)\psi(z)   \right] \cdot \psi^*(z)}
+%\end{equation} 
+%и
+%\begin{equation}
+%	\hat{A}\left( z,\,\hbar  \frac{d }{d z} \right) = \sum_{i \in \mathbb{Z},j\ge 0}^{} a_{ij}
+%	z^i \left( \hbar  \partial_z \right) ^j
+%.\end{equation} 
+%\begin{equation}
+%	\left( \hbar D- j \right) ^n z^k=
+%	\left( \hbar D-j \right) ^{n-1}\left( \hbar k -j\right) z^k=\left( \hbar k-j \right) ^n z^k 
+%.\end{equation}
+%\begin{multline}
+%	\frac{1}{z}r(\hbar D) \psi(z)  =\frac{1}{z} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}(\hbar D)^n \sum_{k \in \mathbb{Z}}^{} \psi_k z^k  =\\=
+%	 \sum_{n=0}^{\infty} \sum_{k \in \mathbb{Z}}^{} 
+%	 \frac{r^{(n)}(0)}{n!}\psi_k (\hbar k)^n z^{k-1}=
+%	 \sum_{k \in \mathbb{Z}}^{} r(\hbar k)\psi_k z^{k-1}
+%.\end{multline}
+%\begin{multline}
+%	\frac{1}{z} r(\hbar D) \sum_{k \in \mathbb{Z}}^{} r(\hbar k) \psi_k z^{k-1}=\frac{1}{z}  \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!} \left( \hbar D \right) ^n
+%	\sum_{k \in \mathbb{Z}}^{} r\left( \hbar k \right) 
+%	\psi_k z^{k-1}=\\=
+%	\frac{1}{z}\sum_{n=0}^{\infty} \sum_{k \in \mathbb{Z}}^{} \frac{r^{(n)}(0)}{n!}\hbar ^n
+%	r\left( \hbar k \right) \psi_k \left( k-1 \right) ^nz^{k-1}=\\=\sum_{k \in \mathbb{Z}}^{} r\left( \hbar (k-1) \right) r(\hbar k)\psi_k z^{k-2}
+%	\label{}
+%.\end{multline}
+%\begin{multline}
+%	\frac{1}{z}r(\hbar D)\frac{1}{z}r(\hbar D)=
+%	\frac{1}{z} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}
+%	(\hbar D)^n \frac{1}{z}\sum_{k=0}^{\infty} \frac{r^{(k)}(0)}{k!} (\hbar D)^k=\\=\frac{1}{z} \sum_{n=0}^{\infty}\frac{r^{(n)}(0)}{n!} \hbar ^n
+%	\sum_{i=0}^{n} \binom{n}{i}\left(D^{n-i} \frac{1}{z}\right)\sum_{k=0}^{\infty} \frac{r^{(k)}(0)}{k!} \hbar ^kD^{k+i}=\\=\frac{1}{z^2} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}\hbar ^n
+%	\sum_{i=0}^{n} \binom{n}{i}(-1)^{n-i} \sum_{k=0}^{\infty} \frac{r^{(k)}(0)}{k!} \hbar ^kD^{k+i}=
+%\\=\frac{1}{z^2} \sum_{n=0}^{\infty} \frac{r^{(n)}(0)}{n!}
+%\left(\hbar (D-1)\right)^n \sum_{k=0}^{\infty} \frac{r^{(k)}(0)}{k!} (\hbar D)^{k}=\\=
+%\frac{1}{z^2}r\left(\hbar (D-1)\right)r(\hbar D)
+%.\end{multline}
+%
 \subsection{$\tau$-функция чисел Гурвица}
 Формула Римана-Гурвица
 \begin{equation}
@@ -793,177 +1316,69 @@ u\to \hbar u
 избавиться от отрицательных степеней $\hbar $ 
 в разложении, получаем
 \begin{equation}
-	F^\hbar _H(\mathbf{t})=\sum_{g=0}^{\infty} \hbar ^{2g}F_H^g(\mathbf{t})
+	F^\hbar _H(t)=\sum_{g=0}^{\infty} \hbar ^{2g}F_H^g(t)
 .\end{equation}
-Покажем, что топологической деформацией \eqref{eq:1}
-из $\tau$-функции иерархии КП \eqref{eq:4} действительно можно
+Покажем, что разложением по родам \eqref{eq:1}
+ $\tau$-функции иерархии КП \eqref{eq:4} действительно можно
 получить $\tau$-функцию иерархии  $\hbar $-КП \eqref{eq:3}.
 Имеем
 \begin{equation}
-	\tau^\hbar _H(\mathbf{t})=
-	\sum_{\lambda}^{} \mathrm{e} ^{u\hbar c(\lambda)}
+	\tau^\hbar _H(t)=
+	\sum_{\lambda}^{} e ^{u\hbar c(\lambda)}
 	s_\lambda\left( \beta_k =\delta_{k,1} \right) 
 	s_\lambda\left( \frac{t_1}{\hbar ^2},\,
 	\frac{t_2}{\hbar ^3},\ldots\right) 
 .\end{equation}
-Можно показать (это вопросов не вызывает), что
+Можно показать, что
 \begin{equation}
-	\tau^\hbar _H(\mathbf{t})=
-	\sum_{\lambda}^{} \mathrm{e} ^{u\hbar c(\lambda)}
-	s_\lambda\left( \frac{1}{\hbar },\,0,\,0,\ldots \right) s_\lambda\left( \frac{\mathbf{t}}{\hbar } \right) 
+	\tau^\hbar _H(t)=
+	\sum_{\lambda}^{} e ^{u\hbar c(\lambda)}
+	s_\lambda\left( \frac{1}{\hbar },\,0,\,0,\ldots \right) s_\lambda\left( \frac{t}{\hbar } \right) 
 \end{equation}
 и что коэффициенты
 \begin{equation}
-	C_\lambda^\hbar = \mathrm{e} ^{u\hbar  c(\lambda)}
+	C_\lambda^\hbar = e ^{u\hbar  c(\lambda)}
 	s_\lambda \left( \beta_k =\frac{\delta_{k,1}}{\hbar } \right) 
 \end{equation}
 удовлетворяют соотношениям Плюкера. Это показывает, что $\hbar $-деформацией
-мы получаем $\tau$-функцию иерархии $\hbar $-КП. Для найденной функции было явно посчитано разложение по $\mathbf{t}$ для первых порядков и проверено, что в неё действительно входят только чётные степени $\hbar $.
-\section{Иерархия $B$КП}
-\subsection{Билинейное тождество $B$КП}
-\emph{Билинейное тождество иерархии $B$КП}
-\begin{multline}
-\frac{1}{2\pi \mathrm{i} } \oint
-\mathrm{e}^{\xi^{\text{н}}\left( \mathbf{t}-\mathbf{t}',\,k \right) }\tau_{B\text{КП}}\left( \mathbf{t}-2 \left[ k^{-1} \right]  \right) \tau_{B\text{КП}}\left( \mathbf{t}'+2 \left[ k^{-1} \right]  \right) \frac{\mathrm{d} k}{k}=\\=
-\tau_{B\text{КП}}\left( \mathbf{t} \right) \tau_{B\text{КП}}
-(\mathbf{t}')
-,\end{multline} 
-где
-\begin{equation}
-	\mathbf{t}\pm \left[ k^{-1} \right] 
-	\xlongequal[]{\text{опр}}
-	\left\{ t_1\pm k^{-1},\,t_2 \pm \frac{1}{2}
-	k^{-2},\,t_3\pm \frac{1}{3}k^{-3},\ldots\right\} 
-\end{equation} 
-и
-\begin{equation}
-	\xi^\text{н}\left( \mathbf{t},\,k \right)=
-	\sum_{j \in \mathbb{Z}_{\text{неч}}^+}^{} t_j k^j
-.\end{equation} 
-Первое уравнение иерархии $B$КП в терминах производных
-Хироты
-\begin{equation}
-	\left( \mathrm{D}_1^6-5\mathrm{D}_1^3 \mathrm{D}_3
-	-5 \mathrm{D}_3^2+9 \mathrm{D}_1 \mathrm{D}_5\right) \tau_{B\text{КП}}\cdot \tau_{B \text{КП}}
-.\end{equation} 
-Что можно переписать как
-\begin{multline}
--60 \left(\frac{\partial ^2F}{\partial
-   t_1^2}\right)^3-30 \frac{\partial ^4F}{\partial
-   t_1^4} \frac{\partial ^2F}{\partial
-   t_1^2}+30 \frac{\partial ^2F}{\partial t_1\, \partial t_3}
-   \frac{\partial ^2F}{\partial t_1^2}-\frac{\partial
-   ^6F}{\partial t_1^6}+\\+5 \frac{\partial ^2F}{\partial
-   t_3^2}-9 \frac{\partial ^2F}{\partial t_1\, \partial t_5}+5
-   \frac{\partial ^4F}{\partial t_1^3\, \partial t_3}=0	
-	\label{}
-.\end{multline}
-\subsection{$Q$-полиномы Шура, соотношения Плюккера  $B$КП,
-гипергеометрические  $\tau^{B\text{КП}}$-функции}
-\emph{Соотношения Плюккера} для $B$КП
-\begin{multline}
-c_{\left[ \alpha_1,\ldots,\,\alpha_k \right] }c_{\left[ 
-\alpha_1,\ldots,\,\alpha_k,\,\beta_1,\,\beta_2,\,\beta_3,\,\beta_4\right] }-c_{\left[ \alpha_1,\ldots,\,\alpha_k,\,
-\beta_1,\,\beta_2\right] }c_{\left[ \alpha_1,\ldots,\,
-\alpha_k,\,\beta_3,\,\beta_4\right] }+\\+c_{\left[ \alpha_1,\ldots,\,\alpha_k,\,
-\beta_1,\,\beta_3\right] }c_{\left[ \alpha_1,\ldots,\,
-\alpha_k,\,\beta_2,\,\beta_4\right] }-c_{\left[ \alpha_1,\ldots,\,\alpha_k,\,
-\beta_1,\,\beta_4\right] }c_{\left[ \alpha_1,\ldots,\,
-\alpha_k,\,\beta_2,\,\beta_3\right] }=0
-.\end{multline} 
-\ytableausetup{boxsize=0.2em}
-Простейшее соотношение Плюккера \begin{equation}
-	c_{\emptyset}c_{\ydiagram{3,2,1}}-c_{\ydiagram{1}}c_{\ydiagram{3,2}}+c_{\ydiagram{2}}c_{\ydiagram{3,1}}-c_{\ydiagram{3}}c_{\ydiagram{2,1}}=0
-.\end{equation} 
-Проверено, что \emph{$Q$-полиномы Шура} действительно удовлетворяют
-простейшему соотношению Плюккера.
-
-Для определения гипергеометрических $\tau$-функций зададим функцию
-\begin{equation}
-	r_\lambda= \prod_{w \in \lambda}^{} r\left( c(w) \right)  
-\label{eq:rl},\end{equation} 
-где
-\begin{equation}
-	c(w)=j,\qquad  1\le i\le l(\lambda),\qquad
-	1\le j\le \lambda_i
-.\end{equation} 
-Визуализация функции $c(w)$ на диаграмме Юнга:
-\ytableausetup{boxsize=1.5em}
-\begin{center}
-\begin{ytableau}
-	1&2&3&4\\
-	1&2&3\\
-	1&2
-\end{ytableau}
-\end{center}
-Также данную функцию можно проще записать как
-\begin{equation}
-	r_\lambda= \prod_{i=1}^{l} r(1)r(2)\cdots r(\lambda_i)  
-.\end{equation} 
-
-Для $k \in \mathbb{Z}_{\text{неч}}^+$ и функции $r$, удовлетворяющей условию
-\begin{equation}
-	r(n)=r(1-n)
-,\end{equation} можно ввести операторы
-\begin{equation}
-B_k= \oint \frac{\mathrm{d} z}{4\pi \mathrm{i} }
-\normord{\left[\left( \frac{1}{z}r(D) \right) ^k \phi(z)  \right]\cdot  \phi(-z)}=\frac{1}{2}
-\sum_{n \in \mathbb{Z}}^{} (-1)^n   \normord{\phi_n}\phi_{k-n}\prod_{i=0}^{k-1} r(n-i)
-,\end{equation} 
-\begin{equation}
-	B(\boldsymbol{\beta})=\sum_{n \in \mathbb{Z}_{\text{неч}}^+}^{} \beta_n B_n
-.\end{equation} 
-\emph{Гипергеометрические $\tau$-функции $B$КП}
-задаются как 
-\begin{equation}
-	\tau\left( \mathbf{t} \right) =
-	\braket{0 | \mathrm{e} ^{H(\mathbf{t})}\mathrm{e} ^{- B(\boldsymbol{\beta})} | 0}
-,\end{equation} 
-и могут быть представлены в виде сумм по строгим разбиениям $\mathrm{SP}$.
-\begin{equation}
-	\tau(\mathbf{t})=\sum_{\lambda \in \mathrm{SP}}^{} r_\lambda
-	Q_\lambda\left(\frac{\boldsymbol{\beta}}{2}\right) Q_\lambda\left(\frac{\mathbf{t}}{2}\right)
-.\end{equation} 
-Данные функции действительно решают иерархию $B$КП,  т.\:к.
-$Q$-полиномы Шура удовлетворяют соотношениям Плюккера $B$КП,
-а множители $r(c(w))$ выносятся как общие. Например,
-для простейшего соотношения Плюккера общим множителем
-будет
-\begin{equation}
-	r(1)^3r(2)^2 r(3)
-.\end{equation} 
-\subsection{$\tau$-функция модели БГВ}
-Статсумма данной матричной модели даётся как
-\begin{equation}
-	Z_{\text{БГВ}}\left( J,\,J^\dagger \right) =
-	\frac{1}{V_N} \int\limits_{N \times N}^{}
-	DU\,
-	\mathrm{e} ^{\Tr \left( J^\dagger U+ J U^\dagger \right) }
-,\end{equation} 
-где интеграл берётся по пространству унитарных матриц
-$N \times N$ с мерой Хаара $DU$ и \begin{equation}V_N= \int\limits_{N\times N}^{} DU \end{equation} --- объём унитарной группы.
-Нас будет интересовать так называемая фаза Концевича
-данной модели, где времена $t_k$ определены как
-\begin{equation}
-	t_k= - \frac{1}{2k-1} \Tr \left( J J^\dagger \right) ^{-k+1 /2}
-.\end{equation} 
-Известно, что статсумма модели БГВ в временах, нормализованных подобающим образом, $\tau_{\text{БГВ}}\left( \mathbf{t} /2 \right) $, является
-гипергеометрической с параметрами
-\begin{equation}
-	r(n)= \frac{\left( 2n-1 \right) ^2}{16},\qquad
-	\beta_k=2 \delta_{k,1}
-\label{eq:rn}
-.\end{equation} 
-\subsection{$\tau$-функция спиновых чисел Гурвица}
-Следующая $\tau$-функция является решением иерархии $B$КП:
-\begin{equation}
-	\tau \left( \mathbf{p},\,\bar{\mathbf{p}} \right) =
-	\sum_{R \in \mathrm{SP}}^{} \left( \mathrm{e} ^{u \left[ 
-	\Phi_R\left( \left[ 3 \right]  \right) +\frac{1}{2}\Phi_R \left( \left[ 1,\,1 \right]  \right) \right] } \right) Q_R\left(\frac{\mathbf{p}}{2}\right)Q_R \left(\frac{\bar{\mathbf{p}}}{2}\right)
-	\label{}
-.\end{equation}
-
-\subsection{Фермионный формализм и бозонно-фермионное соответствие}
+мы получаем $\tau$-функцию иерархии $\hbar $-КП. 
+\subsection{Гипергеометрические $\tau$-функции}
+Числа Гурвица --- это один из примеров гипергеометрических $\tau$-функций КП. Также к ним относятся статсуммы эрмитовой матричной модели и модели БГВ в фазе характеров. Оказывается, что
+для всех них правильной деформацией, согласующейся с разложением
+по родам и <<хорошим>> квазиклассическим поведением будет
+\[
+\left\{
+\begin{aligned}
+	r(n)&\to r\left( \hbar  n \right), \\
+	\beta_n&\to \frac{\beta_n}{\hbar },\\
+	t_n &\to \frac{t_n}{\hbar }.
+\end{aligned}
+\right.
+\] 
+\section{Бозонно-фермионное соответствие $B$КП}
+\subsection{$q$-полиномы Шура}
+Обычным полиномам Шура в $B$КП соответствуют \emph{$q$-полиномы Шура}.
+Для их определения потребуется ввести производящую функцию
+полиномов $P_{n,m}$:
+\[
+\sum_{n,m=0}^{\infty} P_{n,m} z_1^n z_2^m=
+\left[ \exp \left( 
+2 \sum_{k=0}^{\infty} t_{2k+1}\left( 
+z_1^{2k+1}+z_2^{2k+1}\right) \right) -1 \right] \frac{z_1-z_2}{z_1+z_2}
+.\] 
+Из этого определения очевидно, что $P_{n,m}$ --- антисимметричны.
+Определим антисимметричную матрицу
+\[
+	\left( M_\lambda(t) \right) _{i,j}=P_{\lambda_i,\lambda_j}(t)
+\]
+для случая, когда $l(\lambda)$ --- нечётное. Если же  $l(\lambda)$ 
+--- чётное, то будем добавлять к этой матрице
+одну строку $P_{0,\lambda_j}(t)$ (как будто мы добавили к диаграмме Юнга ещё одну строку длины 0). Окончательно,
+$q$-полиномы Шура определяются как
+\[
+q_\lambda(t)= 2^{-l /2} \operatorname{Pf} M_\lambda (t)  \equiv 2^{-l /2} \sqrt{\det M_\lambda (t)} 
+.\] 
+\subsection{Нейтральные фермионы и алгебра $\widehat{go(\infty)}$}
 Нейтральные фермионы определяются как
 \begin{equation}
 	\phi_m= \frac{\psi_m +\left( -1 \right) ^m \psi^*_{-m}}{\sqrt{2} }
@@ -1037,7 +1452,7 @@ $N \times N$ с мерой Хаара $DU$ и \begin{equation}V_N= \int\limits_{
 %	\left( -1 \right) ^a \delta_{a+d,0}
 %	\phi_c \phi_b
 .\end{multline} 
-Элементами матричной алгебры Ли $\mathfrak{go}(\infty)$
+Элементами матричной алгебры Ли $go(\infty)$
 являются матрицы
 \begin{equation}
 	F_{k,m}=(-1)^m E_{k,-m}-(-1)^k E_{m,-k}
@@ -1060,7 +1475,7 @@ a+d}\left[ E_{b,-a},\,E_{c,-d} \right] +
 \end{multline} 
 совпадают с коммутационными соотношениями билинейных
 комбинаций нейтральных фермионов. Значит представление
-алгебры $\mathfrak{go}(\infty)$ может быть реализовано
+алгебры $go(\infty)$ может быть реализовано
 на введённом пространстве Фока элементами $\phi_k \phi_m$.
 %\begin{equation}
 %	\phi_k \phi_m=
@@ -1146,23 +1561,167 @@ J_m  \ket{0}=0,\qquad
 .\end{equation} 
 Определим также производящую функцию данных операторов
 \begin{equation}
-	J(\mathbf{t})= \sum_{k \in \mathbb{Z}_\text{неч}^+}^{} t_k J_k%,\qquad
+	J(t)= \sum_{k \in \mathbb{Z}_\text{неч}^+}^{} t_k J_k%,\qquad
 %	J_-(\mathbf{s})= \sum_{k \in \mathbb{Z}_\text{odd}}^{} s_k J_{-k}
 .\end{equation} 
 
-Как и в случае иерархии КП определим бозонно-фермионное
-соответствие как
+Как и в случае иерархии КП бозонно-фермионное
+соответствие $B$КП задаётся как
 \[
-	\Phi\left( \ket{\lambda} \right) =\braket{0 | \mathrm{e} ^{J(\mathbf{t})} | \lambda}
+	\Phi\left( \ket{\lambda} \right) =\braket{0 | \mathrm{e} ^{J(t)} | \lambda}
 .\] 
-Оказывается, что (TODO?)
+Оказывается, что
 \[
-	\Phi(\ket{\lambda})=2^{-l /2} Q_\lambda\left( \frac{\mathbf{t}}{2} \right) 
+	\Phi(\ket{\lambda})=2^{-l /2} q_\lambda\left( \frac{t}{2} \right) 
 .\] 
-$\tau$-функции иерархии $B$КП можно получить как (TODO)
+
+
+\section{Иерархия $B$КП}
+\subsection{Билинейное тождество $B$КП}
+Иерархию $B$КП проще всего задать через её \emph{билинейное тождество}
+\begin{multline}
+\frac{1}{2\pi i } \oint
+e^{\xi^{\text{н}}\left( t-t',\,k \right) }\tau_{B\text{КП}}\left( t-2 \left[ k^{-1} \right]  \right) \tau_{B\text{КП}}\left( t'+2 \left[ k^{-1} \right]  \right) \frac{d k}{k}=\\=
+\tau_{B\text{КП}}\left( t \right) \tau_{B\text{КП}}
+(t')
+,\end{multline} 
+где
 \begin{equation}
-	\tau_G(\mathbf{t})= \braket{0 | \mathrm{e} ^{J(\mathbf{t}) }G | 0}
+	t\pm \left[ k^{-1} \right] 
+	\xlongequal[]{\text{опр}}
+	\left\{ t_1\pm k^{-1},\,t_2 \pm \frac{1}{2}
+	k^{-2},\,t_3\pm \frac{1}{3}k^{-3},\ldots\right\} 
+\end{equation} 
+и
+\begin{equation}
+	\xi^\text{н}\left( t,\,k \right)=
+	\sum_{j \in \mathbb{Z}_{\text{неч}}^+}^{} t_j k^j
 .\end{equation} 
+Нетрудно получить из билинейного тождества первое уравнение иерархии $B$КП в терминах производных
+Хироты 
+\begin{equation}
+	\left( \mathrm{D}_1^6-5\mathrm{D}_1^3 \mathrm{D}_3
+	-5 \mathrm{D}_3^2+9 \mathrm{D}_1 \mathrm{D}_5\right) \tau_{B\text{КП}}\cdot \tau_{B \text{КП}}
+.\end{equation} 
+Что можно переписать в обычных производных как
+\begin{multline}
+-60 \left(\frac{\partial ^2F}{\partial
+   t_1^2}\right)^3-30 \frac{\partial ^4F}{\partial
+   t_1^4} \frac{\partial ^2F}{\partial
+   t_1^2}+30 \frac{\partial ^2F}{\partial t_1\, \partial t_3}
+   \frac{\partial ^2F}{\partial t_1^2}-\frac{\partial
+   ^6F}{\partial t_1^6}+\\+5 \frac{\partial ^2F}{\partial
+   t_3^2}-9 \frac{\partial ^2F}{\partial t_1\, \partial t_5}+5
+   \frac{\partial ^4F}{\partial t_1^3\, \partial t_3}=0	
+	\label{}
+.\end{multline}
+В фермионном представлении $\tau$-функции  $B$КП задаются как
+\begin{equation}
+	\tau(t)= \braket{0 | \mathrm{e} ^{J(t) }G | 0}
+.\end{equation} 
+\subsection{Соотношения Плюккера  $B$КП,
+гипергеометрические  $\tau$-функции}
+\emph{Соотношения Плюккера} для $B$КП
+\begin{multline}
+c_{\left[ \alpha_1,\ldots,\,\alpha_k \right] }c_{\left[ 
+\alpha_1,\ldots,\,\alpha_k,\,\beta_1,\,\beta_2,\,\beta_3,\,\beta_4\right] }-c_{\left[ \alpha_1,\ldots,\,\alpha_k,\,
+\beta_1,\,\beta_2\right] }c_{\left[ \alpha_1,\ldots,\,
+\alpha_k,\,\beta_3,\,\beta_4\right] }+\\+c_{\left[ \alpha_1,\ldots,\,\alpha_k,\,
+\beta_1,\,\beta_3\right] }c_{\left[ \alpha_1,\ldots,\,
+\alpha_k,\,\beta_2,\,\beta_4\right] }-c_{\left[ \alpha_1,\ldots,\,\alpha_k,\,
+\beta_1,\,\beta_4\right] }c_{\left[ \alpha_1,\ldots,\,
+\alpha_k,\,\beta_2,\,\beta_3\right] }=0
+.\end{multline} 
+\ytableausetup{boxsize=0.2em}
+Простейшее соотношение Плюккера \begin{equation}
+	c_{\emptyset}c_{\ydiagram{3,2,1}}-c_{\ydiagram{1}}c_{\ydiagram{3,2}}+c_{\ydiagram{2}}c_{\ydiagram{3,1}}-c_{\ydiagram{3}}c_{\ydiagram{2,1}}=0
+.\end{equation} 
+
+Для определения гипергеометрических $\tau$-функций зададим функцию
+\begin{equation}
+	r_\lambda= \prod_{w \in \lambda}^{} r\left( c(w) \right)  
+\label{eq:rl},\end{equation} 
+где
+\begin{equation}
+	c(w)=j,\qquad  1\le i\le l(\lambda),\qquad
+	1\le j\le \lambda_i
+.\end{equation} 
+Визуализация функции $c(w)$ на диаграмме Юнга:
+\ytableausetup{boxsize=1.5em}
+\begin{center}
+\begin{ytableau}
+	1&2&3&4\\
+	1&2&3\\
+	1&2
+\end{ytableau}
+\end{center}
+Также данную функцию можно проще записать как
+\begin{equation}
+	r_\lambda= \prod_{i=1}^{l} r(1)r(2)\cdots r(\lambda_i)  
+.\end{equation} 
+
+Для $k \in \mathbb{Z}_{\text{неч}}^+$ и функции $r$, удовлетворяющей условию
+\begin{equation}
+	r(n)=r(1-n)
+,\end{equation} можно ввести операторы
+\begin{equation}
+B_k= \oint \frac{d z}{4\pi i }
+\normord{\left[\left( \frac{1}{z}r(D) \right) ^k \phi(z)  \right]\cdot  \phi(-z)}=\frac{1}{2}
+\sum_{n \in \mathbb{Z}}^{} (-1)^n   \normord{\phi_n}\phi_{k-n}\prod_{i=0}^{k-1} r(n-i)
+,\end{equation} 
+\begin{equation}
+	B(\beta)=\sum_{n \in \mathbb{Z}_{\text{неч}}^+}^{} \beta_n B_n
+.\end{equation} 
+\emph{Гипергеометрические $\tau$-функции $B$КП}
+задаются как 
+\begin{equation}
+	\tau\left( t \right) =
+	\braket{0 | \mathrm{e} ^{H(t)}\mathrm{e} ^{- B(\beta)} | 0}
+,\end{equation} 
+и могут быть представлены в виде сумм по строгим разбиениям $\mathrm{SP}$.
+\begin{equation}
+	\tau(t)=\sum_{\lambda \in \mathrm{SP}}^{} r_\lambda
+	q_\lambda\left(\frac{\beta}{2}\right) q_\lambda\left(\frac{t}{2}\right)
+.\end{equation} 
+Данные функции действительно решают иерархию $B$КП,  т.\:к.
+$q$-полиномы Шура удовлетворяют соотношениям Плюккера $B$КП,
+а множители $r(c(w))$ выносятся как общие. Например,
+для простейшего соотношения Плюккера общим множителем
+будет
+\begin{equation}
+	r(1)^3r(2)^2 r(3)
+.\end{equation} 
+\subsection{$\tau$-функция модели БГВ}
+Статсумма данной матричной модели даётся как
+\begin{equation}
+	Z_{\text{БГВ}}\left( J,\,J^\dagger \right) =
+	\frac{1}{V_N} \int\limits_{N \times N}^{}
+	DU\,
+	\mathrm{e} ^{\Tr \left( J^\dagger U+ J U^\dagger \right) }
+,\end{equation} 
+где интеграл берётся по пространству унитарных матриц
+$N \times N$ с мерой Хаара $DU$ и \begin{equation}V_N= \int\limits_{N\times N}^{} DU \end{equation} --- объём унитарной группы.
+Нас будет интересовать так называемая фаза Концевича
+данной модели, где времена $t_k$ определены как
+\begin{equation}
+	t_k= - \frac{1}{2k-1} \Tr \left( J J^\dagger \right) ^{-k+1 /2}
+.\end{equation} 
+Известно, что статсумма модели БГВ в временах, нормализованных подобающим образом, $\tau_{\text{БГВ}}\left( t /2 \right) $, является
+гипергеометрической с параметрами
+\begin{equation}
+	r(n)= \frac{\left( 2n-1 \right) ^2}{16},\qquad
+	\beta_k=2 \delta_{k,1}
+\label{eq:rn}
+.\end{equation} 
+\subsection{$\tau$-функция спиновых чисел Гурвица}
+Следующая $\tau$-функция является решением иерархии $B$КП:
+\begin{equation}
+	\tau \left( p,\,\bar{p} \right) =
+	\sum_{\lambda \in \mathrm{SP}}^{} \left( \mathrm{e} ^{u \left[ 
+	\Phi_\lambda\left( \left[ 3 \right]  \right) +\frac{1}{2}\Phi_\lambda \left( \left[ 1,\,1 \right]  \right) \right] } \right) q_\lambda\left(\frac{p}{2}\right)q_\lambda \left(\frac{\bar{p}}{2}\right)
+	\label{}
+.\end{equation}
+
 \section{Квантовая деформация иерархии $B$КП}
 Аналогично деформации иерархии КП получаем первое уравнение $\hbar $-$B$КП
 \begin{multline}
@@ -1177,7 +1736,7 @@ $\tau$-функции иерархии $B$КП можно получить ка�
 	\label{}
 .\end{multline}
 
-\subsection{Разложение по родам $\tau$-функции модели БГВ
+\subsection{$\tau$-функция модели БГВ
 в фазе Концевича}
 Добавление $1 /\hbar $ в экспоненту матричного интеграла
 модели БГВ
@@ -1193,26 +1752,26 @@ t_k\to t_k \hbar ^{k-1}
 .\end{equation} 
 Имеем соотношение
  \begin{equation}
-	 \tau_{\text{БГВ}}\left( \frac{\mathbf{t}}{2} \right) =\sum_{\lambda \in \mathrm{SP}}
-	 r_\lambda Q_\lambda\left( \delta_{k,1} \right) Q_\lambda\left( \frac{\mathbf{t}}{2} \right) 
+	 \tau_{\text{БГВ}}\left( \frac{t}{2} \right) =\sum_{\lambda \in \mathrm{SP}}
+	 r_\lambda q_\lambda\left( \delta_{k,1} \right) q_\lambda\left( \frac{t}{2} \right) 
 .\end{equation} 
 Откуда
 \begin{equation}
-	\tau^\hbar _{\text{БГВ}}\left( \frac{\mathbf{t}}{2} \right) =\sum_{\lambda \in \mathrm{SP}}
-	 r_\lambda Q_\lambda\left( \delta_{k,1} \right) Q_\lambda\left( \frac{t_k \hbar ^{k-1}}{2} \right) 
+	\tau^\hbar _{\text{БГВ}}\left( \frac{t}{2} \right) =\sum_{\lambda \in \mathrm{SP}}
+	 r_\lambda q_\lambda\left( \delta_{k,1} \right) q_\lambda\left( \frac{t_k \hbar ^{k-1}}{2} \right) 
 .\end{equation} 
 \begin{stm*}
 Выполнено равенство
 \begin{equation}
-Q_\lambda \left(\frac{ t_k\hbar ^{k-1}}{2}\right) 
+q_\lambda \left(\frac{ t_k\hbar ^{k-1}}{2}\right) 
 	=
-	\hbar ^{|\lambda|} Q_{\lambda} \left( \frac{\mathbf{t}}{2\hbar }\right) 
+	\hbar ^{|\lambda|} q_{\lambda} \left( \frac{t}{2\hbar }\right) 
 .\end{equation} 
 \end{stm*}
 \begin{proof}
 Известно, что
 \begin{equation}
-	Q_R(\mathbf{p})= \sum_{ \substack{\Delta \in \mathrm{OP}\\ \Delta\vdash |R|}}^{} \frac{\Psi_R(\Delta)}{z_\Delta}p_\Delta
+	q_R(p)= \sum_{ \substack{\Delta \in \mathrm{OP}\\ \Delta\vdash |R|}}^{} \frac{\Psi_R(\Delta)}{z_\Delta}p_\Delta
 ,\end{equation} 
 где 
 \begin{itemize}
@@ -1231,34 +1790,34 @@ Q_\lambda \left(\frac{ t_k\hbar ^{k-1}}{2}\right)
 .\end{equation} 
 Значит
 \begin{equation}
-	Q_\lambda \left( \frac{t_k\hbar ^{k-1}}{2} \right) 
+	q_\lambda \left( \frac{t_k\hbar ^{k-1}}{2} \right) 
 	=
-	\hbar ^{|\lambda|} Q_{\lambda} \left( \frac{\mathbf{t}}{2\hbar } \right) 
+	\hbar ^{|\lambda|} q_{\lambda} \left( \frac{t}{2\hbar } \right) 
 .\end{equation} 
 \end{proof}
 Теперь имеем
 \begin{equation}
-	\tau^\hbar _{\text{БГВ}}\left( \frac{\mathbf{t}}{2} \right) =\sum_{\lambda \in \mathrm{SP}}
-	r_\lambda \hbar ^{|\lambda|}Q_\lambda\left( \delta_{k,1} \right) Q_\lambda\left( \frac{\mathbf{t} }{2\hbar } \right) 
+	\tau^\hbar _{\text{БГВ}}\left( \frac{t}{2} \right) =\sum_{\lambda \in \mathrm{SP}}
+	r_\lambda \hbar ^{|\lambda|}q_\lambda\left( \delta_{k,1} \right) q_\lambda\left( \frac{t }{2\hbar } \right) 
 .\end{equation}
 \begin{stm*}
 
 Выполнено равенство
 \begin{equation}
-	\frac{Q_{\lambda}\left( \delta_{k,1} \right) 
-}{\hbar ^{|\lambda|}}= Q_\lambda \left( \frac{\delta_{k,1}}{\hbar } \right)  .\end{equation} 
+	\frac{q_{\lambda}\left( \delta_{k,1} \right) 
+}{\hbar ^{|\lambda|}}= q_\lambda \left( \frac{\delta_{k,1}}{\hbar } \right)  .\end{equation} 
 \end{stm*}
 \begin{proof}
 Напрямую следует из 
 \[
-	Q_R\left( \delta_{k,1} \right) =
+	q_R\left( \delta_{k,1} \right) =
 	\frac{\Psi_R\left( \left\{ 1,\ldots,\,1 \right\}  \right) }{z_{\left\{ 1,\ldots,\,1 \right\} }}p_1^{|R|}
 .\] 
 \end{proof}
 Это позволяет нам написать
 \begin{equation}
-	\tau^\hbar _{\text{БГВ}}\left( \frac{\mathbf{t}}{2} \right) =\sum_{\lambda \in \mathrm{SP}}
-	r_\lambda \hbar ^{2|\lambda|}Q_\lambda\left( \frac{\delta_{k,1}}{\hbar } \right) Q_\lambda\left( \frac{\mathbf{t} }{2\hbar } \right) 
+	\tau^\hbar _{\text{БГВ}}\left( \frac{t}{2} \right) =\sum_{\lambda \in \mathrm{SP}}
+	r_\lambda \hbar ^{2|\lambda|}q_\lambda\left( \frac{\delta_{k,1}}{\hbar } \right) q_\lambda\left( \frac{t }{2\hbar } \right) 
 .\end{equation}
 Вспоминая определение $r_\lambda$ \eqref{eq:rl} и функцию
 $r(n)$ для модели БГВ  \eqref{eq:rn}, можем
@@ -1286,25 +1845,25 @@ r_\lambda^\hbar =\hbar ^{2|\lambda|}r_\lambda=\prod_{w \in \lambda}^{}
 \end{equation} 
 к $r^\hbar (n)$. Таким образом, мы представили  $\hbar $-деформацию $\tau$-функции модели БГВ в виде
 \begin{equation}
-	\tau^\hbar _{\text{БГВ}}\left( \frac{\mathbf{t}}{2} \right) =\sum_{\lambda \in \mathrm{SP}}
-	r_\lambda^\hbar Q_\lambda\left( \frac{\delta_{k,1}}{\hbar } \right) Q_\lambda\left( \frac{\mathbf{t} }{2\hbar } \right) 
+	\tau^\hbar _{\text{БГВ}}\left( \frac{t}{2} \right) =\sum_{\lambda \in \mathrm{SP}}
+	r_\lambda^\hbar q_\lambda\left( \frac{\delta_{k,1}}{\hbar } \right) q_\lambda\left( \frac{t }{2\hbar } \right) 
 ,\end{equation} 
 имеющем следующую интерпретацию в терминах фермионного формализма
 \begin{equation}
-	\tau^\hbar _{\text{БГВ}}=\braket{0 | \mathrm{e} ^{H(\mathbf{t} /\hbar )}\exp \left( -\frac{1}{\hbar }B^\hbar  \right)  |0 }
+	\tau^\hbar _{\text{БГВ}}=\braket{0 | e ^{H(t /\hbar )}\exp \left( -\frac{1}{\hbar }B^\hbar  \right)  |0 }
 ,\end{equation} 
 \begin{equation}
 	B^\hbar =\sum_{n \in \mathbb{Z}_{\text{неч}}^+}^{} \beta_n B_n^\hbar 
 ,\end{equation} 
 \begin{equation}
-	B^\hbar_k = \oint \frac{\mathrm{d} z}{4\pi \mathrm{i} }\normord{\left[ \left(\frac{1}{z}r\left[ \frac{1}{2}+\hbar \left(D-\frac{1}{2}\right) \right]  \right)^k \phi(z)  \right] \cdot \phi(-z)}
+	B^\hbar_k = \oint \frac{d z}{4\pi i }\normord{\left[ \left(\frac{1}{z}r\left[ \frac{1}{2}+\hbar \left(D-\frac{1}{2}\right) \right]  \right)^k \phi(z)  \right] \cdot \phi(-z)}
 \end{equation} 
 Получается интригующая замена для оператора $D$
  \begin{equation}
 	 D\to \frac{1}{2} +\hbar \left( D-\frac{1}{2} \right) 
 .\end{equation} 
 
-\subsection{Разложение по родам спиновых чисел Гурвица}
+\subsection{Cпиновые числа Гурвица}
 Формула Римана-Гурвица (простые точки ветвления имеют профиль $(r+1,\,1,\ldots,\,1)$, где $r$ --- чётное)
 \[
 	2g-2=-2|\mu|+\left( |\mu|-\ell\left(\mu\right) \right) +
@@ -1341,7 +1900,7 @@ r_\lambda^\hbar =\hbar ^{2|\lambda|}r_\lambda=\prod_{w \in \lambda}^{}
 \exp \left( \frac{un(n-1)}{2} \right) \times\\\times
 \mathrm{Hur}_{0,n}^{\mathrm{(spin)}}\bigl( \Delta_1,\,\Delta_2,\,\underbrace{\left\{ 3,\,1^{n-3} \right\}, \ldots,\,\left\{ 3,\,1^{n-3} \right\}}_{m}  \bigr)  p_{\Delta_1}p_{\Delta_2}  \frac{u^m}{m!}
 .\end{multline*} 
-   \centering
+\begin{center}
     \begin{tabular}{r@{}l}
     \raisebox{-6ex}{$|R|-3\left\{\vphantom{\begin{array}{c}~\\[6ex] ~
     \end{array}}\right.$} &
@@ -1352,14 +1911,15 @@ r_\lambda^\hbar =\hbar ^{2|\lambda|}r_\lambda=\prod_{w \in \lambda}^{}
     ~               & \none & \none \\
     \end{ytableau}
     \end{tabular}
-\begin{figure}[ht]
-    \centering
-    \incfig{1}
-    \caption{1}
-    \label{fig:1}
-\end{figure}
-\subsection{$\hbar $-деформация  гипергеометрических $\tau$-функций
-иерархии $B$КП}
+\end{center}
+%%% TODO
+%\begin{figure}[ht]
+%    \centering
+%    \incfig{1}
+%    \caption{1}
+%    \label{fig:1}
+%\end{figure}
+\subsection{Гипергеометрические $\tau$-функции}
 Гипотеза состоит в том, что деформация
 \begin{equation}
 \left\{
@@ -1371,7 +1931,9 @@ r_\lambda^\hbar =\hbar ^{2|\lambda|}r_\lambda=\prod_{w \in \lambda}^{}
 \right.
 \end{equation} 
 даёт для гипергеометрических $\tau$-функций иерархии
- $B $КП разложение по родам\ldots 
+ $B $КП разложение по родам. Для первых порядков непосредственные
+вычисления показывают, что свободная энергия имеет разложение
+по чётным положительным степеням $\hbar $.
 
 
 %Имеем
@@ -1389,5 +1951,8 @@ r_\lambda^\hbar =\hbar ^{2|\lambda|}r_\lambda=\prod_{w \in \lambda}^{}
 %	=\hbar^{\left| \tilde{\lambda} \right|  /2} Q_\lambda\left( \frac{\mathbf{t}}{2\hbar } \right)=
 %	\hbar ^{|\lambda|} Q_{\lambda} \left( \frac{\mathbf{t}}{2\hbar } \right) 
 %.\] 
-
+\section{Заключение}
+\emph{Выводы и предложения автора касательно последующей работы.}
+\nocite{*}
+\printbibliography
 \end{document}

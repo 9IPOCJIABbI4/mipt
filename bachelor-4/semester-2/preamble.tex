@@ -73,6 +73,7 @@
 \theoremstyle{plain} % Это стиль по умолчанию, его можно не переопределять.
 \newtheorem{thm}{Теорема}
 \newtheorem*{thm*}{Теорема}
+\newtheorem*{stm*}{Утверждение}
 \newtheorem{prop}{Предложение}
 \newtheorem*{prop*}{Предложение}
  
@@ -122,7 +123,7 @@
 \usepackage{soul} % Модификаторы начертания
 
 \PassOptionsToPackage{hyphens}{url}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage[usenames,dvipsnames,svgnames,table,rgb]{xcolor}
 \hypersetup{				% Гиперссылки
     unicode=true,           % русские буквы в раздела PDF
@@ -260,4 +261,7 @@ Moscow Institute of Physics and Technology}
 
 \DeclareMathAlphabet{\mathbbold}{U}{bbold}{m}{n}
 
-\newcommand{\normord}[1]{:\mathrel{#1}:}
+%\newcommand{\normord}[1]{:\mathrel{#1}:}
+\newcommand{\normord}[1]{\mathopen{:}#1\mathclose{:}}
+
+\usepackage{simpler-wick}
